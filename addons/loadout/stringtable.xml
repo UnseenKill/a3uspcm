@@ -7,6 +7,12 @@
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutNotSavedText">
             <English>The vehicle's current loadout COULD NOT be saved.</English>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoreCaption">
+            <English>Restore loadout</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoreText">
+            <English>Loadout "%1" successfully restored into %2</English>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutSaveCaption">
             <English>Save loadout</English>
         </Key>
@@ -24,12 +30,6 @@
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuSaveLoadout">
             <English>Save current loadout</English>
-        </Key>
-        <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoreCaption">
-            <English>Restore loadout</English>
-        </Key>
-        <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoreText">
-            <English>Loadout "%1" successfully restored into %2</English>
         </Key>
     </Package>
 </Project>
