@@ -11,7 +11,17 @@ if !hasInterface exitWith {
 [
     ELSTRING(main,Title),
     QGVAR(InstantHeal),
-    [LSTRING(Hotkeys_InstantHeal), LSTRING(Hotkeys_InstantHealTooltip)],
+    [LSTRING(Hotkeys_InstantHealSelf), LSTRING(Hotkeys_InstantHealSelfTooltip)],
+    {},
+    {
+        [] call FUNCMAIN(healPlayer);
+    }
+] call CBA_fnc_addKeybind;
+
+[
+    ELSTRING(main,Title),
+    QGVAR(InstantHealGroup),
+    [LSTRING(Hotkeys_InstantHealGroup), LSTRING(Hotkeys_InstantHealGroupTooltip)],
     {},
     {
         [] call FUNCMAIN(healGroup);
