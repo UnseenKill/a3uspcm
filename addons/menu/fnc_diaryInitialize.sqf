@@ -42,8 +42,4 @@ _entries apply {
     };
 };
 
-GVAR(DiaryEntries) set["teleport", player createDiaryRecord[MENU_SUBJECT_ID, [localize LSTRING(DiaryTeleportCaption), localize LSTRING(DiaryTeleportText)]]];
-GVAR(DiaryEntries) set["healing", player createDiaryRecord[MENU_SUBJECT_ID, [localize LSTRING(DiaryHealingCaption), localize LSTRING(DiaryHealingText)]]];
-GVAR(DiaryEntries) set["fixes", player createDiaryRecord[MENU_SUBJECT_ID, [localize LSTRING(DiaryFixesCaption), localize LSTRING(DiaryFixesText)]]];
-
 nil;

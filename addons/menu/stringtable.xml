@@ -16,6 +16,12 @@
         <Key ID="STR_A3USPCM_Menu_DiaryHealingText">
             <English>You shall be healed.</English>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryMiscellaneousCaption">
+            <English>Miscellaneous</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryMiscellaneousText">
+            <English>Fixes, hacks and such.</English>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_DiarySubjectTitle">
             <English>A3U Singleplayer Cheat Menu</English>
         </Key>
@@ -39,6 +45,30 @@
         </Key>
         <Key ID="STR_A3USPCM_Menu_InitMessage">
             <English>initializing A3U Singleplayer Cheat Menu v%1</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddTeamZeusCaption">
+            <English>Add team to Zeus</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddTeamZeusText">
+            <English>Add team members to curatable objects.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesCaption">
+            <English>Fix planes</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesText">
+            <English>Remove clunky old planes from air support, add jet.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesCaption">
+            <English>Fix helicopters</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesText">
+            <English>Remove all helicopters from air support, add MH-6.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsCaption">
+            <English>Repair buildings</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsText">
+            <English>Repair damaged buildings around player position.</English>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintCaption">
             <English>Summon stragglers</English>

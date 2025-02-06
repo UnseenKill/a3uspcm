@@ -35,5 +35,34 @@ class GVAR(Config) {
                 action = QFUNCMAIN(teleportStragglers);
             };
         };
+
+        class Miscellaneous {
+            caption = CSTRING(DiaryMiscellaneousCaption);
+            text = CSTRING(DiaryMiscellaneousText);
+
+            class RepairBuildings {
+                caption = CSTRING(Miscellaneous_RepairBuildingsCaption);
+                text = CSTRING(Miscellaneous_RepairBuildingsText);
+                action = QFUNCMAIN(miscRepairBuildings);
+            };
+
+            class AddTeamZeus {
+                caption = CSTRING(Miscellaneous_AddTeamZeusCaption);
+                text = CSTRING(Miscellaneous_AddTeamZeusText);
+                action = QFUNCMAIN(miscAddTeamZeus);
+            };
+
+            class FixAirDropVehicles {
+                caption = CSTRING(Miscellaneous_FixAirDropVehiclesCaption);
+                text = CSTRING(Miscellaneous_FixAirDropVehiclesText);
+                action = QFUNCMAIN(miscFixAirDropVehicles);
+            };
+
+            class FixAirSupportVehicles {
+                caption = CSTRING(Miscellaneous_FixAirSupportVehiclesCaption);
+                text = CSTRING(Miscellaneous_FixAirSupportVehiclesText);
+                action = QFUNCMAIN(miscFixAirSupportVehicles);
+            };
+        };
     };
 };
