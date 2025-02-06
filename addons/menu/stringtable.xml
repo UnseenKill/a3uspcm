@@ -43,17 +43,17 @@
         <Key ID="STR_A3USPCM_Menu_Healing_HealPlayerText">
             <English>Only heal yourself using ACE.</English>
         </Key>
-        <Key ID="STR_A3USPCM_Menu_Hotkeys_InstantHealSelf">
-            <English>Instant heal (self)</English>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Hotkeys_InstantHealSelfTooltip">
-            <English>Instantly heal yourself</English>
-        </Key>
         <Key ID="STR_A3USPCM_Menu_Hotkeys_InstantHealGroup">
             <English>Instant heal (group)</English>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Hotkeys_InstantHealGroupTooltip">
             <English>Instantly heal team and yourself</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Hotkeys_InstantHealSelf">
+            <English>Instant heal (self)</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Hotkeys_InstantHealSelfTooltip">
+            <English>Instantly heal yourself</English>
         </Key>
         <Key ID="STR_A3USPCM_Menu_InitMessage">
             <English>initializing A3U Singleplayer Cheat Menu v%1</English>
