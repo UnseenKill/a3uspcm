@@ -2,8 +2,8 @@
 
 if !hasInterface exitWith {};
 
-LOG("A3USPCM: client initialization");
+INFO_1(localize LSTRING(InitMessage),QUOTE(VERSION_STR));
 
-[] call A3USPCM_fnc_initializeDiary;
+[] call FUNC(initializeDiary);
 
 nil;

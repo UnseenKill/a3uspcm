@@ -1,0 +1,279 @@
+version=54;
+class EditorData
+{
+	moveGridStep=0.25;
+	angleGridStep=0.78539819;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=577;
+	class ItemIDProvider
+	{
+		nextID=2231;
+	};
+	class MarkerIDProvider
+	{
+		nextID=209;
+	};
+	class LayerIndexProvider
+	{
+		nextID=12396;
+	};
+	class Camera
+	{
+		pos[]={6499.2637,54.404922,5414.0327};
+		dir[]={-0.82166708,-0.52967745,0.21051198};
+		up[]={-0.51310766,0.84819424,0.13145851};
+		aside[]={0.24818672,4.2684405e-08,0.96871787};
+	};
+};
+binarizationWanted=0;
+sourceName="a3u-sp-cheat-menu";
+addons[]=
+{
+	"A3_Modules_F_Curator_Curator",
+	"A3_Characters_F"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=1458173;
+class ScenarioData
+{
+	author="gor3Splatter";
+	disabledAI=1;
+	class Header
+	{
+		gameType="Survive";
+	};
+};
+class CustomAttributes
+{
+	class Category1
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								singleType="STRING";
+								value="None";
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=1;
+	};
+};
+class Mission
+{
+	class Intel
+	{
+		resistanceWest=0;
+		timeOfChanges=1800.0002;
+		startWeather=0;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=6;
+		minute=-16;
+		startFogBase=-1000;
+		forecastFogBase=-1000;
+		startFogDecay=0;
+		forecastFogDecay=0;
+	};
+	class Entities
+	{
+		items=4;
+		class Item0
+		{
+			dataType="Group";
+			side="Independent";
+			class Attributes
+			{
+				combatMode="GREEN";
+				behaviour="SAFE";
+			};
+			id=41;
+			atlOffset=142.91;
+		};
+		class Item1
+		{
+			dataType="Group";
+			side="East";
+			class Attributes
+			{
+				combatMode="BLUE";
+				behaviour="CARELESS";
+				speedMode="LIMITED";
+				formation="LINE";
+			};
+			id=837;
+			atlOffset=142.91;
+		};
+		class Item2
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7214.876,2.6600001,7061.395};
+			};
+			id=1974;
+			type="ModuleCurator_F";
+			atlOffset=57.63097;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item3
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6421.9512,7.4363208,5423.0576};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=2230;
+					type="B_Soldier_F";
+					atlOffset=-4.7683716e-07;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male06ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2229;
+			atlOffset=-4.7683716e-07;
+		};
+	};
+};

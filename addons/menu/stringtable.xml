@@ -4,5 +4,11 @@
         <Key ID="STR_A3USPCM_Diary_Entry_Title">
             <English>A3U Singleplayer Cheat Menu</English>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Component">
+            <English>A3USPCM - Menu Component</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_InitMessage">
+            <English>initializing A3U Singleplayer Cheat Menu v%1</English>
+        </Key>
     </Package>
 </Project>

@@ -20,4 +20,6 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 
+INFO_3("A3USPCM_fnc_initializeDiary - initialize for (name=%1;uid=%2;type=%3)",name player,getPlayerUID player,typeOf player);
+
 nil;

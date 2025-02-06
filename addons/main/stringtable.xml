@@ -4,6 +4,9 @@
         <Key ID="STR_A3USPCM_Author">
             <English>goreSplatter</English>
         </Key>
+        <Key ID="STR_A3USPCM_Main_Component">
+            <English>A3USPCM - Main Component</English>
+        </Key>
         <Key ID="STR_A3USPCM_URL">
             <English>https://www.example.com/</English>
         </Key>
