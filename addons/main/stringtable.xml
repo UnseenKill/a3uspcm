@@ -7,6 +7,9 @@
         <Key ID="STR_A3USPCM_Main_Component">
             <English>A3USPCM - Main Component</English>
         </Key>
+        <Key ID="STR_A3USPCM_Main_Title">
+            <English>A3U Singleplayer Cheat Menu</English>
+        </Key>
         <Key ID="STR_A3USPCM_URL">
             <English>https://www.example.com/</English>
         </Key>

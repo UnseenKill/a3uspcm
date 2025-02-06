@@ -8,10 +8,14 @@ if !hasInterface exitWith {
 
 #include "XEH_PREP.hpp"
 
-/*
-[ELSTRING(common,WeaponsCategory), "MRT_SwitchItemNextClass_R", [LSTRING(railNext), LSTRING(railNext_tooltip)], {
-    [1, "next"] call FUNC(switchAttachment) // return
-}, {}, [DIK_L, [false, true, false]]] call CBA_fnc_addKeybind;
-*/
+[
+    ELSTRING(main,Title),
+    QGVAR(InstantHeal),
+    [LSTRING(Hotkeys_InstantHeal), LSTRING(Hotkeys_InstantHealTooltip)],
+    {},
+    {
+        [] call FUNCMAIN(healGroup);
+    }
+] call CBA_fnc_addKeybind;
 
 ADDON = true;
