@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Loadout">
+        <Key ID="STR_A3USPCM_Loadout_Component">
+            <English>A3USPCM - Vehicle Loadout Component</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintSavedLoadout">
+            <English>Save loadout</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintSavedLoadoutText">
+            <English>The vehicle's current loadout has been saved.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_MenuLoadout">
+            <English>Loadout</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_MenuRestoreLoadout">
+            <English>Restore saved loadout</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_MenuSaveLoadout">
+            <English>Save current loadout</English>
+        </Key>
+    </Package>
+</Project>

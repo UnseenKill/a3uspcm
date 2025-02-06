@@ -1,4 +1,4 @@
-#define COMPONENT Menu
+#define COMPONENT menu
 #include "\z\a3uspcm\addons\main\script_mod.hpp"
 
 #ifdef DEBUG_ENABLED_MENU
