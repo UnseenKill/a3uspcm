@@ -40,5 +40,29 @@
         <Key ID="STR_A3USPCM_Menu_InitMessage">
             <English>initializing A3U Singleplayer Cheat Menu v%1</English>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportHintAbortCaption">
+            <English>Teleporting aborted</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportHintAbortText">
+            <English>Map closed prematurely.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportHintStartCaption">
+            <English>Teleporting player</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportHintStartText">
+            <English>Left click to desired position. Close the map to abort.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportPlayerCaption">
+            <English>Teleport self</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportPlayerText">
+            <English>Single left click to teleport to location.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportStragglersCaption">
+            <English>Summon stragglers</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportStragglersText">
+            <English>Teleport team members farther away than 100m to your position.</English>
+        </Key>
     </Package>
 </Project>

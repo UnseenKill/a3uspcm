@@ -3,6 +3,8 @@ class CfgFunctions {
         class COMPONENT {
             PATHTO_FNC(healGroup);
             PATHTO_FNC(healPlayer);
+            PATHTO_FNC(teleportPlayer);
+            PATHTO_FNC(teleportStragglers);
         };
     };
 };
