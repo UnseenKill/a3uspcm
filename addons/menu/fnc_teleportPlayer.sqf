@@ -34,6 +34,7 @@ GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
     GVAR(Teleport_Done) = true;
 
     openMap false;
+    INFO_2("teleporting %1 to %2",name player,mapGridPosition _pos);
     TRACE_2("teleporting",player,_pos);
     vehicle player setPosATL _pos;
 }];
@@ -43,6 +44,7 @@ GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
     removeMissionEventHandler["MapSingleClick", GVAR(Teleport_MapSingleClickEH)];
 
     if !GVAR(Teleport_Done) exitWith {
+        INFO("teleportation aborted");
         [
             localize LSTRING(Teleport_TeleportHintAbortCaption), 
             localize LSTRING(Teleport_TeleportHintAbortText)
