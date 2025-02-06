@@ -8,7 +8,8 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "A3A_Core",
+            "A3A_core",
+            "A3A_ultimate",
             "cba_common"
         };
         author = "$STR_A3USPCM_Author";
