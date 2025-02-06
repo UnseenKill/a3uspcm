@@ -22,8 +22,6 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1("A3USPCM_Loadout_fnc_getLoadoutMenuChildren",_this);
-
 params[
     ["_target", objNull, [objNull]],
     ["_player", objNull, [objNull]]
@@ -49,8 +47,39 @@ if !assert(!isNull _player) exitWith { [] };
             QGVAR(MenuRestoreLoadout),
             localize LSTRING(MenuRestoreLoadout),
             "",
-            { [{ call FUNC(restoreLoadout) }, _this] call CBA_fnc_execNextFrame },
-            { true }
+            {},
+            { !(GVAR(Loadouts) isEqualType false) },
+            {
+                private _index = 0;
+                GVAR(Loadouts) apply {
+                    _index = _index + 1;
+
+                    [
+                        [
+                            format["%1_%2", QGVAR(MenuRestoreLoadout), _index],
+                            format["#%1 %2", _index, _x select 0],
+                            "",
+                            { [{ call FUNC(restoreLoadout) }, _this] call CBA_fnc_execNextFrame },
+                            { true },
+                            {},
+                            _x
+                        ] call ace_interact_menu_fnc_createAction,
+                        [],
+                        _target
+                    ]
+                };
+            }
+        ] call ace_interact_menu_fnc_createAction,
+        [],
+        _target
+    ],
+    [
+        [
+            QGVAR(MenuLoadConfig),
+            localize LSTRING(MenuConfigLoadout),
+            "",
+            { [{ [] call FUNC(getLoadouts) }, _this] call CBA_fnc_execNextFrame },
+            { GVAR(Loadouts) isEqualType false }
         ] call ace_interact_menu_fnc_createAction,
         [],
         _target

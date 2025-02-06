@@ -4,11 +4,17 @@
         <Key ID="STR_A3USPCM_Loadout_Component">
             <English>A3USPCM - Vehicle Loadout Component</English>
         </Key>
-        <Key ID="STR_A3USPCM_Loadout_HintSavedLoadout">
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutNotSavedText">
+            <English>The vehicle's current loadout COULD NOT be saved.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutSaveCaption">
             <English>Save loadout</English>
         </Key>
-        <Key ID="STR_A3USPCM_Loadout_HintSavedLoadoutText">
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutSavedText">
             <English>The vehicle's current loadout has been saved.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_MenuConfigLoadout">
+            <English>Fetch config from save</English>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadout">
             <English>Loadout</English>
@@ -18,6 +24,12 @@
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuSaveLoadout">
             <English>Save current loadout</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoreCaption">
+            <English>Restore loadout</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoreText">
+            <English>Loadout "%1" successfully restored into %2</English>
         </Key>
     </Package>
 </Project>

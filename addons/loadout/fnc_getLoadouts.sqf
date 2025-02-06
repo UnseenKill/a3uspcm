@@ -20,30 +20,27 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-
 if (GVAR(Loadouts) isEqualType false) then {
     INFO("Loadouts not loaded, initializing...");
 
-    private _saved = [QGVAR(Loadouts)] call A3A_fnc_getStatVariable;
+    [QGVAR(Loadouts)] call A3A_fnc_getStatVariable;
 
-    if isNil "_saved" then {
+    if isNil QGVAR(Loadouts) then {
         INFO("No saved loadouts found, initializing empty array");
         GVAR(Loadouts) = [];
     } else {
         INFO("Loading saved loadouts");
 
-        if !(_saved isEqualType []) then {
+        if !(GVAR(Loadouts) isEqualType []) then {
             WARNING("Invalid loadouts data type, initializing with empty array");
-            TRACE_1("invalid value",_saved);
+            TRACE_1("invalid value",GVAR(Loadouts));
 
-            _saved = [];
+            GVAR(Loadouts) = [];
         };
 
-        GVAR(Loadouts) = _saved;
     };
 
-    TRACE_1("loaded",_saved);
-
+    TRACE_1("loaded",GVAR(Loadouts));
     [QGVAR(Loadouts), GVAR(Loadouts)] call A3A_fnc_setStatVariable;
 };
 

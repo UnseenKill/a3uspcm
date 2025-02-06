@@ -19,7 +19,6 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-
 params[
     ["_vehicle", objNull, [objNull]],
     ["_player", objNull, [objNull]],
@@ -30,7 +29,14 @@ if !assert(!isNull _vehicle) exitWith {};
 if !assert(!isNull _player) exitWith {};
 
 private _loadouts = [] call FUNC(getLoadouts);
-private _thisLoadout = [_vehicle] call FUNC(serializeLoadout);
+private _thisLoadout = [_vehicle, getText(configOf _vehicle >> "displayName")] call FUNC(serializeLoadout);
+
+if !(_thisLoadout isEqualType []) exitWith {
+    [
+        localize LSTRING(HintLoadoutSaveCaption),
+        localize LSTRING(HintLoadoutNotSavedText)
+    ] call A3A_fnc_customHint;
+};
 
 _loadouts = [_thisLoadout] + _loadouts;
 
@@ -42,8 +48,8 @@ GVAR(Loadouts) = _loadouts;
 [QGVAR(Loadouts), GVAR(Loadouts)] call A3A_fnc_setStatVariable;
 
 [
-    localize LSTRING(HintSavedLoadout),
-    localize LSTRING(HintSavedLoadoutText)
+    localize LSTRING(HintLoadoutSaveCaption),
+    localize LSTRING(HintLoadoutSavedText)
 ] call A3A_fnc_customHint;
 
 nil;
