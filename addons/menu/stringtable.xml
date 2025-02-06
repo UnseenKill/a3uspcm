@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Menu">
+        <Key ID="STR_A3USPCM_Diary_Entry_Title">
+            <English>A3U Singleplayer Cheat Menu</English>
+        </Key>
+    </Package>
+</Project>

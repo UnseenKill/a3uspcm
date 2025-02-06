@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="Main">
-        <Key ID="STR_CBA_Author">
+        <Key ID="STR_A3USPCM_Author">
             <English>goreSplatter</English>
         </Key>
-        <Key ID="STR_CBA_URL">
+        <Key ID="STR_A3USPCM_URL">
             <English>https://www.example.com/</English>
         </Key>
     </Package>
