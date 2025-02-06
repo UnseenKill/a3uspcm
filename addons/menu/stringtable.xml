@@ -40,6 +40,27 @@
         <Key ID="STR_A3USPCM_Menu_InitMessage">
             <English>initializing A3U Singleplayer Cheat Menu v%1</English>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintCaption">
+            <English>Summon stragglers</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintNoPosition">
+            <English>Failed to find a suitable destination for any of your stragglers.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintNoStragglers">
+            <English>There are no team members further away than %1m of you.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintNoTeam">
+            <English>You have no team members to summon.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintSummonedAll">
+            <English>All your stragglers summoned successfully.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintSummonedPartial">
+            <English>Only %1 of your %2 stragglers could be safely summoned.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintSummoning">
+            <English>Summoning %1 straggler(s) to you.</English>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportHintAbortCaption">
             <English>Teleporting aborted</English>
         </Key>
