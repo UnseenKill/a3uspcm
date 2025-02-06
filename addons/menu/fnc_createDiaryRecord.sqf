@@ -40,7 +40,7 @@ _lines pushBack format["<font size='10'>%1</font>", [_config >> "text", "STRING"
 _lines pushBack "";
 
 "true" configClasses _config apply {
-    _lines pushBack format["&bull; %1", [_x] call FUNC(createDiaryRecordAction)];
+    _lines pushBack format["&#160;&#160;&#160;&#160;%1", [_x] call FUNC(createDiaryRecordAction)];
 };
 
 _player createDiaryRecord[_subjectId, [

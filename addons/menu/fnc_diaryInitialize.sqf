@@ -26,7 +26,7 @@ GVAR(DiarySubjectIndex) = player createDiarySubject[MENU_SUBJECT_ID, localize LS
 GVAR(DiaryEntries) = createHashMap;
 
 private _config = configFile >> QGVAR(Config) >> "Diary";
-private _entires = "true" configClasses _config;
+private _entries = "true" configClasses _config;
 
 // Order is reversed in actual diary
 reverse _entries;

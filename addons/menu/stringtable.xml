@@ -25,6 +25,12 @@
         <Key ID="STR_A3USPCM_Menu_DiaryTeleportText">
             <English>Teleport self or team.</English>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Healing_HealGroupCaption">
+            <English>Heal your group</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Healing_HealGroupText">
+            <English>Heal all in your group using ACE.</English>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Healing_HealPlayerCaption">
             <English>Heal self</English>
         </Key>
