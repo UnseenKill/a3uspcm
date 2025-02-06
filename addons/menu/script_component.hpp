@@ -1,4 +1,4 @@
-#define COMPONENT menu
+#define COMPONENT Menu
 #include "\z\a3uspcm\addons\main\script_mod.hpp"
 
 #ifdef DEBUG_ENABLED_MENU
@@ -14,3 +14,4 @@
 #endif
 
 #include "\z\a3uspcm\addons\main\script_macros.hpp"
+#define MENU_SUBJECT_ID QUOTE(DOUBLES(ADDON,DiarySubject))

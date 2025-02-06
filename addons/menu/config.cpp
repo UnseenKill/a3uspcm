@@ -8,11 +8,12 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"a3uspcm_main"};
         author = "$STR_A3USPCM_Author";
-        authors[] = {"Rommel"};
+        authors[] = {"goreSplatter"};
         url = "$STR_A3USPCM_URL";
         VERSION_CONFIG;
     };
 };
 
+#include "CfgAddon.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgFunctions.hpp"

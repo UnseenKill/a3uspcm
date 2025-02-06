@@ -1,9 +1,9 @@
 #include "script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_fnc_initializeDiary
+Function: A3USPCM_fnc_healPlayer
 
 Description:
-    Initialize cheat menu in player diary
+    Heal current player
 
 Parameters:
 
@@ -11,7 +11,7 @@ Optional:
 
 Example:
     (begin example)
-    [] call A3USPCM_fnc_initializeDiary;
+    [] call A3USPCM_fnc_healPlayer;
     (end)
 
 Returns:
@@ -20,6 +20,7 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 
-INFO_3("A3USPCM_fnc_initializeDiary - initialize for (name=%1;uid=%2;type=%3)",name player,getPlayerUID player,typeOf player);
+INFO_1("player %1 healed self",name player);
+[player, player] call ace_medical_treatment_fnc_fullHeal;
 
 nil;

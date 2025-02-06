@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="Menu">
-        <Key ID="STR_A3USPCM_Diary_Entry_Title">
-            <English>A3U Singleplayer Cheat Menu</English>
-        </Key>
         <Key ID="STR_A3USPCM_Menu_Component">
             <English>A3USPCM - Menu Component</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryFixesCaption">
+            <English>Fixes</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryFixesText">
+            <English>Fix lame ass bombing run air vehicles.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryHealingCaption">
+            <English>Healing</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryHealingText">
+            <English>You shall be healed.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiarySubjectTitle">
+            <English>A3U Singleplayer Cheat Menu</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryTeleportCaption">
+            <English>Teleport</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryTeleportText">
+            <English>Teleport self or team.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Healing_HealPlayerCaption">
+            <English>Heal self</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Healing_HealPlayerText">
+            <English>Only heal yourself using ACE.</English>
         </Key>
         <Key ID="STR_A3USPCM_Menu_InitMessage">
             <English>initializing A3U Singleplayer Cheat Menu v%1</English>

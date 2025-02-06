@@ -1,2 +1,3 @@
-
-PREP(initializeDiary);
+PREP(createDiaryRecord);
+PREP(createDiaryRecordAction);
+PREP(diaryInitialize);
