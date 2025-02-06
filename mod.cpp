@@ -1,0 +1,14 @@
+name = "A3U Singleplayer Cheat Menu v0.0.0";
+picture = "a3uspcm.paa";
+actionName = "Website";
+action = "https://www.example.com/";
+description = "Antistasi Ultimate Singleplayer Cheat Menu";
+logo = "a3uspcm.paa";
+logoOver = "a3uspcm.paa";
+tooltip = "A3U Singleplayer Cheat Menu";
+tooltipOwned = "A3U Singleplayer Cheat Menu Owned";
+overview = "It's a cheat menu. For Antistasi Ultimate Singleplayer mode.";
+author = "goreSplatter";
+overviewPicture = "a3uspcm.paa";
+overviewText = "A3U Singleplayer Cheat Menu overviewText";
+overviewFootnote = "<br /><br /><t color='#999999'>This content is under Arma Public License Share Alike (APL-SA) License.<br />Press <t /><t color='#19d3ff'>Left Shift + P<t /><t color='#999999'> to open the store page for more information.<t />";
