@@ -40,6 +40,12 @@ class GVAR(Config) {
             caption = CSTRING(DiaryMiscellaneousCaption);
             text = CSTRING(DiaryMiscellaneousText);
 
+            class MakeLootBox {
+                caption = CSTRING(Miscellaneous_MakeLootBoxCaption);
+                text = CSTRING(Miscellaneous_MakeLootBoxText);
+                action = QFUNCMAIN(miscMakeLootBox);
+            };
+
             class RepairBuildings {
                 caption = CSTRING(Miscellaneous_RepairBuildingsCaption);
                 text = CSTRING(Miscellaneous_RepairBuildingsText);

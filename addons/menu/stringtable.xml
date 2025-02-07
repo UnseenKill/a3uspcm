@@ -82,6 +82,18 @@
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsText">
             <English>Repair damaged buildings around player position.</English>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxCaption">
+            <English>Turn into lootbox</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxText">
+            <English>Turn cursor target into lootbox to collect scattered loot.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxHintNoTargetText">
+            <English>You're not pointing at a valid target.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxHintSuccessText">
+            <English>%1 now has loot collecting abilities.</English>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintCaption">
             <English>Summon stragglers</English>
         </Key>
