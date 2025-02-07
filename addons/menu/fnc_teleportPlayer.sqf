@@ -22,7 +22,10 @@ Author:
 
 INFO_1("player %1 requests teleportation",name player);
 
-openMap true;
+if !visibleMap then {
+    openMap true;
+};
+
 [
     localize LSTRING(Teleport_TeleportHintStartCaption), 
     localize LSTRING(Teleport_TeleportHintStartText)
