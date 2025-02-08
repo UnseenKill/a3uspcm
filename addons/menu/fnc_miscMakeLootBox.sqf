@@ -29,11 +29,18 @@ if visibleMap then {
     [cursorTarget] spawn {
         params[["_target", objNull, [objNull]]];
 
-        if (isNull _target) exitWith {
-            [
-                localize LSTRING(Miscellaneous_MakeLootBoxCaption),
-                localize LSTRING(Miscellaneous_MakeLootBoxHintNoTargetText)
-            ] call A3A_fnc_customHint;
+        if (isNull _target) then {
+            private _vector = player weaponDirection currentWeapon player;
+            private _beg = ASLToAGL eyePos player;
+            private _pos = _beg vectorAdd (_vector vectorMultiply 2);
+            _target = createVehicle["Box_NATO_Equip_F", _pos, [], 0, "NONE"];
+
+            [-500] call A3A_fnc_resourcesPlayer;
+
+            clearMagazineCargoGlobal _target;
+            clearWeaponCargoGlobal _target;
+            clearItemCargoGlobal _target;
+            clearBackpackCargoGlobal _target;
         };
 
         INFO_2("player %1 wants %2 turned into lootbox",name player,typeOf _target);

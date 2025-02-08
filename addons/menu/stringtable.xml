@@ -77,10 +77,7 @@
             <English>Remove all helicopters from air support, add MH-6.</English>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxCaption">
-            <English>Turn into lootbox</English>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxHintNoTargetText">
-            <English>You're not pointing at a valid target.</English>
+            <English>Turn into/create lootbox</English>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxHintSuccessText">
             <English>%1 now has loot collecting abilities.</English>
