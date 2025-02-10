@@ -10,7 +10,7 @@
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoreCaption">
             <English>Restore loadout</English>
         </Key>
-        <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoreText">
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoredText">
             <English>Loadout "%1" successfully restored into %2</English>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutSaveCaption">

@@ -65,7 +65,7 @@ TRACE_1("_items",_items);
 
 [
     localize LSTRING(HintLoadoutRestoreCaption),
-    format[localize LSTRING(HintLoadoutRestoredText), _title]
+    format[localize LSTRING(HintLoadoutRestoredText), _title, getText(configOf _vehicle >> "displayName")],
 ] call A3A_fnc_customHint;
 
 nil;
