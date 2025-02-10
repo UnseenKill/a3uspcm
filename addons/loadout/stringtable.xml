@@ -4,6 +4,12 @@
         <Key ID="STR_A3USPCM_Loadout_Component">
             <English>A3USPCM - Vehicle Loadout Component</English>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutItemExcessText">
+            <English>%2x %1 not in arsenal</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutItemMissingText">
+            <English>Not in arsenal: %1</English>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutNotSavedText">
             <English>The vehicle's current loadout COULD NOT be saved.</English>
         </Key>
