@@ -33,17 +33,6 @@ if !assert(!isNull _player) exitWith { [] };
 [
     [
         [
-            QGVAR(MenuLoadoutSave),
-            localize LSTRING(MenuLoadoutSave),
-            "",
-            { [{ call FUNC(saveLoadout) }, _this] call CBA_fnc_execNextFrame },
-            { true }
-        ] call ace_interact_menu_fnc_createAction,
-        [],
-        _target
-    ],
-    [
-        [
             QGVAR(MenuLoadoutManage),
             localize LSTRING(MenuLoadoutManage),
             "",
@@ -140,6 +129,17 @@ if !assert(!isNull _player) exitWith { [] };
             "",
             { [{ [] call FUNC(getLoadouts) }, _this] call CBA_fnc_execNextFrame },
             { GVAR(Loadouts) isEqualType false }
+        ] call ace_interact_menu_fnc_createAction,
+        [],
+        _target
+    ],
+    [
+        [
+            QGVAR(MenuLoadoutSave),
+            localize LSTRING(MenuLoadoutSave),
+            "",
+            { [{ call FUNC(saveLoadout) }, _this] call CBA_fnc_execNextFrame },
+            { true }
         ] call ace_interact_menu_fnc_createAction,
         [],
         _target
