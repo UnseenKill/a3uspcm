@@ -33,8 +33,8 @@ if !assert(!isNull _player) exitWith { [] };
 [
     [
         [
-            QGVAR(MenuSaveLoadout),
-            localize LSTRING(MenuSaveLoadout),
+            QGVAR(MenuLoadoutSave),
+            localize LSTRING(MenuLoadoutSave),
             "",
             { [{ call FUNC(saveLoadout) }, _this] call CBA_fnc_execNextFrame },
             { true }
@@ -44,25 +44,85 @@ if !assert(!isNull _player) exitWith { [] };
     ],
     [
         [
-            QGVAR(MenuRestoreLoadout),
-            localize LSTRING(MenuRestoreLoadout),
+            QGVAR(MenuLoadoutManage),
+            localize LSTRING(MenuLoadoutManage),
             "",
             {},
             { !(GVAR(Loadouts) isEqualType false) },
             {
                 private _index = 0;
+
                 GVAR(Loadouts) apply {
+                    private _loadout = _x;
                     _index = _index + 1;
 
                     [
                         [
-                            format["%1_%2", QGVAR(MenuRestoreLoadout), _index],
-                            format["#%1 %2", _index, _x select 0],
+                            format["%1_%2", QGVAR(MenuLoadoutManage), _index],
+                            format["#%1 %2", _index, _loadout select 0],
                             "",
-                            { [{ call FUNC(restoreLoadout) }, _this] call CBA_fnc_execNextFrame },
-                            { true },
                             {},
-                            _x
+                            { true },
+                            {
+                                params["_target","","_parameters"];
+                                _parameters params["_loadout","_index"];
+                                
+                                [
+                                    [
+                                        [
+                                            format["%1_%2_apply", QGVAR(MenuLoadoutManage), _index],
+                                            localize LSTRING(MenuLoadoutApply),
+                                            "",
+                                            { [{ call FUNC(restoreLoadout) }, _this] call CBA_fnc_execNextFrame },
+                                            { true },
+                                            {},
+                                            _loadout
+                                        ] call ace_interact_menu_fnc_createAction,
+                                        [],
+                                        _target
+                                    ],
+                                    [
+                                        [
+                                            format["%1_%2_rename", QGVAR(MenuLoadoutManage), _index],
+                                            localize LSTRING(MenuLoadoutRename),
+                                            "",
+                                            { [{ call FUNC(renameLoadout) }, _this] call CBA_fnc_execNextFrame },
+                                            { true },
+                                            {},
+                                            _index - 1
+                                        ] call ace_interact_menu_fnc_createAction,
+                                        [],
+                                        _target
+                                    ],
+                                    [
+                                        [
+                                            format["%1_%2_delete", QGVAR(MenuLoadoutManage), _index],
+                                            localize LSTRING(MenuLoadoutDelete),
+                                            "",
+                                            { [{ call FUNC(deleteLoadout) }, _this] call CBA_fnc_execNextFrame },
+                                            { true },
+                                            {},
+                                            _index - 1
+                                        ] call ace_interact_menu_fnc_createAction,
+                                        [],
+                                        _target
+                                    ],
+                                    [
+                                        [
+                                            format["%1_%2_dump", QGVAR(MenuLoadoutManage), _index],
+                                            localize LSTRING(MenuLoadoutDump),
+                                            "",
+                                            { [{ call FUNC(dumpLoadout) }, _this] call CBA_fnc_execNextFrame },
+                                            { true },
+                                            {},
+                                            _index - 1
+                                        ] call ace_interact_menu_fnc_createAction,
+                                        [],
+                                        _target
+                                    ]
+                                ]
+                            },
+                            [_loadout, _index]
                         ] call ace_interact_menu_fnc_createAction,
                         [],
                         _target

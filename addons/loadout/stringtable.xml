@@ -4,11 +4,17 @@
         <Key ID="STR_A3USPCM_Loadout_Component">
             <English>A3USPCM - Vehicle Loadout Component</English>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutDeletedText">
+            <English>Deleted loadout "%1".</English>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutItemExcessText">
             <English>%2x %1 not in arsenal</English>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutItemMissingText">
             <English>Not in arsenal: %1</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutManageCaption">
+            <English>Manage loadout</English>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutNotSavedText">
             <English>The vehicle's current loadout COULD NOT be saved.</English>
@@ -31,10 +37,19 @@
         <Key ID="STR_A3USPCM_Loadout_MenuLoadout">
             <English>Loadout</English>
         </Key>
-        <Key ID="STR_A3USPCM_Loadout_MenuRestoreLoadout">
-            <English>Restore saved loadout</English>
+        <Key ID="STR_A3USPCM_Loadout_MenuLoadoutApply">
+            <English>Apply</English>
         </Key>
-        <Key ID="STR_A3USPCM_Loadout_MenuSaveLoadout">
+        <Key ID="STR_A3USPCM_Loadout_MenuLoadoutDelete">
+            <English>Delete</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_MenuLoadoutManage">
+            <English>Manage saved loadouts</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_MenuLoadoutRename">
+            <English>Rename</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_MenuLoadoutSave">
             <English>Save current loadout</English>
         </Key>
     </Package>
