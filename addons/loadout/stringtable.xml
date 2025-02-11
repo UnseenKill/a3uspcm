@@ -19,6 +19,9 @@
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutNotSavedText">
             <English>The vehicle's current loadout COULD NOT be saved.</English>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutRenamedText">
+            <English>Loadout renamed to "%1".</English>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoreCaption">
             <English>Restore loadout</English>
         </Key>
@@ -43,6 +46,9 @@
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutDelete">
             <English>Delete</English>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_MenuLoadoutDump">
+            <English>Dump</English>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutManage">
             <English>Manage saved loadouts</English>
         </Key>
@@ -51,6 +57,9 @@
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutSave">
             <English>Save current loadout</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_PromptRenameLoadout">
+            <English>Rename loadout to:</English>
         </Key>
     </Package>
 </Project>

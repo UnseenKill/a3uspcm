@@ -27,7 +27,20 @@ params[
 
 if !assert(!isNull _vehicle) exitWith {};
 if !assert(!isNull _player) exitWith {};
+if !assert(!(GVAR(Loadouts) isEqualType false)) exitWith {};
 
-TRACE_1("rename loadout",_index);
+private _lo = GVAR(Loadouts) select _index;
+
+[localize LSTRING(PromptRenameLoadout), _lo select 0, {
+    params["_name","_index"];
+
+    GVAR(Loadouts) select _index set[0, _name];
+    [QGVAR(Loadouts), GVAR(Loadouts)] call A3A_fnc_setStatVariable;
+
+    [
+        localize LSTRING(HintLoadoutManageCaption),
+        format[localize LSTRING(HintLoadoutRenamedText), _name]
+    ] call A3A_fnc_customHint;
+}, _index] call FUNCMAIN(promptText);
 
 nil;
