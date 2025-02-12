@@ -1,20 +1,38 @@
 class GVAR(Config) {
     class Diary {
-        class Healing {
-            caption = CSTRING(DiaryHealingCaption);
-            text = CSTRING(DiaryHealingText);
-            image = QUOTE(a3\ui_f\data\igui\cfg\actions\heal_ca.paa);
+        class Miscellaneous {
+            caption = CSTRING(DiaryMiscellaneousCaption);
+            text = CSTRING(DiaryMiscellaneousText);
+            image = QUOTE(a3\ui_f\data\igui\cfg\actions\repair_ca.paa);
 
-            class HealPlayer {
-                caption = CSTRING(Healing_HealPlayerCaption);
-                text = CSTRING(Healing_HealPlayerText);
-                action = QFUNCMAIN(healPlayer);
+            class AddTeamZeus {
+                caption = CSTRING(Miscellaneous_AddTeamZeusCaption);
+                text = CSTRING(Miscellaneous_AddTeamZeusText);
+                action = QFUNCMAIN(miscAddTeamZeus);
             };
 
-            class HealGroup {
-                caption = CSTRING(Healing_HealGroupCaption);
-                text = CSTRING(Healing_HealGroupText);
-                action = QFUNCMAIN(healGroup);
+            class MakeLootBox {
+                caption = CSTRING(Miscellaneous_MakeLootBoxCaption);
+                text = CSTRING(Miscellaneous_MakeLootBoxText);
+                action = QFUNCMAIN(miscMakeLootBox);
+            };
+
+            class RepairBuildings {
+                caption = CSTRING(Miscellaneous_RepairBuildingsCaption);
+                text = CSTRING(Miscellaneous_RepairBuildingsText);
+                action = QFUNCMAIN(miscRepairBuildings);
+            };
+
+            class FixAirDropVehicles {
+                caption = CSTRING(Miscellaneous_FixAirDropVehiclesCaption);
+                text = CSTRING(Miscellaneous_FixAirDropVehiclesText);
+                action = QFUNCMAIN(miscFixAirDropVehicles);
+            };
+
+            class FixAirSupportVehicles {
+                caption = CSTRING(Miscellaneous_FixAirSupportVehiclesCaption);
+                text = CSTRING(Miscellaneous_FixAirSupportVehiclesText);
+                action = QFUNCMAIN(miscFixAirSupportVehicles);
             };
         };
 
@@ -36,38 +54,21 @@ class GVAR(Config) {
             };
         };
 
-        class Miscellaneous {
-            caption = CSTRING(DiaryMiscellaneousCaption);
-            text = CSTRING(DiaryMiscellaneousText);
+        class Healing {
+            caption = CSTRING(DiaryHealingCaption);
+            text = CSTRING(DiaryHealingText);
+            image = QUOTE(a3\ui_f\data\igui\cfg\actions\heal_ca.paa);
 
-            class MakeLootBox {
-                caption = CSTRING(Miscellaneous_MakeLootBoxCaption);
-                text = CSTRING(Miscellaneous_MakeLootBoxText);
-                action = QFUNCMAIN(miscMakeLootBox);
+            class HealPlayer {
+                caption = CSTRING(Healing_HealPlayerCaption);
+                text = CSTRING(Healing_HealPlayerText);
+                action = QFUNCMAIN(healPlayer);
             };
 
-            class RepairBuildings {
-                caption = CSTRING(Miscellaneous_RepairBuildingsCaption);
-                text = CSTRING(Miscellaneous_RepairBuildingsText);
-                action = QFUNCMAIN(miscRepairBuildings);
-            };
-
-            class AddTeamZeus {
-                caption = CSTRING(Miscellaneous_AddTeamZeusCaption);
-                text = CSTRING(Miscellaneous_AddTeamZeusText);
-                action = QFUNCMAIN(miscAddTeamZeus);
-            };
-
-            class FixAirDropVehicles {
-                caption = CSTRING(Miscellaneous_FixAirDropVehiclesCaption);
-                text = CSTRING(Miscellaneous_FixAirDropVehiclesText);
-                action = QFUNCMAIN(miscFixAirDropVehicles);
-            };
-
-            class FixAirSupportVehicles {
-                caption = CSTRING(Miscellaneous_FixAirSupportVehiclesCaption);
-                text = CSTRING(Miscellaneous_FixAirSupportVehiclesText);
-                action = QFUNCMAIN(miscFixAirSupportVehicles);
+            class HealGroup {
+                caption = CSTRING(Healing_HealGroupCaption);
+                text = CSTRING(Healing_HealGroupText);
+                action = QFUNCMAIN(healGroup);
             };
         };
     };
