@@ -22,6 +22,12 @@
         <Key ID="STR_A3USPCM_Menu_DiaryMiscellaneousText">
             <English>Fixes, hacks and such.</English>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryRecruitmentCaption">
+            <English>Unit recruitment</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryRecruitmentText">
+            <English>Recruit units into your squad outside HQ. Enemies close restrictions still apply.</English>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_DiarySubjectTitle">
             <English>A3U Singleplayer Cheat Menu</English>
         </Key>

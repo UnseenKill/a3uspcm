@@ -54,6 +54,72 @@ class GVAR(Config) {
             };
         };
 
+        class Recruitment {
+            caption = CSTRING(DiaryRecruitmentCaption);
+            text = CSTRING(DiaryRecruitmentText);
+            image = QUOTE(a3\ui_f\data\igui\cfg\actions\getincommander_ca.paa);
+
+            class Rifleman {
+                caption = "$STR_antistasi_dialogs_unit_recruit_rifleman_text";
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitRifle);
+            };
+
+            class Grenadier {
+                caption = "$STR_antistasi_dialogs_unit_recruit_grenadier_text";
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitGL);
+            };
+
+            class AutoRifleman {
+                caption = "$STR_antistasi_dialogs_unit_recruit_mg_text";
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitMG);
+            };
+
+            class Marksman {
+                caption = "$STR_antistasi_dialogs_unit_recruit_marksman_text";
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitSniper);
+            };
+
+            class LightAT {
+                caption = "$STR_antistasi_dialogs_unit_recruit_antitank_text";
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitLAT);
+            };
+
+            class HeavyAT {
+                caption = "$STR_antistasi_dialogs_unit_recruit_atmissile_text";
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitAT);
+            };
+
+            class HeavyAA {
+                caption = "$STR_antistasi_dialogs_unit_recruit_aamissile_text";
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitAA);
+            };
+
+            class Medic {
+                caption = "$STR_antistasi_dialogs_unit_recruit_medic_text";
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitMedic);
+            };
+
+            class Engineer {
+                caption = "$STR_antistasi_dialogs_unit_recruit_engineer_text";
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitEng);
+            };
+
+            class ExplosiveSpecialist {
+                caption = "$STR_antistasi_dialogs_unit_recruit_explosive_text";
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitExp);
+            };
+        };
+
         class Healing {
             caption = CSTRING(DiaryHealingCaption);
             text = CSTRING(DiaryHealingText);

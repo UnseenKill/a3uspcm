@@ -27,9 +27,21 @@ params[
 
 if !assert(!isNull _config) exitWith { "" };
 
-format[
-    "<execute expression='[] call %1'>%2</execute> - %3",
-    [_config >> "action", "STRING", "false"] call CBA_fnc_getConfigEntry,
-    [_config >> "caption", "STRING", "false"] call CBA_fnc_getConfigEntry,
-    [_config >> "text", "STRING", "false"] call CBA_fnc_getConfigEntry
-];
+private _action = if !isText(_config >> "params") then {
+    format[
+        "<execute expression='[] call %1'>%2</execute>",
+        [_config >> "action", "STRING"] call CBA_fnc_getConfigEntry,
+        [_config >> "caption", "STRING"] call CBA_fnc_getConfigEntry
+    ]
+} else {
+    format[
+        "<execute expression='[%1] call %2'>%3</execute>",
+        str([_config >> "params", "STRING"] call CBA_fnc_getConfigEntry),
+        [_config >> "action", "STRING"] call CBA_fnc_getConfigEntry,
+        [_config >> "caption", "STRING"] call CBA_fnc_getConfigEntry
+    ]
+};
+
+if !isText(_config >> "text") exitWith { _action };
+
+format["%1 - %2", _action, [_config >> "text", "STRING"] call CBA_fnc_getConfigEntry];
