@@ -10,20 +10,21 @@ Features
 --------
 
  * Gameplay Tools
-   * Add player's team (and vehicle) to ZEUS curated objects
+   * Add player's team (and vehicle) to Zeus curated objects
    * Add lootbox functionality to any cursor object
    * Create lootbox on the spot
-   * Repair damaged (output) buildings around player
-   * Substitute lame-ass civilian prop planes for air support vehicles with F-18
+   * Repair damaged (outpost) buildings around player
+   * Substitute lame-ass civilian prop plane air support vehicles with F-18
    * Substitute civilian helicopters with MH-9 (some GM helicopters can't slingload -> no lootbox for you...)
  * Teleportation
    * Teleport self anywhere on map without wait delay or "enemies close" checks
    * Teleport stragglers in player group to self
  * Replenish player squad outside of HQ
+   * Recruit new squad mates in the field
    * "Enemies close" checks still apply
  * Instant healing
    * Heal self/group instantly
-   * Useful when you've driven your vehicle through one of those life-threatening bushes
+   * Useful when you've driven your Polaris/Qilin through one of those deadly bushes
  * Vehicle loadout management
    * Remember a vehicle's inventory and make it available to apply such loadout
    * Save-game safe
@@ -73,7 +74,7 @@ Bugs
 Authors
 ---
 
-* gor\[e3\]Splatter ([Oliver Schieche][gitlab])
+* gor3Splatter
 
 [arma-tools]: https://store.steampowered.com/app/233800/Arma_3_Tools/
 [git]: https://git-scm.com/downloads
