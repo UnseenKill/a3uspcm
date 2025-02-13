@@ -139,7 +139,7 @@ if !assert(!isNull _player) exitWith { [] };
             localize LSTRING(MenuLoadoutSave),
             "",
             { [{ call FUNC(saveLoadout) }, _this] call CBA_fnc_execNextFrame },
-            { true }
+            { call FUNCMAIN(utilVehicleHasCargo) }
         ] call ace_interact_menu_fnc_createAction,
         [],
         _target

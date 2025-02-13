@@ -1,3 +1,4 @@
+PREP(canUseLoadoutMenu);
 PREP(deleteLoadout);
 PREP(dumpLoadout);
 PREP(getLoadoutMenuChildren);
