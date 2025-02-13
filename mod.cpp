@@ -1,8 +1,8 @@
-name = "A3U Singleplayer Cheat Menu v0.0.0";
+name = "A3U Singleplayer Cheat Menu";
 picture = "a3uspcm.paa";
 actionName = "Website";
-action = "https://www.example.com/";
-description = "Antistasi Ultimate Singleplayer Cheat Menu";
+action = "https://gitlab.perfect-co.de/arma3/a3uspcm";
+description = "Antistasi Ultimate Singleplayer Cheat Menu v0.0.0";
 logo = "a3uspcm.paa";
 logoOver = "a3uspcm.paa";
 tooltip = "A3U Singleplayer Cheat Menu";
