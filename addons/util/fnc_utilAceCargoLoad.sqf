@@ -11,6 +11,7 @@ Parameters:
     2: _items - Classname <STRING> of item or <ARRAY> of classnames to load
 
 Optional:
+    3: _requireItemPresence - Require item to be present around vehicle (default: true) <BOOL>
 
 Example:
     (begin example)
@@ -26,7 +27,8 @@ Author:
 params[
     ["_vehicle", objNull, [objNull]],
     ["_player", objNull, [objNull]],
-    ["_items", [], [[], ""]]
+    ["_items", [], [[], ""]],
+    ["_requireItemPresence", true, [true]]
 ];
 
 if !assert(!isNull _vehicle) exitWith { false };
@@ -45,12 +47,36 @@ if (_index >= 0) then {
     _success = false;
     WARNING_2("Cannot load item %1 into vehicle %2",_items select _index,_vehicle);
 } else {
-    _items apply {
-        if !([_x, _vehicle] call ace_cargo_fnc_loadItem) then {
-            WARNING_2("ACE failed to load item %1 into vehicle %2",_x,_vehicle);
+    private _nearItems = nearestObjects[_vehicle, _items, ACE_CARGO_LOAD_RADIUS];
+    TRACE_1("near items",_nearItems);
+
+    {
+        private _item = _x;
+
+        if (_requireItemPresence) then {
+            _index = _nearItems findIf {
+                (isNull attachedTo _x) && 
+                (typeOf _x isEqualTo _item) &&
+                (crew _vehicle isEqualTo [])
+            };
+
+            if (_index < 0) then {
+                WARNING_2("No unattached %1 around %2 meters of vehicle",_item,ACE_CARGO_LOAD_RADIUS);
+                throw [format[localize LSTRING(ACELoadNoEntityNear), getText(configFile >> "CfgVehicles" >> _item >> "displayName"), ACE_CARGO_LOAD_RADIUS]];
+            };
+
+            _item = _nearItems deleteAt _index;
+#ifdef ACE_CARGO_CONVERT_TO_CLASS
+            deleteVehicle _item;
+            _item = _x;
+#endif
+        };
+
+        if !([_item, _vehicle] call ace_cargo_fnc_loadItem) then {
+            WARNING_2("ACE failed to load item %1 into vehicle %2",_item,_vehicle);
             _success = false;
         };
-    };
+    } forEach _items;
 };
 
 _success;

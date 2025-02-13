@@ -38,7 +38,7 @@
             <English>Restore loadout</English>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoredPartialText">
-            <English>Loadout "%1" &lt;t color='#ff0000'&gt;PARTIALLY&lt;/t&gt; restored into %2</English>
+            <English>Loadout "%1" &lt;t color='#ff9900'&gt;PARTIALLY&lt;/t&gt; restored into %2</English>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoredText">
             <English>Loadout "%1" successfully restored into %2</English>

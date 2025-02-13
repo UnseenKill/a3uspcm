@@ -69,17 +69,18 @@ TRACE_1("_magazines",_magazines);
 TRACE_1("_items",_items);
 
 private _error = try {
-    if !([_vehicle, objNull, true] call FUNCMAIN(utilAceCargoUnload)) then { throw LSTRING(HintLoadoutErrorAceUnload) };
+    if !([_vehicle, objNull] call FUNCMAIN(utilAceCargoUnload)) then { throw LSTRING(HintLoadoutErrorAceUnload) };
     if !([_vehicle, _player, _aceCargo] call FUNCMAIN(utilAceCargoLoad)) then { throw LSTRING(HintLoadoutErrorAceLoad) };
 } catch {
-    _exception
+    if (_exception isEqualType []) then {
+        _exception select 0;
+    } else {
+        localize _exception;
+    };
 };
 
 if !(isNil "_error") exitWith {
-    [
-        localize LSTRING(HintLoadoutRestoreCaption),
-        localize _error
-    ] call A3A_fnc_customHint;
+    [localize LSTRING(HintLoadoutRestoreCaption), _error] call A3A_fnc_customHint;
 };
 
 clearBackpackCargoGlobal _vehicle;

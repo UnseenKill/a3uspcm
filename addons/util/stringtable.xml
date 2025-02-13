@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="Util">
+        <Key ID="STR_A3USPCM_Util_ACELoadNoEntityNear">
+            <English>Vehicle's ACE3 loadout requires a &lt;t color='#00c000'&gt;%1&lt;/t&gt;.&lt;br/&gt;&lt;br/&gt;No such vehicle found in a %2 meter radius around target vehicle.</English>
+        </Key>
         <Key ID="STR_A3USPCM_Util_Component">
             <English>A3USPCM - Utility Component</English>
         </Key>
