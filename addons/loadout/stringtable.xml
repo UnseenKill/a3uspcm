@@ -7,11 +7,23 @@
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutDeletedText">
             <English>Deleted loadout "%1".</English>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutErrorAceLoad">
+            <English>Failed to load saved ACE cargo into vehicle.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutErrorAceUnload">
+            <English>Failed to unload ACE cargo from vehicle.</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutForceLoadoutText">
+            <English>WARNING: vehicle inventory is not empty.&lt;br/&gt;&lt;br/&gt;You can forcefully apply the loadout during the next %1 seconds.&lt;br/&gt;&lt;br/&gt;You will &lt;t color='#ff0000'&gt;LOSE ALL INVENTORY&lt;/t&gt; in the process, though.</English>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutItemExcessText">
             <English>%2x %1 not in arsenal</English>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutItemMissingText">
             <English>Not in arsenal: %1</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutItemNoSpaceText">
+            <English>No space left in vehicle for %2x %1.</English>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutManageCaption">
             <English>Manage loadout</English>
@@ -24,6 +36,9 @@
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoreCaption">
             <English>Restore loadout</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoredPartialText">
+            <English>Loadout "%1" &lt;t color='#ff0000'&gt;PARTIALLY&lt;/t&gt; restored into %2</English>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoredText">
             <English>Loadout "%1" successfully restored into %2</English>

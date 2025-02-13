@@ -31,22 +31,66 @@ if !assert(!isNull _vehicle) exitWith {};
 if !assert(!isNull _player) exitWith {};
 if !assert(count _loadout > 0) exitWith {};
 
-clearBackpackCargoGlobal _vehicle;
-clearWeaponCargoGlobal _vehicle;
-clearMagazineCargoGlobal _vehicle;
-clearItemCargoGlobal _vehicle;
+INFO_3("apply loadout %1 to vehicle %2 (player=%3)",_loadout select 0,typeOf _vehicle,name _player);
 
-_loadout params["_title","_backpacks","_weapons","_magazines","_items"];
+private _serialized = [_vehicle, ""] call FUNC(serializeLoadout);
+private _continue = try {
+    if (_serialized isEqualType []) then {
+        private _timeout = _vehicle getVariable[QGVAR(Timeout), 0];
 
+        if (_timeout < diag_tickTime) then {
+            [
+                localize LSTRING(HintLoadoutRestoreCaption),
+                format[localize LSTRING(HintLoadoutForceLoadoutText), FORCE_LOADOUT_TIMEOUT]
+            ] call A3A_fnc_customHint;
+
+            _vehicle setVariable[QGVAR(Timeout), diag_tickTime + FORCE_LOADOUT_TIMEOUT];
+            throw "stop";
+        };
+
+        _vehicle setVariable[QGVAR(Timeout), nil];
+    };
+
+    true;
+} catch {
+    false;
+};
+
+if !_continue exitWith {};
+
+_loadout params["_title","_aceCargo","_inventory"];
+_inventory params["_backpacks","_weapons","_magazines","_items"];
+
+TRACE_1("_title",_title);
+TRACE_1("_aceCargo",_aceCargo);
 TRACE_1("_backpacks",_backpacks);
 TRACE_1("_weapons",_weapons);
 TRACE_1("_magazines",_magazines);
 TRACE_1("_items",_items);
 
+private _error = try {
+    if !([_vehicle, objNull, true] call FUNCMAIN(utilAceCargoUnload)) then { throw LSTRING(HintLoadoutErrorAceUnload) };
+    if !([_vehicle, _player, _aceCargo] call FUNCMAIN(utilAceCargoLoad)) then { throw LSTRING(HintLoadoutErrorAceLoad) };
+} catch {
+    _exception
+};
+
+if !(isNil "_error") exitWith {
+    [
+        localize LSTRING(HintLoadoutRestoreCaption),
+        localize _error
+    ] call A3A_fnc_customHint;
+};
+
+clearBackpackCargoGlobal _vehicle;
+clearWeaponCargoGlobal _vehicle;
+clearMagazineCargoGlobal _vehicle;
+clearItemCargoGlobal _vehicle;
+
 private _messages = [];
 
 {
-    _x params["_type","_items","_callback"];
+    _x params["_type","_baseConfig","_items","_callback"];
 
     {
         private _index = _x call jn_fnc_arsenal_itemType;
@@ -58,29 +102,37 @@ private _messages = [];
         if (_count < 0) then {
             [_vehicle, _x, _y] call _callback;
         } else {
+            private _displayName = [_baseConfig >> _x >> "displayName", "STRING", _x] call CBA_fnc_getConfigEntry;
+
             if (_count == 0) then {
-                _messages pushBack format[localize LSTRING(HintLoadoutItemMissingText), _x];
+                _messages pushBack format[localize LSTRING(HintLoadoutItemMissingText), _displayName];
             } else {
                 if (_y > _count) then {
                     _y = _count;
-                    _messages pushBack format[localize LSTRING(HintLoadoutItemExcessText), _x, _y - _count];
+                    _messages pushBack format[localize LSTRING(HintLoadoutItemExcessText), _displayName, _y - _count];
                 };
 
-                [_vehicle, _x, _y] call _callback;
-                [_index, _x, _y] call jn_fnc_arsenal_removeItem;
+                if !(_vehicle canAdd[_x, _y]) then {
+                    _messages pushBack format[localize LSTRING(HintLoadoutItemNoSpaceText), _displayName, _y];
+                } else {
+                    [_vehicle, _x, _y] call _callback;
+                    [_index, _x, _y] call jn_fnc_arsenal_removeItem;
+                };
             };
         };
     } forEach ((_items # 0) createHashMapFromArray (_items # 1));
 } forEach [
-    ["backpack", _backpacks, { params["_vehicle","_item","_count"]; _vehicle addBackpackCargoGlobal[_item,_count]; }],
-    ["weapon", _weapons, { params["_vehicle","_item","_count"]; _vehicle addWeaponCargoGlobal[_item,_count]; }],
-    ["magazine", _magazines, { params["_vehicle","_item","_count"]; _vehicle addMagazineCargoGlobal[_item,_count]; }],
-    ["item", _items, { params["_vehicle","_item","_count"]; _vehicle addItemCargoGlobal[_item,_count]; }]
+    ["backpack", _backpacks, configFile >> "CfgVehicles", { params["_vehicle","_item","_count"]; _vehicle addBackpackCargoGlobal[_item,_count]; }],
+    ["weapon", _weapons, configFile >> "CfgWeapons", { params["_vehicle","_item","_count"]; _vehicle addWeaponCargoGlobal[_item,_count]; }],
+    ["magazine", _magazines, configFile >> "CfgMagazines", { params["_vehicle","_item","_count"]; _vehicle addMagazineCargoGlobal[_item,_count]; }],
+    ["item", _items, configFile >> "CfgWeapons", { params["_vehicle","_item","_count"]; _vehicle addItemCargoGlobal[_item,_count]; }]
 ];
+
+private _message = [LSTRING(HintLoadoutRestoredPartialText), LSTRING(HintLoadoutRestoredText)] select (_messages isEqualTo []);
 
 [
     localize LSTRING(HintLoadoutRestoreCaption),
-    format[localize LSTRING(HintLoadoutRestoredText), _title, getText(configOf _vehicle >> "displayName")]
+    format[localize _message, _title, getText(configOf _vehicle >> "displayName")]
 ] call A3A_fnc_customHint;
 
 _messages apply { systemChat _x };

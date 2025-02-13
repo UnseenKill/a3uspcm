@@ -33,25 +33,24 @@ private _lo = GVAR(Loadouts) select _index;
 
 TRACE_1("dump",_lo);
 
-{
-    if (0 == _foreachIndex) then {
-        systemChat format["Loadout: %1", _x];
-    } else {
-        private _keys = _x select 0 apply {
-            [_x, switch true do {
-                case isClass(configFile >> "CfgMagazines" >> _x): { getText(configFile >> "CfgMagazines" >> _x >> "displayName") };
-                case isClass(configFile >> "CfgWeapons" >> _x): { getText(configFile >> "CfgWeapons" >> _x >> "displayName") };
-                case isClass(configFile >> "CfgVehicles" >> _x): { getText(configFile >> "CfgVehicles" >> _x >> "displayName") };
-                default { _x };
-            }];
-        };
-        private _values = _x select 1;
+systemChat format["Loadout: %1", _lo select 0];
+systemChat format["ACE cargo: %1", _lo select 1 joinString ", "];
 
-        {
-            _x params["_key", "_title"];
-            systemChat format["%2x %1", _title, _values select _forEachIndex];
-        } forEach _keys;
+{
+    private _keys = _x select 0 apply {
+        [_x, switch true do {
+            case isClass(configFile >> "CfgMagazines" >> _x): { getText(configFile >> "CfgMagazines" >> _x >> "displayName") };
+            case isClass(configFile >> "CfgWeapons" >> _x): { getText(configFile >> "CfgWeapons" >> _x >> "displayName") };
+            case isClass(configFile >> "CfgVehicles" >> _x): { getText(configFile >> "CfgVehicles" >> _x >> "displayName") };
+            default { _x };
+        }];
     };
-} forEach _lo;
+    private _values = _x select 1;
+
+    {
+        _x params["_key", "_title"];
+        systemChat format["%2x %1", _title, _values select _forEachIndex];
+    } forEach _keys;
+} forEach (_lo select 2);
 
 nil;

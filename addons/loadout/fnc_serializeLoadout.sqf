@@ -27,14 +27,19 @@ params[
     ["_loadoutName", "", [""]]
 ];
 
-if !assert(!isNull _vehicle) exitWith {};
+if !assert(!isNull _vehicle) exitWith { false };
+
+private _bp = getBackpackCargo _vehicle;
+private _wc = getWeaponCargo _vehicle;
+private _mc = getMagazineCargo _vehicle;
+private _ic = getItemCargo _vehicle;
+
+if (count(_bp + _wc + _mc + _ic) == 0) exitWith { false };
 
 private _loadout = [
     _loadoutName,
-    getBackpackCargo _vehicle,
-    getWeaponCargo _vehicle,
-    getMagazineCargo _vehicle,
-    getItemCargo _vehicle
+    [_vehicle] call FUNCMAIN(utilAceCargoGetLoaded),
+    [_bp, _wc, _mc, _ic]
 ];
 
 _loadout;

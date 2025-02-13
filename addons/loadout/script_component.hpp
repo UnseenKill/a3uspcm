@@ -15,3 +15,4 @@
 
 #include "\z\a3uspcm\addons\main\script_macros.hpp"
 #define MAX_LOADOUTS 6
+#define FORCE_LOADOUT_TIMEOUT 15
