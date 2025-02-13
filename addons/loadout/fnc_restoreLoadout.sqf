@@ -90,7 +90,7 @@ clearItemCargoGlobal _vehicle;
 private _messages = [];
 
 {
-    _x params["_type","_baseConfig","_items","_callback"];
+    _x params["_type","_items","_baseConfig","_callback"];
 
     {
         private _index = _x call jn_fnc_arsenal_itemType;
@@ -108,8 +108,8 @@ private _messages = [];
                 _messages pushBack format[localize LSTRING(HintLoadoutItemMissingText), _displayName];
             } else {
                 if (_y > _count) then {
-                    _y = _count;
                     _messages pushBack format[localize LSTRING(HintLoadoutItemExcessText), _displayName, _y - _count];
+                    _y = _count;
                 };
 
                 if !(_vehicle canAdd[_x, _y]) then {

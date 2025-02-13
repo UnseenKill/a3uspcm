@@ -34,7 +34,7 @@ private _lo = GVAR(Loadouts) select _index;
 TRACE_1("dump",_lo);
 
 systemChat format["Loadout: %1", _lo select 0];
-systemChat format["ACE cargo: %1", _lo select 1 joinString ", "];
+systemChat format["ACE cargo: %1", _lo select 1 apply { getText(configFile >> "CfgVehicles" >> _x >> "displayName") } joinString ", "];
 
 {
     private _keys = _x select 0 apply {

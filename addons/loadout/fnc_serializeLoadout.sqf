@@ -34,7 +34,7 @@ private _wc = getWeaponCargo _vehicle;
 private _mc = getMagazineCargo _vehicle;
 private _ic = getItemCargo _vehicle;
 
-if (count(_bp + _wc + _mc + _ic) == 0) exitWith { false };
+if ((count flatten(_bp + _wc + _mc + _ic)) == 0) exitWith { false };
 
 if (_loadoutName isEqualTo "") then {
     _loadoutName = getText(configOf _vehicle >> "displayName");
