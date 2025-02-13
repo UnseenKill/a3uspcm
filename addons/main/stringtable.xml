@@ -11,7 +11,7 @@
             <English>A3U Singleplayer Cheat Menu</English>
         </Key>
         <Key ID="STR_A3USPCM_URL">
-            <English>https://www.example.com/</English>
+            <English>https://gitlab.perfect-co.de/arma3/a3uspcm</English>
         </Key>
     </Package>
 </Project>
