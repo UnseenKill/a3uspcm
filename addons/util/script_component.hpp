@@ -14,3 +14,5 @@
 #endif
 
 #include "\z\a3uspcm\addons\main\script_macros.hpp"
+#define ACE_CARGO_VARIABLE QUOTE(ace_cargo_loaded)
+#define ACE_VEHICLE_CARGO(vehicle) ((vehicle) getVariable [ACE_CARGO_VARIABLE, []])
