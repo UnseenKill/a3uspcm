@@ -41,6 +41,6 @@ private _lo = GVAR(Loadouts) select _index;
         localize LSTRING(HintLoadoutManageCaption),
         format[localize LSTRING(HintLoadoutRenamedText), _name]
     ] call A3A_fnc_customHint;
-}, _index] call FUNCMAIN(promptText);
+}, _index] call FUNCMAIN(utilPromptText);
 
 nil;
