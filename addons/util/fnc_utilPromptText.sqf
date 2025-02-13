@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_fnc_promptText
+Function: A3USPCM_fnc_utilPromptText
 
 Description:
     Simple text input prompt
@@ -18,7 +18,7 @@ Example:
     ["The answer", "42", {
         params["_answer","_params"];
         hint format["You answered: %1", _answer];
-    }] call A3USPCM_fnc_promptText;
+    }] call A3USPCM_fnc_utilPromptText;
     (end)
 
 Returns:
