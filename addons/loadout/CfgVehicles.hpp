@@ -16,9 +16,9 @@ class CfgVehicles {
     class LandVehicle;
     class Ship;
 
-    LOADOUT_ACTION_FOR_CLASS(Car, LandVehicle);
-    LOADOUT_ACTION_FOR_CLASS(Tank, LandVehicle);
-    LOADOUT_ACTION_FOR_CLASS(Helicopter, Air);
-    LOADOUT_ACTION_FOR_CLASS(Plane, Air);
-    LOADOUT_ACTION_FOR_CLASS(Ship_F, Ship);
+    LOADOUT_ACTION_FOR_CLASS(Car,LandVehicle);
+    LOADOUT_ACTION_FOR_CLASS(Tank,LandVehicle);
+    LOADOUT_ACTION_FOR_CLASS(Helicopter,Air);
+    LOADOUT_ACTION_FOR_CLASS(Plane,Air);
+    LOADOUT_ACTION_FOR_CLASS(Ship_F,Ship);
 };
