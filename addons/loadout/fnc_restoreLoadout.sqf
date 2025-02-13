@@ -33,7 +33,7 @@ if !assert(count _loadout > 0) exitWith {};
 
 INFO_3("apply loadout %1 to vehicle %2 (player=%3)",_loadout select 0,typeOf _vehicle,name _player);
 
-private _serialized = [_vehicle, ""] call FUNC(serializeLoadout);
+private _serialized = [_vehicle] call FUNC(serializeLoadout);
 private _continue = try {
     if (_serialized isEqualType []) then {
         private _timeout = _vehicle getVariable[QGVAR(Timeout), 0];

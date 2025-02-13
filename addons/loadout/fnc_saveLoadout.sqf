@@ -29,7 +29,7 @@ if !assert(!isNull _vehicle) exitWith {};
 if !assert(!isNull _player) exitWith {};
 
 private _loadouts = [] call FUNC(getLoadouts);
-private _thisLoadout = [_vehicle, getText(configOf _vehicle >> "displayName")] call FUNC(serializeLoadout);
+private _thisLoadout = [_vehicle] call FUNC(serializeLoadout);
 
 if !(_thisLoadout isEqualType []) exitWith {
     [

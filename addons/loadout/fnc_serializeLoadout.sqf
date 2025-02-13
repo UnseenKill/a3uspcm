@@ -36,6 +36,10 @@ private _ic = getItemCargo _vehicle;
 
 if (count(_bp + _wc + _mc + _ic) == 0) exitWith { false };
 
+if (_loadoutName isEqualTo "") then {
+    _loadoutName = getText(configOf _vehicle >> "displayName");
+};
+
 private _loadout = [
     _loadoutName,
     [_vehicle] call FUNCMAIN(utilAceCargoGetLoaded),
