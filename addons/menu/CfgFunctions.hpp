@@ -8,6 +8,7 @@ class CfgFunctions {
             PATHTO_FNC(miscFixAirSupportVehicles);
             PATHTO_FNC(miscMakeLootBox);
             PATHTO_FNC(miscRepairBuildings);
+            PATHTO_FNC(miscUncompromise);
             PATHTO_FNC(recruitForPlayer);
             PATHTO_FNC(teleportPlayer);
             PATHTO_FNC(teleportStragglers);
