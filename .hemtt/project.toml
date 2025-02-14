@@ -7,6 +7,7 @@ mainprefix = "z"
 include = [
     "a3uspcm.paa",
     "LICENSE",
+    "README.md",
     "mod.cpp"
 ]
 
