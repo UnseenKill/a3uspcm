@@ -3,15 +3,19 @@
     <Package name="Main">
         <Key ID="STR_A3USPCM_Author">
             <English>goreSplatter</English>
+            <German>goreSplatter</German>
         </Key>
         <Key ID="STR_A3USPCM_Main_Component">
             <English>A3USPCM - Main Component</English>
+            <German>A3USPCM - Hauptkomponente</German>
         </Key>
         <Key ID="STR_A3USPCM_Main_Title">
             <English>A3U Singleplayer Cheat Menu</English>
+            <German>A3U Einzelspieler Cheat Menü</German>
         </Key>
         <Key ID="STR_A3USPCM_URL">
             <English>https://gitlab.perfect-co.de/arma3/a3uspcm</English>
+            <German>https://gitlab.perfect-co.de/arma3/a3uspcm</German>
         </Key>
     </Package>
 </Project>

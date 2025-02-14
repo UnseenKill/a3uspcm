@@ -3,12 +3,15 @@
     <Package name="Util">
         <Key ID="STR_A3USPCM_Util_ACELoadNoEntityNear">
             <English>Vehicle's ACE3 loadout requires a &lt;t color='#00c000'&gt;%1&lt;/t&gt;.&lt;br/&gt;&lt;br/&gt;No such vehicle found in a %2 meter radius around target vehicle.</English>
+            <German>Das ACE3-Loadout des Fahrzeugs benötigt ein &lt;t color='#00c000'&gt;%1&lt;/t&gt;.&lt;br/&gt;&lt;br/&gt;Kein solches Fahrzeug im Umkreis von %2 Metern um das Zielfahrzeug gefunden.</German>
         </Key>
         <Key ID="STR_A3USPCM_Util_Component">
             <English>A3USPCM - Utility Component</English>
+            <German>A3USPCM - Utility Komponente</German>
         </Key>
         <Key ID="STR_A3USPCM_Util_TextBtnOK">
             <English>OK</English>
+            <German>OK</German>
         </Key>
     </Package>
 </Project>
