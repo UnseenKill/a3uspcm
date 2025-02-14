@@ -11,6 +11,12 @@ class GVAR(Config) {
                 action = QFUNCMAIN(miscAddTeamZeus);
             };
 
+            class Uncompromise {
+                caption = CSTRING(Miscellaneous_UncompromiseCaption);
+                text = CSTRING(Miscellaneous_UncompromiseText);
+                action = QFUNCMAIN(miscUncompromise);
+            };
+
             class MakeLootBox {
                 caption = CSTRING(Miscellaneous_MakeLootBoxCaption);
                 text = CSTRING(Miscellaneous_MakeLootBoxText);

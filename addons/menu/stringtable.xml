@@ -129,6 +129,18 @@
             <English>Repair damaged buildings around player position.</English>
             <German>Repariere beschädigte Gebäude in der Nähe der Spielerposition.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_UncompromiseCaption">
+            <English>Uncompromise</English>
+            <German>Unentdeckt</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_UncompromiseSuccess">
+            <English>You should be able to go undercover again.</English>
+            <German>Du solltest wieder in der Lage sein, Undercover zu gehen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_UncompromiseText">
+            <English>Allow player to go undercover again, also unreport their vehicle.</English>
+            <German>Erlaube dem Spieler, wieder in den Undercover-Modus zu wechseln und melde auch sein Fahrzeug nicht.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintCaption">
             <English>Summon stragglers</English>
             <German>Rufe Nachzügler herbei</German>
