@@ -61,6 +61,10 @@ A3USPCM is designed to work - and is tested - in Antistasi Ultimate Singleplayer
 
 It _might_ work with other Antistasi variants (Community, Plus), but that's also untested.
 
+Features mentioned above are available via the map diary (look for entry **A3U Singleplayer Cheat Menu**).
+
+Vehicle loadout functions are available through ACE3 interaction menu with vehicles.
+
 ### Required mods
 
  * [Antistasi Ultimate - Mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032)
