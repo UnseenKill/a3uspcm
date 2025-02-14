@@ -3,78 +3,103 @@
     <Package name="Loadout">
         <Key ID="STR_A3USPCM_Loadout_Component">
             <English>A3USPCM - Vehicle Loadout Component</English>
+            <German>A3USPCM - Fahrzeugausstattungskomponente</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutDeletedText">
             <English>Deleted loadout "%1".</English>
+            <German>Ausrüstung "%1" gelöscht.</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutErrorAceLoad">
             <English>Failed to load saved ACE cargo into vehicle.</English>
+            <German>Das Laden der gespeicherten ACE-Fracht in das Fahrzeug ist fehlgeschlagen.</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutErrorAceUnload">
             <English>Failed to unload ACE cargo from vehicle.</English>
+            <German>Das Entladen der ACE-Fracht aus dem Fahrzeug ist fehlgeschlagen.</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutForceLoadoutText">
             <English>WARNING: vehicle inventory is not empty.&lt;br/&gt;&lt;br/&gt;You can forcefully apply the loadout during the next %1 seconds.&lt;br/&gt;&lt;br/&gt;You will &lt;t color='#ff0000'&gt;LOSE ALL INVENTORY&lt;/t&gt; in the process, though.</English>
+            <German>WARNUNG: Das Fahrzeuginventar ist nicht leer.&lt;br/&gt;&lt;br/&gt;Du kannst die Ausrüstung innerhalb der nächsten %1 Sekunden zwangsweise anwenden.&lt;br/&gt;&lt;br/&gt;Du verlierst dabei aber &lt;t color='#ff0000'&gt;ALLE INVENTARGEGENSTÄNDE&lt;/t&gt;.</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutItemExcessText">
             <English>%2x %1 not in arsenal</English>
+            <German>%2x %1 nicht im Arsenal</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutItemMissingText">
             <English>Not in arsenal: %1</English>
+            <German>Nicht im Arsenal: %1</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutItemNoSpaceText">
             <English>No space left in vehicle for %2x %1.</English>
+            <German>Kein Platz mehr im Fahrzeug für %2x %1.</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutManageCaption">
             <English>Manage loadout</English>
+            <German>Ausrüstung verwalten</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutNotSavedText">
             <English>The vehicle's current loadout COULD NOT be saved.</English>
+            <German>Die aktuelle Ausrüstung des Fahrzeugs konnte NICHT gespeichert werden.</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutRenamedText">
             <English>Loadout renamed to "%1".</English>
+            <German>Ausrüstung umbenannt in "%1".</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoreCaption">
             <English>Restore loadout</English>
+            <German>Ausrüstung wiederherstellen</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoredPartialText">
             <English>Loadout "%1" &lt;t color='#ff9900'&gt;PARTIALLY&lt;/t&gt; restored into %2</English>
+            <German>Ausrüstung "%1" wurde &lt;t color='#ff9900'&gt;TEILWEISE&lt;/t&gt; in %2 wiederhergestellt</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutRestoredText">
             <English>Loadout "%1" successfully restored into %2</English>
+            <German>Ausrüstung "%1" erfolgreich in %2 wiederhergestellt</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutSaveCaption">
             <English>Save loadout</English>
+            <German>Ausrüstung speichern</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutSavedText">
             <English>The vehicle's current loadout has been saved.</English>
+            <German>Die aktuelle Ausrüstung des Fahrzeugs wurde gespeichert.</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuConfigLoadout">
             <English>Fetch config from save</English>
+            <German>Konfiguration aus Speicherstand abrufen</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadout">
             <English>Loadout</English>
+            <German>Ausrüstung</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutApply">
             <English>Apply</English>
+            <German>Anwenden</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutDelete">
             <English>Delete</English>
+            <German>Löschen</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutDump">
             <English>Dump</English>
+            <German>Entladen</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutManage">
             <English>Manage saved loadouts</English>
+            <German>Gespeicherte Ausrüstungen verwalten</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutRename">
             <English>Rename</English>
+            <German>Umbenennen</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutSave">
             <English>Save current loadout</English>
+            <German>Aktuelle Ausrüstung speichern</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_PromptRenameLoadout">
             <English>Rename loadout to:</English>
+            <German>Ausrüstung umbenennen in:</German>
         </Key>
     </Package>
 </Project>
