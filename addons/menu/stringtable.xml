@@ -3,144 +3,191 @@
     <Package name="Menu">
         <Key ID="STR_A3USPCM_Menu_Component">
             <English>A3USPCM - Menu Component</English>
+            <German>A3USPCM - Menükomponente</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryFixesCaption">
             <English>Fixes</English>
+            <German>Reparaturen</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryFixesText">
             <English>Fix lame ass bombing run air vehicles.</English>
+            <German>Ersetze lahme Luftfahrzeuge für Bombenangriffe.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryHealingCaption">
             <English>Healing</English>
+            <German>Heilung</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryHealingText">
             <English>You shall be healed.</English>
+            <German>Du sollst geheilt werden.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryMiscellaneousCaption">
             <English>Miscellaneous</English>
+            <German>Verschiedenes</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryMiscellaneousText">
             <English>Fixes, hacks and such.</English>
+            <German>Reparaturen, Hacks und so.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryRecruitmentCaption">
             <English>Unit recruitment</English>
+            <German>Einheitenrekrutierung</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryRecruitmentText">
             <English>Recruit units into your squad outside HQ. Enemies close restrictions still apply.</English>
+            <German>Rekrutiere Einheiten in deinen Trupp außerhalb des Hauptquartiers. Einschränkungen durch nahe Feinde gelten weiterhin.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiarySubjectTitle">
             <English>A3U Singleplayer Cheat Menu</English>
+            <German>A3U Singleplayer Cheat Menü</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryTeleportCaption">
             <English>Teleport</English>
+            <German>Teleportieren</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryTeleportText">
             <English>Teleport self or team.</English>
+            <German>Teleportiere dich selbst oder dein Team.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Healing_HealGroupCaption">
             <English>Heal your group</English>
+            <German>Heile deine Gruppe</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Healing_HealGroupText">
             <English>Heal all in your group using ACE.</English>
+            <German>Heile alle in deiner Gruppe mit ACE.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Healing_HealPlayerCaption">
             <English>Heal self</English>
+            <German>Heile dich selbst</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Healing_HealPlayerText">
             <English>Only heal yourself using ACE.</English>
+            <German>Heile nur dich selbst mit ACE.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Hotkeys_InstantHealGroup">
             <English>Instant heal (group)</English>
+            <German>Sofortheilung (Gruppe)</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Hotkeys_InstantHealGroupTooltip">
             <English>Instantly heal team and yourself</English>
+            <German>Heile sofort das Team und dich selbst</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Hotkeys_InstantHealSelf">
             <English>Instant heal (self)</English>
+            <German>Sofortheilung (selbst)</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Hotkeys_InstantHealSelfTooltip">
             <English>Instantly heal yourself</English>
+            <German>Heile dich sofort selbst</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_InitMessage">
             <English>initializing A3U Singleplayer Cheat Menu v%1</English>
+            <German>A3U Singleplayer Cheat Menü v%1 wird initialisiert</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddTeamZeusCaption">
             <English>Add team to Zeus</English>
+            <German>Füge das Team zu Zeus hinzu</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddTeamZeusText">
             <English>Add team members to curatable objects.</English>
+            <German>Füge Teammitglieder zu kuratierbaren Objekten hinzu.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesCaption">
             <English>Fix planes</English>
+            <German>Ersetze Flugzeuge</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesText">
             <English>Remove clunky old planes from air support, add jet.</English>
+            <German>Entferne klobige alte Flugzeuge von der Luftunterstützung, füge Jet hinzu.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesCaption">
             <English>Fix helicopters</English>
+            <German>Ersetze Hubschrauber</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesText">
             <English>Remove all helicopters from air support, add MH-6.</English>
+            <German>Entferne alle Hubschrauber von der Luftunterstützung, füge MH-6 hinzu.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxCaption">
             <English>Turn into/create lootbox</English>
+            <German>Verwandle/Erstelle eine Lootbox</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxHintSuccessText">
             <English>%1 now has loot collecting abilities.</English>
+            <German>%1 hat jetzt die Fähigkeit, Loot zu sammeln.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxText">
             <English>Turn cursor target into lootbox to collect scattered loot.</English>
+            <German>Verwandle das Cursorziel in eine Lootbox, um verstreuten Loot zu sammeln.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsCaption">
             <English>Repair buildings</English>
+            <German>Repariere Gebäude</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsText">
             <English>Repair damaged buildings around player position.</English>
+            <German>Repariere beschädigte Gebäude in der Nähe der Spielerposition.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintCaption">
             <English>Summon stragglers</English>
+            <German>Rufe Nachzügler herbei</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintNoPosition">
             <English>Failed to find a suitable destination for any of your stragglers.</English>
+            <German>Es konnte keine geeignete Stelle für deine Nachzügler gefunden werden.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintNoStragglers">
             <English>There are no team members further away than %1m of you.</English>
+            <German>Es gibt keine Teammitglieder, die weiter als %1m von dir entfernt sind.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintNoTeam">
             <English>You have no team members to summon.</English>
+            <German>Du hast keine Teammitglieder, die du herbeirufen kannst.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintSummonedAll">
             <English>All your stragglers summoned successfully.</English>
+            <German>Alle deine Nachzügler wurden erfolgreich herbeigerufen.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintSummonedPartial">
             <English>Only %1 of your %2 stragglers could be safely summoned.</English>
+            <German>Nur %1 von deinen %2 Nachzüglern konnten sicher herbeigerufen werden.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintSummoning">
             <English>Summoning %1 straggler(s) to you.</English>
+            <German>Rufe %1 Nachzügler zu dir.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportHintAbortCaption">
             <English>Teleporting aborted</English>
+            <German>Teleportation abgebrochen</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportHintAbortText">
             <English>Map closed prematurely.</English>
+            <German>Karte vorzeitig geschlossen.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportHintStartCaption">
             <English>Teleporting player</English>
+            <German>Spieler wird teleportiert</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportHintStartText">
             <English>Left click to desired position. Close the map to abort.</English>
+            <German>Linksklick zur gewünschten Position. Schließe die Karte, um abzubrechen.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportPlayerCaption">
             <English>Teleport self</English>
+            <German>Teleportiere dich selbst</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportPlayerText">
             <English>Single left click to teleport to location.</English>
+            <German>Einmaliger Linksklick, um dich zum Ort zu teleportieren.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportStragglersCaption">
             <English>Summon stragglers</English>
+            <German>Rufe Nachzügler herbei</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportStragglersText">
             <English>Teleport team members farther away than 100m to your position.</English>
+            <German>Teleportiere Teammitglieder, die weiter als 100m entfernt sind, zu deiner Position.</German>
         </Key>
     </Package>
 </Project>
