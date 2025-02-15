@@ -11,6 +11,12 @@ class GVAR(Config) {
                 action = QFUNCMAIN(miscAddTeamZeus);
             };
 
+            class Uncompromise {
+                caption = CSTRING(Miscellaneous_UncompromiseCaption);
+                text = CSTRING(Miscellaneous_UncompromiseText);
+                action = QFUNCMAIN(miscUncompromise);
+            };
+
             class MakeLootBox {
                 caption = CSTRING(Miscellaneous_MakeLootBoxCaption);
                 text = CSTRING(Miscellaneous_MakeLootBoxText);
@@ -117,6 +123,33 @@ class GVAR(Config) {
                 caption = "$STR_antistasi_dialogs_unit_recruit_explosive_text";
                 action = QFUNCMAIN(recruitForPlayer);
                 params = QUOTE(unitExp);
+            };
+        };
+
+        class Resources {
+            caption = CSTRING(DiaryResourcesCaption);
+            text = CSTRING(DiaryResourcesText);
+            image = QUOTE(\z\a3uspcm\addons\menu\ui\money_ca.paa);
+
+            class AddPlayerMoney {
+                caption = CSTRING(Resources_AddPlayerMoneyCaption);
+                action = QFUNCMAIN(resourcesAddPlayerMoney);
+            };
+
+            class AddFactionMoney {
+                caption = CSTRING(Resources_AddFactionMoneyCaption);
+                action = QFUNCMAIN(resourcesAddFactionMoney);
+            };
+
+            class AddHR {
+                caption = CSTRING(Resources_AddHRCaption);
+                action = QFUNCMAIN(resourcesAddHR);
+            };
+
+            class ShowResourcesAll {
+                caption = CSTRING(Resources_ShowResourcesAllCaption);
+                text = CSTRING(Resources_ShowResourcesAllText);
+                action = QFUNCMAIN(resourcesShowAll);
             };
         };
 

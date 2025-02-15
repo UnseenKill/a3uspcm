@@ -16,12 +16,16 @@ Features
    * Repair damaged (outpost) buildings around player
    * Substitute lame-ass civilian prop plane air support vehicles with F-18
    * Substitute civilian helicopters with MH-9 (some GM helicopters can't slingload -> no lootbox for you...)
+   * Uncompromize team and self so you can go undercover again
  * Teleportation
    * Teleport self anywhere on map without wait delay or "enemies close" checks
    * Teleport stragglers in player group to self
  * Replenish player squad outside of HQ
    * Recruit new squad mates in the field
    * "Enemies close" checks still apply
+ * Resources
+   * Add money to player and own faction
+   * See other factions' resources
  * Instant healing
    * Heal self/group instantly
    * Useful when you've driven your Polaris/Qilin through one of those deadly bushes
@@ -30,6 +34,8 @@ Features
    * Save-game safe
    * Requires items present in arsenal to apply loadout
    * Remember/restore ACE3 cargo items
+ * Zeus modules
+   * Module that crews any static emplacement in a 100m radius
 
 Installation
 ------------
