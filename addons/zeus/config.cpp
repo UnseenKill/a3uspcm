@@ -3,10 +3,12 @@
 class CfgPatches {
     class ADDON {
         name = CSTRING(component);
-        units[] = {};
+        units[] = {
+            QGVAR(moduleMountStaticEmplacements)
+        };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"a3uspcm_main","a3uspcm_util"};
+        requiredAddons[] = {"a3uspcm_main","A3_Modules_F"};
         author = "$STR_A3USPCM_Author";
         authors[] = {"goreSplatter"};
         url = "$STR_A3USPCM_URL";
@@ -14,6 +16,5 @@ class CfgPatches {
     };
 };
 
-#include "CfgAddon.hpp"
 #include "CfgEventHandlers.hpp"
-#include "CfgFunctions.hpp"
+#include "CfgVehicles.hpp"

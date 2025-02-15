@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Zeus">
+        <Key ID="STR_A3USPCM_Zeus_Component">
+            <English>A3USPCM - Zeus Module Component</English>
+            <German>A3USPCM - Zeusmodul Komponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_ModuleCategory">
+            <English>A3USPCM Modules</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_ModuleMSE_DisplayName">
+            <English>Crew static emplacements</English>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_ModuleMSE_NoStaticsFound">
+            <English>No static emplacements found in the area.</English>
+        </Key>
+    </Package>
+</Project>
