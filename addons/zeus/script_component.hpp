@@ -14,4 +14,5 @@
 #endif
 
 #include "\z\a3uspcm\addons\main\script_macros.hpp"
-#define CREW_STATIC_RADIUS 100
+#define CREW_STATIC_WAIT 5
+#define FIND_STATIC_RADIUS 100
