@@ -4,6 +4,7 @@ class CfgPatches {
     class ADDON {
         name = CSTRING(component);
         units[] = {
+            QGVAR(moduleFindStaticEmplacements),
             QGVAR(moduleMountStaticEmplacements)
         };
         weapons[] = {};

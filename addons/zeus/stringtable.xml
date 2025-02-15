@@ -8,11 +8,14 @@
         <Key ID="STR_A3USPCM_Zeus_ModuleCategory">
             <English>A3USPCM Modules</English>
         </Key>
+        <Key ID="STR_A3USPCM_Zeus_ModuleFSE_DisplayName">
+            <English>Find static emplacements (100m)</English>
+        </Key>
         <Key ID="STR_A3USPCM_Zeus_ModuleMSE_DisplayName">
-            <English>Crew static emplacements</English>
+            <English>Crew selected static emplacements</English>
         </Key>
         <Key ID="STR_A3USPCM_Zeus_ModuleMSE_NoStaticsFound">
-            <English>No static emplacements found in the area.</English>
+            <English>No static emplacements in your selection.</English>
         </Key>
     </Package>
 </Project>
