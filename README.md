@@ -34,6 +34,8 @@ Features
    * Save-game safe
    * Requires items present in arsenal to apply loadout
    * Remember/restore ACE3 cargo items
+ * Zeus modules
+   * Module that crews any static emplacement in a 100m radius
 
 Installation
 ------------
