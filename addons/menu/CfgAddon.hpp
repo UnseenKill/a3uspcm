@@ -126,6 +126,33 @@ class GVAR(Config) {
             };
         };
 
+        class Resources {
+            caption = CSTRING(DiaryResourcesCaption);
+            text = CSTRING(DiaryResourcesText);
+            image = QUOTE(\z\a3uspcm\addons\menu\ui\money_ca.paa);
+
+            class AddPlayerMoney {
+                caption = CSTRING(Resources_AddPlayerMoneyCaption);
+                action = QFUNCMAIN(resourcesAddPlayerMoney);
+            };
+
+            class AddFactionMoney {
+                caption = CSTRING(Resources_AddFactionMoneyCaption);
+                action = QFUNCMAIN(resourcesAddFactionMoney);
+            };
+
+            class AddHR {
+                caption = CSTRING(Resources_AddHRCaption);
+                action = QFUNCMAIN(resourcesAddHR);
+            };
+
+            class ShowResourcesAll {
+                caption = CSTRING(Resources_ShowResourcesAllCaption);
+                text = CSTRING(Resources_ShowResourcesAllText);
+                action = QFUNCMAIN(resourcesShowAll);
+            };
+        };
+
         class Healing {
             caption = CSTRING(DiaryHealingCaption);
             text = CSTRING(DiaryHealingText);

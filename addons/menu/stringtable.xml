@@ -37,6 +37,14 @@
             <English>Recruit units into your squad outside HQ. Enemies close restrictions still apply.</English>
             <German>Rekrutiere Einheiten in deinen Trupp außerhalb des Hauptquartiers. Einschränkungen durch nahe Feinde gelten weiterhin.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryResourcesCaption">
+            <English>Resources</English>
+            <German>Resourcen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryResourcesText">
+            <English>Add money, HR to self/faction.</English>
+            <German>Füge Geld und HR zu dir/Fraktion hinzu.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_DiarySubjectTitle">
             <English>A3U Singleplayer Cheat Menu</English>
             <German>A3U Singleplayer Cheat Menü</German>
@@ -140,6 +148,50 @@
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_UncompromiseText">
             <English>Allow player to go undercover again, also unreport their vehicle.</English>
             <German>Erlaube dem Spieler, wieder in den Undercover-Modus zu wechseln und melde auch sein Fahrzeug nicht.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_AddFactionMoneyCaption">
+            <English>Add faction money</English>
+            <German>Geld für Fraktion hinzufügen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_AddFactionMoneyText">
+            <English>Faction funds adjusted by %1.</English>
+            <German>Geld der Fraktion um %1 angepasst.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_AddHRCaption">
+            <English>Add faction HR</English>
+            <German>Fraktion HR hinzufügen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_AddHRPrompt">
+            <English>Amount</English>
+            <German>Betrag</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_AddHRText">
+            <English>HR adjusted by %1.</English>
+            <German>HR um %1 angepasst.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_AddMoneyPrompt">
+            <English>Amount</English>
+            <German>Betrag</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_AddPlayerMoneyCaption">
+            <English>Add player money</English>
+            <German>Geld für Spieler hinzufügen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_AddPlayerMoneyText">
+            <English>Player funds adjusted by %1.</English>
+            <German>Spieler Geld um %1 angepasst.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_ShowAllText">
+            <English>Occupiers&lt;br/&gt;&#160;&#160;&#160;Defense: %1&lt;br/&gt;Attack: %2&lt;br/&gt;&lt;br/&gt;Invaders&lt;br/&gt;&#160;&#160;&#160;Defense: %3&lt;br/&gt;Attack: %4</English>
+            <German>Besatzer&lt;br/&gt;&#160;&#160;&#160;Verteidigung: %1&lt;br/&gt;Angriff: %2&lt;br/&gt;&lt;br/&gt;Invasoren&lt;br/&gt;&#160;&#160;&#160;Verteidigung: %3&lt;br/&gt;Angriff: %4</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_ShowResourcesAllCaption">
+            <English>Show</English>
+            <German>Anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_ShowResourcesAllText">
+            <English>Resources for all factions</English>
+            <German>Resources aller Fraktionen</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintCaption">
             <English>Summon stragglers</English>

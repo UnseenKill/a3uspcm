@@ -10,6 +10,10 @@ class CfgFunctions {
             PATHTO_FNC(miscRepairBuildings);
             PATHTO_FNC(miscUncompromise);
             PATHTO_FNC(recruitForPlayer);
+            PATHTO_FNC(resourcesAddFactionMoney);
+            PATHTO_FNC(resourcesAddHR);
+            PATHTO_FNC(resourcesAddPlayerMoney);
+            PATHTO_FNC(resourcesShowAll);
             PATHTO_FNC(teleportPlayer);
             PATHTO_FNC(teleportStragglers);
         };
