@@ -35,7 +35,8 @@ Features
    * Requires items present in arsenal to apply loadout
    * Remember/restore ACE3 cargo items
  * Zeus modules
-   * Module that crews any static emplacement in a 100m radius
+   * Module that adds any static emplacement in a 100m radius to Zeus curatable objects
+   * Module that crews any static emplacement in Zeus' object selection
 
 Installation
 ------------
