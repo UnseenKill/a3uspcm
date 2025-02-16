@@ -30,7 +30,8 @@ TRACE_1("A3USPCM_zeus_fnc_findStaticEmplacements",_this);
 private _position = getPosATL _logic;
 private _radius = FIND_STATIC_RADIUS;
 private _statics = nearestObjects[_position, ["StaticWeapon"], _radius, true] select {
-    _x isKindOf "StaticWeapon";
+    (alive _x) &&
+    (_x isKindOf "StaticWeapon");
 };
 
 if (_logic isKindOf "Module_F") then {
