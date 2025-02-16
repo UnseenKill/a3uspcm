@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Loadout">
+        <Key ID="STR_A3USPCM_Fixes_Component">
+            <English>A3USPCM - A3U Fixes Component</English>
+            <German>A3USPCM - A3U Fixes Komponente</German>
+        </Key>
+    </Package>
+</Project>
