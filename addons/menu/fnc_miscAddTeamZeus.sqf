@@ -24,7 +24,13 @@ INFO_1("player %1 wants team added to Zeus objects",name player);
 
 allCurators apply {
     _x addCuratorEditableObjects[units group player, true];
-    _x addCuratorEditableObjects[[vehicle player, player], true];
+    _x addCuratorEditableObjects[flatten(units group player apply {
+        if isNull objectParent _x then {
+            [];
+        } else {
+            [objectParent _x] + (((objectParent _x) getVariable["ace_cargo_loaded", []]) select { _x isEqualType objNull });
+        };
+    }), true];
 };
 
 nil;
