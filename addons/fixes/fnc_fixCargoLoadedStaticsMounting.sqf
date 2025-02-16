@@ -33,22 +33,8 @@ GVAR(staticsMountedHandler) = {
     if !assert(!isNull _object) exitWith {};
     if !assert(!isNull _vehicle) exitWith {};
     if !(_object isKindOf "StaticWeapon") exitWith {};
-    if (_object getVariable[QGVAR(eh_GetIn), false] isNotEqualTo false) exitWith {};
 
-    INFO_1("adding 'GetIn' event handler to %1",_object);
-
-    private _ehid = _object addEventHandler["GetIn", {
-        params["_vehicle", "_role", "_unit", "_turret"];
-        TRACE_4("GetIn",_vehicle,_role,_unit,_turret);
-
-        if (_unit in playableUnits) exitWith { INFO_2("unit %1 may mount %2",_unit,_vehicle) };
-        if (playableUnits findIf { _unit in (units group _x) } >= 0) exitWith { INFO_2("unit %1 may mount %2",_unit,_vehicle) };
-
-        INFO_2("unit %1 may NOT mount %2",_unit,_vehicle);
-        moveOut _unit;
-    }];
-
-    _object setVariable[QGVAR(eh_GetIn), _ehid, true];
+    _object setVariable["lockedForAI", true, true];
 
     nil;
 };
