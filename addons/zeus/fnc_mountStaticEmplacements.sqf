@@ -46,27 +46,7 @@ _this spawn {
         systemChat localize LSTRING(ModuleMSE_NoStaticsFound);
     };
 
-    private _group = createGroup independent;
-
-    _statics apply {
-        crew _x apply { moveOut _x };
-
-        [_group, _x] spawn {
-            uiSleep 0.5;
-            params["_group","_vehicle"];
-            private _unit = _group createUnit["I_crew_F", getPosATL _vehicle, [], 0, "NONE"];
-            
-            _unit moveInGunner _vehicle;
-            _unit setSkill 1;
-            _vehicle setVariable[QGVAR(crewed), true, true];
-
-            TRACE_2("Crewed static",_vehicle,_unit);
-
-            allCurators apply {
-                _x addCuratorEditableObjects[[_vehicle], true];
-            };
-        };
-    };
+    [_statics] call FUNC(doCrewStatic);
 };
 
 nil;
