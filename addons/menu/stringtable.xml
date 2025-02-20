@@ -5,14 +5,6 @@
             <English>A3USPCM - Menu Component</English>
             <German>A3USPCM - Menükomponente</German>
         </Key>
-        <Key ID="STR_A3USPCM_Menu_DiaryFixesCaption">
-            <English>Fixes</English>
-            <German>Reparaturen</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_DiaryFixesText">
-            <English>Fix lame ass bombing run air vehicles.</English>
-            <German>Ersetze lahme Luftfahrzeuge für Bombenangriffe.</German>
-        </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryHealingCaption">
             <English>Healing</English>
             <German>Heilung</German>
@@ -217,9 +209,21 @@
             <English>Only %1 of your %2 stragglers could be safely summoned.</English>
             <German>Nur %1 von deinen %2 Nachzüglern konnten sicher herbeigerufen werden.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintSummoning">
-            <English>Summoning %1 straggler(s) to you.</English>
-            <German>Rufe %1 Nachzügler zu dir.</German>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportArsenalBoxCaption">
+            <English>Teleport arsenal box</English>
+            <German>Teleportiere Arsenalkiste</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportArsenalBoxText">
+            <English>Move arsenal box to your position</English>
+            <German>Verschiebe die Arsenalkiste zu deiner Position</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportFlagCaption">
+            <English>Teleport flag</English>
+            <German>Teleportiere Fahne</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportFlagText">
+            <English>Move HQ flag to your position</English>
+            <German>Verschiebe die HQ-Fahne zu deiner Position</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportHintAbortCaption">
             <English>Teleporting aborted</English>
@@ -237,6 +241,18 @@
             <English>Left click to desired position. Close the map to abort.</English>
             <German>Linksklick zur gewünschten Position. Schließe die Karte, um abzubrechen.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportMapCaption">
+            <English>Teleport map</English>
+            <German>Teleportiere Karte</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportMapText">
+            <English>Move map object to your position</English>
+            <German>Verschiebe die Kartenobjekt zu deiner Position</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportObjectBack">
+            <English>Return from whence you came</English>
+            <German>Kehre zurück, von wo du gekommen bist</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportPlayerCaption">
             <English>Teleport self</English>
             <German>Teleportiere dich selbst</German>
@@ -252,6 +268,18 @@
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportStragglersText">
             <English>Teleport team members farther away than 100m to your position.</English>
             <German>Teleportiere Teammitglieder, die weiter als 100m entfernt sind, zu deiner Position.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportSuccess">
+            <English>Teleported "%1" to you. It will return home after %2 seconds, or if you activate the appropriate action.</English>
+            <German>"%1" wurde zu dir teleportiert. Es kehrt nach %2 Sekunden nach Hause zurück oder wenn du die entsprechende Aktion aktivierst.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportVehicleBoxCaption">
+            <English>Teleport garage box</English>
+            <German>Teleportiere Garagenkiste</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Teleport_TeleportVehicleBoxText">
+            <English>Move vehicle box to your position</English>
+            <German>Verschiebe die Garagenkiste zu deiner Position</German>
         </Key>
     </Package>
 </Project>
