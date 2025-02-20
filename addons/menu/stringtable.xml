@@ -121,6 +121,10 @@
             <English>Turn cursor target into lootbox to collect scattered loot.</English>
             <German>Verwandle das Cursorziel in eine Lootbox, um verstreuten Loot zu sammeln.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_OutskirtsMarkerText">
+            <English>Outskirts</English>
+            <German>Stadtrand</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsCaption">
             <English>Repair buildings</English>
             <German>Repariere Gebäude</German>
@@ -128,6 +132,18 @@
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsText">
             <English>Repair damaged buildings around player position.</English>
             <German>Repariere beschädigte Gebäude in der Nähe der Spielerposition.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_RoadblockMarkerText">
+            <English>Roadblock</English>
+            <German>Straßensperre</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ShowRoadblocksCaption">
+            <English>Show roadblocks</English>
+            <German>Straßensperren anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ShowRoadblocksText">
+            <English>Temporarily reveal roadblocks on map.</English>
+            <German>Zeige temporär Straßensperren auf der Karte.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_UncompromiseCaption">
             <English>Uncompromise</English>
