@@ -17,5 +17,8 @@
         <Key ID="STR_A3USPCM_Zeus_ModuleMSE_NoStaticsFound">
             <English>No static emplacements in your selection.</English>
         </Key>
+        <Key ID="STR_A3USPCM_Zeus_ModuleRO_DisplayName">
+            <English>Reorient object</English>
+        </Key>
     </Package>
 </Project>

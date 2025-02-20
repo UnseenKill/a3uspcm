@@ -37,6 +37,7 @@ Features
  * Zeus modules
    * Module that adds any static emplacement in a 100m radius to Zeus curatable objects
    * Module that crews any static emplacement in Zeus' object selection
+   * Module to reorient an object in-game to point upwards (not aligned to surface normal)
 
 Installation
 ------------

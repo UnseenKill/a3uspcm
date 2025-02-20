@@ -33,9 +33,11 @@ if visibleMap then {
             private _vector = player weaponDirection currentWeapon player;
             private _beg = ASLToAGL eyePos player;
             private _pos = _beg vectorAdd (_vector vectorMultiply 2);
-            _target = createVehicle["Box_NATO_Equip_F", _pos, [], 0, "NONE"];
+            _target = createVehicle[A3A_faction_reb get "lootCrate", _pos, [], 0, "NONE"];
 
             [-500] call A3A_fnc_resourcesPlayer;
+            [_target] call A3A_Logistics_fnc_addLoadAction;
+            [_target] call A3A_fnc_initMovableObject;
 
             clearMagazineCargoGlobal _target;
             clearWeaponCargoGlobal _target;
