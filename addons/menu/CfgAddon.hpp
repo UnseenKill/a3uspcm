@@ -58,6 +58,34 @@ class GVAR(Config) {
                 text = CSTRING(Teleport_TeleportStragglersText);
                 action = QFUNCMAIN(teleportStragglers);
             };
+
+            class TeleportArsenalBox {
+                caption = CSTRING(Teleport_TeleportArsenalBoxCaption);
+                text = CSTRING(Teleport_TeleportArsenalBoxText);
+                action = QFUNCMAIN(teleportRebelObject);
+                params = QUOTE(boxX);
+            };
+
+            class TeleportVehicleBox {
+                caption = CSTRING(Teleport_TeleportVehicleBoxCaption);
+                text = CSTRING(Teleport_TeleportVehicleBoxText);
+                action = QFUNCMAIN(teleportRebelObject);
+                params = QUOTE(vehicleBox);
+            };
+
+            class TeleportMap {
+                caption = CSTRING(Teleport_TeleportMapCaption);
+                text = CSTRING(Teleport_TeleportMapText);
+                action = QFUNCMAIN(teleportRebelObject);
+                params = QUOTE(mapX);
+            };
+
+            class TeleportFlag {
+                caption = CSTRING(Teleport_TeleportFlagCaption);
+                text = CSTRING(Teleport_TeleportFlagText);
+                action = QFUNCMAIN(teleportRebelObject);
+                params = QUOTE(flagX);
+            };
         };
 
         class Recruitment {

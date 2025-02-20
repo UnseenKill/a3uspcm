@@ -20,6 +20,7 @@ Features
  * Teleportation
    * Teleport self anywhere on map without wait delay or "enemies close" checks
    * Teleport stragglers in player group to self
+   * (Temporarily) teleport HQ objects (arsenal, garage, map, flag) to your position
  * Replenish player squad outside of HQ
    * Recruit new squad mates in the field
    * "Enemies close" checks still apply
