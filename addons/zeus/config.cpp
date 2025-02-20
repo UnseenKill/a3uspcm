@@ -5,7 +5,8 @@ class CfgPatches {
         name = CSTRING(component);
         units[] = {
             QGVAR(moduleFindStaticEmplacements),
-            QGVAR(moduleMountStaticEmplacements)
+            QGVAR(moduleMountStaticEmplacements),
+            QGVAR(moduleReorientObject)
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

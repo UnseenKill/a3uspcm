@@ -1,4 +1,5 @@
 *.pbo
+.hemtt/missions
 .hemttout
 releases
 *.biprivatekey

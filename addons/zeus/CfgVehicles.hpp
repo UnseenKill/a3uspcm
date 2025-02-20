@@ -33,4 +33,12 @@ class CfgVehicles {
         isDisposable = 1;
         curatorCanAttach = 0;
     };
+
+    class GVAR(moduleReorientObject) : GVAR(moduleBase) {
+        displayName = CSTRING(ModuleRO_DisplayName);
+        function = QFUNC(reorientObject);
+        category = QGVAR(modules);
+        isDisposable = 1;
+        curatorCanAttach = 0;
+    };
 };

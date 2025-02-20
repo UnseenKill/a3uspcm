@@ -1,9 +1,9 @@
 #include "script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_zeus_fnc_mountStaticEmplacements
+Function: A3USPCM_zeus_fnc_reorientObject
 
 Description:
-    This module creates a crew and mounts any static emplacements selected by zeus.
+    Reorient objects in selection.
 
 Parameters:
     0: _logic - module logic object <OBJECT>
@@ -19,7 +19,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1("A3USPCM_zeus_fnc_mountStaticEmplacements",_this);
+TRACE_1("A3USPCM_zeus_fnc_reorientObject",_this);
 
 _this spawn {
     params[
@@ -28,8 +28,8 @@ _this spawn {
         ["_activated", false, [false]]
     ];
 
-    for "_wait" from 0 to (CREW_STATIC_WAIT - 1) do {
-        systemChat format["Crewing selection in %1 seconds.", CREW_STATIC_WAIT - _wait];
+    for "_wait" from 0 to (REORIENT_OBJECT_WAIT - 1) do {
+        systemChat format["Reorienting selection in %1 seconds.", REORIENT_OBJECT_WAIT - _wait];
         uiSleep 1;
     };
 
@@ -37,16 +37,11 @@ _this spawn {
         deleteVehicle _logic;
     };
 
-    private _statics = curatorSelected select 0 select {
-        _x isKindOf "StaticWeapon";
+    curatorSelected select 0 apply {
+        TRACE_1("Reorienting object",_x);
+        systemChat format["%1 reoriented", getText(configOf _x >> "displayName")];
+        _x setVectorUp[0,0,1];
     };
-
-    if (_statics isEqualTo []) exitWith {
-        INFO("No statics selected by Zeus.");
-        systemChat localize LSTRING(ModuleMSE_NoStaticsFound);
-    };
-
-    [_statics] call FUNC(doCrewStatic);
 };
 
 nil;
