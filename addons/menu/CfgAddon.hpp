@@ -40,6 +40,12 @@ class GVAR(Config) {
                 text = CSTRING(Miscellaneous_FixAirSupportVehiclesText);
                 action = QFUNCMAIN(miscFixAirSupportVehicles);
             };
+
+            class ShowRoadblocks {
+                caption = CSTRING(Miscellaneous_ShowRoadblocksCaption);
+                text = CSTRING(Miscellaneous_ShowRoadblocksText);
+                action = QFUNCMAIN(miscShowRoadblocks);
+            };
         };
 
         class Teleport {
