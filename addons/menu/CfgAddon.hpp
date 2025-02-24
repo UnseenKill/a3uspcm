@@ -187,6 +187,33 @@ class GVAR(Config) {
             };
         };
 
+        class Unlocks {
+            caption = CSTRING(DiaryUnlocksCaption);
+            text = CSTRING(DiaryUnlocksText);
+            image = QUOTE(\z\a3uspcm\addons\menu\ui\unlock_ca.paa);
+
+            class AcePainkillers {
+                caption = CSTRING(Unlocks_AcePainkillersCaption);
+                action = QFUNCMAIN(unlockAcePainkillers);
+            };
+
+            class BreachingChargeAPCs {
+                caption = CSTRING(Unlocks_BreachingChargeAPCsCaption);
+                action = QFUNCMAIN(unlockBreachingChargeAPCs);
+            };
+
+            class BreachingChargeTanks {
+                caption = CSTRING(Unlocks_BreachingChargeTanksCaption);
+                action = QFUNCMAIN(unlockBreachingChargeTanks);
+            };
+
+            class Loadout {
+                caption = CSTRING(Unlocks_LoadoutCaption);
+                text = CSTRING(Unlocks_LoadoutText);
+                action = QFUNCMAIN(unlockLoadout);
+            };
+        };
+
         class Healing {
             caption = CSTRING(DiaryHealingCaption);
             text = CSTRING(DiaryHealingText);

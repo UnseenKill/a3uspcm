@@ -31,6 +31,10 @@ Features
  * Instant healing
    * Heal self/group instantly
    * Useful when you've driven your Polaris/Qilin through one of those deadly bushes
+ * Unlocks
+   * Unlock ACE3 Painkillers for arsenal
+   * Unlock breaching charges for tanks and APCs
+   * Unlock your current loadout
  * Vehicle loadout management
    * Remember a vehicle's inventory and make it available to apply such loadout
    * Save-game safe

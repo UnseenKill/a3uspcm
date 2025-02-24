@@ -49,6 +49,14 @@
             <English>Teleport self or team.</English>
             <German>Teleportiere dich selbst oder dein Team.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryUnlocksCaption">
+            <English>Unlock</English>
+            <German>Freischalten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryUnlocksText">
+            <English>Unlock items for arsenal</English>
+            <German>Schalte Gegenstände für das Arsenal frei</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Healing_HealGroupCaption">
             <English>Heal your group</English>
             <German>Heile deine Gruppe</German>
@@ -300,6 +308,26 @@
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportVehicleBoxText">
             <English>Move vehicle box to your position</English>
             <German>Verschiebe die Garagenkiste zu deiner Position</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_AcePainkillersCaption">
+            <English>ACE3 Painkillers</English>
+            <German>ACE3 Schmerztabletten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_BreachingChargeAPCsCaption">
+            <English>Breaching charges - APC</English>
+            <German>Sprengladung - APC</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_BreachingChargeTanksCaption">
+            <English>Breaching charges - Tanks</English>
+            <German>Sprengladung - Panzer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_LoadoutCaption">
+            <English>Loadout</English>
+            <German>Ausrüstung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_LoadoutText">
+            <English>Unlock everything in your current loadout.</English>
+            <German>Schalte alles von deiner aktuellen Ausrüstung frei.</German>
         </Key>
     </Package>
 </Project>

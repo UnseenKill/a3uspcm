@@ -18,6 +18,10 @@ class CfgFunctions {
             PATHTO_FNC(teleportPlayer);
             PATHTO_FNC(teleportRebelObject);
             PATHTO_FNC(teleportStragglers);
+            PATHTO_FNC(unlockAcePainkillers);
+            PATHTO_FNC(unlockBreachingChargeAPCs);
+            PATHTO_FNC(unlockBreachingChargeTanks);
+            PATHTO_FNC(unlockLoadout);
         };
     };
 };
