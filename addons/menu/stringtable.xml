@@ -41,6 +41,14 @@
             <English>A3U Singleplayer Cheat Menu</English>
             <German>A3U Singleplayer Cheat Menü</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryUnlocksCaption">
+            <English>Unlock</English>
+            <German>Freischalten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryUnlocksText">
+            <English>Unlock items for arsenal</English>
+            <German>Schalte Gegenstände für das Arsenal frei</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryTeleportCaption">
             <English>Teleport</English>
             <German>Teleportieren</German>
@@ -300,6 +308,18 @@
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportVehicleBoxText">
             <English>Move vehicle box to your position</English>
             <German>Verschiebe die Garagenkiste zu deiner Position</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_AcePainkillersCaption">
+            <English>ACE3 Painkillers</English>
+            <German>ACE3 Schmerztabletten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_BreachingChargeAPCsCaption">
+            <English>Breaching charges - APC</English>
+            <German>Sprengladung - APC</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_BreachingChargeTanksCaption">
+            <English>Breaching charges - Tanks</English>
+            <German>Sprengladung - Panzer</German>
         </Key>
     </Package>
 </Project>
