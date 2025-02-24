@@ -133,6 +133,10 @@
             <English>Repair damaged buildings around player position.</English>
             <German>Repariere beschädigte Gebäude in der Nähe der Spielerposition.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_RoadblockDestroyedMarkerText">
+            <English>Roadblock (destroyed)</English>
+            <German>Straßensperre (zerstört)</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RoadblockMarkerText">
             <English>Roadblock</English>
             <German>Straßensperre</German>

@@ -31,20 +31,31 @@ private _mapInfoRoot = if (isClass (missionConfigFile/"A3A"/"mapInfo"/toLower wo
 getArray (_mapInfoRoot/"A3A"/"mapInfo"/toLower worldName/"garrison") params ["", ["_mrkCSAT",[],[[]]], "", ["_controlsCSAT",[],[[]]]];
 
 private _markers = controlsX apply {
-    TRACE_1("control",_x);
+    private _owner = sidesX getVariable[_x, teamPlayer];
+    //TRACE_2("control",_x,_owner);
 
     private _outskirts = !isOnRoad markerPos _x;
     private _marker = createMarkerLocal[format["%1_%2", QGVAR(Roadblock), _x], markerPos _x];
     _marker setMarkerShapeLocal "ICON";
     _marker setMarkerTypeLocal "mil_dot_noShadow";
 
+    private["_markerText"];
+
     if _outskirts then {
+        _markerText = LSTRING(Miscellaneous_OutskirtsMarkerText);
         _marker setMarkerColorLocal "ColorCivilian";
     } else {
-        _marker setMarkerColorLocal (["ColorBLUFOR","ColorOPFOR"] select (_x in _controlsCSAT));
+        if (_owner == teamPlayer) then {
+            _markerText = LSTRING(Miscellaneous_RoadblockDestroyedMarkerText);
+            _marker setMarkerColorLocal "ColorBlack";
+            _marker setMarkerAlphaLocal 0.5;
+        } else {
+            _markerText = LSTRING(Miscellaneous_RoadblockMarkerText);
+            _marker setMarkerColorLocal (["ColorBLUFOR","ColorOPFOR"] select (_x in _controlsCSAT));
+        };
     };
 
-    _marker setMarkerTextLocal format["%1 (%2)", localize ([LSTRING(Miscellaneous_RoadblockMarkerText), LSTRING(Miscellaneous_OutskirtsMarkerText)] select _outskirts), _x];
+    _marker setMarkerTextLocal format["%1 (%2)", localize _markerText, _x];
     _marker;
 };
 
