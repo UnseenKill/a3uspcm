@@ -49,6 +49,14 @@
             <English>Teleport self or team.</English>
             <German>Teleportiere dich selbst oder dein Team.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryUnlocksCaption">
+            <English>Unlock</English>
+            <German>Freischalten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryUnlocksText">
+            <English>Unlock items for arsenal</English>
+            <German>Schalte Gegenstände für das Arsenal frei</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Healing_HealGroupCaption">
             <English>Heal your group</English>
             <German>Heile deine Gruppe</German>
@@ -94,20 +102,20 @@
             <German>Füge Teammitglieder zu kuratierbaren Objekten hinzu.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesCaption">
-            <English>Fix planes</English>
-            <German>Ersetze Flugzeuge</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesText">
-            <English>Remove clunky old planes from air support, add jet.</English>
-            <German>Entferne klobige alte Flugzeuge von der Luftunterstützung, füge Jet hinzu.</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesCaption">
             <English>Fix helicopters</English>
             <German>Ersetze Hubschrauber</German>
         </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesText">
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesText">
             <English>Remove all helicopters from air support, add MH-6.</English>
             <German>Entferne alle Hubschrauber von der Luftunterstützung, füge MH-6 hinzu.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesCaption">
+            <English>Fix planes</English>
+            <German>Ersetze Flugzeuge</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesText">
+            <English>Remove clunky old planes from air support, add jet.</English>
+            <German>Entferne klobige alte Flugzeuge von der Luftunterstützung, füge Jet hinzu.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxCaption">
             <English>Turn into/create lootbox</English>
@@ -121,6 +129,10 @@
             <English>Turn cursor target into lootbox to collect scattered loot.</English>
             <German>Verwandle das Cursorziel in eine Lootbox, um verstreuten Loot zu sammeln.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_OutskirtsMarkerText">
+            <English>Outskirts</English>
+            <German>Stadtrand</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsCaption">
             <English>Repair buildings</English>
             <German>Repariere Gebäude</German>
@@ -128,6 +140,22 @@
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsText">
             <English>Repair damaged buildings around player position.</English>
             <German>Repariere beschädigte Gebäude in der Nähe der Spielerposition.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_RoadblockDestroyedMarkerText">
+            <English>Roadblock (destroyed)</English>
+            <German>Straßensperre (zerstört)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_RoadblockMarkerText">
+            <English>Roadblock</English>
+            <German>Straßensperre</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ShowRoadblocksCaption">
+            <English>Show roadblocks</English>
+            <German>Straßensperren anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ShowRoadblocksText">
+            <English>Temporarily reveal roadblocks on map.</English>
+            <German>Zeige temporär Straßensperren auf der Karte.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_UncompromiseCaption">
             <English>Uncompromise</English>
@@ -280,6 +308,26 @@
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportVehicleBoxText">
             <English>Move vehicle box to your position</English>
             <German>Verschiebe die Garagenkiste zu deiner Position</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_AcePainkillersCaption">
+            <English>ACE3 Painkillers</English>
+            <German>ACE3 Schmerztabletten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_BreachingChargeAPCsCaption">
+            <English>Breaching charges - APC</English>
+            <German>Sprengladung - APC</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_BreachingChargeTanksCaption">
+            <English>Breaching charges - Tanks</English>
+            <German>Sprengladung - Panzer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_LoadoutCaption">
+            <English>Loadout</English>
+            <German>Ausrüstung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_LoadoutText">
+            <English>Unlock everything in your current loadout.</English>
+            <German>Schalte alles von deiner aktuellen Ausrüstung frei.</German>
         </Key>
     </Package>
 </Project>

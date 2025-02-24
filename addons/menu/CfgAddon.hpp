@@ -40,6 +40,12 @@ class GVAR(Config) {
                 text = CSTRING(Miscellaneous_FixAirSupportVehiclesText);
                 action = QFUNCMAIN(miscFixAirSupportVehicles);
             };
+
+            class ShowRoadblocks {
+                caption = CSTRING(Miscellaneous_ShowRoadblocksCaption);
+                text = CSTRING(Miscellaneous_ShowRoadblocksText);
+                action = QFUNCMAIN(miscShowRoadblocks);
+            };
         };
 
         class Teleport {
@@ -178,6 +184,33 @@ class GVAR(Config) {
                 caption = CSTRING(Resources_ShowResourcesAllCaption);
                 text = CSTRING(Resources_ShowResourcesAllText);
                 action = QFUNCMAIN(resourcesShowAll);
+            };
+        };
+
+        class Unlocks {
+            caption = CSTRING(DiaryUnlocksCaption);
+            text = CSTRING(DiaryUnlocksText);
+            image = QUOTE(\z\a3uspcm\addons\menu\ui\unlock_ca.paa);
+
+            class AcePainkillers {
+                caption = CSTRING(Unlocks_AcePainkillersCaption);
+                action = QFUNCMAIN(unlockAcePainkillers);
+            };
+
+            class BreachingChargeAPCs {
+                caption = CSTRING(Unlocks_BreachingChargeAPCsCaption);
+                action = QFUNCMAIN(unlockBreachingChargeAPCs);
+            };
+
+            class BreachingChargeTanks {
+                caption = CSTRING(Unlocks_BreachingChargeTanksCaption);
+                action = QFUNCMAIN(unlockBreachingChargeTanks);
+            };
+
+            class Loadout {
+                caption = CSTRING(Unlocks_LoadoutCaption);
+                text = CSTRING(Unlocks_LoadoutText);
+                action = QFUNCMAIN(unlockLoadout);
             };
         };
 
