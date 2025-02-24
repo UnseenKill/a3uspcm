@@ -94,20 +94,20 @@
             <German>Füge Teammitglieder zu kuratierbaren Objekten hinzu.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesCaption">
-            <English>Fix planes</English>
-            <German>Ersetze Flugzeuge</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesText">
-            <English>Remove clunky old planes from air support, add jet.</English>
-            <German>Entferne klobige alte Flugzeuge von der Luftunterstützung, füge Jet hinzu.</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesCaption">
             <English>Fix helicopters</English>
             <German>Ersetze Hubschrauber</German>
         </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesText">
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesText">
             <English>Remove all helicopters from air support, add MH-6.</English>
             <German>Entferne alle Hubschrauber von der Luftunterstützung, füge MH-6 hinzu.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesCaption">
+            <English>Fix planes</English>
+            <German>Ersetze Flugzeuge</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesText">
+            <English>Remove clunky old planes from air support, add jet.</English>
+            <German>Entferne klobige alte Flugzeuge von der Luftunterstützung, füge Jet hinzu.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxCaption">
             <English>Turn into/create lootbox</English>
