@@ -50,7 +50,11 @@ if !assert(!isNull _player) exitWith { [] };
                             format["%1_%2", QGVAR(MenuLoadoutManage), _index],
                             format["#%1 %2", _index, _loadout select 0],
                             "",
-                            {},
+                            { 
+                                params["_target","_player","_parameters"];
+                                _parameters params["_loadout",""];
+                                [{ call FUNC(restoreLoadout) }, [_target, _player, _loadout]] call CBA_fnc_execNextFrame;
+                            },
                             { true },
                             {
                                 params["_target","","_parameters"];
