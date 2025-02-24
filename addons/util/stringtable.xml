@@ -5,6 +5,10 @@
             <English>Vehicle's ACE3 loadout requires a &lt;t color='#00c000'&gt;%1&lt;/t&gt;.&lt;br/&gt;&lt;br/&gt;No such vehicle found in a %2 meter radius around target vehicle.</English>
             <German>Das ACE3-Loadout des Fahrzeugs benötigt ein &lt;t color='#00c000'&gt;%1&lt;/t&gt;.&lt;br/&gt;&lt;br/&gt;Kein solches Fahrzeug im Umkreis von %2 Metern um das Zielfahrzeug gefunden.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Util_ArsenalItemNotUnlocked">
+            <English>Arsenal item already unlocked.</English>
+            <German>Arsenal-Item ist bereits freigeschaltet.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Util_ArsenalItemUnlocked">
             <English>Arsenal item unlocked.</English>
             <German>Arsenal-Item freigeschaltet.</German>

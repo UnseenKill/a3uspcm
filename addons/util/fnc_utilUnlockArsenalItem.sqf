@@ -26,8 +26,18 @@ params[
 ];
 
 TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_className);
-private _result = [_className] call A3A_fnc_unlockEquipment;
-TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_result);
+
+private _index = _className call jn_fnc_arsenal_itemType;
+private _arsenal = jna_datalist select _index;
+private _count = [_arsenal, _className] call jn_fnc_arsenal_itemCount;
+
+private _message = if (_count < 0) then {
+    LSTRING(ArsenalItemNotUnlocked);
+} else {
+    private _result = [_className] call A3A_fnc_unlockEquipment;
+    TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_result);
+    LSTRING(ArsenalItemUnlocked);
+};
 
 private _caption = switch true do {
     case isText(configFile >> "CfgMagazines" >> _className >> "displayName"): {
@@ -44,6 +54,6 @@ private _caption = switch true do {
     };
 };
 
-[_caption, localize LSTRING(ArsenalItemUnlocked)] call A3A_fnc_customHint;
+[_caption, localize _message] call A3A_fnc_customHint;
 
 nil;
