@@ -21,6 +21,7 @@ class CfgFunctions {
             PATHTO_FNC(unlockAcePainkillers);
             PATHTO_FNC(unlockBreachingChargeAPCs);
             PATHTO_FNC(unlockBreachingChargeTanks);
+            PATHTO_FNC(unlockLoadout);
         };
     };
 };

@@ -9,6 +9,7 @@ Parameters:
     0: _className - Item class to unlock <STRING>
 
 Optional:
+    1: _silent - Suppress hint message for already unlocked items <BOOL>
 
 Example:
     (begin example)
@@ -22,7 +23,8 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 params[
-    ["_className", "", [""]]
+    ["_className", "", [""]],
+    ["_silent", false, [false]]
 ];
 
 TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_className);
@@ -32,28 +34,30 @@ private _arsenal = jna_datalist select _index;
 private _count = [_arsenal, _className] call jn_fnc_arsenal_itemCount;
 
 private _message = if (_count < 0) then {
-    LSTRING(ArsenalItemNotUnlocked);
+    [LSTRING(ArsenalItemNotUnlocked), ""] select _silent;
 } else {
     private _result = [_className] call A3A_fnc_unlockEquipment;
     TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_result);
     LSTRING(ArsenalItemUnlocked);
 };
 
-private _caption = switch true do {
-    case isText(configFile >> "CfgMagazines" >> _className >> "displayName"): {
-        getText(configFile >> "CfgMagazines" >> _className >> "displayName");
+if (_message isNotEqualTo "") then {
+    private _caption = switch true do {
+        case isText(configFile >> "CfgMagazines" >> _className >> "displayName"): {
+            getText(configFile >> "CfgMagazines" >> _className >> "displayName");
+        };
+        case isText(configFile >> "CfgWeapons" >> _className >> "displayName"): {
+            getText(configFile >> "CfgWeapons" >> _className >> "displayName");
+        };
+        case isText(configFile >> "CfgVehicles" >> _className >> "displayName"): {
+            getText(configFile >> "CfgVehicles" >> _className >> "displayName");
+        };
+        default {
+            format["Unknown %1", _className]
+        };
     };
-    case isText(configFile >> "CfgWeapons" >> _className >> "displayName"): {
-        getText(configFile >> "CfgWeapons" >> _className >> "displayName");
-    };
-    case isText(configFile >> "CfgVehicles" >> _className >> "displayName"): {
-        getText(configFile >> "CfgVehicles" >> _className >> "displayName");
-    };
-    default {
-        format["Unknown %1", _className]
-    };
-};
 
-[_caption, localize _message] call A3A_fnc_customHint;
+    [_caption, localize _message] call A3A_fnc_customHint;
+};
 
 nil;

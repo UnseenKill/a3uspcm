@@ -206,6 +206,12 @@ class GVAR(Config) {
                 caption = CSTRING(Unlocks_BreachingChargeTanksCaption);
                 action = QFUNCMAIN(unlockBreachingChargeTanks);
             };
+
+            class Loadout {
+                caption = CSTRING(Unlocks_LoadoutCaption);
+                text = CSTRING(Unlocks_LoadoutText);
+                action = QFUNCMAIN(unlockLoadout);
+            };
         };
 
         class Healing {

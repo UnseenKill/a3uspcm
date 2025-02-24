@@ -321,5 +321,13 @@
             <English>Breaching charges - Tanks</English>
             <German>Sprengladung - Panzer</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_LoadoutCaption">
+            <English>Loadout</English>
+            <German>Ausrüstung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_LoadoutText">
+            <English>Unlock everything in your current loadout.</English>
+            <German>Schalte alles von deiner aktuellen Ausrüstung frei.</German>
+        </Key>
     </Package>
 </Project>
