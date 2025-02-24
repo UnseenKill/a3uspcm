@@ -17,6 +17,7 @@ Features
    * Substitute lame-ass civilian prop plane air support vehicles with F-18
    * Substitute civilian helicopters with MH-9 (some GM helicopters can't slingload -> no lootbox for you...)
    * Uncompromize team and self so you can go undercover again
+   * Show roadblocks on map
  * Teleportation
    * Teleport self anywhere on map without wait delay or "enemies close" checks
    * Teleport stragglers in player group to self
