@@ -22,6 +22,11 @@ Author:
 
 INFO_1("player %1 requests teleportation",name player);
 
+// remove old event handler in case of double-click on teleportation menu item
+if !isNil QGVAR(Teleport_MapSingleClickEH) exitWith {
+    INFO("ignoring double-click on teleportation menu item");
+};
+
 if !visibleMap then {
     openMap true;
 };
@@ -30,11 +35,6 @@ if !visibleMap then {
     localize LSTRING(Teleport_TeleportHintStartCaption), 
     localize LSTRING(Teleport_TeleportHintStartText)
 ] call A3A_fnc_customHint;
-
-// remove old event handler in case of double-click on teleportation menu item
-if !isNil QGVAR(Teleport_MapSingleClickEH) then {
-    removeMissionEventHandler["MapSingleClick", GVAR(Teleport_MapSingleClickEH)];
-};
 
 GVAR(Teleport_Done) = false;
 GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
