@@ -69,4 +69,16 @@ private _parentPath = [[
     }
 ] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
 
+[[
+    QGVAR(zenMenu_RemoveHC),
+    localize LSTRING(ModuleRemoveHC_DisplayName),
+    "",
+    {
+        hcSelected theBoss apply { theBoss hcRemoveGroup _x };
+    },
+    {
+        hcSelected theBoss isNotEqualTo [];
+    }
+] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
+
 nil;
