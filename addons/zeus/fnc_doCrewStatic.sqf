@@ -24,12 +24,20 @@ params[
 private _group = createGroup independent;
 
 _vehicles apply {
-    crew _x apply { moveOut _x };
+    crew _x apply {
+        _x allowDamage false;
+        moveOut _x;
+        _x spawn {
+            uiSleep 2.5;
+            _this allowDamage true;
+        };
+    };
 
     [_group, _x] spawn {
         uiSleep 0.5;
         params["_group","_vehicle"];
-        private _unit = _group createUnit["I_crew_F", getPosATL _vehicle, [], 0, "NONE"];
+        private _type = [configFile >> QGVAR(Config) >> "moduleMSE" >> "crewClassName", "STRING"] call CBA_fnc_getConfigEntry;
+        private _unit = _group createUnit[_type, getPosATL _vehicle, [], 0, "NONE"];
         
         _unit moveInGunner _vehicle;
         _unit setSkill 1;
