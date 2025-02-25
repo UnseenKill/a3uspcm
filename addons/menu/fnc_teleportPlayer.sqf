@@ -31,6 +31,11 @@ if !visibleMap then {
     localize LSTRING(Teleport_TeleportHintStartText)
 ] call A3A_fnc_customHint;
 
+// remove old event handler in case of double-click on teleportation menu item
+if !isNil QGVAR(Teleport_MapSingleClickEH) then {
+    removeMissionEventHandler["MapSingleClick", GVAR(Teleport_MapSingleClickEH)];
+};
+
 GVAR(Teleport_Done) = false;
 GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
 	params["_units","_pos","_alt","_shift"];
@@ -45,6 +50,7 @@ GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
 [] spawn {
     waitUntil { GVAR(Teleport_Done) || !visibleMap };
     removeMissionEventHandler["MapSingleClick", GVAR(Teleport_MapSingleClickEH)];
+    GVAR(Teleport_MapSingleClickEH) = nil;
 
     if !GVAR(Teleport_Done) exitWith {
         INFO("teleportation aborted");
