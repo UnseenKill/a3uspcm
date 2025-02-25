@@ -1,8 +1,7 @@
 // COMPONENT should be defined in the script_component.hpp and included BEFORE this hpp
 #define PREFIX A3USPCM
 
-// TODO: Consider Mod-wide or Component-narrow versions  (or both, depending on wishes!)
-// We will use the DATE for the BUILD# in the format YYMMDD - VM
+#include "script_production.hpp"
 #include "script_version.hpp"
 
 #define VERSION     MAJOR.MINOR
@@ -11,6 +10,11 @@
 
 // MINIMAL required version for the Mod. Components can specify others..
 #define REQUIRED_VERSION 2.18
+
+// Define DEBUG_MODE_FULL for full debug mode when not in production
+#ifndef __A3USPCM_PRODUCTION__
+    #define DEBUG_MODE_FULL
+#endif
 
 /*
 // Defined DEBUG_MODE_NORMAL in a few CBA_fncs to prevent looped logging :)

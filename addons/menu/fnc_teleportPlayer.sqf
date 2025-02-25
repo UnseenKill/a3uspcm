@@ -22,6 +22,11 @@ Author:
 
 INFO_1("player %1 requests teleportation",name player);
 
+// remove old event handler in case of double-click on teleportation menu item
+if !isNil QGVAR(Teleport_MapSingleClickEH) exitWith {
+    INFO("ignoring double-click on teleportation menu item");
+};
+
 if !visibleMap then {
     openMap true;
 };
@@ -45,6 +50,7 @@ GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
 [] spawn {
     waitUntil { GVAR(Teleport_Done) || !visibleMap };
     removeMissionEventHandler["MapSingleClick", GVAR(Teleport_MapSingleClickEH)];
+    GVAR(Teleport_MapSingleClickEH) = nil;
 
     if !GVAR(Teleport_Done) exitWith {
         INFO("teleportation aborted");

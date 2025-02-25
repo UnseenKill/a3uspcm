@@ -9,10 +9,13 @@ Parameters:
     0: _objectVariableName - Name of global variable that holds the object <STRING>
 
 Optional:
+    1: _teleportCallback - Code to execute once teleportation occured <CODE>
 
 Example:
     (begin example)
-    ["boxX"] call A3USPCM_fnc_teleportRebelObject;
+    ["boxX", {
+        params["_object","_position"];
+    }] call A3USPCM_fnc_teleportRebelObject;
     (end example)
 
 Returns:
@@ -22,7 +25,8 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 params[
-    ["_objectVariableName", "", [""]]
+    ["_objectVariableName", "", [""]],
+    ["_teleportCallback", {}, [{}]]
 ];
 
 if visibleMap then {
@@ -73,6 +77,8 @@ if (_position isEqualTo []) then {
 _object setPosATL _position;
 _object setVectorUp surfaceNormal getPos _object;
 _object setVariable[QGVAR(teleportReturnTimeout), diag_tickTime + TELEPORT_BACK_TIMEOUT];
+
+[_object, _position] spawn _teleportCallback;
 
 TRACE_2("teleported to",_objectVariableName,_position);
 TRACE_2("return timeout set",_objectVariableName,TELEPORT_BACK_TIMEOUT);

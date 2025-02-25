@@ -16,6 +16,7 @@ class CfgFunctions {
             PATHTO_FNC(resourcesAddPlayerMoney);
             PATHTO_FNC(resourcesShowAll);
             PATHTO_FNC(teleportPlayer);
+            PATHTO_FNC(teleportRebelFlag);
             PATHTO_FNC(teleportRebelObject);
             PATHTO_FNC(teleportStragglers);
             PATHTO_FNC(unlockAcePainkillers);
