@@ -24,6 +24,8 @@ params[
 if !assert(_vehicles isNotEqualTo []) exitWith {};
 
 private _group = createGroup independent;
+private _crewClassKey = ["crewClassName","crewClassNameAI"] select GVAR(moduleMSE_useAI);
+private _crewClassType = [configFile >> QGVAR(Config) >> "moduleMSE" >> _crewClassKey, "STRING"] call CBA_fnc_getConfigEntry;
 
 GVAR(groupsCount) = GVAR(groupsCount) + 1;
 
@@ -45,10 +47,9 @@ _vehicles apply {
         };
     };
 
-    [_group, _x] spawn {
+    [_group, _x, _crewClassType] spawn {
         uiSleep 0.5;
-        params["_group","_vehicle"];
-        private _type = [configFile >> QGVAR(Config) >> "moduleMSE" >> "crewClassName", "STRING"] call CBA_fnc_getConfigEntry;
+        params["_group","_vehicle","_type"];
         private _unit = _group createUnit[_type, getPosATL _vehicle, [], 0, "NONE"];
         
         _unit moveInGunner _vehicle;
@@ -63,16 +64,18 @@ _vehicles apply {
     };
 };
 
-[_group] spawn {
-    if !assert(params[["_group",grpNull,[grpNull]]]) exitWith {};
-    if !assert(!isNull _group) exitWith {};
+if !(GVAR(moduleMSE_useAI)) then {
+    [_group] spawn {
+        if !assert(params[["_group",grpNull,[grpNull]]]) exitWith {};
+        if !assert(!isNull _group) exitWith {};
 
-    uiSleep 5;
+        uiSleep 5;
 
-    INFO_2("transferring group %1 to HC (theBoss=%2)",_group,theBoss);
-    theBoss hcSetGroup[_group];
-    _group setCombatBehaviour "COMBAT";
-    _group setCombatMode "RED";
+        INFO_2("transferring group %1 to HC (theBoss=%2)",_group,theBoss);
+        theBoss hcSetGroup[_group];
+        _group setCombatBehaviour "COMBAT";
+        _group setCombatMode "RED";
+    };
 };
 
 nil;

@@ -29,5 +29,13 @@
             <English>Remove current HC selection from HC</English>
             <German>Aktuelle HC Auswahl aus HC entfernen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Zeus_Settings_moduleMSE_useAI_DisplayName">
+            <English>Use AI as crew</English>
+            <German>Nutze KI als Besatzung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_Settings_moduleMSE_useAI_Tooltip">
+            <English>Use AI to crew static emplacements instead of "real" soldiers.</English>
+            <German>Nutze KI, um statische Waffen zu besetzen anstelle von "echten" Soldaten.</German>
+        </Key>
     </Package>
 </Project>
