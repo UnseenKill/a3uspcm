@@ -41,4 +41,11 @@ _object setVariable[QGVAR(teleportActionId), nil];
 _object setVariable[QGVAR(teleportOrigin), nil];
 _object setVariable[QGVAR(teleportReturnTimeout), nil];
 
+private _callback = _object getVariable[QGVAR(teleportBackCallback), false];
+
+if !(_callback isEqualType false) then {
+    _object setVariable[QGVAR(teleportBackCallback), nil];
+    [_object, _position] call _callback;
+};
+
 nil;
