@@ -89,8 +89,7 @@ class GVAR(Config) {
             class TeleportFlag {
                 caption = CSTRING(Teleport_TeleportFlagCaption);
                 text = CSTRING(Teleport_TeleportFlagText);
-                action = QFUNCMAIN(teleportRebelObject);
-                params = QUOTE(flagX);
+                action = QFUNCMAIN(teleportRebelFlag);
             };
         };
 
