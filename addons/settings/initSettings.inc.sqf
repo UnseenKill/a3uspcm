@@ -1,8 +1,8 @@
 private _category = localize ELSTRING(main,Title);
 
 [
-    QGVAR(moduleMSE_useAI), "CHECKBOX",
-    [LSTRING(Settings_moduleMSE_useAI_DisplayName), LSTRING(Settings_moduleMSE_useAI_Tooltip)],
+    QEGVAR(zeus,moduleMSE_useAI), "CHECKBOX",
+    [ELSTRING(zeus,Settings_moduleMSE_useAI_DisplayName), ELSTRING(zeus,Settings_moduleMSE_useAI_Tooltip)],
     _category,
     false,
     1,
