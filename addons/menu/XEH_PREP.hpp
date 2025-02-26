@@ -6,3 +6,4 @@ PREP(intelCleanupHandler);
 PREP(intelCleanupMarker);
 PREP(teleportObjectBack);
 PREP(teleportObjectBackTimer);
+PREP(updateDiaryRecord);

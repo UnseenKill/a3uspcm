@@ -33,18 +33,6 @@ if !assert(!isNull _player) exitWith { diaryRecordNull };
 if !assert(_subjectId isNotEqualTo "") exitWith { diaryRecordNull };
 if !assert(!isNull _config) exitWith { diaryRecordNull };
 
-private _lines = [];
+private _record = _player createDiaryRecord[_subjectId, ["","",""]];
 
-_lines pushBack format["<font size='20'>%1</font>", [_config >> "caption", "STRING", "N/A"] call CBA_fnc_getConfigEntry];
-_lines pushBack format["<font size='10'>%1</font>", [_config >> "text", "STRING", "N/A"] call CBA_fnc_getConfigEntry];
-_lines pushBack "";
-
-"true" configClasses _config apply {
-    _lines pushBack format["&#160;&#160;&#160;&#160;%1", [_x] call FUNC(createDiaryRecordAction)];
-};
-
-_player createDiaryRecord[_subjectId, [
-    [_config >> "caption", "STRING", "N/A"] call CBA_fnc_getConfigEntry,
-    _lines joinString '<br />',
-    [_config >> "image", "STRING", ""] call CBA_fnc_getConfigEntry
-]];
+[_player, _record, _config] call FUNC(updateDiaryRecord);
