@@ -31,3 +31,5 @@ if !hasInterface exitWith {
 ADDON = true;
 
 GVAR(DiaryActions) = createHashMap;
+GVAR(IntelCleanup) = false;
+GVAR(IntelMarkers) = createHashMap;

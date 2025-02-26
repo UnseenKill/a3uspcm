@@ -101,6 +101,26 @@
             <English>Add team members to curatable objects.</English>
             <German>Füge Teammitglieder zu kuratierbaren Objekten hinzu.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FindIntelCaption">
+            <English>Find intel</English>
+            <German>Intel finden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FindIntelCleanupActionText">
+            <English>Found intel</English>
+            <German>Informationen gefunden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FindIntelText">
+            <English>Locate squad leaders, laptops around player</English>
+            <German>Finde Squad-Leader, Laptops in der Nähe des Spielers</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FindIntel_IntelFoundText">
+            <English>Found %1 new points of interest.</English>
+            <German>Es wurden %1 neue interessante Punkte gefunden.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FindIntel_NoIntelFoundText">
+            <English>Could not find any new intel in a %1m radius.</English>
+            <German>Es konnten keine neuen Geheiminformationen im Umkreis von %1m gefunden werden.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesCaption">
             <English>Fix helicopters</English>
             <German>Ersetze Hubschrauber</German>
@@ -213,9 +233,53 @@
             <English>Resources for all factions</English>
             <German>Resources aller Fraktionen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_CategoryIntel_DisplayName">
+            <English>Intelligence finder</English>
+            <German>Geheiminformationen auffinden</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_Category_DisplayName">
             <English>Common settings</English>
             <German>Allgemeine Einstellungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_findIntelAllSL_DisplayName">
+            <English>Find all squad leaders</English>
+            <German>Finde alle Anführer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_findIntelAllSL_Tooltip">
+            <English>When finding squad leaders, mark them irregardless of them actually having any intel to share</English>
+            <German>Wenn Anführer gefunden werden, markiere sie, unabhängig davon, ob sie tatsächlich Informationen zum Teilen haben.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_findIntelLargeFlags_DisplayName">
+            <English>Use large flags</English>
+            <German>Verwende große Flaggen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_findIntelLargeFlags_Tooltip">
+            <English>At daytime, intel is marked with marker flags; large flags are used instead, when this option is enabled.</English>
+            <German>Tagsüber werden Geheiminformationen mit Markierungsflaggen gekennzeichnet. Wenn diese Option aktiviert ist, werden stattdessen große Flaggen verwendet.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_findIntelMarkerTTL_DisplayName">
+            <English>Marker TTL</English>
+            <German>Marker TTL</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_findIntelMarkerTTL_Tooltip">
+            <English>Time to live for intelligence markers</English>
+            <German>Zeit bis zum Entfernen der Markierung für Geheimdienstinformationen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_findIntelPreciseMarker_DisplayName">
+            <English>Use precise markers</English>
+            <German>Verwende präzise Markierungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_findIntelPreciseMarker_Tooltip">
+            <English>When finding intel, markers are placed approximately around the intel unless this option is enabled.</English>
+            <German>Wenn Geheiminformationen gefunden werden, werden Markierungen ungefähr um diese herum platziert, es sei denn, diese Option ist aktiviert.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_findIntelRadius_DisplayName">
+            <English>Search radius</English>
+            <German>Suchradius</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_findIntelRadius_Tooltip">
+            <English>Search for intel this many meters around player</English>
+            <German>Suche nach Intel in diesem Radius um den Spieler herum</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_recruitSkipEnemyCheck_DisplayName">
             <English>Skip enemy close checks when recruiting</English>

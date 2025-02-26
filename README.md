@@ -18,6 +18,7 @@ Features
    * Substitute civilian helicopters with MH-9 (some GM helicopters can't slingload -> no lootbox for you...)
    * Uncompromize team and self so you can go undercover again
    * Show roadblocks on map
+   * Find intel around player's position (configurable via addon options)
  * Teleportation
    * Teleport self anywhere on map without wait delay or "enemies close" checks
    * Teleport stragglers in player group to self
