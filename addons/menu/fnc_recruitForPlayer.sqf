@@ -20,12 +20,22 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-params[
-    ["_typeUnit", "", [""]]
-];
+_this spawn {
+    params[
+        ["_typeUnit", "", [""]]
+    ];
 
-INFO_2("player %1 wants %2 recruited",name player,_typeUnit);
+    INFO_2("player %1 wants %2 recruited",name player,_typeUnit);
+    TRACE_1(QFUNCMAIN(recruitForPlayer),GVAR(recruitSkipEnemyCheck));
 
-[A3A_faction_reb get _typeUnit] spawn A3A_fnc_reinfPlayer;
+    if !GVAR(recruitSkipEnemyCheck) then {
+        [A3A_faction_reb get _typeUnit] call A3A_fnc_reinfPlayer;
+    } else {
+        private _copy = A3A_fnc_enemyNearCheck;
+        A3A_fnc_enemyNearCheck = { false };
+        [A3A_faction_reb get _typeUnit] call A3A_fnc_reinfPlayer;
+        A3A_fnc_enemyNearCheck = _copy;
+    };
+};
 
 nil;

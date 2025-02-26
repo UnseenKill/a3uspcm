@@ -9,3 +9,13 @@ private _category = localize ELSTRING(main,Title);
     {},
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,recruitSkipEnemyCheck), "CHECKBOX",
+    [ELSTRING(menu,recruitSkipEnemyCheck_DisplayName), ELSTRING(menu,recruitSkipEnemyCheck_Tooltip)],
+    _category,
+    false,
+    1,
+    {},
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
