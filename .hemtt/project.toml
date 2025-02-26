@@ -12,10 +12,13 @@ include = [
 ]
 
 [hemtt.launch.default]
-#mission = "zeus-module-mountstatic.Malden"
 workshop = [
     "450814997", # CBA_A3
     "463939057", # ACE3
     "3020755032", # Antistasi Ultimate
     "1779063631", # ZEN
 ]
+
+[hemtt.launch.malden]
+extends = "default"
+mission = "a3uspcm.Malden"

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Settings">
+        <Key ID="STR_A3USPCM_Settings_Component">
+            <English>A3USPCM - Settings Component</English>
+            <German>A3USPCM - Einstellungen Komponente</German>
+        </Key>
+    </Package>
+</Project>

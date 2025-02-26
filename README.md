@@ -24,7 +24,7 @@ Features
    * (Temporarily) teleport HQ objects (arsenal, garage, map, flag) to your position
  * Replenish player squad outside of HQ
    * Recruit new squad mates in the field
-   * "Enemies close" checks still apply
+   * "Enemies close" checks can be suppressed via addon settings
  * Resources
    * Add money to player and own faction
    * See other factions' resources
