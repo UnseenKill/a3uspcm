@@ -48,6 +48,27 @@ class GVAR(Config) {
             };
         };
 
+        class AAFireControl {
+            caption = CSTRING(DiaryAAFireControlCaption);
+            text = CSTRING(DiaryAAFireControlText);
+            image = QUOTE(a3\ui_f\data\igui\cfg\actions\getingunner_ca.paa);
+            initCallback = QEFUNC(aafc,onMenuInit);
+
+            class AllFire {
+                caption = CSTRING(AAFireControl_AllFireCaption);
+                text = CSTRING(AAFireControl_AllFireText);
+                action = QEFUNC(aafc,toggleROE);
+                params = QUOTE(openFire);
+            };
+
+            class AllHold {
+                caption = CSTRING(AAFireControl_AllHoldCaption);
+                text = CSTRING(AAFireControl_AllHoldText);
+                action = QEFUNC(aafc,toggleROE);
+                params = QUOTE(holdFire);
+            };
+        };
+
         class Teleport {
             caption = CSTRING(DiaryTeleportCaption);
             text = CSTRING(DiaryTeleportText);

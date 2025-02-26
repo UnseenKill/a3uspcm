@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="AAFC">
+        <Key ID="STR_A3USPCM_AAFC_Component">
+            <English>A3USPCM - AAFC Component</English>
+            <German>A3USPCM - AAFC Komponente</German>
+        </Key>
+    </Package>
+</Project>

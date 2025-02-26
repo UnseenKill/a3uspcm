@@ -1,0 +1,2 @@
+PREP(onMenuInit);
+PREP(registerAAGroup);

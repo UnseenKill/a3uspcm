@@ -39,6 +39,11 @@ _entries apply {
 
     if !isNull _record then {
         GVAR(DiaryEntries) set[_name, _record];
+
+        if isText(_x >> "initCallback") then {
+            private _callback = compile format["_this call %1", getText(_x >> "initCallback")];
+            [_name, _record] call _callback;
+        };
     };
 };
 
