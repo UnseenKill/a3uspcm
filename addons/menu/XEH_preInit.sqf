@@ -29,3 +29,5 @@ if !hasInterface exitWith {
 ] call CBA_fnc_addKeybind;
 
 ADDON = true;
+
+GVAR(DiaryActions) = createHashMap;
