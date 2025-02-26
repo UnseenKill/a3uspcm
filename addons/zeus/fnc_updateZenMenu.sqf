@@ -17,6 +17,7 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 if !isClass(configFile >> "CfgPatches" >> "zen_context_menu") exitWith {};
+if !GVAR(enhanceZenContextMenu) exitWith { INFO("zen context menu enhancements disabled") };
 
 private _parentPath = [[
     QGVAR(zenMainMenu),

@@ -213,6 +213,10 @@
             <English>Resources for all factions</English>
             <German>Resources aller Fraktionen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_Category_DisplayName">
+            <English>Common settings</English>
+            <German>Allgemeine Einstellungen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintCaption">
             <English>Summon stragglers</English>
             <German>Rufe Nachzügler herbei</German>
