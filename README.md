@@ -98,7 +98,7 @@ This mod allows you to control groups of anti-air assets. You may order them to 
 6. Group should appear in curatable groups list in Zeus
 7. Group should announce their combat readiness in group chat
 
-\* If, in the meantime, Antistasi AI has mounted some of your statics in selection, you'll have to eject them first. When unsure how to do that, place the **Crew selected static emplacements** module in Zeus; you will have five seconds to select any static your wanted crewed and all previous crew will be ejected and replaced with controllable AI.
+\* If, in the meantime, Antistasi AI has mounted some of your statics in selection, you'll have to eject them first. When unsure how to do that, place the **Crew selected static emplacements** module in Zeus; you'll have five seconds to select any static you wanted crewed and all previous crew will be ejected and replaced with controllable AI.
 
 #### Changing AA ROE
 
