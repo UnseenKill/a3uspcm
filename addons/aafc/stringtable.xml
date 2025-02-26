@@ -5,5 +5,33 @@
             <English>A3USPCM - AAFC Component</English>
             <German>A3USPCM - AAFC Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Menu_ROE_Fire">
+            <English>Fire</English>
+            <German>Feuer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Menu_ROE_Hold">
+            <English>Hold</English>
+            <German>Stopfen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Message_AARegistered">
+            <English>AA group reporting in</English>
+            <German>AA Gruppe meldet Bereitschaft</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Message_ROE_AcceptFire">
+            <English>Weapons free</English>
+            <German>Feuer frei</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Message_ROE_AcceptHold">
+            <English>Holding fire</English>
+            <German>Stelle Feuer ein</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_ROE_Caption">
+            <English>Change AA ROE</English>
+            <German>Ändere AA ROE</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_ROE_NoGroups">
+            <English>You need Zeus assigned AA groups before thinking about changing their ROE.</English>
+            <German>Du brauchst vom Zeus zugewiesene AA Gruppen, bevor du darüber nachdenkst, ihre ROE zu ändern.</German>
+        </Key>
     </Package>
 </Project>

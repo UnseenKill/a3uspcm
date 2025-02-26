@@ -38,4 +38,6 @@ GVAR(updateContext) params[
 
 [_player, _record, _config] call EFUNC(menu,updateDiaryRecord);
 
+leader _group sideChat localize LSTRING(Message_AARegistered);
+
 nil;

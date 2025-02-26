@@ -24,4 +24,17 @@ params[
     ["_mode", "", [""]]
 ];
 
+private _groups = GVAR(groups);
+
+if (_groups isEqualTo []) exitWith {
+    [
+        localize LSTRING(ROE_Caption),
+        localize LSTRING(ROE_NoGroups)
+    ] call A3A_fnc_customHint;
+};
+
+{
+    [_x, _mode] call EFUNC(aafc,toggleROE);
+} forEach _groups;
+
 nil;

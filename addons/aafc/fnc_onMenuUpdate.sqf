@@ -39,7 +39,14 @@ if (GVAR(groups) isEqualTo []) exitWith { _lines };
 _lines pushBack "";
 
 GVAR(groups) apply {
-    _lines pushBack format["- %1", groupId _x];
+    private _text = [_x] call FUNC(getGroupMenuText);
+    private _actions = [_x] call FUNC(getGroupMenuActions);
+
+    if (_actions isEqualTo []) then {
+        _lines pushBack format["* %1", _text];
+    } else {
+        _lines pushBack format["* %1 - %2", _text, _actions joinString " / "];
+    };
 };
 
 _lines;
