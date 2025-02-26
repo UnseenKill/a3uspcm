@@ -29,8 +29,6 @@ if !assert(!isNull _config) exitWith { "" };
 
 private _key = configName _config;
 
-if !assert(!(_key in GVAR(DiaryActions))) exitWith { "" };
-
 GVAR(DiaryActions) set[_key, createHashMapFromArray[
     ["action", [] call compile([_config >> "action", "STRING"] call CBA_fnc_getConfigEntry)],
     ["params", if !isText(_config >> "params") then[{[]}, {[[_config >> "params", "STRING"] call CBA_fnc_getConfigEntry]}]],

@@ -65,18 +65,19 @@ class GVAR(Config) {
             text = CSTRING(DiaryAAFireControlText);
             image = QUOTE(a3\ui_f\data\igui\cfg\actions\getingunner_ca.paa);
             initCallback = QEFUNC(aafc,onMenuInit);
+            updateCallback = QEFUNC(aafc,onMenuUpdate);
 
             class AllFire {
                 caption = CSTRING(AAFireControl_AllFireCaption);
                 text = CSTRING(AAFireControl_AllFireText);
-                action = QEFUNC(aafc,toggleROE);
+                action = QEFUNC(aafc,toggleROEAll);
                 params = QUOTE(openFire);
             };
 
             class AllHold {
                 caption = CSTRING(AAFireControl_AllHoldCaption);
                 text = CSTRING(AAFireControl_AllHoldText);
-                action = QEFUNC(aafc,toggleROE);
+                action = QEFUNC(aafc,toggleROEAll);
                 params = QUOTE(holdFire);
             };
         };

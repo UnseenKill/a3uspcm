@@ -26,6 +26,8 @@ params[
     ["_config", configNull, [configNull]]
 ];
 
+TRACE_3(QFUNC(updateDiaryRecord),_player,_record,_config);
+
 if !assert(!isNull _record) exitWith { diaryRecordNull };
 if !assert(!isNull _config) exitWith { diaryRecordNull };
 
@@ -37,6 +39,11 @@ _lines pushBack "";
 
 "true" configClasses _config apply {
     _lines pushBack format["&#160;&#160;&#160;&#160;%1", [_x] call FUNC(createDiaryRecordAction)];
+};
+
+if isText(_config >> "updateCallback") then {
+    private _callback = compile format["_this call %1", getText(_config >> "updateCallback")];
+    _lines = [player, _record, _config, _lines] call _callback;
 };
 
 _player setDiaryRecordText[[MENU_SUBJECT_ID, _record], [

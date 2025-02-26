@@ -36,7 +36,11 @@ private _groupName = format["%1 %2-%3",
 
 TRACE_1(QFUNC(doCrewStatic),_groupName);
 _group setGroupIdGlobal[_groupName];
-[_group] call EFUNC(aafc,registerAAGroup);
+
+[_group] spawn {
+    uiSleep 2.5;
+    call EFUNC(aafc,registerAAGroup);
+};
 
 _vehicles apply {
     crew _x apply {

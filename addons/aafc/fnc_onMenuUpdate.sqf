@@ -1,37 +1,45 @@
 #include "script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_aafc_fnc_onMenuInit
+Function: A3USPCM_aafc_fnc_onMenuUpdate
 
 Description:
-    Receive the menu init event
+    Receive the menu update event
 
 Parameters:
     0: _player - Player for which to create record <OBJECT>
     1: _entry - Diary entry <OBJECT>
     2: _config - Config for diary record <CONFIG>
+    3: _lines - Lines for the diary record so far <ARRAY>
 
 Optional:
 
 Example:
 
 Returns:
-    Nothing
+    Input variable _lines with additional lines
 
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(onMenuInit),_this);
+TRACE_1(QFUNC(onMenuUpdate),_this);
 
 params[
     ["_player", objNull, [objNull]],
     ["_entry", diaryRecordNull, [diaryRecordNull]],
-    ["_config", configNull, [configNull]]
+    ["_config", configNull, [configNull]],
+    ["_lines", [], []]
 ];
 
 if !assert(!isNull _player) exitWith {};
 if !assert(!isNull _entry) exitWith {};
 if !assert(!isNull _config) exitWith {};
 
-GVAR(updateContext) = _this;
+if (GVAR(groups) isEqualTo []) exitWith { _lines };
 
-nil;
+_lines pushBack "";
+
+GVAR(groups) apply {
+    _lines pushBack format["- %1", groupId _x];
+};
+
+_lines;

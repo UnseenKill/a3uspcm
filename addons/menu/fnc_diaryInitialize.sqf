@@ -42,7 +42,7 @@ _entries apply {
 
         if isText(_x >> "initCallback") then {
             private _callback = compile format["_this call %1", getText(_x >> "initCallback")];
-            [_name, _record] call _callback;
+            [player, _record, _x] call _callback;
         };
     };
 };
