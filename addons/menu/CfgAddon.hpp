@@ -29,6 +29,18 @@ class GVAR(Config) {
                 action = QFUNCMAIN(miscRepairBuildings);
             };
 
+            class FindIntel {
+                caption = CSTRING(Miscellaneous_FindIntelCaption);
+                text = CSTRING(Miscellaneous_FindIntelText);
+                action = QFUNCMAIN(miscFindIntel);
+
+                class Intel {
+                    chemlights[] = {"Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"};
+                    flags[] = {"ace_marker_flags_red","ace_flags_carrier_red"};
+                    laptops[] = {"Land_laptop_03_closed_black_F", "Land_laptop_03_closed_sand_F", "Land_laptop_03_closed_olive_F"};
+                };
+            };
+
             class FixAirDropVehicles {
                 caption = CSTRING(Miscellaneous_FixAirDropVehiclesCaption);
                 text = CSTRING(Miscellaneous_FixAirDropVehiclesText);
