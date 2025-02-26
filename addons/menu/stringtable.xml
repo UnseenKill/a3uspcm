@@ -217,6 +217,14 @@
             <English>Common settings</English>
             <German>Allgemeine Einstellungen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_recruitSkipEnemyCheck_DisplayName">
+            <English>Skip enemy close checks when recruiting</English>
+            <German>Überspringe die Überprüfung auf nahe Gegner beim Rekrutieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_recruitSkipEnemyCheck_Tooltip">
+            <English>Skip enemy close checks when recruiting using the menu in the field</English>
+            <German>Überspringe die Überprüfung auf nahe Gegner beim Rekrutieren über das Menü im Feld</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintCaption">
             <English>Summon stragglers</English>
             <German>Rufe Nachzügler herbei</German>
@@ -332,14 +340,6 @@
         <Key ID="STR_A3USPCM_Menu_Unlocks_LoadoutText">
             <English>Unlock everything in your current loadout.</English>
             <German>Schalte alles von deiner aktuellen Ausrüstung frei.</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_recruitSkipEnemyCheck_DisplayName">
-            <English>Skip enemy close checks when recruiting</English>
-            <German>Überspringe die Überprüfung auf nahe Gegner beim Rekrutieren</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_recruitSkipEnemyCheck_Tooltip">
-            <English>Skip enemy close checks when recruiting using the menu in the field</English>
-            <German>Überspringe die Überprüfung auf nahe Gegner beim Rekrutieren über das Menü im Feld</German>
         </Key>
     </Package>
 </Project>

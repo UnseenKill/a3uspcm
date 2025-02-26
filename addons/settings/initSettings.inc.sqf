@@ -20,7 +20,7 @@
 
 [
     QEGVAR(menu,recruitSkipEnemyCheck), "CHECKBOX",
-    [ELSTRING(menu,recruitSkipEnemyCheck_DisplayName), ELSTRING(menu,recruitSkipEnemyCheck_Tooltip)],
+    [ELSTRING(menu,Settings_recruitSkipEnemyCheck_DisplayName), ELSTRING(menu,Settings_recruitSkipEnemyCheck_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
     false, // default
     true, // global
