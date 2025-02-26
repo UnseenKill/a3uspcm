@@ -35,7 +35,7 @@ INFO_2("'%1' is searching for intel (radius=%2m)",name player,_radius);
 TRACE_4(QGVAR(miscFindIntel),_findAll,_radius,_laptops,_config);
 
 private _sl = nearestObjects[player, ["CAManBase"], _radius, true] select {
-    (!alive _x) && (typeOf _x in _squadLeaders) && 
+    (!alive _x) && ((_unit getVariable["unitType",""]) in _squadLeaders) && 
     (_x getVariable["side", west] isNotEqualTo side player) &&
     (_findAll || (_x getVariable["hasIntel", false]))
 };
