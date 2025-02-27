@@ -29,7 +29,6 @@ _group addEventHandler["EnemyDetected", {
 
     if (_enemy getVariable[QGVAR(mseDetected), false] isNotEqualTo false) exitWith {};
     _enemy setVariable[QGVAR(mseDetected), createHashMap];
-    _enemy setVariable[QGVAR(mseProjectiles), createHashMap];
 
     if GVAR(sideChatContact) then {
         leader _group sideChat format[
@@ -54,8 +53,8 @@ _group addEventHandler["EnemyDetected", {
 
         private _key = hashValue _projectile;
 
-        if (_key in (_unit getVariable QGVAR(mseProjectiles))) exitWith { TRACE_1("Ignoring duplicate missile report",_projectile) };
-        _unit getVariable QGVAR(mseProjectiles) set[_key, true];
+        if (_key in (_unit getVariable QGVAR(mseDetected))) exitWith { TRACE_1("Ignoring duplicate missile report",_projectile) };
+        _unit getVariable QGVAR(mseDetected) set[_key, true];
 
         private _sender = _instigator;
 
@@ -66,26 +65,17 @@ _group addEventHandler["EnemyDetected", {
         if (isNull _sender) then {
             WARNING_2("No sender for incoming missile (veh=%1,instigator=%2)",_vehicle,_instigator);
         } else {
-            private _key = hashValue _sender;
-            private _nextReport = _unit getVariable QGVAR(mseDetected) getOrDefault[_key, 0];
-
-            if (_nextReport > diag_tickTime) then {
-                TRACE_3("Ignoring missile report",_sender,_nextReport,diag_tickTime);
+            private _missile = if isClass(configFile >> "CfgMagazines" >> _ammo) then {
+                DISPLAY_NAME_CLASS(CfgMagazines,_ammo);
             } else {
-                _unit getVariable QGVAR(mseDetected) set[_key, diag_tickTime + (CREW_FIRE_REPORT_INTERVAL_MS / 1000)];
-
-                private _missile = if isClass(configFile >> "CfgMagazines" >> _ammo) then {
-                    DISPLAY_NAME_CLASS(CfgMagazines,_ammo);
+                if isClass(configFile >> "CfgWeapons" >> _ammo) then {
+                    DISPLAY_NAME_CLASS(CfgWeapons,_ammo);
                 } else {
-                    if isClass(configFile >> "CfgWeapons" >> _ammo) then {
-                        DISPLAY_NAME_CLASS(CfgWeapons,_ammo);
-                    } else {
-                        _ammo;
-                    };
+                    _ammo;
                 };
-
-                _sender sideChat format[localize LSTRING(Message_EnemyFiredAt), _missile, DISPLAY_NAME_UNIT(_unit)];
             };
+
+            _sender sideChat format[localize LSTRING(Message_EnemyFiredAt), _missile, DISPLAY_NAME_UNIT(_unit)];
         };
     }];
 }];
