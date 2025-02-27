@@ -1,4 +1,5 @@
 PREP(canUseLoadoutMenu);
+PREP(changeCargoSpace);
 PREP(deleteLoadout);
 PREP(dumpLoadout);
 PREP(getLoadoutMenuChildren);
