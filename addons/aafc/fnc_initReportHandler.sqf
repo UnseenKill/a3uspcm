@@ -42,6 +42,8 @@ _group addEventHandler["EnemyDetected", {
 
     INFO_2("'%1' detected enemy '%2'",_group,_enemy);
 
+    player reveal _enemy;
+
     _enemy addEventHandler["IncomingMissile", {
         params[["_unit",objNull,[objNull]], ["_ammo","",[""]], ["_vehicle",objNull,[objNull]], ["_instigator",objNull,[objNull]], ["_projectile",objNull,[objNull]]];
 
