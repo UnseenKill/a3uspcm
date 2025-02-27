@@ -29,14 +29,22 @@ params[
 
 if !assert(!isNull _group) exitWith {};
 
-GVAR(groups) pushBackUnique _group;
-GVAR(updateContext) params[
-    ["_player", objNull, [objNull]],
-    ["_record", diaryRecordNull, [diaryRecordNull]],
-    ["_config", configNull, [configNull]]
-];
+private _vehicles = [];
+{
+    _vehicles pushBackUnique _x
+} forEach (units _group apply { objectParent _x } select { !isNull _x });
 
-[_player, _record, _config] call EFUNC(menu,updateDiaryRecord);
+_group setVariable[QGVAR(vehicles), _vehicles apply { 
+    _x addEventHandler["Killed", {
+        TRACE_1(QFUNC(vehicleKilled),_this);
+        [] call FUNC(updateMenu);
+    }];
+
+    _x;
+}];
+
+GVAR(groups) pushBackUnique _group;
+
 [_group] call FUNC(initReportHandler);
 
 switch GVAR(defaultInitialMode) do {
@@ -51,5 +59,6 @@ switch GVAR(defaultInitialMode) do {
 };
 
 leader _group sideChat localize LSTRING(Message_AARegistered);
+[] call FUNC(updateMenu);
 
 nil;

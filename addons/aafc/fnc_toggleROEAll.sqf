@@ -34,7 +34,9 @@ if (_groups isEqualTo []) exitWith {
 };
 
 {
-    [_x, _mode] call EFUNC(aafc,toggleROE);
+    [_x, _mode, false] call EFUNC(aafc,toggleROE);
 } forEach _groups;
+
+[] call FUNC(updateMenu);
 
 nil;

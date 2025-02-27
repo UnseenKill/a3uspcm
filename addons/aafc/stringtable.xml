@@ -89,5 +89,9 @@
             <English>AA groups can report launch of a missile at a target via sidechat.</English>
             <German>AA Gruppen können den Abschuss einer Rakete auf ein Ziel über den Sidechat melden.</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_VehicleAbbreviation">
+            <English>veh</English>
+            <German>Fzg</German>
+        </Key>
     </Package>
 </Project>

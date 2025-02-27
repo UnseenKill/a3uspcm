@@ -7,3 +7,4 @@ PREP(registerAAGroup);
 PREP(reloadCheck);
 PREP(toggleROE);
 PREP(toggleROEAll);
+PREP(updateMenu);
