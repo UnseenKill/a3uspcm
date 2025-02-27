@@ -93,6 +93,10 @@
             <English>Apply</English>
             <German>Anwenden</German>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_MenuLoadoutCargoSpace">
+            <English>Change maximum cargo</English>
+            <German>Maximale Ladung ändern</German>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutDelete">
             <English>Delete</English>
             <German>Löschen</German>
@@ -112,6 +116,10 @@
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutSave">
             <English>Save current loadout</English>
             <German>Aktuelle Ausrüstung speichern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_PromptChangeCargoSpace">
+            <English>Change cargo space</English>
+            <German>Frachtraum ändern</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_PromptRenameLoadout">
             <English>Rename loadout to:</English>

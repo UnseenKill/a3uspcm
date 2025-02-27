@@ -3,7 +3,7 @@
         class ACE_Actions {\
             class ACE_MainActions {\
                 class GVAR(LoadoutMenu) {\
-                    displayName = "$STR_A3USPCM_Loadout_MenuLoadout";\
+                    displayName = CSTRING(MenuLoadout);\
                     condition = QUOTE(call FUNC(canUseLoadoutMenu));\
                     insertChildren = QUOTE(call FUNC(getLoadoutMenuChildren));\
                 };\
