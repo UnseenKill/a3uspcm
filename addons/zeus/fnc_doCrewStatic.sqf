@@ -55,13 +55,22 @@ _vehicles apply {
     [_group, _x, _crewClassType] spawn {
         uiSleep 0.5;
         params["_group","_vehicle","_type"];
-        private _unit = _group createUnit[_type, getPosATL _vehicle, [], 0, "NONE"];
-        
-        _unit moveInGunner _vehicle;
-        _unit setSkill 1;
-        _vehicle setVariable[QGVAR(crewed), true, true];
 
-        TRACE_2("Crewed static",_vehicle,_unit);
+        allTurrets[_vehicle, false] apply {
+            private _turret = _x;
+            private _unit = _group createUnit[_type, getPosATL _vehicle, [], 0, "NONE"];
+
+            _unit moveInTurret[_vehicle, _turret];
+            _unit setSkill 1;
+
+            TRACE_3("Crewed static",_vehicle,_unit,_turret);
+        };
+
+        _vehicle allowCrewInImmobile true;
+        _vehicle setVariable[QGVAR(crewed), true, true];
+        _vehicle setVehicleRadar 1;
+        _vehicle setVehicleReceiveRemoteTargets true;
+        _vehicle setVehicleReportRemoteTargets true;
 
         allCurators apply {
             _x addCuratorEditableObjects[[_vehicle], true];
