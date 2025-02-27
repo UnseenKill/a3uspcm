@@ -27,20 +27,15 @@ params[
 
 if !assert(!isNull _config) exitWith { "" };
 
-private _action = if !isText(_config >> "params") then {
-    format[
-        "<execute expression='[] call %1'>%2</execute>",
-        [_config >> "action", "STRING"] call CBA_fnc_getConfigEntry,
-        [_config >> "caption", "STRING"] call CBA_fnc_getConfigEntry
-    ]
-} else {
-    format[
-        "<execute expression='[%1] call %2'>%3</execute>",
-        str([_config >> "params", "STRING"] call CBA_fnc_getConfigEntry),
-        [_config >> "action", "STRING"] call CBA_fnc_getConfigEntry,
-        [_config >> "caption", "STRING"] call CBA_fnc_getConfigEntry
-    ]
-};
+private _key = configName _config;
+
+GVAR(DiaryActions) set[_key, createHashMapFromArray[
+    ["action", [] call compile([_config >> "action", "STRING"] call CBA_fnc_getConfigEntry)],
+    ["params", if !isText(_config >> "params") then[{[]}, {[[_config >> "params", "STRING"] call CBA_fnc_getConfigEntry]}]],
+    ["config", _config]
+]];
+
+private _action = format["<execute expression='[%1] call %2'>%3</execute>", str _key, QFUNC(diaryExecuteAction), [_config >> "caption", "STRING"] call CBA_fnc_getConfigEntry];
 
 if !isText(_config >> "text") exitWith { _action };
 

@@ -29,5 +29,33 @@
             <English>Remove current HC selection from HC</English>
             <German>Aktuelle HC Auswahl aus HC entfernen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Zeus_Settings_Category_DisplayName">
+            <English>Zeus</English>
+            <German>Zeus</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_Settings_enhanceZenContextMenu_DisplayName">
+            <English>Add A3USPCM actions to ZEN context menu</English>
+            <German>Füge A3USPCM Aktionen zum ZEN Kontextmenü hinzu</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_Settings_enhanceZenContextMenu_Tooltip">
+            <English>This option only takes effect if Zeus Enhanced is part of your mod list.</English>
+            <German>Diese Option wirkt sich nur aus, wenn Zeus Enhanced Teil deiner Modliste ist.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_Settings_moduleMSE_transferHC_DisplayName">
+            <English>Transfer crew to HC</English>
+            <German>Besatzung in HC hinzufügen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_Settings_moduleMSE_transferHC_Tooltip">
+            <English>Add crew to high command if using real crew instead of AI.</English>
+            <German>Füge Besatzung zum High Command hinzu, wenn du echte Besatzung anstelle von KI verwendest.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_Settings_moduleMSE_useAI_DisplayName">
+            <English>Use AI as crew</English>
+            <German>Nutze KI als Besatzung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_Settings_moduleMSE_useAI_Tooltip">
+            <English>Use AI to crew static emplacements instead of "real" soldiers.</English>
+            <German>Nutze KI, um statische Waffen zu besetzen anstelle von "echten" Soldaten.</German>
+        </Key>
     </Package>
 </Project>

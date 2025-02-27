@@ -29,6 +29,18 @@ class GVAR(Config) {
                 action = QFUNCMAIN(miscRepairBuildings);
             };
 
+            class FindIntel {
+                caption = CSTRING(Miscellaneous_FindIntelCaption);
+                text = CSTRING(Miscellaneous_FindIntelText);
+                action = QFUNCMAIN(miscFindIntel);
+
+                class Intel {
+                    chemlights[] = {"Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"};
+                    flags[] = {"ace_marker_flags_red","ace_flags_carrier_red"};
+                    laptops[] = {"Land_laptop_03_closed_black_F", "Land_laptop_03_closed_sand_F", "Land_laptop_03_closed_olive_F"};
+                };
+            };
+
             class FixAirDropVehicles {
                 caption = CSTRING(Miscellaneous_FixAirDropVehiclesCaption);
                 text = CSTRING(Miscellaneous_FixAirDropVehiclesText);
@@ -45,6 +57,28 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_ShowRoadblocksCaption);
                 text = CSTRING(Miscellaneous_ShowRoadblocksText);
                 action = QFUNCMAIN(miscShowRoadblocks);
+            };
+        };
+
+        class AAFireControl {
+            caption = CSTRING(DiaryAAFireControlCaption);
+            text = CSTRING(DiaryAAFireControlText);
+            image = QUOTE(a3\ui_f\data\igui\cfg\actions\getingunner_ca.paa);
+            initCallback = QEFUNC(aafc,onMenuInit);
+            updateCallback = QEFUNC(aafc,onMenuUpdate);
+
+            class AllFire {
+                caption = CSTRING(AAFireControl_AllFireCaption);
+                text = CSTRING(AAFireControl_AllFireText);
+                action = QEFUNC(aafc,toggleROEAll);
+                params = QUOTE(openFire);
+            };
+
+            class AllHold {
+                caption = CSTRING(AAFireControl_AllHoldCaption);
+                text = CSTRING(AAFireControl_AllHoldText);
+                action = QEFUNC(aafc,toggleROEAll);
+                params = QUOTE(holdFire);
             };
         };
 

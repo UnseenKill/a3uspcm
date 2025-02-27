@@ -35,7 +35,7 @@ if visibleMap then {
 
 INFO_3("'%1' wants '%2' teleported to them at %3",name player,_objectVariableName,position player);
 
-private _object = [] call compile format["%1", _objectVariableName];
+private _object = missionNamespace getVariable _objectVariableName;
 
 if (isNil "_object") exitWith {
     ERROR_1("global variable '%1' not found",_objectVariableName);
