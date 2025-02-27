@@ -25,6 +25,10 @@
             <English>Fired %1 at %2</English>
             <German>Feuere %1 auf %2</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Message_Reloading">
+            <English>Reloading %1</English>
+            <German>Lade %1 nach</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Message_ROE_AcceptFire">
             <English>Weapons free</English>
             <German>Feuer frei</German>
@@ -44,6 +48,14 @@
         <Key ID="STR_A3USPCM_AAFC_Settings_Category_DisplayName">
             <English>AA fire control</English>
             <German>Luftabwehr Feuerkontrolle</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_autoReload_DisplayName">
+            <English>Auto reload</English>
+            <German>Automatisches Nachladen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_autoReload_Tooltip">
+            <English>Reload ammunition of AA groups once depleted.</English>
+            <German>Munition von AA-Gruppen automatisch nachladen, sobald sie erschöpft ist.</German>
         </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_defaultInitialMode_Angry">
             <English>Fire at will</English>

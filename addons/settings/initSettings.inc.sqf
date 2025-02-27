@@ -1,16 +1,6 @@
 // Zeus
 
 [
-    QEGVAR(zeus,moduleMSE_useAI), "CHECKBOX",
-    [ELSTRING(zeus,Settings_moduleMSE_useAI_DisplayName), ELSTRING(zeus,Settings_moduleMSE_useAI_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(zeus,Settings_Category_DisplayName)],
-    false, // default
-    true, // global
-    {}, // onchange
-    false // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
     QEGVAR(zeus,enhanceZenContextMenu), "CHECKBOX",
     [ELSTRING(zeus,Settings_enhanceZenContextMenu_DisplayName), ELSTRING(zeus,Settings_enhanceZenContextMenu_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(zeus,Settings_Category_DisplayName)],
@@ -37,6 +27,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(aafc,autoReload), "CHECKBOX",
+    [ELSTRING(aafc,Settings_autoReload_DisplayName), ELSTRING(aafc,Settings_autoReload_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(aafc,sideChatContact), "CHECKBOX",
     [ELSTRING(aafc,Settings_sideChatContact_DisplayName), ELSTRING(aafc,Settings_sideChatContact_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
@@ -51,6 +51,16 @@
     [ELSTRING(aafc,Settings_sideChatFired_DisplayName), ELSTRING(aafc,Settings_sideChatFired_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
     true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(zeus,moduleMSE_useAI), "CHECKBOX",
+    [ELSTRING(zeus,Settings_moduleMSE_useAI_DisplayName), ELSTRING(zeus,Settings_moduleMSE_useAI_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    false, // default
     true, // global
     {}, // onchange
     false // Needs mission restart

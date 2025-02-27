@@ -4,5 +4,6 @@ PREP(initReportHandler);
 PREP(onMenuInit);
 PREP(onMenuUpdate);
 PREP(registerAAGroup);
+PREP(reloadCheck);
 PREP(toggleROE);
 PREP(toggleROEAll);
