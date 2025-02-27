@@ -78,7 +78,7 @@ _vehicles apply {
     };
 };
 
-if !(GVAR(moduleMSE_useAI)) then {
+if (!GVAR(moduleMSE_useAI) && GVAR(moduleMSE_transferHC)) then {
     [_group] spawn {
         if !assert(params[["_group",grpNull,[grpNull]]]) exitWith {};
         if !assert(!isNull _group) exitWith {};
@@ -87,8 +87,6 @@ if !(GVAR(moduleMSE_useAI)) then {
 
         INFO_2("transferring group %1 to HC (theBoss=%2)",_group,theBoss);
         theBoss hcSetGroup[_group];
-        _group setCombatBehaviour "COMBAT";
-        _group setCombatMode "RED";
     };
 };
 
