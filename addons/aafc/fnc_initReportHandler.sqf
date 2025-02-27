@@ -29,6 +29,7 @@ _group addEventHandler["EnemyDetected", {
 
     if (_enemy getVariable[QGVAR(mseDetected), false] isNotEqualTo false) exitWith {};
     _enemy setVariable[QGVAR(mseDetected), createHashMap];
+    _enemy setVariable[QGVAR(mseProjectiles), createHashMap];
 
     if GVAR(sideChatContact) then {
         leader _group sideChat format[
@@ -43,11 +44,18 @@ _group addEventHandler["EnemyDetected", {
     INFO_2("'%1' detected enemy '%2'",_group,_enemy);
 
     _enemy addEventHandler["IncomingMissile", {
-        params[["_unit",objNull,[objNull]], ["_ammo","",[""]], ["_vehicle",objNull,[objNull]], ["_instigator",objNull,[objNull]]];
+        params[["_unit",objNull,[objNull]], ["_ammo","",[""]], ["_vehicle",objNull,[objNull]], ["_instigator",objNull,[objNull]], ["_projectile",objNull,[objNull]]];
 
-        TRACE_4("Incoming missile",_unit,_ammo,_vehicle,_instigator);
+        TRACE_5("Incoming missile",_unit,_ammo,_vehicle,_instigator,_projectile);
+
+        [_vehicle] call FUNC(reloadCheck);
 
         if !GVAR(sideChatFired) exitWith {};
+
+        private _key = hashValue _projectile;
+
+        if (_key in (_unit getVariable QGVAR(mseProjectiles))) exitWith { TRACE_1("Ignoring duplicate missile report",_projectile) };
+        _unit getVariable QGVAR(mseProjectiles) set[_key, true];
 
         private _sender = _instigator;
 
