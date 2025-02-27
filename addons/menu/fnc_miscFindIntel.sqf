@@ -113,7 +113,7 @@ private _message = if (_intelFound isEqualTo 0) then {
     format[localize LSTRING(Miscellaneous_FindIntel_IntelFoundText), _intelFound];
 };
 
-[LSTRING(Miscellaneous_FindIntelCaption), _message] call A3A_fnc_customHint;
+[localize LSTRING(Miscellaneous_FindIntelCaption), _message] call A3A_fnc_customHint;
 [] call FUNC(intelCleanupHandler);
 
 nil;

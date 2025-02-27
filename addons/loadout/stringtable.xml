@@ -5,6 +5,22 @@
             <English>A3USPCM - Vehicle Loadout Component</English>
             <German>A3USPCM - Fahrzeugausstattungskomponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_DumpContents">
+            <English>Dump contents</English>
+            <German>Inhalt entladen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_DumpContentsEmpty">
+            <English>Container is empty</English>
+            <German>Gibt nichts zu entladen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_DumpContentsSuccess">
+            <English>Contents of %1 dumped</English>
+            <German>Inhalt von %1 wurde entladen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintCargoSizeChangedText">
+            <English>Maximum cargo for %1 changed to %2</English>
+            <German>Maximale Ladung für %1 auf %2 geändert</German>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutDeletedText">
             <English>Deleted loadout "%1".</English>
             <German>Ausrüstung "%1" gelöscht.</German>
