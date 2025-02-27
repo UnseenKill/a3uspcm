@@ -165,6 +165,10 @@
             <English>Turn into/create lootbox</English>
             <German>Verwandle/Erstelle eine Lootbox</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxHintNoMoneyText">
+            <English>You need %1$ to materialize a lootbox.</English>
+            <German>Du benötigst %1$, um eine Lootbox zu materialisieren.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxHintSuccessText">
             <English>%1 now has loot collecting abilities.</English>
             <German>%1 hat jetzt die Fähigkeit, Loot zu sammeln.</German>
@@ -304,6 +308,14 @@
         <Key ID="STR_A3USPCM_Menu_Settings_findIntelRadius_Tooltip">
             <English>Search for intel this many meters around player</English>
             <German>Suche nach Intel in diesem Radius um den Spieler herum</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_lootboxCost_DisplayName">
+            <English>Lootbox cost</English>
+            <German>Lootbox Preis</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_lootboxCost_Tooltip">
+            <English>When creating a lootbox from thin air, have the player pay this much money for it.</English>
+            <German>Wenn du eine Lootbox aus dem Nichts erschaffst, soll der Spieler so viel dafür bezahlen.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_recruitSkipEnemyCheck_DisplayName">
             <English>Skip enemy close checks when recruiting</English>
