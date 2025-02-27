@@ -30,7 +30,7 @@ if !assert(!isNull _object) exitWith {};
 // Wait until relevant object variables are populated
 uiSleep 5;
 
-while { true } do {
+while { alive player } do {
     uiSleep 1;
 
     if (_object getVariable[QGVAR(teleportOrigin), false] isEqualTo false) then { break };

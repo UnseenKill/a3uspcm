@@ -10,6 +10,7 @@ Parameters:
     1: _roe - ROE to set <STRING>
 
 Optional:
+    2: _updateMenu - Update the menu <BOOL>
 
 Example:
 
@@ -23,7 +24,8 @@ TRACE_1(QFUNC(toggleROE),_this);
 
 params[
     ["_group", grpNull, [grpNull,""]],
-    ["_roe", "", [""]]
+    ["_roe", "", [""]],
+    ["_updateMenu", true, [false]]
 ];
 
 if (_group isEqualType "") then {
@@ -50,6 +52,10 @@ switch _roe do {
     default {
         ERROR_2("%1: Invalid ROE %2",QFUNC(toggleROE),_roe);
     };
+};
+
+if (_updateMenu) then {
+    [] call FUNC(updateMenu);
 };
 
 nil;

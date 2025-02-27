@@ -17,14 +17,6 @@
             <English>Crew selected static emplacements</English>
             <German>Besetze ausgewählte statische Waffen</German>
         </Key>
-        <Key ID="STR_A3USPCM_Zeus_ModuleMSE_Message_EnemyDetected">
-            <English>Detected enemy: %1. Position %2, Range %3km, Heading %4°, Speed %5km/h</English>
-            <German>Feind entdeckt: %1. Position %2, Entfernung %3km, Kurs %4°, Geschwindigkeit %5km/h</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Zeus_ModuleMSE_Message_EnemyFiredAt">
-            <English>Fired %1 at %2</English>
-            <German>Feuere %1 auf %2</German>
-        </Key>
         <Key ID="STR_A3USPCM_Zeus_ModuleMSE_NoStaticsFound">
             <English>No static emplacements in your selection.</English>
             <German>Keine statischen Waffen in deiner Auswahl.</German>
@@ -48,6 +40,14 @@
         <Key ID="STR_A3USPCM_Zeus_Settings_enhanceZenContextMenu_Tooltip">
             <English>This option only takes effect if Zeus Enhanced is part of your mod list.</English>
             <German>Diese Option wirkt sich nur aus, wenn Zeus Enhanced Teil deiner Modliste ist.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_Settings_moduleMSE_transferHC_DisplayName">
+            <English>Transfer crew to HC</English>
+            <German>Besatzung in HC hinzufügen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_Settings_moduleMSE_transferHC_Tooltip">
+            <English>Add crew to high command if using real crew instead of AI.</English>
+            <German>Füge Besatzung zum High Command hinzu, wenn du echte Besatzung anstelle von KI verwendest.</German>
         </Key>
         <Key ID="STR_A3USPCM_Zeus_Settings_moduleMSE_useAI_DisplayName">
             <English>Use AI as crew</English>

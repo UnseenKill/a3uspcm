@@ -101,5 +101,25 @@
             <English>Rename loadout to:</English>
             <German>Ausrüstung umbenennen in:</German>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_Settings_Category_DisplayName">
+            <English>Vehicle loadout</English>
+            <German>Fahrzeugausstattung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_Settings_flagLoadoutRadius_DisplayName">
+            <English>Allow loadout in area around flag</English>
+            <German>Ausrüstung im Bereich um Flagge erlauben</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_Settings_flagLoadoutRadius_Tooltip">
+            <English>Require the player to be in area of this many meters near a flag to apply a loadout.</English>
+            <German>Erfordert, dass sich der Spieler im Umkreis von so vielen Metern um eine Flagge befindet, um eine Ausrüstung anzuwenden.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_Settings_requireFlagProximity_DisplayName">
+            <English>Require flag proximity</English>
+            <German>Flagge muss in der Nähe sein</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_Settings_requireFlagProximity_Tooltip">
+            <English>Require the player to be near a flag to apply a loadout.</English>
+            <German>Du musst dich in der Nähe einer Flagge befinden, um eine Ausrüstung anzuwenden.</German>
+        </Key>
     </Package>
 </Project>

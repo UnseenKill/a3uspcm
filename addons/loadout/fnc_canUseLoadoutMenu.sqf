@@ -31,7 +31,7 @@ if !assert(!isNull _target) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
 
 (alive _target)
-#ifdef LOADOUT_REQUIRE_FLAG_PROXIMITY
-&&
-(nearestObjects[_target, ["FlagCarrier"], FIA_FLAG_LOADOUT_RADIUS] isNotEqualTo []);
-#endif
+&& (
+    !GVAR(requireFlagProximity)
+    || (nearestObjects[_target, ["FlagCarrier"], GVAR(flagLoadoutRadius)] isNotEqualTo [])
+);

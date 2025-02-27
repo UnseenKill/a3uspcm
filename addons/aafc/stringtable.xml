@@ -17,6 +17,14 @@
             <English>AA group reporting in</English>
             <German>AA Gruppe meldet Bereitschaft</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Message_EnemyDetected">
+            <English>Detected enemy: %1. Position %2, Range %3km, Heading %4°, Speed %5km/h</English>
+            <German>Feind entdeckt: %1. Position %2, Entfernung %3km, Kurs %4°, Geschwindigkeit %5km/h</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Message_EnemyFiredAt">
+            <English>Fired %1 at %2</English>
+            <German>Feuere %1 auf %2</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Message_ROE_AcceptFire">
             <English>Weapons free</English>
             <German>Feuer frei</German>
@@ -25,6 +33,10 @@
             <English>Holding fire</English>
             <German>Stelle Feuer ein</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Message_Reloading">
+            <English>Reloading %1</English>
+            <German>Lade %1 nach</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_ROE_Caption">
             <English>Change AA ROE</English>
             <German>Ändere AA ROE</German>
@@ -32,6 +44,54 @@
         <Key ID="STR_A3USPCM_AAFC_ROE_NoGroups">
             <English>You need Zeus assigned AA groups before thinking about changing their ROE.</English>
             <German>Du brauchst vom Zeus zugewiesene AA Gruppen, bevor du darüber nachdenkst, ihre ROE zu ändern.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_Category_DisplayName">
+            <English>AA fire control</English>
+            <German>Luftabwehr Feuerkontrolle</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_autoReload_DisplayName">
+            <English>Auto reload</English>
+            <German>Automatisches Nachladen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_autoReload_Tooltip">
+            <English>Reload ammunition of AA groups once depleted.</English>
+            <German>Munition von AA-Gruppen automatisch nachladen, sobald sie erschöpft ist.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_defaultInitialMode_Angry">
+            <English>Fire at will</English>
+            <German>Feuer frei</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_defaultInitialMode_Calm">
+            <English>Hold fire</English>
+            <German>Nicht feuern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_defaultInitialMode_DisplayName">
+            <English>Initial combat mode</English>
+            <German>Anfänglicher Kampfmodus</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_defaultInitialMode_Tooltip">
+            <English>AA groups will enter this combat mode once spawned.</English>
+            <German>AA Gruppen werden in diesen Kampfmodus eintreten, sobald sie gespawnt sind.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_sideChatContact_DisplayName">
+            <English>Report contacts</English>
+            <German>Kontakte melden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_sideChatContact_Tooltip">
+            <English>AA groups can report new contacts via sidechat.</English>
+            <German>AA Gruppen können neue Kontakte über den Sidechat melden.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_sideChatFired_DisplayName">
+            <English>Report launch</English>
+            <German>Melde Abschuss</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_sideChatFired_Tooltip">
+            <English>AA groups can report launch of a missile at a target via sidechat.</English>
+            <German>AA Gruppen können den Abschuss einer Rakete auf ein Ziel über den Sidechat melden.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_VehicleAbbreviation">
+            <English>veh</English>
+            <German>Fzg</German>
         </Key>
     </Package>
 </Project>
