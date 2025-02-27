@@ -45,6 +45,8 @@ Features
    * Save-game safe
    * Requires items present in arsenal to apply loadout
    * Remember/restore ACE3 cargo items
+   * Change maximum cargo of a vehicle
+   * Dump contents of supply boxes to the ground so you can pick'em up with a lootbox
  * Zeus modules
    * Module that adds any static emplacement in a 100m radius to Zeus curatable objects
    * Module that crews any static emplacement in Zeus' object selection
