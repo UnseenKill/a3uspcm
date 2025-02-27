@@ -37,6 +37,18 @@ GVAR(updateContext) params[
 ];
 
 [_player, _record, _config] call EFUNC(menu,updateDiaryRecord);
+[_group] call FUNC(initReportHandler);
+
+switch GVAR(defaultInitialMode) do {
+    case "FC_DEFAULT_ANGRY": {
+        _group setBehaviour "COMBAT";
+        _group setCombatMode "RED";
+    };
+    case "FC_DEFAULT_CALM": {
+        _group setBehaviour "SAFE";
+        _group setCombatMode "BLUE";
+    };
+};
 
 leader _group sideChat localize LSTRING(Message_AARegistered);
 

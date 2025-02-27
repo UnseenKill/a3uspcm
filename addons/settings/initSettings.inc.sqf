@@ -20,6 +20,42 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+// AA fire control
+
+[
+    QEGVAR(aafc,defaultInitialMode), "LIST",
+    [ELSTRING(aafc,Settings_defaultInitialMode_DisplayName), ELSTRING(aafc,Settings_defaultInitialMode_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    [
+        ["FC_DEFAULT_ANGRY", "FC_DEFAULT_CALM"],
+        [ELSTRING(aafc,Settings_defaultInitialMode_Angry), ELSTRING(aafc,Settings_defaultInitialMode_Calm)],
+        0
+    ], // values
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(aafc,sideChatContact), "CHECKBOX",
+    [ELSTRING(aafc,Settings_sideChatContact_DisplayName), ELSTRING(aafc,Settings_sideChatContact_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(aafc,sideChatFired), "CHECKBOX",
+    [ELSTRING(aafc,Settings_sideChatFired_DisplayName), ELSTRING(aafc,Settings_sideChatFired_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Common
 
 [
