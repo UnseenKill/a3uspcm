@@ -88,6 +88,28 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+// Loadout
+
+[
+    QEGVAR(loadout,requireFlagProximity), "CHECKBOX",
+    [ELSTRING(loadout,Settings_requireFlagProximity_DisplayName), ELSTRING(loadout,Settings_requireFlagProximity_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(loadout,flagLoadoutRadius), "SLIDER",
+    [ELSTRING(loadout,Settings_flagLoadoutRadius_DisplayName), ELSTRING(loadout,Settings_flagLoadoutRadius_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
+    [10, 500, 25, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Intel
 
 [
