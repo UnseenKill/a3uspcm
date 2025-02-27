@@ -147,5 +147,16 @@ if !assert(!isNull _player) exitWith { [] };
         ] call ace_interact_menu_fnc_createAction,
         [],
         _target
+    ],
+    [
+        [
+            QGVAR(MenuLoadoutCargoSpace),
+            localize LSTRING(MenuLoadoutCargoSpace),
+            "",
+            { [{ call FUNC(changeCargoSpace) }, _this] call CBA_fnc_execNextFrame },
+            { true }
+        ] call ace_interact_menu_fnc_createAction,
+        [],
+        _target
     ]
 ];
