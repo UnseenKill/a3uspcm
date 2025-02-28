@@ -26,7 +26,7 @@ class GVAR(Config) {
             class PlaceBeacon {
                 caption = CSTRING(Miscellaneous_PlaceBeaconCaption);
                 text = CSTRING(Miscellaneous_PlaceBeaconText);
-                action = QFUNC(miscPlaceBeacon);
+                action = QFUNCMAIN(miscPlaceBeacon);
             };
 
             class RepairBuildings {
