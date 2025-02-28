@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Assets">
+        <Key ID="STR_A3USPCM_Assets_Component">
+            <English>A3USPCM - Assets Component</English>
+            <German>A3USPCM - Assets Komponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_SuppressionBeacon_DisplayName">
+            <English>Despawn Suppression Beacon</English>
+            <German>Despawn Unterdrückungsbake</German>
+        </Key>
+    </Package>
+</Project>
