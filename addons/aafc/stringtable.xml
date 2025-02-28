@@ -73,6 +73,14 @@
             <English>AA groups will enter this combat mode once spawned.</English>
             <German>AA Gruppen werden in diesen Kampfmodus eintreten, sobald sie gespawnt sind.</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_reportAirOnly_DisplayName">
+            <English>Report air contacts only</English>
+            <German>Nur Luftkontakte melden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_reportAirOnly_Tooltip">
+            <English>AA groups should report aerial contacts only.</English>
+            <German>AA Gruppen sollen nur Luftkontakte melden.</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_sideChatContact_DisplayName">
             <English>Report contacts</English>
             <German>Kontakte melden</German>

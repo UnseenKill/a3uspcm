@@ -189,6 +189,18 @@
             <English>Outskirts</English>
             <German>Stadtrand</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_PlaceBeaconCaption">
+            <English>Buy a DSB</English>
+            <German>Kaufe einen DSB</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_PlaceBeaconHintNoMoneyText">
+            <English>You need %1$ to buy a Despawn Suppressor Beacon™.</English>
+            <German>Du benötigst %1$, um einen Despawn Suppressor Beacon™ zu kaufen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_PlaceBeaconText">
+            <English>Despawn Suppression Beacon™</English>
+            <German>Despawn Suppression Beacon™</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsCaption">
             <English>Repair buildings</English>
             <German>Repariere Gebäude</German>
@@ -276,6 +288,10 @@
         <Key ID="STR_A3USPCM_Menu_Settings_Category_DisplayName">
             <English>Common settings</English>
             <German>Allgemeine Einstellungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_dsbCost_DisplayName">
+            <English>Despawn Suppressor Beacon™ cost</English>
+            <German>Kosten für den Despawn Suppressor Beacon™</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_findIntelAllSL_DisplayName">
             <English>Find all squad leaders</English>
