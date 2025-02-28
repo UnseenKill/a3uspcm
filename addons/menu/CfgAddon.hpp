@@ -23,6 +23,12 @@ class GVAR(Config) {
                 action = QFUNCMAIN(miscMakeLootBox);
             };
 
+            class PlaceBeacon {
+                caption = CSTRING(Miscellaneous_PlaceBeaconCaption);
+                text = CSTRING(Miscellaneous_PlaceBeaconText);
+                action = QFUNC(miscPlaceBeacon);
+            };
+
             class RepairBuildings {
                 caption = CSTRING(Miscellaneous_RepairBuildingsCaption);
                 text = CSTRING(Miscellaneous_RepairBuildingsText);

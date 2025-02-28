@@ -21,6 +21,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(menu,dsbCost), "SLIDER",
+    [ELSTRING(menu,Settings_dsbCost_DisplayName), ELSTRING(menu,Settings_dsbCost_DisplayName)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [0, 5000, 750, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(despawnbeacon,loopSound), "CHECKBOX",
     [ELSTRING(despawnbeacon,Settings_loopSound_DisplayName), ELSTRING(despawnbeacon,Settings_loopSound_DisplayName)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],

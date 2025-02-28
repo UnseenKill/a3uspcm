@@ -7,3 +7,5 @@ PREP(intelCleanupMarker);
 PREP(teleportObjectBack);
 PREP(teleportObjectBackTimer);
 PREP(updateDiaryRecord);
+
+PREP(miscPlaceBeacon);
