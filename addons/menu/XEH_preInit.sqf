@@ -28,6 +28,16 @@ if !hasInterface exitWith {
     }
 ] call CBA_fnc_addKeybind;
 
+[
+    ELSTRING(main,Title),
+    QGVAR(EmergencyInvincibility),
+    [LSTRING(Hotkeys_EmergencyInvincibility), LSTRING(Hotkeys_EmergencyInvincibilityTooltip)],
+    {},
+    {
+        [] call FUNCMAIN(emergencyInvincibility);
+    }
+] call CBA_fnc_addKeybind;
+
 ADDON = true;
 
 GVAR(DiaryActions) = createHashMap;

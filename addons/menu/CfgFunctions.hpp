@@ -1,6 +1,7 @@
 class CfgFunctions {
     class PREFIX {
         class COMPONENT {
+            PATHTO_FNC(emergencyInvincibility);
             PATHTO_FNC(healGroup);
             PATHTO_FNC(healPlayer);
             PATHTO_FNC(miscAddTeamZeus);
@@ -8,6 +9,7 @@ class CfgFunctions {
             PATHTO_FNC(miscFixAirDropVehicles);
             PATHTO_FNC(miscFixAirSupportVehicles);
             PATHTO_FNC(miscMakeLootBox);
+            PATHTO_FNC(miscPlaceBeacon);
             PATHTO_FNC(miscRepairBuildings);
             PATHTO_FNC(miscShowRoadblocks);
             PATHTO_FNC(miscUncompromise);
