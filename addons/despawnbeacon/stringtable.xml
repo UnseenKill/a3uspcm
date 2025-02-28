@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="DespawnBeacon">
+        <Key ID="STR_A3USPCM_DespawnBeacon_ActionActivateText">
+            <English>Activate beacon</English>
+            <German>Aktiviere Funkbake</German>
+        </Key>
+        <Key ID="STR_A3USPCM_DespawnBeacon_ActionDeactivateText">
+            <English>Deactivate beacon</English>
+            <German>Deaktiviere Funkbake</German>
+        </Key>
+        <Key ID="STR_A3USPCM_DespawnBeacon_Component">
+            <English>A3USPCM - Despawn Beacon Component</English>
+            <German>A3USPCM - Despawn Beacon Komponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_DespawnBeacon_MarkerText">
+            <English>Despawn Beacon</English>
+            <German>Despawn Funkbake</German>
+        </Key>
+        <Key ID="STR_A3USPCM_DespawnBeacon_Settings_loopSound_DisplayName">
+            <English>Despawn beacons play sound</English>
+            <German>Despawn Funkbake spielt Sound ab</German>
+        </Key>
+    </Package>
+</Project>

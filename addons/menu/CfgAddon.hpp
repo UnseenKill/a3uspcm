@@ -23,6 +23,12 @@ class GVAR(Config) {
                 action = QFUNCMAIN(miscMakeLootBox);
             };
 
+            class PlaceBeacon {
+                caption = CSTRING(Miscellaneous_PlaceBeaconCaption);
+                text = CSTRING(Miscellaneous_PlaceBeaconText);
+                action = QFUNC(miscPlaceBeacon);
+            };
+
             class RepairBuildings {
                 caption = CSTRING(Miscellaneous_RepairBuildingsCaption);
                 text = CSTRING(Miscellaneous_RepairBuildingsText);
@@ -124,6 +130,18 @@ class GVAR(Config) {
                 caption = CSTRING(Teleport_TeleportFlagCaption);
                 text = CSTRING(Teleport_TeleportFlagText);
                 action = QFUNCMAIN(teleportRebelFlag);
+            };
+        };
+
+        class Trader {
+            caption = CSTRING(DiaryTraderCaption);
+            text = CSTRING(DiaryTraderText);
+            image = QUOTE(\z\a3uspcm\addons\menu\ui\trader_ca.paa);
+
+            class Move {
+                caption = CSTRING(Trader_MoveCaption);
+                text = CSTRING(Trader_MoveText);
+                action = QFUNC(traderMove);
             };
         };
 
