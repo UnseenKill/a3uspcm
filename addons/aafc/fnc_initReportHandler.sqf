@@ -50,7 +50,6 @@ _group addEventHandler["EnemyDetected", {
         TRACE_5("Incoming missile",_unit,_ammo,_vehicle,_instigator,_projectile);
 
         if (isNull _vehicle) exitWith {};
-        if (isNull _instigator) exitWith {};
         if (isNull _projectile) exitWith {};
 
         [_vehicle] call FUNC(reloadCheck);
