@@ -6,6 +6,7 @@ PREP(intelCleanupHandler);
 PREP(intelCleanupMarker);
 PREP(teleportObjectBack);
 PREP(teleportObjectBackTimer);
+PREP(traderMove);
 PREP(updateDiaryRecord);
-
 PREP(miscPlaceBeacon);
+
