@@ -53,6 +53,7 @@ private _continue = try {
 
     true;
 } catch {
+    playSound "A3AP_UiFailure";
     false;
 };
 
