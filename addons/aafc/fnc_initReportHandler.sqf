@@ -27,6 +27,10 @@ if !assert(!isNull _group) exitWith {};
 _group addEventHandler["EnemyDetected", {
     params[["_group",grpNull,[grpNull]],["_enemy",objNull,[objNull]]];
 
+    INFO_2("'%1' detected enemy '%2'",_group,_enemy);
+
+    if (GVAR(reportAirOnly) && !(_enemy isKindOf "Air")) exitWith {};
+
     if (_enemy getVariable[QGVAR(mseDetected), false] isNotEqualTo false) exitWith {};
     _enemy setVariable[QGVAR(mseDetected), createHashMap];
 
@@ -40,14 +44,15 @@ _group addEventHandler["EnemyDetected", {
         ];
     };
 
-    INFO_2("'%1' detected enemy '%2'",_group,_enemy);
-
     player reveal _enemy;
 
     _enemy addEventHandler["IncomingMissile", {
         params[["_unit",objNull,[objNull]], ["_ammo","",[""]], ["_vehicle",objNull,[objNull]], ["_instigator",objNull,[objNull]], ["_projectile",objNull,[objNull]]];
 
         TRACE_5("Incoming missile",_unit,_ammo,_vehicle,_instigator,_projectile);
+
+        if (isNull _vehicle) exitWith {};
+        if (isNull _projectile) exitWith {};
 
         [_vehicle] call FUNC(reloadCheck);
 

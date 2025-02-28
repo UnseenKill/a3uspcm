@@ -38,7 +38,7 @@ if !assert(!isNull _vehicle) exitWith { false };
 private _unloaded = true;
 
 {
-    if (_x isEqualTo "ACE_Wheel" && !_unloadWheels) then {
+    if (_x in ["ACE_Track","ACE_Wheel"] && !_unloadWheels) then {
         TRACE_2("discard",_vehicle,_x);
         [_x, _vehicle] call ace_cargo_fnc_removeCargoItem;
     } else {

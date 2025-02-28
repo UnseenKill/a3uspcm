@@ -5,6 +5,18 @@
             <English>A3USPCM - Vehicle Loadout Component</English>
             <German>A3USPCM - Fahrzeugausstattungskomponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_DumpContents">
+            <English>Dump contents</English>
+            <German>Inhalt entladen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_DumpContentsEmpty">
+            <English>Container is empty</English>
+            <German>Gibt nichts zu entladen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_DumpContentsSuccess">
+            <English>Contents of %1 dumped</English>
+            <German>Inhalt von %1 wurde entladen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_HintCargoSizeChangedText">
             <English>Maximum cargo for %1 changed to %2</English>
             <German>Maximale Ladung für %1 auf %2 geändert</German>
@@ -132,6 +144,14 @@
         <Key ID="STR_A3USPCM_Loadout_Settings_requireFlagProximity_Tooltip">
             <English>Require the player to be near a flag to apply a loadout.</English>
             <German>Du musst dich in der Nähe einer Flagge befinden, um eine Ausrüstung anzuwenden.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_Settings_unloadWheels_DisplayName">
+            <English>Unload repair items</English>
+            <German>Entlade Reparaturgegenstände</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_Settings_unloadWheels_Tooltip">
+            <English>Prior to applying a loadout, vehicle cargo space is cleared and wheels/tracks are discarded; enable this option to keep those.</English>
+            <German>Vor dem Anwenden einer Ausrüstung wird der Laderaum des Fahrzeugs geleert und Räder/Ketten werden verworfen; aktiviere diese Option, um diese beizubehalten.</German>
         </Key>
     </Package>
 </Project>

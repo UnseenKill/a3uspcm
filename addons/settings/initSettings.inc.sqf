@@ -1,3 +1,45 @@
+// Common
+
+[
+    QEGVAR(menu,recruitSkipEnemyCheck), "CHECKBOX",
+    [ELSTRING(menu,Settings_recruitSkipEnemyCheck_DisplayName), ELSTRING(menu,Settings_recruitSkipEnemyCheck_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    false, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,lootboxCost), "SLIDER",
+    [ELSTRING(menu,Settings_lootboxCost_DisplayName), ELSTRING(menu,Settings_lootboxCost_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [0, 5000, 250, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,dsbCost), "SLIDER",
+    [ELSTRING(menu,Settings_dsbCost_DisplayName), ELSTRING(menu,Settings_dsbCost_DisplayName)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [0, 5000, 750, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(despawnbeacon,loopSound), "CHECKBOX",
+    [ELSTRING(despawnbeacon,Settings_loopSound_DisplayName), ELSTRING(despawnbeacon,Settings_loopSound_DisplayName)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Zeus
 
 [
@@ -29,6 +71,16 @@
 [
     QEGVAR(aafc,autoReload), "CHECKBOX",
     [ELSTRING(aafc,Settings_autoReload_DisplayName), ELSTRING(aafc,Settings_autoReload_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(aafc,reportAirOnly), "CHECKBOX",
+    [ELSTRING(aafc,Settings_reportAirOnly_DisplayName), ELSTRING(aafc,Settings_reportAirOnly_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
     true, // default
     true, // global
@@ -76,29 +128,17 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
-// Common
+// Loadout
 
 [
-    QEGVAR(menu,recruitSkipEnemyCheck), "CHECKBOX",
-    [ELSTRING(menu,Settings_recruitSkipEnemyCheck_DisplayName), ELSTRING(menu,Settings_recruitSkipEnemyCheck_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    QEGVAR(loadout,unloadWheels), "CHECKBOX",
+    [ELSTRING(loadout,Settings_unloadWheels_DisplayName), ELSTRING(loadout,Settings_unloadWheels_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
     false, // default
     true, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
-
-[
-    QEGVAR(menu,lootboxCost), "SLIDER",
-    [ELSTRING(menu,Settings_lootboxCost_DisplayName), ELSTRING(menu,Settings_lootboxCost_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
-    [0, 5000, 250, 0], // min,max,default,decimals
-    true, // global
-    {}, // onchange
-    false // Needs mission restart
-] call CBA_fnc_addSetting;
-
-// Loadout
 
 [
     QEGVAR(loadout,requireFlagProximity), "CHECKBOX",

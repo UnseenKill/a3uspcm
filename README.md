@@ -23,6 +23,9 @@ Features
    * Enemy detection side chat messages
    * Fire information side chat messages
    * Change ROE of specific groups or all groups
+ * Despawn Suppression Beacon™
+   * Tired of dying, respawning and teleporting back to the battlefield only to find the loot and vehicles gone?
+   * Tire no more: place the *Despawn Suppression Beacon™* in the respawn radius of a location (default 1.1km)
  * Teleportation
    * Teleport self anywhere on map without wait delay or "enemies close" checks
    * Teleport stragglers in player group to self
@@ -45,6 +48,8 @@ Features
    * Save-game safe
    * Requires items present in arsenal to apply loadout
    * Remember/restore ACE3 cargo items
+   * Change maximum cargo of a vehicle
+   * Dump contents of supply boxes to the ground so you can pick'em up with a lootbox
  * Zeus modules
    * Module that adds any static emplacement in a 100m radius to Zeus curatable objects
    * Module that crews any static emplacement in Zeus' object selection
