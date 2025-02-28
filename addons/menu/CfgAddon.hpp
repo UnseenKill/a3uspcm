@@ -127,6 +127,18 @@ class GVAR(Config) {
             };
         };
 
+        class Trader {
+            caption = CSTRING(DiaryTraderCaption);
+            text = CSTRING(DiaryTraderText);
+            image = QUOTE(\z\a3uspcm\addons\menu\ui\trader_ca.paa);
+
+            class Move {
+                caption = CSTRING(Trader_MoveCaption);
+                text = CSTRING(Trader_MoveText);
+                action = QFUNC(traderMove);
+            };
+        };
+
         class Recruitment {
             caption = CSTRING(DiaryRecruitmentCaption);
             text = CSTRING(DiaryRecruitmentText);

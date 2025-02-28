@@ -73,6 +73,14 @@
             <English>Teleport self or team.</English>
             <German>Teleportiere dich selbst oder dein Team.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryTraderCaption">
+            <English>Weapons trader</English>
+            <German>Waffenhändler</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryTraderText">
+            <English>Move trader or start quest.</English>
+            <German>Ziehe Händler um oder starte den Quest.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryUnlocksCaption">
             <English>Unlock</English>
             <German>Freischalten</German>
@@ -420,6 +428,26 @@
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportVehicleBoxText">
             <English>Move vehicle box to your position</English>
             <German>Verschiebe die Garagenkiste zu deiner Position</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Trader_HintChooseNewLocation">
+            <English>Click on one of the question marks on the map to choose new location.</English>
+            <German>Klicke auf eines der Fragezeichen auf der Karte, um einen neuen Standort auszuwählen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Trader_HintFeatureDisabled">
+            <English>Trader feature is disable via A3U params.</English>
+            <German>Die Händlerfunktion ist über A3U-Parameter deaktiviert.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Trader_HintMoveAborted">
+            <English>Trader move aborted.</English>
+            <German>Händlerumzug abgebrochen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Trader_MoveCaption">
+            <English>Move</English>
+            <German>Umziehen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Trader_MoveText">
+            <English>Move trader location to somewhere else on the map or start the trader quest at that location.</English>
+            <German>Verschiebe den Händlerstandort an einen anderen Ort auf der Karte oder starte die Händlerquest an diesem Ort.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_AcePainkillersCaption">
             <English>ACE3 Painkillers</English>
