@@ -19,6 +19,7 @@ Features
    * Uncompromize team and self so you can go undercover again
    * Show roadblocks on map
    * Find intel around player's position (configurable via addon options)
+   * Emergency invincibility hot-button; press it quickly if you see the APFSDS flying towards you (configurable via addon controls; NO default button).
  * AA Fire Control
    * Enemy detection side chat messages
    * Fire information side chat messages
