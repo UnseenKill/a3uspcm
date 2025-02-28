@@ -34,6 +34,7 @@ if visibleMap then {
                 localize LSTRING(Miscellaneous_MakeLootBoxCaption),
                 format[localize LSTRING(Miscellaneous_MakeLootBoxHintNoMoneyText), GVAR(lootboxCost)]
             ] call A3A_fnc_customHint;
+            playSound "A3AP_UiFailure";
         };
 
         if (isNull _target) then {
