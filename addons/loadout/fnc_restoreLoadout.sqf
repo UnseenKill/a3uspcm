@@ -69,7 +69,7 @@ TRACE_1("_magazines",_magazines);
 TRACE_1("_items",_items);
 
 private _error = try {
-    if !([_vehicle, objNull] call FUNCMAIN(utilAceCargoUnload)) then { throw LSTRING(HintLoadoutErrorAceUnload) };
+    if !([_vehicle, objNull, GVAR(unloadWheels)] call FUNCMAIN(utilAceCargoUnload)) then { throw LSTRING(HintLoadoutErrorAceUnload) };
     if !([_vehicle, _player, _aceCargo] call FUNCMAIN(utilAceCargoLoad)) then { throw LSTRING(HintLoadoutErrorAceLoad) };
 } catch {
     if (_exception isEqualType []) then {

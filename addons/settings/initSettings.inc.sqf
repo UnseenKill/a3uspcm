@@ -79,6 +79,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(aafc,reportAirOnly), "CHECKBOX",
+    [ELSTRING(aafc,Settings_reportAirOnly_DisplayName), ELSTRING(aafc,Settings_reportAirOnly_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(aafc,sideChatContact), "CHECKBOX",
     [ELSTRING(aafc,Settings_sideChatContact_DisplayName), ELSTRING(aafc,Settings_sideChatContact_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
@@ -119,6 +129,16 @@
 ] call CBA_fnc_addSetting;
 
 // Loadout
+
+[
+    QEGVAR(loadout,unloadWheels), "CHECKBOX",
+    [ELSTRING(loadout,Settings_unloadWheels_DisplayName), ELSTRING(loadout,Settings_unloadWheels_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
+    false, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
 
 [
     QEGVAR(loadout,requireFlagProximity), "CHECKBOX",
