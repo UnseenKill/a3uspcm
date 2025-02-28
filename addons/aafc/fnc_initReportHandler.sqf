@@ -27,6 +27,10 @@ if !assert(!isNull _group) exitWith {};
 _group addEventHandler["EnemyDetected", {
     params[["_group",grpNull,[grpNull]],["_enemy",objNull,[objNull]]];
 
+    INFO_2("'%1' detected enemy '%2'",_group,_enemy);
+
+    if (GVAR(reportAirOnly) && !(_enemy isKindOf "Air")) exitWith {};
+
     if (_enemy getVariable[QGVAR(mseDetected), false] isNotEqualTo false) exitWith {};
     _enemy setVariable[QGVAR(mseDetected), createHashMap];
 
@@ -39,8 +43,6 @@ _group addEventHandler["EnemyDetected", {
             getDir _enemy toFixed 1, speed _enemy toFixed 1
         ];
     };
-
-    INFO_2("'%1' detected enemy '%2'",_group,_enemy);
 
     player reveal _enemy;
 
