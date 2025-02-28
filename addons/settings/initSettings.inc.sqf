@@ -111,6 +111,16 @@
 // Loadout
 
 [
+    QEGVAR(loadout,unloadWheels), "CHECKBOX",
+    [ELSTRING(loadout,Settings_unloadWheels_DisplayName), ELSTRING(loadout,Settings_unloadWheels_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
+    false, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(loadout,requireFlagProximity), "CHECKBOX",
     [ELSTRING(loadout,Settings_requireFlagProximity_DisplayName), ELSTRING(loadout,Settings_requireFlagProximity_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
