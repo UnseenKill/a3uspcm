@@ -65,6 +65,12 @@ class GVAR(Config) {
                 action = QFUNCMAIN(miscAddToBuildables);
             };
 
+            class AirAccessAnywhere {
+                caption = CSTRING(Miscellaneous_AirAccessAnywhereCaption);
+                text = CSTRING(Miscellaneous_AirAccessAnywhereText);
+                action = QFUNCMAIN(miscAirAccessAnywhere);
+            };
+
             class ShowRoadblocks {
                 caption = CSTRING(Miscellaneous_ShowRoadblocksCaption);
                 text = CSTRING(Miscellaneous_ShowRoadblocksText);
