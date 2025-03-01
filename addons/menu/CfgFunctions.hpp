@@ -5,6 +5,7 @@ class CfgFunctions {
             PATHTO_FNC(healGroup);
             PATHTO_FNC(healPlayer);
             PATHTO_FNC(miscAddTeamZeus);
+            PATHTO_FNC(miscAddToBuildables);
             PATHTO_FNC(miscFindIntel);
             PATHTO_FNC(miscFixAirDropVehicles);
             PATHTO_FNC(miscFixAirSupportVehicles);

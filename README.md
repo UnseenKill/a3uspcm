@@ -20,13 +20,14 @@ Features
    * Show roadblocks on map
    * Find intel around player's position (configurable via addon options)
    * Emergency invincibility hot-button; press it quickly if you see the APFSDS flying towards you (configurable via addon controls; NO default button).
+   * Add any building you're looking at to base buildable object list
  * AA Fire Control
    * Enemy detection side chat messages
    * Fire information side chat messages
    * Change ROE of specific groups or all groups
  * Despawn Suppression Beacon™
    * Tired of dying, respawning and teleporting back to the battlefield only to find the loot and vehicles gone?
-   * Tire no more: place the *Despawn Suppression Beacon™* in the respawn radius of a location (default 1.1km)
+   * Tire no more: place the *Despawn Suppression Beacon™* in the respawn radius of a location (default 1.1km) and die as often as you like. Nothing will despawn.
  * Teleportation
    * Teleport self anywhere on map without wait delay or "enemies close" checks
    * Teleport stragglers in player group to self
@@ -36,6 +37,7 @@ Features
    * "Enemies close" checks can be suppressed via addon settings
  * Resources
    * Add money to player and own faction
+   * Add HR to faction
    * See other factions' resources
  * Instant healing
    * Heal self/group instantly
