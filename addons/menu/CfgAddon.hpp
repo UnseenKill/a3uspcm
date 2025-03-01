@@ -59,6 +59,12 @@ class GVAR(Config) {
                 action = QFUNCMAIN(miscFixAirSupportVehicles);
             };
 
+            class AddToBuildables {
+                caption = CSTRING(Miscellaneous_AddToBuildablesCaption);
+                text = CSTRING(Miscellaneous_AddToBuildablesText);
+                action = QFUNCMAIN(miscAddToBuildables);
+            };
+
             class ShowRoadblocks {
                 caption = CSTRING(Miscellaneous_ShowRoadblocksCaption);
                 text = CSTRING(Miscellaneous_ShowRoadblocksText);
