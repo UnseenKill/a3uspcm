@@ -34,7 +34,13 @@ GVAR(staticsMountedHandler) = {
     if !assert(!isNull _vehicle) exitWith {};
     if !(_object isKindOf "StaticWeapon") exitWith {};
 
+    TRACE_1(QFUNC(fixCargoLoadedStaticsMounting),_object);
     _object setVariable["lockedForAI", true, true];
+
+    if ((_object isKindOf "StaticMortar") && !(_object getVariable[QGVAR(hasFlagAction), false])) then {
+        _object setVariable[QGVAR(hasFlagAction), true, true];
+        [_object, "static"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _object];
+    };
 
     nil;
 };
