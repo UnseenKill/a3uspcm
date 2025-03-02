@@ -21,6 +21,10 @@
             <English>Maximum cargo for %1 changed to %2</English>
             <German>Maximale Ladung für %1 auf %2 geändert</German>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutConfirmDeletionText">
+            <English>Really delete loadout "%1"?</English>
+            <German>Ausrüstung "%1" wirklich löschen?</German>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutDeletedText">
             <English>Deleted loadout "%1".</English>
             <German>Ausrüstung "%1" gelöscht.</German>
