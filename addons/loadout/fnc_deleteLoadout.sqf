@@ -30,6 +30,8 @@ if !assert(!isNull _player) exitWith {};
 if !assert(!(GVAR(Loadouts) isEqualType false)) exitWith {};
 
 [_index] spawn {
+    params["_index"];
+
     private _guiCaption = localize LSTRING(HintLoadoutManageCaption);
     private _guiText = format[localize LSTRING(HintLoadoutConfirmDeletionText), GVAR(Loadouts) select _index select 0];
 
