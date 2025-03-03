@@ -5,6 +5,7 @@ PREP(deleteLoadout);
 PREP(dumpLoadout);
 PREP(getLoadoutMenuChildren);
 PREP(getLoadouts);
+PREP(initClientDoneHandler);
 PREP(restoreLoadout);
 PREP(renameLoadout);
 PREP(saveLoadout);
