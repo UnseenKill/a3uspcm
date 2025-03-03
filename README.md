@@ -39,6 +39,7 @@ Features
  * Resources
    * Add money to player and own faction
    * Add HR to faction
+   * Transfer money from FIA account to yours (with a configurable markup)
    * See other factions' resources
  * Instant healing
    * Heal self/group instantly

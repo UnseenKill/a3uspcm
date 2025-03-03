@@ -4,6 +4,7 @@ PREP(diaryExecuteAction);
 PREP(diaryInitialize);
 PREP(intelCleanupHandler);
 PREP(intelCleanupMarker);
+PREP(resourcesTransfer);
 PREP(teleportObjectBack);
 PREP(teleportObjectBackTimer);
 PREP(traderMove);

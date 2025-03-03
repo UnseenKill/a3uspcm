@@ -41,7 +41,7 @@ class GVAR(promptMenu) {
             onLoad = QUOTE((_this select 0) ctrlSetText (GVAR(promptMenu) get 'caption'));
         };
         class edit: ACE_gui_editBase {
-            onLoad = QUOTE((_this select 0) ctrlSetText (GVAR(promptMenu) get 'prefill'));
+            onLoad = QUOTE(call FUNC(promptInitEdit));
             idc = 100;
             canModify = 1;
             x = "13.1 * (((safeZoneW / safeZoneH) min 1.2) / 40) + (safeZoneX + (safeZoneW - ((safeZoneW / safeZoneH) min 1.2))/2)";

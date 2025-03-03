@@ -1,1 +1,2 @@
+PREP(promptInitEdit);
 PREP(promptReturn);
