@@ -1,22 +1,17 @@
 #include "script_component.hpp"
 
-// Simply a package which requires other addons.
 class CfgPatches {
     class ADDON {
         name = CSTRING(component);
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {
-            "A3A_core",
-            "A3A_ultimate",
-            "cba_common"
-        };
+        requiredAddons[] = {"a3uspcm_main","a3uspcm_util"};
         author = "$STR_A3USPCM_Author";
-        authors[] = {};
+        authors[] = {"goreSplatter"};
         url = "$STR_A3USPCM_URL";
         VERSION_CONFIG;
     };
 };
 
-#include "CfgSettings.hpp"
+#include "CfgEventHandlers.hpp"

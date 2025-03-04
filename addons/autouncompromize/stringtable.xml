@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="AutoUncompromize">
+        <Key ID="STR_A3USPCM_AutoUncompromize_Component">
+            <English>A3USPCM - A3U Auto Uncompromize Component</English>
+            <German>A3USPCM - A3U Auto Uncompromize Komponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AutoUncompromize_EscapeCaption">
+            <English>Compromized!</English>
+            <German>Entdeckt!</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AutoUncompromize_EscapeText">
+            <English>You've been compromized!&lt;br/&gt;&lt;br/&gt;Escape the area of %1m to uncompromize yourself.</English>
+            <German>Du wurdest entdeckt!&lt;br/&gt;&lt;br/&gt;Entkomme aus dem Gebiet von %1m, um dich zu dekompromittieren.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AutoUncompromize_Settings_escapeZoneRadius_DisplayName">
+            <English>Auto uncompromize escape zone radius</English>
+            <German>Autounkompromittierungsfluchtzonenradius</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AutoUncompromize_Settings_escapeZoneRadius_Tooltip">
+            <English>Radius of the escape zone around the player's position once compromized (0 to deactivate feature)</English>
+            <German>Radius der Fluchtzone um die Position des Spielers (0 zum Deaktivieren der Funktion)</German>
+        </Key>
+    </Package>
+</Project>
