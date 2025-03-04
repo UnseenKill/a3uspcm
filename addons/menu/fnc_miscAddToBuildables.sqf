@@ -41,7 +41,11 @@ TRACE_1(QFUNCMAIN(miscAddToBuildables),_this);
                 [(localize LSTRING(Miscellaneous_AddToBuildablesPricePromptText)) + ":", "150", {
                     params[["_price","",[""]],["_target",objNull,[objNull]]];
 
-                    A3A_buildableObjects pushBack[typeOf _target, parseNumber _price];
+                    private _buildable = [typeOf _target, parseNumber _price];
+
+                    A3A_buildableObjects pushBack _buildable;
+                    GVAR(AdditionalBuildables) pushBack _buildable;
+
                     [QGVAR(AdditionalBuildables), GVAR(AdditionalBuildables)] call A3A_fnc_setStatVariable;
 
                     [
