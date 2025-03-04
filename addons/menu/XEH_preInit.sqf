@@ -40,6 +40,14 @@ if !hasInterface exitWith {
 
 ADDON = true;
 
+GVAR(AdditionalBuildables) = false;
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;
+
+[
+    {
+        INFO("loading additional buildable objects");
+        [] call FUNC(loadAdditionalBuildables);
+    }
+] call FUNCMAIN(utilOnA3UClientInitDone);
