@@ -19,44 +19,21 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-if visibleMap then {
-    openMap false;
-};
+TRACE_1(QFUNCMAIN(miscMakeLootBox),_this);
 
-[] spawn {
-    uiSleep 2.5;
-
-    [cursorTarget] spawn {
+[
+    {
         params[["_target", objNull, [objNull]]];
 
-        if ((isNull _target) && (player getVariable["moneyX", 0] < GVAR(lootboxCost))) exitWith {
+        INFO_2("player %1 wants %2 turned into lootbox",name player,typeOf _target);
+
+        if (0 == getNumber(configOf _target >> "maximumLoad")) exitWith {
             [
                 localize LSTRING(Miscellaneous_MakeLootBoxCaption),
-                format[localize LSTRING(Miscellaneous_MakeLootBoxHintNoMoneyText), GVAR(lootboxCost)]
+                format[localize LSTRING(Miscellaneous_MakeLootBoxHintNoCargoSpaceText), getText(configOf _target >> "displayName")]
             ] call A3A_fnc_customHint;
             playSound "A3AP_UiFailure";
         };
-
-        if (isNull _target) then {
-            private _vector = player weaponDirection currentWeapon player;
-            private _beg = ASLToAGL eyePos player;
-            private _pos = _beg vectorAdd (_vector vectorMultiply 2);
-            _target = createVehicle[A3A_faction_reb get "lootCrate", _pos, [], 0, "NONE"];
-
-            if (GVAR(lootboxCost) > 0) then {
-                [-GVAR(lootboxCost)] call A3A_fnc_resourcesPlayer;
-            };
-
-            [_target] call A3A_Logistics_fnc_addLoadAction;
-            [_target] call A3A_fnc_initMovableObject;
-
-            clearMagazineCargoGlobal _target;
-            clearWeaponCargoGlobal _target;
-            clearItemCargoGlobal _target;
-            clearBackpackCargoGlobal _target;
-        };
-
-        INFO_2("player %1 wants %2 turned into lootbox",name player,typeOf _target);
 
         [_target] remoteExec["SCRT_fnc_loot_addActionLoot", 2];
         
@@ -64,7 +41,12 @@ if visibleMap then {
             localize LSTRING(Miscellaneous_MakeLootBoxCaption),
             format[localize LSTRING(Miscellaneous_MakeLootBoxHintSuccessText), getText(configOf _target >> "displayName")]
         ] call A3A_fnc_customHint;
-    };
-};
+        playSound "A3AP_UiSuccess";
+    },
+    [],
+    {
+        call FUNCMAIN(miscSpawnLootBox);
+    }
+] call FUNCMAIN(utilCursorTargetAction);
 
 nil;

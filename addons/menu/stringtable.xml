@@ -237,6 +237,10 @@
             <English>Turn into/create lootbox</English>
             <German>Verwandle/Erstelle eine Lootbox</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxHintNoCargoSpaceText">
+            <English>Object "%1" has no cargo space.</English>
+            <German>Objekt "%1" hat keinen Frachtraum.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxHintNoMoneyText">
             <English>You need %1$ to materialize a lootbox.</English>
             <German>Du benötigst %1$, um eine Lootbox zu materialisieren.</German>
