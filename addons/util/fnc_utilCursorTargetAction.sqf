@@ -45,7 +45,7 @@ _this spawn {
     params[
         ["_callbackOnTarget", {}, [{}]],
         "_callbackArgs",
-        ["_callbackNoTarget", {}, [{},""]]
+        ["_callbackNoTarget", {}, [{},[]]]
     ];
 
     if isNull(cursorTarget) exitWith {
