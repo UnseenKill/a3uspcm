@@ -377,6 +377,14 @@
             <English>Common settings</English>
             <German>Allgemeine Einstellungen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalBuildablesStartEmpty_DisplayName">
+            <English>Start with empty additional buildings</English>
+            <German>Starte mit leeren zusätzlichen Gebäuden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalBuildablesStartEmpty_Tooltip">
+            <English>When loading a save, do not load additional buildables added by this mod. Don't forget to reset this setting when persisting new additional buildables!</English>
+            <German>Wenn du einen Spielstand lädst, lade keine zusätzlichen, von diesem Mod hinzugefügten, Bauobjekte. Vergiss nicht, diese Einstellung zurückzusetzen, wenn du neue zusätzliche Bauobjekte speicherst!</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_dsbCost_DisplayName">
             <English>Despawn Suppressor Beacon™ cost</English>
             <German>Kosten für den Despawn Suppressor Beacon™</German>

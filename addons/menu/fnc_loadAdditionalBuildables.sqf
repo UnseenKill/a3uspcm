@@ -22,6 +22,13 @@ TRACE_1(QFUNC(loadAdditionalBuildables),_this);
 if (GVAR(AdditionalBuildables) isEqualTo false) then {
     INFO("loading additional buildable objects");
 
+    if GVAR(additionalBuildablesStartEmpty) exitWith {
+        INFO("not loading additional buildable objects, as instructed by setting");
+        
+        GVAR(AdditionalBuildables) = [];
+        [QGVAR(AdditionalBuildables), GVAR(AdditionalBuildables)] call A3A_fnc_setStatVariable;
+    };
+
     [QGVAR(AdditionalBuildables)] call A3A_fnc_getStatVariable;
     
     if ((isNil QGVAR(AdditionalBuildables)) || !(GVAR(AdditionalBuildables) isEqualType [])) then {

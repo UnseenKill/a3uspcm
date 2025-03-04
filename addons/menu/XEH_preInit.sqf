@@ -47,7 +47,6 @@ GVAR(IntelMarkers) = createHashMap;
 
 [
     {
-        INFO("loading additional buildable objects");
         [] call FUNC(loadAdditionalBuildables);
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);

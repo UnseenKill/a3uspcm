@@ -80,6 +80,16 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(menu,additionalBuildablesStartEmpty), "CHECKBOX",
+    [ELSTRING(menu,Settings_additionalBuildablesStartEmpty_DisplayName), ELSTRING(menu,Settings_additionalBuildablesStartEmpty_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    false, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Zeus
 
 [
