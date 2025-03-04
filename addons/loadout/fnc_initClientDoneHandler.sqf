@@ -17,7 +17,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(FUNC(initClientDoneHandler),_this);
+TRACE_1(QFUNC(initClientDoneHandler),_this);
 
 _this spawn {
     INFO("waiting for A3U client init");
