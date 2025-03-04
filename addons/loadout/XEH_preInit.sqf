@@ -5,3 +5,10 @@ ADDON = false;
 ADDON = true;
 
 GVAR(Loadouts) = false;
+
+[
+    {
+        INFO("loading stored loadouts");
+        [] call FUNC(getLoadouts);
+    }
+] call FUNCMAIN(utilOnA3UClientInitDone);

@@ -237,6 +237,10 @@
             <English>Turn into/create lootbox</English>
             <German>Verwandle/Erstelle eine Lootbox</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxHintNoCargoSpaceText">
+            <English>Object "%1" has no cargo space.</English>
+            <German>Objekt "%1" hat keinen Frachtraum.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxHintNoMoneyText">
             <English>You need %1$ to materialize a lootbox.</English>
             <German>Du benötigst %1$, um eine Lootbox zu materialisieren.</German>
@@ -345,6 +349,26 @@
             <English>Resources for all factions</English>
             <German>Resources aller Fraktionen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_TransferCaption">
+            <English>Transfer</English>
+            <German>Überweisung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_TransferConfirmation">
+            <English>Transfer %1$ with a %2%3 markup (%4$) to your account?</English>
+            <German>Überweise %1$ mit einem Aufschlag von %2%3 (%4$) auf dein Konto?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_TransferFailedText">
+            <English>The amount to transfer exceeds your FIA resources.</English>
+            <German>Der zu überweisende Betrag übersteigt deine FIA-Ressourcen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_TransferPrompt">
+            <English>Transfer FIA money to player</English>
+            <German>Überweise Geld von FIA zu Spieler</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Resources_TransferText">
+            <English>Get money back from FIA</English>
+            <German>Hole Geld von FIA zurück</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_CategoryIntel_DisplayName">
             <English>Intelligence finder</English>
             <German>Geheiminformationen auffinden</German>
@@ -352,6 +376,14 @@
         <Key ID="STR_A3USPCM_Menu_Settings_Category_DisplayName">
             <English>Common settings</English>
             <German>Allgemeine Einstellungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalBuildablesStartEmpty_DisplayName">
+            <English>Start with empty additional buildings</English>
+            <German>Starte mit leeren zusätzlichen Gebäuden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalBuildablesStartEmpty_Tooltip">
+            <English>When loading a save, do not load additional buildables added by this mod. Don't forget to reset this setting when persisting new additional buildables!</English>
+            <German>Wenn du einen Spielstand lädst, lade keine zusätzlichen, von diesem Mod hinzugefügten, Bauobjekte. Vergiss nicht, diese Einstellung zurückzusetzen, wenn du neue zusätzliche Bauobjekte speicherst!</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_dsbCost_DisplayName">
             <English>Despawn Suppressor Beacon™ cost</English>
@@ -372,6 +404,14 @@
         <Key ID="STR_A3USPCM_Menu_Settings_emergencyInvincibilityDuration_Tooltip">
             <English>We're not going to let you be invincible forever. Unless you set this value to zero. Unit is seconds.</English>
             <German>Wir werden dich nicht für immer unbesiegbar sein lassen. Es sei denn, du setzt diesen Wert auf Null. Einheit sind Sekunden.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_fiaTransferFee_DisplayName">
+            <English>Money transfer fee (%)</English>
+            <German>Überweisungsgebühr (%)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_fiaTransferFee_Tooltip">
+            <English>When transferring money back from FIA to player account, add this percentage fee.</English>
+            <German>Bei der Rücküberweisung von Geld von FIA auf das Spielerkonto wird diese prozentuale Gebühr erhoben.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_findIntelAllSL_DisplayName">
             <English>Find all squad leaders</English>

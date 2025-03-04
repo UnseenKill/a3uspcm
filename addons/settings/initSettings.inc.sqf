@@ -21,6 +21,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(menu,fiaTransferFee), "SLIDER",
+    [ELSTRING(menu,Settings_fiaTransferFee_DisplayName), ELSTRING(menu,Settings_fiaTransferFee_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [0, 100, 10, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(menu,recruitSkipEnemyCheck), "CHECKBOX",
     [ELSTRING(menu,Settings_recruitSkipEnemyCheck_DisplayName), ELSTRING(menu,Settings_recruitSkipEnemyCheck_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
@@ -58,6 +68,26 @@
     true, // global
     {}, // onchange
     false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(util,cursorTargetActionDelay), "SLIDER",
+    [ELSTRING(util,Settings_cursorTargetActionDelay_DisplayName), ELSTRING(util,Settings_cursorTargetActionDelay_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [0, 5, 2.5, 1], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,additionalBuildablesStartEmpty), "CHECKBOX",
+    [ELSTRING(menu,Settings_additionalBuildablesStartEmpty_DisplayName), ELSTRING(menu,Settings_additionalBuildablesStartEmpty_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    false, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
 // Zeus

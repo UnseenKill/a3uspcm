@@ -17,6 +17,14 @@
             <English>A3USPCM - Utility Component</English>
             <German>A3USPCM - Utility Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Util_Settings_cursorTargetActionDelay_DisplayName">
+            <English>Cursor target actions delay</English>
+            <German>Verzögerung bei Cursorziel Aktionen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Util_Settings_cursorTargetActionDelay_Tooltip">
+            <English>Delay in seconds before cursor target actions are executed</English>
+            <German>Verzögerung in Sekunden bevor Cursorziel Aktionen ausgeführt werden</German>
+        </Key>
         <Key ID="STR_A3USPCM_Util_TextBtnOK">
             <English>OK</English>
             <German>OK</German>

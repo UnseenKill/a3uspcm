@@ -14,6 +14,7 @@ class CfgFunctions {
             PATHTO_FNC(miscPlaceBeacon);
             PATHTO_FNC(miscRepairBuildings);
             PATHTO_FNC(miscShowRoadblocks);
+            PATHTO_FNC(miscSpawnLootBox);
             PATHTO_FNC(miscUncompromise);
             PATHTO_FNC(recruitForPlayer);
             PATHTO_FNC(resourcesAddFactionMoney);

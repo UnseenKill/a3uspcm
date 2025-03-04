@@ -243,6 +243,12 @@ class GVAR(Config) {
                 action = QFUNCMAIN(resourcesAddHR);
             };
 
+            class Transfer {
+                caption = CSTRING(Resources_TransferCaption);
+                text = CSTRING(Resources_TransferText);
+                action = QFUNC(resourcesTransfer);
+            };
+
             class ShowResourcesAll {
                 caption = CSTRING(Resources_ShowResourcesAllCaption);
                 text = CSTRING(Resources_ShowResourcesAllText);

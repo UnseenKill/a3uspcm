@@ -20,7 +20,7 @@ Features
    * Show roadblocks on map
    * Find intel around player's position (configurable via addon options)
    * Emergency invincibility hot-button; press it quickly if you see the APFSDS flying towards you (configurable via addon controls; NO default button).
-   * Add any building you're looking at to base buildable object list
+   * Add any building you're looking at to base buildable object list (added to save-game data)
    * Access your air assets from any garage. They *are* air assets after all, right?
  * AA Fire Control
    * Enemy detection side chat messages
@@ -39,6 +39,7 @@ Features
  * Resources
    * Add money to player and own faction
    * Add HR to faction
+   * Transfer money from FIA account to yours (with a configurable markup)
    * See other factions' resources
  * Instant healing
    * Heal self/group instantly
