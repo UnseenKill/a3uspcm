@@ -57,7 +57,11 @@ _this spawn {
         };
     };
 
-    [cursorTarget, _callbackArgs] call _callbackOnTarget;
+    if isNil "_callbackArgs" then {
+        [cursorTarget] call _callbackOnTarget;
+    } else {
+        [cursorTarget, _callbackArgs] call _callbackOnTarget;
+    };
 };
 
 nil;
