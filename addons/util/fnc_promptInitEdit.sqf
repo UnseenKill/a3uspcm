@@ -35,6 +35,7 @@ _control ctrlAddEventHandler["KeyUp", {
     params ["_displayOrControl","_key","_shift","_ctrl","_alt"];
 
     if (_key isEqualTo DIK_RETURN) then {
+        closeDialog 1;
         call FUNC(promptReturn);
     };
 }];
