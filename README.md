@@ -49,6 +49,9 @@ Features
    * Unlock ACE3 Painkillers for arsenal
    * Unlock breaching charges for tanks and APCs
    * Unlock your current loadout
+   * Sort that damn mess of an arsenal
+   * Unlock from a container that's close to arsenal box (ACE3 interaction)
+   * Discard items from arsenal so you're able to sell'em again
  * Vehicle loadout management
    * Remember a vehicle's inventory and make it available to apply such loadout
    * Save-game safe

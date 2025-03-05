@@ -605,5 +605,13 @@
             <English>Unlock everything in your current loadout.</English>
             <German>Schalte alles von deiner aktuellen Ausrüstung frei.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_SortArsenalCaption">
+            <English>Sort arsenal</English>
+            <German>Sortiere Arsenal</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_SortArsenalText">
+            <English>Get this mess in order.</English>
+            <German>Saustall und so.</German>
+        </Key>
     </Package>
 </Project>

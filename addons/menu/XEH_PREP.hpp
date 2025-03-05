@@ -9,4 +9,5 @@ PREP(resourcesTransfer);
 PREP(teleportObjectBack);
 PREP(teleportObjectBackTimer);
 PREP(traderMove);
+PREP(unlockSortArsenal);
 PREP(updateDiaryRecord);
