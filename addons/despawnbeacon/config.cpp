@@ -4,7 +4,7 @@ class CfgPatches {
     class ADDON {
         name = CSTRING(component);
         units[] = {};
-        weapons[] = {};
+        weapons[] = {QGVAR(PackedBeacon)};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"a3uspcm_assets","a3uspcm_util"};
         author = "$STR_A3USPCM_Author";
@@ -16,3 +16,4 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgWeapons.hpp"

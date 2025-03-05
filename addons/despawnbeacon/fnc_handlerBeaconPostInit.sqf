@@ -26,6 +26,7 @@ params[
 
 if !assert(!isNull _beacon) exitWith {};
 
+_beacon allowDamage false;
 GVAR(Entities) pushBackUnique _beacon;
 
 [
@@ -47,6 +48,17 @@ GVAR(Entities) pushBackUnique _beacon;
         "",
         { call FUNC(deactivateBeacon) },
         { call FUNC(canDeactivate) }
+    ] call ace_interact_menu_fnc_createAction
+] call ace_interact_menu_fnc_addActionToObject;
+
+[
+    _beacon, 0, ["ACE_MainActions"],
+    [
+        QGVAR(ActionBeaconPack),
+        localize LSTRING(ActionBeaconPackText),
+        "",
+        { call FUNC(packBeacon) },
+        { call FUNC(canPack) }
     ] call ace_interact_menu_fnc_createAction
 ] call ace_interact_menu_fnc_addActionToObject;
 

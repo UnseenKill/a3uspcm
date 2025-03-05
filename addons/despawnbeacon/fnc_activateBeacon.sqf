@@ -24,10 +24,13 @@ Author:
 TRACE_1(QFUNC(activateBeacon),_this);
 
 params[
-    ["_beacon", objNull, [objNull]]
+    ["_beacon", objNull, [objNull]],
+    ["_player", objNull, [objNull]]
 ];
 
 if !assert(!isNull _beacon) exitWith {};
+
+[_player, "PutDown"] call ace_common_fnc_doGesture;
 
 private _marker = createMarkerLocal[[] call FUNCMAIN(utilGenerateUniqueId), getPosATL _beacon];
 _marker setMarkerTypeLocal "hd_dot_noShadow";
