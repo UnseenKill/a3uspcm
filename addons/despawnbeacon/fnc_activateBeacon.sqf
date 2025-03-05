@@ -54,8 +54,6 @@ _uav hideObjectGlobal true;
 
 _beacon setVariable[QGVAR(UAV), _uav];
 
-allCurators apply { _x addCuratorEditableObjects[[_uav], true] };
-
 if GVAR(loopSound) then {
     [_beacon] spawn {
         params["_beacon"];
