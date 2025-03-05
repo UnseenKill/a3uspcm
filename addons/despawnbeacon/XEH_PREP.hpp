@@ -1,7 +1,11 @@
 PREP(activateBeacon);
 PREP(canActivate);
 PREP(canDeactivate);
+PREP(canPack);
+PREP(canUnpack);
 PREP(deactivateBeacon);
 PREP(handlerBeaconPostInit);
 PREP(onBeaconLoaded);
 PREP(onBeaconUnloaded);
+PREP(packBeacon);
+PREP(unpackBeacon);

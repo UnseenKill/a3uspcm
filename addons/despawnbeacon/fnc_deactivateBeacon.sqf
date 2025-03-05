@@ -24,10 +24,13 @@ Author:
 TRACE_1(QFUNC(deactivateBeacon),_this);
 
 params[
-    ["_beacon", objNull, [objNull]]
+    ["_beacon", objNull, [objNull]],
+    ["_player", objNull, [objNull]]
 ];
 
 if !assert(!isNull _beacon) exitWith {};
+
+[_player, "PutDown"] call ace_common_fnc_doGesture;
 
 private _uav = _beacon getVariable[QGVAR(UAV), objNull];
 

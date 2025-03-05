@@ -24,10 +24,13 @@ Author:
 TRACE_1(QFUNC(activateBeacon),_this);
 
 params[
-    ["_beacon", objNull, [objNull]]
+    ["_beacon", objNull, [objNull]],
+    ["_player", objNull, [objNull]]
 ];
 
 if !assert(!isNull _beacon) exitWith {};
+
+[_player, "PutDown"] call ace_common_fnc_doGesture;
 
 private _marker = createMarkerLocal[[] call FUNCMAIN(utilGenerateUniqueId), getPosATL _beacon];
 _marker setMarkerTypeLocal "hd_dot_noShadow";
@@ -50,8 +53,6 @@ _uav allowDamage false;
 _uav hideObjectGlobal true;
 
 _beacon setVariable[QGVAR(UAV), _uav];
-
-allCurators apply { _x addCuratorEditableObjects[[_uav], true] };
 
 if GVAR(loopSound) then {
     [_beacon] spawn {
