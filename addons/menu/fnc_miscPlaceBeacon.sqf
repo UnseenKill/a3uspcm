@@ -27,7 +27,7 @@ if ((player getVariable["moneyX", 0] < GVAR(dsbCost))) exitWith {
     playSound "A3AP_UiFailure";
 };
 
-private _beacon = QEGVAR(assets,DespawnSuppressionBeacon) createVehicle getPosATL player;
+private _beacon = createVehicle[QEGVAR(assets,DespawnSuppressionBeacon), player modelToWorld[0,1,0], [], 5, "NONE"];
 _beacon say3D QEGVAR(assets,RadioWave);
 
 if (GVAR(dsbCost) > 0) then {
