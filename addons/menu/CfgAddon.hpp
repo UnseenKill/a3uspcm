@@ -281,6 +281,12 @@ class GVAR(Config) {
                 text = CSTRING(Unlocks_LoadoutText);
                 action = QFUNCMAIN(unlockLoadout);
             };
+
+            class SortArsenal {
+                caption = CSTRING(Unlocks_SortArsenalCaption);
+                text = CSTRING(Unlocks_SortArsenalText);
+                action = QFUNC(unlockSortArsenal);
+            };
         };
 
         class Healing {

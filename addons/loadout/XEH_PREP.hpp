@@ -1,3 +1,8 @@
+PREP(arsenalDiscard);
+PREP(arsenalProcessContainer);
+PREP(arsenalUnlock);
+PREP(canDiscard);
+PREP(canUnlock);
 PREP(canUseLoadoutMenu);
 PREP(changeCargoSpace);
 PREP(containerDumpContents);
