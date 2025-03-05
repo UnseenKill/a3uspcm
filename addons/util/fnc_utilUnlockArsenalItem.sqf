@@ -10,6 +10,7 @@ Parameters:
 
 Optional:
     1: _silent - Suppress hint message for already unlocked items <BOOL>
+    2: _unlock - Unlock (TRUE) or discard (FALSE) items <BOOL>
 
 Example:
     (begin example)
@@ -24,21 +25,33 @@ Author:
 ---------------------------------------------------------------------------- */
 params[
     ["_className", "", [""]],
-    ["_silent", false, [false]]
+    ["_silent", false, [false]],
+    ["_unlock", true, [false]]
 ];
 
-TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_className);
+TRACE_2(QFUNCMAIN(utilUnlockArsenalItem),_unlock,_className);
 
 private _index = _className call jn_fnc_arsenal_itemType;
 private _arsenal = jna_datalist select _index;
 private _count = [_arsenal, _className] call jn_fnc_arsenal_itemCount;
 
 private _message = if (_count < 0) then {
-    [LSTRING(ArsenalItemNotUnlocked), ""] select _silent;
+    if _unlock then {
+        [LSTRING(ArsenalItemNotUnlocked), ""] select _silent;
+    } else {
+        TRACE_1("arsenal",_arsenal);
+        _arsenal = _arsenal select { _x isNotEqualTo[_className, -1] };
+        jna_datalist set[_index, _arsenal];
+        LSTRING(ArsenalItemDiscarded);
+    };
 } else {
-    private _result = [_className] call A3A_fnc_unlockEquipment;
-    TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_result);
-    LSTRING(ArsenalItemUnlocked);
+    if !_unlock then {
+        [LSTRING(ArsenalItemNotDiscarded), ""] select _silent;
+    } else {
+        private _result = [_className] call A3A_fnc_unlockEquipment;
+        TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_result);
+        LSTRING(ArsenalItemUnlocked);
+    };
 };
 
 if (_message isNotEqualTo "") then {

@@ -31,6 +31,7 @@ if !assert(!isNull _target) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
 
 (alive _target)
+&& (getNumber(configOf _target >> "maximumLoad") > 0)
 && (
     !GVAR(requireFlagProximity)
     || (nearestObjects[_target, ["FlagCarrier"], GVAR(flagLoadoutRadius)] isNotEqualTo [])

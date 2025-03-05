@@ -28,7 +28,20 @@ class CfgVehicles {
             class ACE_MainActions {
                 class GVAR(DumpContents) {
                     displayName = CSTRING(DumpContents);
+                    condition = QUOTE(call FUNCMAIN(utilVehicleHasCargo));
                     statement = QUOTE(call FUNC(containerDumpContents));
+                };
+
+                class GVAR(ArsenalUnlock) {
+                    displayName = CSTRING(ArsenalUnlock);
+                    condition = QUOTE(call FUNC(canUnlock));
+                    statement = QUOTE(call FUNC(arsenalUnlock));
+                };
+
+                class GVAR(ArsenalDiscard) {
+                    displayName = CSTRING(ArsenalDiscard);
+                    condition = QUOTE(call FUNC(canDiscard));
+                    statement = QUOTE(call FUNC(arsenalDiscard));
                 };
             };
         };
