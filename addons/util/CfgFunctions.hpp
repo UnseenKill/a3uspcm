@@ -5,8 +5,10 @@ class CfgFunctions {
             PATHTO_FNC(utilAceCargoLoad);
             PATHTO_FNC(utilAceCargoUnload);
             PATHTO_FNC(utilContainerCargoCopy);
+            PATHTO_FNC(utilCursorTargetAction);
             PATHTO_FNC(utilGenerateUniqueID);
             PATHTO_FNC(utilIsDaytime);
+            PATHTO_FNC(utilOnA3UClientInitDone);
             PATHTO_FNC(utilPromptText);
             PATHTO_FNC(utilSpreadPoint);
             PATHTO_FNC(utilUnlockArsenalItem);

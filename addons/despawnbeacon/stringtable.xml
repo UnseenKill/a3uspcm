@@ -5,6 +5,14 @@
             <English>Activate beacon</English>
             <German>Aktiviere Funkbake</German>
         </Key>
+        <Key ID="STR_A3USPCM_DespawnBeacon_ActionBeaconPackText">
+            <English>Pack up beacon</English>
+            <German>Funkbake einpacken</German>
+        </Key>
+        <Key ID="STR_A3USPCM_DespawnBeacon_ActionBeaconUnpackText">
+            <English>Unpack DSB</English>
+            <German>DSB entpacken</German>
+        </Key>
         <Key ID="STR_A3USPCM_DespawnBeacon_ActionDeactivateText">
             <English>Deactivate beacon</English>
             <German>Deaktiviere Funkbake</German>
@@ -17,9 +25,25 @@
             <English>Despawn Beacon</English>
             <German>Despawn Funkbake</German>
         </Key>
+        <Key ID="STR_A3USPCM_DespawnBeacon_PackedBeacon">
+            <English>Packed DSB</English>
+            <German>Eingepackter DSB</German>
+        </Key>
+        <Key ID="STR_A3USPCM_DespawnBeacon_PackedBeaconDesc">
+            <English>Despawn Suppression Beacon™ all packed up and ready to deploy</English>
+            <German>Despawn Suppression Beacon™ komplett verpackt und bereit zum Einsatz</German>
+        </Key>
+        <Key ID="STR_A3USPCM_DespawnBeacon_PackingBeaconProgressText">
+            <English>Packing DSB</English>
+            <German>Verpacke DSB</German>
+        </Key>
         <Key ID="STR_A3USPCM_DespawnBeacon_Settings_loopSound_DisplayName">
             <English>Despawn beacons play sound</English>
             <German>Despawn Funkbake spielt Sound ab</German>
+        </Key>
+        <Key ID="STR_A3USPCM_DespawnBeacon_UnpackingBeaconProgressText">
+            <English>Unpacking DSB</English>
+            <German>Entpacke DSB</German>
         </Key>
     </Package>
 </Project>

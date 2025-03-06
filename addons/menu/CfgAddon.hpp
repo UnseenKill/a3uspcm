@@ -243,6 +243,12 @@ class GVAR(Config) {
                 action = QFUNCMAIN(resourcesAddHR);
             };
 
+            class Transfer {
+                caption = CSTRING(Resources_TransferCaption);
+                text = CSTRING(Resources_TransferText);
+                action = QFUNC(resourcesTransfer);
+            };
+
             class ShowResourcesAll {
                 caption = CSTRING(Resources_ShowResourcesAllCaption);
                 text = CSTRING(Resources_ShowResourcesAllText);
@@ -274,6 +280,12 @@ class GVAR(Config) {
                 caption = CSTRING(Unlocks_LoadoutCaption);
                 text = CSTRING(Unlocks_LoadoutText);
                 action = QFUNCMAIN(unlockLoadout);
+            };
+
+            class SortArsenal {
+                caption = CSTRING(Unlocks_SortArsenalCaption);
+                text = CSTRING(Unlocks_SortArsenalText);
+                action = QFUNC(unlockSortArsenal);
             };
         };
 

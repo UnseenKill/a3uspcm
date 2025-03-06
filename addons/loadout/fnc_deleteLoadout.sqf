@@ -29,12 +29,21 @@ if !assert(!isNull _vehicle) exitWith {};
 if !assert(!isNull _player) exitWith {};
 if !assert(!(GVAR(Loadouts) isEqualType false)) exitWith {};
 
-private _lo = GVAR(Loadouts) deleteAt _index;
-[QGVAR(Loadouts), GVAR(Loadouts)] call A3A_fnc_setStatVariable;
+[_index] spawn {
+    params["_index"];
 
-[
-    localize LSTRING(HintLoadoutManageCaption),
-    format[localize LSTRING(HintLoadoutDeletedText), _lo select 0]
-] call A3A_fnc_customHint;
+    private _guiCaption = localize LSTRING(HintLoadoutManageCaption);
+    private _guiText = format[localize LSTRING(HintLoadoutConfirmDeletionText), GVAR(Loadouts) select _index select 0];
+
+    if !([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) exitWith {};
+
+    private _lo = GVAR(Loadouts) deleteAt _index;
+    [QGVAR(Loadouts), GVAR(Loadouts)] call A3A_fnc_setStatVariable;
+
+    [
+        localize LSTRING(HintLoadoutManageCaption),
+        format[localize LSTRING(HintLoadoutDeletedText), _lo select 0]
+    ] call A3A_fnc_customHint;
+};
 
 nil;

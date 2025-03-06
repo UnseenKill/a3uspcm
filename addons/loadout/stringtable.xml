@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="Loadout">
+        <Key ID="STR_A3USPCM_Loadout_ArsenalDiscard">
+            <English>Discard contents from arsenal</English>
+            <German>Inhalt aus Arsenal entfernen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_ArsenalProcessContainerCleanConfirm">
+            <English>Items processed. Clear container now?</English>
+            <German>Gegenstände verarbeitet. Container jetzt leeren?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_ArsenalUnlock">
+            <English>Unlock contents in arsenal</English>
+            <German>Inhalt im Arsenal freischalten</German>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_Component">
             <English>A3USPCM - Vehicle Loadout Component</English>
             <German>A3USPCM - Fahrzeugausstattungskomponente</German>
@@ -20,6 +32,10 @@
         <Key ID="STR_A3USPCM_Loadout_HintCargoSizeChangedText">
             <English>Maximum cargo for %1 changed to %2</English>
             <German>Maximale Ladung für %1 auf %2 geändert</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutConfirmDeletionText">
+            <English>Really delete loadout "%1"?</English>
+            <German>Ausrüstung "%1" wirklich löschen?</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutDeletedText">
             <English>Deleted loadout "%1".</English>
