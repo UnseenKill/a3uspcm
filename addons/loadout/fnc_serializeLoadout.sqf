@@ -43,7 +43,8 @@ if (_loadoutName isEqualTo "") then {
 private _loadout = [
     _loadoutName,
     [_vehicle] call FUNCMAIN(utilAceCargoGetLoaded),
-    [_bp, _wc, _mc, _ic]
+    [_bp, _wc, _mc, _ic],
+    [typeOf _vehicle, magazinesAllTurrets _vehicle]
 ];
 
 _loadout;
