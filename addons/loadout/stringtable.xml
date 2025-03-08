@@ -37,6 +37,10 @@
             <English>Really delete loadout "%1"?</English>
             <German>Ausrüstung "%1" wirklich löschen?</German>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutConfirmOverwriteText">
+            <English>Overwrite loadout "%1"?</English>
+            <German>Ausrüstung "%1" wirklich überschreiben?</German>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutDeletedText">
             <English>Deleted loadout "%1".</English>
             <German>Ausrüstung "%1" gelöscht.</German>
@@ -72,6 +76,10 @@
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutNotSavedText">
             <English>The vehicle's current loadout COULD NOT be saved.</English>
             <German>Die aktuelle Ausrüstung des Fahrzeugs konnte NICHT gespeichert werden.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintLoadoutOverwrittenText">
+            <English>Loadout "%1" overwritten.</English>
+            <German>Ausrüstung "%1" überschrieben.</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_HintLoadoutRenamedText">
             <English>Loadout renamed to "%1".</English>
@@ -124,6 +132,10 @@
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutManage">
             <English>Manage saved loadouts</English>
             <German>Gespeicherte Ausrüstungen verwalten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_MenuLoadoutOverwrite">
+            <English>Overwrite</English>
+            <German>Überschreiben</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutRename">
             <English>Rename</English>

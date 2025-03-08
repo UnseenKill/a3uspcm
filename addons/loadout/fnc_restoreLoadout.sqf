@@ -137,6 +137,8 @@ private _message = [LSTRING(HintLoadoutRestoredPartialText), LSTRING(HintLoadout
     format[localize _message, _title, getText(configOf _vehicle >> "displayName")]
 ] call A3A_fnc_customHint;
 
+playSound(["A3AP_UiFailure","A3AP_UiSuccess"] select (_messages isEqualTo []));
+
 _messages apply { systemChat _x };
 
 nil;
