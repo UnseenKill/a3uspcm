@@ -6,6 +6,17 @@ A3USPCM
 [![pipeline status](https://gitlab.perfect-co.de/arma3/a3uspcm/badges/dev/pipeline.svg)](https://gitlab.perfect-co.de/arma3/a3uspcm/-/commits/dev)
 [![Latest Release](https://gitlab.perfect-co.de/arma3/a3uspcm/-/badges/release.svg)](https://gitlab.perfect-co.de/arma3/a3uspcm/-/releases)
 
+Although Antistasi isn't made primarily with solo-gameplay in mind, it's playable
+if you accept a few discomforts that this mod aims to counteract. Some features
+like AA Fire Control, the *Despawn Suppression Beacon™* and accessing your air
+assets from anywhere do *help* you with single player gameplay and others are
+outright cheats.
+
+Many features can be configured via the addon settings and tweaked so it doesn't
+completely feel like cheating; more like getting assistance. E.g. you may
+choose that the "find intel" feature places its hints *close* to intel instead of
+directly on top of it, transfer FIA money back to your account with a markup, etc.
+
 Features
 --------
 
@@ -121,7 +132,7 @@ Once groups have been created, they are available for fire control via the **AA 
 ### Required mods
 
  * [Antistasi Ultimate - Mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032)
- * [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057) - Healing and vehicle loadout works _exclusively_ with ACE3
+ * [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057) - Healing, vehicle loadout and object interactions work _exclusively_ with ACE3
 
 Bugs
 ----
