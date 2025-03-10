@@ -89,6 +89,19 @@ if !assert(!isNull _player) exitWith { [] };
                                     ],
                                     [
                                         [
+                                            format["%1_%2_overwrite", QGVAR(MenuLoadoutManage), _index],
+                                            localize LSTRING(MenuLoadoutOverwrite),
+                                            "",
+                                            { [{ call FUNC(overwriteLoadout) }, _this] call CBA_fnc_execNextFrame },
+                                            { [_this select 0] call FUNCMAIN(utilVehicleHasCargo) },
+                                            {},
+                                            _index - 1
+                                        ] call ace_interact_menu_fnc_createAction,
+                                        [],
+                                        _target
+                                    ],
+                                    [
+                                        [
                                             format["%1_%2_delete", QGVAR(MenuLoadoutManage), _index],
                                             localize LSTRING(MenuLoadoutDelete),
                                             "",
