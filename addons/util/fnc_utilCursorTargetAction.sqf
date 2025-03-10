@@ -11,7 +11,8 @@ Parameters:
 Optional:
     1: _callbackArgs - arguments for the callback <ANY>
     2: _callbackNoTarget - call this function when there is no target <CODE>
-    2: _messagesNoTarget - show this caption/message combination (locale ids) when there is no target <ARRAY>
+    3: _messagesNoTarget - show this caption/message combination (locale ids) when there is no target <ARRAY>
+    4: _recursive - internal, true on repeated self-calls <BOOL>
 
 Example:
     (begin example)
@@ -36,17 +37,18 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 _this spawn {
-    if (visibleMap) exitWith {
-        openMap false;
-        uiSleep GVAR(cursorTargetActionDelay);
-        call FUNCMAIN(utilCursorTargetAction);
-    };
-
     params[
         ["_callbackOnTarget", {}, [{}]],
         "_callbackArgs",
-        ["_callbackNoTarget", {}, [{},[]]]
+        ["_callbackNoTarget", {}, [{},[]]],
+        ["_recursive", false, [false]]
     ];
+
+    if (visibleMap || (!_recursive && isNull(cursorTarget))) exitWith {
+        openMap false;
+        uiSleep GVAR(cursorTargetActionDelay);
+        [_callbackOnTarget, RETNIL(_callbackArgs), _callbackNoTarget, true] call FUNCMAIN(utilCursorTargetAction);
+    };
 
     if isNull(cursorTarget) exitWith {
         if !(_callbackNoTarget isEqualType []) then {
