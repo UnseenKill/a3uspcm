@@ -17,6 +17,7 @@ class CfgFunctions {
             PATHTO_FNC(miscSpawnLootBox);
             PATHTO_FNC(miscUncompromise);
             PATHTO_FNC(recruitForPlayer);
+            PATHTO_FNC(recruitRenameHC);
             PATHTO_FNC(resourcesAddFactionMoney);
             PATHTO_FNC(resourcesAddHR);
             PATHTO_FNC(resourcesAddPlayerMoney);

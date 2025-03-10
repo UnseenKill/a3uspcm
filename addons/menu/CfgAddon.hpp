@@ -162,6 +162,13 @@ class GVAR(Config) {
             text = CSTRING(DiaryRecruitmentText);
             image = QUOTE(a3\ui_f\data\igui\cfg\actions\getincommander_ca.paa);
 
+            class RenameHC {
+                caption = CSTRING(Recruitment_RenameHCCaption);
+                text = CSTRING(Recruitment_RenameHCText);
+                action = QFUNCMAIN(recruitRenameHC);
+                separator = 1;
+            };
+
             class Rifleman {
                 caption = "$STR_antistasi_dialogs_unit_recruit_rifleman_text";
                 action = QFUNCMAIN(recruitForPlayer);
