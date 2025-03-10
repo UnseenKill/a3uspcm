@@ -68,6 +68,7 @@ Features
    * Save-game safe
    * Requires items present in arsenal to apply loadout
    * Remember/restore ACE3 cargo items
+   * Remember/restore turret ammunition
    * Change maximum cargo of a vehicle
    * Dump contents of supply boxes to the ground so you can pick'em up with a lootbox
  * Zeus modules
