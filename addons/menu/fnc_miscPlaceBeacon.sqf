@@ -34,6 +34,4 @@ if (GVAR(dsbCost) > 0) then {
     [-GVAR(dsbCost)] call A3A_fnc_resourcesPlayer;
 };
 
-openMap false;
-
 nil;

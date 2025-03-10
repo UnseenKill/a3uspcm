@@ -59,7 +59,7 @@ private _continue = try {
 
 if !_continue exitWith {};
 
-_loadout params["_title","_aceCargo","_inventory"];
+_loadout params["_title","_aceCargo","_inventory",["_turretsMagsInfo",false]];
 _inventory params["_backpacks","_weapons","_magazines","_items"];
 
 TRACE_1("_title",_title);
@@ -130,12 +130,34 @@ private _messages = [];
     ["item", _items, configFile >> "CfgWeapons", { params["_vehicle","_item","_count"]; _vehicle addItemCargoGlobal[_item,_count]; }]
 ];
 
+if (_turretsMagsInfo isNotEqualTo false) then {
+    TRACE_1("trying to apply turret magazines",_turretsMagsInfo);
+
+    _turretsMagsInfo params["_vehicleClass","_turretsMags"];
+
+    if !(_vehicle isKindOf _vehicleClass) then {
+        INFO_2("vehicle %1 is not of class %2; skipping turret mags",typeOf _vehicle,_vehicleClass);
+    } else {
+        private _current = magazinesAllTurrets _vehicle;
+
+        _current apply {
+            _vehicle removeMagazineTurret[_x # 0, _x # 1];
+        };
+
+        _turretsMags apply {
+            _vehicle addMagazineTurret[_x # 0, _x # 1, _x # 2];
+        };
+    };
+};
+
 private _message = [LSTRING(HintLoadoutRestoredPartialText), LSTRING(HintLoadoutRestoredText)] select (_messages isEqualTo []);
 
 [
     localize LSTRING(HintLoadoutRestoreCaption),
     format[localize _message, _title, getText(configOf _vehicle >> "displayName")]
 ] call A3A_fnc_customHint;
+
+playSound(["A3AP_UiFailure","A3AP_UiSuccess"] select (_messages isEqualTo []));
 
 _messages apply { systemChat _x };
 

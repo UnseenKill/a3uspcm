@@ -10,6 +10,7 @@ PREP(deleteLoadout);
 PREP(dumpLoadout);
 PREP(getLoadoutMenuChildren);
 PREP(getLoadouts);
+PREP(overwriteLoadout);
 PREP(restoreLoadout);
 PREP(renameLoadout);
 PREP(saveLoadout);

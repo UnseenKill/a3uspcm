@@ -35,7 +35,9 @@ GVAR(DiaryActions) set[_key, createHashMapFromArray[
     ["config", _config]
 ]];
 
-private _action = format["<execute expression='[%1] call %2'>%3</execute>", str _key, QFUNC(diaryExecuteAction), [_config >> "caption", "STRING"] call CBA_fnc_getConfigEntry];
+private _action = format["<%1 expression='[%2] call %3'>%4</%1>", 
+    ["execute","executeClose"] select ([_config >> "closeDiary", "NUMBER", 0] call CBA_fnc_getConfigEntry),
+    str _key, QFUNC(diaryExecuteAction), [_config >> "caption", "STRING"] call CBA_fnc_getConfigEntry];
 
 if !isText(_config >> "text") exitWith { _action };
 
