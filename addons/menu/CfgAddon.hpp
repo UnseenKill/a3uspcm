@@ -21,12 +21,14 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_MakeLootBoxCaption);
                 text = CSTRING(Miscellaneous_MakeLootBoxText);
                 action = QFUNCMAIN(miscMakeLootBox);
+                closeDiary = 1;
             };
 
             class PlaceBeacon {
                 caption = CSTRING(Miscellaneous_PlaceBeaconCaption);
                 text = CSTRING(Miscellaneous_PlaceBeaconText);
                 action = QFUNCMAIN(miscPlaceBeacon);
+                closeDiary = 1;
             };
 
             class RepairBuildings {
@@ -63,12 +65,14 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_AddToBuildablesCaption);
                 text = CSTRING(Miscellaneous_AddToBuildablesText);
                 action = QFUNCMAIN(miscAddToBuildables);
+                closeDiary = 1;
             };
 
             class AirAccessAnywhere {
                 caption = CSTRING(Miscellaneous_AirAccessAnywhereCaption);
                 text = CSTRING(Miscellaneous_AirAccessAnywhereText);
                 action = QFUNCMAIN(miscAirAccessAnywhere);
+                closeDiary = 1;
             };
 
             class ShowRoadblocks {
@@ -122,6 +126,7 @@ class GVAR(Config) {
                 text = CSTRING(Teleport_TeleportArsenalBoxText);
                 action = QFUNCMAIN(teleportRebelObject);
                 params = QUOTE(boxX);
+                closeDiary = 1;
             };
 
             class TeleportVehicleBox {
@@ -129,6 +134,7 @@ class GVAR(Config) {
                 text = CSTRING(Teleport_TeleportVehicleBoxText);
                 action = QFUNCMAIN(teleportRebelObject);
                 params = QUOTE(vehicleBox);
+                closeDiary = 1;
             };
 
             class TeleportMap {
@@ -136,12 +142,14 @@ class GVAR(Config) {
                 text = CSTRING(Teleport_TeleportMapText);
                 action = QFUNCMAIN(teleportRebelObject);
                 params = QUOTE(mapX);
+                closeDiary = 1;
             };
 
             class TeleportFlag {
                 caption = CSTRING(Teleport_TeleportFlagCaption);
                 text = CSTRING(Teleport_TeleportFlagText);
                 action = QFUNCMAIN(teleportRebelFlag);
+                closeDiary = 1;
             };
         };
 

@@ -19,8 +19,6 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNCMAIN(resourcesTransfer),_this);
 
-openMap false;
-
 [localize LSTRING(Resources_TransferPrompt) + ":", "1000", {
     params["_amountStr"];
 
