@@ -18,3 +18,22 @@ GVAR(markerColors) = createHashMapFromArray(
     }
 );
 
+#define LB_ITEM(NAME,TYPE) [localize LSTRING(TRIPLES(RscA3USPCMGarrisonManagerDialog_ListOverview_Column,NAME,Caption)), localize LSTRING(TRIPLES(RscA3USPCMGarrisonManagerDialog_ListOverview_Column,NAME,Tooltip)), TYPE]
+GVAR(lbColumns) = [
+    LB_ITEM(Name,""),
+    LB_ITEM(Current,""),
+    LB_ITEM(Capacity,""),
+    LB_ITEM(SquadLdr,"unitSL"),
+    LB_ITEM(Medic,"unitMedic"),
+    LB_ITEM(Marksman,"unitSniper"),
+    LB_ITEM(Rifleman,"unitRifle"),
+    LB_ITEM(Grenadier,"unitGL"),
+    LB_ITEM(Autorifleman,"unitMG"),
+    LB_ITEM(AT,"unitLAT"),
+    LB_ITEM(Crew,"unitCrew"),
+    LB_ITEM(Sapper,"unitExp"),
+    LB_ITEM(Engineer,"unitEng"),
+    LB_ITEM(AASpecialist,"unitAA"),
+    LB_ITEM(ATSpecialist,"unitAT")
+];
+#undef LB_ITEM

@@ -24,6 +24,7 @@ if !assert(!isNull _display) exitWith {};
 private _states = missionNamespace getVariable QGVAR(dialogCheckBoxes);
 private _listbox = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTOVERVIEW;
 lnbClear _listbox;
+_listbox lnbSetCurSelRow 0;
 
 private _showBLUFOR = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBLUFOR;
 private _showINDEP = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWINDEP;
@@ -41,18 +42,6 @@ private _closeLocation = {
 
     if (_loc isNotEqualTo []) exitWith { format[_format, text(_loc select 0)] };
     format[_format, mapGridPosition(_entry get "position")];
-};
-
-private _getGarrisonInfo = {
-    params[["_entry",false,[createHashMap]]];
-
-    private _garrison = garrison getVariable[_entry get "marker",[]];
-    
-    GVAR(lbColumns) select { _x select 2 isNotEqualTo "" } apply {
-        _x params["","","_unit"];
-
-        { _x isEqualTo _unit } count _garrison;
-    };
 };
 
 private _entries = markersX select {
@@ -83,31 +72,31 @@ private _entries = markersX select {
     }];
 
     private _label = switch true do {
-        case(_x in citiesX): { 
+        case(_x in citiesX): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\Ruin_CA.paa"];
             _x;
         };
-        case(_x in resourcesX): { 
+        case(_x in resourcesX): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\Rock_CA.paa"];
             ["Resource near %1", _entry] call _closeLocation;
         };
-        case(_x in outposts): { 
+        case(_x in outposts): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\bunker_CA.paa"];
             ["Outpost near %1", _entry] call _closeLocation;
         };
-        case(_x in factories): { 
+        case(_x in factories): {
             _entry set["picture", "\A3\ui_f\data\map\markers\nato\u_installation.paa"];
             ["Factory near %1", _entry] call _closeLocation;
         };
-        case(_x in milbases): { 
+        case(_x in milbases): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\Tourism_CA.paa"];
             ["Military base near %1", _entry] call _closeLocation;
         };
-        case(_x in airportsX): { 
+        case(_x in airportsX): {
             _entry set["picture", "\a3\ui_f\data\igui\cfg\simpletasks\types\Plane_ca.paa"];
             ["Airport near %1", _entry] call _closeLocation;
         };
-        case(_x in seaports): { 
+        case(_x in seaports): {
             _entry set["picture", "\A3\ui_f\data\map\markers\nato\n_naval.paa"];
             ["Seaport near %1", _entry] call _closeLocation;
         };
@@ -124,22 +113,16 @@ private _index = _listbox lnbAddRow[""];
     _listbox lnbSetTooltip[[_index, _forEachIndex + 1], _tooltip];
 } forEach GVAR(lbColumns);
 
+GVAR(lbEntries) = createHashMap;
+
 _entries sort true;
 _entries apply {
     _x params[["_label", ""], ["_entry", false, [createHashMap]]];
 
     private _index = _listbox lnbAddRow["", _label];
-    private _info = [_entry] call _getGarrisonInfo;
-    private _color = GVAR(markerColors) getOrDefault[_entry get "color", [1,0,1,1]];
 
-    {
-        _listbox lnbSetText[[_index, _forEachIndex + 2], str _x];
-        _listbox lnbSetColor[[_index, _forEachIndex + 2], [[1,1,1,1], [0.5,0.5,0.5,1]] select (_x isEqualTo 0)];
-    } forEach _info;
-
-    _listbox lnbSetColor[[_index, 1], _color];
-    _listbox lnbSetPicture[[_index, 0], _entry get "picture"];
-    _listbox lnbSetPictureColor[[_index, 0], _color];
+    GVAR(lbEntries) set[_index, _entry];
+    [_listbox, _index] call FUNC(updateGarrison);
 };
 
 nil;

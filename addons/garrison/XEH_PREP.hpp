@@ -1,2 +1,7 @@
+PREP(autoUpdate);
+PREP(doRecruit);
+PREP(getGarrisonInfo);
 PREP(onMenuOpen);
-//PREP(updateList);
+PREP(startAutoUpdateLoop);
+PREP(updateGarrison);
+PREP(updateList);
