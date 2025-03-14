@@ -26,10 +26,18 @@ if (sidesX getVariable[_marker, sideUnknown] isNotEqualTo teamPlayer) exitWith {
 private _garrison = garrison getVariable[_marker, []];
 TRACE_2(QFUNC(getGarrisonInfo),_marker,_garrison);
 
-[count _garrison, [_marker] call A3A_fnc_getGarrisonLimit] + 
+[
+    createHashMapFromArray[["count", count _garrison]],
+    createHashMapFromArray[["count", [_marker] call A3A_fnc_getGarrisonLimit]]
+]
+
++
 
 (GVAR(lbColumns) select { _x select 2 isNotEqualTo "" } apply {
-    _x params["","","_unit"];
+    _x params["","_name","_unit"];
 
-    { _x isEqualTo (A3A_faction_reb get _unit) } count _garrison;
+    createHashMapFromArray[
+        ["name", _name],
+        ["count", { _x isEqualTo (A3A_faction_reb get _unit) } count _garrison]
+    ]
 });

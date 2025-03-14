@@ -28,11 +28,12 @@ private _color = GVAR(markerColors) getOrDefault[_entry get "color", [1,0,1,1]];
 {
     private _color = switch _foreachIndex do {
         case 0;
-        case 1: { [[[1,1,1,1], [0.4,0.4,0.4,1]] select (_info#0 isEqualTo _info#1), [1,0,0,1]] select (_x isEqualTo 0) };
-        default { [[1,1,1,1], [0.4,0.4,0.4,1]] select (_x isEqualTo 0) };
+        case 1: { [[[1,1,1,1], [0.4,0.4,0.4,1]] select (_info#0 isEqualTo _info#1), [1,0,0,1]] select (_x get "count" isEqualTo 0) };
+        default { [[1,1,1,1], [0.4,0.4,0.4,1]] select (_x get "count" isEqualTo 0) };
     };
 
-    _listbox lnbSetText[[_index, _forEachIndex + 2], str _x];
+    _listbox lnbSetText[[_index, _forEachIndex + 2], str(_x get "count")];
+    _listbox lnbSetTooltip[[_index, _forEachIndex + 2], _x getOrDefault["name", ""]];
     _listbox lnbSetColor[[_index, _forEachIndex + 2], _color];
 } forEach _info;
 
