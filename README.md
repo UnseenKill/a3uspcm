@@ -66,7 +66,7 @@ Features
  * Advanced Garrison Management
    * See all garrisonable locations in one list
    * Filter types, ownership
-   * See deployed units of a location at a glance
+   * See deployed units of a location at a glance (without having to speed-read a fading notification)
    * Rerecruit for selected location (enemy close/location under attack checks still apply)
  * Vehicle loadout management
    * Remember a vehicle's inventory and make it available to apply such loadout
