@@ -1,0 +1,29 @@
+#include "script_component.hpp"
+/* ----------------------------------------------------------------------------
+Function: A3USPCM_garrison_fnc_onClientInitDone
+
+Description:
+    Called after A3U client init is done
+
+Parameters:
+
+Optional:
+
+Example:
+
+Returns:
+    Nothing
+
+Author:
+    goreSplatter
+---------------------------------------------------------------------------- */
+waitUntil { !isNull(missionNamespace getVariable["mapX", objNull]) };
+
+missionNamespace getVariable "mapX" addAction[
+    localize LSTRING(RscA3USPCMGarrisonManagerDialog_StaticTitle),
+    {
+        createDialog QGVAR(dialog);
+    }
+];
+
+nil;

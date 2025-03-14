@@ -9,6 +9,7 @@ GVAR(Loadouts) = false;
 [
     {
         INFO("loading stored loadouts");
+        if is3DENPreview exitWith {};
         [] call FUNC(getLoadouts);
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);

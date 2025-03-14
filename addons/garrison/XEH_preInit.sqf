@@ -4,6 +4,13 @@ ADDON = false;
 #include "XEH_PREP.hpp"
 ADDON = true;
 
+[
+    {
+        INFO("adding advanced garrison management to map");
+        [] spawn FUNC(onClientInitDone);
+    }
+] call FUNCMAIN(utilOnA3UClientInitDone);
+
 GVAR(markerColors) = createHashMapFromArray(
     "true" configClasses(configFile >> "CfgMarkerColors") apply {
         private _color = getArray(_x >> "color") apply {
