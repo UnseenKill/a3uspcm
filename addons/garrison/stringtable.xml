@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Garrison">
+        <Key ID="STR_A3USPCM_Garrison_Component">
+            <English>A3USPCM - Garrison Management Component</English>
+            <German>A3USPCM - Garrison Management Komponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_BtnClose">
+            <English>X</English>
+            <German>X</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_BtnLocate">
+            <English>Locate...</English>
+            <German>Suche...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_BtnRecruit">
+            <English>Recruit</English>
+            <German>Rekruitiere</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowBLUFOR_tooltip">
+            <English>Show locations of BLUFOR faction (usually NATO)</English>
+            <German>Zeige Standorte der BLUFOR-Fraktion (normalerweise NATO)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowBases_tooltip">
+            <English>Show military bases/airports</English>
+            <German>Zeige Militärbasen/Flughäfen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowINDEP_tooltip">
+            <English>Show locations of INDEP faction (usually: you)</English>
+            <German>Zeige Standorte der INDEP-Fraktion (normalerweise: du)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowOPFOR_tooltip">
+            <English>Show locations of OPFOR faction (usually CSAT)</English>
+            <German>Zeige Standorte der OPFOR-Fraktion (normalerweise CSAT)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowOutposts_tooltip">
+            <English>Show outposts</English>
+            <German>Zeige Aussenposten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowResources_tooltip">
+            <English>Show resources</English>
+            <German>Zeige Rohstoffe</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowTowns_tooltip">
+            <English>Show towns/villages</English>
+            <German>Zeige Städte/Dörfer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelBLUFOR">
+            <English>BLUFOR</English>
+            <German>BLUFOR</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelBases">
+            <English>Bases</English>
+            <German>Basen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelINDEP">
+            <English>INDEP</English>
+            <German>INDEP</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelOPFOR">
+            <English>OPFOR</English>
+            <German>OPFOR</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelOutposts">
+            <English>Outposts</English>
+            <German>Aussenposten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelResources">
+            <English>Resources</English>
+            <German>Rohstoffe</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelTowns">
+            <English>Towns/villages</English>
+            <German>Städte/Dörfer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticTitle">
+            <English>A3USPCM Advanced Garrison Management</English>
+            <German>A3USPCM Erweiterte Garnisonsverwaltung</German>
+        </Key>
+    </Package>
+</Project>
