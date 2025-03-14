@@ -30,6 +30,11 @@ uiNamespace setVariable [QGVAR(menuDisplay), _display];
 
 private["_control"];
 
+// Labels
+_display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELBLUFOR ctrlSetText(A3A_faction_occ get "name");
+_display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELINDEP ctrlSetText(A3A_faction_reb get "name");
+_display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELOPFOR ctrlSetText(A3A_faction_inv get "name");
+
 // Filters
 
 private _checkStates = missionNamespace getVariable[QGVAR(dialogCheckBoxes), createHashMapFromArray [
