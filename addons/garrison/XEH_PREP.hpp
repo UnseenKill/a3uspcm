@@ -1,0 +1,10 @@
+PREP(autoUpdate);
+PREP(changeLocationOwner);
+PREP(doRecruit);
+PREP(getGarrisonInfo);
+PREP(onClientInitDone);
+PREP(onMapButtonUp);
+PREP(onMenuOpen);
+PREP(startAutoUpdateLoop);
+PREP(updateGarrison);
+PREP(updateList);
