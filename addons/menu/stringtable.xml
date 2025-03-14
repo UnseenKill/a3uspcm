@@ -305,6 +305,14 @@
             <English>Allow player to go undercover again, also unreport their vehicle.</English>
             <German>Erlaube dem Spieler, wieder in den Undercover-Modus zu wechseln und melde auch sein Fahrzeug nicht.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Recruitment_LaunchAGMCaption">
+            <English>Launch AGM</English>
+            <German>EGM starten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Recruitment_LaunchAGMText">
+            <English>Advanced Garrison Manager</English>
+            <German>Erweiterter Garnisonsmanager</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Recruitment_RenameCountdownText">
             <English>Make your HC selection (%1 seconds remaining)</English>
             <German>Triff deine HC-Auswahl (noch %1 Sekunden)</German>
