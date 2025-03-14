@@ -24,7 +24,7 @@ private _marker = _entry get "marker";
 if (sidesX getVariable[_marker, sideUnknown] isNotEqualTo teamPlayer) exitWith {[]};
 
 private _garrison = garrison getVariable[_marker, []];
-TRACE_2(QFUNC(updateList),_marker,_garrison);
+TRACE_2(QFUNC(getGarrisonInfo),_marker,_garrison);
 
 [count _garrison, [_marker] call A3A_fnc_getGarrisonLimit] + 
 

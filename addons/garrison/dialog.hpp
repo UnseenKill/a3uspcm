@@ -9,7 +9,7 @@
 //  Search: (^\s*(?:text|tooltip)\s*=\s*)[$]STR_A3_([^;]+)
 //  Replace: $1CSTRING($2)
 
-/* #Lacosi
+/* #Junygo
 $[
 	1.063,
 	["RscA3USPCMGarrisonManagerDialog",[["safezoneX","safezoneY","safezoneW","safezoneH"],"safezoneW / 40","safezoneH / 25","GUI_GRID"],2,1,1],
@@ -32,10 +32,10 @@ $[
 	[1008,"StaticLabelTowns",[1,"Towns/villages",["0.7175 * safezoneW + safezoneX","0.776 * safezoneH + safezoneY","0.0625 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1500,"ListOverview",[1,"",["0.1625 * safezoneW + safezoneX","0.18 * safezoneH + safezoneY","0.675 * safezoneW","0.3 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = false;","idcLeft = -1;","idcRight = -1;","tooltipPerColumn = true;"]],
 	[1602,"BtnRecruit",[1,"Recruit",["0.3425 * safezoneW + safezoneX","0.728 * safezoneH + safezoneY","0.075 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.6,0,1],[-1,-1,-1,-1],"","-1"],[]],
-	[1009,"MapControl",[1,"",["0.45 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.375 * safezoneW","0.24 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[-1800,"StaticRecruitFrame",[1,"Recruit reinforcements",["0.1625 * safezoneW + safezoneX","0.5 * safezoneH + safezoneY","0.2625 * safezoneW","0.28 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[-1801,"StaticMapFrame",[1,"Map view",["0.4375 * safezoneW + safezoneX","0.5 * safezoneH + safezoneY","0.4 * safezoneW","0.28 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1501,"ListRecruitTypes",[1,"",["0.1675 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.25 * safezoneW","0.2 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+	[-1800,"StaticRecruitFrame",[1,"Recruit reinforcements",["0.1625 * safezoneW + safezoneX","0.5 * safezoneH + safezoneY","0.2625 * safezoneW","0.28 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
+	[-1801,"StaticMapFrame",[1,"Map view",["0.4375 * safezoneW + safezoneX","0.5 * safezoneH + safezoneY","0.4 * safezoneW","0.28 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
+	[1501,"ListRecruitTypes",[1,"",["0.1675 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.25 * safezoneW","0.2 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1009,"MapControl",[1,"",["0.45 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.375 * safezoneW","0.24 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
 ]
 */
 class GVAR(dialog) {
@@ -45,7 +45,7 @@ class GVAR(dialog) {
 
     class controls {
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Lacosi)
+		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Junygo)
 		////////////////////////////////////////////////////////
 
 		class StaticBackground: RscText
@@ -226,16 +226,10 @@ class GVAR(dialog) {
 			h = QUOTE(0.04 * safezoneH);
 			colorBackground[] = {0,0.6,0,1};
 		};
-		class MapControl: A3A_MapControl
-		{
-			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_MAPCONTROL;
-			x = QUOTE(0.45 * safezoneW + safezoneX);
-			y = QUOTE(0.52 * safezoneH + safezoneY);
-			w = QUOTE(0.375 * safezoneW);
-			h = QUOTE(0.24 * safezoneH);
-		};
 		class StaticRecruitFrame: RscFrame
 		{
+			sizeEx = QUOTE(0.03);
+
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICRECRUITFRAME;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticRecruitFrame);
 			x = QUOTE(0.1625 * safezoneW + safezoneX);
@@ -245,6 +239,8 @@ class GVAR(dialog) {
 		};
 		class StaticMapFrame: RscFrame
 		{
+			sizeEx = QUOTE(0.03);
+
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICMAPFRAME;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticMapFrame);
 			x = QUOTE(0.4375 * safezoneW + safezoneX);
@@ -259,6 +255,14 @@ class GVAR(dialog) {
 			y = QUOTE(0.52 * safezoneH + safezoneY);
 			w = QUOTE(0.25 * safezoneW);
 			h = QUOTE(0.2 * safezoneH);
+		};
+		class MapControl: A3A_MapControl
+		{
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_MAPCONTROL;
+			x = QUOTE(0.45 * safezoneW + safezoneX);
+			y = QUOTE(0.52 * safezoneH + safezoneY);
+			w = QUOTE(0.375 * safezoneW);
+			h = QUOTE(0.24 * safezoneH);
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END

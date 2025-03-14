@@ -108,10 +108,21 @@ _control ctrlAddEventHandler["LBSelChanged", {
     _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTRECRUITTYPES ctrlEnable _validSelection;
 }];
 
+// Map
+
+_control = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_MAPCONTROL;
+_control ctrlAddEventHandler["MouseButtonUp", {
+    call FUNC(onMapButtonUp);
+}];
+
 // Recruit list
 
 _control = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTRECRUITTYPES;
 _control ctrlEnable false;
+_control ctrlSetFontHeight 0.03;
+_control ctrlAddEventHandler["LBDblClick", {
+    call FUNC(doRecruit);
+}];
 
 GVAR(lbColumns) select { _x select 2 isNotEqualTo "" } apply {
     private _index = _control lbAdd (_x # 1);

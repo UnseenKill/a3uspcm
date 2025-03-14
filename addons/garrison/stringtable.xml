@@ -81,6 +81,14 @@
             <English>A3USPCM Advanced Garrison Management</English>
             <German>A3USPCM Erweiterte Garnisonsverwaltung</German>
         </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ChangeOwnership_Caption">
+            <English>Change ownership of "%1"</English>
+            <German>Besitz von "%1" ändern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ChangeOwnership_Confirm">
+            <English>Location is currently owned by "%1". Change ownership to "%2"?</English>
+            <German>Der Standort gehört derzeit "%1". Besitz zu "%2" ändern?</German>
+        </Key>
         <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AASpecialist_Caption">
             <English>AA/S</English>
             <German>Fla/S</German>
@@ -174,8 +182,8 @@
             <German>Name</German>
         </Key>
         <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_Tooltip">
-            <English>Name of Location</English>
-            <German>Name des Standorts</German>
+            <English>Name of Location (double-click to locate on map)</English>
+            <German>Name des Standorts (Doppelklicken, um auf Karte anzuzeigen)</German>
         </Key>
         <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Rifleman_Caption">
             <English>Rfl</English>

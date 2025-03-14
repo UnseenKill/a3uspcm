@@ -23,7 +23,14 @@ missionNamespace getVariable "mapX" addAction[
     localize LSTRING(RscA3USPCMGarrisonManagerDialog_StaticTitle),
     {
         createDialog QGVAR(dialog);
-    }
+    },
+    nil,
+    0,
+    false,
+    true,
+    "",
+    "true",
+    3
 ];
 
 nil;

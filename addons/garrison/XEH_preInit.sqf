@@ -37,10 +37,10 @@ GVAR(lbColumns) = [
     LB_ITEM(Grenadier,"unitGL"),
     LB_ITEM(Autorifleman,"unitMG"),
     LB_ITEM(AT,"unitLAT"),
+    LB_ITEM(AASpecialist,"unitAA"),
+    LB_ITEM(ATSpecialist,"unitAT"),
     LB_ITEM(Crew,"unitCrew"),
     LB_ITEM(Sapper,"unitExp"),
-    LB_ITEM(Engineer,"unitEng"),
-    LB_ITEM(AASpecialist,"unitAA"),
-    LB_ITEM(ATSpecialist,"unitAT")
+    LB_ITEM(Engineer,"unitEng")
 ];
 #undef LB_ITEM

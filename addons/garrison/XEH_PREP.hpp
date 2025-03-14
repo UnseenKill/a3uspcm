@@ -2,6 +2,7 @@ PREP(autoUpdate);
 PREP(doRecruit);
 PREP(getGarrisonInfo);
 PREP(onClientInitDone);
+PREP(onMapButtonUp);
 PREP(onMenuOpen);
 PREP(startAutoUpdateLoop);
 PREP(updateGarrison);

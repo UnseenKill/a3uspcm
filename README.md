@@ -137,7 +137,7 @@ Once groups have been created, they are available for fire control via the **AA 
 
 ### Required mods
 
- * [Antistasi Ultimate - Mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032)
+ * [Antistasi Ultimate - Mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032) - Latest version where this mod was working: **11.5.4**
  * [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057) - Healing, vehicle loadout and object interactions work _exclusively_ with ACE3
 
 Bugs

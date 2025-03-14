@@ -39,7 +39,12 @@ _unitType = A3A_faction_reb get _unitType;
 TRACE_4(QFUNC(doRecruit),_index,_unitType,_locationIndex,_marker);
 
 positionXGarr = _marker;
-[_unitType] spawn A3A_fnc_garrisonAdd;
-GVAR(nextAutoUpdate) = diag_tickTime + 0.333;
+
+[_unitType] spawn {
+    params["_unitType"];
+    private _handle = [_unitType] spawn A3A_fnc_garrisonAdd;
+    waitUntil {scriptDone _handle};
+    GVAR(nextAutoUpdate) = diag_tickTime + 0.5;
+};
 
 nil;
