@@ -100,6 +100,26 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(garrison,addActionToMapObject), "CHECKBOX",
+    [ELSTRING(garrison,Settings_addActionToMapObject_DisplayName), ELSTRING(garrison,Settings_addActionToMapObject_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(garrison,allowTakeOverAnything), "CHECKBOX",
+    [ELSTRING(garrison,Settings_allowTakeOverAnything_DisplayName), ELSTRING(garrison,Settings_allowTakeOverAnything_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    false, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Zeus
 
 [

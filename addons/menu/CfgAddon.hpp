@@ -170,6 +170,13 @@ class GVAR(Config) {
             text = CSTRING(DiaryRecruitmentText);
             image = QUOTE(a3\ui_f\data\igui\cfg\actions\getincommander_ca.paa);
 
+            class LaunchAGM {
+                caption = CSTRING(Recruitment_LaunchAGMCaption);
+                text = CSTRING(Recruitment_LaunchAGMText);
+                action = QFUNCMAIN(recruitLaunchAGM);
+                closeDiary = 1;
+            };
+
             class RenameHC {
                 caption = CSTRING(Recruitment_RenameHCCaption);
                 text = CSTRING(Recruitment_RenameHCText);

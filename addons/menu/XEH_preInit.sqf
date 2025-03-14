@@ -47,6 +47,7 @@ GVAR(IntelMarkers) = createHashMap;
 
 [
     {
+        if is3DENPreview exitWith {};
         [] call FUNC(loadAdditionalBuildables);
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);
