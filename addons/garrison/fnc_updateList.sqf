@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#include "RscDefine.hpp"
 /* ----------------------------------------------------------------------------
 Function: A3USPCM_garrison_fnc_updateList
 
@@ -33,20 +34,6 @@ private _showOutposts = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHO
 private _showResources = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES;
 private _showTowns = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTOWNS;
 
-private _colors = createHashMapFromArray
-    ("true" configClasses(configFile >> "CfgMarkerColors") apply {
-        private _color = getArray(_x >> "color") apply {
-            if !(_x isEqualType "") then {
-                _x;
-            } else {
-                [] call compile _x;
-            };
-        };
-
-        [configName _x, _color];
-    }
-);
-
 private _closeLocation = {
     params[["_format","",[""]], ["_entry",false,[createHashMap]]];
 
@@ -54,6 +41,18 @@ private _closeLocation = {
 
     if (_loc isNotEqualTo []) exitWith { format[_format, text(_loc select 0)] };
     format[_format, mapGridPosition(_entry get "position")];
+};
+
+private _getGarrisonInfo = {
+    params[["_entry",false,[createHashMap]]];
+
+    private _garrison = garrison getVariable[_entry get "marker",[]];
+    
+    GVAR(lbColumns) select { _x select 2 isNotEqualTo "" } apply {
+        _x params["","","_unit"];
+
+        { _x isEqualTo _unit } count _garrison;
+    };
 };
 
 private _entries = markersX select {
@@ -129,8 +128,14 @@ _entries sort true;
 _entries apply {
     _x params[["_label", ""], ["_entry", false, [createHashMap]]];
 
-    private _index = _listbox lnbAddRow["", _label, "4", "2", "0", "0", "A"];
-    private _color = _colors getOrDefault[_entry get "color", [1,0,1,1]];
+    private _index = _listbox lnbAddRow["", _label];
+    private _info = [_entry] call _getGarrisonInfo;
+    private _color = GVAR(markerColors) getOrDefault[_entry get "color", [1,0,1,1]];
+
+    {
+        _listbox lnbSetText[[_index, _forEachIndex + 2], str _x];
+        _listbox lnbSetColor[[_index, _forEachIndex + 2], [[1,1,1,1], [0.5,0.5,0.5,1]] select (_x isEqualTo 0)];
+    } forEach _info;
 
     _listbox lnbSetColor[[_index, 1], _color];
     _listbox lnbSetPicture[[_index, 0], _entry get "picture"];

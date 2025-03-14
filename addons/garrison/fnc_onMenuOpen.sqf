@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#include "RscDefine.hpp"
 /* ----------------------------------------------------------------------------
 Function: A3USPCM_garrison_fnc_onMenuOpen
 
@@ -52,7 +53,7 @@ GVAR(lbColumns) = [
     LB_ITEM(Sapper,"unitExp"),
     LB_ITEM(Engineer,"unitEng"),
     LB_ITEM(AASpecialist,"unitAA"),
-    LB_ITEM(ATSpecialist,"unitAT"),
+    LB_ITEM(ATSpecialist,"unitAT")
 ];
 #undef LB_ITEM
 

@@ -77,5 +77,109 @@
             <English>A3USPCM Advanced Garrison Management</English>
             <German>A3USPCM Erweiterte Garnisonsverwaltung</German>
         </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AASpecialist_Caption">
+            <English>AA/S</English>
+            <German>Fla/S</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AASpecialist_Tooltip">
+            <English>A/A Specialists</English>
+            <German>Fla-Spezialisten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_ATSpecialist_Caption">
+            <English>AT/S</English>
+            <German>PzAbw</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_ATSpecialist_Tooltip">
+            <English>AT Specialists</English>
+            <German>Panzerabwehr-Spezialisten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AT_Caption">
+            <English>AT</English>
+            <German>AT</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_AT_Tooltip">
+            <English>Light AT</English>
+            <German>Leichte AT</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Autorifleman_Caption">
+            <English>MG</English>
+            <German>MG</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Autorifleman_Tooltip">
+            <English>Autoriflemen</English>
+            <German>MG-Schützen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Crew_Caption">
+            <English>Crew</English>
+            <German>Bes</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Crew_Tooltip">
+            <English>Static crew</English>
+            <German>Besatzung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Engineer_Caption">
+            <English>Eng</English>
+            <German>Ing</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Engineer_Tooltip">
+            <English>Engineers</English>
+            <German>Ingenieure</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Grenadier_Caption">
+            <English>Grn</English>
+            <German>Grn</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Grenadier_Tooltip">
+            <English>Grenadiers</English>
+            <German>Grenadiere</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Marksman_Caption">
+            <English>MM</English>
+            <German>SSchtz</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Marksman_Tooltip">
+            <English>Marksmen</English>
+            <German>Scharfschützen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Medic_Caption">
+            <English>Med</English>
+            <German>San</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Medic_Tooltip">
+            <English>Medic</English>
+            <German>Sanitäter</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_Caption">
+            <English>Name</English>
+            <German>Name</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_Tooltip">
+            <English>Name of Location</English>
+            <German>Name des Standorts</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Rifleman_Caption">
+            <English>Rfl</English>
+            <German>Schtz</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Rifleman_Tooltip">
+            <English>Riflemen</English>
+            <German>Schützen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Sapper_Caption">
+            <English>EXP</English>
+            <German>Pio</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Sapper_Tooltip">
+            <English>Sappers</English>
+            <German>Pioniere</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_SquadLdr_Caption">
+            <English>SqLdr</English>
+            <German>GruFhr</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_SquadLdr_Tooltip">
+            <English>Squad Leaders</English>
+            <German>Gruppenführer</German>
+        </Key>
     </Package>
 </Project>

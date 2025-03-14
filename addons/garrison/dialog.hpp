@@ -1,4 +1,5 @@
 #include "\z\a3uspcm\addons\main\ui_define.hpp"
+#include "RscDefine.hpp"
 
 // Replace attributes:
 //  Search: (^\s*(?:sizeEx|[xywh])) = ([^;]+)
@@ -7,10 +8,10 @@
 //  Search: (^\s*(?:text|tooltip)\s*=\s*)[$]STR_A3_([^;]+)
 //  Replace: $1CSTRING($2)
 
-/* #Qejymi
+/* #Ryhulu
 $[
 	1.063,
-	["RscA3USPCMGarrisonManagerDialog",[["safezoneX","safezoneY","safezoneW","safezoneH"],"safezoneW / 40","safezoneH / 25","GUI_GRID"],2,0,1],
+	["RscA3USPCMGarrisonManagerDialog",[["safezoneX","safezoneY","safezoneW","safezoneH"],"safezoneW / 40","safezoneH / 25","GUI_GRID"],2,1,1],
 	[-1000,"StaticBackground",[1,"",["0.15 * safezoneW + safezoneX","0.16 * safezoneH + safezoneY","0.7 * safezoneW","0.68 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],[]],
 	[-1001,"StaticTitle",[1,"Title",["0.15 * safezoneW + safezoneX","0.116 * safezoneH + safezoneY","0.7 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]],
 	[-1600,"BtnClose",[1,"X",["0.8325 * safezoneW + safezoneX","0.128 * safezoneH + safezoneY","0.0125 * safezoneW","0.02 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
@@ -40,12 +41,12 @@ class GVAR(dialog) {
 
     class controls {
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Qejymi)
+		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Ryhulu)
 		////////////////////////////////////////////////////////
 
 		class StaticBackground: RscText
 		{
-			idc = 1000;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICBACKGROUND;
 			x = QUOTE(0.15 * safezoneW + safezoneX);
 			y = QUOTE(0.16 * safezoneH + safezoneY);
 			w = QUOTE(0.7 * safezoneW);
@@ -54,7 +55,7 @@ class GVAR(dialog) {
 		};
 		class StaticTitle: RscText
 		{
-			idc = 1001;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICTITLE;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticTitle);
 			x = QUOTE(0.15 * safezoneW + safezoneX);
 			y = QUOTE(0.116 * safezoneH + safezoneY);
@@ -64,7 +65,7 @@ class GVAR(dialog) {
 		};
 		class BtnClose: RscButton
 		{
-			idc = 1600;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_BTNCLOSE;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_BtnClose);
 			x = QUOTE(0.8325 * safezoneW + safezoneX);
 			y = QUOTE(0.128 * safezoneH + safezoneY);
@@ -73,7 +74,7 @@ class GVAR(dialog) {
 		};
 		class CheckShowBLUFOR: RscCheckbox
 		{
-			idc = 2800;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBLUFOR;
 			x = QUOTE(0.1625 * safezoneW + safezoneX);
 			y = QUOTE(0.788 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
@@ -82,7 +83,7 @@ class GVAR(dialog) {
 		};
 		class StaticLabelBLUFOR: RscText
 		{
-			idc = 1002;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELBLUFOR;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelBLUFOR);
 			x = QUOTE(0.1875 * safezoneW + safezoneX);
 			y = QUOTE(0.78 * safezoneH + safezoneY);
@@ -91,7 +92,7 @@ class GVAR(dialog) {
 		};
 		class CheckShowOPFOR: RscCheckbox
 		{
-			idc = 2801;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOPFOR;
 			x = QUOTE(0.25 * safezoneW + safezoneX);
 			y = QUOTE(0.788 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
@@ -100,7 +101,7 @@ class GVAR(dialog) {
 		};
 		class StaticLabelOPFOR: RscText
 		{
-			idc = 1003;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELOPFOR;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelOPFOR);
 			x = QUOTE(0.275 * safezoneW + safezoneX);
 			y = QUOTE(0.78 * safezoneH + safezoneY);
@@ -109,7 +110,7 @@ class GVAR(dialog) {
 		};
 		class CheckShowINDEP: RscCheckbox
 		{
-			idc = 2802;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWINDEP;
 			x = QUOTE(0.325 * safezoneW + safezoneX);
 			y = QUOTE(0.788 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
@@ -118,7 +119,7 @@ class GVAR(dialog) {
 		};
 		class StaticLabelINDEP: RscText
 		{
-			idc = 1004;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELINDEP;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelINDEP);
 			x = QUOTE(0.35 * safezoneW + safezoneX);
 			y = QUOTE(0.78 * safezoneH + safezoneY);
@@ -127,7 +128,7 @@ class GVAR(dialog) {
 		};
 		class CheckShowBases: RscCheckbox
 		{
-			idc = 2803;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBASES;
 			x = QUOTE(0.425 * safezoneW + safezoneX);
 			y = QUOTE(0.788 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
@@ -136,7 +137,7 @@ class GVAR(dialog) {
 		};
 		class StaticLabelBases: RscText
 		{
-			idc = 1005;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELBASES;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelBases);
 			x = QUOTE(0.45 * safezoneW + safezoneX);
 			y = QUOTE(0.776 * safezoneH + safezoneY);
@@ -145,7 +146,7 @@ class GVAR(dialog) {
 		};
 		class CheckShowOutposts: RscCheckbox
 		{
-			idc = 2804;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS;
 			x = QUOTE(0.5125 * safezoneW + safezoneX);
 			y = QUOTE(0.788 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
@@ -154,7 +155,7 @@ class GVAR(dialog) {
 		};
 		class StaticLabelOutposts: RscText
 		{
-			idc = 1006;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELOUTPOSTS;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelOutposts);
 			x = QUOTE(0.5375 * safezoneW + safezoneX);
 			y = QUOTE(0.776 * safezoneH + safezoneY);
@@ -163,7 +164,7 @@ class GVAR(dialog) {
 		};
 		class CheckShowResources: RscCheckbox
 		{
-			idc = 2805;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES;
 			x = QUOTE(0.6025 * safezoneW + safezoneX);
 			y = QUOTE(0.788 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
@@ -172,7 +173,7 @@ class GVAR(dialog) {
 		};
 		class StaticLabelResources: RscText
 		{
-			idc = 1007;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELRESOURCES;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelResources);
 			x = QUOTE(0.625 * safezoneW + safezoneX);
 			y = QUOTE(0.776 * safezoneH + safezoneY);
@@ -181,7 +182,7 @@ class GVAR(dialog) {
 		};
 		class CheckShowTowns: RscCheckbox
 		{
-			idc = 2806;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTOWNS;
 			x = QUOTE(0.695 * safezoneW + safezoneX);
 			y = QUOTE(0.788 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
@@ -190,7 +191,7 @@ class GVAR(dialog) {
 		};
 		class StaticLabelTowns: RscText
 		{
-			idc = 1008;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELTOWNS;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelTowns);
 			x = QUOTE(0.7175 * safezoneW + safezoneX);
 			y = QUOTE(0.776 * safezoneH + safezoneY);
@@ -205,7 +206,7 @@ class GVAR(dialog) {
 			idcRight = -1;
 			tooltipPerColumn = true;
 
-			idc = 1500;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTOVERVIEW;
 			x = QUOTE(0.1625 * safezoneW + safezoneX);
 			y = QUOTE(0.18 * safezoneH + safezoneY);
 			w = QUOTE(0.675 * safezoneW);
@@ -213,7 +214,7 @@ class GVAR(dialog) {
 		};
 		class BtnLocate: RscButton
 		{
-			idc = 1601;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_BTNLOCATE;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_BtnLocate);
 			x = QUOTE(0.7125 * safezoneW + safezoneX);
 			y = QUOTE(0.86 * safezoneH + safezoneY);
@@ -223,7 +224,7 @@ class GVAR(dialog) {
 		};
 		class BtnRecruit: RscButton
 		{
-			idc = 1602;
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_BTNRECRUIT;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_BtnRecruit);
 			x = QUOTE(0.775 * safezoneW + safezoneX);
 			y = QUOTE(0.86 * safezoneH + safezoneY);
