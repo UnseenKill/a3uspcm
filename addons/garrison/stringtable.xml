@@ -209,5 +209,21 @@
             <English>Squad Leaders</English>
             <German>Gruppenführer</German>
         </Key>
+        <Key ID="STR_A3USPCM_garrison_Settings_addActionToMapObject_DisplayName">
+            <English>Add advanced garrison management action to flag</English>
+            <German>Füge erweiterte Garnisonsverwaltungsaktion zur Flagge hinzu</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_Settings_addActionToMapObject_Tooltip">
+            <English>Adds the action to launch advanced garrison management to the base's flag object</English>
+            <German>Fügt die Aktion zum Starten der erweiterten Garnisonsverwaltung zum Flaggenobjekt der Basis hinzu</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_Settings_allowTakeOverAnything_DisplayName">
+            <English>Allow ownership change of any location</English>
+            <German>Erlaube Besitzwechsel für jede Art von Ort</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_Settings_allowTakeOverAnything_Tooltip">
+            <English>Allows the player to change ownership of any location on AGM map; hold Ctrl and click for normal ownership change, Ctrl+Alt for all.</English>
+            <German>Erlaube dem Spieler, den Besitz jedes Ortes auf der AGM-Karte zu ändern; Halte Strg gedrückt und klicke für normalen Besitzwechsel, Strg+Alt für alle.</German>
+        </Key>
     </Package>
 </Project>

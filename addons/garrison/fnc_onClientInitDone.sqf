@@ -19,18 +19,20 @@ Author:
 ---------------------------------------------------------------------------- */
 waitUntil { !isNull(missionNamespace getVariable["mapX", objNull]) };
 
-missionNamespace getVariable "mapX" addAction[
-    localize LSTRING(RscA3USPCMGarrisonManagerDialog_StaticTitle),
-    {
-        createDialog QGVAR(dialog);
-    },
-    nil,
-    0,
-    false,
-    true,
-    "",
-    "true",
-    3
-];
+if GVAR(addActionToMapObject) then {
+    missionNamespace getVariable "mapX" addAction[
+        localize LSTRING(RscA3USPCMGarrisonManagerDialog_StaticTitle),
+        {
+            createDialog QGVAR(dialog);
+        },
+        nil,
+        0,
+        false,
+        true,
+        "",
+        "true",
+        3
+    ];
+};
 
 nil;

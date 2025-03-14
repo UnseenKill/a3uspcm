@@ -1,4 +1,5 @@
 PREP(autoUpdate);
+PREP(changeLocationOwner);
 PREP(doRecruit);
 PREP(getGarrisonInfo);
 PREP(onClientInitDone);
