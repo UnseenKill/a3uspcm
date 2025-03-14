@@ -63,6 +63,11 @@ Features
    * Sort that damn mess of an arsenal
    * Unlock from a container that's close to arsenal box (ACE3 interaction)
    * Discard items from arsenal so you're able to sell'em again
+ * Advanced Garrison Management
+   * See all garrisonable locations in one list
+   * Filter types, ownership
+   * See deployed units of a location at a glance
+   * Rerecruit for selected location (enemy close/location under attack checks still apply)
  * Vehicle loadout management
    * Remember a vehicle's inventory and make it available to apply such loadout
    * Save-game safe
