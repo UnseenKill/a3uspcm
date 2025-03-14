@@ -177,9 +177,33 @@
             <English>Medic</English>
             <German>Sanitäter</German>
         </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_AirportLabel">
+            <English>Airport near %1</English>
+            <German>Flughafen nahe %1</German>
+        </Key>
         <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_Caption">
             <English>Name</English>
             <German>Name</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_FactoryLabel">
+            <English>Factory near %1</English>
+            <German>Fabrik nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_MilBaseLabel">
+            <English>Military base near %1</English>
+            <German>Militärbasis nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_OutpostLabel">
+            <English>Outpost near %1</English>
+            <German>Außenposten nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_ResourceLabel">
+            <English>Resource near %1</English>
+            <German>Rohstoff nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SeaportLabel">
+            <English>Seaport near %1</English>
+            <German>Hafen nahe %1</German>
         </Key>
         <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_Tooltip">
             <English>Name of Location (double-click to locate on map)</English>

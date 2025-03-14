@@ -78,27 +78,27 @@ private _entries = markersX select {
         };
         case(_x in resourcesX): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\Rock_CA.paa"];
-            ["Resource near %1", _entry] call _closeLocation;
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_ResourceLabel), _entry] call _closeLocation;
         };
         case(_x in outposts): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\bunker_CA.paa"];
-            ["Outpost near %1", _entry] call _closeLocation;
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_OutpostLabel), _entry] call _closeLocation;
         };
         case(_x in factories): {
             _entry set["picture", "\A3\ui_f\data\map\markers\nato\u_installation.paa"];
-            ["Factory near %1", _entry] call _closeLocation;
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_FactoryLabel), _entry] call _closeLocation;
         };
         case(_x in milbases): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\Tourism_CA.paa"];
-            ["Military base near %1", _entry] call _closeLocation;
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_MilBaseLabel), _entry] call _closeLocation;
         };
         case(_x in airportsX): {
             _entry set["picture", "\a3\ui_f\data\igui\cfg\simpletasks\types\Plane_ca.paa"];
-            ["Airport near %1", _entry] call _closeLocation;
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_AirportLabel), _entry] call _closeLocation;
         };
         case(_x in seaports): {
             _entry set["picture", "\A3\ui_f\data\map\markers\nato\n_naval.paa"];
-            ["Seaport near %1", _entry] call _closeLocation;
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SeaportLabel), _entry] call _closeLocation;
         };
         default { format["UNK(%1)", _x] };
     };
