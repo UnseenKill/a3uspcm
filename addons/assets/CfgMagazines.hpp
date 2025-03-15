@@ -5,6 +5,7 @@ class CfgMagazines {
     class GVAR(40mm_EMP) : CA_Magazine {
         scope = 2;
         displayName = CSTRING(Mag_40mm_EMP_DisplayName);
+        displayNameShort = CSTRING(Mag_40mm_EMP_DisplayName);
         descriptionShort = CSTRING(Mag_40mm_EMP_DescriptionShort);
 
         ammo = QGVAR(Ammo40mm_EMP);
@@ -22,6 +23,7 @@ class CfgMagazines {
     class GVAR(Grenade_EMP) : O_R_IR_Grenade {
         scope = 2;
         displayName = CSTRING(Mag_Grenade_EMP_DisplayName);
+        displayNameShort = CSTRING(Mag_Grenade_EMP_DisplayName);
         descriptionShort = CSTRING(Mag_Grenade_EMP_DescriptionShort);
         mass = 6;
         ammo = QGVAR(Ammo40mm_EMP);
