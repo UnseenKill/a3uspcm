@@ -3,6 +3,13 @@
 class CfgPatches {
     class ADDON {
         name = CSTRING(component);
+        ammo[] = {
+            QGVAR(Ammo40mm_EMP)
+        };
+        magazines[] = {
+            QGVAR(40mm_EMP),
+            QGVAR(Grenade_EMP)
+        };
         units[] = {
             QGVAR(DespawnSuppressionBeacon)
         };
@@ -16,6 +23,11 @@ class CfgPatches {
     };
 };
 
+#include "CfgAmmo.hpp"
+#include "CfgCloudlets.hpp"
 #include "CfgEventHandlers.hpp"
+#include "CfgMagazines.hpp"
+#include "CfgMagazineWells.hpp"
 #include "CfgSounds.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgWeapons.hpp"
