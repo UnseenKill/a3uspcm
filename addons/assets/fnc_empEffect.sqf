@@ -29,8 +29,30 @@ if (_projectile getVariable[QGVAR(empEffect), false]) exitWith {};
 _projectile setVariable[QGVAR(empEffect), true];
 [_projectile] remoteExec[QFUNC(empEffectLocal), 0];
 
+private _duration = GVAR(empEffectDuration);
+private _range = GVAR(empEffectRangeBlackout);
 private _vehDamageRange = GVAR(empEffectRangeVehicleDamage);
 private _vehicles = nearestObjects[_projectile, ["Air","LandVehicle","Ship"], _vehDamageRange, false] select { alive _x };
+private _groups = [];
+
+_projectile nearObjects["CAManBase", _range] apply {
+    _groups pushBackUnique group _x;
+};
+
+TRACE_1(QFUNC(empEffect),_groups);
+_groups apply {
+    _x enableGunLights "ForceOff";
+    _x enableIRLasers false;
+};
+
+[{
+    params["_groups"];
+
+    _groups select { !isNull _x } apply {
+        _x enableGunLights "Auto";
+        _x enableIRLasers true;
+    };
+}, [_groups], _duration] call CBA_fnc_waitAndExecute;
 
 {
     private _vehicle = _x;
@@ -47,7 +69,7 @@ private _vehicles = nearestObjects[_projectile, ["Air","LandVehicle","Ship"], _v
         } forEach _allHitpoints;
 
         _damagePoints apply { 
-            _vehicle setHitIndex[_x, 1, true];
+            _vehicle setHitIndex[_x, 0.97, true];
         };
     };
 } forEach _vehicles;
