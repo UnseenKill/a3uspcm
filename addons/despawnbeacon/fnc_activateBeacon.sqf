@@ -44,6 +44,9 @@ private _uav = createVehicle["I_UAV_01_F", getPosATL _beacon, [], 10, "NONE"];
 private _group = createGroup[side theBoss, true];
 private["_unit"];
 
+// Disable ACE3 BFT feature for this group
+_group setVariable["ace_map_hideBlueForceMarker", true];
+
 _unit = _group createUnit["I_UAV_AI", getPosATL _uav, [], 0, "NONE"];
 _unit moveInAny _uav;
 _unit = _group createUnit ["I_UAV_AI", getPos _beacon, [], 0, "NONE"];
@@ -51,6 +54,10 @@ _unit moveInAny _uav;
 
 _uav allowDamage false;
 _uav hideObjectGlobal true;
+
+allPlayers apply {
+    _x disableUAVConnectability[_uav, true];
+};
 
 _beacon setVariable[QGVAR(UAV), _uav];
 

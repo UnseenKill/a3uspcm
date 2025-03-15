@@ -233,6 +233,14 @@
             <English>Remove clunky old planes from air support, add jet.</English>
             <German>Entferne klobige alte Flugzeuge von der Luftunterstützung, füge Jet hinzu.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixVoicesCaption">
+            <English>Fix voices</English>
+            <German>Stimmen reparieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixVoicesText">
+            <English>Plain old English, please.</English>
+            <German>Einfach nur Englisch, bitte.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxCaption">
             <English>Turn into/create lootbox</English>
             <German>Verwandle/Erstelle eine Lootbox</German>

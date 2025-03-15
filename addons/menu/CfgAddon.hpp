@@ -42,6 +42,8 @@ class GVAR(Config) {
                 text = CSTRING(Miscellaneous_FindIntelText);
                 action = QFUNCMAIN(miscFindIntel);
 
+                separator = 1;
+
                 class Intel {
                     chemlights[] = {"Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"};
                     flags[] = {"ace_marker_flags_red","ace_flags_carrier_red"};
@@ -59,6 +61,14 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_FixAirSupportVehiclesCaption);
                 text = CSTRING(Miscellaneous_FixAirSupportVehiclesText);
                 action = QFUNCMAIN(miscFixAirSupportVehicles);
+            };
+
+            class FixVoices {
+                caption = CSTRING(Miscellaneous_FixVoicesCaption);
+                text = CSTRING(Miscellaneous_FixVoicesText);
+                action = QFUNCMAIN(miscFixVoices);
+
+                separator = 1;
             };
 
             class AddToBuildables {
