@@ -29,4 +29,27 @@ if (_projectile getVariable[QGVAR(empEffect), false]) exitWith {};
 _projectile setVariable[QGVAR(empEffect), true];
 [_projectile] remoteExec[QFUNC(empEffectLocal), 0];
 
+private _vehDamageRange = GVAR(empEffectRangeVehicleDamage);
+private _vehicles = nearestObjects[_projectile, ["Air","LandVehicle","Ship"], _vehDamageRange, false] select { alive _x };
+
+{
+    private _vehicle = _x;
+    private _allHitpoints = getAllHitPointsDamage _vehicle select 0;
+
+    if !(isNil "_allHitpoints") then {
+        private _damagePoints = [];
+        private _wantEngineDamage = !GVAR(requireVehicleEngineOn) || isEngineOn _vehicle;
+
+        {
+            if ((_x find "light" >= 0) || (_wantEngineDamage && (_x find "engine" >= 0))) then {
+                _damagePoints pushBack _foreachIndex;
+            };
+        } forEach _allHitpoints;
+
+        _damagePoints apply { 
+            _vehicle setHitIndex[_x, 1, true];
+        };
+    };
+} forEach _vehicles;
+
 nil;
