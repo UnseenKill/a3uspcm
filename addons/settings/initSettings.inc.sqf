@@ -240,6 +240,16 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(loadout,containerDumpContentsDelay), "SLIDER",
+    [ELSTRING(loadout,Settings_containerDumpContentsDelay_DisplayName), ELSTRING(loadout,Settings_containerDumpContentsDelay_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
+    [0, 180, 15, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Intel
 
 [
