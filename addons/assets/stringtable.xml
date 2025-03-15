@@ -5,6 +5,58 @@
             <English>A3USPCM - Assets Component</English>
             <German>A3USPCM - Assets Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_40mm_EMP_DescriptionShort">
+            <English>A 40mm EMP grenade for underbarrel grenade launchers. Lights out, mofo.</English>
+            <German>Eine 40mm EMP Granate für Unterlaufgranatwerfer. Licht aus.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_40mm_EMP_DisplayName">
+            <English>40mm EMP</English>
+            <German>40mm EMP</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_Grenade_EMP_DescriptionShort">
+            <English>Throwable EMP grenade. Lights out, mofo.</English>
+            <German>Werfbare EMP Granate. Licht aus.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_Grenade_EMP_DisplayName">
+            <English>EMP grenade</English>
+            <German>EMP Granate</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Settings_Category_DisplayName">
+            <English>Electromagnetic pulse ammo</English>
+            <German>Elektromagnetische Impulsmunition</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Settings_empEffectDuration_DisplayName">
+            <English>EMP effect duration</English>
+            <German>EMP Wirkungsdauer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Settings_empEffectDuration_Tooltip">
+            <English>Duration of the EMP effect in seconds.</English>
+            <German>Dauer des EMP-Effekts in Sekunden.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Settings_empEffectRangeBlackout_DisplayName">
+            <English>EMP blackout range</English>
+            <German>EMP Blackout-Reichweite</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Settings_empEffectRangeBlackout_Tooltip">
+            <English>Range of the EMP blackout effect in meters.</English>
+            <German>Reichweite des EMP-Blackout-Effekts in Metern.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Settings_empEffectRangeVehicleDamage_DisplayName">
+            <English>EMP vehicle damage range</English>
+            <German>EMP Fahrzeugschaden-Reichweite</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Settings_empEffectRangeVehicleDamage_Tooltip">
+            <English>Range of the EMP vehicle damage effect in meters.</English>
+            <German>Reichweite des EMP-Fahrzeugschadenseffekts in Metern.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Settings_requireVehicleEngineOn_DisplayName">
+            <English>Require vehicle engine on</English>
+            <German>Fahrzeugmotor muss laufen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Settings_requireVehicleEngineOn_Tooltip">
+            <English>Whether the vehicle engine must be on for the EMP effect to work.</English>
+            <German>Ob der Fahrzeugmotor laufen muss, damit der EMP-Effekt funktioniert.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Assets_SuppressionBeacon_DisplayName">
             <English>Despawn Suppression Beacon</English>
             <German>Despawn Unterdrückungsbake</German>

@@ -250,6 +250,48 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+// EMP
+
+[
+    QEGVAR(assets,empEffectDuration), "SLIDER",
+    [ELSTRING(assets,Settings_empEffectDuration_DisplayName), ELSTRING(assets,Settings_empEffectDuration_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(assets,Settings_Category_DisplayName)],
+    [0, 3600, 300, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(assets,empEffectRangeBlackout), "SLIDER",
+    [ELSTRING(assets,Settings_empEffectRangeBlackout_DisplayName), ELSTRING(assets,Settings_empEffectRangeBlackout_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(assets,Settings_Category_DisplayName)],
+    [0, 1500, 300, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(assets,empEffectRangeVehicleDamage), "SLIDER",
+    [ELSTRING(assets,Settings_empEffectRangeVehicleDamage_DisplayName), ELSTRING(assets,Settings_empEffectRangeVehicleDamage_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(assets,Settings_Category_DisplayName)],
+    [0, 1500, 100, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(assets,requireVehicleEngineOn), "CHECKBOX",
+    [ELSTRING(assets,Settings_requireVehicleEngineOn_DisplayName), ELSTRING(assets,Settings_requireVehicleEngineOn_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(assets,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Intel
 
 [

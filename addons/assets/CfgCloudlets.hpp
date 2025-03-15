@@ -1,0 +1,44 @@
+class CfgCloudlets {
+    class Default;
+
+   	class GVAR(EmpEffect): Default {
+		interval = 0.2;
+		circleRadius = 0;
+		circleVelocity[] = {0,0,0};
+		particleFSNtieth = 16;
+		particleFSIndex = 10;
+		particleFSFrameCount = 32;
+		particleFSLoop = 1;
+		angleVar = 0.1;
+		particleShape = QPATHTOF(particle-effect\UniversalB.p3d);
+		animationName = "";
+		particleType = "Billboard";
+		timerPeriod = 1;
+		lifeTime = 1.5;
+		moveVelocity[] = {0,1,0};
+		rotationVelocity = 0;
+		weight = 0.045;
+		volume = 0.04;
+		rubbing = 0.05;
+		size[] = {2.8,0.35};
+		color[] = {{1,1,1,-1}};
+		animationSpeed[] = {0.5,1};
+		randomDirectionPeriod = 0;
+		randomDirectionIntensity = 0;
+		onTimerScript = "";
+		beforeDestroyScript = "";
+		lifeTimeVar = 0.4;
+		positionVar[] = {0.1,0.3,0.1};
+		moveVelocityVar[] = {0.1,0.5,0.1};
+		rotationVelocityVar = 10;
+		sizeVar = 0.5;
+		colorVar[] = {0.1,0.1,0.1,0};
+		randomDirectionPeriodVar = 0;
+		randomDirectionIntensityVar = 0;
+		coreIntensity = 0.25;
+		coreDistance = 1.75;
+		damageTime = 0.75;
+		constantDistance = 1;
+		damageType = "Fire";
+	};
+};
