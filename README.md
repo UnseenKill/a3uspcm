@@ -41,6 +41,10 @@ Features
  * Despawn Suppression Beacon™
    * Tired of dying, respawning and teleporting back to the battlefield only to find the loot and vehicles gone?
    * Tire no more: place the *Despawn Suppression Beacon™* in the respawn radius of a location (default 1.1km) and die as often as you like. Nothing will despawn.
+ * Electomagnetic Pulse Ammunition
+   * Fire 40mm EMP grenades or use them as a throwable
+   * Creates a blackout in a configurable radius
+   * Damage running vehicle engines in a configurable radius
  * Teleportation
    * Teleport self anywhere on map without wait delay or "enemies close" checks
    * Teleport stragglers in player group to self

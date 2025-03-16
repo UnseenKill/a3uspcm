@@ -157,6 +157,14 @@
             <English>Vehicle loadout</English>
             <German>Fahrzeugausstattung</German>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_Settings_containerDumpContentsDelay_DisplayName">
+            <English>Dump container duration</English>
+            <German>Dauer zum Entladen des Containers</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_Settings_containerDumpContentsDelay_Tooltip">
+            <English>When dumping container contents via interaction menu, show progress bar for this many seconds.</English>
+            <German>Zeige Fortschrittsbalken für diese Anzahl an Sekunden an, wenn Container-Inhalte über das Interaktionsmenü entladen werden.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_Settings_flagLoadoutRadius_DisplayName">
             <English>Allow loadout in area around flag</English>
             <German>Ausrüstung im Bereich um Flagge erlauben</German>

@@ -31,19 +31,29 @@ params[
 if !assert(!isNull _container) exitWith {};
 if !([_container] call FUNCMAIN(utilVehicleHasCargo)) exitWith { systemChat localize LSTRING(DumpContentsEmpty) };
 
-private _gwh = nearestObjects[_container, ["GroundWeaponHolder"], 10];
+[
+    GVAR(containerDumpContentsDelay),
+    _this,
+    {
+        params[
+            ["_container", objNull, [objNull]]
+        ];
 
-if (_gwh isNotEqualTo []) then {
-    _gwh = _gwh select 0;
-} else {
-    _gwh = createVehicle["GroundWeaponHolder", getPosATL _player, [], 1, "CAN_COLLIDE"];
-};
+        private _gwh = nearestObjects[_container, ["GroundWeaponHolder"], 10];
 
-TRACE_2(QFUNC(containerDumpContents),_gwh,getPosATL _gwh);
+        if (_gwh isNotEqualTo []) then {
+            _gwh = _gwh select 0;
+        } else {
+            _gwh = createVehicle["GroundWeaponHolder", getPosATL _player, [], 1, "CAN_COLLIDE"];
+        };
 
-[_container, _gwh] call FUNCMAIN(utilContainerCargoCopy);
-playSound3D["x\A3A\addons\core\Sounds\Misc\LootSuccess.ogg", _gwh];
+        TRACE_2(QFUNC(containerDumpContents),_gwh,getPosATL _gwh);
 
-systemChat format[localize LSTRING(DumpContentsSuccess), getText(configOf _container >> "displayName")];
+        [_container, _gwh] call FUNCMAIN(utilContainerCargoCopy);
+        playSound3D["x\A3A\addons\core\Sounds\Misc\LootSuccess.ogg", _gwh];
+
+        systemChat format[localize LSTRING(DumpContentsSuccess), getText(configOf _container >> "displayName")];
+    }
+] call ace_common_fnc_progressBar;
 
 nil;

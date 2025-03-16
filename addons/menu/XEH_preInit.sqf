@@ -47,6 +47,10 @@ GVAR(IntelMarkers) = createHashMap;
 
 [
     {
+        allCurators apply {
+            _x addCuratorEditableObjects[[player]];
+        };
+
         if is3DENPreview exitWith {};
         [] call FUNC(loadAdditionalBuildables);
     }
