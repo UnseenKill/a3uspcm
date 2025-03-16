@@ -35,7 +35,8 @@ if !([_container] call FUNCMAIN(utilVehicleHasCargo)) exitWith { systemChat loca
     GVAR(containerDumpContentsDelay),
     _this,
     {
-        params[
+        params["_params"];
+        _params params[
             ["_container", objNull, [objNull]]
         ];
 
