@@ -80,6 +80,8 @@ Features
    * Remember/restore turret ammunition
    * Change maximum cargo of a vehicle
    * Dump contents of supply boxes to the ground so you can pick'em up with a lootbox
+ * Q.O.L.
+   * Weapons dealer: when selling, double-clicking an item updates the amount edit box the the current item's count
  * Zeus modules
    * Module that adds any static emplacement in a 100m radius to Zeus curatable objects
    * Module that crews any static emplacement in Zeus' object selection
