@@ -111,6 +111,16 @@ _control ctrlAddEventHandler["LBSelChanged", {
 
     _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_BTNRECRUIT ctrlEnable _validSelection;
     _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTRECRUITTYPES ctrlEnable _validSelection;
+
+    if !_validSelection then {
+        [false] call FUNC(updateRecruitList);
+    } else {
+        private _entry = GVAR(lbEntries) getOrDefault[_index, false];
+
+        if assert(_entry isEqualType createHashMap) then {
+            [_entry] call FUNC(updateRecruitList);
+        };
+    };
 }];
 
 // Map
@@ -123,7 +133,7 @@ _control ctrlAddEventHandler["MouseButtonUp", {
 // Recruit list
 
 _control = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTRECRUITTYPES;
-_control lnbAddColumn 0.9;
+_control lnbAddColumn 0.1;
 _control ctrlEnable false;
 _control ctrlSetFontHeight 0.03;
 _control ctrlAddEventHandler["LBDblClick", {
@@ -131,7 +141,7 @@ _control ctrlAddEventHandler["LBDblClick", {
 }];
 
 GVAR(lbColumns) select { _x select 2 isNotEqualTo "" } apply {
-    private _index = _control lnbAddRow[(_x # 1)];
+    private _index = _control lnbAddRow["", _x # 1];
     _control lnbSetData [[_index, 0], _x # 2];
 };
 

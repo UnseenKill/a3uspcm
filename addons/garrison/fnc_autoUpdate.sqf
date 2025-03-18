@@ -28,6 +28,12 @@ TRACE_1(QFUNC(autoUpdate),_index);
 
 if (_index >= 0) then {
     [_listbox, _index] call FUNC(updateGarrison);
+
+    private _entry = GVAR(lbEntries) getOrDefault[_index, false];
+
+    if assert(_entry isEqualType createHashMap) then {
+        [_entry] call FUNC(updateRecruitList);
+    };
 };
 
 nil;

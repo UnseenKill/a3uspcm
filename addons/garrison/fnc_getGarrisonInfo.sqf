@@ -38,6 +38,7 @@ TRACE_2(QFUNC(getGarrisonInfo),_marker,_garrison);
 
     createHashMapFromArray[
         ["name", _name],
+        ["dataColumn", true],
         ["count", { _x isEqualTo (A3A_faction_reb get _unit) } count _garrison]
     ]
 });
