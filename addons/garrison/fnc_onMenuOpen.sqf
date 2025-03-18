@@ -123,6 +123,7 @@ _control ctrlAddEventHandler["MouseButtonUp", {
 // Recruit list
 
 _control = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTRECRUITTYPES;
+_control lnbAddColumn 0.9;
 _control ctrlEnable false;
 _control ctrlSetFontHeight 0.03;
 _control ctrlAddEventHandler["LBDblClick", {
@@ -130,8 +131,8 @@ _control ctrlAddEventHandler["LBDblClick", {
 }];
 
 GVAR(lbColumns) select { _x select 2 isNotEqualTo "" } apply {
-    private _index = _control lbAdd (_x # 1);
-    _control lbSetData [_index, _x # 2];
+    private _index = _control lnbAddRow[(_x # 1)];
+    _control lnbSetData [[_index, 0], _x # 2];
 };
 
 // Recruit button
