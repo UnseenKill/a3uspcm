@@ -23,13 +23,15 @@ if !isServer exitWith {};
 if (GVAR(escapeZoneRadius) <= 0) exitWith { INFO("auto-uncompromize feature deactivated") };
 
 while { alive player } do {
-    INFO_1("player '%1' compromize monitor started",name player);
-    waitUntil { sleep 1; (!alive player) || (player getVariable["compromised", 0] > 0) };
+    INFO_1("player '%1' compromize monitor loop beginning",name player);
+    waitUntil { uiSleep 1; (!alive player) || (player getVariable["compromised", 0] > 0) };
 
-    if (!alive player) then { continue };
+    if (!alive player) then { uiSleep 30; continue };
 
     private _var = player getVariable["compromised", 0];
     INFO_2("player '%1' compromized until %2",name player,_var);
+
+    if (_var < 1) then { uiSleep 10; continue };
 
     private _trigger = createTrigger["EmptyDetector", getPos player];
     _trigger setTriggerArea[GVAR(escapeZoneRadius), GVAR(escapeZoneRadius), 0, false];
@@ -54,10 +56,15 @@ while { alive player } do {
     _marker setMarkerBrush "DIAGGRID";
 #endif
 
-    waitUntil { !alive player || isNull _trigger };
+    waitUntil { !alive player || captive player || isNull _trigger };
     TRACE_2(QFUNC(playerCompromizeMonitor),alive player,isNull _trigger);
 
-    if (alive player) then {
+    // player died or went undercover
+    if !(isNull _trigger) then { 
+        deleteVehicle _trigger;
+    };
+
+    if (alive player && !captive player) then {
         [] call FUNCMAIN(miscUncompromise);
     };
 
