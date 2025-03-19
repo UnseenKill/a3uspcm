@@ -1,6 +1,7 @@
 class CfgFunctions {
     class PREFIX {
         class COMPONENT {
+            PATHTO_FNC(utilAceCargoGetCargoSize);
             PATHTO_FNC(utilAceCargoGetLoaded);
             PATHTO_FNC(utilAceCargoLoad);
             PATHTO_FNC(utilAceCargoUnload);

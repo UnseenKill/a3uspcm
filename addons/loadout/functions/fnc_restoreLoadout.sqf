@@ -59,7 +59,7 @@ private _continue = try {
 
 if !_continue exitWith {};
 
-_loadout params["_title","_aceCargo","_inventory",["_turretsMagsInfo",false]];
+_loadout params["_title","_aceCargo","_inventory",["_turretsMagsInfo",false],["_cargoSpace",false]];
 _inventory params["_backpacks","_weapons","_magazines","_items"];
 
 TRACE_1("_title",_title);
@@ -148,6 +148,11 @@ if (_turretsMagsInfo isNotEqualTo false) then {
             _vehicle addMagazineTurret[_x # 0, _x # 1, _x # 2];
         };
     };
+};
+
+if (_cargoSpace isNotEqualTo false) then {
+    TRACE_1("setting cargo space",_cargoSpace);
+    [_vehicle, _cargoSpace] call ace_cargo_fnc_setSpace;
 };
 
 private _message = [LSTRING(HintLoadoutRestoredPartialText), LSTRING(HintLoadoutRestoredText)] select (_messages isEqualTo []);

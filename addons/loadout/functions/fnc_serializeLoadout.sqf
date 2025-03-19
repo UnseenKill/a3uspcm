@@ -44,7 +44,8 @@ private _loadout = [
     _loadoutName,
     [_vehicle] call FUNCMAIN(utilAceCargoGetLoaded),
     [_bp, _wc, _mc, _ic],
-    [typeOf _vehicle, magazinesAllTurrets _vehicle]
+    [typeOf _vehicle, magazinesAllTurrets _vehicle],
+    [_vehicle] call FUNCMAIN(utilAceCargoGetCargoSize)
 ];
 
 _loadout;

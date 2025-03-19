@@ -29,7 +29,7 @@ params[
 if !assert(!isNull _vehicle) exitWith {};
 if !assert(!isNull _player) exitWith {};
 
-[localize LSTRING(PromptChangeCargoSpace), str getNumber(configOf _vehicle >> "ace_cargo_space"), {
+[localize LSTRING(PromptChangeCargoSpace), str([_vehicle] call FUNCMAIN(utilAceCargoGetCargoSize)), {
     TRACE_1(QFUNC(changeCargoSpace),_this);
     params[["_sizeStr","",[""]],["_vehicle",objNull,[objNull]]];
     private _size = parseNumber _sizeStr;
