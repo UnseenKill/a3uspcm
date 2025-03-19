@@ -49,7 +49,7 @@ switch _type do {
 traderX say3D QEGVAR(assets,Sell);
 
 if !is3DENPreview then {
-    [0, _payout] remoteExec ["A3A_fnc_resourcesFIA",2];
+    [_payout] call A3A_fnc_resourcesPlayer;
 };
 
 if (_amount >= _count) then {
