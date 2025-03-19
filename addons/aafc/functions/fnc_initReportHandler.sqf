@@ -47,12 +47,15 @@ _group addEventHandler["EnemyDetected", {
     player reveal _enemy;
 
     _enemy addEventHandler["IncomingMissile", {
-        params[["_unit",objNull,[objNull]], ["_ammo","",[""]], ["_vehicle",objNull,[objNull]], ["_instigator",objNull,[objNull]], ["_projectile",objNull,[objNull]]];
-
         TRACE_5("Incoming missile",_unit,_ammo,_vehicle,_instigator,_projectile);
 
-        if (isNull _vehicle) exitWith {};
-        if (isNull _projectile) exitWith {};
+        params["_unit","_ammo","_vehicle","_instigator","_projectile"];
+
+        if isNil("_projectile") exitWith {};
+        if isNil("_vehicle") exitWith {};
+
+        if isNull(_projectile) exitWith {};
+        if isNull(_vehicle) exitWith {};
 
         [_vehicle] call FUNC(reloadCheck);
 
