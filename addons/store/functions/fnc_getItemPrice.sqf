@@ -28,7 +28,7 @@ params[
 private _price = false;
 
 ("true" configClasses(configFile >> "CfgHALsAddons" >> "cfgHALsStore" >> "categories")) findIf {
-    diag_log format["%1: %2 => %3", _class, _x, isClass(_x >> _class)];
+    //diag_log format["%1: %2 => %3", _class, _x, isClass(_x >> _class)];
 
     if !isClass(_x >> _class) then {
         false;
