@@ -20,6 +20,44 @@ params[
     ["_control",controlNull,[controlNull]]
 ];
 
-GVAR(allowAmountAutoUpdate) = nil;
+private _display = uiNamespace getVariable[QGVAR(menuDisplay), displayNull];
+if !assert(!isNull _display) exitWith {};
+
+private _list = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINERCONTENT;
+private _items = _list getVariable[QGVAR(items), []];
+private _index = lbCurSel _list;
+
+TRACE_1(QFUNC(onSellItemClick),_index);
+
+try {
+    if (_index < 0) then { throw false };
+
+    private _itemIndex = parseNumber(_list lnbData[_index, 0]);
+    private _data = _items select _itemIndex;
+
+    if (_data get "price" isEqualTo false) then { throw false };
+
+    private _amount = parseNumber ctrlText(_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_EDITAMOUNT);
+    private _class = _data get "class";
+    private _count = _data get "count";
+    private _price = (_data get "price") * HALs_store_sellFactor;
+    private _total = _price * _amount;
+
+    if (_amount <= 0 || _amount > _count) then { throw false };
+
+    TRACE_5(QFUNC(onSellItemClick),_class,_price,_amount,_count,_total);
+
+    if ([_class, _amount, _price, _itemIndex, _items, GVAR(sellContainerObject)] call FUNC(sellItem)) then {
+        _list lnbDeleteRow _index;
+    } else {
+        _list lnbSetText[[_index, 1], str((_items select _itemIndex) get "count")];
+    };
+
+    [] call FUNC(updateUiFromSelection);
+    GVAR(allowAmountAutoUpdate) = true;
+} catch {
+    WARNING("something went wrong");
+    GVAR(allowAmountAutoUpdate) = nil;
+};
 
 nil;
