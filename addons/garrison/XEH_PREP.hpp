@@ -8,3 +8,4 @@ PREP(onMenuOpen);
 PREP(startAutoUpdateLoop);
 PREP(updateGarrison);
 PREP(updateList);
+PREP(updateRecruitList);

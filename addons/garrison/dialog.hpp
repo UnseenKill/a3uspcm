@@ -34,7 +34,7 @@ $[
 	[1602,"BtnRecruit",[1,"Recruit",["0.3425 * safezoneW + safezoneX","0.728 * safezoneH + safezoneY","0.075 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.6,0,1],[-1,-1,-1,-1],"","-1"],[]],
 	[-1800,"StaticRecruitFrame",[1,"Recruit reinforcements",["0.1625 * safezoneW + safezoneX","0.5 * safezoneH + safezoneY","0.2625 * safezoneW","0.28 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
 	[-1801,"StaticMapFrame",[1,"Map view",["0.4375 * safezoneW + safezoneX","0.5 * safezoneH + safezoneY","0.4 * safezoneW","0.28 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
-	[1501,"ListRecruitTypes",[1,"",["0.1675 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.25 * safezoneW","0.2 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1501,"ListRecruitTypes",[1,"",["0.1675 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.25 * safezoneW","0.2 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = false;","idcLeft = -1;","idcRight = -1;"]],
 	[1009,"MapControl",[1,"",["0.45 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.375 * safezoneW","0.24 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
 ]
 */
@@ -250,6 +250,11 @@ class GVAR(dialog) {
 		};
 		class ListRecruitTypes: RscListbox
 		{
+			type = CT_LISTNBOX;
+			drawSideArrows = false;
+			idcLeft = -1;
+			idcRight = -1;
+
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTRECRUITTYPES;
 			x = QUOTE(0.1675 * safezoneW + safezoneX);
 			y = QUOTE(0.52 * safezoneH + safezoneY);
