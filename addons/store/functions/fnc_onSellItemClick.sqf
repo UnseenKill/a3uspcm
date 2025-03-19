@@ -1,4 +1,5 @@
 #include "..\script_component.hpp"
+#include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
 Function: A3USPCM_store_fnc_onSellItemClick
 
@@ -25,7 +26,7 @@ if !assert(!isNull _display) exitWith {};
 
 private _list = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINERCONTENT;
 private _items = _list getVariable[QGVAR(items), []];
-private _index = lbCurSel _list;
+private _index = lnbCurSelRow _list;
 
 TRACE_1(QFUNC(onSellItemClick),_index);
 
@@ -48,8 +49,10 @@ try {
     TRACE_5(QFUNC(onSellItemClick),_class,_price,_amount,_count,_total);
 
     if ([_class, _amount, _price, _itemIndex, _items, GVAR(sellContainerObject)] call FUNC(sellItem)) then {
+        TRACE_1(QFUNC(onSellItemClick),"Item sold");
         _list lnbDeleteRow _index;
     } else {
+        TRACE_1(QFUNC(onSellItemClick),"Item retained");
         _list lnbSetText[[_index, 1], str((_items select _itemIndex) get "count")];
     };
 

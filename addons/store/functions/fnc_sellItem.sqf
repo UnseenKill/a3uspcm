@@ -14,7 +14,7 @@ Parameters:
     5: _container - container <OBJECT>
 
 Returns:
-    Nothing
+    Whether item was sold completely <BOOL>
 
 Author:
     goreSplatter
@@ -47,14 +47,17 @@ switch _type do {
 };
 
 traderX say3D QEGVAR(assets,Sell);
-[0, _payout] remoteExec ["A3A_fnc_resourcesFIA",2];
+
+if !is3DENPreview then {
+    [0, _payout] remoteExec ["A3A_fnc_resourcesFIA",2];
+};
 
 if (_amount >= _count) then {
     _items set[_itemIndex, nil];
+    GVAR(sellContainerItems) deleteAt _class;
     true;
 } else {
     _items select _itemIndex set["count", _count - _amount];
+    GVAR(sellContainerItems) get _class set["count", _count - _amount];
     false;
 };
-
-nil;
