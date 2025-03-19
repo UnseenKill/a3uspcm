@@ -5,5 +5,61 @@
             <English>A3USPCM - Store Component</English>
             <German>A3USPCM - Store Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnClose">
+            <English>X</English>
+            <German>X</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnListboxLeftArrow">
+            <English>&lt;&lt;</English>
+            <German>&lt;&lt;</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnListboxRightArrow">
+            <English>&gt;&gt;</English>
+            <German>&gt;&gt;</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnSell">
+            <English>Sell</English>
+            <German>Verkaufen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FrameItemInfo">
+            <English>Item name goes here</English>
+            <German>Item Name hier</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_LabelAmount">
+            <English>Amount:</English>
+            <German>Anzahl:</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_LabelItemInfoCount">
+            <English>Amount in container:</English>
+            <German>Anzahl im Container:</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_LabelItemSalePrice">
+            <English>Item sale price:</English>
+            <German>Item Verkaufspreis:</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_LabelShowUnsellable">
+            <English>Show unsellable items</English>
+            <German>Unverkaufbare Items anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_LabelTotalSale">
+            <English>Total sale:</English>
+            <German>Gesamtverkauf:</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_StaticTitle">
+            <English>A3USPCM Faster Loot Selling</English>
+            <German>A3USPCM Schnelleres Loot Verkaufen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_TextItemCount">
+            <English>0</English>
+            <German>0</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_TextItemPrice">
+            <English>0</English>
+            <German>0</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_TextTotalSale">
+            <English>0</English>
+            <German>0</German>
+        </Key>
     </Package>
 </Project>
