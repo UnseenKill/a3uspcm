@@ -47,6 +47,7 @@ switch _type do {
 };
 
 traderX say3D QEGVAR(assets,Sell);
+[0, _payout] remoteExec ["A3A_fnc_resourcesFIA",2];
 
 if (_amount >= _count) then {
     _items set[_itemIndex, nil];
