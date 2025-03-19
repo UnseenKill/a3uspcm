@@ -5,5 +5,13 @@
             <English>A3USPCM - A3U Fixes Component</English>
             <German>A3USPCM - A3U Fixes Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Fixes_Settings_storeQuickSell_DisplayName">
+            <English>Weapons dealer quick sell</English>
+            <German>Waffenhändlerschnellverkauf</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Fixes_Settings_storeQuickSell_Tooltip">
+            <English>Enhance sell menu: double-clicking an item sets the item count in the amount textbox. If list focus advances, automatically update sell amount with that new item's count.</English>
+            <German>Verbessertes Verkaufsmenü: Ein Doppelklick auf einen Gegenstand setzt die Anzahl des Gegenstands in das Mengentextfeld. Wenn der Listen-Fokus weitergeht, aktualisiert automatisch den Verkaufsbetrag mit der Anzahl des neuen Artikels.</German>
+        </Key>
     </Package>
 </Project>

@@ -353,3 +353,15 @@
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
+
+// Experimental
+
+[
+    QEGVAR(fixes,storeQuickSell), "CHECKBOX",
+    [ELSTRING(fixes,Settings_storeQuickSell_DisplayName), ELSTRING(fixes,Settings_storeQuickSell_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;

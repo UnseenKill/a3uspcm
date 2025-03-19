@@ -23,6 +23,8 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(halsStoreDialogInit),_this);
 
+if !GVAR(storeQuickSell) exitWith {};
+
 disableSerialization;
 
 [] call {
