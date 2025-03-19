@@ -231,6 +231,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(loadout,aceInteractShowVehicleDumpAction), "CHECKBOX",
+    [ELSTRING(loadout,Settings_aceInteractShowVehicleDumpAction_DisplayName), ELSTRING(loadout,Settings_aceInteractShowVehicleDumpAction_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(loadout,flagLoadoutRadius), "SLIDER",
     [ELSTRING(loadout,Settings_flagLoadoutRadius_DisplayName), ELSTRING(loadout,Settings_flagLoadoutRadius_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
@@ -342,4 +352,16 @@
     true, // global
     {}, // onchange
     false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+// Experimental
+
+[
+    QEGVAR(fixes,storeQuickSell), "CHECKBOX",
+    [ELSTRING(fixes,Settings_storeQuickSell_DisplayName), ELSTRING(fixes,Settings_storeQuickSell_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
 ] call CBA_fnc_addSetting;

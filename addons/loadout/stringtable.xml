@@ -126,8 +126,8 @@
             <German>Löschen</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutDump">
-            <English>Dump</English>
-            <German>Entladen</German>
+            <English>Show</English>
+            <German>Anzeigen</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutManage">
             <English>Manage saved loadouts</English>
@@ -156,6 +156,14 @@
         <Key ID="STR_A3USPCM_Loadout_Settings_Category_DisplayName">
             <English>Vehicle loadout</English>
             <German>Fahrzeugausstattung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_Settings_aceInteractShowVehicleDumpAction_DisplayName">
+            <English>Show "dump inventory" action for vehicles</English>
+            <German>Zeige "Inventar entladen"-Aktion für Fahrzeuge</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_Settings_aceInteractShowVehicleDumpAction_Tooltip">
+            <English>When enabled, ACE interaction menu will show an action to dump vehicle inventory.</English>
+            <German>Wenn aktiviert, zeigt das ACE-Interaktionsmenü eine Aktion zum Entladen des Fahrzeuginventars an.</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_Settings_containerDumpContentsDelay_DisplayName">
             <English>Dump container duration</English>
