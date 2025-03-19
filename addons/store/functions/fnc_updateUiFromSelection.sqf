@@ -44,6 +44,11 @@ try {
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlEnable false;
     };
 
+    if !(isNil QGVAR(allowAmountAutoUpdate)) then {
+        GVAR(allowAmountAutoUpdate) = nil;
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_EDITAMOUNT ctrlSetText str(_data get "count");
+    };
+
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_FRAMEITEMINFO ctrlSetText getText((_data get "config") >> (_data get "class") >> "displayName");
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMCOUNT ctrlSetText str(_data get "count");
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMPRICE ctrlSetText format["%1 %2", round _price, A3A_faction_civ get "currencySymbol"];
