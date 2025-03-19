@@ -8,7 +8,7 @@
 //  Search: (^\s*(?:text|tooltip)\s*=\s*)[$]STR_A3_([^;]+)
 //  Replace: $1CSTRING($2)
 
-/* #Vyzogo
+/* #Vatuxo
 $[
 	1.063,
 	["RscA3USPCMStoreSellDialog",[[0,0,1,1],0.025,0.04,"GUI_GRID"],2,1,1],
@@ -19,12 +19,12 @@ $[
 	[1500,"ListContainerContent",[1,"",["0.308186 * safezoneW + safezoneX","0.324 * safezoneH + safezoneY","0.2475 * safezoneW","0.44 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = true;","idcLeft = IDC_RSCA3USPCMSTORESELLDIALOG_BTNLISTBOXLEFTARROW;","idcRight = IDC_RSCA3USPCMSTORESELLDIALOG_BTNLISTBOXRIGHTARROW;","tooltipPerColumn = true;"]],
 	[1600,"BtnListboxLeftArrow",[1,"<<",["0.298906 * safezoneW + safezoneX","0.808 * safezoneH + safezoneY","0.04125 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1601,"BtnListboxRightArrow",[1,">>",["0.345312 * safezoneW + safezoneX","0.808 * safezoneH + safezoneY","0.04125 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[2800,"",[1,"",["0.556719 * safezoneW + safezoneX","0.731 * safezoneH + safezoneY","0.020625 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2800,"CheckShowUnsellable",[1,"",["0.556719 * safezoneW + safezoneX","0.731 * safezoneH + safezoneY","0.020625 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1002,"LabelShowUnsellable",[1,"Show unsellable items",["0.577344 * safezoneW + safezoneX","0.72 * safezoneH + safezoneY","0.118594 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1003,"LabelAmount",[1,"Amount:",["0.579403 * safezoneW + safezoneX","0.544 * safezoneH + safezoneY","0.0464063 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1400,"EditAmount",[1,"",["0.630971 * safezoneW + safezoneX","0.5506 * safezoneH + safezoneY","0.0464063 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0],[-1,-1,-1,-1],"","-1"],[]],
 	[1603,"BtnSell",[1,"Sell",["0.580438 * safezoneW + safezoneX","0.588 * safezoneH + safezoneY","0.0979687 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]],
-	[1200,"PictureSellItem",[1,"#(argb,8,8,3)color(1,1,1,1)",["0.644375 * safezoneW + safezoneX","0.313 * safezoneH + safezoneY","0.04125 * safezoneW","0.077 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1200,"PictureSellItem",[1,"#(argb,8,8,3)color(0,0,0,0)",["0.644375 * safezoneW + safezoneX","0.313 * safezoneH + safezoneY","0.04125 * safezoneW","0.077 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[-1800,"FrameItemInfo",[1,"Item name goes here",["0.561875 * safezoneW + safezoneX","0.291 * safezoneH + safezoneY","0.134062 * safezoneW","0.352 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
 	[1004,"LabelItemInfoCount",[1,"Amount in container:",["0.567031 * safezoneW + safezoneX","0.401 * safezoneH + safezoneY","0.0876563 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1005,"LabelItemSalePrice",[1,"Item sale price:",["0.567031 * safezoneW + safezoneX","0.434 * safezoneH + safezoneY","0.0876563 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
@@ -41,7 +41,7 @@ class GVAR(sellDialog) {
 
     class controls {
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Vyzogo)
+		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Vatuxo)
 		////////////////////////////////////////////////////////
 
 		class StaticTitle: RscText
@@ -112,9 +112,9 @@ class GVAR(sellDialog) {
 			w = QUOTE(0.04125 * safezoneW);
 			h = QUOTE(0.055 * safezoneH);
 		};
-		class RscCheckbox_2800: RscCheckbox
+		class CheckShowUnsellable: RscCheckbox
 		{
-			idc = IDC_RSCA3USPCMSTORESELLDIALOG_RSCCHECKBOX_2800;
+			idc = IDC_RSCA3USPCMSTORESELLDIALOG_CHECKSHOWUNSELLABLE;
 			x = QUOTE(0.556719 * safezoneW + safezoneX);
 			y = QUOTE(0.731 * safezoneH + safezoneY);
 			w = QUOTE(0.020625 * safezoneW);
@@ -160,7 +160,7 @@ class GVAR(sellDialog) {
 		class PictureSellItem: RscPicture
 		{
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEM;
-			text = "#(argb,8,8,3)color(1,1,1,1)";
+			text = "#(argb,8,8,3)color(0,0,0,0)";
 			x = QUOTE(0.644375 * safezoneW + safezoneX);
 			y = QUOTE(0.313 * safezoneH + safezoneY);
 			w = QUOTE(0.04125 * safezoneW);
