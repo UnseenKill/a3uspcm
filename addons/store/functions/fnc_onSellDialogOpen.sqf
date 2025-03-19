@@ -50,7 +50,7 @@ _control ctrlAddEventHandler["KeyUp", {
 _control = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL;
 _control ctrlEnable false;
 _control ctrlAddEventHandler["ButtonClick", {
-    /* something */
+    call FUNC(onSellItemClick);
 }];
 
 // Filter list
@@ -77,9 +77,11 @@ _control ctrlEnable false;
 _control ctrlSetFontHeight 0.04;
 _control lnbAddColumn 0.23;
 _control lnbAddColumn 0.27;
+
 _control ctrlAddEventHandler["LBDblClick", {
-    /* something */
+    call FUNC(updateItemCount);
 }];
+
 _control ctrlAddEventHandler["LBSelChanged", {
     params[["_control",controlNull,[controlNull]], ["_index",0,[0]]];
     [] call FUNC(updateUiFromSelection);
