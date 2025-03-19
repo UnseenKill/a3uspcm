@@ -15,3 +15,4 @@ class CfgPatches {
 };
 
 #include "CfgHalsStore.hpp"
+#include "dialog.hpp"
