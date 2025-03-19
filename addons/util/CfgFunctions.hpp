@@ -5,6 +5,7 @@ class CfgFunctions {
             PATHTO_FNC(utilAceCargoGetLoaded);
             PATHTO_FNC(utilAceCargoLoad);
             PATHTO_FNC(utilAceCargoUnload);
+            PATHTO_FNC(utilContainerContentFlattened);
             PATHTO_FNC(utilContainerCargoCopy);
             PATHTO_FNC(utilCursorTargetAction);
             PATHTO_FNC(utilGenerateUniqueID);

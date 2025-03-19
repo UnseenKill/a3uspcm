@@ -14,5 +14,7 @@ class CfgPatches {
     };
 };
 
+#include "CfgEventHandlers.hpp"
 #include "CfgHalsStore.hpp"
+#include "CfgVehicles.hpp"
 #include "dialog.hpp"

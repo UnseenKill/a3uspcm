@@ -1,0 +1,63 @@
+#include "..\script_component.hpp"
+/* ----------------------------------------------------------------------------
+Function: A3USPCM_store_fnc_startAdvancedSelling
+
+Description:
+    User interaction callback handler for starting advanced selling
+
+Parameters:
+    0: _container - Inventory container <OBJECT>
+
+Optional:
+
+Example:
+
+Returns:
+    <BOOL>
+
+Author:
+    goreSplatter
+---------------------------------------------------------------------------- */
+_this spawn {
+    params[["_container",objNull,[objNull]]];
+
+    if !assert(!isNull _container) exitWith {};
+
+    private _guiCaption = localize LSTRING(AdvSell_DisplayNameShort);
+    private _guiText = localize LSTRING(AdvSell_ConfirmBreakdown);
+
+    if !([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) exitWith {};
+
+    GVAR(sellContainer) = _container;
+    GVAR(sellContainerReady) = false;
+
+    [_container, {
+        params[["_container",objNull,[objNull]], ["_items",nil,[createHashMap]]];
+
+        if !assert(!isNull _container) exitWith {};
+        if !assert(!isNil "_items") exitWith {};
+
+        {
+            _y set["class", _x];
+            _y set["config", switch (_y get "type") do {
+                case "item": { [configFile >> "CfgWeapons", configFile >> "CfgGlasses"] select isClass(configFile >> "CfgGlasses" >> _x) };
+                case "weapon": { configFile >> "CfgWeapons" };
+                case "magazine": { configFile >> "CfgMagazines" };
+                case "backpack": { configFile >> "CfgVehicles" };
+                default { 
+                    ERROR_2("unknown type for %1: %2",_x,_y get "type");
+                    configNull;
+                };
+            }];
+            _y set["price", [_x] call FUNC(getItemPrice)];
+        } forEach _items;
+
+        GVAR(sellContainerItems) = _items;
+        GVAR(sellContainerObject) = _container;
+        GVAR(sellContainerReady) = true;
+    }] spawn FUNC(breakdownContainer);
+
+    createDialog QGVAR(sellDialog);
+};
+
+nil;
