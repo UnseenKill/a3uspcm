@@ -7,6 +7,11 @@
                     condition = QUOTE(call FUNC(canUseLoadoutMenu));\
                     insertChildren = QUOTE(call FUNC(getLoadoutMenuChildren));\
                 };\
+                class GVAR(LoadoutDump) {\
+                    displayName = CSTRING(DumpContents);\
+                    condition = QUOTE(GVAR(aceInteractShowVehicleDumpAction) && call FUNCMAIN(utilVehicleHasCargo));\
+                    statement = QUOTE(call FUNC(containerDumpContents));\
+                };\
             };\
         };\
     }
