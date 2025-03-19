@@ -5,6 +5,10 @@
             <English>Contents of container need to be broken down first. Continue with breakdown?</English>
             <German>Inhalte des Containers muss zerlegt werden. Mit Zerlegung fortfahren?</German>
         </Key>
+        <Key ID="STR_A3USPCM_Store_AdvSell_DblClickHint">
+            <English>Double click an item to enter its amount.</English>
+            <German>Doppelklicke auf einen Gegenstand, um seine Menge einzugeben.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Store_AdvSell_DisplayNameShort">
             <English>Advanced selling</English>
             <German>Verbesserter Verkauf</German>
@@ -24,18 +28,6 @@
         <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnClose">
             <English>X</English>
             <German>X</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnListboxLeftArrow">
-            <English>&lt;&lt;</English>
-            <German>&lt;&lt;</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnListboxRightArrow">
-            <English>&gt;&gt;</English>
-            <German>&gt;&gt;</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnListboxRightArrow_Tooltip">
-            <English>Sell all units of this item</English>
-            <German>Alle Einheiten dieses Gegenstands verkaufen</German>
         </Key>
         <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnSell">
             <English>Sell</English>

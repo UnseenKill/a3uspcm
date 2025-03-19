@@ -72,9 +72,6 @@ _control ctrlAddEventHandler["LBSelChanged", {
 
 // Container items list
 
-_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNLISTBOXLEFTARROW ctrlShow false;
-_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNLISTBOXRIGHTARROW ctrlShow false;
-
 _control = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINERCONTENT;
 _control ctrlEnable false;
 _control ctrlSetFontHeight 0.04;
@@ -104,7 +101,8 @@ _control ctrlAddEventHandler["CheckedChanged", {
     waitUntil { isNull _display || GVAR(sellContainerReady) };
     TRACE_1("sellContainerReady",GVAR(sellContainerReady));
 
-    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlShow false;
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText localize LSTRING(AdvSell_DblClickHint);
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetTextColor [1,1,1,1];
 
     [true] call FUNC(updateSellableItemsList);
 };
