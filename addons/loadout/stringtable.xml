@@ -126,8 +126,8 @@
             <German>Löschen</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutDump">
-            <English>Dump</English>
-            <German>Entladen</German>
+            <English>Show</English>
+            <German>Anzeigen</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutManage">
             <English>Manage saved loadouts</English>
