@@ -625,6 +625,10 @@
             <English>Move trader location to somewhere else on the map or start the trader quest at that location.</English>
             <German>Verschiebe den Händlerstandort an einen anderen Ort auf der Karte oder starte die Händlerquest an diesem Ort.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_AceEHPCaption">
+            <English>ACE3 Electronic Hearing Protection</English>
+            <German>ACE3 Elektronischer Gehörschutz</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_AcePainkillersCaption">
             <English>ACE3 Painkillers</English>
             <German>ACE3 Schmerztabletten</German>

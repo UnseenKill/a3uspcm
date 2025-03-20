@@ -29,6 +29,7 @@ class CfgFunctions {
             PATHTO_FNC(teleportRebelFlag);
             PATHTO_FNC(teleportRebelObject);
             PATHTO_FNC(teleportStragglers);
+            PATHTO_FNC(unlockAceEHP);
             PATHTO_FNC(unlockAcePainkillers);
             PATHTO_FNC(unlockBreachingChargeAPCs);
             PATHTO_FNC(unlockBreachingChargeTanks);
