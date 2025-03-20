@@ -81,6 +81,7 @@ Features
    * Change maximum cargo of a vehicle
    * Dump contents of supply boxes to the ground so you can pick'em up with a lootbox
  * Q.O.L.
+   * Vehicles: fire smoke launcher from any position of a vehicle (requires additional keybind via addon keybinds; does not interfere w/ regular counter-measures keybind)
    * Weapons dealer: when selling, double-clicking an item updates the amount edit box the the current item's count
  * Zeus modules
    * Module that adds any static emplacement in a 100m radius to Zeus curatable objects

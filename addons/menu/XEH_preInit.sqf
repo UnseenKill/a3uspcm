@@ -38,6 +38,16 @@ if !hasInterface exitWith {
     }
 ] call CBA_fnc_addKeybind;
 
+[
+    ELSTRING(main,Title),
+    QGVAR(FireSmokeLauncher),
+    [LSTRING(Hotkeys_FireSmokeLauncher), LSTRING(Hotkeys_FireSmokeLauncherTooltip)],
+    {},
+    {
+        [] call FUNCMAIN(fireSmokeLauncher);
+    }
+] call CBA_fnc_addKeybind;
+
 ADDON = true;
 
 GVAR(AdditionalBuildables) = false;
