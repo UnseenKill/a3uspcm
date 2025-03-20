@@ -29,6 +29,10 @@
             <English>X</English>
             <German>X</German>
         </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnPurge">
+            <English>Purge</English>
+            <German>Entfernen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnSell">
             <English>Sell</English>
             <German>Verkaufen</German>
@@ -44,6 +48,10 @@
         <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FilterSelect_SortByAmount">
             <English>Sort items by amount</English>
             <German>Sortiere Gegenstände nach Anzahl</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FilterSelect_SortByPrice">
+            <English>Sort items by price</English>
+            <German>Sortiere Gegenstände nach Preis</German>
         </Key>
         <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FrameItemInfo">
             <English>Item name goes here</English>

@@ -22,7 +22,7 @@ Author:
 params[
     ["_class","",[""]],
     ["_amount",0,[0]],
-    ["_price",0,[0]],
+    ["_price",0,[0,false]],
     ["_itemIndex",0,[0]],
     ["_items",[],[]],
     ["_container",objNull,[objNull]]
@@ -32,7 +32,7 @@ private _item = _items select _itemIndex;
 private _class = _item get "class";
 private _type = _item get "type";
 private _count = _item get "count";
-private _payout = _price * _amount;
+private _payout = if (_price isEqualTo false) then [{ false }, { _price * _amount }];
 
 TRACE_5(QFUNC(sellItem),_class,_type,_price,_amount,_payout);
 
@@ -44,10 +44,14 @@ switch _type do {
     default { throw "This is where I give up." };
 };
 
-traderX say3D QEGVAR(assets,Sell);
+if (_payout isNotEqualTo false) then {
+    if GVAR(playKaching) then {
+        traderX say3D QEGVAR(assets,Sell);
+    };
 
-if !is3DENPreview then {
-    [_payout] call A3A_fnc_resourcesPlayer;
+    if !is3DENPreview then {
+        [_payout] call A3A_fnc_resourcesPlayer;
+    };
 };
 
 if (_amount >= _count) then {
