@@ -19,8 +19,6 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(sellItem),_this);
-
 params[
     ["_class","",[""]],
     ["_amount",0,[0]],
@@ -36,7 +34,7 @@ private _type = _item get "type";
 private _count = _item get "count";
 private _payout = _price * _amount;
 
-TRACE_4(QFUNC(sellItem),_class,_type,_amount,_payout);
+TRACE_5(QFUNC(sellItem),_class,_type,_price,_amount,_payout);
 
 switch _type do {
     case "backpack": { _container addBackpackCargoGlobal[_class, -_amount] };
