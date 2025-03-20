@@ -41,6 +41,10 @@
             <English>Sort items alphabetically</English>
             <German>Sortiere Gegenstände alphabetisch</German>
         </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FilterSelect_SortByAmount">
+            <English>Sort items by amount</English>
+            <German>Sortiere Gegenstände nach Anzahl</German>
+        </Key>
         <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FrameItemInfo">
             <English>Item name goes here</English>
             <German>Item Name hier</German>

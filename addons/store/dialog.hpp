@@ -49,6 +49,11 @@ class GVAR(sellDialog) {
             displayName = CSTRING(RscA3USPCMStoreSellDialog_FilterSelect_SortAlphabetically);
             function = QUOTE(call FUNC(filterSortAlphabetically));
         };
+
+        class SortByAmount {
+            displayName = CSTRING(RscA3USPCMStoreSellDialog_FilterSelect_SortByAmount);
+            function = QUOTE(call FUNC(filterSortByAmount));
+        };
     };
 
     class Controls {
