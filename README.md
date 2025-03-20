@@ -81,6 +81,7 @@ Features
    * Change maximum cargo of a vehicle
    * Dump contents of supply boxes to the ground so you can pick'em up with a lootbox
  * Q.O.L.
+   * Vehicles: fire smoke launcher from any position of a vehicle (requires additional keybind via addon keybinds; does not interfere w/ regular counter-measures keybind)
    * Weapons dealer: when selling in the native sell dialog, double-clicking an item updates the amount edit box the the current item's count
    * Weapons dealer: speed-improved advanced selling dialog via ACE3 interaction near the trader
  * Zeus modules
