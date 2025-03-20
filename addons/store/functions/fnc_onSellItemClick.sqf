@@ -35,18 +35,22 @@ try {
 
     private _itemIndex = parseNumber(_list lnbData[_index, 0]);
     private _data = _items select _itemIndex;
-
-    if (_data get "price" isEqualTo false) then { throw false };
-
     private _amount = parseNumber ctrlText(_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_EDITAMOUNT);
+    private _price = _data get "price";
+
+    if (_price isNotEqualTo false) then {
+        _price = _price * HALs_store_sellFactor;
+    } else {
+        TRACE_2(QFUNC(onSellItemClick),"purge",_data);
+        _amount = _data get "count";
+    };
+
     private _class = _data get "class";
     private _count = _data get "count";
-    private _price = (_data get "price") * HALs_store_sellFactor;
-    private _total = _price * _amount;
 
     if (_amount <= 0 || _amount > _count) then { throw false };
 
-    TRACE_5(QFUNC(onSellItemClick),_class,_price,_amount,_count,_total);
+    TRACE_4(QFUNC(onSellItemClick),_class,_price,_amount,_count);
 
     if ([_class, _amount, _price, _itemIndex, _items, GVAR(sellContainerObject)] call FUNC(sellItem)) then {
         TRACE_1(QFUNC(onSellItemClick),"Item sold");

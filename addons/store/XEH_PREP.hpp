@@ -3,6 +3,7 @@ PREP(canStartAdvancedSelling);
 PREP(filterGroupedByType);
 PREP(filterSortAlphabetically);
 PREP(filterSortByAmount);
+PREP(filterSortByPrice);
 PREP(getItemPrice);
 PREP(onSellDialogOpen);
 PREP(onSellItemClick);
