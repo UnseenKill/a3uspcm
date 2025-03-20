@@ -365,3 +365,13 @@
     {}, // onchange
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(store,playKaching), "CHECKBOX",
+    [ELSTRING(store,Settings_playKaching_DisplayName), ELSTRING(store,Settings_playKaching_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;

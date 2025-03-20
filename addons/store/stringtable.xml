@@ -89,5 +89,13 @@
             <English>0</English>
             <German>0</German>
         </Key>
+        <Key ID="STR_A3USPCM_Store_Settings_playKaching_DisplayName">
+            <English>Play "kaching" sound when selling</English>
+            <German>Spiele Sound beim Verkaufen ab</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_Settings_playKaching_Tooltip">
+            <English>Plays an annoying sound when selling via the "Better Selling" feature</English>
+            <German>Spielt einen nervigen Sound ab, wenn über die "Besser Verkaufen"-Funktion verkauft wird</German>
+        </Key>
     </Package>
 </Project>
