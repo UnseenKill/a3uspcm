@@ -62,6 +62,7 @@ Features
    * Useful when you've driven your Polaris/Qilin through one of those deadly bushes
  * Unlocks
    * Unlock ACE3 Painkillers for arsenal
+   * Unlock ACE3 electronic hearing protection for arsenal
    * Unlock breaching charges for tanks and APCs
    * Unlock your current loadout
    * Sort that damn mess of an arsenal
