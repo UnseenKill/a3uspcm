@@ -34,5 +34,5 @@ if !assert(!isNull _player) exitWith { false };
 && (getNumber(configOf _target >> "maximumLoad") > 0)
 && (
     !GVAR(requireFlagProximity)
-    || (nearestObjects[_target, [A3A_faction_reb get "flag"], GVAR(flagLoadoutRadius)] isNotEqualTo [])
+    || (nearestObjects[_target, ["FlagCarrier"], GVAR(flagLoadoutRadius)] isNotEqualTo [])
 );
