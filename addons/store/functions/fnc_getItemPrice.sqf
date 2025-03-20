@@ -25,13 +25,13 @@ params[
     ["_class", "", [""]]
 ];
 
-private _price = false;
-
-private _index = _className call jn_fnc_arsenal_itemType;
+private _index = _class call jn_fnc_arsenal_itemType;
 private _arsenal = jna_datalist select _index;
-private _count = [_arsenal, _className] call jn_fnc_arsenal_itemCount;
+private _count = [_arsenal, _class] call jn_fnc_arsenal_itemCount;
 
 if (_count < 0) exitWith { false };
+
+private _price = false;
 
 ("true" configClasses(configFile >> "CfgHALsAddons" >> "cfgHALsStore" >> "categories")) findIf {
     //diag_log format["%1: %2 => %3", _class, _x, isClass(_x >> _class)];
