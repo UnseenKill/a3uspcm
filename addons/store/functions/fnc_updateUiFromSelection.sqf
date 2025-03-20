@@ -23,8 +23,6 @@ private _list = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINER
 private _items = _list getVariable[QGVAR(items), []];
 private _index = lbCurSel _list;
 
-TRACE_1(QFUNC(updateUiFromSelection),_index);
-
 try {
     if (_index < 0) then { throw false };
 

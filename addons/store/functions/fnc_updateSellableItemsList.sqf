@@ -38,7 +38,7 @@ private _toggleUiElements = {
 
 private _filter = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_DROPFILTERSELECT lbData lbCurSel(_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_DROPFILTERSELECT);
 private _callback = getText(configFile >> QGVAR(sellDialog) >> "Filters" >> _filter >> "function");
-private _items = [+GVAR(sellContainerItems)] call compile _callback;
+private _items = [GVAR(sellContainerItems)] call compile _callback;
 
 if !(cbChecked(_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_CHECKSHOWUNSELLABLE)) then {
     _items = _items select { (_x get "price") isNotEqualTo false };
