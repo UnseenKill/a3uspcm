@@ -38,7 +38,7 @@ try {
     private _amount = parseNumber ctrlText(_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_EDITAMOUNT);
     private _price = _data get "price";
 
-    if (_price isNotEqualTo false) then {
+    if (_data get "sellable") then {
         _price = _price * HALs_store_sellFactor;
     } else {
         TRACE_2(QFUNC(onSellItemClick),"purge",_data);
@@ -52,12 +52,12 @@ try {
 
     TRACE_4(QFUNC(onSellItemClick),_class,_price,_amount,_count);
 
-    if ([_class, _amount, _price, _itemIndex, _items, GVAR(sellContainerObject)] call FUNC(sellItem)) then {
-        TRACE_1(QFUNC(onSellItemClick),"Item sold");
-        _list lnbDeleteRow _index;
-    } else {
-        TRACE_1(QFUNC(onSellItemClick),"Item retained");
+    if !([_class, _amount, _price, _itemIndex, _items, GVAR(sellContainerObject)] call FUNC(sellItem)) then {
         _list lnbSetText[[_index, 1], str((_items select _itemIndex) get "count")];
+    } else {
+        _list lnbDeleteRow _index;
+        _list lnbSetCurSelRow _index;
+        [{ call FUNC(updateItemCount) }, [_list, _index]] call CBA_fnc_execNextFrame;
     };
 
     [] call FUNC(updateUiFromSelection);

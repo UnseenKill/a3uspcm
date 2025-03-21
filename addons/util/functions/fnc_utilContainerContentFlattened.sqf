@@ -37,6 +37,7 @@ private _toCollection = {
     #define ADD_LOOKUP_MAG(INDEX) if (_x select(INDEX) isNotEqualTo []) then { _typeLookup set[_x select(INDEX) select 0, QUOTE(magazine)]; };
     _wic apply { 
         _typeLookup set[_x select 0, "weapon"];
+        ADD_LOOKUP(weapon,1); // Muzzle
         ADD_LOOKUP(item,2); // Flashlight/IR Laser
         ADD_LOOKUP(item,3); // Optic
         ADD_LOOKUP_MAG(4); // Primary magazine

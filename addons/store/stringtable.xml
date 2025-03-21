@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="Store">
+        <Key ID="STR_A3USPCM_Store_AdvSell_CantSell">
+            <English>Can't sell item because: %1</English>
+            <German>Kann Gegenstand nicht verkaufen weil: %1</German>
+        </Key>
         <Key ID="STR_A3USPCM_Store_AdvSell_ConfirmBreakdown">
             <English>Contents of container need to be broken down first. Continue with breakdown?</English>
             <German>Inhalte des Containers muss zerlegt werden. Mit Zerlegung fortfahren?</German>
@@ -20,6 +24,18 @@
         <Key ID="STR_A3USPCM_Store_AdvSell_NothingToSell">
             <English>There are no items to sell.</English>
             <German>Es gibt keine Gegenstände zu verkaufen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_AdvSell_Reason_ItemForbidden">
+            <English>Item is in A3U blacklist</English>
+            <German>Gegenstand ist auf der A3U Blacklist</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_AdvSell_Reason_ItemUnconfigured">
+            <English>Item has no price in A3U</English>
+            <German>Gegenstand hat keinen Preis in A3U</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_AdvSell_Reason_ItemUnlocked">
+            <English>Item is unlocked in Arsenal</English>
+            <German>Gegenstand ist im Arsenal freigeschaltet</German>
         </Key>
         <Key ID="STR_A3USPCM_Store_Component">
             <English>A3USPCM - Store Component</English>
@@ -104,6 +120,14 @@
         <Key ID="STR_A3USPCM_Store_Settings_playKaching_Tooltip">
             <English>Plays an annoying sound when selling via the "Better Selling" feature</English>
             <German>Spielt einen nervigen Sound ab, wenn über die "Besser Verkaufen"-Funktion verkauft wird</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_Settings_sellForbidden_DisplayName">
+            <English>Also sell A3U "forbidden" items</English>
+            <German>Auch A3U "verbotene" Gegenstände verkaufen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_Settings_sellForbidden_Tooltip">
+            <English>Allows selling of items that are normally not sellable</English>
+            <German>Erlaubt den Verkauf von normalerweise nicht verkaufbaren Gegenständen</German>
         </Key>
     </Package>
 </Project>

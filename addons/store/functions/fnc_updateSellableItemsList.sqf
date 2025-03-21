@@ -41,7 +41,7 @@ private _callback = getText(configFile >> QGVAR(sellDialog) >> "Filters" >> _fil
 private _items = [GVAR(sellContainerItems)] call compile _callback;
 
 if !(cbChecked(_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_CHECKSHOWUNSELLABLE)) then {
-    _items = _items select { (_x get "price") isNotEqualTo false };
+    _items = _items select { _x get "sellable" };
 };
 
 if (_quitIfListEmpty && _items isEqualTo []) exitWith {
