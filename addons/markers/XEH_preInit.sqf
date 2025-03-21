@@ -9,7 +9,7 @@ GVAR(storedMarkers) = false;
 [
     {
         INFO("loading stored markers");
-        if is3DENPreview exitWith {};
+        if is3DENPreview exitWith { GVAR(storedMarkers) = createHashMap };
         [] call FUNC(loadMarkers);
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);

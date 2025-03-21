@@ -26,7 +26,7 @@ if !hasInterface exitWith {};
 
 #define BAIL_OUT_OR_CALL(localIndex,func) if true then {\
     if ((_this select localIndex) && ((_this select 0) find "_USER_DEFINED" isEqualTo 0) && ([] call FUNC(canEraseMarkers))) then {\
-        [] remoteExec[QUOTE(func), 2];\
+        _this remoteExec[QUOTE(func), 2];\
     };\
 }
 

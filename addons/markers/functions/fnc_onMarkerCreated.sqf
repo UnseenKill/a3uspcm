@@ -33,13 +33,14 @@ params[
 ];
 
 if (isNull _owner) exitWith { TRACE_1(QFUNC(onMarkerCreated),_owner) };
-if (keys GVAR(storedMarkers) > GVAR(saveLimit)) exitWith {
+if (count keys GVAR(storedMarkers) >= GVAR(saveLimit)) exitWith {
     TRACE_1(QFUNC(onMarkerCreated),"Save limit reached");
 
     [
         localize LSTRING(HintCaption),
-        localize LSTRING(HintSaveLimitHit)
+        format[localize LSTRING(HintSaveLimitHit), GVAR(saveLimit)]
     ] remoteExec["A3A_fnc_customHint", owner _owner];
+    playSound "A3AP_UiFailure";
 };
 
 private _markerProperties = [
