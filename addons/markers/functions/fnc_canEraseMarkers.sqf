@@ -17,6 +17,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
+if !GVAR(allowPersistentMarkers) exitWith { false };
 if !((alive ACE_player) && (QGVAR(PermanentMarker) in uniformItems ACE_player)) exitWith { false };
 
 switch true do {
