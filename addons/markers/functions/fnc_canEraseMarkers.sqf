@@ -17,4 +17,10 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-(alive ACE_player) && (QGVAR(PermanentMarker) in uniformItems ACE_player);
+if !((alive ACE_player) && (QGVAR(PermanentMarker) in uniformItems ACE_player)) exitWith { false };
+
+switch true do {
+    case ("theBoss" isEqualTo GVAR(allowUsageFor)): { player isEqualTo theBoss };
+    case ("member" isEqualTo GVAR(allowUsageFor)): { [player] call A3A_fnc_isMember };
+    default { true };
+};
