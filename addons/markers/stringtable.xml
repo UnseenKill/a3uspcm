@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Markers">
+        <Key ID="STR_A3USPCM_Markers_Component">
+            <English>A3USPCM - Markers Component</English>
+            <German>A3USPCM - Kartenmarkierungskomponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_EraseMarkers">
+            <English>Erase markers</English>
+            <German>Markierungen löschen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_HintCaption">
+            <English>Permanent markers</English>
+            <German>Permanente Markierungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_HintEraseMarkers">
+            <English>Click on a permanent marker to unpermanent it. Close map to finish erasing.</English>
+            <German>Klicke auf eine permanente Markierung, um sie wieder zu entfernen. Schließe die Karte, um das Löschen abzuschließen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_HintNoMarkerFound">
+            <English>No permanent marker found near that location. If it's a polyline marker you're trying to delete, click near its start.</English>
+            <German>Keine permanente Markierung in der Nähe gefunden. Wenn du versuchst, eine Polylinienmarkierung zu löschen, klicke in die Nähe ihres Startpunkts.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_HintSaveLimitHit">
+            <English>&lt;t color="#ff0000"&gt;Map marker not saved!&lt;/t&gt;&lt;br/&gt;&lt;br/&gt;Save limit of %1 exceeded.</English>
+            <German>Permanente Markierungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_PermanentMarker">
+            <English>Permanent marker</English>
+            <German>Edding</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_PermanentMarkerDesc">
+            <English>Carry this item _in your uniform_ to make map markers permanent (i.e.: part of the save)</English>
+            <German>Trage diesen Gegenstand _in deiner Uniform_, um Kartenmarkierungen permanent zu machen (d.h. Teil des Spielstandes).</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_CategoryMarkers_DisplayName">
+            <English>Persistent map markers</English>
+            <German>Permanente Kartenmarkierungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowPersistentMarkers_DisplayName">
+            <English>Allow persistent map markers</English>
+            <German>Erlaube permanente Kartenmarkierungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowPersistentMarkers_Tooltip">
+            <English>Allow players to make map markers permanent</English>
+            <German>Erlaube Spielern, Kartenmarkierungen permanent zu machen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowUsageFor_Anyone">
+            <English>All</English>
+            <German>Alle</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowUsageFor_DisplayName">
+            <English>Allow feature for</English>
+            <German>Erlaube Verwendung für</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowUsageFor_Members">
+            <English>Members</English>
+            <German>Mitglieder</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowUsageFor_TheBoss">
+            <English>Commander only</English>
+            <German>Nur Kommandeur</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowUsageFor_Tooltip">
+            <English>Who is allowed to use the feature</English>
+            <German>Wer darf die Funktion verwenden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_saveLimit_DisplayName">
+            <English>Save limit</English>
+            <German>Speichergrenze</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_saveLimit_Tooltip">
+            <English>Maximum number of markers that can be saved</English>
+            <German>Maximale Anzahl von Markierungen, die gespeichert werden können</German>
+        </Key>
+    </Package>
+</Project>
