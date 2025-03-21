@@ -26,9 +26,9 @@ params[
     ["_unlock", true, [true]]
 ];
 
-if !assert(!isNull _container) exitWith { false };
+if !assert(!isNull _container) exitWith {};
 
-private _items = [_container] call FUNC(utilContainerContentFlattened);
+private _items = [_container] call FUNCMAIN(utilContainerContentFlattened);
 
 keys _items apply {
     [_x, false, _unlock] call FUNCMAIN(utilUnlockArsenalItem);
