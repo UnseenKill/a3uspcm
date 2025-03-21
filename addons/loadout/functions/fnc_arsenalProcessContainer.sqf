@@ -26,15 +26,9 @@ params[
     ["_unlock", true, [true]]
 ];
 
-if !assert(!isNull _container) exitWith { false };
+if !assert(!isNull _container) exitWith {};
 
-private _items = createHashMap;
-
-flatten((weaponsItemsCargo _container) + (magazineCargo _container) + (backpackCargo _container) + (itemCargo _container)) select {
-    (_x isEqualType "") && (_x isNotEqualTo "");
-} apply {
-    _items set[_x, true];
-};
+private _items = [_container] call FUNCMAIN(utilContainerContentFlattened);
 
 keys _items apply {
     [_x, false, _unlock] call FUNCMAIN(utilUnlockArsenalItem);

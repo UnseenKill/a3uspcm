@@ -54,6 +54,7 @@ _group addEventHandler["EnemyDetected", {
         if isNil("_projectile") exitWith {};
         if isNil("_vehicle") exitWith {};
 
+        if !(_vehicle isEqualType objNull) exitWith { WARNING_1("Vehicle '%1' is not an object",_vehicle) };
         if isNull(_projectile) exitWith {};
         if isNull(_vehicle) exitWith {};
 

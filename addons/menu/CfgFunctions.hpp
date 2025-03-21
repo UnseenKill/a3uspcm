@@ -2,6 +2,7 @@ class CfgFunctions {
     class PREFIX {
         class COMPONENT {
             PATHTO_FNC(emergencyInvincibility);
+            PATHTO_FNC(fireSmokeLauncher);
             PATHTO_FNC(healGroup);
             PATHTO_FNC(healPlayer);
             PATHTO_FNC(miscAddTeamZeus);
@@ -28,6 +29,7 @@ class CfgFunctions {
             PATHTO_FNC(teleportRebelFlag);
             PATHTO_FNC(teleportRebelObject);
             PATHTO_FNC(teleportStragglers);
+            PATHTO_FNC(unlockAceEHP);
             PATHTO_FNC(unlockAcePainkillers);
             PATHTO_FNC(unlockBreachingChargeAPCs);
             PATHTO_FNC(unlockBreachingChargeTanks);

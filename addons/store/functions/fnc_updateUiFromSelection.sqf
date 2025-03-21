@@ -1,0 +1,87 @@
+#include "..\script_component.hpp"
+#include "..\RscDefine.hpp"
+/* ----------------------------------------------------------------------------
+Function: A3USPCM_store_fnc_updateUiFromSelection
+
+Description:
+    Update UI elements based on selected item in sell dialog
+
+Parameters:
+
+Example:
+
+Returns:
+    Nothing
+
+Author:
+    goreSplatter
+---------------------------------------------------------------------------- */
+private _display = uiNamespace getVariable[QGVAR(menuDisplay), displayNull];
+if !assert(!isNull _display) exitWith {};
+
+private _list = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINERCONTENT;
+private _items = _list getVariable[QGVAR(items), []];
+private _index = lbCurSel _list;
+
+try {
+    if (_index < 0) then { throw false };
+
+    private _itemIndex = _list lnbData[_index, 0];
+    private _data = _items select parseNumber _itemIndex;
+
+    private _price = _data get "price";
+    private _amount = parseNumber ctrlText(_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_EDITAMOUNT);
+
+    if !(_data get "sellable") then {
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMPRICE ctrlSetText "-";
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnPurge);
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTTOTALSALE ctrlSetText "-";
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlEnable true;
+
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText format[localize LSTRING(AdvSell_CantSell), localize(_data get "reason")];
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetTextColor [1,1,1,1];
+    } else {
+        _price = _price * HALs_store_sellFactor;
+
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText localize LSTRING(AdvSell_DblClickHint);
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetTextColor [1,1,1,1];
+
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMPRICE ctrlSetText format["%1 %2", round _price, A3A_faction_civ get "currencySymbol"];
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnSell);
+
+        if (_amount > 0 && _amount <= (_data get "count")) then {
+            _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTTOTALSALE ctrlSetText format["%1 %2", round(_price * _amount), A3A_faction_civ get "currencySymbol"];
+            _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlEnable true;
+        } else {
+            _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTTOTALSALE ctrlSetText "-";
+            _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlEnable false;
+        };
+
+        if !(isNil QGVAR(allowAmountAutoUpdate)) then {
+            _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_EDITAMOUNT ctrlSetText str(_data get "count");
+        };
+    };
+
+    GVAR(allowAmountAutoUpdate) = nil;
+
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_FRAMEITEMINFO ctrlSetText getText((_data get "config") >> (_data get "class") >> "displayName");
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMCOUNT ctrlSetText str(_data get "count");
+
+    if (_data get "type" isEqualTo "weapon") then {
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMWEAPON ctrlSetText getText((_data get "config") >> (_data get "class") >> "picture");
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMSQUARE ctrlSetText "#(argb,8,8,3)color(0,0,0,0)";
+    } else {
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMSQUARE ctrlSetText getText((_data get "config") >> (_data get "class") >> "picture");
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMWEAPON ctrlSetText "#(argb,8,8,3)color(0,0,0,0)";
+    };
+} catch {
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMCOUNT ctrlSetText "";
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMPRICE ctrlSetText "";
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTTOTALSALE ctrlSetText "";
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_FRAMEITEMINFO ctrlSetText "";
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMSQUARE ctrlSetText "#(argb,8,8,3)color(0,0,0,0)";
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMWEAPON ctrlSetText "#(argb,8,8,3)color(0,0,0,0)";
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlEnable false;
+};
+
+nil;

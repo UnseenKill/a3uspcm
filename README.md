@@ -62,6 +62,7 @@ Features
    * Useful when you've driven your Polaris/Qilin through one of those deadly bushes
  * Unlocks
    * Unlock ACE3 Painkillers for arsenal
+   * Unlock ACE3 electronic hearing protection for arsenal
    * Unlock breaching charges for tanks and APCs
    * Unlock your current loadout
    * Sort that damn mess of an arsenal
@@ -81,7 +82,9 @@ Features
    * Change maximum cargo of a vehicle
    * Dump contents of supply boxes to the ground so you can pick'em up with a lootbox
  * Q.O.L.
-   * Weapons dealer: when selling, double-clicking an item updates the amount edit box the the current item's count
+   * Vehicles: fire smoke launcher from any position of a vehicle (requires additional keybind via addon keybinds; does not interfere w/ regular counter-measures keybind)
+   * Weapons dealer: when selling in the native sell dialog, double-clicking an item updates the amount edit box the the current item's count
+   * Weapons dealer: speed-improved advanced selling dialog via ACE3 interaction near the trader
  * Zeus modules
    * Module that adds any static emplacement in a 100m radius to Zeus curatable objects
    * Module that crews any static emplacement in Zeus' object selection

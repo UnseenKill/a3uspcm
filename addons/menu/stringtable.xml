@@ -113,6 +113,14 @@
             <English>When you see that APFSDS round flying towards you, it's time to hit that button.</English>
             <German>Wenn du die APFSDS-Munition auf dich zufliegen siehst, ist es Zeit, diesen Knopf zu drücken.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Hotkeys_FireSmokeLauncher">
+            <English>Fire vehicle smoke launcher</English>
+            <German>Fahrzeug-Nebelwerfer abfeuern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Hotkeys_FireSmokeLauncherTooltip">
+            <English>Fire vehicle smoke launcher even if you're not the commander</English>
+            <German>Fahrzeug-Nebelwerfer abfeuern auch, wenn du nicht der Fahrzeugkommandeur bist</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Hotkeys_InstantHealGroup">
             <English>Instant heal (group)</English>
             <German>Sofortheilung (Gruppe)</German>
@@ -616,6 +624,10 @@
         <Key ID="STR_A3USPCM_Menu_Trader_MoveText">
             <English>Move trader location to somewhere else on the map or start the trader quest at that location.</English>
             <German>Verschiebe den Händlerstandort an einen anderen Ort auf der Karte oder starte die Händlerquest an diesem Ort.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_AceEHPCaption">
+            <English>ACE3 Electronic Hearing Protection</English>
+            <German>ACE3 Elektronischer Gehörschutz</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_AcePainkillersCaption">
             <English>ACE3 Painkillers</English>

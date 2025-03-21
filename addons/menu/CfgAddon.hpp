@@ -298,6 +298,11 @@ class GVAR(Config) {
                 action = QFUNCMAIN(unlockAcePainkillers);
             };
 
+            class AceEHP {
+                caption = CSTRING(Unlocks_AceEHPCaption);
+                action = QFUNCMAIN(unlockAceEHP);
+            };
+
             class BreachingChargeAPCs {
                 caption = CSTRING(Unlocks_BreachingChargeAPCsCaption);
                 action = QFUNCMAIN(unlockBreachingChargeAPCs);
