@@ -9,6 +9,14 @@
             <English>Erase markers</English>
             <German>Markierungen löschen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Markers_HintCaption">
+            <English>Permanent markers</English>
+            <German>Permanente Markierungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_HintSaveLimitHit">
+            <English>&lt;t color="#ff0000"&gt;Map marker not saved!&lt;/t&gt;&lt;br/&gt;&lt;br/&gt;Save limit of %1 exceeded.</English>
+            <German>Permanente Markierungen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Markers_PermanentMarker">
             <English>Permanent marker</English>
             <German>Edding</German>

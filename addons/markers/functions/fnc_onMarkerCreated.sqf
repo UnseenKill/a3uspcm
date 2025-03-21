@@ -23,11 +23,41 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onMarkerCreated),_this);
 
+if !assert(isServer) exitWith {};
+
 params[
     ["_marker", "", [""]],
     ["_channel", 0, [0]],
     ["_owner", objNull, [objNull]],
     ["_local", false, [false]]
 ];
+
+if (isNull _owner) exitWith { TRACE_1(QFUNC(onMarkerCreated),_owner) };
+if (keys GVAR(storedMarkers) > GVAR(saveLimit)) exitWith {
+    TRACE_1(QFUNC(onMarkerCreated),"Save limit reached");
+
+    [
+        localize LSTRING(HintCaption),
+        localize LSTRING(HintSaveLimitHit)
+    ] remoteExec["A3A_fnc_customHint", owner _owner];
+};
+
+private _markerProperties = [
+    /* 00 */ markerAlpha _marker,
+    /* 01 */ markerBrush _marker,
+    /* 02 */ markerChannel _marker,
+    /* 03 */ markerColor _marker,
+    /* 04 */ markerDir _marker,
+    /* 05 */ markerPolyline _marker,
+    /* 06 */ markerPos _marker,
+    /* 07 */ markerShadow _marker,
+    /* 08 */ markerShape _marker,
+    /* 09 */ markerSize _marker,
+    /* 10 */ markerText _marker,
+    /* 11 */ markerType _marker
+];
+
+GVAR(storedMarkers) set[_marker, _markerProperties];
+[QGVAR(storedMarkers), GVAR(storedMarkers)] call A3A_fnc_setStatVariable;
 
 nil;

@@ -21,9 +21,14 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onMarkerDeleted),_this);
 
+if !assert(isServer) exitWith {};
+
 params[
     ["_marker", "", [""]],
     ["_local", false, [false]]
 ];
+
+GVAR(storedMarkers) deleteAt _marker;
+[QGVAR(storedMarkers), GVAR(storedMarkers)] call A3A_fnc_setStatVariable;
 
 nil;
