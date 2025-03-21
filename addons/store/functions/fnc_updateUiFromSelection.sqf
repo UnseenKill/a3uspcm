@@ -32,13 +32,19 @@ try {
     private _price = _data get "price";
     private _amount = parseNumber ctrlText(_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_EDITAMOUNT);
 
-    if (_price isEqualTo false) then {
+    if !(_data get "sellable") then {
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMPRICE ctrlSetText "-";
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnPurge);
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTTOTALSALE ctrlSetText "-";
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlEnable true;
+
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText format[localize LSTRING(AdvSell_CantSell), localize(_data get "reason")];
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetTextColor [1,1,1,1];
     } else {
         _price = _price * HALs_store_sellFactor;
+
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText localize LSTRING(AdvSell_DblClickHint);
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetTextColor [1,1,1,1];
 
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMPRICE ctrlSetText format["%1 %2", round _price, A3A_faction_civ get "currencySymbol"];
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnSell);

@@ -23,7 +23,7 @@ if !assert(!isNil "_items") exitWith {[]};
 private _sorted = [];
 
 {
-    private _price = if (_y get "price" isEqualTo false) then [{ 0 }, { _y get "price" }];
+    private _price = if (_y get "sellable") then [{ _y get "price" }, { 0 }];
     _sorted pushBack[
         (20000 - _price),
         getText((_y get "config") >> _x >> "displayName"),

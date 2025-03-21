@@ -16,7 +16,7 @@ Example:
     (end example)
 
 Returns:
-    Price <NUMBER> or <BOOL> false if not found
+    Result array [isSellable, priceOrReason] <ARRAY> 
 
 Author:
     goreSplatter
@@ -25,27 +25,42 @@ params[
     ["_class", "", [""]]
 ];
 
-private _count = if is3DENPreview then {
-    0;
-} else {
-    private _index = _class call jn_fnc_arsenal_itemType;
-    private _arsenal = jna_datalist select _index;
-    [_arsenal, _class] call jn_fnc_arsenal_itemCount;
-};
-
-if (_count < 0) exitWith { false };
-
-private _price = false;
-
-("true" configClasses(configFile >> "CfgHALsAddons" >> "cfgHALsStore" >> "categories")) findIf {
-    //diag_log format["%1: %2 => %3", _class, _x, isClass(_x >> _class)];
-
-    if !isClass(_x >> _class) then {
-        false;
-    } else {
-        _price = getNumber(_x >> _class >> "price");
-        true;
+try {
+    if (!GVAR(sellForbidden) && (_class in A3U_forbiddenItems)) then {
+        private _flag = [configFile >> "A3U" >> "forbiddenItems" >> _class >> "unlimited", "NUMBER", 0] call CBA_fnc_getConfigEntry;
+        if (_flag isNotEqualTo 0) then {
+            throw LSTRING(AdvSell_Reason_ItemForbidden);
+        };
     };
-};
 
-_price;
+    private _count = if is3DENPreview then {
+        0;
+    } else {
+        private _index = _class call jn_fnc_arsenal_itemType;
+        private _arsenal = jna_datalist select _index;
+        [_arsenal, _class] call jn_fnc_arsenal_itemCount;
+    };
+
+    if (_count < 0) then {
+        throw LSTRING(AdvSell_Reason_ItemUnlocked);
+    };
+
+    private _price = false;
+
+    ("true" configClasses(configFile >> "CfgHALsAddons" >> "cfgHALsStore" >> "categories")) findIf {
+        if !isClass(_x >> _class) then {
+            false;
+        } else {
+            _price = getNumber(_x >> _class >> "price");
+            true;
+        };
+    };
+
+    if (_price isEqualTo false) then {
+        throw LSTRING(AdvSell_Reason_ItemUnconfigured);
+    };
+
+    [true, _price];
+} catch {
+    [false, _exception];
+};

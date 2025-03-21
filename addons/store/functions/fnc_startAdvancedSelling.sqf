@@ -38,6 +38,8 @@ _this spawn {
         if !assert(!isNil "_items") exitWith {};
 
         {
+            [_x] call FUNC(getItemPrice) params["_isSellable", "_priceOrReason"];
+
             _y set["class", _x];
             _y set["config", switch (_y get "type") do {
                 case "item": { [configFile >> "CfgWeapons", configFile >> "CfgGlasses"] select isClass(configFile >> "CfgGlasses" >> _x) };
@@ -49,7 +51,15 @@ _this spawn {
                     configNull;
                 };
             }];
-            _y set["price", [_x] call FUNC(getItemPrice)];
+
+            _y set["sellable", _isSellable];
+
+            if _isSellable then {
+                _y set["price", _priceOrReason];
+            } else {
+                _y set["price", false];
+                _y set["reason", _priceOrReason];
+            };
         } forEach _items;
 
         GVAR(sellContainerItems) = _items;
