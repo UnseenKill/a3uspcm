@@ -4,6 +4,7 @@ ADDON = false;
 #include "XEH_PREP.hpp"
 ADDON = true;
 
+GVAR(markerNameMapping) = createHashMap;
 GVAR(storedMarkers) = false;
 
 [

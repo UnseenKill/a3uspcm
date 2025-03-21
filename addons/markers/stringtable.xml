@@ -13,6 +13,14 @@
             <English>Permanent markers</English>
             <German>Permanente Markierungen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Markers_HintEraseMarkers">
+            <English>Click on a permanent marker to unpermanent it. Close map to finish erasing.</English>
+            <German>Klicke auf eine permanente Markierung, um sie wieder zu entfernen. Schließe die Karte, um das Löschen abzuschließen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_HintNoMarkerFound">
+            <English>No permanent marker found near that location. If it's a polyline marker you're trying to delete, click near its start.</English>
+            <German>Keine permanente Markierung in der Nähe gefunden. Wenn du versuchst, eine Polylinienmarkierung zu löschen, klicke in die Nähe ihres Startpunkts.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Markers_HintSaveLimitHit">
             <English>&lt;t color="#ff0000"&gt;Map marker not saved!&lt;/t&gt;&lt;br/&gt;&lt;br/&gt;Save limit of %1 exceeded.</English>
             <German>Permanente Markierungen</German>

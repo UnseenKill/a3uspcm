@@ -23,6 +23,8 @@ GVAR(storedMarkers) apply {
     private _markerId = [] call FUNCMAIN(utilGenerateUniqueId);
     private _properties = _y;
 
+	GVAR(markerNameMapping) set[_markerId, _x];
+
     TRACE_3(QFUNC(restoreMarkers),_x,_markerId,_properties);
 
 	private _marker = createMarker[_markerId, _properties select 6];

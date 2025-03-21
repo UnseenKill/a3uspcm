@@ -22,4 +22,44 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(eraseMarkers),_this);
 
+if !isNil QGVAR(MapSingleClickEH) exitWith {
+    INFO("ignoring duplicate feature activation");
+};
+
+if !visibleMap then {
+    openMap true;
+};
+
+[
+    localize LSTRING(HintCaption),
+    localize LSTRING(HintEraseMarkers)
+] call A3A_fnc_customHint;
+
+GVAR(MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
+	params["_units","_pos","_alt","_shift"];
+
+    private _nearestMarker = [allMapMarkers, _pos] call BIS_fnc_nearestPosition;
+
+    if !(_nearestMarker in GVAR(markerNameMapping)) exitWith {
+        [
+            localize LSTRING(HintCaption),
+            localize LSTRING(HintNoMarkerFound)
+        ] remoteExec["A3A_fnc_customHint", owner _owner];
+        playSound "A3AP_UiFailure";
+    };
+
+    private _markerId = GVAR(markerNameMapping) get _nearestMarker;
+    deleteMarker _nearestMarker;
+
+    GVAR(markerNameMapping) deleteAt _nearestMarker;
+    GVAR(storedMarkers) deleteAt _markerId;
+    [QGVAR(storedMarkers), GVAR(storedMarkers)] call A3A_fnc_setStatVariable;
+}];
+
+[] spawn {
+    waitUntil { !visibleMap };
+    removeMissionEventHandler["MapSingleClick", GVAR(MapSingleClickEH)];
+    GVAR(MapSingleClickEH) = nil;
+};
+
 nil;
