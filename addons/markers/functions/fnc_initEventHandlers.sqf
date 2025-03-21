@@ -22,4 +22,24 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(initEventHandlers),_this);
 
+if !hasInterface exitWith {};
+
+#define BAIL_OUT_OR_CALL(localIndex,func) if true then {\
+    if ((_this select localIndex) && ((_this select 0) find "_USER_DEFINED" isEqualTo 0) && ([] call FUNC(canEraseMarkers))) then {\
+        [] remoteExec[QUOTE(func), 2];\
+    };\
+}
+
+addMissionEventHandler["MarkerCreated", {
+    BAIL_OUT_OR_CALL(3,FUNC(onMarkerCreated));
+}];
+
+addMissionEventHandler["MarkerDeleted", {
+    BAIL_OUT_OR_CALL(1,FUNC(onMarkerDeleted));
+}];
+
+addMissionEventHandler["MarkerUpdated", {
+    BAIL_OUT_OR_CALL(1,FUNC(onMarkerUpdated));
+}];
+
 nil;
