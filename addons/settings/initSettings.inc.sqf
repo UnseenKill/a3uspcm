@@ -293,6 +293,30 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(assets,empEffectLightsListEntry), "EDITBOX",
+    [ELSTRING(assets,Settings_empEffectLightsList_DisplayName), ELSTRING(assets,Settings_empEffectLightsList_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(assets,Settings_Category_DisplayName)],
+    "[]", // default
+    true, // global
+    { // onchange
+        params[["_list","",[""]]];
+        private _parsed = parseSimpleArray _list;
+
+        TRACE_2("EMP lights",_this,_parsed);
+
+        if (_parsed isEqualType []) then {
+            EGVAR(assets,empEffectsLights) = [];
+            _parsed apply {
+                if (_x isEqualType "") then {
+                    EGVAR(assets,empEffectsLights) pushBackUnique _x;
+                };
+            };
+        };
+    },
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(assets,requireVehicleEngineOn), "CHECKBOX",
     [ELSTRING(assets,Settings_requireVehicleEngineOn_DisplayName), ELSTRING(assets,Settings_requireVehicleEngineOn_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(assets,Settings_Category_DisplayName)],

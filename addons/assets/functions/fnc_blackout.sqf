@@ -29,13 +29,19 @@ params[
 
 private _duration = GVAR(empEffectDuration);
 private _range = GVAR(empEffectRangeBlackout);
-private _lights = _position nearObjects["Lamps_base_F", _range];
+private _classes = ["Lamps_base_F","PowerLines_Small_base_F"];
 
 if isClass(configFile >> "CfgPatches" >> "gm_core") then {
-    _lights = _lights + (_position nearObjects["gm_lamp_euro_80_base", _range]);
+    _classes = _classes + ["gm_lamp_euro_80_base"];
 };
 
-_lights = _lights select { (alive _x) && (_x getVariable[QGVAR(EmpEffect), false] isEqualTo false) };
+if (GVAR(empEffectsLights) isEqualType []) then {
+    _classes = _classes + GVAR(empEffectsLights);
+};
+
+private _lights = nearestObjects[_position, _classes, _range] select {
+    (alive _x) && (_x getVariable[QGVAR(EmpEffect), false] isEqualTo false)
+};
 
 if (_lights isEqualTo []) exitWith {};
 
