@@ -313,10 +313,17 @@ class GVAR(Config) {
                 action = QFUNCMAIN(unlockBreachingChargeTanks);
             };
 
+            class PermanentMarker {
+                caption = CSTRING(Unlocks_PermanentMarkerCaption);
+                action = QFUNCMAIN(unlockPermanentMarker);
+                separator = 1;
+            };
+
             class Loadout {
                 caption = CSTRING(Unlocks_LoadoutCaption);
                 text = CSTRING(Unlocks_LoadoutText);
                 action = QFUNCMAIN(unlockLoadout);
+                separator = 1;
             };
 
             class SortArsenal {
