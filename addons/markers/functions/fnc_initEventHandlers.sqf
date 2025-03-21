@@ -23,6 +23,7 @@ Author:
 TRACE_1(QFUNC(initEventHandlers),_this);
 
 if !hasInterface exitWith {};
+if !GVAR(allowPersistentMarkers) exitWith { false };
 
 #define BAIL_OUT_OR_CALL(localIndex,func) if true then {\
     if ((_this select localIndex) && ((_this select 0) find "_USER_DEFINED" isEqualTo 0) && ([] call FUNC(canEraseMarkers))) then {\

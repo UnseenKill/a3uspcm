@@ -22,6 +22,8 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(initItemContextMenu),_this);
 
+if !GVAR(allowPersistentMarkers) exitWith { false };
+
 [
     QGVAR(PermanentMarker),
     "UNIFORM_CONTAINER",
