@@ -55,6 +55,8 @@ try {
     if ([_class, _amount, _price, _itemIndex, _items, GVAR(sellContainerObject)] call FUNC(sellItem)) then {
         TRACE_1(QFUNC(onSellItemClick),"Item sold");
         _list lnbDeleteRow _index;
+        _list lnbSetCurSelRow _index;
+        [{ call FUNC(updateItemCount) }, [_list, _index]] call CBA_fnc_execNextFrame;
     } else {
         TRACE_1(QFUNC(onSellItemClick),"Item retained");
         _list lnbSetText[[_index, 1], str((_items select _itemIndex) get "count")];
