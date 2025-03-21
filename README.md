@@ -49,6 +49,8 @@ Features
    * Teleport self anywhere on map without wait delay or "enemies close" checks
    * Teleport stragglers in player group to self
    * (Temporarily) teleport HQ objects (arsenal, garage, map, flag) to your position
+ * Permanent map markers
+   * Buy a permanent marker and carry it _in the uniform_ to make map markers you place permanent (i.e.: part of the save)
  * Replenish player squad outside of HQ
    * Recruit new squad mates in the field
    * "Enemies close" checks can be suppressed via addon settings
@@ -64,6 +66,7 @@ Features
    * Unlock ACE3 Painkillers for arsenal
    * Unlock ACE3 electronic hearing protection for arsenal
    * Unlock breaching charges for tanks and APCs
+   * Unlock permanent marker
    * Unlock your current loadout
    * Sort that damn mess of an arsenal
    * Unlock from a container that's close to arsenal box (ACE3 interaction)

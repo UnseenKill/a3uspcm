@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Markers">
+        <Key ID="STR_A3USPCM_Markers_Component">
+            <English>A3USPCM - Markers Component</English>
+            <German>A3USPCM - Kartenmarkierungskomponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_EraseMarkers">
+            <English>Erase markers</English>
+            <German>Markierungen löschen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_PermanentMarker">
+            <English>Permanent marker</English>
+            <German>Edding</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_PermanentMarkerDesc">
+            <English>Carry this item _in your uniform_ to make map markers permanent (i.e.: part of the save)</English>
+            <German>Trage diesen Gegenstand _in deiner Uniform_, um Kartenmarkierungen permanent zu machen (d.h. Teil des Spielstandes).</German>
+        </Key>
+    </Package>
+</Project>
