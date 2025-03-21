@@ -354,6 +354,45 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+// Persistent markers
+
+[
+    QEGVAR(markers,allowPersistentMarkers), "CHECKBOX",
+    [ELSTRING(markers,Settings_allowPersistentMarkers_DisplayName), ELSTRING(markers,Settings_allowPersistentMarkers_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(markers,Settings_CategoryMarkers_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(markers,allowUsageFor), "LIST",
+    [ELSTRING(markers,Settings_allowUsageFor_DisplayName), ELSTRING(markers,Settings_allowUsageFor_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(markers,Settings_CategoryMarkers_DisplayName)],
+    [ // default
+        ["theBoss","members","anyone"],
+        [
+            ELSTRING(markers,Settings_allowUsageFor_TheBoss),
+            ELSTRING(markers,Settings_allowUsageFor_Members),
+            ELSTRING(markers,Settings_allowUsageFor_Anyone)
+        ], 0
+    ],
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(markers,saveLimit), "SLIDER",
+    [ELSTRING(markers,Settings_saveLimit_DisplayName), ELSTRING(markers,Settings_saveLimit_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(markers,Settings_CategoryMarkers_DisplayName)],
+    [1, 500, 20, -1], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Experimental
 
 [

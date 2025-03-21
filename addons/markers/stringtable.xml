@@ -17,5 +17,45 @@
             <English>Carry this item _in your uniform_ to make map markers permanent (i.e.: part of the save)</English>
             <German>Trage diesen Gegenstand _in deiner Uniform_, um Kartenmarkierungen permanent zu machen (d.h. Teil des Spielstandes).</German>
         </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_CategoryMarkers_DisplayName">
+            <English>Persistent map markers</English>
+            <German>Permanente Kartenmarkierungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowPersistentMarkers_DisplayName">
+            <English>Allow persistent map markers</English>
+            <German>Erlaube permanente Kartenmarkierungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowPersistentMarkers_Tooltip">
+            <English>Allow players to make map markers permanent</English>
+            <German>Erlaube Spielern, Kartenmarkierungen permanent zu machen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowUsageFor_Anyone">
+            <English>All</English>
+            <German>Alle</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowUsageFor_DisplayName">
+            <English>Allow feature for</English>
+            <German>Erlaube Verwendung für</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowUsageFor_Members">
+            <English>Members</English>
+            <German>Mitglieder</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowUsageFor_TheBoss">
+            <English>Commander only</English>
+            <German>Nur Kommandeur</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_allowUsageFor_Tooltip">
+            <English>Who is allowed to use the feature</English>
+            <German>Wer darf die Funktion verwenden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_saveLimit_DisplayName">
+            <English>Save limit</English>
+            <German>Speichergrenze</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Markers_Settings_saveLimit_Tooltip">
+            <English>Maximum number of markers that can be saved</English>
+            <German>Maximale Anzahl von Markierungen, die gespeichert werden können</German>
+        </Key>
     </Package>
 </Project>
