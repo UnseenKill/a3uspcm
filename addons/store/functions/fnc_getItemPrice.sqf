@@ -25,9 +25,13 @@ params[
     ["_class", "", [""]]
 ];
 
-private _index = _class call jn_fnc_arsenal_itemType;
-private _arsenal = jna_datalist select _index;
-private _count = [_arsenal, _class] call jn_fnc_arsenal_itemCount;
+private _count = if is3DENPreview then {
+    0;
+} else {
+    private _index = _class call jn_fnc_arsenal_itemType;
+    private _arsenal = jna_datalist select _index;
+    [_arsenal, _class] call jn_fnc_arsenal_itemCount;
+};
 
 if (_count < 0) exitWith { false };
 
