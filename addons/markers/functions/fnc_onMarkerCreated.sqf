@@ -40,7 +40,7 @@ if (count keys GVAR(storedMarkers) >= GVAR(saveLimit)) exitWith {
         localize LSTRING(HintCaption),
         format[localize LSTRING(HintSaveLimitHit), GVAR(saveLimit)]
     ] remoteExec["A3A_fnc_customHint", owner _owner];
-    playSound "A3AP_UiFailure";
+    ["A3AP_UiFailure"] remoteExec["playSound", owner _owner];
 };
 
 private _markerProperties = [
