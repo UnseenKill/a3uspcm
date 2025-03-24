@@ -44,7 +44,7 @@ GVAR(MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
         [
             localize LSTRING(HintCaption),
             localize LSTRING(HintNoMarkerFound)
-        ] remoteExec["A3A_fnc_customHint", owner _owner];
+        ] call A3A_fnc_customHint;
         playSound "A3AP_UiFailure";
     };
 
