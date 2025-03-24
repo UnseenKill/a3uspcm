@@ -649,6 +649,10 @@
             <English>Unlock everything in your current loadout.</English>
             <German>Schalte alles von deiner aktuellen Ausrüstung frei.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_PermanentMarkerCaption">
+            <English>Permanent marker</English>
+            <German>Edding</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_SortArsenalCaption">
             <English>Sort arsenal</English>
             <German>Sortiere Arsenal</German>

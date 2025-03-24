@@ -34,6 +34,7 @@ class CfgFunctions {
             PATHTO_FNC(unlockBreachingChargeAPCs);
             PATHTO_FNC(unlockBreachingChargeTanks);
             PATHTO_FNC(unlockLoadout);
+            PATHTO_FNC(unlockPermanentMarker);
         };
     };
 };

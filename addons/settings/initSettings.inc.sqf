@@ -293,6 +293,30 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(assets,empEffectLightsListEntry), "EDITBOX",
+    [ELSTRING(assets,Settings_empEffectLightsList_DisplayName), ELSTRING(assets,Settings_empEffectLightsList_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(assets,Settings_Category_DisplayName)],
+    "[]", // default
+    true, // global
+    { // onchange
+        params[["_list","",[""]]];
+        private _parsed = parseSimpleArray _list;
+
+        TRACE_2("EMP lights",_this,_parsed);
+
+        if (_parsed isEqualType []) then {
+            EGVAR(assets,empEffectsLights) = [];
+            _parsed apply {
+                if (_x isEqualType "") then {
+                    EGVAR(assets,empEffectsLights) pushBackUnique _x;
+                };
+            };
+        };
+    },
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(assets,requireVehicleEngineOn), "CHECKBOX",
     [ELSTRING(assets,Settings_requireVehicleEngineOn_DisplayName), ELSTRING(assets,Settings_requireVehicleEngineOn_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(assets,Settings_Category_DisplayName)],
@@ -349,6 +373,45 @@
     [ELSTRING(menu,Settings_findIntelLargeFlags_DisplayName), ELSTRING(menu,Settings_findIntelLargeFlags_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryIntel_DisplayName)],
     false, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+// Persistent markers
+
+[
+    QEGVAR(markers,allowPersistentMarkers), "CHECKBOX",
+    [ELSTRING(markers,Settings_allowPersistentMarkers_DisplayName), ELSTRING(markers,Settings_allowPersistentMarkers_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(markers,Settings_CategoryMarkers_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(markers,allowUsageFor), "LIST",
+    [ELSTRING(markers,Settings_allowUsageFor_DisplayName), ELSTRING(markers,Settings_allowUsageFor_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(markers,Settings_CategoryMarkers_DisplayName)],
+    [ // default
+        ["theBoss","members","anyone"],
+        [
+            ELSTRING(markers,Settings_allowUsageFor_TheBoss),
+            ELSTRING(markers,Settings_allowUsageFor_Members),
+            ELSTRING(markers,Settings_allowUsageFor_Anyone)
+        ], 0
+    ],
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(markers,saveLimit), "SLIDER",
+    [ELSTRING(markers,Settings_saveLimit_DisplayName), ELSTRING(markers,Settings_saveLimit_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(markers,Settings_CategoryMarkers_DisplayName)],
+    [1, 500, 20, -1], // min,max,default,decimals
     true, // global
     {}, // onchange
     false // Needs mission restart

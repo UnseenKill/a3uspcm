@@ -33,6 +33,14 @@
             <English>Duration of the EMP effect in seconds.</English>
             <German>Dauer des EMP-Effekts in Sekunden.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Assets_Settings_empEffectLightsList_DisplayName">
+            <English>Additional lights classes</English>
+            <German>Zusätzliche Lichtklassen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Settings_empEffectLightsList_Tooltip">
+            <English>This list is evaluated by `parseSimpleArray`.</English>
+            <German>Diese Liste wird von `parseSimpleArray` ausgewertet.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Assets_Settings_empEffectRangeBlackout_DisplayName">
             <English>EMP blackout range</English>
             <German>EMP Blackout-Reichweite</German>
