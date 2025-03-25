@@ -64,7 +64,17 @@ try {
 
     GVAR(allowAmountAutoUpdate) = nil;
 
+    private _description = [
+        getText((_data get "config") >> (_data get "class") >> "Library" >> "libTextDesc"),
+        getText((_data get "config") >> (_data get "class") >> "descriptionShort"),
+        getText((_data get "config") >> (_data get "class") >> "displayName")
+    ] select { _x isNotEqualTo "" };
+
+    _description = if (_description isEqualTo []) then[{ "N/A" }, { _description select 0 }];
+    if ((toLower _description) find "$str_" isEqualTo 0) then { _description = localize _description };
+
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_FRAMEITEMINFO ctrlSetText getText((_data get "config") >> (_data get "class") >> "displayName");
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMDESCRIPTION ctrlSetStructuredText parseText format["<t size='0.5'>%1</t>", _description];
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMCOUNT ctrlSetText str(_data get "count");
 
     if (_data get "type" isEqualTo "weapon") then {
