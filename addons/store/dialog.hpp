@@ -8,30 +8,31 @@
 //  Search: (^\s*(?:text|tooltip)\s*=\s*)[$]STR_A3_([^;]+)
 //  Replace: $1CSTRING($2)
 
-/* #Byhika
+/* #Dinyji
 $[
 	1.063,
 	["RscA3USPCMStoreSellDialog",[[0,0,1,1],0.025,0.04,"GUI_GRID"],2,1,1],
-	[-1000,"StaticTitle",[1,"A3USPCM Faster Loot Selling",["0.215438 * safezoneW + safezoneX","0.2342 * safezoneH + safezoneY","0.551719 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]],
-	[-1001,"StaticBackground",[1,"",["0.215313 * safezoneW + safezoneX","0.285 * safezoneH + safezoneY","0.5775 * safezoneW","0.495 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],[]],
-	[-1800,"FrameItemInfo",[1,"Item name goes here",["0.62375 * safezoneW + safezoneX","0.291 * safezoneH + safezoneY","0.159844 * safezoneW","0.352 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
-	[-1602,"BtnClose",[1,"X",["0.772249 * safezoneW + safezoneX","0.2338 * safezoneH + safezoneY","0.020625 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1603,"BtnSell",[1,"Sell",["0.659844 * safezoneW + safezoneX","0.588 * safezoneH + safezoneY","0.0979687 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]],
-	[1201,"PictureSellItemWeapon",[1,"#(argb,8,8,3)color(0,0,0,0)",["0.634062 * safezoneW + safezoneX","0.313 * safezoneH + safezoneY","0.108281 * safezoneW","0.077 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1200,"PictureSellItemSquare",[1,"#(argb,8,8,3)color(0,0,0,0)",["0.732031 * safezoneW + safezoneX","0.313 * safezoneH + safezoneY","0.04125 * safezoneW","0.077 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[2100,"DropFilterSelect",[1,"",["0.22053 * safezoneW + safezoneX","0.291 * safezoneH + safezoneY","0.391875 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1500,"ListContainerContent",[1,"",["0.22053 * safezoneW + safezoneX","0.324 * safezoneH + safezoneY","0.391875 * safezoneW","0.44 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = true;","idcLeft = -1;","idcRight = -1;","tooltipPerColumn = true;","sizeEx = 0.08;"]],
-	[1002,"LabelShowUnsellable",[1,"Show unsellable items",["0.649531 * safezoneW + safezoneX","0.709 * safezoneH + safezoneY","0.118594 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[2800,"CheckShowUnsellable",[1,"",["0.62375 * safezoneW + safezoneX","0.72 * safezoneH + safezoneY","0.020625 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1003,"LabelAmount",[1,"Amount:",["0.65675 * safezoneW + safezoneX","0.544 * safezoneH + safezoneY","0.0464063 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1400,"EditAmount",[1,"",["0.716561 * safezoneW + safezoneX","0.5506 * safezoneH + safezoneY","0.04125 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0],[-1,-1,-1,-1],"","-1"],["style = ST_RIGHT;"]],
-	[1005,"LabelItemSalePrice",[1,"Item sale price:",["0.628906 * safezoneW + safezoneX","0.434 * safezoneH + safezoneY","0.0876563 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1007,"TextItemPrice",[1,"0",["0.737188 * safezoneW + safezoneX","0.434 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["style = ST_RIGHT;"]],
-	[1004,"LabelItemInfoCount",[1,"Amount in container:",["0.628906 * safezoneW + safezoneX","0.401 * safezoneH + safezoneY","0.0876563 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1006,"TextItemCount",[1,"0",["0.737188 * safezoneW + safezoneX","0.401 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["style = ST_RIGHT;"]],
-	[1008,"LabelTotalSale",[1,"Total sale:",["0.628906 * safezoneW + safezoneX","0.467 * safezoneH + safezoneY","0.0876563 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1009,"TextTotalSale",[1,"0",["0.737188 * safezoneW + safezoneX","0.467 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["style = ST_RIGHT;"]],
-	[1010,"StaticWaitForBreakdown",[1,"Please wait a moment while box contents are broken down.",["0.62375 * safezoneW + safezoneX","0.654 * safezoneH + safezoneY","0.159844 * safezoneW","0.066 * safezoneH"],[1,0,0,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["style = ST_CENTER + ST_MULTI;"]]
+	[1000,"StaticTitle",[1,"A3USPCM Faster Loot Selling",["0.215375 * safezoneW + safezoneX","0.181 * safezoneH + safezoneY","0.551719 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1001,"StaticBackground",[1,"",["0.215313 * safezoneW + safezoneX","0.219 * safezoneH + safezoneY","0.5775 * safezoneW","0.561 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],[]],
+	[1800,"FrameItemInfo",[1,"Item name goes here",["0.62375 * safezoneW + safezoneX","0.236 * safezoneH + safezoneY","0.159844 * safezoneW","0.44 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
+	[1602,"BtnClose",[1,"X",["0.77225 * safezoneW + safezoneX","0.181 * safezoneH + safezoneY","0.020625 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1603,"BtnSell",[1,"Sell",["0.659844 * safezoneW + safezoneX","0.6276 * safezoneH + safezoneY","0.0979687 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1201,"PictureSellItemWeapon",[1,"#(argb,8,8,3)color(0,0,0,0)",["0.628906 * safezoneW + safezoneX","0.258 * safezoneH + safezoneY","0.0979687 * safezoneW","0.077 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1200,"PictureSellItemSquare",[1,"#(argb,8,8,3)color(0,0,0,0)",["0.732031 * safezoneW + safezoneX","0.258 * safezoneH + safezoneY","0.04125 * safezoneW","0.077 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2100,"DropFilterSelect",[1,"",["0.220531 * safezoneW + safezoneX","0.236 * safezoneH + safezoneY","0.391875 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1500,"ListContainerContent",[1,"",["0.22053 * safezoneW + safezoneX","0.269 * safezoneH + safezoneY","0.391875 * safezoneW","0.495 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = true;","idcLeft = -1;","idcRight = -1;","tooltipPerColumn = true;","sizeEx = 0.08;"]],
+	[1002,"LabelShowUnsellable",[1,"Show unsellable items",["0.649531 * safezoneW + safezoneX","0.7222 * safezoneH + safezoneY","0.118594 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2800,"CheckShowUnsellable",[1,"",["0.62375 * safezoneW + safezoneX","0.7332 * safezoneH + safezoneY","0.020625 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1003,"LabelAmount",[1,"Amount:",["0.65675 * safezoneW + safezoneX","0.5902 * safezoneH + safezoneY","0.0464063 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1400,"EditAmount",[1,"",["0.716561 * safezoneW + safezoneX","0.5968 * safezoneH + safezoneY","0.04125 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0],[-1,-1,-1,-1],"","-1"],["style = ST_RIGHT;"]],
+	[1005,"LabelItemSalePrice",[1,"Item sale price:",["0.628906 * safezoneW + safezoneX","0.511 * safezoneH + safezoneY","0.0876563 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1007,"TextItemPrice",[1,"0",["0.737188 * safezoneW + safezoneX","0.5132 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["style = ST_RIGHT;"]],
+	[1004,"LabelItemInfoCount",[1,"Amount in container:",["0.628906 * safezoneW + safezoneX","0.4824 * safezoneH + safezoneY","0.0876563 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1006,"TextItemCount",[1,"0",["0.737188 * safezoneW + safezoneX","0.4846 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["style = ST_RIGHT;"]],
+	[1008,"LabelTotalSale",[1,"Total sale:",["0.628906 * safezoneW + safezoneX","0.5396 * safezoneH + safezoneY","0.0876563 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1009,"TextTotalSale",[1,"0",["0.737188 * safezoneW + safezoneX","0.5418 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["style = ST_RIGHT;"]],
+	[1010,"StaticWaitForBreakdown",[1,"Please wait a moment while box contents are broken down.",["0.62375 * safezoneW + safezoneX","0.676 * safezoneH + safezoneY","0.159844 * safezoneW","0.066 * safezoneH"],[1,0,0,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["style = ST_CENTER + ST_MULTI;"]],
+	[1100,"TextItemDescription",[1,"",["0.628906 * safezoneW + safezoneX","0.335 * safezoneH + safezoneY","0.149531 * safezoneW","0.143 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.02;"]]
 ]
 */
 class GVAR(sellDialog) {
@@ -63,15 +64,15 @@ class GVAR(sellDialog) {
 
     class Controls {
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Byhika)
+		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Dinyji)
 		////////////////////////////////////////////////////////
 
 		class StaticTitle: RscText
 		{
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_STATICTITLE;
 			text = CSTRING(RscA3USPCMStoreSellDialog_StaticTitle);
-			x = QUOTE(0.215438 * safezoneW + safezoneX);
-			y = QUOTE(0.2342 * safezoneH + safezoneY);
+			x = QUOTE(0.215375 * safezoneW + safezoneX);
+			y = QUOTE(0.181 * safezoneH + safezoneY);
 			w = QUOTE(0.551719 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 			colorBackground[] = {0,0.8,0,1};
@@ -80,9 +81,9 @@ class GVAR(sellDialog) {
 		{
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_STATICBACKGROUND;
 			x = QUOTE(0.215313 * safezoneW + safezoneX);
-			y = QUOTE(0.285 * safezoneH + safezoneY);
+			y = QUOTE(0.219 * safezoneH + safezoneY);
 			w = QUOTE(0.5775 * safezoneW);
-			h = QUOTE(0.495 * safezoneH);
+			h = QUOTE(0.561 * safezoneH);
 			colorBackground[] = {0,0,0,0.8};
 		};
 		class FrameItemInfo: RscFrame
@@ -92,16 +93,16 @@ class GVAR(sellDialog) {
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_FRAMEITEMINFO;
 			text = CSTRING(RscA3USPCMStoreSellDialog_FrameItemInfo);
 			x = QUOTE(0.62375 * safezoneW + safezoneX);
-			y = QUOTE(0.291 * safezoneH + safezoneY);
+			y = QUOTE(0.236 * safezoneH + safezoneY);
 			w = QUOTE(0.159844 * safezoneW);
-			h = QUOTE(0.352 * safezoneH);
+			h = QUOTE(0.44 * safezoneH);
 		};
 		class BtnClose: RscButton
 		{
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_BTNCLOSE;
 			text = CSTRING(RscA3USPCMStoreSellDialog_BtnClose);
-			x = QUOTE(0.772249 * safezoneW + safezoneX);
-			y = QUOTE(0.2338 * safezoneH + safezoneY);
+			x = QUOTE(0.77225 * safezoneW + safezoneX);
+			y = QUOTE(0.181 * safezoneH + safezoneY);
 			w = QUOTE(0.020625 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 		};
@@ -110,7 +111,7 @@ class GVAR(sellDialog) {
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL;
 			text = CSTRING(RscA3USPCMStoreSellDialog_BtnSell);
 			x = QUOTE(0.659844 * safezoneW + safezoneX);
-			y = QUOTE(0.588 * safezoneH + safezoneY);
+			y = QUOTE(0.6276 * safezoneH + safezoneY);
 			w = QUOTE(0.0979687 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 			colorBackground[] = {0,0.8,0,1};
@@ -119,9 +120,9 @@ class GVAR(sellDialog) {
 		{
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMWEAPON;
 			text = "#(argb,8,8,3)color(0,0,0,0)";
-			x = QUOTE(0.634062 * safezoneW + safezoneX);
-			y = QUOTE(0.313 * safezoneH + safezoneY);
-			w = QUOTE(0.108281 * safezoneW);
+			x = QUOTE(0.628906 * safezoneW + safezoneX);
+			y = QUOTE(0.258 * safezoneH + safezoneY);
+			w = QUOTE(0.0979687 * safezoneW);
 			h = QUOTE(0.077 * safezoneH);
 		};
 		class PictureSellItemSquare: RscPicture
@@ -129,15 +130,15 @@ class GVAR(sellDialog) {
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMSQUARE;
 			text = "#(argb,8,8,3)color(0,0,0,0)";
 			x = QUOTE(0.732031 * safezoneW + safezoneX);
-			y = QUOTE(0.313 * safezoneH + safezoneY);
+			y = QUOTE(0.258 * safezoneH + safezoneY);
 			w = QUOTE(0.04125 * safezoneW);
 			h = QUOTE(0.077 * safezoneH);
 		};
 		class DropFilterSelect: RscCombo
 		{
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_DROPFILTERSELECT;
-			x = QUOTE(0.22053 * safezoneW + safezoneX);
-			y = QUOTE(0.291 * safezoneH + safezoneY);
+			x = QUOTE(0.220531 * safezoneW + safezoneX);
+			y = QUOTE(0.236 * safezoneH + safezoneY);
 			w = QUOTE(0.391875 * safezoneW);
 			h = QUOTE(0.022 * safezoneH);
 		};
@@ -152,16 +153,16 @@ class GVAR(sellDialog) {
 
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINERCONTENT;
 			x = QUOTE(0.22053 * safezoneW + safezoneX);
-			y = QUOTE(0.324 * safezoneH + safezoneY);
+			y = QUOTE(0.269 * safezoneH + safezoneY);
 			w = QUOTE(0.391875 * safezoneW);
-			h = QUOTE(0.44 * safezoneH);
+			h = QUOTE(0.495 * safezoneH);
 		};
 		class LabelShowUnsellable: RscText
 		{
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_LABELSHOWUNSELLABLE;
 			text = CSTRING(RscA3USPCMStoreSellDialog_LabelShowUnsellable);
 			x = QUOTE(0.649531 * safezoneW + safezoneX);
-			y = QUOTE(0.709 * safezoneH + safezoneY);
+			y = QUOTE(0.7222 * safezoneH + safezoneY);
 			w = QUOTE(0.118594 * safezoneW);
 			h = QUOTE(0.055 * safezoneH);
 		};
@@ -169,7 +170,7 @@ class GVAR(sellDialog) {
 		{
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_CHECKSHOWUNSELLABLE;
 			x = QUOTE(0.62375 * safezoneW + safezoneX);
-			y = QUOTE(0.72 * safezoneH + safezoneY);
+			y = QUOTE(0.7332 * safezoneH + safezoneY);
 			w = QUOTE(0.020625 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 		};
@@ -178,7 +179,7 @@ class GVAR(sellDialog) {
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_LABELAMOUNT;
 			text = CSTRING(RscA3USPCMStoreSellDialog_LabelAmount);
 			x = QUOTE(0.65675 * safezoneW + safezoneX);
-			y = QUOTE(0.544 * safezoneH + safezoneY);
+			y = QUOTE(0.5902 * safezoneH + safezoneY);
 			w = QUOTE(0.0464063 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 		};
@@ -188,7 +189,7 @@ class GVAR(sellDialog) {
 
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_EDITAMOUNT;
 			x = QUOTE(0.716561 * safezoneW + safezoneX);
-			y = QUOTE(0.5506 * safezoneH + safezoneY);
+			y = QUOTE(0.5968 * safezoneH + safezoneY);
 			w = QUOTE(0.04125 * safezoneW);
 			h = QUOTE(0.022 * safezoneH);
 			colorBackground[] = {0,0,0,0};
@@ -198,7 +199,7 @@ class GVAR(sellDialog) {
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_LABELITEMSALEPRICE;
 			text = CSTRING(RscA3USPCMStoreSellDialog_LabelItemSalePrice);
 			x = QUOTE(0.628906 * safezoneW + safezoneX);
-			y = QUOTE(0.434 * safezoneH + safezoneY);
+			y = QUOTE(0.511 * safezoneH + safezoneY);
 			w = QUOTE(0.0876563 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 		};
@@ -209,7 +210,7 @@ class GVAR(sellDialog) {
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMPRICE;
 			text = CSTRING(RscA3USPCMStoreSellDialog_TextItemPrice);
 			x = QUOTE(0.737188 * safezoneW + safezoneX);
-			y = QUOTE(0.434 * safezoneH + safezoneY);
+			y = QUOTE(0.5132 * safezoneH + safezoneY);
 			w = QUOTE(0.04125 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 		};
@@ -218,7 +219,7 @@ class GVAR(sellDialog) {
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_LABELITEMINFOCOUNT;
 			text = CSTRING(RscA3USPCMStoreSellDialog_LabelItemInfoCount);
 			x = QUOTE(0.628906 * safezoneW + safezoneX);
-			y = QUOTE(0.401 * safezoneH + safezoneY);
+			y = QUOTE(0.4824 * safezoneH + safezoneY);
 			w = QUOTE(0.0876563 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 		};
@@ -229,7 +230,7 @@ class GVAR(sellDialog) {
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMCOUNT;
 			text = CSTRING(RscA3USPCMStoreSellDialog_TextItemCount);
 			x = QUOTE(0.737188 * safezoneW + safezoneX);
-			y = QUOTE(0.401 * safezoneH + safezoneY);
+			y = QUOTE(0.4846 * safezoneH + safezoneY);
 			w = QUOTE(0.04125 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 		};
@@ -238,7 +239,7 @@ class GVAR(sellDialog) {
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_LABELTOTALSALE;
 			text = CSTRING(RscA3USPCMStoreSellDialog_LabelTotalSale);
 			x = QUOTE(0.628906 * safezoneW + safezoneX);
-			y = QUOTE(0.467 * safezoneH + safezoneY);
+			y = QUOTE(0.5396 * safezoneH + safezoneY);
 			w = QUOTE(0.0876563 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 		};
@@ -249,7 +250,7 @@ class GVAR(sellDialog) {
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_TEXTTOTALSALE;
 			text = CSTRING(RscA3USPCMStoreSellDialog_TextTotalSale);
 			x = QUOTE(0.737188 * safezoneW + safezoneX);
-			y = QUOTE(0.467 * safezoneH + safezoneY);
+			y = QUOTE(0.5418 * safezoneH + safezoneY);
 			w = QUOTE(0.04125 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 		};
@@ -260,10 +261,20 @@ class GVAR(sellDialog) {
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN;
 			text = CSTRING(RscA3USPCMStoreSellDialog_StaticWaitForBreakdown);
 			x = QUOTE(0.62375 * safezoneW + safezoneX);
-			y = QUOTE(0.654 * safezoneH + safezoneY);
+			y = QUOTE(0.676 * safezoneH + safezoneY);
 			w = QUOTE(0.159844 * safezoneW);
 			h = QUOTE(0.066 * safezoneH);
 			colorText[] = {1,0,0,1};
+		};
+		class TextItemDescription: RscStructuredText
+		{
+			sizeEx = QUOTE(0.02);
+
+			idc = IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMDESCRIPTION;
+			x = QUOTE(0.628906 * safezoneW + safezoneX);
+			y = QUOTE(0.335 * safezoneH + safezoneY);
+			w = QUOTE(0.149531 * safezoneW);
+			h = QUOTE(0.143 * safezoneH);
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
