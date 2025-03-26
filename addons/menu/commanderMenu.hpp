@@ -1,3 +1,4 @@
+class brSpacer;
 class ButtonBase;
 class ScrtRscControlsGroup;
 class ScrtRscControlsGroupNoScrollbarsMain;
@@ -13,10 +14,10 @@ class TextBaseMT;
     class GLUE(button,C): ButtonBase {\
         idc = GLUE(CM_SHORTCUT_BUTTON_BASE,C); \
         text = QUOTE(GLUE(button,C)); \
-        x = POS_GRID_X(10 * (C mod 2)); \
+        x = POS_GRID_X(11.1 * (C mod 2)); \
         y = POS_GRID_Y(2 * floor(C / 2)); \
-        w = POS_GRID_X(9.75); \
-        h = POS_GRID_Y(1.5); \
+        w = POS_GRID_X(10.9); \
+        h = POS_GRID_Y(1.75); \
         sizeEx = QUOTE(((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.25); \
         shadow = 2; \
         action = QUOTE(['GLUE(CM_SHORTCUT_BUTTON_BASE,C)'] call FUNC(commanderMenuAction)); \
@@ -47,7 +48,7 @@ class commanderMenu {
                     x = POS_GRID_X(1);
                     y = POS_GRID_Y(2);
                     w = POS_GRID_X(22);
-                    h = POS_GRID_Y(10);
+                    h = POS_GRID_Y(8);
 
                     class Controls {
                         CM_BTN(0);
@@ -59,6 +60,11 @@ class commanderMenu {
                         CM_BTN(6);
                         CM_BTN(7);
                     };
+                };
+
+                class GVAR(spacer0): brSpacer {
+                    idc = 61198204;
+                    y = POS_GRID_Y(10.5);
                 };
             };
         };
