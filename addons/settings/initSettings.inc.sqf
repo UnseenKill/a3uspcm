@@ -141,7 +141,7 @@
     ],
     true, // global
     {}, // onchange
-    false // Needs mission restart
+    true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
 // Zeus
