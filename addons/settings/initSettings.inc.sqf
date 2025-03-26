@@ -120,6 +120,30 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(menu,injectA3USPCMTab), "LIST",
+    [ELSTRING(menu,Settings_injectA3USPCMTab_DisplayName), ELSTRING(menu,Settings_injectA3USPCMTab_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [ // default
+        [-1, false, true, 1140, 2000, 3000, 7000, 4000, 5000, 6000],
+        [
+            ELSTRING(menu,Settings_inject_Nowhere),
+            ELSTRING(menu,Settings_inject_Start),
+            ELSTRING(menu,Settings_inject_End),
+            ELSTRING(menu,Settings_inject_BeforeSupport),
+            ELSTRING(menu,Settings_inject_BeforeGarrison),
+            ELSTRING(menu,Settings_inject_BeforeHQ),
+            ELSTRING(menu,Settings_inject_BeforeRivals),
+            ELSTRING(menu,Settings_inject_BeforeEnvironment),
+            ELSTRING(menu,Settings_inject_BeforeOptions),
+            ELSTRING(menu,Settings_inject_BeforeInfos)
+        ], 2
+    ],
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Zeus
 
 [

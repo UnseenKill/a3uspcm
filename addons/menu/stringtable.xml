@@ -493,6 +493,54 @@
             <English>Search for intel this many meters around player</English>
             <German>Suche nach Intel in diesem Radius um den Spieler herum</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_injectA3USPCMTab_DisplayName">
+            <English>Inject A3U Singleplayer Cheat Menu tab</English>
+            <German>Füge den A3U Singleplayer Cheat Menü-Tab hinzu</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_injectA3USPCMTab_Tooltip">
+            <English>Where to inject the A3U Singleplayer Cheat Menu tab into the commander menu.</English>
+            <German>Wo der A3U Singleplayer Cheat Menü-Tab in das Kommandeurmenü eingefügt werden soll.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_BeforeEnvironment">
+            <English>Before Environment</English>
+            <German>Vor Umgebung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_BeforeGarrison">
+            <English>Before Garrison</English>
+            <German>Vor Garnison</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_BeforeHQ">
+            <English>Before HQ</English>
+            <German>Vor Hauptquartier</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_BeforeInfos">
+            <English>Before Infos</English>
+            <German>Vor Infos</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_BeforeOptions">
+            <English>Before Options</English>
+            <German>Vor Optionen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_BeforeRivals">
+            <English>Before Rivals</English>
+            <German>Vor Rivalen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_BeforeSupport">
+            <English>Before Support</English>
+            <German>Vor Unterstützung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_End">
+            <English>End</English>
+            <German>Ende</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_Nowhere">
+            <English>Nowhere</English>
+            <German>Nirgends</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_Start">
+            <English>Start</English>
+            <German>Start</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_lootboxCost_DisplayName">
             <English>Lootbox cost</English>
             <German>Lootbox Preis</German>
