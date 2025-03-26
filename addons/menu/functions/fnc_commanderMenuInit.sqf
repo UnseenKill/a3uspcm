@@ -27,7 +27,7 @@ params[
 if !assert(!isNull _control) exitWith {};
 
 allControls _control apply {
-    TRACE_2(QFUNC(commanderMenuInit),_x,ctrlFade _x);
+    TRACE_1(QFUNC(commanderMenuInit),_x);
     _x ctrlSetFade 0;
     _x ctrlCommit 0.3;
 };

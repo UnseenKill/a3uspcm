@@ -6,8 +6,21 @@ class TextBaseMT;
 
 #define POS_GRID_X(position) POS_GRID_OX(0,position)
 #define POS_GRID_Y(position) POS_GRID_OY(0,position)
-#define POS_GRID_OX(offset,position) QUOTE(offset + (position * pixelGridNoUIScale * pixelW))
-#define POS_GRID_OY(offset,position) QUOTE(offset + (position * pixelGridNoUIScale * pixelH))
+#define POS_GRID_OX(offset,position) QUOTE(offset + ((position) * pixelGridNoUIScale * pixelW))
+#define POS_GRID_OY(offset,position) QUOTE(offset + ((position) * pixelGridNoUIScale * pixelH))
+#define GLUE(A,B) A##B
+#define CM_BTN(C) \
+    class GLUE(button,C): ButtonBase {\
+        idc = GLUE(61198203,C); \
+        text = QUOTE(GLUE(button,C)); \
+        x = POS_GRID_X(10 * (C mod 2)); \
+        y = POS_GRID_Y(2 * floor(C / 2)); \
+        w = POS_GRID_X(9.75); \
+        h = POS_GRID_Y(1.5); \
+        sizeEx = QUOTE(((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.25); \
+        shadow = 2; \
+        action = QUOTE([GLUE(61198203,C)] call FUNC(commanderMenuAction)); \
+    }
 
 class commanderMenu {
     class Controls {
@@ -29,7 +42,7 @@ class commanderMenu {
                     h = POS_GRID_Y(1.5);
 				};
 
-                class GVAR(section0): ScrtRscControlsGroupNoScrollbarsMain {
+                class GVAR(menuHotButtons): ScrtRscControlsGroupNoScrollbarsMain {
                     idc = 61198202;
                     x = POS_GRID_X(1);
                     y = POS_GRID_Y(2);
@@ -37,18 +50,14 @@ class commanderMenu {
                     h = POS_GRID_Y(10);
 
                     class Controls {
-                        class GVAR(button1): ButtonBase {
-                            idc = 61198203;
-                            text = "Hello, world!";
-                            x = POS_GRID_X(0);
-                            y = POS_GRID_Y(0);
-                            w = POS_GRID_X(12);
-                            h = POS_GRID_Y(1.5);
-
-                            sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.25";
-                            shadow = 2;
-                            action = "diag_log 'FOOBAR!'";
-                        };
+                        CM_BTN(0);
+                        CM_BTN(1);
+                        CM_BTN(2);
+                        CM_BTN(3);
+                        CM_BTN(4);
+                        CM_BTN(5);
+                        CM_BTN(6);
+                        CM_BTN(7);
                     };
                 };
             };
