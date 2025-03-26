@@ -1,3 +1,5 @@
+PREP(commanderMenuAppend);
+PREP(commanderMenuInit);
 PREP(createDiaryRecord);
 PREP(createDiaryRecordAction);
 PREP(diaryExecuteAction);

@@ -17,3 +17,4 @@ class CfgPatches {
 #include "CfgAddon.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgFunctions.hpp"
+#include "commanderMenu.hpp"
