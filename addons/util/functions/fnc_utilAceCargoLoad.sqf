@@ -47,7 +47,7 @@ if (_index >= 0) then {
     _success = false;
     WARNING_2("Cannot load item %1 into vehicle %2",_items select _index,_vehicle);
 } else {
-    private _nearItems = nearestObjects[_vehicle, _items, ACE_CARGO_LOAD_RADIUS];
+    private _nearItems = if !_requireItemPresence then [{ [] }, { nearestObjects[_vehicle, _items, ACE_CARGO_LOAD_RADIUS] }];
     TRACE_1("near items",_nearItems);
 
     {
