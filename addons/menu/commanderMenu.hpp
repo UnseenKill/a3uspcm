@@ -11,7 +11,7 @@ class TextBaseMT;
 #define GLUE(A,B) A##B
 #define CM_BTN(C) \
     class GLUE(button,C): ButtonBase {\
-        idc = GLUE(61198203,C); \
+        idc = GLUE(CM_SHORTCUT_BUTTON_BASE,C); \
         text = QUOTE(GLUE(button,C)); \
         x = POS_GRID_X(10 * (C mod 2)); \
         y = POS_GRID_Y(2 * floor(C / 2)); \
@@ -19,7 +19,7 @@ class TextBaseMT;
         h = POS_GRID_Y(1.5); \
         sizeEx = QUOTE(((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.25); \
         shadow = 2; \
-        action = QUOTE([GLUE(61198203,C)] call FUNC(commanderMenuAction)); \
+        action = QUOTE(['GLUE(CM_SHORTCUT_BUTTON_BASE,C)'] call FUNC(commanderMenuAction)); \
     }
 
 class commanderMenu {
