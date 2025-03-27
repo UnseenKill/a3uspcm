@@ -7,7 +7,7 @@ Description:
     Start/stop a stop watch
 
 Parameters:
-    0: _buttonControl - Button initiating the toggle event <TYPE>
+    0: _buttonControl - Button initiating the toggle event <CONTROL>
 
 Optional:
 

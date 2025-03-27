@@ -71,8 +71,9 @@ if (_timer isEqualTo false) then {
     _control ctrlShow false;
 
     private _progress = _display displayCtrl (_idc + CMI_OFFSET_STOPWATCH_PROGRESS);
+    _progress ctrlShow true;
+
     _control = _display displayCtrl (_idc + CMI_OFFSET_STOPWATCH_TEXT);
-    _control ctrlShow true;
 
     [_index, _timer, _control, _progress] spawn {
         params[["_index",nil,[0]], ["_timer",nil,[createHashMap]], ["_control",nil,[controlNull]], ["_progressCtrl",nil,[controlNull]]];
