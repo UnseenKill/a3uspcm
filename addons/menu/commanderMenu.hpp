@@ -135,6 +135,71 @@ class commanderMenu {
                         };
                     };
                 };
+
+                class GVAR(stopWatches1): ScrtRscControlsGroupNoScrollbarsMain {
+                    idc = IDC_CM_INJECT_STOPWATCHES_CONTROL1;
+                    x = POS_GRID_X(1);
+                    y = POS_GRID_Y(19);
+                    w = POS_GRID_X(22);
+                    h = POS_GRID_Y(7);
+                    onLoad = QUOTE(_this spawn FUNC(commanderMenuStopWatchesInit));
+
+                    class GVAR(Config) {
+                        timerIndex = 1;
+                    };
+
+                    class Controls {
+                        class GVAR(timerTitle): TextBase {
+                            idc = IDC_CM_INJECT_STOPWATCHES_TITLE1;
+                            text = CSTRING(CMI_IDC_CM_INJECT_STOPWATCHES_TITLE);
+                            x = POS_GRID_X(0);
+                            y = POS_GRID_Y(0);
+                            w = POS_GRID_X(22);
+                            h = POS_GRID_Y(1.5);
+                        };
+
+                        class GVAR(timerText): TextBaseMT {
+                            idc = IDC_CM_INJECT_STOPWATCHES_TEXT1;
+                            text = CSTRING(CMI_IDC_CM_INJECT_STOPWATCHES_STATUS);
+                            x = POS_GRID_X(0);
+                            y = POS_GRID_Y(2);
+                            w = POS_GRID_X(22);
+                            h = POS_GRID_Y(1.5);
+                            colorText[] = {1,1,1,0.7};
+                        };
+
+                        class GVAR(timerProgressBar): ProgressBase {
+                            idc = IDC_CM_INJECT_STOPWATCHES_PROGRESS1;
+                            x = POS_GRID_X(0);
+                            y = POS_GRID_Y(4);
+                            w = POS_GRID_X(16);
+                            h = POS_GRID_Y(1.5);
+                        };
+
+                        class GVAR(timerSlider): SliderBase {
+                            idc = IDC_CM_INJECT_STOPWATCHES_SLIDER1;
+                            x = POS_GRID_X(0);
+                            y = POS_GRID_Y(4);
+                            w = POS_GRID_X(16);
+                            h = POS_GRID_Y(1.5);
+                        };
+
+                        class GVAR(timerButton): ButtonBase {
+                            idc = IDC_CM_INJECT_STOPWATCHES_BUTTON1;
+                            text = CSTRING(CMI_IDC_CM_INJECT_STOPWATCHES_START);
+                            x = POS_GRID_X(16.5);
+                            y = POS_GRID_Y(4);
+                            w = POS_GRID_X(5.5);
+                            h = POS_GRID_Y(1.5);
+                            sizeEx = QUOTE(pixelH * pixelGridNoUIScale * 2.5 * 0.475);
+                        };
+
+                        class GVAR(spacer): brSpacer {
+                            idc = -1;
+                            y = POS_GRID_Y(6);
+                        };
+                    };
+                };
             };
         };
     };
