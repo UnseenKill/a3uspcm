@@ -13,5 +13,37 @@
             <English>Enhance sell menu: double-clicking an item sets the item count in the amount textbox. If list focus advances, automatically update sell amount with that new item's count.</English>
             <German>Verbessertes Verkaufsmenü: Ein Doppelklick auf einen Gegenstand setzt die Anzahl des Gegenstands in das Mengentextfeld. Wenn der Listen-Fokus weitergeht, aktualisiert automatisch den Verkaufsbetrag mit der Anzahl des neuen Artikels.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Fixes_Text_Action_CargoLoadMortar">
+            <English>Cargo load mortar</English>
+            <German>Lade Mörser als Fracht auf</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Fixes_Text_Action_GetOutAndCargoLoad">
+            <English>Disembark mortar and cargo load it</English>
+            <German>Aus Mörser aussteigen und Fracht laden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Fixes_Text_Chat_CargoLoadingMortar">
+            <English>Roger. Cargo loading mortar.</English>
+            <German>Verstanden. Lade Mörser als Fracht auf.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Fixes_Text_Chat_MortarCargoLoadFailed">
+            <English>Mortar NOT cargo loaded.</English>
+            <German>Mörser NICHT als Fracht geladen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Fixes_Text_Chat_MortarCargoLoaded">
+            <English>Mortar cargo loaded.</English>
+            <German>Mörser als Fracht geladen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Fixes_Text_Chat_MortarDestroyed">
+            <English>Cannot cargo load. Mortar is destroyed.</English>
+            <German>Kann zerstörten Mörser nicht als Fracht laden.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Fixes_Text_Chat_VehicleDestroyed">
+            <English>Cannot cargo load. Target vehicle is destroyed.</English>
+            <German>Kann Mörser nicht als Fracht in zerstörtes Fahrzeug laden.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Fixes_Text_Chat_VehicleTooFarAway">
+            <English>Cannot cargo load. Target vehicle is not within %1m radius of mortar.</English>
+            <German>Kann Mörser nicht als Fracht laden: Fahrzeug ist nicht im %1m Radius vom Mörser.</German>
+        </Key>
     </Package>
 </Project>
