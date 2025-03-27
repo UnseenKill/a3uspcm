@@ -44,7 +44,7 @@ if (_playNoise) then {
 
     [
         localize LSTRING(AlarmClockCaption),
-        format[localize LSTRING(AlarmClockText), _timer get "_expiration"]
+        format[localize LSTRING(AlarmClockText), _timer get "expiration"]
     ] remoteExec["A3A_fnc_customHint", 0];
 };
 
