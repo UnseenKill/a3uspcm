@@ -29,7 +29,7 @@ params[
 GVAR(Timers) set[_index, _timer];
 
 [QGVAR(Timers), GVAR(Timers) apply {
-    if !(_x isEqualType []) then {
+    if (_x isEqualType false) then {
         _x;
     } else {
         private _data = +_x;
