@@ -50,7 +50,8 @@ if (_timer isNotEqualTo false) then {
     [_timer] call FUNC(timerStart);
 };
 
-GVAR(Timers) set [_index, _timer];
+[_timer, _index] call FUNC(timerSave);
+
 [_groupControl, _groupConfig] call FUNC(commanderMenuStopWatchesInit);
 
 nil;

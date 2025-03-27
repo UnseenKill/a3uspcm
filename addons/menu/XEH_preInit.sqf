@@ -64,6 +64,7 @@ GVAR(Timers) = [false, false];
 
         if is3DENPreview exitWith {};
         [] call FUNC(loadAdditionalBuildables);
+        [] call FUNC(timerRestore);
         [] call FUNC(commanderMenuAppend);
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);

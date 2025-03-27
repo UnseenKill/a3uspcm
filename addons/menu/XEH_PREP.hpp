@@ -15,6 +15,8 @@ PREP(teleportObjectBack);
 PREP(teleportObjectBackTimer);
 PREP(timerCreate);
 PREP(timerMonitor);
+PREP(timerRestore);
+PREP(timerSave);
 PREP(timerStart);
 PREP(timerStop);
 PREP(traderMove);
