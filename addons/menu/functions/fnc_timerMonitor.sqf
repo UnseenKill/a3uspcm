@@ -51,6 +51,6 @@ while { true } do {
 
 INFO_2("%1(%2) timer expired",QFUNC(timerMonitor),_timer get "uid");
 
-[_timer] call FUNC(timerStop);
+[_timer, true] call FUNC(timerStop);
 
 nil;

@@ -9,6 +9,7 @@ Parameters:
     0: _timer - Timer "object" <HASHMAP>
 
 Optional:
+    1: _playNoise - Play a noise timer expires <BOOL>
 
 Example:
     (begin example)
@@ -22,7 +23,8 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 params[
-    ["_timer",nil,[createHashMap]]
+    ["_timer",nil,[createHashMap]],
+    ["_playNoise",false,[false]]
 ];
 
 if !assert(!isNil "_timer") exitWith {};
@@ -35,6 +37,15 @@ if (_handle isNotEqualTo false) then {
     };
 
     _timer set ["handle", false];
+};
+
+if (_playNoise) then {
+    [QEGVAR(assets,AlarmClock)] remoteExec["playSound", 0];
+
+    [
+        localize LSTRING(AlarmClockCaption),
+        format[localize LSTRING(AlarmClockText), _timer get "_expiration"]
+    ] remoteExec["A3A_fnc_customHint", 0];
 };
 
 nil;

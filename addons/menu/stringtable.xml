@@ -17,6 +17,14 @@
             <English>All AA disregard recognized threats</English>
             <German>Alle Flugabwehrsysteme ignorieren erkannte Bedrohungen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_AlarmClockCaption">
+            <English>Timer has expired</English>
+            <German>Timer abgelaufen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_AlarmClockText">
+            <English>A timer set for %1 minutes has just expired.</English>
+            <German>Ein Timer, der auf %1 Minuten eingestellt wurde, ist gerade abgelaufen.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_CMI_IDC_CM_INJECT_STOPWATCHES_START">
             <English>Start</English>
             <German>Starten</German>
