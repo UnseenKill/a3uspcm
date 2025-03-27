@@ -46,7 +46,6 @@ if isNil QGVAR(Timers) then {
 };
 
 TRACE_1("loaded",GVAR(Timers));
-[QGVAR(Timers), GVAR(Timers)] call A3A_fnc_setStatVariable;
 
 GVAR(Timers) apply {
     if (_x isEqualType createHashMap) then {
