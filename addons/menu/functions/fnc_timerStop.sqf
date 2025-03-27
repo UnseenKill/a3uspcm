@@ -9,7 +9,7 @@ Parameters:
     0: _timer - Timer "object" <HASHMAP>
 
 Optional:
-    1: _playNoise - Play a noise timer expires <BOOL>
+    1: _playNoise - Play a noise when timer expires <BOOL>
 
 Example:
     (begin example)

@@ -32,6 +32,8 @@ if !assert(!isNil "_timer") exitWith {};
 private _handle = _timer get "handle";
 
 if (_handle isEqualTo false) then {
+    // We could just do `[_timer] call FUNC(timerMonitor);` here, but that 
+    // spams the logs with the full spawned code
     _handle = [_timer] spawn {
         call FUNC(timerMonitor);
     };
