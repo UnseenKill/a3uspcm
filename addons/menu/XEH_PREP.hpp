@@ -14,6 +14,7 @@ PREP(resourcesTransfer);
 PREP(teleportObjectBack);
 PREP(teleportObjectBackTimer);
 PREP(timerCreate);
+PREP(timerMonitor);
 PREP(timerStart);
 PREP(timerStop);
 PREP(traderMove);

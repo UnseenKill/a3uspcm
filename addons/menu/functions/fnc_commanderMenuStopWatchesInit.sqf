@@ -69,10 +69,11 @@ if (_timer isEqualTo false) then {
     _control = _display displayCtrl (_idc + CMI_OFFSET_STOPWATCH_SLIDER);
     _control ctrlShow false;
 
+    private _progress = _display displayCtrl (_idc + CMI_OFFSET_STOPWATCH_PROGRESS);
     _control = _display displayCtrl (_idc + CMI_OFFSET_STOPWATCH_TEXT);
 
-    [_index, _timer, _control] spawn {
-        params[["_index",nil,[0]], ["_timer",nil,[createHashMap]], ["_control",nil,[controlNull]]];
+    [_index, _timer, _control, _progress] spawn {
+        params[["_index",nil,[0]], ["_timer",nil,[createHashMap]], ["_control",nil,[controlNull]], ["_progressCtrl",nil,[controlNull]]];
 
         TRACE_1(QFUNC(commanderMenuStopWatchesInit_UPDATELOOP_START),_index);
 
@@ -80,13 +81,16 @@ if (_timer isEqualTo false) then {
             if isNull(uiNamespace getVariable[QGVAR(CommanderMenu), displayNull]) then { break };
             if (GVAR(Timers) select _index isEqualTo false) then { break };
 
-            private _expiration = _timer get "expiration";
-            private _start = _timer get "start";
-            private _dateExpired = _start + _expiration;
             private _now = dateToNumber date;
-            private _remaining = _dateExpired - _now;
+            private _start = _timer get "start";
+            private _dateExpired = _timer get "dateExpired";
+            private _unit = (dateToNumber[_timer get "year", 1, 1, 0, 1]) - (dateToNumber[_timer get "year", 1, 1, 0, 0]);
 
-            _control ctrlSetText format["Timer expires in %1", [_remaining, "HH:MM:SS"] call BIS_fnc_secondsToString];
+            private _remaining = (_dateExpired - _now) / _unit * 60;
+            private _progress = linearConversion[_start, _dateExpired, _now, 0, 1];
+            _progressCtrl progressSetPosition _progress;
+
+            _control ctrlSetText format["Timer expires in about %1", [_remaining, "HH:MM"] call BIS_fnc_secondsToString];
             uiSleep 0.5;
         };
 

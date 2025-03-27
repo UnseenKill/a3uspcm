@@ -21,8 +21,6 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(timerStop),_this);
-
 params[
     ["_timer",nil,[createHashMap]]
 ];
@@ -32,7 +30,10 @@ if !assert(!isNil "_timer") exitWith {};
 private _handle = _timer get "handle";
 
 if (_handle isNotEqualTo false) then {
-    terminate _handle;
+    if !(scriptDone _handle) then {
+        terminate _handle;
+    };
+
     _timer set ["handle", false];
 };
 

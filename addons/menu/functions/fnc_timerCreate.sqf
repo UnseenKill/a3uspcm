@@ -30,7 +30,9 @@ params[
 if !assert(!isNil "_minutes") exitWith {};
 
 createHashMapFromArray[
+    ["uid", [] call FUNCMAIN(utilGenerateUniqueId)],
     ["expiration", _minutes],
     ["start", dateToNumber date],
+    ["year", date select 0],
     ["handle", false]
 ];

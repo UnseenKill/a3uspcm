@@ -33,6 +33,8 @@ private _groupControl = _buttonControl getVariable QGVAR(groupControl);
 private _groupConfig = _buttonControl getVariable QGVAR(groupConfig);
 private _timer = GVAR(Timers) select _index;
 
+TRACE_1(QFUNC(commanderMenuStopWatchToggle),_timer);
+
 if (_timer isNotEqualTo false) then {
     [_timer] call FUNC(timerStop);
     _timer = false;
