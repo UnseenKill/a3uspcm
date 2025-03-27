@@ -47,6 +47,7 @@ TRACE_4(QFUNC(commanderMenuStopWatchesInit),str _groupControl,_idc,_index,_timer
 
 if (_timer isEqualTo false) then {
     _control = _display displayCtrl (_idc + CMI_OFFSET_STOPWATCH_SLIDER);
+    _control ctrlShow true;
     _control ctrlAddEventHandler["SliderPosChanged", {
         params[["_control",controlNull,[controlNull]], ["_value",0,[0]]];
 
@@ -71,6 +72,7 @@ if (_timer isEqualTo false) then {
 
     private _progress = _display displayCtrl (_idc + CMI_OFFSET_STOPWATCH_PROGRESS);
     _control = _display displayCtrl (_idc + CMI_OFFSET_STOPWATCH_TEXT);
+    _control ctrlShow true;
 
     [_index, _timer, _control, _progress] spawn {
         params[["_index",nil,[0]], ["_timer",nil,[createHashMap]], ["_control",nil,[controlNull]], ["_progressCtrl",nil,[controlNull]]];
