@@ -120,6 +120,22 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(menu,injectA3USPCMTab), "LIST",
+    [ELSTRING(menu,Settings_injectA3USPCMTab_DisplayName), ELSTRING(menu,Settings_injectA3USPCMTab_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [ // default
+        [-1, false],
+        [
+            ELSTRING(menu,Settings_inject_Nowhere),
+            ELSTRING(menu,Settings_inject_End)
+        ], 1
+    ],
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Zeus
 
 [

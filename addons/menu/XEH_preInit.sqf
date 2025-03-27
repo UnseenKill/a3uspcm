@@ -54,6 +54,7 @@ GVAR(AdditionalBuildables) = false;
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;
+GVAR(Timers) = [false, false];
 
 [
     {
@@ -63,5 +64,7 @@ GVAR(IntelMarkers) = createHashMap;
 
         if is3DENPreview exitWith {};
         [] call FUNC(loadAdditionalBuildables);
+        [] call FUNC(timerRestore);
+        [] call FUNC(commanderMenuAppend);
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);
