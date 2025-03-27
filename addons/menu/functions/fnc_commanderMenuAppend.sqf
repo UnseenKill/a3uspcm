@@ -1,4 +1,5 @@
 #include "..\script_component.hpp"
+#include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
 Function: A3USPCM_menu_fnc_commanderMenuAppend
 
@@ -27,7 +28,7 @@ SCRT_fnc_ui_populateCommanderMenu = {
 
     call GVAR(SCRT_fnc_ui_populateCommanderMenu);
 
-    private _injectTab = [QUOTE(PREFIX), 61198200];
+    private _injectTab = [QUOTE(PREFIX), IDC_CM_INJECT_MAIN_CONTROL];
 
     if (GVAR(injectA3USPCMTab) isEqualTo false) exitWith {
         menuSliderArray pushBack _injectTab;

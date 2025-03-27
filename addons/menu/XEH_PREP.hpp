@@ -1,6 +1,8 @@
 PREP(commanderMenuAction);
 PREP(commanderMenuAppend);
 PREP(commanderMenuInit);
+PREP(commanderMenuStopWatchesInit);
+PREP(commanderMenuStopWatchToggle);
 PREP(createDiaryRecord);
 PREP(createDiaryRecordAction);
 PREP(diaryExecuteAction);
@@ -11,6 +13,9 @@ PREP(loadAdditionalBuildables);
 PREP(resourcesTransfer);
 PREP(teleportObjectBack);
 PREP(teleportObjectBackTimer);
+PREP(timerCreate);
+PREP(timerStart);
+PREP(timerStop);
 PREP(traderMove);
 PREP(unlockSortArsenal);
 PREP(updateDiaryRecord);

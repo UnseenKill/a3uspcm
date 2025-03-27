@@ -1,4 +1,5 @@
 #include "..\script_component.hpp"
+#include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
 Function: A3USPCM_menu_fnc_commanderMenuInit
 
@@ -24,7 +25,14 @@ params[
     ["_control",controlNull,[controlNull]]
 ];
 
+waitUntil { !isNull findDisplay IDD_COMMANDER_MENU };
+
+private _display = findDisplay IDD_COMMANDER_MENU;
+TRACE_1(QFUNC(commanderMenuInit),_display);
+
 if !assert(!isNull _control) exitWith {};
+
+uiNamespace setVariable[QGVAR(CommanderMenu), _display];
 
 private _controls = createHashMap;
 
@@ -32,10 +40,13 @@ allControls _control apply {
     // For some fucking reason, IDCs above an unknown magnitude are stringified in +e notation; no way around this but to parse the _actual_ stringified version which returns the correct IDC
     private _str = str _x;
     private _idc = _str select [9];
-    TRACE_2(QFUNC(commanderMenuInit),_x,_idc);
-    _x ctrlSetFade 0;
-    _x ctrlCommit 0.3;
-    _controls set[_idc, _x];
+
+    if (_idc isNotEqualTo "-1") then {
+        TRACE_2(QFUNC(commanderMenuInit),_x,_idc);
+        _x ctrlSetFade 0;
+        _x ctrlCommit 0.3;
+        _controls set[_idc, _x];
+    };
 };
 
 TRACE_1(QFUNC(commanderMenuInit),_controls);
@@ -63,7 +74,7 @@ while { count _shortcuts < MAX_CM_SHORTCUTS } do {
 TRACE_1(QFUNC(commanderMenuInit),_shortcuts);
 
 {
-    private _idc = format["%1%2",QUOTE(CM_SHORTCUT_BUTTON_BASE),_forEachIndex];
+    private _idc = format["%1%2",QUOTE(IDC_CM_INJECT_HOTBUTTONS_BASE),_forEachIndex];
     private _config = _x;
     private _control = _controls getOrDefault[_idc, controlNull];
 

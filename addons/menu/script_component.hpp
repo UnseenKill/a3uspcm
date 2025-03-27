@@ -2,7 +2,6 @@
 #include "\z\a3uspcm\addons\main\script_mod.hpp"
 #include "\z\a3uspcm\addons\main\script_macros.hpp"
 
-#define CM_SHORTCUT_BUTTON_BASE 61198203
 #define INTEL_CLEANUP_INTERVAL 10
 #define INTEL_MARKER_RADIUS 8
 #define MAX_CM_SHORTCUTS 8

@@ -1,4 +1,5 @@
 #include "..\script_component.hpp"
+#include "..\RscDefine.hpp"
 /* ----------------------------------------------------------------------------
 Function: A3USPCM_menu_fnc_commanderMenuAction
 
@@ -40,7 +41,7 @@ _shortcut spawn {
     closeDialog 0;
     closeDialog 0;
 
-    waitUntil { isNull findDisplay 60000 };
+    waitUntil { isNull findDisplay IDD_COMMANDER_MENU };
 
     GVAR(DiaryConfig) = _config;
     [] call compile format["call %1", _shortcut];

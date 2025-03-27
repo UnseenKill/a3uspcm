@@ -54,6 +54,7 @@ GVAR(AdditionalBuildables) = false;
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;
+GVAR(Timers) = [false, false];
 
 [
     {
