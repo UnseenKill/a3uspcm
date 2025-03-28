@@ -36,7 +36,8 @@ if (_handle isNotEqualTo false) then {
         terminate _handle;
     };
 
-    _timer set ["handle", false];
+    _timer set["handle", false];
+    [_timer] call FUNC(timerSave);
 };
 
 if (_playNoise) then {

@@ -7,12 +7,13 @@ Description:
 
 Parameters:
     0: _minutes - Timer expiration <NUMBER>
+    1: _index - Index of the timer <NUMBER>
 
 Optional:
 
 Example:
     (begin example)
-    [360] call A3USPCM_menu_fnc_timerCreate;
+    [360, 0] call A3USPCM_menu_fnc_timerCreate;
     (end example)
 
 Returns:
@@ -24,13 +25,15 @@ Author:
 TRACE_1(QFUNC(timerCreate),_this);
 
 params[
-    ["_minutes",nil,[0]]
+    ["_minutes",nil,[0]],
+    ["_index",nil,[0]]
 ];
 
 if !assert(!isNil "_minutes") exitWith {};
 
 createHashMapFromArray[
     ["uid", [] call FUNCMAIN(utilGenerateUniqueId)],
+    ["index", _index],
     ["expiration", _minutes],
     ["start", dateToNumber date],
     ["year", date select 0],

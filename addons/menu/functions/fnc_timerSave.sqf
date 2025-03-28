@@ -7,7 +7,6 @@ Description:
 
 Parameters:
     0: _timer - Timer "object" <HASHMAP>
-    1: _index - Index of the timer <NUMBER>
 
 Optional:
 
@@ -22,11 +21,14 @@ Author:
 TRACE_1(QFUNC(timerSave),_this);
 
 params[
-    ["_timer",nil,[createHashMap]],
-    ["_index",nil,[0]]
+    ["_timer",nil,[createHashMap]]
 ];
 
-GVAR(Timers) set[_index, _timer];
+if (_timer get "handle" isEqualTo false) then {
+    GVAR(Timers) set[_timer get "index", false];
+} else {
+    GVAR(Timers) set[_timer get "index", _timer];
+};
 
 [QGVAR(Timers), GVAR(Timers) apply {
     if (_x isEqualType false) then {

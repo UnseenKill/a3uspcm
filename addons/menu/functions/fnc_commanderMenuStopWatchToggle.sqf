@@ -37,7 +37,6 @@ TRACE_1(QFUNC(commanderMenuStopWatchToggle),_timer);
 
 if (_timer isNotEqualTo false) then {
     [_timer] call FUNC(timerStop);
-    _timer = false;
 } else {
     private _slider = _display displayCtrl ((ctrlIDC _groupControl) + CMI_OFFSET_STOPWATCH_SLIDER);
     private _value = sliderPosition _slider;
@@ -46,11 +45,10 @@ if (_timer isNotEqualTo false) then {
 
     TRACE_2(QFUNC(commanderMenuStopWatchToggle),_slider,_value);
 
-    _timer = [_value] call FUNC(timerCreate);
+    _timer = [_value, _index] call FUNC(timerCreate);
     [_timer] call FUNC(timerStart);
+    [_timer] call FUNC(timerSave);
 };
-
-[_timer, _index] call FUNC(timerSave);
 
 [_groupControl, _groupConfig] call FUNC(commanderMenuStopWatchesInit);
 
