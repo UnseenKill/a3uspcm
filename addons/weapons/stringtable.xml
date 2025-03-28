@@ -5,5 +5,13 @@
             <English>A3USPCM - Weapons Component</English>
             <German>A3USPCM - Weapons Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Weapons_Hotkeys_ToggleSuppressors">
+            <English>Group toggle suppressors</English>
+            <German>Gruppe schaltet Schalldämpfer um</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Hotkeys_ToggleSuppressorsTooltip">
+            <English>Toggles your current weapon's suppressor, group adapts to your new setting.</English>
+            <German>Schaltet den Schalldämpfer deiner aktuellen Waffe um, die Gruppe passt sich deiner neuen Einstellung an.</German>
+        </Key>
     </Package>
 </Project>
