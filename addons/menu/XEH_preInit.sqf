@@ -54,7 +54,7 @@ if !hasInterface exitWith {
     [ELSTRING(weapons,Hotkeys_ToggleSuppressors), ELSTRING(weapons,Hotkeys_ToggleSuppressorsTooltip)],
     {},
     {
-        [] call EFUNC(weapons,toggleSuppressors);
+        [player] call EFUNC(weapons,toggleSuppressors);
     }
 ] call CBA_fnc_addKeybind;
 
