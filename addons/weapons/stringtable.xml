@@ -13,5 +13,57 @@
             <English>Toggles your current weapon's suppressor, group adapts to your new setting.</English>
             <German>Schaltet den Schalldämpfer deiner aktuellen Waffe um, die Gruppe passt sich deiner neuen Einstellung an.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_MuzzleAlreadyAttached">
+            <English>Muzzle device already attached.</English>
+            <German>Mündungsaufsatz bereits angebracht.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_MuzzleAttached0">
+            <English>Going silent.</English>
+            <German>Es wird still.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_MuzzleAttached1">
+            <English>And the rest was silence.</English>
+            <German>Und es ward Stille.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_MuzzleAttached2">
+            <English>Silence is golden.</English>
+            <German>Schweigen ist Gold.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_MuzzleAttached3">
+            <English>Shhh.</English>
+            <German>Pscht.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_MuzzleRemoved0">
+            <English>Going loud.</English>
+            <German>Es wird laut.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_MuzzleRemoved1">
+            <English>Let's make some noise.</English>
+            <German>Lasst uns etwas Lärm machen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_MuzzleRemoved2">
+            <English>This'll make me go deaf.</English>
+            <German>Davon werde ich taub.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_MuzzleRemoved3">
+            <English>Let's wake the neighbors.</English>
+            <German>Lass uns die Nachbarn wecken.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_NoCompatibleSuppressors">
+            <English>No compatible suppressors for %1 in inventory.</English>
+            <German>Keine kompatiblen Schalldämpfer für %1 im Inventar.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_NoMuzzleAttached">
+            <English>No muzzle device attached.</English>
+            <German>Kein Mündungsaufsatz angebracht.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_NoMuzzleConfigurable">
+            <English>This weapon has no muzzle that can be configured.</English>
+            <German>Diese Waffe hat keine konfigurierbare Mündung.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Message_NoWeaponInHand">
+            <English>I have no weapon in my hands.</English>
+            <German>Ich habe keine Waffe in der Hand.</German>
+        </Key>
     </Package>
 </Project>
