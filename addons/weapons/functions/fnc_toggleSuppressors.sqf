@@ -35,14 +35,14 @@ if !assert(!isNull _unit) exitWith {};
 private _weapon = currentWeapon _unit;
 
 if (_weapon isEqualTo "") exitWith {
-    _unit groupChat "No weapon in hand";
+    _unit groupChat localize LSTRING(Message_NoWeaponInHand);
 };
 
 private _config = configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems";
 private _displayName = getText(configFile >> "CfgWeapons" >> _weapon >> "displayName");
 
 if !isClass(_config) exitWith {
-    systemChat format["%1 has no muzzle config", _displayName];
+    _unit groupChat localize LSTRING(Message_NoMuzzleConfigurable);
 };
 
 private _weaponInfo = getUnitLoadout _unit select [0, 3];
@@ -65,7 +65,7 @@ TRACE_1(QFUNC(toggleSuppressors),_suppressorOn);
 
 if !(_suppressorOn) then {
     if (_muzzleDevice isEqualTo "") then {
-        _unit groupChat "No muzzle device attached.";
+        _unit groupChat localize LSTRING(Message_NoMuzzleAttached);
     } else {
         switch _weaponType do {
             case 0: { _unit removePrimaryWeaponItem _muzzleDevice };
@@ -74,17 +74,22 @@ if !(_suppressorOn) then {
         };
 
         _unit addItem _muzzleDevice;
-        _unit groupChat "Going loud.";
+        _unit groupChat localize selectRandom[
+            LSTRING(Message_MuzzleRemoved0),
+            LSTRING(Message_MuzzleRemoved1),
+            LSTRING(Message_MuzzleRemoved2),
+            LSTRING(Message_MuzzleRemoved3)
+        ];
     };
 } else {
     if (_muzzleDevice isNotEqualTo "") then {
-        _unit groupChat "Muzzle device already attached.";
+        _unit groupChat localize LSTRING(Message_MuzzleAlreadyAttached);
     } else {
         private _compatible = configProperties[_config, "getNumber(_x) > 0", true] apply { configName _x };
         private _intersect = items _unit arrayIntersect _compatible;
 
         if (_intersect isEqualTo []) then {
-            _unit groupChat format["No compatible suppressors for %1 in inventory.", _displayName];
+            _unit groupChat format[localize LSTRING(Message_NoCompatibleSuppressors), _displayName];
         } else {
             _muzzleDevice = _intersect select 0;
 
@@ -95,7 +100,12 @@ if !(_suppressorOn) then {
             };
 
             _unit removeItem _muzzleDevice;
-            _unit groupChat "Going silent.";
+            _unit groupChat localize selectRandom[
+                LSTRING(Message_MuzzleAttached0),
+                LSTRING(Message_MuzzleAttached1),
+                LSTRING(Message_MuzzleAttached2),
+                LSTRING(Message_MuzzleAttached3)
+            ];
         };
     };
 };
