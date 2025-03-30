@@ -43,6 +43,11 @@ private _idc = ctrlIDC _groupControl;
 private _index = getNumber(_config >> "timerIndex");
 private _timer = GVAR(Timers) select _index;
 
+// That sometimes happens
+if (isNil "_timer") then {
+    _timer = false;
+};
+
 TRACE_4(QFUNC(commanderMenuStopWatchesInit),str _groupControl,_idc,_index,_timer);
 
 if (_timer isEqualTo false) then {
