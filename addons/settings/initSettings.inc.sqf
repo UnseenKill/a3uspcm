@@ -464,3 +464,13 @@
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(weapons,vehicleWeaponsAdditionalClasses), "EDITBOX",
+    [ELSTRING(weapons,Settings_vehicleWeaponsAdditionalClasses_DisplayName), ELSTRING(weapons,Settings_vehicleWeaponsAdditionalClasses_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    '["missiles_titan","emp"]', // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
