@@ -74,7 +74,7 @@ _unit groupChat localize LSTRING(Text_Chat_CargoLoadingMortar);
 
     uiSleep 3.5;
 
-    if ([_vehicle, _unit, [_mortar], false] call FUNCMAIN(utilAceCargoLoad)) then {
+    if ([_mortar, _vehicle, true] call ace_cargo_fnc_loadItem) then {
         _unit groupRadio "SentSupportDone";
         _unit groupChat localize LSTRING(Text_Chat_MortarCargoLoaded);
     } else {

@@ -48,6 +48,16 @@ if !hasInterface exitWith {
     }
 ] call CBA_fnc_addKeybind;
 
+[
+    ELSTRING(main,Title),
+    QEGVAR(weapons,ToggleSuppressors),
+    [ELSTRING(weapons,Hotkeys_ToggleSuppressors), ELSTRING(weapons,Hotkeys_ToggleSuppressorsTooltip)],
+    {},
+    {
+        [player] call EFUNC(weapons,toggleSuppressors);
+    }
+] call CBA_fnc_addKeybind;
+
 ADDON = true;
 
 GVAR(AdditionalBuildables) = false;
