@@ -469,7 +469,7 @@
     QEGVAR(weapons,vehicleWeaponsAdditionalClasses), "EDITBOX",
     [ELSTRING(weapons,Settings_vehicleWeaponsAdditionalClasses_DisplayName), ELSTRING(weapons,Settings_vehicleWeaponsAdditionalClasses_Tooltip)],
     [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
-    '["missiles_titan","emp"]', // default
+    '["missiles_titan"]', // default
     true, // global
     {}, // onchange
     false // Needs mission restart
