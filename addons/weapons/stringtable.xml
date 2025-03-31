@@ -65,5 +65,29 @@
             <English>I have no weapon in my hands.</English>
             <German>Ich habe keine Waffe in der Hand.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Weapons_Settings_vehicleWeaponsAdditionalClasses_DisplayName">
+            <English>Addable vehicle weaponry</English>
+            <German>Hinzufügbare Fahrzeugbewaffnung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_Settings_vehicleWeaponsAdditionalClasses_Tooltip">
+            <English>List of vehicle weaponry classes that can be added to vehicles.</English>
+            <German>Liste der Fahrzeugbewaffnungs-Klassen, die Fahrzeugen hinzugefügt werden können.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_VehicleWeaponsSelfActionsAddWeaponText">
+            <English>Add weapon</English>
+            <German>Waffe hinzufügen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_VehicleWeaponsSelfActionsMenuText">
+            <English>Vehicle weaponry</English>
+            <German>Fahrzeugbewaffnung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_VehicleWeaponsSelfActionsRemoveWeaponConfirm">
+            <English>Remove "%1" from weaponry?</English>
+            <German>"%1" aus der Bewaffnung entfernen?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_VehicleWeaponsSelfActionsRemoveWeaponText">
+            <English>Remove weapon</English>
+            <German>Waffe entfernen</German>
+        </Key>
     </Package>
 </Project>

@@ -59,7 +59,7 @@ private _continue = try {
 
 if !_continue exitWith {};
 
-_loadout params["_title","_aceCargo","_inventory",["_turretsMagsInfo",false],["_cargoSpace",false]];
+_loadout params["_title","_aceCargo","_inventory",["_turretsMagsInfo",false],["_cargoSpace",false],["_turretWeapons",false]];
 _inventory params["_backpacks","_weapons","_magazines","_items"];
 
 TRACE_1("_title",_title);
@@ -153,6 +153,33 @@ if (_turretsMagsInfo isNotEqualTo false) then {
 if (_cargoSpace isNotEqualTo false) then {
     TRACE_1("setting cargo space",_cargoSpace);
     [_vehicle, _cargoSpace] call ace_cargo_fnc_setSpace;
+};
+
+if (_turretWeapons isNotEqualTo false) then {
+    TRACE_1("restoring weapons turrets",_turretWeapons);
+    _turretWeapons params["_vehicleClass","_turrets","_weapons"];
+
+    if !(_vehicle isKindOf _vehicleClass) then {
+        INFO_2("vehicle %1 is not of class %2; skipping turret weapons",typeOf _vehicle,_vehicleClass);
+    } else {
+        private _modded = [];
+
+        {
+            private _path = _x;
+
+            _vehicle weaponsTurret _path apply {
+                _vehicle removeWeaponTurret[_x, _path];
+            };
+
+            _weapons select _foreachIndex apply {
+                _vehicle addWeaponTurret[_x, _path];
+            };
+
+            _modded pushBack _path;
+        } forEach _turrets;
+
+        _vehicle setVariable[QGVAR(moddedTurrets), _modded, true];
+    };
 };
 
 private _message = [LSTRING(HintLoadoutRestoredPartialText), LSTRING(HintLoadoutRestoredText)] select (_messages isEqualTo []);

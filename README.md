@@ -85,6 +85,7 @@ Features
    * Remember/restore turret ammunition
    * Change maximum cargo of a vehicle
    * Dump contents of supply boxes to the ground so you can pick'em up with a lootbox
+   * Edit a vehicle's weaponry making it show armament not seen around naturally
  * Q.O.L.
    * Vehicles: fire smoke launcher from any position of a vehicle (requires additional keybind via addon keybinds; does not interfere w/ regular counter-measures keybind)
    * Weapons: configurable hotkey to toggle group's suppressors
