@@ -59,7 +59,7 @@ _list apply {
 
     [
         [
-            _className,
+            format["%1_%2", ADDON, _className],
             _displayName,
             "",
             { [{ call FUNC(vehicleWeaponAdd) }, _this] call CBA_fnc_execNextFrame },
