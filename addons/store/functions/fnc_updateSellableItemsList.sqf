@@ -73,6 +73,10 @@ if (_items isEqualTo []) exitWith {
     _list lnbSetPicture[[_index, 0], getText((_x get "config") >> (_x get "class") >> "picture")];
     _list lnbSetData[[_index, 0], str _foreachIndex];
 
+    if ((_x get "class") in (_display getVariable QGVAR(protected))) then {
+        _list lnbSetPicture[[_index, COLUMN_PROTECT_ICON], QPATHTOEF(assets,ui\lock-icon.paa)];
+    };
+
     if ((_x get "price") isNotEqualTo false) then {
         _list lnbSetData[[_index, DATA_IDX_SELLABLE], "true"];
     } else {
