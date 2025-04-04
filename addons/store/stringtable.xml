@@ -161,6 +161,14 @@
             <English>Plays an annoying sound when selling via the "Better Selling" feature</English>
             <German>Spielt einen nervigen Sound ab, wenn über die "Besser Verkaufen"-Funktion verkauft wird</German>
         </Key>
+        <Key ID="STR_A3USPCM_Store_Settings_sellDelay_DisplayName">
+            <English>Delay between auto sales</English>
+            <German>Verzögerung zwischen automatischen Verkäufen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_Settings_sellDelay_Tooltip">
+            <English>Short delay between auto sales</English>
+            <German>Kurze Verzögerung zwischen automatischen Verkäufen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Store_Settings_sellForbidden_DisplayName">
             <English>Also sell A3U "forbidden" items</English>
             <German>Auch A3U "verbotene" Gegenstände verkaufen</German>

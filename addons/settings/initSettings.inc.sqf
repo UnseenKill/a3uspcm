@@ -456,6 +456,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(store,sellDelay), "SLIDER",
+    [ELSTRING(store,Settings_sellDelay_DisplayName), ELSTRING(store,Settings_sellDelay_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    [0, 1, 0.25, 3], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(store,sellForbidden), "CHECKBOX",
     [ELSTRING(store,Settings_sellForbidden_DisplayName), ELSTRING(store,Settings_sellForbidden_Tooltip)],
     [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],

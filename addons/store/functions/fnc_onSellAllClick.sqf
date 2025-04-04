@@ -96,7 +96,7 @@ private _list = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINER
         private _protected = _display getVariable QGVAR(protected); // private protected. lol.
 
         while { true } do {
-            uiSleep 0.25;
+            uiSleep GVAR(sellDelay);
 
             if isNull(uiNamespace getVariable[QGVAR(menuDisplay), displayNull]) then { throw false };
 
