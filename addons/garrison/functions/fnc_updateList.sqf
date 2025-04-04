@@ -34,6 +34,7 @@ private _showBases = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBA
 private _showOutposts = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS;
 private _showResources = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES;
 private _showTowns = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTOWNS;
+private _hideFull = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKHIDEFULL;
 
 private _closeLocation = {
     params[["_format","",[""]], ["_entry",false,[createHashMap]]];
@@ -54,6 +55,10 @@ private _entries = markersX select {
         (_showBLUFOR && sidesX getVariable[_x, sideUnknown] isEqualTo west) ||
         (_showINDEP && sidesX getVariable[_x, sideUnknown] isEqualTo resistance) ||
         (_showOPFOR && sidesX getVariable[_x, sideUnknown] isEqualTo east)
+    ) && (
+        !_hideFull || (
+            count(garrison getVariable[_x, []]) < ([_x] call A3A_fnc_getGarrisonLimit)
+        )
     )
 } apply {
     private _entry = createHashMapFromArray[

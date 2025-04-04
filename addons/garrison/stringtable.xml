@@ -13,6 +13,10 @@
             <English>Recruit</English>
             <German>Rekruitiere</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckHideFull_tooltip">
+            <English>Hide locations at full garrison capacity</English>
+            <German>Verstecke Standorte mit voller Garnisonskapazität</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowBLUFOR_tooltip">
             <English>Show locations of BLUFOR faction (usually NATO)</English>
             <German>Zeige Standorte der BLUFOR-Fraktion (normalerweise NATO)</German>
@@ -48,6 +52,10 @@
         <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelBases">
             <English>Bases</English>
             <German>Basen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelFull">
+            <English>Hide full</English>
+            <German>Verstecke volle</German>
         </Key>
         <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelINDEP">
             <English>INDEP</English>

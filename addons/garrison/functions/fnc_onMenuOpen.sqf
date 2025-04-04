@@ -1,5 +1,6 @@
 #include "..\script_component.hpp"
 #include "..\RscDefine.hpp"
+#include "\a3\ui_f\hpp\defineDIKCodes.inc"
 /* ----------------------------------------------------------------------------
 Function: A3USPCM_garrison_fnc_onMenuOpen
 
@@ -44,7 +45,8 @@ private _checkStates = missionNamespace getVariable[QGVAR(dialogCheckBoxes), cre
     [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBASES, false],
     [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS, false],
     [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES, false],
-    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTOWNS, true]
+    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTOWNS, true],
+    [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKHIDEFULL, false]
 ]];
 
 missionNamespace setVariable[QGVAR(dialogCheckBoxes), _checkStates];
@@ -138,6 +140,13 @@ _control ctrlEnable false;
 _control ctrlSetFontHeight 0.03;
 _control ctrlAddEventHandler["LBDblClick", {
     call FUNC(doRecruit);
+}];
+_control ctrlAddEventHandler["KeyUp", {
+    params[["_control",controlNull,[controlNull]],["_key",0,[0]]];
+
+    if (_key isEqualTo DIK_RETURN) then {
+        [_control] call FUNC(doRecruit);
+    };
 }];
 
 GVAR(lbColumns) select { _x select 2 isNotEqualTo "" } apply {
