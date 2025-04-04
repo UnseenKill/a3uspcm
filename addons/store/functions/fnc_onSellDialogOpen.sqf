@@ -28,8 +28,19 @@ params[["_display",displayNull,[displayNull]]];
 if !assert(!isNull _display) exitWith {};
 
 uiNamespace setVariable[QGVAR(menuDisplay), _display];
+_display setVariable[QGVAR(protected), createHashMap];
 
 private["_control"];
+
+// Automatic item selection property
+
+private _wantSelectionDataControls = "getNumber(_x >> 'wantSelectionData') > 0" configClasses(configFile >> QGVAR(sellDialog) >> "Controls") apply {
+    _display displayCtrl getNumber(_x >> "idc");
+};
+
+_display setVariable[QGVAR(wantSelectionDataControls), _wantSelectionDataControls];
+
+TRACE_1(QFUNC(onSellDialogOpen),_wantSelectionDataControls);
 
 // Close button
 
@@ -51,6 +62,22 @@ _control = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL;
 _control ctrlEnable false;
 _control ctrlAddEventHandler["ButtonClick", {
     call FUNC(onSellItemClick);
+}];
+
+// Sell all button
+
+_control = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL;
+_control ctrlEnable false;
+_control ctrlAddEventHandler["ButtonClick", {
+    call FUNC(onSellAllClick);
+}];
+
+// Protect button
+
+_control = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNPROTECT;
+_control ctrlEnable false;
+_control ctrlAddEventHandler["ButtonClick", {
+    call FUNC(onProtectItemClick);
 }];
 
 // Filter list
@@ -77,6 +104,7 @@ _control ctrlEnable false;
 _control ctrlSetFontHeight 0.04;
 _control lnbAddColumn 0.23;
 _control lnbAddColumn 0.27;
+_control lnbAddColumn 0.87;
 
 _control ctrlAddEventHandler["LBDblClick", {
     call FUNC(updateItemCount);

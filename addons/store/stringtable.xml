@@ -41,17 +41,57 @@
             <English>A3USPCM - Store Component</English>
             <German>A3USPCM - Store Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnAgain">
+            <English>Again</English>
+            <German>Nochmal</German>
+        </Key>
         <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnClose">
             <English>X</English>
             <German>X</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnProtect">
+            <English>Protect</English>
+            <German>Schützen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnProtect_Tooltip">
+            <English>Protect an item from being sold/purged when using "sell/purge all"</English>
+            <German>Schützt einen Gegenstand davor, beim "Alles verkaufen/entfernen" verkauft/entfernt zu werden</German>
         </Key>
         <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnPurge">
             <English>Purge</English>
             <German>Entfernen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnPurgeAll">
+            <English>Purge all</English>
+            <German>Alle entfernen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnPurgeAll_Tooltip">
+            <English>WARNING: purges all _visible_ unprotected items, not ALL of the current item</English>
+            <German>WARNUNG: entfernt alle _sichtbaren_ ungeschützten Gegenstände, nicht ALLE des aktuellen Gegenstands</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnPurgeAll_Tooltip_Confirm">
+            <English>Click me again in the next five seconds to _really_ purge every unprotected item.</English>
+            <German>Klicke innerhalb der nächsten fünf Sekunden noch einmal, um _wirklich_ alle ungeschützten Gegenstände zu entfernen.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnSell">
             <English>Sell</English>
             <German>Verkaufen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnSellAll">
+            <English>Sell all</English>
+            <German>Alle verkaufen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnSellAll_Tooltip">
+            <English>WARNING: sells all _visible_ unprotected items, not ALL of the current item</English>
+            <German>WARNUNG: verkauft alle _sichtbaren_ ungeschützten Gegenstände, nicht ALLE des aktuellen Gegenstands</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnSellAll_Tooltip_Confirm">
+            <English>Click me again in the next five seconds to _really_ sell every unprotected item.</English>
+            <German>Klicke innerhalb der nächsten fünf Sekunden noch einmal, um _wirklich_ alle ungeschützten Gegenstände zu verkaufen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_BtnUnprotect">
+            <English>Unprotect</English>
+            <German>Freigeben</German>
         </Key>
         <Key ID="STR_A3USPCM_Store_RscA3USPCMStoreSellDialog_FilterSelect_GroupedByType">
             <English>Group items by type, then sort alphabetically</English>
