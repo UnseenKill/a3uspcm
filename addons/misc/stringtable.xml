@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Misc">
+        <Key ID="STR_A3USPCM_Misc_Component">
+            <English>A3USPCM - Misc Component</English>
+            <German>A3USPCM - Misc Komponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_SnapNeck">
+            <English>Snap neck</English>
+            <German>Genick brechen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_SnappingNeckProgressText">
+            <English>Snapping neck...</English>
+            <German>Breche Genick...</German>
+        </Key>
+    </Package>
+</Project>
