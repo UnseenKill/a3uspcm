@@ -9,11 +9,11 @@
 //  Search: (^\s*(?:text|tooltip)\s*=\s*)[$]STR_A3_([^;]+)
 //  Replace: $1CSTRING($2)
 
-/* #Pyremo
+/* #Hyvygo
 $[
 	1.063,
 	["RscA3USPCMGarrisonManagerDialog",[["safezoneX","safezoneY","safezoneW","safezoneH"],"safezoneW / 40","safezoneH / 25","GUI_GRID"],2,1,1],
-	[-1000,"StaticBackground",[1,"",["0.15 * safezoneW + safezoneX","0.16 * safezoneH + safezoneY","0.7 * safezoneW","0.68 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],[]],
+	[-1000,"StaticBackground",[1,"",["0.15 * safezoneW + safezoneX","0.16 * safezoneH + safezoneY","0.7 * safezoneW","0.72 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],[]],
 	[-1001,"StaticTitle",[1,"Title",["0.15 * safezoneW + safezoneX","0.116 * safezoneH + safezoneY","0.7 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]],
 	[-1600,"BtnClose",[1,"X",["0.8325 * safezoneW + safezoneX","0.128 * safezoneH + safezoneY","0.0125 * safezoneW","0.02 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[2800,"CheckShowBLUFOR",[1,"",["0.1625 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show locations of BLUFOR faction (usually NATO)","-1"],[]],
@@ -22,22 +22,24 @@ $[
 	[1003,"StaticLabelOPFOR",[1,"OPFOR",["0.26 * safezoneW + safezoneX","0.78 * safezoneH + safezoneY","0.04125 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[2802,"CheckShowINDEP",[1,"",["0.305 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show locations of INDEP faction (usually: you)","-1"],[]],
 	[1004,"StaticLabelINDEP",[1,"INDEP",["0.33 * safezoneW + safezoneX","0.78 * safezoneH + safezoneY","0.04125 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[2803,"CheckShowBases",[1,"",["0.3925 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show military bases/airports","-1"],[]],
-	[1005,"StaticLabelBases",[1,"Bases",["0.4175 * safezoneW + safezoneX","0.776 * safezoneH + safezoneY","0.0375 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[2804,"CheckShowOutposts",[1,"",["0.46 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show outposts","-1"],[]],
-	[1006,"StaticLabelOutposts",[1,"Outposts",["0.485 * safezoneW + safezoneX","0.776 * safezoneH + safezoneY","0.0625 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[2805,"CheckShowResources",[1,"",["0.5525 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show resources","-1"],[]],
-	[1007,"StaticLabelResources",[1,"Resources",["0.5775 * safezoneW + safezoneX","0.776 * safezoneH + safezoneY","0.0625 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[2806,"CheckShowTowns",[1,"",["0.645 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show towns/villages","-1"],[]],
-	[1008,"StaticLabelTowns",[1,"Towns/villages",["0.67 * safezoneW + safezoneX","0.776 * safezoneH + safezoneY","0.0625 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2803,"CheckShowBases",[1,"",["0.525 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show military bases/airports","-1"],[]],
+	[1005,"StaticLabelBases",[1,"Bases",["0.55 * safezoneW + safezoneX","0.78 * safezoneH + safezoneY","0.075 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2804,"CheckShowOutposts",[1,"",["0.525 * safezoneW + safezoneX","0.832 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show outposts","-1"],[]],
+	[1006,"StaticLabelOutposts",[1,"Outposts",["0.55 * safezoneW + safezoneX","0.82 * safezoneH + safezoneY","0.075 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2805,"CheckShowResources",[1,"",["0.625 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show resources","-1"],[]],
+	[1007,"StaticLabelResources",[1,"Resources",["0.65 * safezoneW + safezoneX","0.776 * safezoneH + safezoneY","0.0875 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2806,"CheckShowTowns",[1,"",["0.7375 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show towns/villages","-1"],[]],
+	[1008,"StaticLabelTowns",[1,"Towns/villages",["0.76 * safezoneW + safezoneX","0.776 * safezoneH + safezoneY","0.0875 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1500,"ListOverview",[1,"",["0.1625 * safezoneW + safezoneX","0.18 * safezoneH + safezoneY","0.675 * safezoneW","0.3 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = false;","idcLeft = -1;","idcRight = -1;","tooltipPerColumn = true;"]],
 	[1602,"BtnRecruit",[1,"Recruit",["0.3425 * safezoneW + safezoneX","0.728 * safezoneH + safezoneY","0.075 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.6,0,1],[-1,-1,-1,-1],"","-1"],[]],
 	[-1800,"StaticRecruitFrame",[1,"Recruit reinforcements",["0.1625 * safezoneW + safezoneX","0.5 * safezoneH + safezoneY","0.2625 * safezoneW","0.28 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
 	[-1801,"StaticMapFrame",[1,"Map view",["0.4375 * safezoneW + safezoneX","0.5 * safezoneH + safezoneY","0.4 * safezoneW","0.28 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
 	[1501,"ListRecruitTypes",[1,"",["0.1675 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.25 * safezoneW","0.2 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = false;","idcLeft = -1;","idcRight = -1;"]],
 	[1009,"MapControl",[1,"",["0.45 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.375 * safezoneW","0.24 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[2807,"CheckHideFull",[1,"",["0.7375 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show towns/villages","-1"],[]],
-	[1010,"StaticLabelFull",[1,"Hide full",["0.7625 * safezoneW + safezoneX","0.776 * safezoneH + safezoneY","0.0625 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+	[2807,"CheckHideFull",[1,"",["0.7375 * safezoneW + safezoneX","0.832 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show towns/villages","-1"],[]],
+	[1010,"StaticLabelFull",[1,"Hide full",["0.76 * safezoneW + safezoneX","0.82 * safezoneH + safezoneY","0.0875 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2808,"CheckShowPosts",[1,"",["0.625 * safezoneW + safezoneX","0.832 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show towns/villages","-1"],[]],
+	[1011,"StaticLabelPosts",[1,"Posts",["0.65 * safezoneW + safezoneX","0.82 * safezoneH + safezoneY","0.0875 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
 ]
 */
 class GVAR(dialog) {
@@ -47,7 +49,7 @@ class GVAR(dialog) {
 
     class controls {
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Pyremo)
+		// GUI EDITOR OUTPUT START (by goreSplatter, v1.063, #Hyvygo)
 		////////////////////////////////////////////////////////
 
 		class StaticBackground: RscText
@@ -56,7 +58,7 @@ class GVAR(dialog) {
 			x = QUOTE(0.15 * safezoneW + safezoneX);
 			y = QUOTE(0.16 * safezoneH + safezoneY);
 			w = QUOTE(0.7 * safezoneW);
-			h = QUOTE(0.68 * safezoneH);
+			h = QUOTE(0.72 * safezoneH);
 			colorBackground[] = {0,0,0,0.8};
 		};
 		class StaticTitle: RscText
@@ -135,7 +137,7 @@ class GVAR(dialog) {
 		class CheckShowBases: RscCheckbox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBASES;
-			x = QUOTE(0.3925 * safezoneW + safezoneX);
+			x = QUOTE(0.525 * safezoneW + safezoneX);
 			y = QUOTE(0.788 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
 			h = QUOTE(0.04 * safezoneH);
@@ -145,16 +147,16 @@ class GVAR(dialog) {
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELBASES;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelBases);
-			x = QUOTE(0.4175 * safezoneW + safezoneX);
-			y = QUOTE(0.776 * safezoneH + safezoneY);
-			w = QUOTE(0.0375 * safezoneW);
+			x = QUOTE(0.55 * safezoneW + safezoneX);
+			y = QUOTE(0.78 * safezoneH + safezoneY);
+			w = QUOTE(0.075 * safezoneW);
 			h = QUOTE(0.06 * safezoneH);
 		};
 		class CheckShowOutposts: RscCheckbox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS;
-			x = QUOTE(0.46 * safezoneW + safezoneX);
-			y = QUOTE(0.788 * safezoneH + safezoneY);
+			x = QUOTE(0.525 * safezoneW + safezoneX);
+			y = QUOTE(0.832 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
 			h = QUOTE(0.04 * safezoneH);
 			tooltip = CSTRING(RscA3USPCMGarrisonManagerDialog_CheckShowOutposts_tooltip);
@@ -163,15 +165,15 @@ class GVAR(dialog) {
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELOUTPOSTS;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelOutposts);
-			x = QUOTE(0.485 * safezoneW + safezoneX);
-			y = QUOTE(0.776 * safezoneH + safezoneY);
-			w = QUOTE(0.0625 * safezoneW);
+			x = QUOTE(0.55 * safezoneW + safezoneX);
+			y = QUOTE(0.82 * safezoneH + safezoneY);
+			w = QUOTE(0.075 * safezoneW);
 			h = QUOTE(0.06 * safezoneH);
 		};
 		class CheckShowResources: RscCheckbox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES;
-			x = QUOTE(0.5525 * safezoneW + safezoneX);
+			x = QUOTE(0.625 * safezoneW + safezoneX);
 			y = QUOTE(0.788 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
 			h = QUOTE(0.04 * safezoneH);
@@ -181,15 +183,15 @@ class GVAR(dialog) {
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELRESOURCES;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelResources);
-			x = QUOTE(0.5775 * safezoneW + safezoneX);
+			x = QUOTE(0.65 * safezoneW + safezoneX);
 			y = QUOTE(0.776 * safezoneH + safezoneY);
-			w = QUOTE(0.0625 * safezoneW);
+			w = QUOTE(0.0875 * safezoneW);
 			h = QUOTE(0.06 * safezoneH);
 		};
 		class CheckShowTowns: RscCheckbox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTOWNS;
-			x = QUOTE(0.645 * safezoneW + safezoneX);
+			x = QUOTE(0.7375 * safezoneW + safezoneX);
 			y = QUOTE(0.788 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
 			h = QUOTE(0.04 * safezoneH);
@@ -199,9 +201,9 @@ class GVAR(dialog) {
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELTOWNS;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelTowns);
-			x = QUOTE(0.67 * safezoneW + safezoneX);
+			x = QUOTE(0.76 * safezoneW + safezoneX);
 			y = QUOTE(0.776 * safezoneH + safezoneY);
-			w = QUOTE(0.0625 * safezoneW);
+			w = QUOTE(0.0875 * safezoneW);
 			h = QUOTE(0.06 * safezoneH);
 		};
 		class ListOverview: RscListbox
@@ -263,7 +265,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.25 * safezoneW);
 			h = QUOTE(0.2 * safezoneH);
 		};
-		class MapControl: RscText
+		class MapControl: A3A_MapControl
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_MAPCONTROL;
 			x = QUOTE(0.45 * safezoneW + safezoneX);
@@ -275,7 +277,7 @@ class GVAR(dialog) {
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKHIDEFULL;
 			x = QUOTE(0.7375 * safezoneW + safezoneX);
-			y = QUOTE(0.788 * safezoneH + safezoneY);
+			y = QUOTE(0.832 * safezoneH + safezoneY);
 			w = QUOTE(0.025 * safezoneW);
 			h = QUOTE(0.04 * safezoneH);
 			tooltip = CSTRING(RscA3USPCMGarrisonManagerDialog_CheckHideFull_tooltip);
@@ -284,9 +286,27 @@ class GVAR(dialog) {
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELFULL;
 			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelFull);
-			x = QUOTE(0.7625 * safezoneW + safezoneX);
-			y = QUOTE(0.776 * safezoneH + safezoneY);
-			w = QUOTE(0.0625 * safezoneW);
+			x = QUOTE(0.76 * safezoneW + safezoneX);
+			y = QUOTE(0.82 * safezoneH + safezoneY);
+			w = QUOTE(0.0875 * safezoneW);
+			h = QUOTE(0.06 * safezoneH);
+		};
+		class CheckShowPosts: RscCheckbox
+		{
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWPOSTS;
+			x = QUOTE(0.625 * safezoneW + safezoneX);
+			y = QUOTE(0.832 * safezoneH + safezoneY);
+			w = QUOTE(0.025 * safezoneW);
+			h = QUOTE(0.04 * safezoneH);
+			tooltip = CSTRING(RscA3USPCMGarrisonManagerDialog_CheckShowPosts_tooltip);
+		};
+		class StaticLabelPosts: RscText
+		{
+			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELPOSTS;
+			text = CSTRING(RscA3USPCMGarrisonManagerDialog_StaticLabelPosts);
+			x = QUOTE(0.65 * safezoneW + safezoneX);
+			y = QUOTE(0.82 * safezoneH + safezoneY);
+			w = QUOTE(0.0875 * safezoneW);
 			h = QUOTE(0.06 * safezoneH);
 		};
 		////////////////////////////////////////////////////////

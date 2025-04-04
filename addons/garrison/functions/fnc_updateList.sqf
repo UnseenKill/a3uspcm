@@ -32,6 +32,7 @@ private _showOPFOR = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOP
 
 private _showBases = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBASES;
 private _showOutposts = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS;
+private _showPosts = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWPOSTS;
 private _showResources = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES;
 private _showTowns = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTOWNS;
 private _hideFull = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKHIDEFULL;
@@ -47,10 +48,11 @@ private _closeLocation = {
 
 private _entries = markersX select {
     (
-        (_showBases && _x in (milbases + airportsX + seaports)) ||
+        (_showBases && _x in (milbases + airportsX + seaports + ["Synd_HQ"])) ||
         (_showOutposts && _x in outposts) ||
         (_showResources && _x in (resourcesX + factories)) ||
-        (_showTowns && _x in citiesX)
+        (_showTowns && _x in citiesX) ||
+        (_showPosts && _x in (aapostsFIA + atpostsFIA + hmgpostsFIA + roadblocksFIA + watchpostsFIA))
     ) && (
         (_showBLUFOR && sidesX getVariable[_x, sideUnknown] isEqualTo west) ||
         (_showINDEP && sidesX getVariable[_x, sideUnknown] isEqualTo resistance) ||
@@ -77,6 +79,10 @@ private _entries = markersX select {
     }];
 
     private _label = switch true do {
+        case(_x isEqualTo "Synd_HQ"): {
+            _entry set["picture", "\A3\ui_f\data\map\markers\handdrawn\flag_CA.paa"];
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SyndicateHQLabel), _entry] call _closeLocation;
+        };
         case(_x in citiesX): {
             _entry set["picture", "\A3\ui_f\data\map\mapcontrol\Ruin_CA.paa"];
             _x;
@@ -104,6 +110,26 @@ private _entries = markersX select {
         case(_x in seaports): {
             _entry set["picture", "\A3\ui_f\data\map\markers\nato\n_naval.paa"];
             [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SeaportLabel), _entry] call _closeLocation;
+        };
+        case(_x in aapostsFIA): {
+            _entry set["picture", "\A3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa"];
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_AApostLabel), _entry] call _closeLocation;
+        };
+        case(_x in atpostsFIA): {
+            _entry set["picture", "\A3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa"];
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_ATpostLabel), _entry] call _closeLocation;
+        };
+        case(_x in hmgpostsFIA): {
+            _entry set["picture", "\A3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa"];
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_HMGpostLabel), _entry] call _closeLocation;
+        };
+        case (_x in roadblocksFIA): {
+            _entry set["picture", "\A3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa"];
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_RoadblockLabel), _entry] call _closeLocation;
+        };
+        case (_x in watchpostsFIA): {
+            _entry set["picture", "\A3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa"];
+            [localize LSTRING(RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_WatchpostLabel), _entry] call _closeLocation;
         };
         default { format["UNK(%1)", _x] };
     };
