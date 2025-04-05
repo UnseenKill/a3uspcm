@@ -120,6 +120,22 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(menu,injectA3USPCMTab), "LIST",
+    [ELSTRING(menu,Settings_injectA3USPCMTab_DisplayName), ELSTRING(menu,Settings_injectA3USPCMTab_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [ // default
+        [-1, false],
+        [
+            ELSTRING(menu,Settings_inject_Nowhere),
+            ELSTRING(menu,Settings_inject_End)
+        ], 1
+    ],
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Zeus
 
 [
@@ -440,10 +456,30 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(store,sellDelay), "SLIDER",
+    [ELSTRING(store,Settings_sellDelay_DisplayName), ELSTRING(store,Settings_sellDelay_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    [0, 1, 0.25, 3], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(store,sellForbidden), "CHECKBOX",
     [ELSTRING(store,Settings_sellForbidden_DisplayName), ELSTRING(store,Settings_sellForbidden_Tooltip)],
     [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
     false, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(weapons,vehicleWeaponsAdditionalClasses), "EDITBOX",
+    [ELSTRING(weapons,Settings_vehicleWeaponsAdditionalClasses_DisplayName), ELSTRING(weapons,Settings_vehicleWeaponsAdditionalClasses_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    '["missiles_titan"]', // default
     true, // global
     {}, // onchange
     false // Needs mission restart

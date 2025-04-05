@@ -13,6 +13,10 @@
             <English>Recruit</English>
             <German>Rekruitiere</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckHideFull_tooltip">
+            <English>Hide locations at full garrison capacity</English>
+            <German>Verstecke Standorte mit voller Garnisonskapazität</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowBLUFOR_tooltip">
             <English>Show locations of BLUFOR faction (usually NATO)</English>
             <German>Zeige Standorte der BLUFOR-Fraktion (normalerweise NATO)</German>
@@ -33,6 +37,10 @@
             <English>Show outposts</English>
             <German>Zeige Aussenposten</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowPosts_tooltip">
+            <English>Show A/A, A/T, HMG, Roadblocks, Watchposts</English>
+            <German>Zeige Fla, PzAbw, sMG, Straßensperren, Wachposten</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_CheckShowResources_tooltip">
             <English>Show resources</English>
             <German>Zeige Rohstoffe</German>
@@ -49,6 +57,10 @@
             <English>Bases</English>
             <German>Basen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelFull">
+            <English>Hide full</English>
+            <German>Verstecke volle</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelINDEP">
             <English>INDEP</English>
             <German>INDEP</German>
@@ -60,6 +72,10 @@
         <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelOutposts">
             <English>Outposts</English>
             <German>Aussenposten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelPosts">
+            <English>Posts</English>
+            <German>Posten</German>
         </Key>
         <Key ID="STR_A3USPCM_Garrison_RscA3USPCMGarrisonManagerDialog_StaticLabelResources">
             <English>Resources</English>
@@ -177,6 +193,14 @@
             <English>Medic</English>
             <German>Sanitäter</German>
         </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_AApostLabel">
+            <English>A/A post near %1</English>
+            <German>Fla-Posten nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_ATpostLabel">
+            <English>A/T post near %1</English>
+            <German>PzAbw-Posten nahe %1</German>
+        </Key>
         <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_AirportLabel">
             <English>Airport near %1</English>
             <German>Flughafen nahe %1</German>
@@ -188,6 +212,10 @@
         <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_FactoryLabel">
             <English>Factory near %1</English>
             <German>Fabrik nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_HMGpostLabel">
+            <English>HMG post near %1</English>
+            <German>sMG-Posten nahe %1</German>
         </Key>
         <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_MilBaseLabel">
             <English>Military base near %1</English>
@@ -201,13 +229,25 @@
             <English>Resource near %1</English>
             <German>Rohstoff nahe %1</German>
         </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_RoadblockLabel">
+            <English>Road block near %1</English>
+            <German>Straßensperre nahe %1</German>
+        </Key>
         <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SeaportLabel">
             <English>Seaport near %1</English>
             <German>Hafen nahe %1</German>
         </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_SyndicateHQLabel">
+            <English>HQ near %1</English>
+            <German>HQ nahe %1</German>
+        </Key>
         <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_Tooltip">
             <English>Name of Location (double-click to locate on map)</English>
             <German>Name des Standorts (Doppelklicken, um auf Karte anzuzeigen)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Name_WatchpostLabel">
+            <English>Watchpost near %1</English>
+            <German>Wachposten nahe %1</German>
         </Key>
         <Key ID="STR_A3USPCM_garrison_RscA3USPCMGarrisonManagerDialog_ListOverview_Column_Rifleman_Caption">
             <English>Rfl</English>

@@ -17,6 +17,34 @@
             <English>All AA disregard recognized threats</English>
             <German>Alle Flugabwehrsysteme ignorieren erkannte Bedrohungen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_AlarmClockCaption">
+            <English>Timer has expired</English>
+            <German>Timer abgelaufen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_AlarmClockText">
+            <English>A timer set for %1 minutes has just expired.</English>
+            <German>Ein Timer, der auf %1 Minuten eingestellt wurde, ist gerade abgelaufen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_CMI_IDC_CM_INJECT_STOPWATCHES_START">
+            <English>Start</English>
+            <German>Starten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_CMI_IDC_CM_INJECT_STOPWATCHES_STATUS">
+            <English>No timer running</English>
+            <German>Kein Timer aktiv</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_CMI_IDC_CM_INJECT_STOPWATCHES_STOP">
+            <English>Stop</English>
+            <German>Stopp</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_CMI_IDC_CM_INJECT_STOPWATCHES_TEXT">
+            <English>Set timer to expire in %1 minutes (%2)</English>
+            <German>Timer läuft in %1 Minuten ab (%2)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_CMI_IDC_CM_INJECT_STOPWATCHES_TITLE">
+            <English>Timer</English>
+            <German>Timer</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Component">
             <English>A3USPCM - Menu Component</English>
             <German>A3USPCM - Menükomponente</German>
@@ -492,6 +520,22 @@
         <Key ID="STR_A3USPCM_Menu_Settings_findIntelRadius_Tooltip">
             <English>Search for intel this many meters around player</English>
             <German>Suche nach Intel in diesem Radius um den Spieler herum</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_injectA3USPCMTab_DisplayName">
+            <English>Inject A3U Singleplayer Cheat Menu tab</English>
+            <German>Füge den A3U Singleplayer Cheat Menü-Tab hinzu</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_injectA3USPCMTab_Tooltip">
+            <English>Where to inject the A3U Singleplayer Cheat Menu tab into the commander menu.</English>
+            <German>Wo der A3U Singleplayer Cheat Menü-Tab in das Kommandeurmenü eingefügt werden soll.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_End">
+            <English>End</English>
+            <German>Ende</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_inject_Nowhere">
+            <English>Nowhere</English>
+            <German>Nirgends</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_lootboxCost_DisplayName">
             <English>Lootbox cost</English>

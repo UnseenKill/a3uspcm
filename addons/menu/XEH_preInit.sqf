@@ -48,12 +48,23 @@ if !hasInterface exitWith {
     }
 ] call CBA_fnc_addKeybind;
 
+[
+    ELSTRING(main,Title),
+    QEGVAR(weapons,ToggleSuppressors),
+    [ELSTRING(weapons,Hotkeys_ToggleSuppressors), ELSTRING(weapons,Hotkeys_ToggleSuppressorsTooltip)],
+    {},
+    {
+        [player] call EFUNC(weapons,toggleSuppressors);
+    }
+] call CBA_fnc_addKeybind;
+
 ADDON = true;
 
 GVAR(AdditionalBuildables) = false;
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;
+GVAR(Timers) = [false, false];
 
 [
     {
@@ -63,5 +74,7 @@ GVAR(IntelMarkers) = createHashMap;
 
         if is3DENPreview exitWith {};
         [] call FUNC(loadAdditionalBuildables);
+        [] call FUNC(timerRestore);
+        [] call FUNC(commanderMenuAppend);
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);

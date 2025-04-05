@@ -9,12 +9,14 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_AddTeamZeusCaption);
                 text = CSTRING(Miscellaneous_AddTeamZeusText);
                 action = QFUNCMAIN(miscAddTeamZeus);
+                cmShortcut = 1;
             };
 
             class Uncompromise {
                 caption = CSTRING(Miscellaneous_UncompromiseCaption);
                 text = CSTRING(Miscellaneous_UncompromiseText);
                 action = QFUNCMAIN(miscUncompromise);
+                cmShortcut = 1;
             };
 
             class MakeLootBox {
@@ -41,6 +43,7 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_FindIntelCaption);
                 text = CSTRING(Miscellaneous_FindIntelText);
                 action = QFUNCMAIN(miscFindIntel);
+                cmShortcut = 1;
 
                 separator = 1;
 
@@ -123,6 +126,7 @@ class GVAR(Config) {
                 caption = CSTRING(Teleport_TeleportPlayerCaption);
                 text = CSTRING(Teleport_TeleportPlayerText);
                 action = QFUNCMAIN(teleportPlayer);
+                cmShortcut = 1;
             };
 
             class TeleportStragglers {

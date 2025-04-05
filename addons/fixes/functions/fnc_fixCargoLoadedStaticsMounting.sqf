@@ -26,7 +26,8 @@ INFO("starting cargo loaded statics mount fixes");
 GVAR(staticsMountedHandler) = {
     params[
         ["_object", objNull, [objNull,""]],
-        ["_vehicle", objNull, [objNull]]
+        ["_vehicle", objNull, [objNull]],
+        ["_unloaded", nil, [false]]
     ];
 
     if !(_object isEqualType objNull) exitWith {};
@@ -37,9 +38,17 @@ GVAR(staticsMountedHandler) = {
     TRACE_1(QFUNC(fixCargoLoadedStaticsMounting),_object);
     _object setVariable["lockedForAI", true, true];
 
-    if ((_object isKindOf "StaticMortar") && !(_object getVariable[QGVAR(hasFlagAction), false])) then {
-        _object setVariable[QGVAR(hasFlagAction), true, true];
-        [_object, "static"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _object];
+    if (_object isKindOf "StaticMortar") then {
+        if (_unloaded) then {
+            [_object, _vehicle] call FUNC(mortarCargoLoadAction);
+        } else {
+            [_object] call FUNC(mortarClearActionsAndEH);
+        };
+
+        if !(_object getVariable[QGVAR(hasFlagAction), false]) then {
+            _object setVariable[QGVAR(hasFlagAction), true, true];
+            [_object, "static"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _object];
+        };
     };
 
     nil;
@@ -53,7 +62,7 @@ GVAR(staticsMountedHandler) = {
 
     TRACE_2("ace_cargoLoaded",_object,_vehicle);
 
-    [_object, _vehicle] call GVAR(staticsMountedHandler);
+    [_object, _vehicle, false] call GVAR(staticsMountedHandler);
 }] call CBA_fnc_addEventHandler;
 
 ["ace_cargoUnloaded", {
@@ -65,7 +74,7 @@ GVAR(staticsMountedHandler) = {
 
     TRACE_3("ace_cargoUnloaded",_object,_vehicle,_unloadType);
 
-    [_object, _vehicle] call GVAR(staticsMountedHandler);
+    [_object, _vehicle, true] call GVAR(staticsMountedHandler);
 }] call CBA_fnc_addEventHandler;
 
 nil;
