@@ -40,10 +40,10 @@ GVAR(staticsMountedHandler) = {
 
     if (_object isKindOf "StaticMortar") then {
         if (_unloaded) then {
-            _vehicle lock 0;
+            _object lock 0;
             [_object, _vehicle] call FUNC(mortarCargoLoadAction);
         } else {
-            _vehicle lock 2;
+            _object lock 2;
             [_object] call FUNC(mortarClearActionsAndEH);
         };
 
