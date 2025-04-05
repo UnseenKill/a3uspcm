@@ -29,7 +29,14 @@ A3A_fnc_music = {
 
 addMusicEventHandler["MusicStop", {
     TRACE_2(QFUNC(MusicStop),_this,musicON);
-    if !musicON exitWith {};
+    if !musicON exitWith {
+        params["_musicClassname","_eventHandlerId","_currentPosition","_totalLength"];
+
+        // When not almost finished with the track, remove it from the lastTracks array
+        if (_currentPosition < _totalLength - 4) then {
+            GVAR(lastTracks) = GVAR(lastTracks) - [_musicClassname];
+        };
+    };
 
     private _pause = GVAR(pause);
     private _delay = [_pause / 2, _pause] call FUNCMAIN(utilRandomRange);
