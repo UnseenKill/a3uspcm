@@ -136,6 +136,28 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+// Music
+
+[
+    QEGVAR(music,overrideMusic), "CHECKBOX",
+    [ELSTRING(music,Settings_overrideMusic_DisplayName), ELSTRING(music,Settings_overrideMusic_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(music,pause), "SLIDER",
+    [ELSTRING(music,Settings_pause_DisplayName), ELSTRING(music,Settings_pause_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
+    [0, 600, 90, -1], // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Zeus
 
 [

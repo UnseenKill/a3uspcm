@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Music">
+        <Key ID="STR_A3USPCM_Music_Component">
+            <English>A3USPCM - Music Component</English>
+            <German>A3USPCM - Music Komponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_Settings_Category_DisplayName">
+            <English>Customizable music player</English>
+            <German>Konfigurierbarer Musik-Player</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_Settings_overrideMusic_DisplayName">
+            <English>Use custom music player</English>
+            <German>Benutze eigenen Musik-Player</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_Settings_overrideMusic_Tooltip">
+            <English>Use customizable music player instead of the default one.</English>
+            <German>Benutze einen konfigurierbaren Musik-Player anstelle des Standardmäßigen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_Settings_pause_DisplayName">
+            <English>Pause between tracks</English>
+            <German>Pause zwischen Stücken</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_Settings_pause_Tooltip">
+            <English>Delay between tracks. Wait at least half this many seconds up til the configured value.</English>
+            <German>Verzögerung zwischen Titeln. Warte mindestens die Hälfte dieser Sekunden bis zum konfigurierten Wert.</German>
+        </Key>
+    </Package>
+</Project>
