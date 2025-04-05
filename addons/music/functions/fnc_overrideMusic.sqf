@@ -28,12 +28,16 @@ A3A_fnc_music = {
 };
 
 addMusicEventHandler["MusicStop", {
+    TRACE_2(QFUNC(MusicStop),_this,musicON);
     if !musicON exitWith {};
 
     private _pause = GVAR(pause);
     private _delay = [_pause / 2, _pause] call FUNCMAIN(utilRandomRange);
 
+    TRACE_2(QFUNC(MusicStop),_pause,_delay);
+
     GVAR(waitScript) = [_delay] spawn {
+        params["_delay"];
         uiSleep _delay;
         [] call FUNC(playNextTrack);
     };
