@@ -9,6 +9,42 @@
             <English>Now playing:&lt;br/&gt;&lt;t color='#00fccc'&gt;%1&lt;/t&gt; (%2)</English>
             <German>Aktuelle Wiedergabe:&lt;br/&gt;&lt;t color='#00fccc'&gt;%1&lt;/t&gt; (%2)</German>
         </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnAddSelection">
+            <English>Add Selection</English>
+            <German>Auswahl hinzufügen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnAddSelection_tooltip">
+            <English>Add selected tracks</English>
+            <German>Füge die Tracks der ausgewählten Kategorie hinzu</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnClose">
+            <English>X</English>
+            <German>X</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnExport">
+            <English>Export</English>
+            <German>Exportieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnImport">
+            <English>Import</English>
+            <German>Importieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnRemove">
+            <English>&lt;&lt;</English>
+            <German>&lt;&gt;</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnRemove_tooltip">
+            <English>Remove selected track</English>
+            <German>Entferne ausgewählte Track</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnSavePlaylist">
+            <English>Save Playlist</English>
+            <German>Playlist speichern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_StaticTitle">
+            <English>A3USPCM Playlist Editor</English>
+            <German>A3USPCM Playlist Editor</German>
+        </Key>
         <Key ID="STR_A3USPCM_Music_Settings_Category_DisplayName">
             <English>Customizable music player</English>
             <German>Konfigurierbarer Musik-Player</German>
