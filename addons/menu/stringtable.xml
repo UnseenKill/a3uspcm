@@ -277,6 +277,14 @@
             <English>Plain old English, please.</English>
             <German>Einfach nur Englisch, bitte.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_IngameMusicPlaylistEditorCaption">
+            <English>In-game music playlist editor</English>
+            <German>In-Game Musik Playlist Editor</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_IngameMusicPlaylistEditorText">
+            <English>Tired of the same eight songs playing?</English>
+            <German>Genug von den immer gleichen acht Liedern?</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxCaption">
             <English>Turn into/create lootbox</English>
             <German>Verwandle/Erstelle eine Lootbox</German>
