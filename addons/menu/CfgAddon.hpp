@@ -10,6 +10,7 @@ class GVAR(Config) {
                 text = CSTRING(Miscellaneous_AddTeamZeusText);
                 action = QFUNCMAIN(miscAddTeamZeus);
                 cmShortcut = 1;
+                closeDiary = 1;
             };
 
             class Uncompromise {
