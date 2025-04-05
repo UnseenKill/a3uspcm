@@ -46,7 +46,7 @@ if (GVAR(tracks) isNotEqualTo false) then {
 
     ["Combat","Stealth","Night","Default"] apply {
         private _key = toLower _x;
-        _tracks set[_key, getArray(configFile >> QGVAR(Config) >> "Tracks" >> _x >> "tracks")];
+        GVAR(tracks) set[_key, getArray(configFile >> QGVAR(Config) >> "Tracks" >> _x >> "tracks")];
     };
 };
 
