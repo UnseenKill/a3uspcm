@@ -47,6 +47,21 @@ _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNEXPORT ctrlAddEventH
 _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_EDITCOPYPASTE ctrlEnable false;
 _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_EDITCOPYPASTE ctrlShow false;
 
+// Save button
+_display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNSAVEPLAYLIST ctrlAddEventHandler["ButtonClick", {
+    params["_control"];
+
+    if (_control getVariable[QGVAR(copyPasteMode), false] isNotEqualTo false) exitWith { 
+        if (_control getVariable[QGVAR(copyPasteMode), false] isEqualTo "import") then {
+            [true] call FUNC(importPlaylist);
+        };
+
+        [false, ""] call FUNC(toggleCopyPasteControl);
+    };
+
+    [] call FUNC(savePlaylist);
+}];
+
 // Add/remove buttons
 _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNADDSELECTION ctrlEnable false;
 _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNADDSELECTION ctrlAddEventHandler["ButtonClick", {

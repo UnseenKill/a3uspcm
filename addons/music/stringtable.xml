@@ -37,6 +37,10 @@
             <English>X</English>
             <German>X</German>
         </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnDone">
+            <English>Done</English>
+            <German>Fertig</German>
+        </Key>
         <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnExport">
             <English>Export</English>
             <German>Exportieren</German>
@@ -56,6 +60,34 @@
         <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnSavePlaylist">
             <English>Save Playlist</English>
             <German>Playlist speichern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_EditCopyPasteImport">
+            <English>Paste your previously exported playlist config here</English>
+            <German>Füge deine zuvor exportierte Playlist-Konfiguration hier ein</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_ImportError">
+            <English>Playlist import error</English>
+            <German>Fehler beim Importieren der Wiedergabeliste</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_ImportErrorSection">
+            <English>Line %1: expected begin of section</English>
+            <German>Zeile %1: erwartete Anfang eines Abschnitts</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_ImportErrorSectionMissing">
+            <English>Import successful, but section "%1" is missing.</English>
+            <German>Import erfolgreich, aber Abschnitt "%1" fehlt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_ImportErrorSectionTracks">
+            <English>Import successful, but section "%1" has less than %2 tracks.</English>
+            <German>Import erfolgreich, aber Abschnitt "%1" hat weniger als %2 Tracks.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_ImportErrorSectionUnknown">
+            <English>Import successful, but there are unknown sections: %1.</English>
+            <German>Import erfolgreich, aber es gibt unbekannte Abschnitte: %1.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_ImportErrorVersion">
+            <English>Line %1: version mismatch</English>
+            <German>Zeile %1: Versionskonflikt</German>
         </Key>
         <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_StaticTitle">
             <English>A3USPCM Playlist Editor</English>
