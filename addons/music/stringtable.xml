@@ -10,8 +10,8 @@
             <German>Aktuelle Wiedergabe:&lt;br/&gt;&lt;t color='#00fccc'&gt;%1&lt;/t&gt; (%2)</German>
         </Key>
         <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnAddSelection">
-            <English>Add Selection</English>
-            <German>Auswahl hinzufügen</German>
+            <English>Add selection &gt;&gt;</English>
+            <German>Hinzufügen &gt;&gt;</German>
         </Key>
         <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnAddSelection_tooltip">
             <English>Add selected tracks</English>
@@ -30,8 +30,8 @@
             <German>Importieren</German>
         </Key>
         <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnRemove">
-            <English>&lt;&lt;</English>
-            <German>&lt;&gt;</German>
+            <English>&lt;&lt; Remove</English>
+            <German>&lt;&gt; Entfernen</German>
         </Key>
         <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnRemove_tooltip">
             <English>Remove selected track</English>
