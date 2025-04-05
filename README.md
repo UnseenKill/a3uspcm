@@ -87,6 +87,7 @@ Features
    * Dump contents of supply boxes to the ground so you can pick'em up with a lootbox
    * Edit a vehicle's weaponry making it show armament not seen around naturally
  * Q.O.L.
+   * Music: tired of the same eight songs playing? Get some variety and change the playlists for combat, stealth, night or roaming.
    * Vehicles: fire smoke launcher from any position of a vehicle (requires additional keybind via addon keybinds; does not interfere w/ regular counter-measures keybind)
    * Weapons: configurable hotkey to toggle group's suppressors
    * Weapons dealer: when selling in the native sell dialog, double-clicking an item updates the amount edit box the the current item's count

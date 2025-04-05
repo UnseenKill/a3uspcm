@@ -23,6 +23,9 @@ Author:
 INFO_1("player %1 wants team added to Zeus objects",name player);
 
 allCurators apply {
+    _x addCuratorEditableObjects[allUnitsUAV select {
+        player in (UAVControl _x - ["", objNull]);
+    }, true];
     _x addCuratorEditableObjects[units group player, true];
     _x addCuratorEditableObjects[flatten(units group player apply {
         if isNull objectParent _x then {

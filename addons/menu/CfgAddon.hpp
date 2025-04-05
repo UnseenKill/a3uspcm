@@ -10,6 +10,7 @@ class GVAR(Config) {
                 text = CSTRING(Miscellaneous_AddTeamZeusText);
                 action = QFUNCMAIN(miscAddTeamZeus);
                 cmShortcut = 1;
+                closeDiary = 1;
             };
 
             class Uncompromise {
@@ -37,6 +38,7 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_RepairBuildingsCaption);
                 text = CSTRING(Miscellaneous_RepairBuildingsText);
                 action = QFUNCMAIN(miscRepairBuildings);
+                closeDiary = 1;
             };
 
             class FindIntel {
@@ -52,6 +54,14 @@ class GVAR(Config) {
                     flags[] = {"ace_marker_flags_red","ace_flags_carrier_red"};
                     laptops[] = {"Land_laptop_03_closed_black_F", "Land_laptop_03_closed_sand_F", "Land_laptop_03_closed_olive_F"};
                 };
+            };
+
+            class IngameMusicPlaylistEditor {
+                caption = CSTRING(Miscellaneous_IngameMusicPlaylistEditorCaption);
+                text = CSTRING(Miscellaneous_IngameMusicPlaylistEditorText);
+                action = QFUNCMAIN(miscIngameMusicPlaylistEditor);
+                closeDiary = 1;
+                separator = 1;
             };
 
             class FixAirDropVehicles {
