@@ -14,6 +14,7 @@ class CfgFunctions {
             PATHTO_FNC(utilOnA3UClientInitDone);
             PATHTO_FNC(utilPromptText);
             PATHTO_FNC(utilRandomRange);
+            PATHTO_FNC(utilRange);
             PATHTO_FNC(utilSetUnitsSpeaker);
             PATHTO_FNC(utilSpreadPoint);
             PATHTO_FNC(utilUnlockArsenalItem);
