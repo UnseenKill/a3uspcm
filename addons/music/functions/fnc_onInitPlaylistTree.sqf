@@ -51,7 +51,7 @@ _tree ctrlCommit 0;
 ] apply {
     _x params["_category", "_title"];
 
-    private _idx = _tree tvAdd[[], _title];
+    private _idx = _tree tvAdd[[], localize _title];
     _tree tvSetData[[_idx], _category];
 
     GVAR(tracks) get _category apply {
