@@ -149,6 +149,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(music,showNowPlaying), "CHECKBOX",
+    [ELSTRING(music,Settings_showNowPlaying_DisplayName), ELSTRING(music,Settings_showNowPlaying_DisplayName)],
+    [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(music,pause), "SLIDER",
     [ELSTRING(music,Settings_pause_DisplayName), ELSTRING(music,Settings_pause_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],

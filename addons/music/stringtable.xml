@@ -5,6 +5,10 @@
             <English>A3USPCM - Music Component</English>
             <German>A3USPCM - Music Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Music_NowPlaying">
+            <English>Now playing:&lt;br/&gt;&lt;t color='#00fccc'&gt;%1&lt;/t&gt; (%2)</English>
+            <German>Aktuelle Wiedergabe:&lt;br/&gt;&lt;t color='#00fccc'&gt;%1&lt;/t&gt; (%2)</German>
+        </Key>
         <Key ID="STR_A3USPCM_Music_Settings_Category_DisplayName">
             <English>Customizable music player</English>
             <German>Konfigurierbarer Musik-Player</German>
@@ -24,6 +28,10 @@
         <Key ID="STR_A3USPCM_Music_Settings_pause_Tooltip">
             <English>Delay between tracks. Wait at least half this many seconds up til the configured value.</English>
             <German>Verzögerung zwischen Titeln. Warte mindestens die Hälfte dieser Sekunden bis zum konfigurierten Wert.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_Settings_showNowPlaying_DisplayName">
+            <English>Show "now playing" hint</English>
+            <German>Zeige "Aktuelle Wiedergabe"-Hinweis</German>
         </Key>
     </Package>
 </Project>

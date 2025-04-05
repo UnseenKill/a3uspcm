@@ -44,4 +44,14 @@ INFO_3("%1() playing %2 track: %3",QFUNC(playNextTrack),_key,_track);
 
 [_track] call FUNC(playTrack);
 
+if GVAR(showNowPlaying) then {
+    private _config = configFile >> "CfgMusic" >> _track;
+
+    if !isClass(_config) exitWith { WARNING_1("track '%1' not found in config",_track) };
+
+    private _title = [_config >> "name", "STRING", _track] call CBA_fnc_getConfigEntry;
+
+    hintSilent parseText format[localize LSTRING(NowPlaying), _title, [getNumber(_config >> "duration"), "MM:SS"] call BIS_fnc_secondsToString];
+};
+
 nil;
