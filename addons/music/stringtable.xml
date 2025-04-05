@@ -6,7 +6,7 @@
             <German>Kampfmusik</German>
         </Key>
         <Key ID="STR_A3USPCM_Music_CategoryMusicDefault">
-            <English>Default music</English>
+            <English>Roaming music</English>
             <German>Standardmusik</German>
         </Key>
         <Key ID="STR_A3USPCM_Music_CategoryMusicNight">
@@ -94,8 +94,8 @@
             <German>A3USPCM Playlist Editor</German>
         </Key>
         <Key ID="STR_A3USPCM_Music_Settings_Category_DisplayName">
-            <English>Customizable music player</English>
-            <German>Konfigurierbarer Musik-Player</German>
+            <English>Music player (customizable)</English>
+            <German>Musik-Player (konfigurierbar)</German>
         </Key>
         <Key ID="STR_A3USPCM_Music_Settings_overrideMusic_DisplayName">
             <English>Use custom music player</English>
@@ -116,6 +116,14 @@
         <Key ID="STR_A3USPCM_Music_Settings_showNowPlaying_DisplayName">
             <English>Show "now playing" hint</English>
             <German>Zeige "Aktuelle Wiedergabe"-Hinweis</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_Settings_volume_DisplayName">
+            <English>Volume</English>
+            <German>Lautstärke</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Music_Settings_volume_Tooltip">
+            <English>WARNING: anything above one (1.0) will make you deaf.</English>
+            <German>WARNUNG: Alles über eins (1.0) macht dich taub.</German>
         </Key>
     </Package>
 </Project>

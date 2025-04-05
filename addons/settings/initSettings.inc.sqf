@@ -168,6 +168,19 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(music,volume), "SLIDER",
+    [ELSTRING(music,Settings_volume_DisplayName), ELSTRING(music,Settings_volume_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
+    [0, 5, 0.5, 3], // default
+    true, // global
+    {
+        params[["_volume",0.5,[0]]];
+        2 fadeMusic _volume;
+    }, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Zeus
 
 [

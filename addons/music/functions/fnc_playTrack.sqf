@@ -40,7 +40,7 @@ if _remember then {
     };
 };
 
-1.25 fadeMusic 0.5;
+1.25 fadeMusic GVAR(volume);
 playMusic _track;
 
 nil;
