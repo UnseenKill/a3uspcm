@@ -1,4 +1,6 @@
 PREP(toggleSuppressors);
+PREP(vehicleHunterKillerCanEnable);
+PREP(vehicleHunterKillerEnable);
 PREP(vehicleWeaponAdd);
 PREP(vehicleWeaponCanRemove);
 PREP(vehicleWeaponCanUseMenu);
