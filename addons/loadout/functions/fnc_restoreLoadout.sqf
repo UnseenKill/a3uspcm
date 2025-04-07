@@ -59,7 +59,7 @@ private _continue = try {
 
 if !_continue exitWith {};
 
-_loadout params["_title","_aceCargo","_inventory",["_turretsMagsInfo",false],["_cargoSpace",false],["_turretWeapons",false]];
+_loadout params["_title","_aceCargo","_inventory",["_turretsMagsInfo",false],["_cargoSpace",false],["_turretWeapons",false],["_maxLoad",false]];
 _inventory params["_backpacks","_weapons","_magazines","_items"];
 
 TRACE_1("_title",_title);
@@ -88,6 +88,11 @@ clearBackpackCargoGlobal _vehicle;
 clearWeaponCargoGlobal _vehicle;
 clearMagazineCargoGlobal _vehicle;
 clearItemCargoGlobal _vehicle;
+
+if (_maxLoad isNotEqualTo false) then {
+    TRACE_2("setting max load",_vehicle,_maxLoad);
+    _vehicle setMaxLoad _maxLoad;
+};
 
 private _messages = [];
 

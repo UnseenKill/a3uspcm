@@ -20,6 +20,14 @@ class GVAR(Config) {
                 cmShortcut = 1;
             };
 
+            class ReinstateLeadership {
+                caption = CSTRING(Miscellaneous_ReinstateLeadershipCaption);
+                text = CSTRING(Miscellaneous_ReinstateLeadershipText);
+                action = QFUNCMAIN(miscReinstateLeadership);
+                closeDiary = 1;
+                separator = 1;
+            };
+
             class MakeLootBox {
                 caption = CSTRING(Miscellaneous_MakeLootBoxCaption);
                 text = CSTRING(Miscellaneous_MakeLootBoxText);
@@ -143,6 +151,8 @@ class GVAR(Config) {
                 caption = CSTRING(Teleport_TeleportStragglersCaption);
                 text = CSTRING(Teleport_TeleportStragglersText);
                 action = QFUNCMAIN(teleportStragglers);
+                closeDiary = 1;
+                separator = 1;
             };
 
             class TeleportArsenalBox {

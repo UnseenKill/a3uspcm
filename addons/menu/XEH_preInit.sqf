@@ -58,6 +58,16 @@ if !hasInterface exitWith {
     }
 ] call CBA_fnc_addKeybind;
 
+[
+    ELSTRING(main,Title),
+    QEGVAR(misc,WakeupUnconscious),
+    [ELSTRING(misc,Hotkeys_WakeupUnconscious), ELSTRING(misc,Hotkeys_WakeupUnconsciousTooltip)],
+    {},
+    {
+        [player] call EFUNC(misc,wakeupUnconscious);
+    }
+] call CBA_fnc_addKeybind;
+
 ADDON = true;
 
 GVAR(AdditionalBuildables) = false;

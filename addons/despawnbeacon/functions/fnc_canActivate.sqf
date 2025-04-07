@@ -27,4 +27,5 @@ params[
 
 if !assert(!isNull _beacon) exitWith { false };
 
-_beacon getVariable[QGVAR(UAV), objNull] isEqualTo objNull;
+!(_beacon getVariable[QGVAR(active), false]) &&
+(_beacon getVariable[QGVAR(UAV), objNull] isEqualTo objNull);

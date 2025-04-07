@@ -21,4 +21,9 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-!(call FUNC(canActivate));
+params[
+    ["_beacon", objNull, [objNull]],
+    ["_player", objNull, [objNull]]
+];
+
+([_player, _beacon] call ace_common_fnc_canInteractWith) && !(call FUNC(canActivate));

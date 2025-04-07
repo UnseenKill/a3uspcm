@@ -171,5 +171,16 @@ if !assert(!isNull _player) exitWith { [] };
         ] call ace_interact_menu_fnc_createAction,
         [],
         _target
+    ],
+    [
+        [
+            QGVAR(MenuLoadoutSetMaxLoad),
+            localize LSTRING(MenuLoadoutMaxLoad),
+            QPATHTOEF(assets,ui\loadout-edit.paa),
+            { [{ call FUNC(changeMaxLoad) }, _this] call CBA_fnc_execNextFrame },
+            { true }
+        ] call ace_interact_menu_fnc_createAction,
+        [],
+        _target
     ]
 ];
