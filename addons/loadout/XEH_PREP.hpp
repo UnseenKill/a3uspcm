@@ -5,6 +5,7 @@ PREP(canDiscard);
 PREP(canUnlock);
 PREP(canUseLoadoutMenu);
 PREP(changeCargoSpace);
+PREP(changeMaxLoad);
 PREP(containerDumpContents);
 PREP(deleteLoadout);
 PREP(dumpLoadout);

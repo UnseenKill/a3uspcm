@@ -1,9 +1,9 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_loadout_fnc_changeCargoSpace
+Function: A3USPCM_loadout_fnc_changeMaxLoad
 
 Description:
-    Change the maximum (ACE3) cargo
+    Change the maximum (inventory) cargo
 
 Parameters:
     0: _vehicle - Target vehicle <OBJECT>
@@ -29,15 +29,15 @@ params[
 if !assert(!isNull _vehicle) exitWith {};
 if !assert(!isNull _player) exitWith {};
 
-[localize LSTRING(PromptChangeCargoSpace), str([_vehicle] call FUNCMAIN(utilAceCargoGetCargoSize)), {
-    TRACE_1(QFUNC(changeCargoSpace),_this);
+[localize LSTRING(PromptChangeMaxLoad), str maxLoad _vehicle, {
+    TRACE_1(QFUNC(changeMaxLoad),_this);
     params[["_sizeStr","",[""]],["_vehicle",objNull,[objNull]]];
     private _size = parseNumber _sizeStr;
-    [_vehicle, _size] call ace_cargo_fnc_setSpace;
+    _vehicle setMaxLoad _size;
 
     [
-        localize LSTRING(PromptChangeCargoSpace),
-        format[localize LSTRING(HintCargoSizeChangedText), getText(configOf _vehicle >> "displayName"), _size]
+        localize LSTRING(PromptChangeMaxLoad),
+        format[localize LSTRING(HintMaxLoadChangedText), getText(configOf _vehicle >> "displayName"), _size]
     ] call A3A_fnc_customHint;
 }, _vehicle] call FUNCMAIN(utilPromptText);
 

@@ -105,6 +105,10 @@
             <English>The vehicle's current loadout has been saved.</English>
             <German>Die aktuelle Ausrüstung des Fahrzeugs wurde gespeichert.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_HintMaxLoadChangedText">
+            <English>Maximum inventory for %1 changed to %2.</English>
+            <German>Maximale Inventargröße für %1 auf %2 geändert.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuConfigLoadout">
             <English>Fetch config from save</English>
             <German>Konfiguration aus Speicherstand abrufen</German>
@@ -133,6 +137,10 @@
             <English>Manage saved loadouts</English>
             <German>Gespeicherte Ausrüstungen verwalten</German>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_MenuLoadoutMaxLoad">
+            <English>Change inventory space</English>
+            <German>Inventarplatz ändern</German>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_MenuLoadoutOverwrite">
             <English>Overwrite</English>
             <German>Überschreiben</German>
@@ -148,6 +156,10 @@
         <Key ID="STR_A3USPCM_Loadout_PromptChangeCargoSpace">
             <English>Change cargo space</English>
             <German>Frachtraum ändern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_PromptChangeMaxLoad">
+            <English>Change maximum load</English>
+            <German>Maximale Ladung ändern</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_PromptRenameLoadout">
             <English>Rename loadout to:</English>

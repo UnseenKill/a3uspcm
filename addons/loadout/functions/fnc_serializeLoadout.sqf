@@ -58,7 +58,8 @@ private _loadout = [
     [_bp, _wc, _mc, _ic],
     [typeOf _vehicle, magazinesAllTurrets _vehicle],
     [_vehicle] call FUNCMAIN(utilAceCargoGetCargoSize),
-    _turretWeapons
+    _turretWeapons,
+    maxLoad _vehicle
 ];
 
 _loadout;
