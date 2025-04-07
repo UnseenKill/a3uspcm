@@ -29,6 +29,18 @@ params[
 
 if !assert(!isNull _player) exitWith {};
 
-[_player, false] call ace_medical_status_fnc_setUnconsciousState;
+private _zeusDisplay = findDisplay 312;
+
+if isNull(_zeusDisplay) then {
+    [_player, false] call ace_medical_status_fnc_setUnconsciousState;
+} else {
+    _zeusDisplay closeDisplay 2;
+
+    [_player] spawn {
+        params["_player"];
+        uiSleep 0.5;
+        [_player, false] call ace_medical_status_fnc_setUnconsciousState;
+    };
+};
 
 nil;
