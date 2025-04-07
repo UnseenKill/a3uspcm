@@ -206,8 +206,8 @@
             <German>Neuer Preis</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuildablesText">
-            <English>Add the current cursor target to list of base building objects</English>
-            <German>Füge das aktuelle Cursorziel zur Liste der Basisbauobjekte hinzu</German>
+            <English>Add the current cursor target to list of base building objects.</English>
+            <German>Füge das aktuelle Cursorziel zur Liste der Basisbauobjekte hinzu.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AirAccessAnywhereCaption">
             <English>Air access anywhere</English>
@@ -242,8 +242,8 @@
             <German>Informationen gefunden</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FindIntelText">
-            <English>Locate squad leaders, laptops around player</English>
-            <German>Finde Squad-Leader, Laptops in der Nähe des Spielers</German>
+            <English>Locate squad leaders, laptops around player.</English>
+            <German>Finde Squad-Leader, Laptops in der Nähe des Spielers.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FindIntel_IntelFoundText">
             <English>Found %1 new points of interest.</English>
@@ -598,16 +598,16 @@
             <German>Teleportiere Arsenalkiste</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportArsenalBoxText">
-            <English>Move arsenal box to your position</English>
-            <German>Verschiebe die Arsenalkiste zu deiner Position</German>
+            <English>Move arsenal box to your position.</English>
+            <German>Verschiebe die Arsenalkiste zu deiner Position.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportFlagCaption">
             <English>Teleport flag</English>
             <German>Teleportiere Fahne</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportFlagText">
-            <English>Move HQ flag to your position</English>
-            <German>Verschiebe die HQ-Fahne zu deiner Position</German>
+            <English>Move HQ flag to your position.</English>
+            <German>Verschiebe die HQ-Fahne zu deiner Position.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportHintAbortCaption">
             <English>Teleporting aborted</English>
@@ -630,8 +630,8 @@
             <German>Teleportiere Karte</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportMapText">
-            <English>Move map object to your position</English>
-            <German>Verschiebe die Kartenobjekt zu deiner Position</German>
+            <English>Move map object to your position.</English>
+            <German>Verschiebe die Kartenobjekt zu deiner Position.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportObjectBack">
             <English>Return from whence you came</English>
@@ -662,8 +662,8 @@
             <German>Teleportiere Garagenkiste</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_TeleportVehicleBoxText">
-            <English>Move vehicle box to your position</English>
-            <German>Verschiebe die Garagenkiste zu deiner Position</German>
+            <English>Move vehicle box to your position.</English>
+            <German>Verschiebe die Garagenkiste zu deiner Position.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Trader_HintChooseNewLocation">
             <English>Click on one of the question marks on the map to choose new location.</English>
