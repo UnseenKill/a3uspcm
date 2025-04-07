@@ -51,7 +51,11 @@ if GVAR(showNowPlaying) then {
 
     private _title = [_config >> "name", "STRING", _track] call CBA_fnc_getConfigEntry;
 
-    hintSilent parseText format[localize LSTRING(NowPlaying), _title, [getNumber(_config >> "duration"), "MM:SS"] call BIS_fnc_secondsToString];
+    [
+        localize LSTRING(NowPlaying),
+        parseText format["<t color='#00fccc'>%1</t> (%2)", _title, [getNumber(_config >> "duration"), "MM:SS"] call BIS_fnc_secondsToString],
+        true
+    ] call A3A_fnc_customHint;
 };
 
 nil;
