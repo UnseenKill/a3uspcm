@@ -37,6 +37,8 @@ _this spawn {
 
     if !assert(!isNull _player) exitWith {};
 
+    [_beacon, _beacon] call ace_common_fnc_claim;
+
     [_player, "PutDown"] call ace_common_fnc_doGesture;
     _beacon setVariable[QGVAR(active), nil];
 

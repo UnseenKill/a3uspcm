@@ -45,6 +45,12 @@ _this spawn {
 
     TRACE_1("waiting",_beacon);
     waitUntil { _beacon animationSourcePhase "Terminal_source" isEqualTo 100 };
+
+    _beacon animateSource["Progress_source", 100, 2];
+
+    TRACE_1("waiting",_beacon);
+    waitUntil { _beacon animationSourcePhase "Progress_source" isEqualTo 100 };
+
     TRACE_1("looping",_beacon);
 
     private _marker = createMarkerLocal[[] call FUNCMAIN(utilGenerateUniqueId), getPosATL _beacon];
@@ -84,7 +90,14 @@ _this spawn {
     _beacon setVariable[QGVAR(ready), false];
 
     while { true } do {
-        uiSleep 0.1;
+        uiSleep 0.25;
+
+        // Skip animations etc. if noone is around to enjoy them
+        if (allPlayers findIf { _beacon distance _x < 100 } isEqualTo -1) then {
+            TRACE_1(QFUNC(activateBeacon_noPlayers),_beacon);
+            uiSleep 10;
+            continue;
+        };
 
         private _phase = _beacon animationSourcePhase "Terminal_source";
 
@@ -110,6 +123,12 @@ _this spawn {
 
     [_beacon, _beacon] call ace_common_fnc_claim;
     TRACE_1("exiting",_beacon);
+
+    _beacon animateSource["Progress_source", 0, 2];
+    _beacon animateSource["Terminal_source", 100, true];
+
+    TRACE_1("waiting",_beacon);
+    waitUntil { _beacon animationSourcePhase "Progress_source" isEqualTo 0 };
 
     _beacon animateSource["Terminal_source", 0, 1];
     _beacon animateSource["Terminal_source_sound", 0, 1];
