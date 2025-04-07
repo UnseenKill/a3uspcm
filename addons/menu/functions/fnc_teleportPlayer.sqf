@@ -44,7 +44,27 @@ GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
     openMap false;
     INFO_2("teleporting %1 to %2",name player,mapGridPosition _pos);
     TRACE_2("teleporting",player,_pos);
-    vehicle player setPosATL _pos;
+
+    [_pos] spawn {
+        params["_pos"];
+        
+        uiSleep 0.75;
+
+        private _vehicle = vehicle player;
+        private _canDamage = local _vehicle && isDamageAllowed _vehicle;
+
+        if !_canDamage then {
+            _vehicle setPosATL _pos;
+        } else {
+            _vehicle allowDamage false;
+            _vehicle setPosATL _pos;
+            [_vehicle] spawn {
+                params ["_vehicle"];
+                uiSleep 0.75;
+                _vehicle allowDamage true;
+            };
+        };
+    };
 }];
 
 [] spawn {
