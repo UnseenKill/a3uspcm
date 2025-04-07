@@ -23,6 +23,4 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onBeaconUnloaded),_this);
 
-call FUNC(activateBeacon);
-
 nil;

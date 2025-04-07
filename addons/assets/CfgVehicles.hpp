@@ -15,5 +15,32 @@ class CfgVehicles {
         ace_dragging_ignoreWeight = 1;
         ace_dragging_canCarry = 1;
         ace_dragging_ignoreWeightCarry = 1;
+
+        sound = "LinkTerminal_01_Standby_Loop";
+
+        class AnimationSources {
+            class Satellite_source {
+                source = "user";
+                initPhase = 0;
+                animPeriod = 0.1;
+            };
+            class Terminal_source {
+                source = "user";
+                initPhase = 0;
+                animPeriod = 0.07;
+            };
+            class Terminal_source_sound {
+                source = "user";
+                initPhase = 0;
+                animPeriod = 0.07;
+                sound = "LinkTerminal_01_node_1_F_Sound";
+                soundposition = "Sound_node1";
+            };
+            class Progress_source {
+                source = "user";
+                initPhase = 0;
+                animPeriod = 0.1;
+            };
+        };
     };
 };

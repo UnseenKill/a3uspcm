@@ -21,30 +21,39 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(deactivateBeacon),_this);
+_this spawn {
+    TRACE_1(QFUNC(deactivateBeacon),_this);
 
-params[
-    ["_beacon", objNull, [objNull]],
-    ["_player", objNull, [objNull]]
-];
+    params[
+        ["_beacon", objNull, [objNull]],
+        ["_player", objNull, [objNull]]
+    ];
 
-if !assert(!isNull _beacon) exitWith {};
+    if !assert(!isNull _beacon) exitWith {};
 
-[_player, "PutDown"] call ace_common_fnc_doGesture;
+    private _uav = _beacon getVariable[QGVAR(UAV), objNull];
 
-private _uav = _beacon getVariable[QGVAR(UAV), objNull];
+    if (isNull _uav) exitWith {};
 
-if (isNull _uav) exitWith {};
+    if !assert(!isNull _player) exitWith {};
 
-crew _uav apply { deleteVehicle _x };
-deleteVehicle _uav;
+    [_player, "PutDown"] call ace_common_fnc_doGesture;
+    _beacon setVariable[QGVAR(active), nil];
 
-_beacon setVariable[QGVAR(UAV), nil];
+    TRACE_1(QFUNC(deactivateBeacon_waitState),_beacon);
+    waitUntil { _beacon getVariable[QGVAR(ready), false] };
+    TRACE_1(QFUNC(deactivateBeacon_cleanupState),_beacon);
 
-private _marker = _beacon getVariable[QGVAR(marker), false];
-if !(_marker isEqualType false) then {
-    deleteMarker _marker;
-    _beacon setVariable[QGVAR(marker), nil];
+    crew _uav apply { deleteVehicle _x };
+    deleteVehicle _uav;
+
+    _beacon setVariable[QGVAR(UAV), nil];
+
+    private _marker = _beacon getVariable[QGVAR(marker), false];
+    if !(_marker isEqualType false) then {
+        deleteMarker _marker;
+        _beacon setVariable[QGVAR(marker), nil];
+    };
 };
 
 nil;
