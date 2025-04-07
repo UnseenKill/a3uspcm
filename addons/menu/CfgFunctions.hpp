@@ -15,6 +15,7 @@ class CfgFunctions {
             PATHTO_FNC(miscIngameMusicPlaylistEditor);
             PATHTO_FNC(miscMakeLootBox);
             PATHTO_FNC(miscPlaceBeacon);
+            PATHTO_FNC(miscReinstateLeadership);
             PATHTO_FNC(miscRepairBuildings);
             PATHTO_FNC(miscShowRoadblocks);
             PATHTO_FNC(miscSpawnLootBox);

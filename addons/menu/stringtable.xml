@@ -321,6 +321,14 @@
             <English>Despawn Suppression Beacon™</English>
             <German>Despawn Suppression Beacon™</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ReinstateLeadershipCaption">
+            <English>Reinstate leadership</English>
+            <German>Führung wiederherstellen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ReinstateLeadershipText">
+            <English>makes you team leader again following unconsciousness.</English>
+            <German>macht dich nach Bewusstlosigkeit wieder zum Teamleiter.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsCaption">
             <English>Repair buildings</English>
             <German>Repariere Gebäude</German>
