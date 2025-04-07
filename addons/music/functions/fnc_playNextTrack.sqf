@@ -53,7 +53,11 @@ if GVAR(showNowPlaying) then {
 
     [
         localize LSTRING(NowPlaying),
-        parseText format["<t color='#00fccc'>%1</t> (%2)", _title, [getNumber(_config >> "duration"), "MM:SS"] call BIS_fnc_secondsToString],
+        parseText format[
+            "%1:<br /><t color='#00fccc'>%2</t> (%3)",
+            localize LSTRING(NowPlaying), _title,
+            [getNumber(_config >> "duration"), "MM:SS"] call BIS_fnc_secondsToString
+        ],
         true
     ] call A3A_fnc_customHint;
 };
