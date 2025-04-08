@@ -22,8 +22,8 @@
             <German>A3USPCM - Music Komponente</German>
         </Key>
         <Key ID="STR_A3USPCM_Music_NowPlaying">
-            <English>Now playing:&lt;br/&gt;&lt;t color='#00fccc'&gt;%1&lt;/t&gt; (%2)</English>
-            <German>Aktuelle Wiedergabe:&lt;br/&gt;&lt;t color='#00fccc'&gt;%1&lt;/t&gt; (%2)</German>
+            <English>Now playing</English>
+            <German>Aktuelle Wiedergabe</German>
         </Key>
         <Key ID="STR_A3USPCM_Music_RscA3USPCMTracklistEditorDialog_BtnAddSelection">
             <English>Add selection &gt;&gt;</English>

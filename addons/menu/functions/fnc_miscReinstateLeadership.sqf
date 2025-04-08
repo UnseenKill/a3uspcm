@@ -1,18 +1,17 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_despawnbeacon_fnc_onBeaconUnloaded
+Function: A3USPCM_fnc_miscReinstateLeadership
 
 Description:
-    Event listener callback when despawn beacon is unloaded from a vehicle.
+    Reinstate leadership of a group to the player.
 
 Parameters:
-    0: _beacon - Despawn beacon object <OBJECT>
 
 Optional:
 
 Example:
     (begin example)
-    [_object] call A3USPCM_despawnbeacon_fnc_onBeaconUnloaded;
+    [] call A3USPCM_fnc_miscReinstateLeadership;
     (end example)
 
 Returns:
@@ -21,6 +20,10 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(onBeaconUnloaded),_this);
+TRACE_1(QFUNCMAIN(miscReinstateLeadership),_this);
+
+INFO_1("'%1' wants group leadership back",name player);
+
+group player selectLeader player;
 
 nil;

@@ -73,6 +73,10 @@
             <English>List of vehicle weaponry classes that can be added to vehicles.</English>
             <German>Liste der Fahrzeugbewaffnungs-Klassen, die Fahrzeugen hinzugefügt werden können.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Weapons_VehicleHunterKillerEnableText">
+            <English>Enable Hunter-Killer</English>
+            <German>Hunter-Killer aktivieren</German>
+        </Key>
         <Key ID="STR_A3USPCM_Weapons_VehicleWeaponsSelfActionsAddWeaponText">
             <English>Add weapon</English>
             <German>Waffe hinzufügen</German>
