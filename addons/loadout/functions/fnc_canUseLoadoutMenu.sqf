@@ -31,7 +31,7 @@ if !assert(!isNull _target) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
 
 (alive _target)
-&& (locked _target isEqualTo 0)
+&& (locked _target < 2)
 && (getNumber(configOf _target >> "maximumLoad") > 0)
 && (
     !GVAR(requireFlagProximity)
