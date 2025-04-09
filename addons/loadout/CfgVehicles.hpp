@@ -9,7 +9,7 @@
                 };\
                 class GVAR(LoadoutDump) {\
                     displayName = CSTRING(DumpContents);\
-                    condition = QUOTE(GVAR(aceInteractShowVehicleDumpAction) && call FUNCMAIN(utilVehicleHasCargo));\
+                    condition = QUOTE(GVAR(aceInteractShowVehicleDumpAction) && (locked _target isEqualTo 0) && call FUNCMAIN(utilVehicleHasCargo));\
                     statement = QUOTE(call FUNC(containerDumpContents));\
                     icon = QPATHTOEF(assets,ui\loadout-unload.paa);\
                 };\
