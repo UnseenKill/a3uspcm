@@ -58,6 +58,16 @@ private _parentPath = [[
 ] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
 
 [[
+    QGVAR(zenMenu_TeleportGroup),
+    localize LSTRING(ModuleTeleportGroup_DisplayName),
+    "",
+    {
+        call FUNC(teleportGroup);
+    },
+    { true }
+] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
+
+[[
     QGVAR(zenMenu_ReorientObjects),
     localize LSTRING(ModuleRO_DisplayName),
     "",

@@ -29,6 +29,10 @@
             <English>Remove current HC selection from HC</English>
             <German>Aktuelle HC Auswahl aus HC entfernen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Zeus_ModuleTeleportGroup_DisplayName">
+            <English>Teleport group here</English>
+            <German>Gruppe hierher teleportieren</German>
+        </Key>
         <Key ID="STR_A3USPCM_Zeus_Settings_Category_DisplayName">
             <English>Zeus</English>
             <German>Zeus</German>
