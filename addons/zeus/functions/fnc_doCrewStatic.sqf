@@ -58,7 +58,7 @@ _vehicles apply {
 
         private _skill = EGVAR(aafc,aiSkill);
         if (_skill isEqualTo 0) then {
-            0.1 + 0.1 * A3A_rebelSkillMul + 0.015 * skillFIA;
+            _skill = 0.1 + 0.1 * A3A_rebelSkillMul + 0.015 * skillFIA;
         };
 
         allTurrets[_vehicle, false] apply {
