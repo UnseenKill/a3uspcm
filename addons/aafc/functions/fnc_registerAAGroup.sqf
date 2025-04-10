@@ -43,6 +43,12 @@ _group setVariable[QGVAR(vehicles), _vehicles apply {
     _x;
 }];
 
+_group addEventHandler["Deleted", {
+    TRACE_1(QFUNC(groupDeleted),_this);
+    GVAR(groups) = GVAR(groups) - [_this select 0];
+    _this call FUNC(updateMenu);
+}];
+
 GVAR(groups) pushBackUnique _group;
 
 [_group] call FUNC(initReportHandler);
