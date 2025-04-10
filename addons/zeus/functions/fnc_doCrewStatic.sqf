@@ -56,12 +56,17 @@ _vehicles apply {
         uiSleep 0.5;
         params["_group","_vehicle","_type"];
 
+        private _skill = EGVAR(aafc,aiSkill);
+        if (_skill isEqualTo 0) then {
+            0.1 + 0.1 * A3A_rebelSkillMul + 0.015 * skillFIA;
+        };
+
         allTurrets[_vehicle, false] apply {
             private _turret = _x;
             private _unit = _group createUnit[_type, getPosATL _vehicle, [], 0, "NONE"];
 
             _unit moveInTurret[_vehicle, _turret];
-            _unit setSkill 1;
+            _unit setSkill _skill;
 
             TRACE_3("Crewed static",_vehicle,_unit,_turret);
         };
