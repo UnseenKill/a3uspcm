@@ -210,6 +210,36 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(aafc,aiSkill), "SLIDER",
+    [ELSTRING(aafc,Settings_aiSkill_DisplayName), ELSTRING(aafc,Settings_aiSkill_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    [0, 1, 0.75, 2, true], // min,max,default,decimals,isPercentage
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(aafc,autoGroupAtStart), "CHECKBOX",
+    [ELSTRING(aafc,Settings_autoGroupAtStart_DisplayName), ELSTRING(aafc,Settings_autoGroupAtStart_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    false, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(aafc,autoGroupRadius), "SLIDER",
+    [ELSTRING(aafc,Settings_autoGroupRadius_DisplayName), ELSTRING(aafc,Settings_autoGroupRadius_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    [10, 1000, 200, -1], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(aafc,autoReload), "CHECKBOX",
     [ELSTRING(aafc,Settings_autoReload_DisplayName), ELSTRING(aafc,Settings_autoReload_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
