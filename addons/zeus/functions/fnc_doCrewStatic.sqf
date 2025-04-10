@@ -23,7 +23,7 @@ params[
 
 if !assert(_vehicles isNotEqualTo []) exitWith {};
 
-private _group = createGroup independent;
+private _group = createGroup[independent, true];
 private _crewClassKey = ["crewClassName","crewClassNameAI"] select GVAR(moduleMSE_useAI);
 private _crewClassType = [configFile >> QGVAR(Config) >> "moduleMSE" >> _crewClassKey, "STRING"] call CBA_fnc_getConfigEntry;
 
