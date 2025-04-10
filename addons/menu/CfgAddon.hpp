@@ -42,6 +42,13 @@ class GVAR(Config) {
                 closeDiary = 1;
             };
 
+            class EnlargeNearestMarker {
+                caption = CSTRING(Miscellaneous_EnlargeNearestMarkerCaption);
+                text = CSTRING(Miscellaneous_EnlargeNearestMarkerText);
+                action = QFUNCMAIN(miscEnlargeNearestMarker);
+                closeDiary = 1;
+            };
+
             class RepairBuildings {
                 caption = CSTRING(Miscellaneous_RepairBuildingsCaption);
                 text = CSTRING(Miscellaneous_RepairBuildingsText);
