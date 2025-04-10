@@ -60,7 +60,7 @@ class GVAR(Config) {
                 class Intel {
                     chemlights[] = {"Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"};
                     flags[] = {"ace_marker_flags_red","ace_flags_carrier_red"};
-                    laptops[] = {"Land_laptop_03_closed_black_F", "Land_laptop_03_closed_sand_F", "Land_laptop_03_closed_olive_F"};
+                    laptops[] = {"Land_laptop_03_closed_black_F", "Land_laptop_03_closed_sand_F", "Land_laptop_03_closed_olive_F", "Land_Laptop_unfolded_F", "Land_Document_01_F"};
                 };
             };
 
