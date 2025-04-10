@@ -44,11 +44,17 @@ _group setGroupIdGlobal[_groupName];
 
 _vehicles apply {
     crew _x apply {
-        _x allowDamage false;
-        moveOut _x;
-        _x spawn {
-            uiSleep 3.5;
-            _this allowDamage true;
+        private _crew = _x;
+
+        if (["B_UAV_AI","O_UAV_AI","I_UAV_AI","C_UAV_AI"] findIf { _crew isKindOf _x } >= 0) then {
+            deleteVehicle _crew;
+        } else {
+            _crew allowDamage false;
+            moveOut _crew;
+            _crew spawn {
+                uiSleep 3.5;
+                _this allowDamage true;
+            };
         };
     };
 
