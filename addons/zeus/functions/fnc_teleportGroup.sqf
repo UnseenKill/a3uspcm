@@ -18,6 +18,8 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
+TRACE_1(QFUNC(teleportGroup),_this);
+
 params[
     ["_position",nil,[[]]]
 ];

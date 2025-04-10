@@ -5,6 +5,10 @@
             <English>A3USPCM - Zeus Module Component</English>
             <German>A3USPCM - Zeusmodul Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Zeus_ModuleBlowupMines_DisplayName">
+            <English>Blow up mines</English>
+            <German>Minen in die Luft gehen lassen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Zeus_ModuleCategory">
             <English>A3USPCM Modules</English>
             <German>A3USPCM Module</German>
@@ -12,6 +16,10 @@
         <Key ID="STR_A3USPCM_Zeus_ModuleFSE_DisplayName">
             <English>Find static emplacements (100m)</English>
             <German>Statische Waffen suchen (100m)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_ModuleFindGWH_DisplayName">
+            <English>Find ground weapon holders (300m)</English>
+            <German>Waffen auf Boden suchen (300m)</German>
         </Key>
         <Key ID="STR_A3USPCM_Zeus_ModuleMSE_DisplayName">
             <English>Crew selected static emplacements</English>
