@@ -35,9 +35,7 @@ private _parentPath = [[
         [_position] call FUNC(findStaticEmplacements);
     },
     {
-        [] isEqualTo (curatorSelected select 0 select {
-            _x isKindOf "StaticWeapon";
-        });
+        [] isNotEqualTo nearestObjects[_this select 0, ["StaticWeapon"], FIND_STATIC_RADIUS, true];
     }
 ] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
 
@@ -54,6 +52,40 @@ private _parentPath = [[
         [] isNotEqualTo (curatorSelected select 0 select {
             _x isKindOf "StaticWeapon";
         });
+    }
+] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
+
+[[
+    QGVAR(zenMenu_FindGWH),
+    localize LSTRING(ModuleFindGWH_DisplayName),
+    "",
+    {
+        call FUNC(findGWH);
+    },
+    {
+        [] isNotEqualTo nearestObjects[_this select 0, ["GroundWeaponHolder","WeaponHolderSimulated"], 300, true];
+    }
+] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
+
+[[
+    QGVAR(zenMenu_TeleportGroup),
+    localize LSTRING(ModuleTeleportGroup_DisplayName),
+    "",
+    {
+        call FUNC(teleportGroup);
+    },
+    { true }
+] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
+
+[[
+    QGVAR(zenMenu_BlowupMines),
+    localize LSTRING(ModuleBlowupMines_DisplayName),
+    "",
+    {
+        call FUNC(blowUpMines);
+    },
+    { 
+        [] isNotEqualTo nearestMines[_this select 0, ["MineBase"], 300, false, true];
     }
 ] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
 
@@ -81,5 +113,17 @@ private _parentPath = [[
         hcSelected theBoss isNotEqualTo [];
     }
 ] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
+
+if is3DENPreview then {
+    [[
+        QGVAR(zenMenu_3DENExec),
+        "Exec module.sqf here",
+        "",
+        {
+            call compile preprocessFileLineNumbers "module.sqf";
+        },
+        { true }
+    ] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
+};
 
 nil;

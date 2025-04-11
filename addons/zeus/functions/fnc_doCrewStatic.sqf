@@ -23,7 +23,7 @@ params[
 
 if !assert(_vehicles isNotEqualTo []) exitWith {};
 
-private _group = createGroup independent;
+private _group = createGroup[independent, true];
 private _crewClassKey = ["crewClassName","crewClassNameAI"] select GVAR(moduleMSE_useAI);
 private _crewClassType = [configFile >> QGVAR(Config) >> "moduleMSE" >> _crewClassKey, "STRING"] call CBA_fnc_getConfigEntry;
 
@@ -44,11 +44,17 @@ _group setGroupIdGlobal[_groupName];
 
 _vehicles apply {
     crew _x apply {
-        _x allowDamage false;
-        moveOut _x;
-        _x spawn {
-            uiSleep 3.5;
-            _this allowDamage true;
+        private _crew = _x;
+
+        if (["B_UAV_AI","O_UAV_AI","I_UAV_AI","C_UAV_AI"] findIf { _crew isKindOf _x } >= 0) then {
+            deleteVehicle _crew;
+        } else {
+            _crew allowDamage false;
+            moveOut _crew;
+            _crew spawn {
+                uiSleep 3.5;
+                _this allowDamage true;
+            };
         };
     };
 
@@ -56,12 +62,17 @@ _vehicles apply {
         uiSleep 0.5;
         params["_group","_vehicle","_type"];
 
+        private _skill = EGVAR(aafc,aiSkill);
+        if (_skill isEqualTo 0) then {
+            _skill = 0.1 + 0.1 * A3A_rebelSkillMul + 0.015 * skillFIA;
+        };
+
         allTurrets[_vehicle, false] apply {
             private _turret = _x;
             private _unit = _group createUnit[_type, getPosATL _vehicle, [], 0, "NONE"];
 
             _unit moveInTurret[_vehicle, _turret];
-            _unit setSkill 1;
+            _unit setSkill _skill;
 
             TRACE_3("Crewed static",_vehicle,_unit,_turret);
         };

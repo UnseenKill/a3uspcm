@@ -233,6 +233,18 @@
             <English>None shall stand in your way now.</English>
             <German>Niemand soll dir jetzt im Wege stehen.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_EnlargeNearestMarkerCaption">
+            <English>Change current location marker size</English>
+            <German>Ändere Markergröße für aktuelle Position</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_EnlargeNearestMarkerPrompt">
+            <English>Change size of "%1" to:</English>
+            <German>Ändere Größe von "%1" zu:</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_EnlargeNearestMarkerText">
+            <English>For when HQ area is too small.</English>
+            <German>Wenn die HQ-Fläche nicht reicht.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FindIntelCaption">
             <English>Find intel</English>
             <German>Intel finden</German>

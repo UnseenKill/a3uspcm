@@ -49,6 +49,30 @@
             <English>AA fire control</English>
             <German>Luftabwehr Feuerkontrolle</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_aiSkill_DisplayName">
+            <English>Crew skill</English>
+            <German>Fähigkeit der Besatzung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_aiSkill_Tooltip">
+            <English>Set to zero to use rebel skill</English>
+            <German>Auf Null setzen, um die Rebellenfähigkeit zu nutzen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_autoGroupAtStart_DisplayName">
+            <English>Auto assign A/A at game start</English>
+            <German>Fla-Gruppen automatisch beim Spielstart erstellen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_autoGroupAtStart_Tooltip">
+            <English>Find clusters of A/A vehicles and automatically create groups for them.</English>
+            <German>Findet Ansammlungen von Fla-Fahrzeugen und erstellt automatisch Gruppen für diese.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_autoGroupRadius_DisplayName">
+            <English>Find cluster radius</English>
+            <German>Radius für Suche</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_autoGroupRadius_Tooltip">
+            <English>Radius in meters to find clusters of A/A vehicles.</English>
+            <German>Radius in Metern, um Ansammlungen von Fla-Fahrzeugen zu finden.</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_autoReload_DisplayName">
             <English>Auto reload</English>
             <German>Automatisches Nachladen</German>

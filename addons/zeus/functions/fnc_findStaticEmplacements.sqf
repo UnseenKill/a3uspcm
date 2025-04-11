@@ -25,7 +25,7 @@ params[
     ["_activated", false, [false]]
 ];
 
-TRACE_1("A3USPCM_zeus_fnc_findStaticEmplacements",_this);
+TRACE_1(QFUNC(findStaticEmplacements),_this);
 
 private _position = if (_logic isEqualType []) then {
     _logic;

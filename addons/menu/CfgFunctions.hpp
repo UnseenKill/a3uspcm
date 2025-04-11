@@ -8,6 +8,7 @@ class CfgFunctions {
             PATHTO_FNC(miscAddTeamZeus);
             PATHTO_FNC(miscAddToBuildables);
             PATHTO_FNC(miscAirAccessAnywhere);
+            PATHTO_FNC(miscEnlargeNearestMarker);
             PATHTO_FNC(miscFindIntel);
             PATHTO_FNC(miscFixAirDropVehicles);
             PATHTO_FNC(miscFixAirSupportVehicles);
