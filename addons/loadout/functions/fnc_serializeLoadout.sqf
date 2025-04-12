@@ -55,7 +55,7 @@ private _turretWeapons = if (_vehicle getVariable[QGVAR(moddedTurrets), []] isEq
 private _loadout = [
     _loadoutName,
     [_vehicle] call FUNCMAIN(utilAceCargoGetLoaded),
-    [_bp, _wc, _mc, _ic],
+    [_bp, ["0xdeadbeef", weaponsItemsCargo _vehicle], _mc, _ic],
     [typeOf _vehicle, magazinesAllTurrets _vehicle],
     [_vehicle] call FUNCMAIN(utilAceCargoGetCargoSize),
     _turretWeapons,
