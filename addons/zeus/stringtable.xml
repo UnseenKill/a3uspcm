@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="Zeus">
+        <Key ID="STR_A3USPCM_Zeus_CenterOnHQText">
+            <English>Zeus - center on HQ</English>
+            <German>Zeus - auf HQ zentrieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_CenterOnHQTooltip">
+            <English>Move Zeus camera to rebel HQ</English>
+            <German>Bewege die Zeus Kamera zum Rebellen HQ</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_CenterOnPlayerText">
+            <English>Zeus - center on player</English>
+            <German>Zeus - auf Spieler zentrieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Zeus_CenterOnPlayerTooltip">
+            <English>Move Zeus camera to current player</English>
+            <German>Bewege die Zeus Kamera zum Spieler</German>
+        </Key>
         <Key ID="STR_A3USPCM_Zeus_Component">
             <English>A3USPCM - Zeus Module Component</English>
             <German>A3USPCM - Zeusmodul Komponente</German>

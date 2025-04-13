@@ -1,4 +1,6 @@
 PREP(blowUpMines);
+PREP(centerOnHQ);
+PREP(centerOnPlayer);
 PREP(doCrewStatic);
 PREP(findGWH);
 PREP(findStaticEmplacements);
