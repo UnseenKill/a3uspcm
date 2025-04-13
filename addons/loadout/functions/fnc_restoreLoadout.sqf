@@ -120,7 +120,6 @@ if (_weapons select 0 isNotEqualTo "0xdeadbeef") then {
 
         if (_count < 0) exitWith { _item };
         if (_count == 0) exitWith {
-            diag_log format["%1: %2",getText(_config >> _item >> "displayName"),_item];
             _missing pushBack getText(_config >> _item >> "displayName");
             "";
         };
