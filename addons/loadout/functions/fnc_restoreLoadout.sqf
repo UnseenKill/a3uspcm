@@ -94,7 +94,69 @@ if (_maxLoad isNotEqualTo false) then {
     _vehicle setMaxLoad _maxLoad;
 };
 
+
 private _messages = [];
+private _actions = [
+    ["backpack", _backpacks, configFile >> "CfgVehicles", { params["_vehicle","_item","_count"]; _vehicle addBackpackCargoGlobal[_item,_count]; }],
+    ["magazine", _magazines, configFile >> "CfgMagazines", { params["_vehicle","_item","_count"]; _vehicle addMagazineCargoGlobal[_item,_count]; }],
+    ["item", _items, configFile >> "CfgWeapons", { params["_vehicle","_item","_count"]; _vehicle addItemCargoGlobal[_item,_count]; }]
+];
+
+// backwards compatibility for old loadouts
+if (_weapons select 0 isNotEqualTo "0xdeadbeef") then {
+    _actions = [
+        ["weapon", _weapons, configFile >> "CfgWeapons", { params["_vehicle","_item","_count"]; _vehicle addWeaponCargoGlobal[_item,_count]; }]
+    ] + _actions;
+} else {
+    private _missing = [];
+    private _checkItem = {
+        params["_item","_config"];
+
+        if (_item isEqualTo "") exitWith { _item };
+
+        private _index = _item call jn_fnc_arsenal_itemType;
+        private _arsenal = jna_datalist select _index;
+        private _count = [_arsenal, _item] call jn_fnc_arsenal_itemCount;
+
+        if (_count < 0) exitWith { _item };
+        if (_count == 0) exitWith {
+            _missing pushBack getText(_config >> _item >> "displayName");
+            "";
+        };
+
+        [_index, _item, 1] call jn_fnc_arsenal_removeItem;
+        _item;
+    };
+
+    _weapons select 1 apply {
+        _x params["_weapon","_muzzle","_flashlite","_scope","_magPrimary","_magSecondary","_bipod"];
+
+        if ([_weapon, configFile >> "CfgWeapons"] call _checkItem isEqualTo _weapon) then {
+            _muzzle = [_muzzle, configFile >> "CfgWeapons"] call _checkItem;
+            _flashlite = [_flashlite, configFile >> "CfgWeapons"] call _checkItem;
+            _scope = [_scope, configFile >> "CfgWeapons"] call _checkItem;
+            _bipod = [_bipod, configFile >> "CfgWeapons"] call _checkItem;
+
+            if (_magPrimary isNotEqualTo []) then {
+                if ([_magPrimary select 0, configFile >> "CfgMagazines"] call _checkItem isEqualTo "") then {
+                    _magPrimary = [];
+                };
+            };
+
+            if (_magSecondary isNotEqualTo []) then {
+                if ([_magSecondary select 0, configFile >> "CfgMagazines"] call _checkItem isEqualTo "") then {
+                    _magSecondary = [];
+                };
+            };
+
+            _vehicle addWeaponWithAttachmentsCargoGlobal[[_weapon, _muzzle, _flashlite, _scope, _magPrimary, _magSecondary, _bipod], 1];
+        };
+    };
+
+    _missing apply {
+        _messages pushBack format[localize LSTRING(HintLoadoutItemMissingText), _x];
+    };
+};
 
 {
     _x params["_type","_items","_baseConfig","_callback"];
@@ -128,12 +190,7 @@ private _messages = [];
             };
         };
     } forEach ((_items # 0) createHashMapFromArray (_items # 1));
-} forEach [
-    ["backpack", _backpacks, configFile >> "CfgVehicles", { params["_vehicle","_item","_count"]; _vehicle addBackpackCargoGlobal[_item,_count]; }],
-    ["weapon", _weapons, configFile >> "CfgWeapons", { params["_vehicle","_item","_count"]; _vehicle addWeaponCargoGlobal[_item,_count]; }],
-    ["magazine", _magazines, configFile >> "CfgMagazines", { params["_vehicle","_item","_count"]; _vehicle addMagazineCargoGlobal[_item,_count]; }],
-    ["item", _items, configFile >> "CfgWeapons", { params["_vehicle","_item","_count"]; _vehicle addItemCargoGlobal[_item,_count]; }]
-];
+} forEach _actions;
 
 if (_turretsMagsInfo isNotEqualTo false) then {
     TRACE_1("trying to apply turret magazines",_turretsMagsInfo);
