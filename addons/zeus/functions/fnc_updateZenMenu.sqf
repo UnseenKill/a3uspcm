@@ -103,6 +103,18 @@ private _parentPath = [[
 ] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
 
 [[
+    QGVAR(zenMenu_GarageVehicles),
+    localize LSTRING(ModuleGarageVehicles_DisplayName),
+    "",
+    {
+        call FUNC(garageVehicles);
+    },
+    {
+        call FUNC(canGarageVehicles);
+    }
+] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
+
+[[
     QGVAR(zenMenu_RemoveHC),
     localize LSTRING(ModuleRemoveHC_DisplayName),
     "",

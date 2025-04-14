@@ -37,6 +37,10 @@
             <English>Find ground weapon holders (300m)</English>
             <German>Waffen auf Boden suchen (300m)</German>
         </Key>
+        <Key ID="STR_A3USPCM_Zeus_ModuleGarageVehicles_DisplayName">
+            <English>Garage vehicles</English>
+            <German>Fahrzeuge in Garage</German>
+        </Key>
         <Key ID="STR_A3USPCM_Zeus_ModuleMSE_DisplayName">
             <English>Crew selected static emplacements</English>
             <German>Besetze ausgewählte statische Waffen</German>
