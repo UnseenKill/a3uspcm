@@ -79,18 +79,6 @@ class GVAR(Config) {
                 separator = 1;
             };
 
-            class FixAirDropVehicles {
-                caption = CSTRING(Miscellaneous_FixAirDropVehiclesCaption);
-                text = CSTRING(Miscellaneous_FixAirDropVehiclesText);
-                action = QFUNCMAIN(miscFixAirDropVehicles);
-            };
-
-            class FixAirSupportVehicles {
-                caption = CSTRING(Miscellaneous_FixAirSupportVehiclesCaption);
-                text = CSTRING(Miscellaneous_FixAirSupportVehiclesText);
-                action = QFUNCMAIN(miscFixAirSupportVehicles);
-            };
-
             class FixVoices {
                 caption = CSTRING(Miscellaneous_FixVoicesCaption);
                 text = CSTRING(Miscellaneous_FixVoicesText);
@@ -361,6 +349,24 @@ class GVAR(Config) {
                 caption = CSTRING(Unlocks_SortArsenalCaption);
                 text = CSTRING(Unlocks_SortArsenalText);
                 action = QFUNC(unlockSortArsenal);
+            };
+        };
+
+        class Vehicles {
+            caption = CSTRING(DiaryVehiclesCaption);
+            text = CSTRING(DiaryVehiclesText);
+            image = QUOTE(a3\ui_f\data\igui\cfg\actions\getindriver_ca.paa);
+
+            class FixAirDropVehicles {
+                caption = CSTRING(Vehicles_FixAirDropVehiclesCaption);
+                text = CSTRING(Vehicles_FixAirDropVehiclesText);
+                action = QFUNCMAIN(vehiclesFixAirDropVehicles);
+            };
+
+            class FixAirSupportVehicles {
+                caption = CSTRING(Vehicles_FixAirSupportVehiclesCaption);
+                text = CSTRING(Vehicles_FixAirSupportVehiclesText);
+                action = QFUNCMAIN(vehiclesFixAirSupportVehicles);
             };
         };
 
