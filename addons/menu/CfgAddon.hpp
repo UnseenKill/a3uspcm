@@ -357,6 +357,13 @@ class GVAR(Config) {
             text = CSTRING(DiaryVehiclesText);
             image = QUOTE(a3\ui_f\data\igui\cfg\actions\getindriver_ca.paa);
 
+            class ChangeLockpickDuration {
+                caption = CSTRING(Vehicles_ChangeLockpickDurationCaption);
+                action = QFUNCMAIN(vehiclesChangeLockpickDuration);
+                separator = 1;
+                closeDiary = 1;
+            };
+
             class FixAirDropVehicles {
                 caption = CSTRING(Vehicles_FixAirDropVehiclesCaption);
                 text = CSTRING(Vehicles_FixAirDropVehiclesText);

@@ -729,6 +729,18 @@
             <English>Arsenal was sorted.</English>
             <German>Arsenal wurde sortiert.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationCaption">
+            <English>Change lock picking duration</English>
+            <German>Dauer des Schlösserknackens ändern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationPrompt">
+            <English>Change to seconds</English>
+            <German>Auf soviele Sekunden ändern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationSuccess">
+            <English>Vehicle lockpicking base duration changed to %1 seconds.</English>
+            <German>Die Basisdauer für das Knacken von Fahrzeugschlössern wurde auf %1 Sekunden geändert.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Vehicles_FixAirDropVehiclesCaption">
             <English>Fix helicopters</English>
             <German>Ersetze Hubschrauber</German>

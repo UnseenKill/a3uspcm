@@ -36,6 +36,7 @@ class CfgFunctions {
             PATHTO_FNC(unlockBreachingChargeTanks);
             PATHTO_FNC(unlockLoadout);
             PATHTO_FNC(unlockPermanentMarker);
+            PATHTO_FNC(vehiclesChangeLockpickDuration);
             PATHTO_FNC(vehiclesFixAirDropVehicles);
             PATHTO_FNC(vehiclesFixAirSupportVehicles);
         };
