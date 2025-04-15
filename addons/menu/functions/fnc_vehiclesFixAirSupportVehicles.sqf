@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_fnc_miscFixAirSupportVehicles
+Function: A3USPCM_fnc_vehiclesFixAirSupportVehicles
 
 Description:
     Remove clunky old planes from air support, add jet.
@@ -11,7 +11,7 @@ Optional:
 
 Example:
     (begin example)
-    [] call A3USPCM_fnc_miscFixAirSupportVehicles;
+    [] call A3USPCM_fnc_vehiclesFixAirSupportVehicles;
     (end)
 
 Returns:

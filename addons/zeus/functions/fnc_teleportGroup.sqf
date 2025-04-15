@@ -57,6 +57,8 @@ private _curpos = _position;
 _positions apply {
     _x params["_vehicle", "_pos", "_ghost"];
 
+    private _vdu = [vectorDir _ghost, vectorUp _ghost];
+
     deleteVehicle _ghost;
 
     if (isDamageAllowed _vehicle) then {
@@ -67,5 +69,10 @@ _positions apply {
         }, _vehicle, 3] call CBA_fnc_waitAndExecute;
     };
 
-    _vehicle setPosATL _pos;
+    _vehicle enableSimulation false;
+    _vehicle setVectorDirAndUp _vdu;
+    _vehicle setPosATL(_pos vectorAdd[0, 0, [0.5, 0.15] select(_vehicle isKindOf "CAManBase")]);
+    _vehicle enableSimulation true;
 };
+
+nil;

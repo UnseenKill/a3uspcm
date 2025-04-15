@@ -7,11 +7,8 @@ class CfgFunctions {
             PATHTO_FNC(healPlayer);
             PATHTO_FNC(miscAddTeamZeus);
             PATHTO_FNC(miscAddToBuildables);
-            PATHTO_FNC(miscAirAccessAnywhere);
             PATHTO_FNC(miscEnlargeNearestMarker);
             PATHTO_FNC(miscFindIntel);
-            PATHTO_FNC(miscFixAirDropVehicles);
-            PATHTO_FNC(miscFixAirSupportVehicles);
             PATHTO_FNC(miscFixVoices);
             PATHTO_FNC(miscIngameMusicPlaylistEditor);
             PATHTO_FNC(miscMakeLootBox);
@@ -38,6 +35,10 @@ class CfgFunctions {
             PATHTO_FNC(unlockBreachingChargeTanks);
             PATHTO_FNC(unlockLoadout);
             PATHTO_FNC(unlockPermanentMarker);
+            PATHTO_FNC(vehiclesAirAccessAnywhere);
+            PATHTO_FNC(vehiclesChangeLockpickDuration);
+            PATHTO_FNC(vehiclesFixAirDropVehicles);
+            PATHTO_FNC(vehiclesFixAirSupportVehicles);
         };
     };
 };

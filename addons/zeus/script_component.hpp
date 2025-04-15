@@ -4,3 +4,9 @@
 #define CREW_STATIC_WAIT 5
 #define FIND_STATIC_RADIUS 100
 #define REORIENT_OBJECT_WAIT 5
+#define TEST_CAN_GARAGE(VEHICLE) (\
+    ((VEHICLE) isKindOf "LandVehicle") ||\
+    ((VEHICLE) isKindOf "StaticWeapon") ||\
+    ((VEHICLE) isKindOf "Air") ||\
+    ((VEHICLE) isKindOf "Ship") \
+)
