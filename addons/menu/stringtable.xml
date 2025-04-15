@@ -561,6 +561,14 @@
             <English>Skip enemy close checks when recruiting using the menu in the field</English>
             <German>Überspringe die Überprüfung auf nahe Gegner beim Rekrutieren über das Menü im Feld</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_teleportGroup_DisplayName">
+            <English>Teleport group instead of player</English>
+            <German>Teleportiere Gruppe anstelle des Spielers</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_teleportGroup_Tooltip">
+            <English>Teleport the whole group instead of just the player when using "teleport player" feature.</English>
+            <German>Teleportiere die ganze Gruppe anstelle nur des Spielers.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintCaption">
             <English>Summon stragglers</English>
             <German>Rufe Nachzügler herbei</German>

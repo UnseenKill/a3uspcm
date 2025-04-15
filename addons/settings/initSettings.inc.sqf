@@ -136,6 +136,15 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(menu,teleportGroup), "CHECKBOX",
+    [ELSTRING(menu,Settings_teleportGroup_DisplayName), ELSTRING(menu,Settings_teleportGroup_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    false, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
 // Music
 
 [
