@@ -217,18 +217,6 @@
             <English>Add the current cursor target to list of base building objects.</English>
             <German>Füge das aktuelle Cursorziel zur Liste der Basisbauobjekte hinzu.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AirAccessAnywhereCaption">
-            <English>Air access anywhere</English>
-            <German>Luftfahrzeuge überall</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AirAccessAnywhereHintDone">
-            <English>You can now access your air vehicles from any garage.</English>
-            <German>Du kannst jetzt von jeder Garage aus auf deine Luftfahrzeuge zugreifen.</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AirAccessAnywhereText">
-            <English>Access your air vehicles from any garage.</English>
-            <German>Greife von jeder Garage aus auf deine Luftfahrzeuge zu.</German>
-        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_EmergencyInvincibilityCooldownHintText">
             <English>You have recently been immortal. That can't happen any time, though. Wait another %1 seconds.</English>
             <German>Du warst erst vor Kurzem unsterblich. Das kann aber nicht jederzeit passieren. Warte weitere %1 Sekunden.</German>
@@ -728,6 +716,18 @@
         <Key ID="STR_A3USPCM_Menu_Unlocks_SortArsenalTextSuccess">
             <English>Arsenal was sorted.</English>
             <German>Arsenal wurde sortiert.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AirAccessAnywhereCaption">
+            <English>Air access anywhere</English>
+            <German>Luftfahrzeuge überall</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AirAccessAnywhereHintDone">
+            <English>You can now access your air vehicles from any garage.</English>
+            <German>Du kannst jetzt von jeder Garage aus auf deine Luftfahrzeuge zugreifen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AirAccessAnywhereText">
+            <English>Access your air vehicles from any garage.</English>
+            <German>Greife von jeder Garage aus auf deine Luftfahrzeuge zu.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationCaption">
             <English>Change lock picking duration</English>

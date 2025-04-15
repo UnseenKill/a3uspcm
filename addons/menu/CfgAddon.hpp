@@ -94,13 +94,6 @@ class GVAR(Config) {
                 closeDiary = 1;
             };
 
-            class AirAccessAnywhere {
-                caption = CSTRING(Miscellaneous_AirAccessAnywhereCaption);
-                text = CSTRING(Miscellaneous_AirAccessAnywhereText);
-                action = QFUNCMAIN(miscAirAccessAnywhere);
-                closeDiary = 1;
-            };
-
             class ShowRoadblocks {
                 caption = CSTRING(Miscellaneous_ShowRoadblocksCaption);
                 text = CSTRING(Miscellaneous_ShowRoadblocksText);
@@ -374,6 +367,14 @@ class GVAR(Config) {
                 caption = CSTRING(Vehicles_FixAirSupportVehiclesCaption);
                 text = CSTRING(Vehicles_FixAirSupportVehiclesText);
                 action = QFUNCMAIN(vehiclesFixAirSupportVehicles);
+                separator = 1;
+            };
+
+            class AirAccessAnywhere {
+                caption = CSTRING(Vehicles_AirAccessAnywhereCaption);
+                text = CSTRING(Vehicles_AirAccessAnywhereText);
+                action = QFUNCMAIN(vehiclesAirAccessAnywhere);
+                closeDiary = 1;
             };
         };
 
