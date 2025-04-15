@@ -43,7 +43,11 @@ GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
 
     openMap false;
     INFO_2("teleporting %1 to %2",name player,mapGridPosition _pos);
-    TRACE_2("teleporting",player,_pos);
+    TRACE_3("teleporting",player,_pos,GVAR(teleportGroup));
+
+    if GVAR(teleportGroup) exitWith {
+        [_pos] call EFUNC(zeus,teleportGroup);
+    };
 
     [_pos] spawn {
         params["_pos"];
