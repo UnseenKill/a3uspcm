@@ -37,22 +37,31 @@ private _unmounted = _units - flatten(_vehicles apply { crew _x });
 private _positions = [];
 private _curpos = _position;
 
-(_vehicles + _unmounted) apply {
-    private _vpos = [_curpos, 0, 20, 5] call BIS_fnc_findSafePos;
+{
+    private _vpos = if (_foreachIndex == 0) then {
+        _curpos findEmptyPosition[5, 10, typeOf _x];
+    } else {
+        [_curpos, 0, 20, 5] call BIS_fnc_findSafePos;
+    };
 
-    if (count _vpos isNotEqualTo 2) then {
+    if (_vpos isEqualTo []) then {
         systemChat format["No safe position found for %1", getText(configOf _x >> "displayName")];
     } else {
-        _curpos = _vpos + [0];
+        _curpos = _vpos;
+
+        if (count _curpos isEqualTo 2) then {
+            _curpos pushBack 0;
+        };
 
         private _ghost = createVehicle[typeOf _x, [0,0,0], [], 0, "NONE"];
         _ghost allowDamage false;
         _ghost setDir getDir _x;
+        _ghost setVectorUp surfaceNormal _curpos;
         _ghost setPosATL _curpos;
 
         _positions pushBack[_x, _curpos, _ghost];
     };
-};
+} forEach(_vehicles + _unmounted);
 
 _positions apply {
     _x params["_vehicle", "_pos", "_ghost"];
