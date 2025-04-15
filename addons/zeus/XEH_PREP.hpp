@@ -1,7 +1,11 @@
 PREP(blowUpMines);
+PREP(centerOnHQ);
+PREP(centerOnPlayer);
+PREP(canGarageVehicles);
 PREP(doCrewStatic);
 PREP(findGWH);
 PREP(findStaticEmplacements);
+PREP(garageVehicles);
 PREP(mountStaticEmplacements);
 PREP(reorientObject);
 PREP(teleportGroup);

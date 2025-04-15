@@ -117,6 +117,14 @@
             <English>Unlock items for arsenal</English>
             <German>Schalte Gegenstände für das Arsenal frei</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryVehiclesCaption">
+            <English>Vehicles</English>
+            <German>Fahrzeuge</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryVehiclesText">
+            <English>Vehicle related actions</English>
+            <German>Fahrzeugbezogene Aktionen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Healing_HealGroupCaption">
             <English>Heal your group</English>
             <German>Heile deine Gruppe</German>
@@ -209,18 +217,6 @@
             <English>Add the current cursor target to list of base building objects.</English>
             <German>Füge das aktuelle Cursorziel zur Liste der Basisbauobjekte hinzu.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AirAccessAnywhereCaption">
-            <English>Air access anywhere</English>
-            <German>Luftfahrzeuge überall</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AirAccessAnywhereHintDone">
-            <English>You can now access your air vehicles from any garage.</English>
-            <German>Du kannst jetzt von jeder Garage aus auf deine Luftfahrzeuge zugreifen.</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AirAccessAnywhereText">
-            <English>Access your air vehicles from any garage.</English>
-            <German>Greife von jeder Garage aus auf deine Luftfahrzeuge zu.</German>
-        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_EmergencyInvincibilityCooldownHintText">
             <English>You have recently been immortal. That can't happen any time, though. Wait another %1 seconds.</English>
             <German>Du warst erst vor Kurzem unsterblich. Das kann aber nicht jederzeit passieren. Warte weitere %1 Sekunden.</German>
@@ -264,22 +260,6 @@
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FindIntel_NoIntelFoundText">
             <English>Could not find any new intel in a %1m radius.</English>
             <German>Es konnten keine neuen Geheiminformationen im Umkreis von %1m gefunden werden.</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesCaption">
-            <English>Fix helicopters</English>
-            <German>Ersetze Hubschrauber</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirDropVehiclesText">
-            <English>Remove all helicopters from air support, add MH-6.</English>
-            <German>Entferne alle Hubschrauber von der Luftunterstützung, füge MH-6 hinzu.</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesCaption">
-            <English>Fix planes</English>
-            <German>Ersetze Flugzeuge</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixAirSupportVehiclesText">
-            <English>Remove clunky old planes from air support, add jet.</English>
-            <German>Entferne klobige alte Flugzeuge von der Luftunterstützung, füge Jet hinzu.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_FixVoicesCaption">
             <English>Fix voices</English>
@@ -581,6 +561,14 @@
             <English>Skip enemy close checks when recruiting using the menu in the field</English>
             <German>Überspringe die Überprüfung auf nahe Gegner beim Rekrutieren über das Menü im Feld</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_teleportGroup_DisplayName">
+            <English>Teleport group instead of player</English>
+            <German>Teleportiere Gruppe anstelle des Spielers</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_teleportGroup_Tooltip">
+            <English>Teleport the whole group instead of just the player when using "teleport player" feature.</English>
+            <German>Teleportiere die ganze Gruppe anstelle nur des Spielers.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Teleport_StragglersHintCaption">
             <English>Summon stragglers</English>
             <German>Rufe Nachzügler herbei</German>
@@ -736,6 +724,46 @@
         <Key ID="STR_A3USPCM_Menu_Unlocks_SortArsenalTextSuccess">
             <English>Arsenal was sorted.</English>
             <German>Arsenal wurde sortiert.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AirAccessAnywhereCaption">
+            <English>Air access anywhere</English>
+            <German>Luftfahrzeuge überall</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AirAccessAnywhereHintDone">
+            <English>You can now access your air vehicles from any garage.</English>
+            <German>Du kannst jetzt von jeder Garage aus auf deine Luftfahrzeuge zugreifen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AirAccessAnywhereText">
+            <English>Access your air vehicles from any garage.</English>
+            <German>Greife von jeder Garage aus auf deine Luftfahrzeuge zu.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationCaption">
+            <English>Change lock picking duration</English>
+            <German>Dauer des Schlösserknackens ändern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationPrompt">
+            <English>Change to seconds</English>
+            <German>Auf soviele Sekunden ändern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationSuccess">
+            <English>Vehicle lockpicking base duration changed to %1 seconds.</English>
+            <German>Die Basisdauer für das Knacken von Fahrzeugschlössern wurde auf %1 Sekunden geändert.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_FixAirDropVehiclesCaption">
+            <English>Fix helicopters</English>
+            <German>Ersetze Hubschrauber</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_FixAirDropVehiclesText">
+            <English>Remove all helicopters from air support, add MH-6.</English>
+            <German>Entferne alle Hubschrauber von der Luftunterstützung, füge MH-6 hinzu.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_FixAirSupportVehiclesCaption">
+            <English>Fix planes</English>
+            <German>Ersetze Flugzeuge</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_FixAirSupportVehiclesText">
+            <English>Remove clunky old planes from air support, add jet.</English>
+            <German>Entferne klobige alte Flugzeuge von der Luftunterstützung, füge Jet hinzu.</German>
         </Key>
     </Package>
 </Project>

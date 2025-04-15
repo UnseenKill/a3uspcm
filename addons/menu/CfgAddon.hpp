@@ -79,18 +79,6 @@ class GVAR(Config) {
                 separator = 1;
             };
 
-            class FixAirDropVehicles {
-                caption = CSTRING(Miscellaneous_FixAirDropVehiclesCaption);
-                text = CSTRING(Miscellaneous_FixAirDropVehiclesText);
-                action = QFUNCMAIN(miscFixAirDropVehicles);
-            };
-
-            class FixAirSupportVehicles {
-                caption = CSTRING(Miscellaneous_FixAirSupportVehiclesCaption);
-                text = CSTRING(Miscellaneous_FixAirSupportVehiclesText);
-                action = QFUNCMAIN(miscFixAirSupportVehicles);
-            };
-
             class FixVoices {
                 caption = CSTRING(Miscellaneous_FixVoicesCaption);
                 text = CSTRING(Miscellaneous_FixVoicesText);
@@ -103,13 +91,6 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_AddToBuildablesCaption);
                 text = CSTRING(Miscellaneous_AddToBuildablesText);
                 action = QFUNCMAIN(miscAddToBuildables);
-                closeDiary = 1;
-            };
-
-            class AirAccessAnywhere {
-                caption = CSTRING(Miscellaneous_AirAccessAnywhereCaption);
-                text = CSTRING(Miscellaneous_AirAccessAnywhereText);
-                action = QFUNCMAIN(miscAirAccessAnywhere);
                 closeDiary = 1;
             };
 
@@ -361,6 +342,39 @@ class GVAR(Config) {
                 caption = CSTRING(Unlocks_SortArsenalCaption);
                 text = CSTRING(Unlocks_SortArsenalText);
                 action = QFUNC(unlockSortArsenal);
+            };
+        };
+
+        class Vehicles {
+            caption = CSTRING(DiaryVehiclesCaption);
+            text = CSTRING(DiaryVehiclesText);
+            image = QUOTE(a3\ui_f\data\igui\cfg\actions\getindriver_ca.paa);
+
+            class ChangeLockpickDuration {
+                caption = CSTRING(Vehicles_ChangeLockpickDurationCaption);
+                action = QFUNCMAIN(vehiclesChangeLockpickDuration);
+                separator = 1;
+                closeDiary = 1;
+            };
+
+            class FixAirDropVehicles {
+                caption = CSTRING(Vehicles_FixAirDropVehiclesCaption);
+                text = CSTRING(Vehicles_FixAirDropVehiclesText);
+                action = QFUNCMAIN(vehiclesFixAirDropVehicles);
+            };
+
+            class FixAirSupportVehicles {
+                caption = CSTRING(Vehicles_FixAirSupportVehiclesCaption);
+                text = CSTRING(Vehicles_FixAirSupportVehiclesText);
+                action = QFUNCMAIN(vehiclesFixAirSupportVehicles);
+                separator = 1;
+            };
+
+            class AirAccessAnywhere {
+                caption = CSTRING(Vehicles_AirAccessAnywhereCaption);
+                text = CSTRING(Vehicles_AirAccessAnywhereText);
+                action = QFUNCMAIN(vehiclesAirAccessAnywhere);
+                closeDiary = 1;
             };
         };
 

@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_fnc_miscFixAirDropVehicles
+Function: A3USPCM_fnc_vehiclesFixAirDropVehicles
 
 Description:
     Remove all helicopters from air support, add MH-6.
@@ -11,7 +11,7 @@ Optional:
 
 Example:
     (begin example)
-    [] call A3USPCM_fnc_miscFixAirDropVehicles;
+    [] call A3USPCM_fnc_vehiclesFixAirDropVehicles;
     (end)
 
 Returns:

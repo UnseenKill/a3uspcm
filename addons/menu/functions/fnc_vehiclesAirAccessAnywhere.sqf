@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_fnc_miscAirAccessAnywhere
+Function: A3USPCM_fnc_vehiclesAirAccessAnywhere
 
 Description:
     Access your air vehicles from any garage
@@ -17,13 +17,13 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNCMAIN(miscAirAccessAnywhere),_this);
+TRACE_1(QFUNCMAIN(vehiclesAirAccessAnywhere),_this);
 
 HR_GRG_Cnd_canAccessAir = { true };
 
 [
-    localize LSTRING(Miscellaneous_AirAccessAnywhereCaption),
-    localize LSTRING(Miscellaneous_AirAccessAnywhereHintDone)
+    localize LSTRING(Vehicles_AirAccessAnywhereCaption),
+    localize LSTRING(Vehicles_AirAccessAnywhereHintDone)
 ] call A3A_fnc_customHint;
 
 playSound "A3AP_UiSuccess";
