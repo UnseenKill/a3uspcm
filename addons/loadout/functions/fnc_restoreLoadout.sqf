@@ -11,6 +11,7 @@ Parameters:
     2: _loadout - Loadout to restore <ARRAY>
 
 Optional:
+    3: _client - Client invoking the function <NUMBER>
 
 Example:
 
@@ -19,17 +20,22 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1("A3USPCM_Loadout_fnc_restoreLoadout",_this);
+TRACE_1(QFUNC(restoreLoadout),_this);
 
 params[
     ["_vehicle", objNull, [objNull]],
     ["_player", objNull, [objNull]],
-    ["_loadout", [], [[]]]
+    ["_loadout", [], [[]]],
+    ["_client", 2, [0]]
 ];
 
 if !assert(!isNull _vehicle) exitWith {};
 if !assert(!isNull _player) exitWith {};
 if !assert(count _loadout > 0) exitWith {};
+
+if (!isServer && hasInterface) exitWith {
+    [_vehicle, _player, _loadout, clientOwner] remoteExec[QFUNC(restoreLoadout), 2];
+};
 
 INFO_3("apply loadout %1 to vehicle %2 (player=%3)",_loadout select 0,typeOf _vehicle,name _player);
 
@@ -42,7 +48,7 @@ private _continue = try {
             [
                 localize LSTRING(HintLoadoutRestoreCaption),
                 format[localize LSTRING(HintLoadoutForceLoadoutText), FORCE_LOADOUT_TIMEOUT]
-            ] call A3A_fnc_customHint;
+            ] remoteExec["A3A_fnc_customHint", _client];
 
             _vehicle setVariable[QGVAR(Timeout), diag_tickTime + FORCE_LOADOUT_TIMEOUT];
             throw "stop";
@@ -53,7 +59,7 @@ private _continue = try {
 
     true;
 } catch {
-    playSound "A3AP_UiFailure";
+    "A3AP_UiFailure" remoteExec["playSound", _client];
     false;
 };
 
@@ -81,7 +87,7 @@ private _error = try {
 };
 
 if !(isNil "_error") exitWith {
-    [localize LSTRING(HintLoadoutRestoreCaption), _error] call A3A_fnc_customHint;
+    [localize LSTRING(HintLoadoutRestoreCaption), _error] remoteExec["A3A_fnc_customHint", _client];
 };
 
 clearBackpackCargoGlobal _vehicle;
@@ -249,10 +255,10 @@ private _message = [LSTRING(HintLoadoutRestoredPartialText), LSTRING(HintLoadout
 [
     localize LSTRING(HintLoadoutRestoreCaption),
     format[localize _message, _title, getText(configOf _vehicle >> "displayName")]
-] call A3A_fnc_customHint;
+] remoteExec["A3A_fnc_customHint", _client];
 
-playSound(["A3AP_UiFailure","A3AP_UiSuccess"] select (_messages isEqualTo []));
+(["A3AP_UiFailure","A3AP_UiSuccess"] select (_messages isEqualTo [])) remoteExec["playSound", _client];
 
-_messages apply { systemChat _x };
+_messages apply { _x remoteExec["systemChat", _client] };
 
 nil;
