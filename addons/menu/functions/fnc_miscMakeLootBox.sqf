@@ -35,7 +35,7 @@ TRACE_1(QFUNCMAIN(miscMakeLootBox),_this);
             playSound "A3AP_UiFailure";
         };
 
-        [_target] remoteExec["SCRT_fnc_loot_addActionLoot", 2];
+        [_target] remoteExec["SCRT_fnc_loot_addActionLoot", [teamPlayer, civilian], _target];
         
         [
             localize LSTRING(Miscellaneous_MakeLootBoxCaption),
