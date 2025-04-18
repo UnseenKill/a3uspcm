@@ -20,6 +20,7 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 if !isServer exitWith {};
+if !EGVAR(main,AceHaveAddon) exitWith {};
 
 INFO("starting cargo loaded statics mount fixes");
 
