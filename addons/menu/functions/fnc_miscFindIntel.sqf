@@ -31,6 +31,8 @@ private _chemlights = getArray(_config >> "Intel" >> "chemlights");
 private _flags = getArray(_config >> "Intel" >> "flags");
 private _laptops = getArray(_config >> "Intel" >> "laptops");
 
+_flags = _flags select EGVAR(main,AceHaveAddon);
+
 INFO_2("'%1' is searching for intel (radius=%2m)",name player,_radius);
 TRACE_4(QGVAR(miscFindIntel),_findAll,_radius,_laptops,_config);
 
@@ -86,7 +88,10 @@ private _intelFound = 0;
         };
         private _flag = createVehicle[_class, [_pos # 0, _pos # 1], [], 0, "CAN_COLLIDE"];
         _flag setDir random 360;
-        [_flag, _flag] call ace_common_fnc_claim; // disables ALL ACE3 interactions
+
+        if EGVAR(main,AceHaveAddon) then {
+            [_flag, _flag] call ace_common_fnc_claim; // disables ALL ACE3 interactions
+        };
 
         _flag addAction[
             localize LSTRING(Miscellaneous_FindIntelCleanupActionText),

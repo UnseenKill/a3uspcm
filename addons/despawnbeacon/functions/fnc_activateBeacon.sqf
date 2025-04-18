@@ -32,8 +32,12 @@ _this spawn {
     if !assert(!isNull _beacon) exitWith {};
     if !assert(!isNull _player) exitWith {};
 
-    [_beacon, _beacon] call ace_common_fnc_claim;
-    [_player, "PutDown"] call ace_common_fnc_doGesture;
+    if !EGVAR(main,AceHaveAddon) then {
+        _player playActionNow "PutDown";
+    } else {
+        [_beacon, _beacon] call ace_common_fnc_claim;
+        [_player, "PutDown"] call ace_common_fnc_doGesture;
+    };
 
     _beacon animateSource["Terminal_source", 100, 1];
     _beacon animateSource["Terminal_source_sound", 100, 1];
@@ -82,7 +86,9 @@ _this spawn {
 
     _beacon setVariable[QGVAR(UAV), _uav];
 
-    [objNull, _beacon] call ace_common_fnc_claim;
+    if EGVAR(main,AceHaveAddon) then {
+        [objNull, _beacon] call ace_common_fnc_claim;
+    };
 
     private _forward = true;
     private _sourceStates = [50, 100];
@@ -121,7 +127,10 @@ _this spawn {
         };
     };
 
-    [_beacon, _beacon] call ace_common_fnc_claim;
+    if EGVAR(main,AceHaveAddon) then {
+        [_beacon, _beacon] call ace_common_fnc_claim;
+    };
+
     TRACE_1("exiting",_beacon);
 
     _beacon animateSource["Progress_source", 0, 2];
@@ -142,7 +151,9 @@ _this spawn {
     _beacon setVariable["ace_dragging_canCarry", true];
     _beacon setVariable["ace_dragging_canDrag", true];
 
-    [objNull, _beacon] call ace_common_fnc_claim;
+    if EGVAR(main,AceHaveAddon) then {
+        [objNull, _beacon] call ace_common_fnc_claim;
+    };
 };
 
 nil;

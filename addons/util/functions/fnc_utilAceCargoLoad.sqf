@@ -33,6 +33,7 @@ params[
 
 if !assert(!isNull _vehicle) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
+if !EGVAR(main,AceHaveAddon) exitWith { true };
 
 if !(_items isEqualType []) then {
     _items = [_items];

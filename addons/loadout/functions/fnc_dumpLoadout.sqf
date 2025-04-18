@@ -37,6 +37,13 @@ systemChat format["Loadout: %1", _lo select 0];
 systemChat format["ACE cargo: %1", _lo select 1 apply { getText(configFile >> "CfgVehicles" >> _x >> "displayName") } joinString ", "];
 
 {
+    if (_x select 0 isEqualType "") then {
+        _X select 1 apply {
+            systemChat getText(configFile >> "CfgWeapons" >> (_x select 0) >> "displayName");
+        };
+        continue;
+    };
+
     private _keys = _x select 0 apply {
         [_x, switch true do {
             case isClass(configFile >> "CfgMagazines" >> _x): { getText(configFile >> "CfgMagazines" >> _x >> "displayName") };

@@ -165,6 +165,54 @@
             <English>Rename loadout to:</English>
             <German>Ausrüstung umbenennen in:</German>
         </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_BtnApply">
+            <English>Apply</English>
+            <German>Anwenden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_BtnApply_tooltip">
+            <English>Apply current loadout</English>
+            <German>Aktuelle Ausrüstung anwenden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_BtnClose">
+            <English>X</English>
+            <German>X</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_BtnDelete">
+            <English>Delete</English>
+            <German>Löschen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_BtnDelete_tooltip">
+            <English>Save current loadout</English>
+            <German>Aktuelle Ausrüstung speichern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_BtnOverwrite">
+            <English>Overwrite</English>
+            <German>Überschreiben</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_BtnOverwrite_tooltip">
+            <English>Overwrite current loadout</English>
+            <German>Aktuelle Ausrüstung überschreiben</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_BtnRename">
+            <English>Rename</English>
+            <German>Umbenennen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_BtnRename_tooltip">
+            <English>Rename current loadout</English>
+            <German>Aktuelle Ausrüstung umbenennen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_BtnSave">
+            <English>Save</English>
+            <German>Speichern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_BtnSave_tooltip">
+            <English>Save current loadout</English>
+            <German>Aktuelle Ausrüstung speichern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Loadout_RscA3USPCMLoadoutManagerDialog_StaticTitle">
+            <English>A3USPCM Loadout Manager</English>
+            <German>A3USPCM Ausrüstungs Manager</German>
+        </Key>
         <Key ID="STR_A3USPCM_Loadout_Settings_Category_DisplayName">
             <English>Vehicle loadout</English>
             <German>Fahrzeugausstattung</German>

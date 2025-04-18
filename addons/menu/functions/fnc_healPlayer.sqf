@@ -21,6 +21,11 @@ Author:
 ---------------------------------------------------------------------------- */
 
 INFO_1("player %1 healed self",name player);
-[player, player] call ace_medical_treatment_fnc_fullHeal;
+
+if !EGVAR(main,AceHaveAddon) then {
+    player setDamage 0;
+} else {
+    [player, player] call ace_medical_treatment_fnc_fullHeal;
+};
 
 nil;

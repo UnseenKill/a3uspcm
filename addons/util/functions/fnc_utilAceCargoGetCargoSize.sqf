@@ -25,7 +25,8 @@ params[
     ["_vehicle", objNull, [objNull]]
 ];
 
-if !assert(!isNull _vehicle) exitWith {0};
+if !assert(!isNull _vehicle) exitWith { 0 };
+if !EGVAR(main,AceHaveAddon) exitWith { 0 };
 
 private _space = _vehicle getVariable["ace_cargo_space", 0];
 private _loaded = _vehicle getVariable ["ace_cargo_loaded", []];
