@@ -218,7 +218,7 @@ if (_turretsMagsInfo isNotEqualTo false) then {
     };
 };
 
-if (_cargoSpace isNotEqualTo false) then {
+if (EGVAR(main,AceHaveAddon) && { _cargoSpace isNotEqualTo false }) then {
     TRACE_1("setting cargo space",_cargoSpace);
     [_vehicle, _cargoSpace] call ace_cargo_fnc_setSpace;
 };

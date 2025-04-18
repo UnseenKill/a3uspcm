@@ -37,7 +37,11 @@ if !assert(!isNull _vehicle) exitWith {};
     "true",
     {},
     {},
-    { call FUNC(openLoadoutManagementDialog) }
+    { call FUNC(openLoadoutManagementDialog) },
+    {},
+    [],
+    3,
+    -200
 ] call BIS_fnc_holdActionAdd;
 
 nil;

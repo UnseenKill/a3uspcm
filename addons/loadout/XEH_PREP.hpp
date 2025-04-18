@@ -13,6 +13,7 @@ PREP(getLoadoutMenuChildren);
 PREP(getLoadouts);
 PREP(initInteractions);
 PREP(onAIVehInit);
+PREP(onDialogOpen);
 PREP(openLoadoutManagementDialog);
 PREP(overwriteLoadout);
 PREP(restoreLoadout);

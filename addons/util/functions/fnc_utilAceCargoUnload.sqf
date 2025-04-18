@@ -34,6 +34,7 @@ params[
 ];
 
 if !assert(!isNull _vehicle) exitWith { false };
+if !EGVAR(main,AceHaveAddon) exitWith { true };
 
 private _unloaded = true;
 
