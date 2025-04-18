@@ -28,20 +28,16 @@ params[
 
 if !assert(!isNull _vehicle) exitWith {};
 
-[
-    _vehicle,
+_vehicle addAction[
     localize LSTRING(HintLoadoutManageCaption),
-    "a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
-    "a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
-    QUOTE([ARR_2(_target,player)] call FUNC(canUseLoadoutMenu)),
-    "true",
-    {},
-    {},
     { call FUNC(openLoadoutManagementDialog) },
-    {},
     [],
-    3,
-    -200
-] call BIS_fnc_holdActionAdd;
+    -200,
+    false,
+    true,
+    "",
+    QUOTE([ARR_2(_target,player)] call FUNC(canUseLoadoutMenu)),
+    5
+];
 
 nil;

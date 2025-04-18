@@ -51,6 +51,10 @@ _control ctrlAddEventHandler["ButtonClick", {
     closeDialog 0;
 }];
 
+if ([GVAR(vehicle)] call FUNCMAIN(utilVehicleHasCargo)) then {
+    _control ctrlEnable true;
+};
+
 // Delete button
 _control = _display displayCtrl IDC_RSCA3USPCMLOADOUTMANAGERDIALOG_BTNDELETE;
 _control ctrlEnable true;
@@ -104,10 +108,6 @@ _control ctrlAddEventHandler["ButtonClick", {
     closeDialog 0;
     [GVAR(vehicle), player, _index] call FUNC(overwriteLoadout);
 }];
-
-if ([GVAR(vehicle)] call FUNCMAIN(utilVehicleHasCargo)) then {
-    _control ctrlEnable true;
-};
 
 // Apply button
 _control = _display displayCtrl IDC_RSCA3USPCMLOADOUTMANAGERDIALOG_BTNAPPLY;
