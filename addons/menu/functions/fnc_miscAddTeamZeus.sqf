@@ -19,15 +19,18 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
+TRACE_1(QFUNCMAIN(miscAddTeamZeus),_this);
 
-INFO_1("player %1 wants team added to Zeus objects",name player);
+INFO_1("player %1 wants team added to Zeus objects",name theBoss);
+
+if (!isServer && hasInterface) exitWith { [] remoteExec[QFUNCMAIN(miscAddTeamZeus), 2] };
 
 allCurators apply {
     _x addCuratorEditableObjects[allUnitsUAV select {
-        player in (UAVControl _x - ["", objNull]);
+        theBoss in (UAVControl _x - ["", objNull]);
     }, true];
-    _x addCuratorEditableObjects[units group player, true];
-    _x addCuratorEditableObjects[flatten(units group player apply {
+    _x addCuratorEditableObjects[units group theBoss, true];
+    _x addCuratorEditableObjects[flatten(units group theBoss apply {
         if isNull objectParent _x then {
             [];
         } else {

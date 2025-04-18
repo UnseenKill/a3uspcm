@@ -37,7 +37,7 @@ if (!isNil QGVAR(Trader_MoveInProgress)) exitWith {};
     localize LSTRING(Trader_HintChooseNewLocation)
 ] call A3A_fnc_customHint;
 
-GVAR(Trader_PositionCandidates) = controlsX select {(!isOnRoad getMarkerPos _x) && (sidesX getVariable [_x,sideUnknown] != teamPlayer)};
+GVAR(Trader_PositionCandidates) = controlsX select {(!isOnRoad getMarkerPos _x) /*&& (sidesX getVariable [_x,sideUnknown] != teamPlayer)*/};
 GVAR(Trader_Markers) = GVAR(Trader_PositionCandidates) apply {
     private _marker = createMarkerLocal[[] call FUNCMAIN(utilGenerateUniqueId),markerPos _x];
     _marker setMarkerShapeLocal "ICON";

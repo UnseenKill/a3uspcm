@@ -1,4 +1,5 @@
 PREP(activateBeacon);
+PREP(addInteractions);
 PREP(canActivate);
 PREP(canDeactivate);
 PREP(canPack);
