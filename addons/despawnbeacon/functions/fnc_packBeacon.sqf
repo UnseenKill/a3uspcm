@@ -31,18 +31,28 @@ params[
 if !assert(!isNull _beacon) exitWith {};
 if !assert(!isNull _player) exitWith {};
 
+#define PACKUP() { \
+    params["_params"]; \
+    _params params["_beacon", "_player"]; \
+    private _gwh = createVehicle["GroundWeaponHolder", getPosATL _beacon, [], 0, "CAN_COLLIDE"]; \
+    deleteVehicle _beacon; \
+    _gwh addItemCargoGlobal[QGVAR(PackedBeacon), 1]; \
+}
+
+if !EGVAR(main,AceHaveAddon) exitWith {
+    _player playActionNow "MedicOther";
+
+    [[_beacon, _player]] spawn {
+        uiSleep 5;
+        _this call PACKUP();
+    };
+};
+
 [_player, "MedicOther"] call ace_common_fnc_doGesture;
 [
     5,
     [_beacon, _player],
-    {
-        params["_params"];
-        _params params["_beacon", "_player"];
-
-        private _gwh = createVehicle["GroundWeaponHolder", getPosATL _beacon, [], 0, "CAN_COLLIDE"];
-        deleteVehicle _beacon;
-        _gwh addItemCargoGlobal[QGVAR(PackedBeacon), 1];
-    },
+    PACKUP(),
     {},
     localize LSTRING(PackingBeaconProgressText)
 ] call ace_common_fnc_progressBar;

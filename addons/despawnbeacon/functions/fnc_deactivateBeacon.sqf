@@ -37,9 +37,12 @@ _this spawn {
 
     if !assert(!isNull _player) exitWith {};
 
-    [_beacon, _beacon] call ace_common_fnc_claim;
-
-    [_player, "PutDown"] call ace_common_fnc_doGesture;
+    if !EGVAR(main,AceHaveAddon) then {
+        _player playActionNow "PutDown";
+    } else {
+        [_beacon, _beacon] call ace_common_fnc_claim;
+        [_player, "PutDown"] call ace_common_fnc_doGesture;
+    };
     _beacon setVariable[QGVAR(active), nil];
 
     TRACE_1(QFUNC(deactivateBeacon_waitState),_beacon);
