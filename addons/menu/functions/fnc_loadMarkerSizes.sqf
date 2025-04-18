@@ -29,6 +29,8 @@ if (GVAR(MarkerSizes) isEqualTo false) then {
         GVAR(MarkerSizes) = createHashMap;
     } else {
         INFO("Loading changed markers from saved data");
+
+        GVAR(MarkerSizes) = createHashMapFromArray GVAR(MarkerSizes);
         GVAR(MarkerSizes) apply {
             TRACE_2(QFUNC(loadMarkerSizes),_x,_y);
             _x setMarkerSize[_y, _y];
