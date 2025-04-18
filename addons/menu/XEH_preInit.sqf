@@ -74,16 +74,18 @@ GVAR(AdditionalBuildables) = false;
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;
+GVAR(MarkerSizes) = false;
 GVAR(Timers) = [false, false];
 
 [
     {
         allCurators apply {
-            _x addCuratorEditableObjects[[player]];
+            _x addCuratorEditableObjects[[theBoss]];
         };
 
         if is3DENPreview exitWith {};
         [] call FUNC(loadAdditionalBuildables);
+        [] call FUNC(loadMarkerSizes);
         [] call FUNC(timerRestore);
         [] call FUNC(commanderMenuAppend);
     }
