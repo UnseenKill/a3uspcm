@@ -26,6 +26,7 @@ params[
 ];
 
 if !assert(!isNull _vehicle) exitWith {[]};
+if !EGVAR(main,AceHaveAddon) exitWith {[]};
 
 ACE_VEHICLE_CARGO(_vehicle) apply {
     if (_x isEqualType objNull) then {

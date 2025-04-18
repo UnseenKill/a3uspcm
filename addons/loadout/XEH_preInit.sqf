@@ -9,6 +9,7 @@ GVAR(Loadouts) = false;
 [
     {
         INFO("loading stored loadouts");
+        [] call FUNC(initInteractions);
         if is3DENPreview exitWith {};
         [] call FUNC(getLoadouts);
     }

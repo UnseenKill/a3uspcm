@@ -29,18 +29,27 @@ params[
 
 if !assert(!isNull _player) exitWith {};
 
+#define UNPACK() { \
+    params["_params"]; \
+    _params params["_player"]; \
+    _player removeItem QGVAR(PackedBeacon); \
+    createVehicle[QEGVAR(assets,DespawnSuppressionBeacon), _player modelToWorld[0,1,0], [], 0, "NONE"]; \
+}
+
+if !EGVAR(main,AceHaveAddon) exitWith {
+    _player playActionNow "PutDown";
+
+    [[_player]] spawn {
+        uiSleep 1.5;
+        _this call UNPACK();
+    };
+};
+
 [_player, "PutDown"] call ace_common_fnc_doGesture;
 [
     1.5,
     [_player],
-    {
-        params["_params"];
-        _params params["_player"];
-
-        _player removeItem QGVAR(PackedBeacon);
-
-        createVehicle[QEGVAR(assets,DespawnSuppressionBeacon), _player modelToWorld[0,1,0], [], 0, "NONE"];
-    },
+    UNPACK(),
     {},
     localize LSTRING(UnpackingBeaconProgressText)
 ] call ace_common_fnc_progressBar;

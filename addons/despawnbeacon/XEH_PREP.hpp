@@ -1,11 +1,14 @@
 PREP(activateBeacon);
 PREP(addInteractions);
+PREP(addInteractionsACE);
+PREP(addInteractionsVanilla);
 PREP(canActivate);
 PREP(canDeactivate);
 PREP(canPack);
 PREP(canUnpack);
 PREP(deactivateBeacon);
 PREP(handlerBeaconPostInit);
+PREP(initItemContextMenu);
 PREP(onBeaconLoaded);
 PREP(onBeaconUnloaded);
 PREP(packBeacon);
