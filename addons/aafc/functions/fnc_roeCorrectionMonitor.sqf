@@ -43,7 +43,7 @@ while { alive theBoss } do {
         TRACE_4(QFUNC(roeCorrectionMonitor),_x,_mode,_expect,_current);
 
         if (_expect isNotEqualTo _current) then {
-            INFO_4("%1: Correcting ROE for %2 (current=%3; expect=%4)", QFUNC(roeCorrectionMonitor), _x, _current, _expect);
+            INFO_4("%1: Correcting ROE for %2 (current=%3; expect=%4)",QFUNC(roeCorrectionMonitor),_x,_current,_expect);
             [_x, _mode, false] call EFUNC(aafc,toggleROE);
         };
     } forEach (GVAR(groups) - [grpNull]);
