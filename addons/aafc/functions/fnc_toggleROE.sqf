@@ -41,11 +41,15 @@ if (_group isEqualType "") then {
 if !assert(!isNull _group) exitWith {};
 
 switch _roe do {
-    case "openFire": {
+    case MODE_OPENFIRE: {
+        _group setVariable[QGVAR(ROE), _roe];
+        _group setBehaviourStrong "COMBAT";
         _group setCombatMode "RED";
         leader _group sideChat localize LSTRING(Message_ROE_AcceptFire);
     };
-    case "holdFire": {
+    case MODE_HOLDFIRE: {
+        _group setVariable[QGVAR(ROE), _roe];
+        _group setBehaviourStrong "SAFE";
         _group setCombatMode "BLUE";
         leader _group sideChat localize LSTRING(Message_ROE_AcceptHold);
     };

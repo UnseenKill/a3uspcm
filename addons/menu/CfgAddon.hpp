@@ -94,6 +94,15 @@ class GVAR(Config) {
                 closeDiary = 1;
             };
 
+            class AddToBuyableStatics {
+                caption = CSTRING(Miscellaneous_AddToBuyableStaticsCaption);
+                text = CSTRING(Miscellaneous_AddToBuyableStaticsText);
+                action = QFUNCMAIN(miscAddToBuyableStatics);
+                closeDiary = 1;
+
+                separator = 1;
+            };
+
             class ShowRoadblocks {
                 caption = CSTRING(Miscellaneous_ShowRoadblocksCaption);
                 text = CSTRING(Miscellaneous_ShowRoadblocksText);

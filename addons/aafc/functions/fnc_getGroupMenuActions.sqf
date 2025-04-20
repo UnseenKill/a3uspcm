@@ -28,7 +28,7 @@ if ({ alive _x } count units _group isEqualTo 0) exitWith {[]};
 
 private _actions = [];
 
-_actions pushBack format["<execute expression='[%1,""openFire""] call %2'>%3</execute>", str groupId _group, QFUNC(toggleROE), localize LSTRING(Menu_ROE_Fire)];
-_actions pushBack format["<execute expression='[%1,""holdFire""] call %2'>%3</execute>", str groupId _group, QFUNC(toggleROE), localize LSTRING(Menu_ROE_Hold)];
+_actions pushBack format["<execute expression='[%1,""%2""] call %3'>%4</execute>", str groupId _group, MODE_OPENFIRE, QFUNC(toggleROE), localize LSTRING(Menu_ROE_Fire)];
+_actions pushBack format["<execute expression='[%1,""%2""] call %3'>%4</execute>", str groupId _group, MODE_HOLDFIRE, QFUNC(toggleROE), localize LSTRING(Menu_ROE_Hold)];
 
 _actions;

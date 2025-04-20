@@ -55,12 +55,14 @@ GVAR(groups) pushBackUnique _group;
 
 switch GVAR(defaultInitialMode) do {
     case "FC_DEFAULT_ANGRY": {
-        _group setBehaviour "COMBAT";
+        _group setBehaviourStrong "COMBAT";
         _group setCombatMode "RED";
+        _group setVariable[QGVAR(ROE), MODE_OPENFIRE];
     };
     case "FC_DEFAULT_CALM": {
-        _group setBehaviour "SAFE";
+        _group setBehaviourStrong "SAFE";
         _group setCombatMode "BLUE";
+        _group setVariable[QGVAR(ROE), MODE_HOLDFIRE];
     };
 };
 

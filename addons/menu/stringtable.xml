@@ -217,6 +217,38 @@
             <English>Add the current cursor target to list of base building objects.</English>
             <German>Füge das aktuelle Cursorziel zur Liste der Basisbauobjekte hinzu.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsCaption">
+            <English>Add as buyable</English>
+            <German>Als kaufbar hinzufügen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsConfirmText">
+            <English>Do you want to add "%1" to base static emplacements list?</English>
+            <German>Möchtest du "%1" zur Liste der Basis-Stellungswaffen hinzufügen?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsHintAlreadyExistsText">
+            <English>Object "%1" is already in the list of buyable static emplacements.</English>
+            <German>Objekt "%1" befindet sich bereits in der Liste der käuflichen statischen Stellungen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsHintNoEmplacementText">
+            <English>"%1" is not a static weapon emplacement.</English>
+            <German>"%1" ist keine statische Waffenstellung.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsHintNoTargetText">
+            <English>You're not pointing at anything.</English>
+            <German>Du zeigst auf nichts.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsHintSuccessText">
+            <English>You can now buy "%1" for the price of %2$.</English>
+            <German>Du kannst "%1" jetzt für den Preis von %2$ kaufen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsPricePromptText">
+            <English>New price</English>
+            <German>Neuer Preis</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsText">
+            <English>Add the current cursor target to list of base buyable statics.</English>
+            <German>Füge das aktuelle Cursorziel zur Liste der Basis-Stellungswaffen hinzu.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_EmergencyInvincibilityCooldownHintText">
             <English>You have recently been immortal. That can't happen any time, though. Wait another %1 seconds.</English>
             <German>Du warst erst vor Kurzem unsterblich. Das kann aber nicht jederzeit passieren. Warte weitere %1 Sekunden.</German>

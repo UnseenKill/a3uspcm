@@ -149,12 +149,12 @@ This mod allows you to control groups of anti-air assets. You may order them to 
 
 #### Changing AA ROE
 
-Once groups have been created, they are available for fire control via the **AA fire control** diary option.
+Once groups have been created, they are available for fire control via the **AA fire control** diary option or an optional keybind.
 
 ### Required mods
 
- * [Antistasi Ultimate - Mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032) - Latest version where this mod was working: **11.5.4**
- * [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057) - Healing, vehicle loadout and object interactions work _exclusively_ with ACE3
+ * [Antistasi Ultimate - Mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032) - Latest version where this mod was working: **11.6.0**
+ * [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057) - Not required, but strongly recommended
 
 Bugs
 ----

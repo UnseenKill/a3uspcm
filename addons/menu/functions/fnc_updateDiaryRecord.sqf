@@ -26,7 +26,7 @@ params[
     ["_config", configNull, [configNull]]
 ];
 
-TRACE_3(QFUNC(updateDiaryRecord),_player,_record,_config);
+//TRACE_3(QFUNC(updateDiaryRecord),_player,_record,_config);
 
 if !assert(!isNull _record) exitWith { diaryRecordNull };
 if !assert(!isNull _config) exitWith { diaryRecordNull };

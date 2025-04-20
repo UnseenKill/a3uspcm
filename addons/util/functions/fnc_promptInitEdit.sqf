@@ -34,7 +34,7 @@ _control ctrlSetTextSelection[0, count _prefill];
 _control ctrlAddEventHandler["KeyUp", {
     params ["_displayOrControl","_key","_shift","_ctrl","_alt"];
 
-    if (_key isEqualTo DIK_RETURN) then {
+    if (_key in [DIK_RETURN, DIK_NUMPADENTER]) then {
         closeDialog 1;
         call FUNC(promptReturn);
     };
