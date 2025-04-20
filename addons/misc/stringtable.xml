@@ -13,6 +13,14 @@
             <English>Wake player up from unconsciousness (press hotkey in Zeus when unconscious)</English>
             <German>Spieler aus Bewusstlosigkeit erwecken (Taste in Zeus drücken, wenn bewusstlos)</German>
         </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_addAceTrenchesToBuildings_DisplayName">
+            <English>Add ACE3 dug trenches to save</English>
+            <German>ACE3 Schützengräben zum Speichstand hinzufügen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_addAceTrenchesToBuildings_Tooltip">
+            <English>Add ACE3 dug trenches to saved buildings list (WARNING: they're subject to garbage collection)</English>
+            <German>Füge ACE3 Schützengräben zur Liste gespeicherter Gebäude hinzu (WARNUNG: sie unterliegen dann der Garbage Collection)</German>
+        </Key>
         <Key ID="STR_A3USPCM_Misc_SnapNeck">
             <English>Snap neck</English>
             <German>Genick brechen</German>

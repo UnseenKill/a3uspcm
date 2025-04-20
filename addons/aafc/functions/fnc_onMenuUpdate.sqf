@@ -21,7 +21,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(onMenuUpdate),_this);
+//TRACE_1(QFUNC(onMenuUpdate),_this);
 
 params[
     ["_player", objNull, [objNull]],

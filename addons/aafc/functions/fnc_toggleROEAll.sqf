@@ -24,13 +24,18 @@ params[
     ["_mode", "", [""]]
 ];
 
-private _groups = GVAR(groups);
+private _groups = GVAR(groups) - [grpNull];
 
 if (_groups isEqualTo []) exitWith {
     [
         localize LSTRING(ROE_Caption),
         localize LSTRING(ROE_NoGroups)
     ] call A3A_fnc_customHint;
+};
+
+if (_mode isEqualTo "") then {
+    _mode = [MODE_OPENFIRE, MODE_HOLDFIRE] select ((_groups select 0) getVariable[QGVAR(ROE), MODE_OPENFIRE] isEqualTo MODE_OPENFIRE);
+    TRACE_2(QFUNC(toggleROEAll),_this,_mode);
 };
 
 {

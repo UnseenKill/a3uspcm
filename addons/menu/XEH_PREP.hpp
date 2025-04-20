@@ -10,6 +10,7 @@ PREP(diaryInitialize);
 PREP(intelCleanupHandler);
 PREP(intelCleanupMarker);
 PREP(loadAdditionalBuildables);
+PREP(loadAdditionalStatics);
 PREP(loadMarkerSizes);
 PREP(resourcesTransfer);
 PREP(teleportObjectBack);

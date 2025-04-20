@@ -30,7 +30,7 @@ if !assert(!isNull _target) exitWith {};
 if !assert(!isNull _player) exitWith {};
 
 [
-    3,
+    1.75,
     _this,
     {
         params["_params"];
