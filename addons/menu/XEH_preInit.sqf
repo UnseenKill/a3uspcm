@@ -81,6 +81,7 @@ if !hasInterface exitWith {
 ADDON = true;
 
 GVAR(AdditionalBuildables) = false;
+GVAR(AdditionalStatics) = false;
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;
@@ -95,6 +96,7 @@ GVAR(Timers) = [false, false];
 
         if is3DENPreview exitWith {};
         [] call FUNC(loadAdditionalBuildables);
+        [] call FUNC(loadAdditionalStatics);
         [] call FUNC(loadMarkerSizes);
         [] call FUNC(timerRestore);
         [] call FUNC(commanderMenuAppend);
