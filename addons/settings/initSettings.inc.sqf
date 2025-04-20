@@ -145,6 +145,7 @@
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
+
 // Music
 
 [
@@ -557,6 +558,16 @@
     true, // global
     {}, // onchange
     false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(misc,addAceTrenchesToBuildings), "CHECKBOX",
+    [ELSTRING(misc,Settings_addAceTrenchesToBuildings_DisplayName), ELSTRING(misc,Settings_addAceTrenchesToBuildings_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    false, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
 [
