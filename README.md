@@ -149,7 +149,7 @@ This mod allows you to control groups of anti-air assets. You may order them to 
 
 #### Changing AA ROE
 
-Once groups have been created, they are available for fire control via the **AA fire control** diary option.
+Once groups have been created, they are available for fire control via the **AA fire control** diary option or an optional keybind.
 
 ### Required mods
 
