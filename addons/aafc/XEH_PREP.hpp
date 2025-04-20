@@ -6,6 +6,7 @@ PREP(onMenuInit);
 PREP(onMenuUpdate);
 PREP(registerAAGroup);
 PREP(reloadCheck);
+PREP(roeCorrectionMonitor);
 PREP(toggleROE);
 PREP(toggleROEAll);
 PREP(updateMenu);

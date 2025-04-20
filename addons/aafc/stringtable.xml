@@ -5,6 +5,14 @@
             <English>A3USPCM - AAFC Component</English>
             <German>A3USPCM - AAFC Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_HotkeysToggleROEAll">
+            <English>Toggle A/A FC ROE</English>
+            <German>Fla-Feuerkontrolle schalten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_HotkeysToggleROEAllTooltip">
+            <English>Toggle A/A fire control rules of engagement for all A/A groups</English>
+            <German>Fla-Feuerkontrolle ROE für alle Fla-Gruppen wechseln</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Menu_ROE_Fire">
             <English>Fire</English>
             <German>Feuer</German>
@@ -104,6 +112,14 @@
         <Key ID="STR_A3USPCM_AAFC_Settings_reportAirOnly_Tooltip">
             <English>AA groups should report aerial contacts only.</English>
             <German>AA Gruppen sollen nur Luftkontakte melden.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_roeCorrectionInterval_DisplayName">
+            <English>ROE correction interval</English>
+            <German>ROE Korrekturintervall</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_roeCorrectionInterval_Tooltip">
+            <English>Time in seconds between ROE corrections (groups sometimes switch to hold-fire on their own for some reason).</English>
+            <German>Zeit in Sekunden zwischen ROE-Korrekturen (Gruppen schalten aus irgendeinem Grund manchmal selbstständig auf Feuer halten).</German>
         </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_sideChatContact_DisplayName">
             <English>Report contacts</English>

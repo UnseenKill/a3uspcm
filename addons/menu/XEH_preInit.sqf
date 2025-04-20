@@ -68,6 +68,16 @@ if !hasInterface exitWith {
     }
 ] call CBA_fnc_addKeybind;
 
+[
+    ELSTRING(main,Title),
+    QEGVAR(aafc,HotkeysToggleROEAll),
+    [ELSTRING(aafc,HotkeysToggleROEAll), ELSTRING(aafc,HotkeysToggleROEAllTooltip)],
+    {},
+    {
+        [""] call EFUNC(aafc,toggleROEAll);
+    }
+] call CBA_fnc_addKeybind;
+
 ADDON = true;
 
 GVAR(AdditionalBuildables) = false;

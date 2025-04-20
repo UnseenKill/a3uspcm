@@ -220,6 +220,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(aafc,roeCorrectionInterval), "SLIDER",
+    [ELSTRING(aafc,Settings_roeCorrectionInterval_DisplayName), ELSTRING(aafc,Settings_roeCorrectionInterval_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    [0, 300, 25, -1], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(aafc,aiSkill), "SLIDER",
     [ELSTRING(aafc,Settings_aiSkill_DisplayName), ELSTRING(aafc,Settings_aiSkill_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
