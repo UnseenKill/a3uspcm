@@ -39,7 +39,7 @@ if !EGVAR(main,AceHaveAddon) exitWith { true };
 private _unloaded = true;
 
 {
-    if (_x in ["ACE_Track","ACE_Wheel"] && !_unloadWheels) then {
+    if (_unloadWheels && (_x in ["ACE_Track","ACE_Wheel"])) then {
         TRACE_2("discard",_vehicle,_x);
         [_x, _vehicle] call ace_cargo_fnc_removeCargoItem;
     } else {
