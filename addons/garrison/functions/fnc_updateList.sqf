@@ -52,7 +52,7 @@ private _entries = markersX select {
         (_showOutposts && _x in outposts) ||
         (_showResources && _x in (resourcesX + factories)) ||
         (_showTowns && _x in citiesX) ||
-        (_showPosts && _x in (aapostsFIA + atpostsFIA + hmgpostsFIA + roadblocksFIA + watchpostsFIA))
+        (_showPosts && _x in (aapostsFIA + atpostsFIA + hmgpostsFIA + roadblocksFIA))
     ) && (
         (_showBLUFOR && sidesX getVariable[_x, sideUnknown] isEqualTo west) ||
         (_showINDEP && sidesX getVariable[_x, sideUnknown] isEqualTo resistance) ||
