@@ -30,9 +30,14 @@ params[
 private _duration = GVAR(empEffectDuration);
 private _range = GVAR(empEffectRangeBlackout);
 private _classes = ["Lamps_base_F","PowerLines_Small_base_F"];
+private _haveCSLA = isClass(configFile >> "CfgPatches" >> "CSLA");
 
 if isClass(configFile >> "CfgPatches" >> "gm_core") then {
     _classes = _classes + ["gm_lamp_euro_80_base"];
+};
+
+if _haveCSLA then {
+    _classes = _classes + ["Land_CSLA_UL_base"];
 };
 
 if (GVAR(empEffectsLights) isEqualType []) then {
@@ -41,6 +46,12 @@ if (GVAR(empEffectsLights) isEqualType []) then {
 
 private _lights = nearestObjects[_position, _classes, _range] select {
     (alive _x) && (_x getVariable[QGVAR(EmpEffect), false] isEqualTo false)
+};
+
+if _haveCSLA then {
+    _lights = _lights + (nearestTerrainObjects[_position, ["HIDE"], _range, false, true] select {
+        (typeOf _x isEqualTo "Land_csla_Rail_Lamp") || (_x isKindOf "Land_CSLA_runway_edgelight_white");
+    });
 };
 
 if (_lights isEqualTo []) exitWith {};
