@@ -44,14 +44,16 @@ if (GVAR(empEffectsLights) isEqualType []) then {
     _classes = _classes + GVAR(empEffectsLights);
 };
 
-private _lights = nearestObjects[_position, _classes, _range] select {
-    (alive _x) && (_x getVariable[QGVAR(EmpEffect), false] isEqualTo false)
-};
+private _lights = nearestObjects[_position, _classes, _range];
 
 if _haveCSLA then {
     _lights = _lights + (nearestTerrainObjects[_position, ["HIDE"], _range, false, true] select {
         (typeOf _x isEqualTo "Land_csla_Rail_Lamp") || (_x isKindOf "Land_CSLA_runway_edgelight_white");
     });
+};
+
+_lights = _lights select {
+    (alive _x) && (_x getVariable[QGVAR(EmpEffect), false] isEqualTo false);
 };
 
 if (_lights isEqualTo []) exitWith {};
