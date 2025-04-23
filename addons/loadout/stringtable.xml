@@ -250,12 +250,12 @@
             <German>Du musst dich in der Nähe einer Flagge befinden, um eine Ausrüstung anzuwenden.</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_Settings_unloadWheels_DisplayName">
-            <English>Unload repair items</English>
-            <German>Entlade Reparaturgegenstände</German>
+            <English>Discard repair items</English>
+            <German>Reparaturgegenstände verwerfen</German>
         </Key>
         <Key ID="STR_A3USPCM_Loadout_Settings_unloadWheels_Tooltip">
-            <English>Prior to applying a loadout, vehicle cargo space is cleared and wheels/tracks are discarded; enable this option to keep those.</English>
-            <German>Vor dem Anwenden einer Ausrüstung wird der Laderaum des Fahrzeugs geleert und Räder/Ketten werden verworfen; aktiviere diese Option, um diese beizubehalten.</German>
+            <English>Prior to applying a loadout, vehicle cargo space is cleared and wheels/tracks can be discarded; disable this option to keep those.</English>
+            <German>Vor dem Anwenden einer Ausrüstung wird der Laderaum des Fahrzeugs geleert und Räder/Ketten können verworfen werden; deaktiviere diese Option, um diese zu behalten.</German>
         </Key>
     </Package>
 </Project>
