@@ -59,7 +59,7 @@ _lights = _lights select {
 if (_lights isEqualTo []) exitWith {};
 
 _lights apply {
-    _x setVariable[QGVAR(EmpEffect), false];
+    _x setVariable[QGVAR(EmpEffect), true];
     [_x, 0.25, "OFF"] call FUNCMAIN(utilLightFlicker);
 };
 
