@@ -745,6 +745,18 @@
             <English>Permanent marker</English>
             <German>Edding</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_PurgeArsenalCaption">
+            <English>Purge arsenal</English>
+            <German>Arsenal aufräumen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_PurgeArsenalText">
+            <English>Clear items no longer found.</English>
+            <German>Entferne Gegenstände, die nicht mehr gefunden werden können.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_PurgeArsenalTextSuccess">
+            <English>Arsenal was purged. %1 item(s) removed.</English>
+            <German>Arsenal wurde aufgeräumt. %1 Gegenstände entfernt.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_SortArsenalCaption">
             <English>Sort arsenal</English>
             <German>Sortiere Arsenal</German>
