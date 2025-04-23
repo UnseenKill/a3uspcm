@@ -110,12 +110,12 @@
             <German>Ziehe Händler um oder starte den Quest.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryUnlocksCaption">
-            <English>Unlock</English>
-            <German>Freischalten</German>
+            <English>Arsenal</English>
+            <German>Arsenal</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryUnlocksText">
-            <English>Unlock items for arsenal</English>
-            <German>Schalte Gegenstände für das Arsenal frei</German>
+            <English>Maintain or unlock items for arsenal</English>
+            <German>Wartung von/schalte Gegenstände für das Arsenal frei</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryVehiclesCaption">
             <English>Vehicles</English>
@@ -718,20 +718,20 @@
             <German>Verschiebe den Händlerstandort an einen anderen Ort auf der Karte oder starte die Händlerquest an diesem Ort.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_AceEHPCaption">
-            <English>ACE3 Electronic Hearing Protection</English>
-            <German>ACE3 Elektronischer Gehörschutz</German>
+            <English>Unlock ACE3 Electronic Hearing Protection</English>
+            <German>ACE3 Elektronischer Gehörschutz freischalten</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_AcePainkillersCaption">
-            <English>ACE3 Painkillers</English>
-            <German>ACE3 Schmerztabletten</German>
+            <English>Unlock ACE3 Painkillers</English>
+            <German>ACE3 Schmerztabletten freischalten</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_BreachingChargeAPCsCaption">
-            <English>Breaching charges - APC</English>
-            <German>Sprengladung - APC</German>
+            <English>Unlock Breaching charges - APC</English>
+            <German>Sprengladung - APC freischalten</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_BreachingChargeTanksCaption">
-            <English>Breaching charges - Tanks</English>
-            <German>Sprengladung - Panzer</German>
+            <English>Unlock Breaching charges - Tanks</English>
+            <German>Sprengladung - Panzer freischalten</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_LoadoutCaption">
             <English>Loadout</English>
@@ -742,8 +742,20 @@
             <German>Schalte alles von deiner aktuellen Ausrüstung frei.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_PermanentMarkerCaption">
-            <English>Permanent marker</English>
-            <German>Edding</German>
+            <English>Unlock Permanent marker</English>
+            <German>Edding freischalten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_PurgeArsenalCaption">
+            <English>Purge arsenal</English>
+            <German>Arsenal aufräumen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_PurgeArsenalText">
+            <English>Clear items no longer found.</English>
+            <German>Entferne Gegenstände, die nicht mehr gefunden werden können.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Unlocks_PurgeArsenalTextSuccess">
+            <English>Arsenal was purged. %1 item(s) removed.</English>
+            <German>Arsenal wurde aufgeräumt. %1 Gegenstände entfernt.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Unlocks_SortArsenalCaption">
             <English>Sort arsenal</English>

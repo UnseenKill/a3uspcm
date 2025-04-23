@@ -22,5 +22,6 @@ PREP(timerSave);
 PREP(timerStart);
 PREP(timerStop);
 PREP(traderMove);
+PREP(unlockPurgeArsenal);
 PREP(unlockSortArsenal);
 PREP(updateDiaryRecord);
