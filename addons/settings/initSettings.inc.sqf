@@ -335,7 +335,7 @@
     QEGVAR(supports,supportBuildingCost), "SLIDER",
     [ELSTRING(supports,Settings_supportBuildingCost_DisplayName), ELSTRING(supports,Settings_supportBuildingCost_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(supports,Settings_Category_DisplayName)],
-    [0, 50000, 15000, 0], // min,max,default,decimals
+    [0, 1500, 2500, 0], // min,max,default,decimals
     true, // global
     {}, // onchange
     true // Needs mission restart
