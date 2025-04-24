@@ -88,6 +88,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = CSTRING(SupportTentArtilleryDisplayName);
 
+        GVAR(supportType) = SUPPORT_TYPE_ARTILLERY;
         GVAR(attachObjects)[] = {
             SUPPORT_TENT_ATTACH_OBJECTS_BASE,
             {"MRL_Magazine_transport_RF",{2.4873,-3.57091,-0.875122},{{-0.707107,-0.707106,0.00109183},{0.00077204,0.00077204,0.999999}}}
@@ -99,6 +100,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = CSTRING(SupportTentCASHelicopterDisplayName);
 
+        GVAR(supportType) = SUPPORT_TYPE_CAS_HELICOPTER;
         GVAR(attachObjects)[] = {
             SUPPORT_TENT_ATTACH_OBJECTS_BASE,
             {"Land_Missle_Trolley_02_F",{2.021,-3.26353,-0.564541},{{-0.866025,-0.499999,0.00105463},{0.00077204,0.00077204,0.999999}}}
@@ -110,6 +112,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = CSTRING(SupportTentCASPlaneDisplayName);
 
+        GVAR(supportType) = SUPPORT_TYPE_CAS_PLANE;
         GVAR(attachObjects)[] = {
             SUPPORT_TENT_ATTACH_OBJECTS_BASE,
             {"Land_Bomb_Trolley_01_F",{1.39502,-3.55845,-0.563847},{{-0.851979,-0.523574,0.0010618},{0.000771824,0.00077204,0.999999}}}
@@ -121,6 +124,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = CSTRING(SupportTentTransportDisplayName);
 
+        GVAR(supportType) = SUPPORT_TYPE_TRANSPORT;
         GVAR(attachObjects)[] = {
             SUPPORT_TENT_ATTACH_OBJECTS_BASE,
             {"Land_Pallet_MilBoxes_F",{1.23633,-3.61195,-0.84774},{{0,1,-0.00077204},{0.00077204,0.00077204,0.999999}}}

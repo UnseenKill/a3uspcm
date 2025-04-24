@@ -6,19 +6,14 @@ Description:
     Post-init handler for support tents (server side)
 
 Parameters:
-    0: _param1 - description <TYPE>
-    1: _param2 - description <TYPE>
+    0: _tent - Support tent object <OBJECT>
 
 Optional:
-    2: _param3 - description <TYPE>
 
 Example:
-    (begin example)
-    ["param1", "param2"] call PREFIX_fnc_name;
-    (end example)
 
 Returns:
-    Return description <TYPE>
+    Nothing
 
 Author:
     goreSplatter
@@ -38,5 +33,21 @@ getArray(configOf _tent >> QGVAR(attachObjects)) apply {
     _object attachTo[_tent, _pos];
     _object setVectorDirAndUp _vdup;
 };
+
+_tent addEventHandler["Deleted", {
+    TRACE_1(QFUNC(handlerSupportTentPostInit_DeletedEH),_this);
+    params["_tent"];
+
+    attachedObjects _tent apply { deleteVehicle _x };
+    call FUNC(handlerSupportTentKilled);
+}];
+
+_tent addEventHandler["Killed", {
+    TRACE_1(QFUNC(handlerSupportTentPostInit_KilledEH),_this);
+    params["_tent"];
+
+    attachedObjects _tent apply { _x setDamage 1 };
+    call FUNC(handlerSupportTentKilled);
+}];
 
 nil;
