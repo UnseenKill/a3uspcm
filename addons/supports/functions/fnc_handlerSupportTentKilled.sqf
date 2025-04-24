@@ -28,6 +28,8 @@ if !assert(!isNull _tent) exitWith {};
 
 private _supportType = getText(configOf _tent >> QGVAR(supportType));
 
+GVAR(supportBuildings) deleteAt _supportType;
+
 INFO_2("Support tent '%1' killed; revoking %2 support",getText(configOf _tent >> "displayName"),_supportType);
 
 private _module = [_supportType] call FUNC(getSupportModule);

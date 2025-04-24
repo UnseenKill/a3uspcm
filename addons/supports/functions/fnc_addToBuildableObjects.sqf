@@ -21,7 +21,7 @@ Author:
 TRACE_1(QFUNC(addToBuildableObjects),_this);
 
 params[
-    ["_config",objNull,[objNull]]
+    ["_config",configNull,[configNull]]
 ];
 
 if !assert(!isNull _config) exitWith {};
