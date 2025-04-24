@@ -5,4 +5,5 @@ PREP(canUseAssignSupportRoleMenu);
 PREP(canAssignSupport);
 PREP(getSupportModule);
 PREP(getSupportProviderModule);
+PREP(handlerSupportTentPostInit);
 PREP(revokeSupportRoleFromVehicle);

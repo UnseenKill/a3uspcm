@@ -33,5 +33,21 @@
             <English>Revoke support role</English>
             <German>Unterstützungsrolle aufheben</German>
         </Key>
+        <Key ID="STR_A3USPCM_Supports_SupportTentArtilleryDisplayName">
+            <English>Artillery support tent</English>
+            <German>Zelt zur Artillerieunterstützung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_SupportTentCasHelicopterDisplayName">
+            <English>CAS Helicopter support tent</English>
+            <German>Zelt zur CAS-Helikopterunterstützung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_SupportTentCasPlaneDisplayName">
+            <English>CAS Plane support tent</English>
+            <German>Zelt zur CAS-Flugzeugunterstützung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_SupportTentTransportDisplayName">
+            <English>Air transport support tent</English>
+            <German>Zelt zur Lufttransportunterstützung</German>
+        </Key>
     </Package>
 </Project>

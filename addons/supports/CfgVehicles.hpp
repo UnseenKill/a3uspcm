@@ -45,8 +45,24 @@
         }; \
     }
 
+// THIS FUCKING += OPERATOR. WHEN. DOES. IT. WORK.
+#define SUPPORT_TENT_ATTACH_OBJECTS_BASE \
+            {"Land_PortableDesk_01_black_F",{0.85791,0.200492,-0.764919},{{-1,1.56148e-06,0.000771823},{0.000771824,0.00077204,0.999999}}}, \
+            {"Land_DeskChair_01_black_F",{0.193848,0.962382,-0.988018},{{1,-1.11643e-06,-0.000771824},{0.000771824,0.00077204,0.999999}}}, \
+            {"Land_Laptop_03_black_F",{0.826172,0.94807,-0.154469},{{1,-1.11643e-06,-0.000771824},{0.000771824,0.00077204,0.999999}}}, \
+            {"Land_TentLamp_01_suspended_F",{-0.00878906,1.50576,1.02723},{{-1,1.19249e-08,0},{0,0,1}}}, \
+            {"Land_PortableCabinet_01_bookcase_sand_F",{-1.01123,1.09114,-0.790859},{{-0.5,0.866026,-0.000282695},{0.000771824,0.00077204,0.999999}}}, \
+            {"Land_Document_01_F",{0.814453,0.274359,-0.307304},{{0.866025,0.499999,-0.00105444},{0.000771824,0.00077204,0.999999}}}, \
+            {"Land_Notepad_F",{0.725098,-0.712944,-0.310806},{{0,1,-0.00077204},{0.000771824,0.00077204,0.999999}}}, \
+            {"Land_PenRed_F",{0.710938,-0.838918,-0.314308},{{-0.866025,0.500001,0.000282398},{0.000771824,0.00077204,0.999999}}}, \
+            {"Land_DataTerminal_01_F",{-1.14111,-3.00419,-1.28695},{{0,1,-0.00077204},{0.000771824,0.00077204,0.999999}}}, \
+            {"Land_PlasticCase_01_medium_olive_F",{-0.921875,-0.884279,-1.01468},{{-8.02678e-07,-1,0.000772041},{0.000771824,0.00077204,0.999999}}} \
+
+class CBA_Extended_EventHandlers_base;
+
 class CfgVehicles {
     class Air;
+    class Land_ConnectorTent_01_NATO_closed_F;
     class LandVehicle;
     class Ship;
 
@@ -55,4 +71,59 @@ class CfgVehicles {
     VEHICLE_SUPPORT_ACTIONS(Helicopter,Air);
     VEHICLE_SUPPORT_ACTIONS(Plane,Air);
     VEHICLE_SUPPORT_ACTIONS(Ship_F,Ship);
+
+    class GVAR(SupportTentBase) : Land_ConnectorTent_01_NATO_closed_F {
+        scope = 0;
+        scopeCurator = 0;
+        author = "$STR_A3USPCM_Author";
+        authors[] = {"goreSplatter"};
+
+        class EventHandlers {
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+        };
+    };
+
+    class GVAR(SupportTentArtillery) : GVAR(SupportTentBase) {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = CSTRING(SupportTentArtilleryDisplayName);
+
+        GVAR(attachObjects)[] = {
+            SUPPORT_TENT_ATTACH_OBJECTS_BASE,
+            {"MRL_Magazine_transport_RF",{2.4873,-3.57091,-0.875122},{{-0.707107,-0.707106,0.00109183},{0.00077204,0.00077204,0.999999}}}
+        };
+    };
+
+    class GVAR(SupportTentCASHelicopter) : GVAR(SupportTentBase) {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = CSTRING(SupportTentCASHelicopterDisplayName);
+
+        GVAR(attachObjects)[] = {
+            SUPPORT_TENT_ATTACH_OBJECTS_BASE,
+            {"Land_Missle_Trolley_02_F",{2.021,-3.26353,-0.564541},{{-0.866025,-0.499999,0.00105463},{0.00077204,0.00077204,0.999999}}}
+        };
+    };
+
+    class GVAR(SupportTentCASPlane) : GVAR(SupportTentBase) {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = CSTRING(SupportTentCASPlaneDisplayName);
+
+        GVAR(attachObjects)[] = {
+            SUPPORT_TENT_ATTACH_OBJECTS_BASE,
+            {"Land_Bomb_Trolley_01_F",{1.39502,-3.55845,-0.563847},{{-0.851979,-0.523574,0.0010618},{0.000771824,0.00077204,0.999999}}}
+        };
+    };
+
+    class GVAR(SupportTentTransport) : GVAR(SupportTentBase) {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = CSTRING(SupportTentTransportDisplayName);
+
+        GVAR(attachObjects)[] = {
+            SUPPORT_TENT_ATTACH_OBJECTS_BASE,
+            {"Land_Pallet_MilBoxes_F",{1.23633,-3.61195,-0.84774},{{0,1,-0.00077204},{0.00077204,0.00077204,0.999999}}}
+        };
+    };
 };
