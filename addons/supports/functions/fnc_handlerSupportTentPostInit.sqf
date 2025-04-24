@@ -26,6 +26,23 @@ params[
 
 if !assert(!isNull _tent) exitWith {};
 if !assert(GVAR(tentGuysGroup) isEqualType grpNull) exitWith {};
+if !assert(GVAR(supportBuildings) isEqualType createHashMap) exitWith {};
+
+private _supportType = getText(configOf _tent >> QGVAR(supportType));
+
+if (_supportType in GVAR(supportBuildings)) exitWith {
+    ERROR_1("Found another %1 instance. Deleting.",typeOf _tent);
+    deleteVehicle _tent;
+};
+
+GVAR(supportBuildings) set[_supportType, _tent];
+
+// Remove from buildable objects
+if !isNil "A3A_buildableObjects" then {
+    A3A_buildableObjects = A3A_buildableObjects select {
+        _x select 0 isNotEqualTo typeOf _tent
+    };
+};
 
 getArray(configOf _tent >> QGVAR(attachObjects)) apply {
     _x params["_class","_pos","_vdup","_isSimple"];

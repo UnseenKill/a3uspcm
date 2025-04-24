@@ -1,3 +1,5 @@
+PREP(addToBuildableObjects);
+PREP(appendBuildables);
 PREP(assignSupportRoleToVehicle);
 PREP(canRevokeSupportRole);
 PREP(canUseSupportsMenu);

@@ -90,6 +90,8 @@ class CfgVehicles {
     class GVAR(SupportTentArtillery) : GVAR(SupportTentBase) {
         scope = 2;
         scopeCurator = 2;
+
+        costMultiplier = 1.25;
         displayName = CSTRING(SupportTentArtilleryDisplayName);
 
         GVAR(supportType) = SUPPORT_TYPE_ARTILLERY;
@@ -104,6 +106,8 @@ class CfgVehicles {
     class GVAR(SupportTentCASHelicopter) : GVAR(SupportTentBase) {
         scope = 2;
         scopeCurator = 2;
+
+        costMultiplier = 1.75;
         displayName = CSTRING(SupportTentCASHelicopterDisplayName);
 
         GVAR(supportType) = SUPPORT_TYPE_CAS_HELICOPTER;
@@ -118,6 +122,8 @@ class CfgVehicles {
     class GVAR(SupportTentCASPlane) : GVAR(SupportTentBase) {
         scope = 2;
         scopeCurator = 2;
+
+        costMultiplier = 2;
         displayName = CSTRING(SupportTentCASPlaneDisplayName);
 
         GVAR(supportType) = SUPPORT_TYPE_CAS_PLANE;

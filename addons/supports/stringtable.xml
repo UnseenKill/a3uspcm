@@ -33,6 +33,26 @@
             <English>Revoke support role</English>
             <German>Unterstützungsrolle aufheben</German>
         </Key>
+        <Key ID="STR_A3USPCM_Supports_Settings_Category_DisplayName">
+            <English>Supports</English>
+            <German>Unterstützung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_Settings_requireSupportBuildings_DisplayName">
+            <English>Require support buildings</English>
+            <German>Benötige Unterstützungsgebäude</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_Settings_requireSupportBuildings_Tooltip">
+            <English>Require support buildings to be placed in order to use the support system.</English>
+            <German>Benötige Unterstützungsgebäude, um das Unterstützungssystem nutzen zu können.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_Settings_supportBuildingCost_DisplayName">
+            <English>Support building cost</English>
+            <German>Unterstützungsgebäude Kosten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_Settings_supportBuildingCost_Tooltip">
+            <English>Cost of support buildings.</English>
+            <German>Kosten der Unterstützungsgebäude.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Supports_SupportTentArtilleryDisplayName">
             <English>Artillery support tent</English>
             <German>Zelt zur Artillerieunterstützung</German>

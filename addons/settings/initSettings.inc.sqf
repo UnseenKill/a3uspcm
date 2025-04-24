@@ -319,6 +319,28 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+// Supports
+
+[
+    QEGVAR(supports,requireSupportBuildings), "CHECKBOX",
+    [ELSTRING(supports,Settings_requireSupportBuildings_DisplayName), ELSTRING(supports,Settings_requireSupportBuildings_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(supports,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(supports,supportBuildingCost), "SLIDER",
+    [ELSTRING(supports,Settings_supportBuildingCost_DisplayName), ELSTRING(supports,Settings_supportBuildingCost_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(supports,Settings_Category_DisplayName)],
+    [0, 50000, 15000, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Loadout
 
 [

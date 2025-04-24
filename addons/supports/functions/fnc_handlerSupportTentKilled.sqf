@@ -37,4 +37,6 @@ synchronizedObjects _module apply {
     _module synchronizeObjectsRemove[_x];
 };
 
+[configOf _tent] call FUNC(addToBuildableObjects);
+
 nil;
