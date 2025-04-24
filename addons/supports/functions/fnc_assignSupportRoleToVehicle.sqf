@@ -34,9 +34,10 @@ if !assert(!isNull _player) exitWith { false };
 private _module = [_supportType] call FUNC(getSupportModule);
 
 if (crew _vehicle isEqualTo []) then {
+    _module synchronizeObjectsAdd[_vehicle];
+
     private _group = side _player createVehicleCrew _vehicle;
     _player hcSetGroup[_group];
-    _module synchronizeObjectsAdd[_vehicle];
 } else {
     private _seats = createHashMapFromArray[
         ["driver", driver _vehicle],
@@ -64,6 +65,8 @@ if (crew _vehicle isEqualTo []) then {
     };
 };
 
+_vehicle setVariable[QGVAR(supportType), _supportType, true];
+group(crew _vehicle select 0) setVariable[QGVAR(supportType), _supportType, true];
 
 TRACE_3(QFUNC(assignSupportRoleToVehicle),_module,_vehicle,synchronizedObjects _module apply { typeOf _x });
 

@@ -13,9 +13,25 @@
             <English>Artillery</English>
             <German>Ferngärtner</German>
         </Key>
+        <Key ID="STR_A3USPCM_Supports_MenuSupportsAssignAsCasHelicopter">
+            <English>CAS Helicopter</English>
+            <German>CAS Helikopter</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MenuSupportsAssignAsCasPlane">
+            <English>CAS Plane (Bombing)</English>
+            <German>CAS Flugzeug (Bomben)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MenuSupportsAssignAsTransport">
+            <English>Air transport</English>
+            <German>Lufttransport</German>
+        </Key>
         <Key ID="STR_A3USPCM_Supports_MenuSupportsAssignRole">
             <English>Assign role...</English>
             <German>Rolle zuweisen...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MenuSupportsRevokeRole">
+            <English>Revoke support role</English>
+            <German>Unterstützungsrolle aufheben</German>
         </Key>
     </Package>
 </Project>
