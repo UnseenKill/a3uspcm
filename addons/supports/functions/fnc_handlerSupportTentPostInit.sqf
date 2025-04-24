@@ -27,11 +27,20 @@ params[
 if !assert(!isNull _tent) exitWith {};
 
 getArray(configOf _tent >> QGVAR(attachObjects)) apply {
-    _x params["_class","_pos","_vdup"];
+    _x params["_class","_pos","_vdup","_isSimple"];
 
-    private _object = createSimpleObject[_class, [0,0,100], false];
+    private _object = if (_isSimple isNotEqualTo 0) then {
+        createSimpleObject[_class, [0,0,100], false];
+    } else {
+        _class createVehicle[0,0,0];
+    };
+
     _object attachTo[_tent, _pos];
     _object setVectorDirAndUp _vdup;
+
+    if (_object isKindOf "CAManBase") then {
+        _object playMove "AidlPercMstpSnonWnonDnon_G01";
+    };
 };
 
 _tent addEventHandler["Deleted", {
