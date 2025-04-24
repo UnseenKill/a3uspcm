@@ -19,8 +19,6 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(canUseSupportsMenu),_this);
-
 params[
     ["_vehicle",objNull,[objNull]],
     ["_player",objNull,[objNull]]

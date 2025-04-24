@@ -23,6 +23,4 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(canUseAssignSupportRoleMenu),_this);
-
 true;

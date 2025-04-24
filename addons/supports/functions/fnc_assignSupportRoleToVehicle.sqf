@@ -31,13 +31,44 @@ params[
 if !assert(!isNull _vehicle) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
 
+private _module = [_supportType] call FUNC(getSupportModule);
+
 if (crew _vehicle isEqualTo []) then {
     private _group = side _player createVehicleCrew _vehicle;
     _player hcSetGroup[_group];
+    _module synchronizeObjectsAdd[_vehicle];
+} else {
+    private _seats = createHashMapFromArray[
+        ["driver", driver _vehicle],
+        ["gunner", gunner _vehicle],
+        ["commander", commander _vehicle]
+    ];
+    private _nonCargo = values _seats;
+    private _cargo = [];
+
+    crew _vehicle apply {
+        if !(_x in _nonCargo) then {
+            _cargo pushBack _x;
+        };
+
+        moveOut _x;
+    };
+
+    _module synchronizeObjectsAdd[_vehicle];
+
+    _vehicle moveInDriver(_seats getOrDefault["driver", objNull]);
+    _vehicle moveInGunner(_seats getOrDefault["gunner", objNull]);
+    _vehicle moveInCommander(_seats getOrDefault["commander", objNull]);
+    _cargo apply {
+        _vehicle moveInCargo _x;
+    };
 };
 
-private _module = [_supportType] call FUNC(getSupportModule);
 
-_vehicle synchronizeObjectsAdd[_module];
+TRACE_3(QFUNC(assignSupportRoleToVehicle),_module,_vehicle,synchronizedObjects _module apply { typeOf _x });
+
+allCurators apply {
+    _x addCuratorEditableObjects[[_vehicle], true];
+};
 
 nil;

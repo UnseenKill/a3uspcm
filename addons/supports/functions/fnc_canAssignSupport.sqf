@@ -36,7 +36,7 @@ private _check = switch true do {
         private _group = group(crew _vehicle select 0);
 
         if !(_group in hcAllGroups theBoss) then { breakWith false };
-        _group getVariable[QGVAR(supportType), false] isNotEqualTo false;
+        _group getVariable[QGVAR(supportType), false] isEqualTo false;
     };
 };
 
