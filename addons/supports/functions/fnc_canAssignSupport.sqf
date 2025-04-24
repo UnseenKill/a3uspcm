@@ -29,8 +29,10 @@ params[
 if !assert(!isNull _vehicle) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
 
+if (_vehicle getVariable[QGVAR(supportType), false] isNotEqualTo false) exitWith { false };
+
 private _check = switch true do {
-    case(_vehicle isKindOf "Air"): { _vehicle getVariable[QGVAR(supportType), false] isEqualTo false };
+    case(_vehicle isKindOf "Air"): { true };
     case(crew _vehicle isEqualTo []): { false };
     default {
         private _group = group(crew _vehicle select 0);

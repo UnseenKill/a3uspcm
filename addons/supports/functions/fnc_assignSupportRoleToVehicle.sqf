@@ -53,6 +53,7 @@ if (crew _vehicle isEqualTo []) then {
         };
 
         moveOut _x;
+        doStop _x;
     };
 
     _module synchronizeObjectsAdd[_vehicle];

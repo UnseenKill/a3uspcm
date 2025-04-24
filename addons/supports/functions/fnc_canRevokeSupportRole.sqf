@@ -1,9 +1,9 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_supports_fnc_canUseAssignSupportRoleMenu
+Function: A3USPCM_supports_fnc_canRevokeSupportRole
 
 Description:
-    Callback function to check if the assign support role menu can be opened.
+    Callback function to check if the revoke support role can be used.
 
 Parameters:
     0: _vehicle - Target <OBJECT>
@@ -19,4 +19,9 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-true;
+params[
+    ["_vehicle", objNull, [objNull]],
+    ["_player", objNull, [objNull]]
+];
+
+_vehicle getVariable[QGVAR(supportType), false] isNotEqualTo false
