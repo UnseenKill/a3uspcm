@@ -25,6 +25,7 @@ params[
 ];
 
 if !assert(!isNull _tent) exitWith {};
+if !assert(GVAR(tentGuysGroup) isEqualType grpNull) exitWith {};
 
 getArray(configOf _tent >> QGVAR(attachObjects)) apply {
     _x params["_class","_pos","_vdup","_isSimple"];
@@ -35,11 +36,32 @@ getArray(configOf _tent >> QGVAR(attachObjects)) apply {
         _class createVehicle[0,0,0];
     };
 
-    _object attachTo[_tent, _pos];
-    _object setVectorDirAndUp _vdup;
+    if !(_object isKindOf "CAManBase") then {
+        _object attachTo[_tent, _pos];
+        _object setVectorDirAndUp _vdup;
+    } else {
+        deleteVehicle _object;
+        _object = GVAR(tentGuysGroup) createUnit[_class, [0,0,0], [], 0, "NONE"];
+        _object disableAI "MOVE";
+        _object disableAI "AUTOTARGET";
+        _object setBehaviour "SAFE";
+        _object setPosASL (_tent modelToWorld _pos);
+        _object setDir (getDir _tent + 180);
 
-    if (_object isKindOf "CAManBase") then {
-        _object playMove "AidlPercMstpSnonWnonDnon_G01";
+        // Don't let them be in sync animating
+        [
+            {
+                params["_object"];
+                _object playMoveNow "Acts_A_M01_briefing";
+            },
+            [_object],
+            (random 1000) / 100
+        ] call CBA_fnc_waitAndExecute;
+
+        // No tapping shoulders or anything
+        if EGVAR(main,AceHaveAddon) then {
+            [_object, _object] call ace_common_fnc_claim;
+        };
     };
 };
 

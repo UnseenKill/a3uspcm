@@ -61,6 +61,7 @@ class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles {
     class Air;
+    class B_Deck_Crew_F;
     class Land_ConnectorTent_01_NATO_closed_F;
     class LandVehicle;
     class Ship;
@@ -70,6 +71,10 @@ class CfgVehicles {
     VEHICLE_SUPPORT_ACTIONS(Helicopter,Air);
     VEHICLE_SUPPORT_ACTIONS(Plane,Air);
     VEHICLE_SUPPORT_ACTIONS(Ship_F,Ship);
+
+    class GVAR(I_Deck_Crew_F) : B_Deck_Crew_F {
+        faction = "IND_E_F";
+    };
 
     class GVAR(SupportTentBase) : Land_ConnectorTent_01_NATO_closed_F {
         scope = 0;
@@ -118,7 +123,7 @@ class CfgVehicles {
         GVAR(supportType) = SUPPORT_TYPE_CAS_PLANE;
         GVAR(attachObjects)[] = {
             SUPPORT_TENT_ATTACH_OBJECTS_BASE,
-            {"Land_Bomb_Trolley_01_F",{1.39502,-3.55845,-0.563847},{{-0.851979,-0.523574,0.0010618},{0.000771824,0.00077204,0.999999}},1},
+            {"Land_Bomb_Trolley_01_F",{2.15771,-3.29966,-0.563881},{{-0.851979,-0.523574,0.00106198},{0.00077204,0.00077204,0.999999}},1},
             {"Land_TentLamp_01_suspended_red_F",{-0.00830078,1.50576,1.02703},{{-1,1.19249e-08,0},{0,0,1}},0},
             {"I_pilot_F",{-0.246094,0.105128,-1.20744},{{-8.74228e-08,-1,0},{0,0,1}},0}
         };
@@ -134,7 +139,7 @@ class CfgVehicles {
             SUPPORT_TENT_ATTACH_OBJECTS_BASE,
             {"Land_TentLamp_01_suspended_F",{-0.00830078,1.50576,1.02703},{{-1,1.19249e-08,0},{0,0,1}},0},
             {"Land_Pallet_MilBoxes_F",{1.23633,-3.61195,-0.84774},{{0,1,-0.00077204},{0.00077204,0.00077204,0.999999}},1},
-            {"B_Deck_Crew_F",{-0.246094,0.105128,-1.20744},{{-8.74228e-08,-1,0},{0,0,1}},0}
+            {QGVAR(I_Deck_Crew_F),{-0.246094,0.105128,-1.20744},{{-8.74228e-08,-1,0},{0,0,1}},0}
         };
     };
 };

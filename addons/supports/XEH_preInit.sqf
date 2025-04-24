@@ -6,5 +6,7 @@ ADDON = true;
 
 GVAR(moduleSupportProvider) = objNull;
 GVAR(moduleProviders) = createHashMap;
+GVAR(tentGuysGroup) = createGroup[resistance, true];
+GVAR(tentGuysGroup) setVariable["ace_map_hideBlueForceMarker", true];
 
 nil;
