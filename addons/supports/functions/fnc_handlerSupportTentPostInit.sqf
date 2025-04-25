@@ -67,6 +67,7 @@ getArray(configOf _tent >> QGVAR(attachObjects)) apply {
         _object setVectorDirAndUp _vdup;
     } else {
         deleteVehicle _object;
+
         _object = GVAR(tentGuysGroup) createUnit[_class, [0,0,0], [], 0, "NONE"];
         _object disableAI "MOVE";
         _object disableAI "AUTOTARGET";
@@ -91,6 +92,13 @@ getArray(configOf _tent >> QGVAR(attachObjects)) apply {
         if EGVAR(main,AceHaveAddon) then {
             [_object, _object] call ace_common_fnc_claim;
         };
+
+        // Lose support if guy is killed
+        _object setVariable[QGVAR(tent), _tent];
+        _object addEventHandler["Killed", {
+            params["_unit","_killer","_instigator","_useEffects"];
+            [_unit getVariable QGVAR(tent)] call FUNC(handlerSupportTentKilled);
+        }];
     };
 };
 
