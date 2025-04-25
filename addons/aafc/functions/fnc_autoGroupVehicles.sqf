@@ -24,7 +24,8 @@ _this spawn {
 
     private _grouped = [];
     private _vehicles = allUnitsUAV select {
-        _x getVariable["ownerSide", sideUnknown] isEqualTo side theBoss
+        (_x getVariable[QGVAR(autoGroup), true] isEqualTo true) &&
+        (_x getVariable["ownerSide", sideUnknown] isEqualTo side theBoss)
     };
 
     while { _vehicles isNotEqualTo [] } do {

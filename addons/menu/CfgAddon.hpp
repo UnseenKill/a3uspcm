@@ -352,6 +352,12 @@ class GVAR(Config) {
                 text = CSTRING(Unlocks_SortArsenalText);
                 action = QFUNC(unlockSortArsenal);
             };
+
+            class PurgeArsenal {
+                caption = CSTRING(Unlocks_PurgeArsenalCaption);
+                text = CSTRING(Unlocks_PurgeArsenalText);
+                action = QFUNC(unlockPurgeArsenal);
+            };
         };
 
         class Vehicles {

@@ -8,17 +8,17 @@ Description:
 Parameters:
     0: _vehicle - Vehicle to unload cargo from <OBJECT>
     1: _unloader - Player doing the unloading <OBJECT>
-    2: _unloadWheels - Unload and deploy (true) wheels or just unload and discard (false) <BOOL>
+    2: _discardRepairItems - Unload and deploy (false) wheels/tracks or just discard (true) <BOOL>
 
 Optional:
 
 Example:
     (begin example)
     // Unload all cargo from vehicle, dispose of wheels
-    [vehicle player, false] call A3USPCM_fnc_utilAceCargoUnload;
+    [vehicle player, true] call A3USPCM_fnc_utilAceCargoUnload;
 
     // Unload all cargo from vehicle, also wheels
-    [vehicle player, true] call A3USPCM_fnc_utilAceCargoUnload;
+    [vehicle player, false] call A3USPCM_fnc_utilAceCargoUnload;
     (end example)
 
 Returns:
@@ -30,7 +30,7 @@ Author:
 params[
     ["_vehicle", objNull, [objNull]],
     ["_player", objNull, [objNull]],
-    ["_unloadWheels", false, [false]]
+    ["_discardRepairItems", false, [false]]
 ];
 
 if !assert(!isNull _vehicle) exitWith { false };
@@ -39,7 +39,7 @@ if !EGVAR(main,AceHaveAddon) exitWith { true };
 private _unloaded = true;
 
 {
-    if (_x in ["ACE_Track","ACE_Wheel"] && !_unloadWheels) then {
+    if (_discardRepairItems && (_x in ["ACE_Track","ACE_Wheel"])) then {
         TRACE_2("discard",_vehicle,_x);
         [_x, _vehicle] call ace_cargo_fnc_removeCargoItem;
     } else {
