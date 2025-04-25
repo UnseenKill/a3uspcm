@@ -28,12 +28,16 @@ if !assert(!isNull _tent) exitWith {};
 if !assert(GVAR(tentGuysGroup) isEqualType grpNull) exitWith {};
 if !assert(GVAR(supportBuildings) isEqualType createHashMap) exitWith {};
 
-private _supportType = getText(configOf _tent >> QGVAR(supportType));
-
 if !GVAR(requireSupportBuildings) exitWith {
     INFO_1("Support buildings are disabled. Deleting %1",typeOf _tent);
     deleteVehicle _tent;
 };
+
+if !(isNil "A3A_building_EHDB") exitWith {
+    INFO_1("Tent %1 created in base builder. Doing nothing.",typeOf _tent);
+};
+
+private _supportType = getText(configOf _tent >> QGVAR(supportType));
 
 if (_supportType in GVAR(supportBuildings)) exitWith {
     ERROR_1("Found another %1 instance. Deleting.",typeOf _tent);
