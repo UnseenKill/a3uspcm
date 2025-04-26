@@ -73,7 +73,9 @@ class CfgVehicles {
     VEHICLE_SUPPORT_ACTIONS(Ship_F,Ship);
 
     class GVAR(I_Deck_Crew_F) : B_Deck_Crew_F {
-        faction = "IND_E_F";
+        faction = "IND_F";
+        modelSides[] = {2,3};
+        side = 2;
     };
 
     class GVAR(SupportTentBase) : Land_ConnectorTent_01_NATO_closed_F {
