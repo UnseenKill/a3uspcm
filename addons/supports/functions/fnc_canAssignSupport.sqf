@@ -35,7 +35,7 @@ if (_vehicle getVariable[QGVAR(supportType), false] isNotEqualTo false) exitWith
 
 private _check = switch true do {
     case(_vehicle isKindOf "Air"): { true };
-    case(crew _vehicle isEqualTo []): { false };
+    case(crew _vehicle isEqualTo []): { _vehicle isKindOf "StaticWeapon" };
     default {
         private _group = group(crew _vehicle select 0);
 
