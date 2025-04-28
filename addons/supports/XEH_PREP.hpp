@@ -1,3 +1,4 @@
+PREP(addArtillerySupportActions);
 PREP(addToBuildableObjects);
 PREP(appendBuildables);
 PREP(assignSupportRoleToVehicle);
