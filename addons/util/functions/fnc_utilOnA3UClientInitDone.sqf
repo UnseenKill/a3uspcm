@@ -23,7 +23,7 @@ Author:
 ---------------------------------------------------------------------------- */
 if is3DEN exitWith {};
 
-TRACE_1(QFUNCMAIN(utilOnA3UClientInitDone),_this);
+//TRACE_1(QFUNCMAIN(utilOnA3UClientInitDone),_this);
 
 params[["_callback", {}, [{}]]];
 

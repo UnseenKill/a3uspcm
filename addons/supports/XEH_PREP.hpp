@@ -12,4 +12,8 @@ PREP(getSupportModule);
 PREP(getSupportProviderModule);
 PREP(handlerSupportTentKilled);
 PREP(handlerSupportTentPostInit);
+PREP(loadSaved);
+PREP(onEventSupportSpecialistKilled);
+PREP(onEventSupportStartSpecialistMission);
 PREP(revokeSupportRoleFromVehicle);
+PREP(setupSupportTent);

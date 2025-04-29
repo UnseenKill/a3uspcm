@@ -3,7 +3,12 @@
 class CfgPatches {
     class ADDON {
         name = CSTRING(component);
-        units[] = {};
+        units[] = {
+            QGVAR(SupportTentArtillery),
+            QGVAR(SupportTentCASHelicopter),
+            QGVAR(SupportTentCASPlane),
+            QGVAR(SupportTentTransport)
+        };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"a3uspcm_main","a3uspcm_util"};
@@ -14,5 +19,6 @@ class CfgPatches {
     };
 };
 
+#include "CfgAddon.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"

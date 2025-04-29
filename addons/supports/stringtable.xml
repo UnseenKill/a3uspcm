@@ -41,6 +41,14 @@
             <English>Supports</English>
             <German>Unterstützung</German>
         </Key>
+        <Key ID="STR_A3USPCM_Supports_Settings_requireSpecialists_DisplayName">
+            <English>Require specialists</English>
+            <German>Benötige Spezialisten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_Settings_requireSpecialists_Tooltip">
+            <English>Require a specialist unit to be present in order to use the support system.</English>
+            <German>Benötigt eine Spezialeinheit, um das Unterstützungssystem nutzen zu können.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Supports_Settings_requireSupportBuildings_DisplayName">
             <English>Require support buildings</English>
             <German>Benötige Unterstützungsgebäude</German>
