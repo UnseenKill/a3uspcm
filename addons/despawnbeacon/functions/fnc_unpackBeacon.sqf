@@ -33,7 +33,8 @@ if !assert(!isNull _player) exitWith {};
     params["_params"]; \
     _params params["_player"]; \
     _player removeItem QGVAR(PackedBeacon); \
-    createVehicle[QEGVAR(assets,DespawnSuppressionBeacon), _player modelToWorld[0,1,0], [], 0, "NONE"]; \
+    private _dsb = createVehicle[QEGVAR(assets,DespawnSuppressionBeacon), _player modelToWorld[0,3,0], [], 0, "NONE"]; \
+    _dsb setDir(getDir _player - 180); \
 }
 
 if !EGVAR(main,AceHaveAddon) exitWith {
