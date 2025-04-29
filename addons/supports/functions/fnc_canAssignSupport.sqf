@@ -29,6 +29,7 @@ params[
 if !assert(!isNull _vehicle) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
 
+if (!GVAR(requireSupportBuildings)) exitWith { true };
 if (GVAR(requireSupportBuildings) && !(_supportType in GVAR(supportBuildings))) exitWith { false };
 
 if (_vehicle getVariable[QGVAR(supportType), false] isNotEqualTo false) exitWith { false };
