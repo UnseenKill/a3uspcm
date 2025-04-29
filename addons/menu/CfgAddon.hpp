@@ -312,7 +312,7 @@ class GVAR(Config) {
         class Unlocks {
             caption = CSTRING(DiaryUnlocksCaption);
             text = CSTRING(DiaryUnlocksText);
-            image = QUOTE(\z\a3uspcm\addons\menu\ui\unlock_ca.paa);
+            image = QPATHTOF(ui\unlock_ca.paa);
 
             class AcePainkillers {
                 caption = CSTRING(Unlocks_AcePainkillersCaption);
@@ -365,13 +365,6 @@ class GVAR(Config) {
             text = CSTRING(DiaryVehiclesText);
             image = QUOTE(a3\ui_f\data\igui\cfg\actions\getindriver_ca.paa);
 
-            class ChangeLockpickDuration {
-                caption = CSTRING(Vehicles_ChangeLockpickDurationCaption);
-                action = QFUNCMAIN(vehiclesChangeLockpickDuration);
-                separator = 1;
-                closeDiary = 1;
-            };
-
             class FixAirDropVehicles {
                 caption = CSTRING(Vehicles_FixAirDropVehiclesCaption);
                 text = CSTRING(Vehicles_FixAirDropVehiclesText);
@@ -408,6 +401,33 @@ class GVAR(Config) {
                 caption = CSTRING(Healing_HealGroupCaption);
                 text = CSTRING(Healing_HealGroupText);
                 action = QFUNCMAIN(healGroup);
+            };
+        };
+
+        class A3USettings {
+            caption = CSTRING(DiaryA3USettingsCaption);
+            text = CSTRING(DiaryA3USettingsText);
+            image = QPATHTOF(ui\gear_ca.paa);
+
+            class BuilderTime {
+                caption = CSTRING(A3USettings_BuilderTimeCaption);
+                text = CSTRING(A3USettings_BuilderTimeText);
+                action = QFUNCMAIN(a3uChangeParameter);
+                params[] = {QUOTE(A3A_builderBuildTime), CSTRING(A3USettings_BuilderTimePrompt), "NUMBER"};
+            };
+
+            class MinWeaps {
+                caption = CSTRING(A3USettings_MinWeapsCaption);
+                text = CSTRING(A3USettings_MinWeapsText);
+                action = QFUNCMAIN(a3uChangeParameter);
+                params[] = {QUOTE(minWeaps), CSTRING(A3USettings_MinWeapsPrompt), "NUMBER"};
+            };
+
+            class VehicleLockpickTime {
+                caption = CSTRING(A3USettings_VehicleLockpickTimeCaption);
+                text = CSTRING(A3USettings_VehicleLockpickTimeText);
+                action = QFUNCMAIN(a3uChangeParameter);
+                params[] = {QUOTE(vehicleLockpickTime), CSTRING(A3USettings_VehicleLockpickTimePrompt), "NUMBER"};
             };
         };
     };
