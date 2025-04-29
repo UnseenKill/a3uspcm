@@ -20,4 +20,26 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onEventSupportStartSpecialistMission),_this);
 
+[
+    {
+        params[
+            ["_supportType", "", [""]]
+        ];
+
+        private _requester = owner theBoss;
+		private _possibleMarkers = [citiesX, petros, true] call A3A_fnc_findIfNearAndHostile;
+
+        if (count _possibleMarkers == 0) exitWith { 
+            [petros, "globalChat", "I have no specialist missions for you. Move our HQ closer to the enemy."] remoteExec["A3A_fnc_commsMP", _requester];
+            [petros, "hint", "Specialist Missions require Cities or Airports closer than 4Km from your HQ.", "Missions"] remoteExec["A3A_fnc_commsMP", _requester];
+        };
+
+        private _site = selectRandom _possibleMarkers;
+
+        [[_site, _supportType], QFUNC(startSpecialistMission)] remoteExec["A3A_fnc_scheduler", 2];
+    },
+    _this,
+    3.5
+] call CBA_fnc_waitAndExecute;
+
 nil;

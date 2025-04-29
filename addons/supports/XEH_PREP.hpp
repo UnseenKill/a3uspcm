@@ -17,3 +17,4 @@ PREP(onEventSupportSpecialistKilled);
 PREP(onEventSupportStartSpecialistMission);
 PREP(revokeSupportRoleFromVehicle);
 PREP(setupSupportTent);
+PREP(startSpecialistMission);

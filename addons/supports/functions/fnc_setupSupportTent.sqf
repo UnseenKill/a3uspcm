@@ -69,7 +69,7 @@ getArray(configOf _tent >> QGVAR(attachObjects)) apply {
 
     if !_spawnSpecialist then {
         INFO_1("Starting specialist mission for support type %1",_tent getVariable QGVAR(supportType));
-        [QGVAR(eventSupportStartSpecialistMission), [_tent getVariable QGVAR(supportType), _tent getVariable QGVAR(specialistClass)]] call CBA_fnc_serverEvent;
+        [QGVAR(eventSupportStartSpecialistMission), [_tent getVariable QGVAR(supportType)]] call CBA_fnc_serverEvent;
     } else {
         _object = GVAR(tentGuysGroup) createUnit[_class, [0,0,0], [], 0, "NONE"];
         _object disableAI "MOVE";
