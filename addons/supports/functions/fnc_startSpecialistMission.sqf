@@ -175,13 +175,14 @@ _vehicles pushBack _searchHeliVeh;
 //Tasks
 ////////////
 private _taskId = "RES" + str A3A_taskCount;
+private _config = configFile >> QGVAR(Config) >> "Missions" >> _supportType;
 
 [
     [teamPlayer,civilian],
     _taskId,
     [
-        format [localize "STR_A3A_Missions_RES_Informer_task_desc", _faction get "name", _destinationName, _displayTime],
-        localize "STR_A3A_Missions_RES_Informer_task_header",
+        format[getText(_config >> "missionDescription"), _faction get "name", _destinationName, _displayTime],
+        getText(_config >> "missionText"),
         _markerX
     ],
     _positionX,
@@ -290,7 +291,7 @@ deleteMarkerLocal _marker2;
 
 if (_earlyEscape) exitWith {
     ERROR_1("%1(): Problems with road positions, rerequesting new rescue mission.",QFUNC(startSpecialistMission));
-    ["RES"] remoteExec ["A3A_fnc_missionRequest",2];
+    [QGVAR(eventSupportSpecialistMissionNotStarted), [_supportType]] call CBA_fnc_serverEvent;
 };
 
 INFO_1("%1(): Roadblocks have spawned.",QFUNC(startSpecialistMission));
@@ -413,6 +414,7 @@ switch(true) do {
 
         [-900, _side] remoteExec ["A3A_fnc_timingCA",2];
         [-10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
+        [QGVAR(eventSupportSpecialistMissionFailed), [_supportType]] call CBA_fnc_serverEvent;
     };
     case (!alive _informer): {
         INFO_1("%1(): Informer died, fail.",QFUNC(startSpecialistMission));
@@ -424,6 +426,7 @@ switch(true) do {
         
         [-900, _side] remoteExec ["A3A_fnc_timingCA",2];
         [-10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
+        [QGVAR(eventSupportSpecialistMissionFailed), [_supportType]] call CBA_fnc_serverEvent;
     };
     case (alive _informer && {(_informer distance2D (getMarkerPos "Synd_HQ") < 25)}): {
         INFO_1("%1(): Informer survived and arrived to HQ, success.",QFUNC(startSpecialistMission));
@@ -445,6 +448,8 @@ switch(true) do {
         } forEach (call SCRT_fnc_misc_getRebelPlayers);
         [20*_bonus, theBoss] call A3A_fnc_addScorePlayer;
         [400*_bonus,theBoss, true] call A3A_fnc_addMoneyPlayer;
+
+        [QGVAR(eventSupportSpecialistMissionSuccess), [_supportType]] call CBA_fnc_serverEvent;
     };
     default {
         ERROR_1("%1(): Unexpected behaviour, cancelling mission.",QFUNC(startSpecialistMission));
@@ -452,7 +457,7 @@ switch(true) do {
     };
 };
 
-sleep 30;
+sleep 5;
 
 deleteMarkerLocal _mrk;
 
