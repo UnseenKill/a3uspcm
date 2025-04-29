@@ -67,7 +67,7 @@ _tent addEventHandler["Killed", {
 
 // Support tents are set up after loading the save data, but any other tent
 // created afterwards via builder needs to be set up explicitly.
-if !isNil QGVAR(postInitDone) then {
+if EGVAR(utils,initClientDone) then {
     [_tent] call FUNC(setupSupportTent);
 };
 

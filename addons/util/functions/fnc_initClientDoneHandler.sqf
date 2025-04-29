@@ -27,6 +27,8 @@ _this spawn {
     GVAR(ClientInitCallbacks) apply {
         [] call _x;
     };
+
+    GVAR(initClientDone) = true;
 };
 
 nil;
