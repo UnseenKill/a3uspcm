@@ -13,6 +13,18 @@
             <English>Base builder hold action multiplier.</English>
             <German>Basis Bauzeit Multiplikator.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_DistanceMissionCaption">
+            <English>Mission distance</English>
+            <German>Missionsdistanz</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_DistanceMissionPrompt">
+            <English>Meters (3000=default)</English>
+            <German>Meter (3000=Standard)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_DistanceMissionText">
+            <English>Radius around HQ where missions can spawn.</English>
+            <German>Radius um das Hauptquartier, in dem Missionen spawnen können.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_A3USettings_MinWeapsCaption">
             <English>Arsenal item unlock</English>
             <German>Arsenalfreischaltung</German>

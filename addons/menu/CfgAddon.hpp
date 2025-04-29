@@ -429,6 +429,13 @@ class GVAR(Config) {
                 action = QFUNCMAIN(a3uChangeParameter);
                 params[] = {QUOTE(vehicleLockpickTime), CSTRING(A3USettings_VehicleLockpickTimePrompt), "NUMBER"};
             };
+
+            class DistanceMission {
+                caption = CSTRING(A3USettings_DistanceMissionCaption);
+                text = CSTRING(A3USettings_DistanceMissionText);
+                action = QFUNCMAIN(a3uChangeParameter);
+                params[] = {QUOTE(distanceMission), CSTRING(A3USettings_DistanceMissionPrompt), "NUMBER"};
+            };
         };
     };
 };
