@@ -45,30 +45,62 @@
             <English>A %1 artillery specialist wants to defect in %2. Find him and convince him to join your side. We need him extracted by %3.</English>
             <German>Ein %1 Artilleriespezialist möchte in %2 überlaufen. Finde ihn und überzeuge ihn, auf deine Seite zu wechseln. Er muss bis %3 evakuiert sein.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistArtilleryFailed">
+            <English>We failed to acquire the artillery specialist. Maybe sometime soon, another will surface.</English>
+            <German>Wir haben den Artilleriespezialisten nicht bekommen. Vielleicht taucht bald ein anderer auf.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistArtillerySuccess">
+            <English>We acquired the artillery specialist. He will be a great asset to our forces.</English>
+            <German>Wir haben den Artilleriespezialisten bekommen. Er wird eine große Bereicherung für unsere Streitkräfte sein.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Supports_MissionSpecialistCASHeli">
-             <English>Find CAS helicopter specialist</English>
-             <German>CAS Helikopterspezialist finden</German>
-         </Key>
-         <Key ID="STR_A3USPCM_Supports_MissionSpecialistCASHeliDescription">
-             <English>A %1 CAS helicopter specialist wants to defect in %2. Find him and convince him to join your side. We need him extracted by %3.</English>
-             <German>Ein %1 CAS Helikopterspezialist möchte in %2 überlaufen. Finde ihn und überzeuge ihn, auf deine Seite zu wechseln. Er muss bis %3 evakuiert sein.</German>
-         </Key>
-         <Key ID="STR_A3USPCM_Supports_MissionSpecialistCASPlane">
-             <English>Find CAS plane specialist</English>
-             <German>CAS Flugzeugspezialist finden</German>
-         </Key>
-         <Key ID="STR_A3USPCM_Supports_MissionSpecialistCASPlaneDescription">
-             <English>A %1 CAS plane specialist wants to defect in %2. Find him and convince him to join your side. We need him extracted by %3.</English>
-             <German>Ein %1 CAS Flugzeugspezialist möchte in %2 überlaufen. Finde ihn und überzeuge ihn, auf deine Seite zu wechseln. Er muss bis %3 evakuiert sein.</German>
-         </Key>
-         <Key ID="STR_A3USPCM_Supports_MissionSpecialistTransport">
-             <English>Find transport specialist</English>
-             <German>Transportspezialist finden</German>
-         </Key>
-         <Key ID="STR_A3USPCM_Supports_MissionSpecialistTransportDescription">
-             <English>A %1 transport specialist wants to defect in %2. Find him and convince him to join your side. We need him extracted by %3.</English>
-             <German>Ein %1 Transportspezialist möchte in %2 überlaufen. Finde ihn und überzeuge ihn, auf deine Seite zu wechseln. Er muss bis %3 evakuiert sein.</German>
-         </Key>
+            <English>Find CAS helicopter specialist</English>
+            <German>CAS Helikopterspezialist finden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistCASHeliDescription">
+            <English>A %1 CAS helicopter specialist wants to defect in %2. Find him and convince him to join your side. We need him extracted by %3.</English>
+            <German>Ein %1 CAS Helikopterspezialist möchte in %2 überlaufen. Finde ihn und überzeuge ihn, auf deine Seite zu wechseln. Er muss bis %3 evakuiert sein.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistCASHeliFailed">
+            <English>We failed to acquire the CAS helicopter specialist. Maybe sometime soon, another will surface.</English>
+            <German>Wir haben den CAS Helikopterspezialisten nicht bekommen. Vielleicht taucht bald ein anderer auf.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistCASHeliSuccess">
+            <English>We acquired the CAS helicopter specialist. He will be a great asset to our forces.</English>
+            <German>Wir haben den CAS Helikopterspezialisten bekommen. Er wird eine große Bereicherung für unsere Streitkräfte sein.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistCASPlane">
+            <English>Find CAS plane specialist</English>
+            <German>CAS Flugzeugspezialist finden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistCASPlaneDescription">
+            <English>A %1 CAS plane specialist wants to defect in %2. Find him and convince him to join your side. We need him extracted by %3.</English>
+            <German>Ein %1 CAS Flugzeugspezialist möchte in %2 überlaufen. Finde ihn und überzeuge ihn, auf deine Seite zu wechseln. Er muss bis %3 evakuiert sein.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistCASPlaneFailed">
+            <English>We failed to acquire the CAS plane specialist. Maybe sometime soon, another will surface.</English>
+            <German>Wir haben den CAS Flugzeugspezialisten nicht bekommen. Vielleicht taucht bald ein anderer auf.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistCASPlaneSuccess">
+            <English>We acquired the CAS plane specialist. He will be a great asset to our forces.</English>
+            <German>Wir haben den CAS Flugzeugspezialisten bekommen. Er wird eine große Bereicherung für unsere Streitkräfte sein.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistTransport">
+            <English>Find transport specialist</English>
+            <German>Transportspezialist finden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistTransportDescription">
+            <English>A %1 transport specialist wants to defect in %2. Find him and convince him to join your side. We need him extracted by %3.</English>
+            <German>Ein %1 Transportspezialist möchte in %2 überlaufen. Finde ihn und überzeuge ihn, auf deine Seite zu wechseln. Er muss bis %3 evakuiert sein.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistTransportFailed">
+            <English>We failed to acquire the transport specialist. Maybe sometime soon, another will surface.</English>
+            <German>Wir haben den Transportspezialisten nicht bekommen. Vielleicht taucht bald ein anderer auf.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_MissionSpecialistTransportSuccess">
+            <English>We acquired the transport specialist. He will be a great asset to our forces.</English>
+            <German>Wir haben den Transportspezialisten bekommen. Er wird eine große Bereicherung für unsere Streitkräfte sein.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Supports_Settings_Category_DisplayName">
             <English>Supports</English>
             <German>Unterstützung</German>
