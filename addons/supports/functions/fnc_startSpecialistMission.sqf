@@ -177,12 +177,14 @@ _vehicles pushBack _searchHeliVeh;
 private _taskId = "RES" + str A3A_taskCount;
 private _config = configFile >> QGVAR(Config) >> "Missions" >> _supportType;
 
+TRACE_2(QFUNC(startSpecialistMission),_supportType,_config);
+
 [
     [teamPlayer,civilian],
     _taskId,
     [
         format[getText(_config >> "missionDescription"), _faction get "name", _destinationName, _displayTime],
-        getText(_config >> "missionText"),
+        getText(_config >> "missionCaption"),
         _markerX
     ],
     _positionX,

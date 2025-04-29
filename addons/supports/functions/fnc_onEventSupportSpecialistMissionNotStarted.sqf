@@ -20,4 +20,14 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onEventSupportSpecialistMissionNotStarted),_this);
 
+params[
+    ["_supportType",nil,[""]]
+];
+
+if !assert(!isNil "_supportType") exitWith {};
+
+ERROR_1("Support specialist mission could not be started for %1",_supportType);
+
+[QGVAR(eventSupportSpecialistMissionSuccess), [_supportType, true]] call CBA_fnc_serverEvent;
+
 nil;

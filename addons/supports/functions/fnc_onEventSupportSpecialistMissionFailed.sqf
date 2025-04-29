@@ -20,4 +20,25 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onEventSupportSpecialistMissionFailed),_this);
 
+params[
+    ["_supportType",nil,[""]]
+];
+
+if !assert(!isNil "_supportType") exitWith {};
+if !assert(_supportType in GVAR(supportBuildings)) exitWith {
+    ERROR_1("Support specialist acquired, but no building for %1",_supportType);
+};
+
+private _config = configFile >> QGVAR(Config) >> "Missions" >> _supportType;
+
+if !assert(!isClass _config) exitWith {};
+
+[
+    getText(_config >> "missionCaption"),
+    getText(_config >> "missionFailed")
+] remoteExec["A3A_fnc_customHint", owner theBoss];
+["A3AP_UiFailure"] remoteExec["playSound", owner theBoss];
+
+[QGVAR(eventSupportStartSpecialistMission), [_supportType, 600 + random 600]] call CBA_fnc_serverEvent;
+
 nil;

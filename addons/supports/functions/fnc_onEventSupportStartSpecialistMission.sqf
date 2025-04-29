@@ -9,6 +9,7 @@ Parameters:
     0: _supportType - Support type <STRING>
 
 Optional:
+    1: _delay - Delay in seconds <NUMBER> (default: 3.5)
 
 Example:
 
@@ -19,6 +20,11 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onEventSupportStartSpecialistMission),_this);
+
+params[
+    ["_supportType", nil, [""]],
+    ["_delay", 3.5, [0]]
+];
 
 [
     {
@@ -39,7 +45,7 @@ TRACE_1(QFUNC(onEventSupportStartSpecialistMission),_this);
         [[_site, _supportType], QFUNC(startSpecialistMission)] remoteExec["A3A_fnc_scheduler", 2];
     },
     _this,
-    3.5
+    _delay
 ] call CBA_fnc_waitAndExecute;
 
 nil;
