@@ -29,6 +29,10 @@
             <English>Assign role...</English>
             <German>Rolle zuweisen...</German>
         </Key>
+        <Key ID="STR_A3USPCM_Supports_MenuSupportsEjectCrew">
+            <English>Eject crew</English>
+            <German>Besatzung rauswerfen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Supports_MenuSupportsRevokeRole">
             <English>Revoke support role</English>
             <German>Unterstützungsrolle aufheben</German>
