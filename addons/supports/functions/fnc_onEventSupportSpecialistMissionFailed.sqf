@@ -25,9 +25,6 @@ params[
 ];
 
 if !assert(!isNil "_supportType") exitWith {};
-if !assert(_supportType in GVAR(supportBuildings)) exitWith {
-    ERROR_1("Support specialist acquired, but no building for %1",_supportType);
-};
 
 private _config = configFile >> QGVAR(Config) >> "Missions" >> _supportType;
 

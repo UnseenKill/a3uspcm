@@ -27,6 +27,9 @@ params[
 ];
 
 if !assert(!isNil "_supportType") exitWith {};
+
+GVAR(supportSpecialistsMissions) deleteAt _supportType;
+
 if !assert(_supportType in GVAR(supportBuildings)) exitWith {
     ERROR_1("Support specialist acquired, but no building for %1",_supportType);
 };
@@ -37,7 +40,6 @@ if !assert(isClass _config) exitWith {};
 
 GVAR(supportSpecialists) set[_supportType, true];
 [QGVAR(supportSpecialists), GVAR(supportSpecialists)] call A3A_fnc_setStatVariable;
-GVAR(supportSpecialistsMissions) deleteAt _supportType;
 
 [GVAR(supportBuildings) get _supportType] call FUNC(setupSupportTent);
 

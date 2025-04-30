@@ -31,9 +31,9 @@ private _supportType = _tent getVariable QGVAR(supportType);
 
 GVAR(supportSpecialists) set[_supportType, false];
 
-// Somehow, when units get killed _inside_ the tent is killed, too.
-// If this issue fixed at some point, take this into account but still check
-// after a while if the tent is really dead.
+// Somehow, when units get killed _inside_ the tent, the tent is killed, too.
+// If this issue is fixed at some point, take this into account but still check
+// after a while to see if the tent is really dead.
 [
     {
         params["_tent"];

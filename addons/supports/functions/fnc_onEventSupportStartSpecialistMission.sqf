@@ -27,7 +27,7 @@ params[
 ];
 
 if (GVAR(supportSpecialistsMissions) getOrDefault[_supportType, false]) exitWith {
-    WARNING_2("%1(%2): another mission is active",QFUNC(onEventSupportStartSpecialistMission),_supportType);
+    ERROR_2("%1(%2): another mission is active",QFUNC(onEventSupportStartSpecialistMission),_supportType);
 };
 
 [

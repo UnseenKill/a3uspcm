@@ -28,16 +28,15 @@ if (GVAR(supportSpecialists) isEqualTo false) then {
         INFO("No saved specialists found, defaulting to all available as backwards compatibility");
 
         GVAR(supportSpecialists) = [
-            [SUPPORT_TYPE_ARTILLERY, true],
-            [SUPPORT_TYPE_CAS_HELICOPTER, true],
-            [SUPPORT_TYPE_CAS_PLANE, true],
-            [SUPPORT_TYPE_TRANSPORT, true]
+            [SUPPORT_TYPE_ARTILLERY, SUPPORT_TYPE_CAS_HELICOPTER, SUPPORT_TYPE_CAS_PLANE, SUPPORT_TYPE_TRANSPORT] apply {
+                [_x, !isNull(GVAR(supportBuildings) getOrDefault[_x, objNull])]
+            }
         ];
     } else {
         INFO("Loading saved support specialists");
 
         if !(GVAR(supportSpecialists) isEqualType []) then {
-            WARNING("Invalid markers data type, initializing with empty array");
+            WARNING("Invalid specialists data type, initializing with empty array");
             TRACE_1("invalid value",GVAR(supportSpecialists));
 
             GVAR(supportSpecialists) = [];
