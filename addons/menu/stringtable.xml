@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="Menu">
+        <Key ID="STR_A3USPCM_Menu_A3USettings_BuilderTimeCaption">
+            <English>Builder time</English>
+            <German>Bauzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_BuilderTimePrompt">
+            <English>Multiplier (0=instant,5=default)</English>
+            <German>Multiplikator (0=sofort,5=Standard)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_BuilderTimeText">
+            <English>Base builder hold action multiplier.</English>
+            <German>Basis Bauzeit Multiplikator.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_DistanceMissionCaption">
+            <English>Mission distance</English>
+            <German>Missionsdistanz</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_DistanceMissionPrompt">
+            <English>Meters (3000=default)</English>
+            <German>Meter (3000=Standard)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_DistanceMissionText">
+            <English>Radius around HQ where missions can spawn.</English>
+            <German>Radius um das Hauptquartier, in dem Missionen spawnen können.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_MinWeapsCaption">
+            <English>Arsenal item unlock</English>
+            <German>Arsenalfreischaltung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_MinWeapsPrompt">
+            <English>Amount (-1=never,25=default)</English>
+            <German>Menge (-1=nie,25=Standard)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_MinWeapsText">
+            <English>Required items to unlock in arsenal.</English>
+            <German>Benötigte Items zur Freischaltung.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_VehicleLockpickTimeCaption">
+            <English>Vehicle lockpick duration</English>
+            <German>Fahrzeug-Schlösserknackzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_VehicleLockpickTimePrompt">
+            <English>Time needed (0=instant,60=default)</English>
+            <German>Benötigte Zeit (0=sofort,60=Standard)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_VehicleLockpickTimeText">
+            <English>Vehicle lockpick duration.</English>
+            <German>Dauer zum Schlossknacken.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_AAFireControl_AllFireCaption">
             <English>All fire</English>
             <German>Alle feuer frei</German>
@@ -48,6 +96,14 @@
         <Key ID="STR_A3USPCM_Menu_Component">
             <English>A3USPCM - Menu Component</English>
             <German>A3USPCM - Menükomponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryA3USettingsCaption">
+            <English>A3U Parameters</English>
+            <German>A3U Parameter</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryA3USettingsText">
+            <English>Freely change parameters</English>
+            <German>Freies Ändern von Parametern</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryAAFireControlCaption">
             <English>AA Fire Control</English>
@@ -326,7 +382,7 @@
             <German>%1 hat jetzt die Fähigkeit, Loot zu sammeln.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxText">
-            <English>Turn cursor target into lootbox to collect scattered loot.</English>
+            <English>Turn cursor target into loot-collect box.</English>
             <German>Verwandle das Cursorziel in eine Lootbox, um verstreuten Loot zu sammeln.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_OutskirtsMarkerText">
@@ -780,18 +836,6 @@
         <Key ID="STR_A3USPCM_Menu_Vehicles_AirAccessAnywhereText">
             <English>Access your air vehicles from any garage.</English>
             <German>Greife von jeder Garage aus auf deine Luftfahrzeuge zu.</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationCaption">
-            <English>Change lock picking duration</English>
-            <German>Dauer des Schlösserknackens ändern</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationPrompt">
-            <English>Change to seconds</English>
-            <German>Auf soviele Sekunden ändern</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationSuccess">
-            <English>Vehicle lockpicking base duration changed to %1 seconds.</English>
-            <German>Die Basisdauer für das Knacken von Fahrzeugschlössern wurde auf %1 Sekunden geändert.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Vehicles_FixAirDropVehiclesCaption">
             <English>Fix helicopters</English>
