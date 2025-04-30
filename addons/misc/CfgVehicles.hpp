@@ -12,5 +12,13 @@ class CfgVehicles {
                 };
             };
         };
+        class ACE_SelfActions {
+            class GVAR(SquashSnake) {
+                displayName = CSTRING(SquashSnake);
+                condition = QUOTE(call FUNC(canSquashSnake));
+                icon = QPATHTOEF(assets,ui\dead-face.paa);
+                statement = QUOTE(call FUNC(squashSnake));
+            };
+        };
     };
 };

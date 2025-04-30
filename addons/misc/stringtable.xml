@@ -29,5 +29,9 @@
             <English>Snapping neck...</English>
             <German>Breche Genick...</German>
         </Key>
+        <Key ID="STR_A3USPCM_Misc_SquashSnake">
+            <English>Squash snake</English>
+            <German>Schlange zerquetschen</German>
+        </Key>
     </Package>
 </Project>
