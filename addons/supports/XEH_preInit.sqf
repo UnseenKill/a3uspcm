@@ -8,6 +8,7 @@ GVAR(moduleSupportProvider) = objNull;
 GVAR(moduleProviders) = createHashMap;
 GVAR(supportBuildings) = createHashMap;
 GVAR(supportSpecialists) = false;
+GVAR(supportSpecialistsMissions) = createHashMap;
 GVAR(tentGuysGroup) = createGroup[resistance, false];
 GVAR(tentGuysGroup) setVariable["ace_map_hideBlueForceMarker", true];
 

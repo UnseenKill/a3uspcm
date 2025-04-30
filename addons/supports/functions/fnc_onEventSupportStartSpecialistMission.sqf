@@ -26,6 +26,10 @@ params[
     ["_delay", 3.5, [0]]
 ];
 
+if (GVAR(supportSpecialistsMissions) getOrDefault[_supportType, false]) exitWith {
+    WARNING_2("%1(%2): another mission is active",QFUNC(onEventSupportStartSpecialistMission),_supportType);
+};
+
 [
     {
         params[

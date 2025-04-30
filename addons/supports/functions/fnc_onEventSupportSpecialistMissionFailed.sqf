@@ -39,6 +39,7 @@ if !assert(!isClass _config) exitWith {};
 ] remoteExec["A3A_fnc_customHint", owner theBoss];
 ["A3AP_UiFailure"] remoteExec["playSound", owner theBoss];
 
+GVAR(supportSpecialistsMissions) deleteAt _supportType;
 [QGVAR(eventSupportStartSpecialistMission), [_supportType, 600 + random 600]] call CBA_fnc_serverEvent;
 
 nil;
