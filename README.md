@@ -42,6 +42,7 @@ Features
    * Build support tents on your base to unlock radio support
    * Assign captured planes/helicopters as CAS response units
    * Assign mortars, MLRS as artillery support
+   * If you want, find a specialist for each support type to unlock that support in the world
  * Despawn Suppression Beacon™
    * Tired of dying, respawning and teleporting back to the battlefield only to find the loot and vehicles gone?
    * Tire no more: place the *Despawn Suppression Beacon™* in the respawn radius of a location (default 1.1km) and die as often as you like. Nothing will despawn.

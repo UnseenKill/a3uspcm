@@ -45,66 +45,7 @@ if (_supportType in GVAR(supportBuildings)) exitWith {
 };
 
 GVAR(supportBuildings) set[_supportType, _tent];
-
-// Remove from buildable objects
-if !isNil "A3A_buildableObjects" then {
-    INFO_1("Removing %1 from buildable objects",typeOf _tent);
-    
-    A3A_buildableObjects = A3A_buildableObjects select {
-        _x select 0 isNotEqualTo typeOf _tent
-    };
-};
-
-_tent setVariable[QGVAR(attached), []];
-
-getArray(configOf _tent >> QGVAR(attachObjects)) apply {
-    _x params["_class","_pos","_vdup","_isSimple"];
-
-    private _object = if (_isSimple isNotEqualTo 0) then {
-        createSimpleObject[_class, [0,0,100], false];
-    } else {
-        _class createVehicle[0,0,0];
-    };
-
-    if !(_object isKindOf "CAManBase") then {
-        _object attachTo[_tent, _pos];
-        _object setVectorDirAndUp _vdup;
-    } else {
-        deleteVehicle _object;
-
-        _object = GVAR(tentGuysGroup) createUnit[_class, [0,0,0], [], 0, "NONE"];
-        _object disableAI "MOVE";
-        _object disableAI "AUTOTARGET";
-        _object setBehaviour "SAFE";
-        _object setPosASL (_tent modelToWorld _pos);
-        _object setDir (getDir _tent + 180);
-
-        // Put into list of non-attached objects
-        _tent getVariable QGVAR(attached) pushBack _object;
-
-        // Don't let them be in sync animating
-        [
-            {
-                params["_object"];
-                _object playMoveNow "Acts_A_M01_briefing";
-            },
-            [_object],
-            (random 1000) / 100
-        ] call CBA_fnc_waitAndExecute;
-
-        // No tapping shoulders or anything
-        if EGVAR(main,AceHaveAddon) then {
-            [_object, _object] call ace_common_fnc_claim;
-        };
-
-        // Lose support if guy is killed
-        _object setVariable[QGVAR(tent), _tent];
-        _object addEventHandler["Killed", {
-            params["_unit","_killer","_instigator","_useEffects"];
-            [_unit getVariable QGVAR(tent)] call FUNC(handlerSupportTentKilled);
-        }];
-    };
-};
+_tent setVariable[QGVAR(supportType), _supportType];
 
 _tent addEventHandler["Deleted", {
     TRACE_1(QFUNC(handlerSupportTentPostInit_DeletedEH),_this);
@@ -123,5 +64,11 @@ _tent addEventHandler["Killed", {
     attachedObjects _tent apply { _x setDamage 1 };
     call FUNC(handlerSupportTentKilled);
 }];
+
+// Support tents are set up after loading the save data, but any other tent
+// created afterwards via builder needs to be set up explicitly.
+if EGVAR(utils,initClientDone) then {
+    [_tent] call FUNC(setupSupportTent);
+};
 
 nil;

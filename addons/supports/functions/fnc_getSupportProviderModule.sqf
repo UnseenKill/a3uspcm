@@ -39,7 +39,7 @@ if (isNull GVAR(moduleSupportProvider)) then {
 
     _init = _init joinString (";" + endl);
 
-    TRACE_1(QFUNC(getSupportProviderModule),_init);
+    //TRACE_1(QFUNC(getSupportProviderModule),_init);
 
     "SupportRequester" createUnit[
         markerPos "Synd_HQ",
