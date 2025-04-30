@@ -26,7 +26,11 @@ params[
     ["_delay", 3.5, [0]]
 ];
 
-if (GVAR(supportSpecialistsMissions) getOrDefault[_supportType, false]) exitWith {
+if !(_supportType in GVAR(supportBuildings)) exitWith {
+    ERROR_1("Support mission requested, but no building for %1",_supportType);
+};
+
+if (GVAR(supportSpecialistsMissions) getOrDefault[_supportType, false] isEqualType objNull) exitWith {
     ERROR_2("%1(%2): another mission is active",QFUNC(onEventSupportStartSpecialistMission),_supportType);
 };
 

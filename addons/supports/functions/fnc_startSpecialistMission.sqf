@@ -474,7 +474,7 @@ if (!isNil "_informerMarker") then {
     deleteVehicle _x;
 } forEach (_effects + _props + [_informer]);
 
-GVAR(supportSpecialistsMissions) set[_supportType, true];
+GVAR(supportSpecialistsMissions) set[_supportType, _informer];
 missionNamespace setVariable ["A3U_dialogCivMissionInProgress", false, true];
 
 [_taskId, "RES", 1200] spawn A3A_fnc_taskDelete;
