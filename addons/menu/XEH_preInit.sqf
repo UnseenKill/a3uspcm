@@ -60,6 +60,16 @@ if !hasInterface exitWith {
 
 [
     ELSTRING(main,Title),
+    QEGVAR(misc,RevealFOV),
+    [ELSTRING(misc,Hotkeys_RevealFOV), ELSTRING(misc,Hotkeys_RevealFOVTooltip)],
+    {},
+    {
+        [player] call EFUNC(misc,revealFOV);
+    }
+] call CBA_fnc_addKeybind;
+
+[
+    ELSTRING(main,Title),
     QEGVAR(misc,WakeupUnconscious),
     [ELSTRING(misc,Hotkeys_WakeupUnconscious), ELSTRING(misc,Hotkeys_WakeupUnconsciousTooltip)],
     {},
