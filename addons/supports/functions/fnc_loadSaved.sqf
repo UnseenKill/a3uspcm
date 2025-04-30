@@ -27,11 +27,7 @@ if (GVAR(supportSpecialists) isEqualTo false) then {
     if (isNil QGVAR(supportSpecialists)) then {
         INFO("No saved specialists found, defaulting to all available as backwards compatibility");
 
-        GVAR(supportSpecialists) = [
-            [SUPPORT_TYPE_ARTILLERY, SUPPORT_TYPE_CAS_HELICOPTER, SUPPORT_TYPE_CAS_PLANE, SUPPORT_TYPE_TRANSPORT] apply {
-                [_x, !isNull(GVAR(supportBuildings) getOrDefault[_x, objNull])]
-            }
-        ];
+        GVAR(supportSpecialists) = false;
     } else {
         INFO("Loading saved support specialists");
 
@@ -39,8 +35,16 @@ if (GVAR(supportSpecialists) isEqualTo false) then {
             WARNING("Invalid specialists data type, initializing with empty array");
             TRACE_1("invalid value",GVAR(supportSpecialists));
 
-            GVAR(supportSpecialists) = [];
+            GVAR(supportSpecialists) = false;
         };
+    };
+
+    if (GVAR(supportSpecialists) isEqualTo false) then {
+        GVAR(supportSpecialists) = [
+            [SUPPORT_TYPE_ARTILLERY, SUPPORT_TYPE_CAS_HELICOPTER, SUPPORT_TYPE_CAS_PLANE, SUPPORT_TYPE_TRANSPORT] apply {
+                [_x, !isNull(GVAR(supportBuildings) getOrDefault[_x, objNull])]
+            }
+        ];
     };
 
     GVAR(supportSpecialists) = createHashMapFromArray GVAR(supportSpecialists);
