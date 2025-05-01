@@ -59,6 +59,5 @@ private _markerProperties = [
 ];
 
 GVAR(storedMarkers) set[_marker, _markerProperties];
-[QGVAR(storedMarkers), GVAR(storedMarkers)] call A3A_fnc_setStatVariable;
 
 nil;

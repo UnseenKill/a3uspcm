@@ -60,6 +60,16 @@ if !hasInterface exitWith {
 
 [
     ELSTRING(main,Title),
+    QEGVAR(misc,RevealFOV),
+    [ELSTRING(misc,Hotkeys_RevealFOV), ELSTRING(misc,Hotkeys_RevealFOVTooltip)],
+    {},
+    {
+        [player] call EFUNC(misc,revealFOV);
+    }
+] call CBA_fnc_addKeybind;
+
+[
+    ELSTRING(main,Title),
     QEGVAR(misc,WakeupUnconscious),
     [ELSTRING(misc,Hotkeys_WakeupUnconscious), ELSTRING(misc,Hotkeys_WakeupUnconsciousTooltip)],
     {},
@@ -82,6 +92,7 @@ ADDON = true;
 
 GVAR(AdditionalBuildables) = false;
 GVAR(AdditionalStatics) = false;
+GVAR(AdditionalVehicles) = false;
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;
@@ -97,8 +108,28 @@ GVAR(Timers) = [false, false];
         if is3DENPreview exitWith {};
         [] call FUNC(loadAdditionalBuildables);
         [] call FUNC(loadAdditionalStatics);
+        [] call FUNC(loadAdditionalVehicles);
         [] call FUNC(loadMarkerSizes);
         [] call FUNC(timerRestore);
         [] call FUNC(commanderMenuAppend);
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);
+
+[QEGVAR(main,eventMainOnSaveGame), {
+    INFO("saving game variables");
+
+    [QGVAR(AdditionalBuildables), +GVAR(AdditionalBuildables)] call A3A_fnc_setStatVariable;
+    [QGVAR(AdditionalStatics), +GVAR(AdditionalStatics)] call A3A_fnc_setStatVariable;
+    [QGVAR(AdditionalVehicles), +GVAR(AdditionalVehicles)] call A3A_fnc_setStatVariable;
+    [QGVAR(MarkerSizes), +GVAR(MarkerSizes)] call A3A_fnc_setStatVariable;
+
+    [QGVAR(Timers), GVAR(Timers) apply {
+        if (_x isEqualType false) then {
+            _x;
+        } else {
+            private _data = +_x;
+            _data set["handle", false];
+            _data;
+        };
+    }] call A3A_fnc_setStatVariable;
+}] call CBA_fnc_addEventHandler;

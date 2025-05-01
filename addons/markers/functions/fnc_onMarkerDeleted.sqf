@@ -29,6 +29,5 @@ params[
 ];
 
 GVAR(storedMarkers) deleteAt _marker;
-[QGVAR(storedMarkers), GVAR(storedMarkers)] call A3A_fnc_setStatVariable;
 
 nil;

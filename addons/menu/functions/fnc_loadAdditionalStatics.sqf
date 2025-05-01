@@ -27,7 +27,6 @@ if (GVAR(AdditionalStatics) isEqualTo false) then {
     if ((isNil QGVAR(AdditionalStatics)) || !(GVAR(AdditionalStatics) isEqualType [])) then {
         INFO("No saved additional statics found, initializing empty array");
         GVAR(AdditionalStatics) = [];
-        [QGVAR(AdditionalStatics), GVAR(AdditionalStatics)] call A3A_fnc_setStatVariable;
     } else {
         INFO("Loading additional statics from saved data");
         GVAR(AdditionalStatics) apply {

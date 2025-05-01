@@ -5,6 +5,14 @@
             <English>A3USPCM - Misc Component</English>
             <German>A3USPCM - Misc Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Misc_Hotkeys_RevealFOV">
+            <English>Reveal in FOV</English>
+            <German>Im Sichtfeld aufdecken</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Hotkeys_RevealFOVTooltip">
+            <English>Reveal units in your FOV that your AI is too stupid to see</English>
+            <German>Enthülle Einheitein in Deinem Sichtfeld, die deine KI zu dumm zu sehen ist</German>
+        </Key>
         <Key ID="STR_A3USPCM_Misc_Hotkeys_WakeupUnconscious">
             <English>Wake up</English>
             <German>Aufwachen</German>
@@ -28,6 +36,10 @@
         <Key ID="STR_A3USPCM_Misc_SnappingNeckProgressText">
             <English>Snapping neck...</English>
             <German>Breche Genick...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_SquashSnake">
+            <English>Squash snake</English>
+            <German>Schlange zerquetschen</German>
         </Key>
     </Package>
 </Project>

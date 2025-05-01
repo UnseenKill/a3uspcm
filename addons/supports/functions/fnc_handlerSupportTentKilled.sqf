@@ -41,4 +41,11 @@ synchronizedObjects _module apply {
 
 [configOf _tent] call FUNC(addToBuildableObjects);
 
+if (GVAR(supportSpecialistsMissions) getOrDefault[_supportType, false] isEqualType objNull) then {
+    private _informer = GVAR(supportSpecialistsMissions) get _supportType;
+    _informer setDamage 1;
+    GVAR(supportSpecialistsMissions) deleteAt _supportType;
+};
+
+
 nil;

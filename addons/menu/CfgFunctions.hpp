@@ -1,6 +1,7 @@
 class CfgFunctions {
     class PREFIX {
         class COMPONENT {
+            PATHTO_FNC(a3uChangeParameter);
             PATHTO_FNC(emergencyInvincibility);
             PATHTO_FNC(fireSmokeLauncher);
             PATHTO_FNC(healGroup);
@@ -8,6 +9,7 @@ class CfgFunctions {
             PATHTO_FNC(miscAddTeamZeus);
             PATHTO_FNC(miscAddToBuildables);
             PATHTO_FNC(miscAddToBuyableStatics);
+            PATHTO_FNC(miscAddToBuyableVehicles);
             PATHTO_FNC(miscEnlargeNearestMarker);
             PATHTO_FNC(miscFindIntel);
             PATHTO_FNC(miscFixVoices);
@@ -37,7 +39,6 @@ class CfgFunctions {
             PATHTO_FNC(unlockLoadout);
             PATHTO_FNC(unlockPermanentMarker);
             PATHTO_FNC(vehiclesAirAccessAnywhere);
-            PATHTO_FNC(vehiclesChangeLockpickDuration);
             PATHTO_FNC(vehiclesFixAirDropVehicles);
             PATHTO_FNC(vehiclesFixAirSupportVehicles);
         };

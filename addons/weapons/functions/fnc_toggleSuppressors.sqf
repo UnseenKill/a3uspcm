@@ -112,7 +112,9 @@ if !(_suppressorOn) then {
 
 if (_unit isEqualTo leader group _unit) then {
     TRACE_1("toggleSuppressors",_unit);
-    ((units group _unit) - [_unit]) apply {
+    units group _unit select {
+        !isPlayer _x;
+    } apply {
         [_x, _suppressorOn] spawn FUNC(toggleSuppressors);
     };
 };

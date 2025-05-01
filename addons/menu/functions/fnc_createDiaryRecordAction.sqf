@@ -28,10 +28,15 @@ params[
 if !assert(!isNull _config) exitWith { "" };
 
 private _key = configName _config;
+private _params = switch true do {
+    case isArray(_config >> "params"): { [_config >> "params", "ARRAY"] call CBA_fnc_getConfigEntry };
+    case isText(_config >> "params"): { [_config >> "params", "STRING"] call CBA_fnc_getConfigEntry };
+    default { [] };
+};
 
 GVAR(DiaryActions) set[_key, createHashMapFromArray[
     ["action", [] call compile([_config >> "action", "STRING"] call CBA_fnc_getConfigEntry)],
-    ["params", if !isText(_config >> "params") then[{[]}, {[[_config >> "params", "STRING"] call CBA_fnc_getConfigEntry]}]],
+    ["params", _params],
     ["config", _config]
 ]];
 

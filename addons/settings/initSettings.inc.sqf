@@ -341,6 +341,16 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(supports,requireSpecialists), "CHECKBOX",
+    [ELSTRING(supports,Settings_requireSpecialists_DisplayName), ELSTRING(supports,Settings_requireSpecialists_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(supports,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Loadout
 
 [

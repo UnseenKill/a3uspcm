@@ -10,6 +10,7 @@ class CfgFunctions {
             PATHTO_FNC(utilContainerCargoCopy);
             PATHTO_FNC(utilCursorTargetAction);
             PATHTO_FNC(utilGenerateUniqueID);
+            PATHTO_FNC(utilIsArmedVehicle);
             PATHTO_FNC(utilIsDaytime);
             PATHTO_FNC(utilLightFlicker);
             PATHTO_FNC(utilOnA3UClientInitDone);

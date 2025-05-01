@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="Menu">
+        <Key ID="STR_A3USPCM_Menu_A3USettings_BuilderTimeCaption">
+            <English>Builder time</English>
+            <German>Bauzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_BuilderTimePrompt">
+            <English>Multiplier (0=instant,5=default)</English>
+            <German>Multiplikator (0=sofort,5=Standard)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_BuilderTimeText">
+            <English>Base builder hold action multiplier.</English>
+            <German>Basis Bauzeit Multiplikator.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_DistanceMissionCaption">
+            <English>Mission distance</English>
+            <German>Missionsdistanz</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_DistanceMissionPrompt">
+            <English>Meters (3000=default)</English>
+            <German>Meter (3000=Standard)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_DistanceMissionText">
+            <English>Radius around HQ where missions can spawn.</English>
+            <German>Radius um das Hauptquartier, in dem Missionen spawnen können.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_MinWeapsCaption">
+            <English>Arsenal item unlock</English>
+            <German>Arsenalfreischaltung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_MinWeapsPrompt">
+            <English>Amount (-1=never,25=default)</English>
+            <German>Menge (-1=nie,25=Standard)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_MinWeapsText">
+            <English>Required items to unlock in arsenal.</English>
+            <German>Benötigte Items zur Freischaltung.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_VehicleLockpickTimeCaption">
+            <English>Vehicle lockpick duration</English>
+            <German>Fahrzeug-Schlösserknackzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_VehicleLockpickTimePrompt">
+            <English>Time needed (0=instant,60=default)</English>
+            <German>Benötigte Zeit (0=sofort,60=Standard)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_A3USettings_VehicleLockpickTimeText">
+            <English>Vehicle lockpick duration.</English>
+            <German>Dauer zum Schlossknacken.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_AAFireControl_AllFireCaption">
             <English>All fire</English>
             <German>Alle feuer frei</German>
@@ -48,6 +96,14 @@
         <Key ID="STR_A3USPCM_Menu_Component">
             <English>A3USPCM - Menu Component</English>
             <German>A3USPCM - Menükomponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryA3USettingsCaption">
+            <English>A3U Parameters</English>
+            <German>A3U Parameter</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryA3USettingsText">
+            <English>Freely change parameters</English>
+            <German>Freies Ändern von Parametern</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryAAFireControlCaption">
             <English>AA Fire Control</English>
@@ -249,6 +305,42 @@
             <English>Add the current cursor target to list of base buyable statics.</English>
             <German>Füge das aktuelle Cursorziel zur Liste der Basis-Stellungswaffen hinzu.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesCaption">
+            <English>Add as vehicle</English>
+            <German>Als Fahrzeug hinzufügen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesConfirmText">
+            <English>Do you want to add "%1" to base vehicles list?</English>
+            <German>Möchtest du "%1" zur Liste der Basis-Fahrzeuge hinzufügen?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintAlreadyExistsText">
+            <English>Object "%1" is already in the list of buyable vehicles.</English>
+            <German>Objekt "%1" befindet sich bereits in der Liste der käuflichen Fahrzeuge.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintNoTargetText">
+            <English>You're not pointing at anything.</English>
+            <German>Du zeigst auf nichts.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintNoVehicleText">
+            <English>"%1" is not a vehicle.</English>
+            <German>"%1" ist kein Fahrzeug.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintSuccessBMWarningText">
+            <English>You can now buy "%1".&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;WARNING:&lt;/t&gt; a black-market config entry exists for this vehicle; certain buying restrictions may still apply!</English>
+            <German>Du kannst "%1" jetzt kaufen.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;WARNUNG:&lt;/t&gt; Ein Schwarzmarkt-Konfigurationseintrag ist für dieses Fahrzeug vorhanden; bestimmte Kaufbeschränkungen können weiterhin gelten!</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintSuccessText">
+            <English>You can now buy "%1" for the price of %2$.</English>
+            <German>Du kannst "%1" jetzt für den Preis von %2$ kaufen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesPricePromptText">
+            <English>New price</English>
+            <German>Neuer Preis</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesText">
+            <English>Add the current cursor target to list of base buyable vehicles.</English>
+            <German>Füge das aktuelle Cursorziel zur Liste der Basis-Fahrzeuge hinzu.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_EmergencyInvincibilityCooldownHintText">
             <English>You have recently been immortal. That can't happen any time, though. Wait another %1 seconds.</English>
             <German>Du warst erst vor Kurzem unsterblich. Das kann aber nicht jederzeit passieren. Warte weitere %1 Sekunden.</German>
@@ -326,7 +418,7 @@
             <German>%1 hat jetzt die Fähigkeit, Loot zu sammeln.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_MakeLootBoxText">
-            <English>Turn cursor target into lootbox to collect scattered loot.</English>
+            <English>Turn cursor target into loot-collect box.</English>
             <German>Verwandle das Cursorziel in eine Lootbox, um verstreuten Loot zu sammeln.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_OutskirtsMarkerText">
@@ -780,18 +872,6 @@
         <Key ID="STR_A3USPCM_Menu_Vehicles_AirAccessAnywhereText">
             <English>Access your air vehicles from any garage.</English>
             <German>Greife von jeder Garage aus auf deine Luftfahrzeuge zu.</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationCaption">
-            <English>Change lock picking duration</English>
-            <German>Dauer des Schlösserknackens ändern</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationPrompt">
-            <English>Change to seconds</English>
-            <German>Auf soviele Sekunden ändern</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Vehicles_ChangeLockpickDurationSuccess">
-            <English>Vehicle lockpicking base duration changed to %1 seconds.</English>
-            <German>Die Basisdauer für das Knacken von Fahrzeugschlössern wurde auf %1 Sekunden geändert.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Vehicles_FixAirDropVehiclesCaption">
             <English>Fix helicopters</English>

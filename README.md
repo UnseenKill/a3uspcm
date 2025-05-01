@@ -34,6 +34,7 @@ Features
    * Emergency invincibility hot-button; press it quickly if you see the APFSDS flying towards you (configurable via addon controls; NO default button).
    * Add any building you're looking at to base buildable object list (added to save-game data)
    * Access your air assets from any garage. They *are* air assets after all, right?
+   * Change many A3U parameters to values of your choice permanently
  * AA Fire Control
    * Enemy detection side chat messages
    * Fire information side chat messages
@@ -42,6 +43,7 @@ Features
    * Build support tents on your base to unlock radio support
    * Assign captured planes/helicopters as CAS response units
    * Assign mortars, MLRS as artillery support
+   * If you want, find a specialist for each support type to unlock that support in the world
  * Despawn Suppression Beacon™
    * Tired of dying, respawning and teleporting back to the battlefield only to find the loot and vehicles gone?
    * Tire no more: place the *Despawn Suppression Beacon™* in the respawn radius of a location (default 1.1km) and die as often as you like. Nothing will despawn.

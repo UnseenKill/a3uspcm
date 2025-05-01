@@ -81,6 +81,17 @@ params[
                     ] call ace_interact_menu_fnc_createAction,
                     [],
                     _target
+                ],
+                [
+                    [
+                        QGVAR(MenuSupportsEjectCrew),
+                        localize LSTRING(MenuSupportsEjectCrew),
+                        "",
+                        { call FUNC(ejectCrew) },
+                        { call FUNC(canEjectCrew) }
+                    ] call ace_interact_menu_fnc_createAction,
+                    [],
+                    _target
                 ]
             ]
         }

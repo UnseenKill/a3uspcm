@@ -2,10 +2,15 @@
 #include "\z\a3uspcm\addons\main\script_mod.hpp"
 #include "\z\a3uspcm\addons\main\script_macros.hpp"
 
-#define SUPPORT_TYPE_ARTILLERY QUOTE(artillery)
-#define SUPPORT_TYPE_CAS_PLANE QUOTE(cas_plane)
-#define SUPPORT_TYPE_CAS_HELICOPTER QUOTE(cas_helicopter)
-#define SUPPORT_TYPE_TRANSPORT QUOTE(transport)
+#define SUPPORT_TYPE_ARTILLERY_P artillery
+#define SUPPORT_TYPE_CAS_HELICOPTER_P cas_helicopter
+#define SUPPORT_TYPE_CAS_PLANE_P cas_plane
+#define SUPPORT_TYPE_TRANSPORT_P transport
+
+#define SUPPORT_TYPE_ARTILLERY QUOTE(SUPPORT_TYPE_ARTILLERY_P)
+#define SUPPORT_TYPE_CAS_PLANE QUOTE(SUPPORT_TYPE_CAS_PLANE_P)
+#define SUPPORT_TYPE_CAS_HELICOPTER QUOTE(SUPPORT_TYPE_CAS_HELICOPTER_P)
+#define SUPPORT_TYPE_TRANSPORT QUOTE(SUPPORT_TYPE_TRANSPORT_P)
 
 #define SUPPORT_TYPES_MAP [ \
     [SUPPORT_TYPE_ARTILLERY, "Artillery"], \

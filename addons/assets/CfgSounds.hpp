@@ -21,4 +21,19 @@ class CfgSounds {
 		sound[] = {QPATHTOF(sound\cash-register-purchase-87313.ogg), 1, 1, 5};
 		titles[] = {};
 	};
+
+	// From https://pixabay.com/sound-effects/squish-107555/
+	class GVAR(Squash0) {
+		name = "Snake Squashed Sound";
+		sound[] = {QPATHTOF(sound\tomato-squishwet-103934.ogg), 1, 1, 5};
+		titles[] = {};
+	};
+
+	// From https://pixabay.com/sound-effects/goopy-slime-30-229642/
+	class GVAR(Squash1) {
+		name = "Snake Squashed Sound";
+		sound[] = {QPATHTOF(sound\goopy-slime-30-229642.ogg), 1, 1, 5};
+		titles[] = {};
+	};
 };
+

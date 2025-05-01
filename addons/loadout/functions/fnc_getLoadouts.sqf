@@ -41,7 +41,6 @@ if (GVAR(Loadouts) isEqualType false) then {
     };
 
     TRACE_1("loaded",GVAR(Loadouts));
-    [QGVAR(Loadouts), GVAR(Loadouts)] call A3A_fnc_setStatVariable;
 };
 
 GVAR(Loadouts);

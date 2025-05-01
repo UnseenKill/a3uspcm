@@ -45,7 +45,6 @@ while {count _loadouts > MAX_LOADOUTS} do {
 };
 
 GVAR(Loadouts) = _loadouts;
-[QGVAR(Loadouts), GVAR(Loadouts)] call A3A_fnc_setStatVariable;
 
 [
     localize LSTRING(HintLoadoutSaveCaption),
