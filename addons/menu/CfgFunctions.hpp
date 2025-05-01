@@ -9,6 +9,7 @@ class CfgFunctions {
             PATHTO_FNC(miscAddTeamZeus);
             PATHTO_FNC(miscAddToBuildables);
             PATHTO_FNC(miscAddToBuyableStatics);
+            PATHTO_FNC(miscAddToBuyableVehicles);
             PATHTO_FNC(miscEnlargeNearestMarker);
             PATHTO_FNC(miscFindIntel);
             PATHTO_FNC(miscFixVoices);

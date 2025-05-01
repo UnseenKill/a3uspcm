@@ -305,6 +305,42 @@
             <English>Add the current cursor target to list of base buyable statics.</English>
             <German>Füge das aktuelle Cursorziel zur Liste der Basis-Stellungswaffen hinzu.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesCaption">
+            <English>Add as vehicle</English>
+            <German>Als Fahrzeug hinzufügen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesConfirmText">
+            <English>Do you want to add "%1" to base vehicles list?</English>
+            <German>Möchtest du "%1" zur Liste der Basis-Fahrzeuge hinzufügen?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintAlreadyExistsText">
+            <English>Object "%1" is already in the list of buyable vehicles.</English>
+            <German>Objekt "%1" befindet sich bereits in der Liste der käuflichen Fahrzeuge.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintNoTargetText">
+            <English>You're not pointing at anything.</English>
+            <German>Du zeigst auf nichts.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintNoVehicleText">
+            <English>"%1" is not a vehicle.</English>
+            <German>"%1" ist kein Fahrzeug.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintSuccessBMWarningText">
+            <English>You can now buy "%1".&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;WARNING:&lt;/t&gt; a black-market config entry exists for this vehicle; certain buying restrictions may still apply!</English>
+            <German>Du kannst "%1" jetzt kaufen.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;WARNUNG:&lt;/t&gt; Ein Schwarzmarkt-Konfigurationseintrag ist für dieses Fahrzeug vorhanden; bestimmte Kaufbeschränkungen können weiterhin gelten!</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintSuccessText">
+            <English>You can now buy "%1" for the price of %2$.</English>
+            <German>Du kannst "%1" jetzt für den Preis von %2$ kaufen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesPricePromptText">
+            <English>New price</English>
+            <German>Neuer Preis</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesText">
+            <English>Add the current cursor target to list of base buyable vehicles.</English>
+            <German>Füge das aktuelle Cursorziel zur Liste der Basis-Fahrzeuge hinzu.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_EmergencyInvincibilityCooldownHintText">
             <English>You have recently been immortal. That can't happen any time, though. Wait another %1 seconds.</English>
             <German>Du warst erst vor Kurzem unsterblich. Das kann aber nicht jederzeit passieren. Warte weitere %1 Sekunden.</German>
