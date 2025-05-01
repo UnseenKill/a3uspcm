@@ -46,8 +46,6 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableStatics),_this);
                     A3A_faction_reb get "staticMGs" pushBackUnique typeOf _target;
                     GVAR(AdditionalStatics) pushBack _static;
 
-                    [QGVAR(AdditionalStatics), GVAR(AdditionalStatics)] call A3A_fnc_setStatVariable;
-
                     [
                         localize LSTRING(Miscellaneous_AddToBuyableStaticsCaption),
                         format [localize LSTRING(Miscellaneous_AddToBuyableStaticsHintSuccessText), getText(configOf _target >> "displayName"), _price]

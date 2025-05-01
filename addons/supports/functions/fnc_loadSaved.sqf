@@ -48,7 +48,6 @@ if (GVAR(supportSpecialists) isEqualTo false) then {
     };
 
     GVAR(supportSpecialists) = createHashMapFromArray GVAR(supportSpecialists);
-    [QGVAR(supportSpecialists), GVAR(supportSpecialists)] call A3A_fnc_setStatVariable;
 
     [
         {

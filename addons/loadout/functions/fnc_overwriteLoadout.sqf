@@ -41,7 +41,6 @@ if !assert(!(GVAR(Loadouts) isEqualType false)) exitWith {};
     private _thisLoadout = [_vehicle] call FUNC(serializeLoadout);
 
     GVAR(Loadouts) set[_index, _thisLoadout];
-    [QGVAR(Loadouts), GVAR(Loadouts)] call A3A_fnc_setStatVariable;
 
     [
         localize LSTRING(HintLoadoutManageCaption),

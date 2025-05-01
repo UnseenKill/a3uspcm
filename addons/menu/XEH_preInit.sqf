@@ -114,3 +114,22 @@ GVAR(Timers) = [false, false];
         [] call FUNC(commanderMenuAppend);
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);
+
+[QEGVAR(main,eventMainOnSaveGame), {
+    INFO("saving game variables");
+
+    [QGVAR(AdditionalBuildables), +GVAR(AdditionalBuildables)] call A3A_fnc_setStatVariable;
+    [QGVAR(AdditionalStatics), +GVAR(AdditionalStatics)] call A3A_fnc_setStatVariable;
+    [QGVAR(AdditionalVehicles), +GVAR(AdditionalVehicles)] call A3A_fnc_setStatVariable;
+    [QGVAR(MarkerSizes), GVAR(MarkerSizes)] call A3A_fnc_setStatVariable;
+
+    [QGVAR(Timers), GVAR(Timers) apply {
+        if (_x isEqualType false) then {
+            _x;
+        } else {
+            private _data = +_x;
+            _data set["handle", false];
+            _data;
+        };
+    }] call A3A_fnc_setStatVariable;
+}] call CBA_fnc_addEventHandler;

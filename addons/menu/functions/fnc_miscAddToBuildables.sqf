@@ -46,8 +46,6 @@ TRACE_1(QFUNCMAIN(miscAddToBuildables),_this);
                     A3A_buildableObjects pushBack _buildable;
                     GVAR(AdditionalBuildables) pushBack _buildable;
 
-                    [QGVAR(AdditionalBuildables), GVAR(AdditionalBuildables)] call A3A_fnc_setStatVariable;
-
                     [
                         localize LSTRING(Miscellaneous_AddToBuildablesCaption),
                         format [localize LSTRING(Miscellaneous_AddToBuildablesHintSuccessText), getText(configOf _target >> "displayName"), _price]

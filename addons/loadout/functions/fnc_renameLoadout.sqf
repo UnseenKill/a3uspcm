@@ -35,7 +35,6 @@ private _lo = GVAR(Loadouts) select _index;
     params["_name","_index"];
 
     GVAR(Loadouts) select _index set[0, _name];
-    [QGVAR(Loadouts), GVAR(Loadouts)] call A3A_fnc_setStatVariable;
 
     [
         localize LSTRING(HintLoadoutManageCaption),

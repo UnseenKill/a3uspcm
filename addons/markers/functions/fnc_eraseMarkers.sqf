@@ -53,7 +53,6 @@ GVAR(MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
 
     GVAR(markerNameMapping) deleteAt _nearestMarker;
     GVAR(storedMarkers) deleteAt _markerId;
-    [QGVAR(storedMarkers), GVAR(storedMarkers)] call A3A_fnc_setStatVariable;
 }];
 
 [] spawn {

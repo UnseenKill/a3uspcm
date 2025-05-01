@@ -38,7 +38,6 @@ if !assert(!(GVAR(Loadouts) isEqualType false)) exitWith {};
     if !([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) exitWith {};
 
     private _lo = GVAR(Loadouts) deleteAt _index;
-    [QGVAR(Loadouts), GVAR(Loadouts)] call A3A_fnc_setStatVariable;
 
     [
         localize LSTRING(HintLoadoutManageCaption),

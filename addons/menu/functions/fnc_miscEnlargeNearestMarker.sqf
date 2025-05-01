@@ -31,7 +31,6 @@ private _markerX = [_sites, player] call BIS_fnc_nearestPosition;
     _markerX setMarkerSize[_amount, _amount];
 
     GVAR(MarkerSizes) set[_markerX, _amount];
-    [QGVAR(MarkerSizes), GVAR(MarkerSizes)] call A3A_fnc_setStatVariable;
 
     systemChat "Done";
 }, _markerX] call FUNCMAIN(utilPromptText);

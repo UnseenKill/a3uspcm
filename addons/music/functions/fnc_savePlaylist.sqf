@@ -39,7 +39,6 @@ private _count = _tree tvCount[];
 };
 
 TRACE_1("save playlist",GVAR(tracks));
-[QGVAR(tracks), GVAR(tracks)] call A3A_fnc_setStatVariable;
 
 closeDialog 0;
 nil;

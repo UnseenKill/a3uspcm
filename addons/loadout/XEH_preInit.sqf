@@ -14,3 +14,8 @@ GVAR(Loadouts) = false;
         [] call FUNC(getLoadouts);
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);
+
+[QEGVAR(main,eventMainOnSaveGame), {
+    INFO("saving loadouts");
+    [QGVAR(Loadouts), +GVAR(Loadouts)] call A3A_fnc_setStatVariable;
+}] call CBA_fnc_addEventHandler;
