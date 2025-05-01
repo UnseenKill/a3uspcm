@@ -39,7 +39,6 @@ private _config = configFile >> QGVAR(Config) >> "Missions" >> _supportType;
 if !assert(isClass _config) exitWith {};
 
 GVAR(supportSpecialists) set[_supportType, true];
-[QGVAR(supportSpecialists), GVAR(supportSpecialists)] call A3A_fnc_setStatVariable;
 
 [GVAR(supportBuildings) get _supportType] call FUNC(setupSupportTent);
 
