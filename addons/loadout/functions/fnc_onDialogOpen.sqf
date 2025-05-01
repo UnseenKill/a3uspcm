@@ -66,7 +66,6 @@ _control ctrlAddEventHandler["ButtonClick", {
     private _index = parseNumber(_list lnbData[lnbCurSelRow _list, 0]);
 
     private _lo = GVAR(Loadouts) deleteAt _index;
-    [QGVAR(Loadouts), GVAR(Loadouts)] call A3A_fnc_setStatVariable;
 
     systemChat format[localize LSTRING(HintLoadoutDeletedText), _lo select 0];
     _list lnbDeleteRow lnbCurSelRow _list;
