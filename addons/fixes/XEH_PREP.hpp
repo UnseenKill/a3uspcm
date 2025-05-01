@@ -1,4 +1,5 @@
 PREP(fixCargoLoadedStaticsMounting);
+PREP(fixSaveLoop);
 PREP(halsStoreDialogAdjust);
 PREP(halsStoreDialogInit);
 PREP(halsStoreDialogUpdateAmount);
