@@ -30,7 +30,7 @@ if !assert(!isNull _vehicle) exitWith {};
 if !assert(!isNull _player) exitWith {};
 
 crew _vehicle apply {
-    private _unit = x;
+    private _unit = _x;
 
     // AI can't dismount; just delete them
     if (["I_UAV_AI","B_UAV_AI","O_UAV_AI","C_UAV_AI"] findIf { _unit isKindOf _x } >= 0) then {

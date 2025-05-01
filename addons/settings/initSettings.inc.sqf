@@ -260,6 +260,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(aafc,autoGroupIgnoreClasses), "EDITBOX",
+    [ELSTRING(aafc,Settings_autoGroupIgnoreClasses_DisplayName), ELSTRING(aafc,Settings_autoGroupIgnoreClasses_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    '["TwinMortar_base_RF"]', // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(aafc,autoReload), "CHECKBOX",
     [ELSTRING(aafc,Settings_autoReload_DisplayName), ELSTRING(aafc,Settings_autoReload_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
