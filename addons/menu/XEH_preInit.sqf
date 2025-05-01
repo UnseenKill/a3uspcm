@@ -121,7 +121,7 @@ GVAR(Timers) = [false, false];
     [QGVAR(AdditionalBuildables), +GVAR(AdditionalBuildables)] call A3A_fnc_setStatVariable;
     [QGVAR(AdditionalStatics), +GVAR(AdditionalStatics)] call A3A_fnc_setStatVariable;
     [QGVAR(AdditionalVehicles), +GVAR(AdditionalVehicles)] call A3A_fnc_setStatVariable;
-    [QGVAR(MarkerSizes), GVAR(MarkerSizes)] call A3A_fnc_setStatVariable;
+    [QGVAR(MarkerSizes), +GVAR(MarkerSizes)] call A3A_fnc_setStatVariable;
 
     [QGVAR(Timers), GVAR(Timers) apply {
         if (_x isEqualType false) then {
