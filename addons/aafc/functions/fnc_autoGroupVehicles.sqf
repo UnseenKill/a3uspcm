@@ -17,15 +17,23 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-_this spawn {
-    TRACE_1(QFUNC(autoGroupVehicles),_this);
+TRACE_1(QFUNC(autoGroupVehicles),_this);
 
-    uiSleep AUTO_GROUP_DELAY;
-
+[{
     private _grouped = [];
+    private _ignore = parseSimpleArray GVAR(autoGroupIgnoreClasses);
+
+    if !(_ignore isEqualType []) then {
+        WARNING_2("%1(): vehicles classes list could not be parsed from %2",QFUNC(autoGroupVehicles),GVAR(autoGroupIgnoreClasses));
+    } else {
+        _ignore = _ignore select { _x isEqualType "" };
+    };
+
     private _vehicles = allUnitsUAV select {
-        (_x getVariable[QGVAR(autoGroup), true] isEqualTo true) &&
-        (_x getVariable["ownerSide", sideUnknown] isEqualTo side theBoss)
+        private _vehicle = _x;
+        (_vehicle getVariable[QGVAR(autoGroup), true] isEqualTo true) &&
+        (_vehicle getVariable["ownerSide", sideUnknown] isEqualTo side theBoss) &&
+        (_ignore findIf { _vehicle isKindOf _x } isEqualTo -1)
     };
 
     while { _vehicles isNotEqualTo [] } do {
@@ -56,6 +64,6 @@ _this spawn {
 
         [_x] call A3USPCM_zeus_fnc_doCrewStatic;
     } forEach _grouped;
-};
+}, _this, AUTO_GROUP_DELAY] call CBA_fnc_waitAndExecute;
 
 nil;

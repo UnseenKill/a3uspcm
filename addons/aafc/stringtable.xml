@@ -73,9 +73,17 @@
             <English>Find clusters of A/A vehicles and automatically create groups for them.</English>
             <German>Findet Ansammlungen von Fla-Fahrzeugen und erstellt automatisch Gruppen für diese.</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_autoGroupIgnoreClasses_DisplayName">
+            <English>Find cluster - ignore classes</English>
+            <German>Anhäufungen - ignoriere Klassen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_autoGroupIgnoreClasses_Tooltip">
+            <English>Ignore these classes when searching for clusters of A/A vehicles.</English>
+            <German>Ignoriere diese Klassen, wenn du nach Ansammlungen von Fla-Fahrzeugen suchst.</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_autoGroupRadius_DisplayName">
-            <English>Find cluster radius</English>
-            <German>Radius für Suche</German>
+            <English>Find cluster - radius</English>
+            <German>Anhäufungen - Radius für Suche</German>
         </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_autoGroupRadius_Tooltip">
             <English>Radius in meters to find clusters of A/A vehicles.</English>
