@@ -27,7 +27,6 @@ if (GVAR(AdditionalVehicles) isEqualTo false) then {
     if ((isNil QGVAR(AdditionalVehicles)) || !(GVAR(AdditionalVehicles) isEqualType [])) then {
         INFO("No saved additional Vehicles found, initializing empty array");
         GVAR(AdditionalVehicles) = [];
-        [QGVAR(AdditionalVehicles), GVAR(AdditionalVehicles)] call A3A_fnc_setStatVariable;
     } else {
         private _typeMap = createHashMapFromArray[
             ["vehiclesLightArmed", "TANK"],

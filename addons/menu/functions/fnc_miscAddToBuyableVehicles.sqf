@@ -66,8 +66,6 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableVehicles),_this);
                     A3A_faction_reb get _key pushBackUnique typeOf _target;
                     GVAR(AdditionalVehicles) pushBack _config;
 
-                    [QGVAR(AdditionalVehicles), GVAR(AdditionalVehicles)] call A3A_fnc_setStatVariable;
-
                     private _hasBM = A3U_blackMarketStock findIf { _x select 0 isEqualTo typeOf _target } >= 0;
 
                     [
