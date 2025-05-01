@@ -99,6 +99,13 @@ class GVAR(Config) {
                 text = CSTRING(Miscellaneous_AddToBuyableStaticsText);
                 action = QFUNCMAIN(miscAddToBuyableStatics);
                 closeDiary = 1;
+            };
+
+            class AddToBuyableVehicles {
+                caption = CSTRING(Miscellaneous_AddToBuyableVehiclesCaption);
+                text = CSTRING(Miscellaneous_AddToBuyableVehiclesText);
+                action = QFUNCMAIN(miscAddToBuyableVehicles);
+                closeDiary = 1;
 
                 separator = 1;
             };

@@ -92,6 +92,7 @@ ADDON = true;
 
 GVAR(AdditionalBuildables) = false;
 GVAR(AdditionalStatics) = false;
+GVAR(AdditionalVehicles) = false;
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;
@@ -107,6 +108,7 @@ GVAR(Timers) = [false, false];
         if is3DENPreview exitWith {};
         [] call FUNC(loadAdditionalBuildables);
         [] call FUNC(loadAdditionalStatics);
+        [] call FUNC(loadAdditionalVehicles);
         [] call FUNC(loadMarkerSizes);
         [] call FUNC(timerRestore);
         [] call FUNC(commanderMenuAppend);
