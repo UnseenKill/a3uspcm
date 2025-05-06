@@ -60,10 +60,10 @@ getArray(configOf _tent >> QGVAR(attachObjects)) apply {
     _tent setVariable[QGVAR(specialistClass), typeOf _object];
     deleteVehicle _object;
 
-    private _spawnSpecialist = (!GVAR(requireSpecialists)) || (
+    private _spawnSpecialist = (!GVAR(requireSpecialists)) || {
         (GVAR(supportSpecialists) isEqualType createHashMap) && 
-        (GVAR(supportSpecialists) getOrDefault[_tent getVariable QGVAR(supportType), false] isEqualTo true)
-    );
+        { GVAR(supportSpecialists) getOrDefault[_tent getVariable QGVAR(supportType), false] isEqualTo true }
+    };
 
     TRACE_2(QFUNC(setupSupportTent),_spawnSpecialist,_tent);
 

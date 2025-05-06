@@ -45,7 +45,7 @@ getArray(_config >> "weapons") apply {
 };
 
 _list = _list select {
-    !(_x in _turretWeapons) && isClass(configFile >> "CfgWeapons" >> _x);
+    !(_x in _turretWeapons) && { isClass(configFile >> "CfgWeapons" >> _x) };
 } apply {
     [getText(configFile >> "CfgWeapons" >> _x >> "displayName"), _x];
 };

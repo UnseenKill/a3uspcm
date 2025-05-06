@@ -49,7 +49,7 @@ if (_confirm < diag_tickTime) exitWith {
 
         waitUntil {
             (isNull _display) ||
-            (_control getVariable[QGVAR(confirm), 0] < diag_tickTime)
+            { _control getVariable[QGVAR(confirm), 0] < diag_tickTime }
         };
 
         if (isNull _display) exitWith {};
@@ -110,7 +110,7 @@ private _list = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINER
             private _amount = _data get "count";
             private _price = _data get "price";
 
-            if ((_data get "sellable" isNotEqualTo _selling) || (_class in _protected)) then {
+            if ((_data get "sellable" isNotEqualTo _selling) || { _class in _protected }) then {
                 _index = _index + 1;
                 continue;
             };

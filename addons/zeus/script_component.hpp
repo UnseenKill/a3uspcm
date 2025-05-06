@@ -6,7 +6,7 @@
 #define REORIENT_OBJECT_WAIT 5
 #define TEST_CAN_GARAGE(VEHICLE) (\
     ((VEHICLE) isKindOf "LandVehicle") ||\
-    ((VEHICLE) isKindOf "StaticWeapon") ||\
-    ((VEHICLE) isKindOf "Air") ||\
-    ((VEHICLE) isKindOf "Ship") \
+    { (VEHICLE) isKindOf "StaticWeapon" } ||\
+    { (VEHICLE) isKindOf "Air" } ||\
+    { (VEHICLE) isKindOf "Ship" } \
 )

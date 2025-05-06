@@ -31,5 +31,5 @@ if (objectParent _player isNotEqualTo _vehicle) exitWith { false };
 if (_player isNotEqualTo commander _vehicle) exitWith { false };
 
 (_vehicle getVariable[QGVAR(hunterkiller), false] isEqualTo false) && 
-!(isNumber(configOf _vehicle >> "ace_hunterkiller")) &&
-!(isArray(configOf _vehicle >> "ace_hunterkiller"));
+{ !(isNumber(configOf _vehicle >> "ace_hunterkiller")) } &&
+{ !(isArray(configOf _vehicle >> "ace_hunterkiller")) };

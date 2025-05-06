@@ -30,8 +30,8 @@ if !assert(!isNull _vehicle) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
 
 if !GVAR(requireSupportBuildings) exitWith { true };
-if (GVAR(requireSupportBuildings) && !(_supportType in GVAR(supportBuildings))) exitWith { false };
-if (GVAR(requireSpecialists) && !(GVAR(supportSpecialists) getOrDefault[_supportType, false])) exitWith { false };
+if (GVAR(requireSupportBuildings) && { !(_supportType in GVAR(supportBuildings)) }) exitWith { false };
+if (GVAR(requireSpecialists) && { !(GVAR(supportSpecialists) getOrDefault[_supportType, false]) }) exitWith { false };
 
 if (_vehicle getVariable[QGVAR(supportType), false] isNotEqualTo false) exitWith { false };
 

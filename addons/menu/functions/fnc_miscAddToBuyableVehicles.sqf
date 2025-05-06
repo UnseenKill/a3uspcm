@@ -30,7 +30,7 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableVehicles),_this);
 
             private _isArmed = [_target] call FUNCMAIN(utilIsArmedVehicle);
             private _key = switch true do {
-                case (_isArmed && (_target isKindOf "Car"));
+                case (_isArmed && {_target isKindOf "Car"});
                 case (_target isKindOf "Tank"): { "vehiclesLightArmed" };
                 case (_target isKindOf "Helicopter"): { ["vehiclesCivHeli","vehiclesPlane"] select _isArmed };
                 case (_target isKindOf "Plane"): { ["vehiclesCivPlane","vehiclesPlane"] select _isArmed };

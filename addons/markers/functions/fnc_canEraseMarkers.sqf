@@ -18,7 +18,7 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 if !GVAR(allowPersistentMarkers) exitWith { false };
-if !((alive player) && (QGVAR(PermanentMarker) in uniformItems player)) exitWith { false };
+if !((alive player) && {QGVAR(PermanentMarker) in uniformItems player}) exitWith { false };
 
 switch true do {
     case ("theBoss" isEqualTo GVAR(allowUsageFor)): { player isEqualTo theBoss };

@@ -27,4 +27,4 @@ params[
 if !assert(!isNull _target) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
 
-(alive _target && _target getVariable["ACE_isUnconscious",false] && (side _target isNotEqualTo side _player));
+alive _target && {_target getVariable["ACE_isUnconscious",false] && {side _target isNotEqualTo side _player}};
