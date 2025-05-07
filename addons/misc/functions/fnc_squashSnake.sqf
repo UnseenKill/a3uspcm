@@ -26,7 +26,7 @@ params[
 
 if !assert(!isNull _player) exitWith {};
 
-_player nearObjects 4 select { (alive _x) && (typeOf _x isEqualTo "Snake_random_F") } apply {
+_player nearObjects 4 select { (alive _x) && { typeOf _x isEqualTo "Snake_random_F" } } apply {
     [
         {
             playSound selectRandom[QEGVAR(assets,Squash0), QEGVAR(assets,Squash1)];

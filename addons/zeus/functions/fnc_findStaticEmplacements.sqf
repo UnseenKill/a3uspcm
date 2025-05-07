@@ -41,8 +41,7 @@ private _position = if (_logic isEqualType []) then {
 
 private _radius = FIND_STATIC_RADIUS;
 private _statics = nearestObjects[_position, ["StaticWeapon"], _radius, true] select {
-    (alive _x) &&
-    (_x isKindOf "StaticWeapon");
+    (alive _x) && { _x isKindOf "StaticWeapon" };
 };
 
 allCurators apply {

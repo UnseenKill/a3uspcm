@@ -74,9 +74,9 @@ _this spawn {
         if (_dir1 # 1 < 0) then { _bisDir = _bisDir + 180 };
 
         GVAR(unitsDetected) = ((_player nearObjects["CAManBase", GVAR(revealRadius)]) - [_player]) select {
-            (alive _x) && (side _x isNotEqualTo side _player) &&
-            ([_pos, _bisDir, 2 * GVAR(revealCone), getPosWorld _x] call BIS_fnc_inAngleSector) &&
-            !(lineIntersects[AGLToASL _pos, getPosASL _x, vehicle _player, _x])
+            (alive _x) && { side _x isNotEqualTo side _player } &&
+            { [_pos, _bisDir, 2 * GVAR(revealCone), getPosWorld _x] call BIS_fnc_inAngleSector } &&
+            { !lineIntersects[AGLToASL _pos, getPosASL _x, vehicle _player, _x] }
         } apply {
             group _player reveal[_x, 4];
             _x;

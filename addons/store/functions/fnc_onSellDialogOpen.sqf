@@ -128,7 +128,7 @@ _control ctrlAddEventHandler["CheckedChanged", {
 [_display] spawn {
     params[["_display",displayNull,[displayNull]]];
 
-    waitUntil { isNull _display || GVAR(sellContainerReady) };
+    waitUntil { isNull _display || { GVAR(sellContainerReady) } };
     TRACE_1("sellContainerReady",GVAR(sellContainerReady));
 
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText localize LSTRING(AdvSell_DblClickHint);

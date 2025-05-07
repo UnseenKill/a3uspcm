@@ -27,4 +27,4 @@ params[
 ];
 
 (!EGVAR(main,AceHaveAddon) || { [_player, _beacon] call ace_common_fnc_canInteractWith })
-&& !(call FUNC(canActivate));
+&& { !(call FUNC(canActivate)) };

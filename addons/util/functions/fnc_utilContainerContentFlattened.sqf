@@ -62,7 +62,7 @@ everyBackpack _container apply {
 };
 
 flatten _collection select {
-    (_x isEqualType "") && (_x isNotEqualTo "");
+    (_x isEqualType "") && {_x isNotEqualTo ""};
 } apply {
     private _item = _items getOrDefault[_x, createHashMapFromArray[
         ["count", 0],

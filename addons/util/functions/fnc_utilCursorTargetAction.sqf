@@ -44,7 +44,7 @@ _this spawn {
         ["_recursive", false, [false]]
     ];
 
-    if (visibleMap || (!_recursive && isNull(cursorTarget))) exitWith {
+    if (visibleMap || {!_recursive && {isNull(cursorTarget)}}) exitWith {
         openMap false;
         uiSleep GVAR(cursorTargetActionDelay);
         [_callbackOnTarget, RETNIL(_callbackArgs), _callbackNoTarget, true] call FUNCMAIN(utilCursorTargetAction);
