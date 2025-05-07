@@ -51,6 +51,13 @@ class GVAR(Config) {
                 closeDiary = 1;
             };
 
+            class RevealLocation {
+                caption = CSTRING(Miscellaneous_RevealLocationCaption);
+                text = CSTRING(Miscellaneous_RevealLocationText);
+                action = QFUNCMAIN(miscRevealLocation);
+                condition = QUOTE(hideEnemyMarkers);
+            };
+
             class RepairBuildings {
                 caption = CSTRING(Miscellaneous_RepairBuildingsCaption);
                 text = CSTRING(Miscellaneous_RepairBuildingsText);

@@ -18,6 +18,7 @@ class CfgFunctions {
             PATHTO_FNC(miscPlaceBeacon);
             PATHTO_FNC(miscReinstateLeadership);
             PATHTO_FNC(miscRepairBuildings);
+            PATHTO_FNC(miscRevealLocation);
             PATHTO_FNC(miscShowRoadblocks);
             PATHTO_FNC(miscSpawnLootBox);
             PATHTO_FNC(miscUncompromise);

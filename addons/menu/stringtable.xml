@@ -453,6 +453,14 @@
             <English>Repair damaged buildings around player position.</English>
             <German>Repariere beschädigte Gebäude in der Nähe der Spielerposition.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_RevealLocationCaption">
+            <English>Reveal zone</English>
+            <German>Zone enthüllen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_RevealLocationText">
+            <English>Reveal a random location on the map.</English>
+            <German>Enthülle einen zufälligenStandort auf der Karte.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RoadblockDestroyedMarkerText">
             <English>Roadblock (destroyed)</English>
             <German>Straßensperre (zerstört)</German>
