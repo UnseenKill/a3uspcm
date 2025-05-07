@@ -105,6 +105,8 @@ GVAR(Timers) = [false, false];
             _x addCuratorEditableObjects[[theBoss]];
         };
 
+        [] call FUNC(diaryInitialize);
+
         if is3DENPreview exitWith {};
         [] call FUNC(loadAdditionalBuildables);
         [] call FUNC(loadAdditionalStatics);
