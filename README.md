@@ -34,6 +34,7 @@ Features
    * Emergency invincibility hot-button; press it quickly if you see the APFSDS flying towards you (configurable via addon controls; NO default button).
    * Add any building you're looking at to base buildable object list (added to save-game data)
    * Access your air assets from any garage. They *are* air assets after all, right?
+   * Reveal a random zone if enemy markers are hidden
    * Change many A3U parameters to values of your choice permanently
  * AA Fire Control
    * Enemy detection side chat messages
