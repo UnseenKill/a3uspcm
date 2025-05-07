@@ -5,3 +5,4 @@ PREP(revealFOV);
 PREP(snapNeck);
 PREP(squashSnake);
 PREP(wakeupUnconscious);
+PREP(wearClothes);
