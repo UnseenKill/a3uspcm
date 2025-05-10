@@ -37,6 +37,10 @@
             <English>Revoke support role</English>
             <German>Unterstützungsrolle aufheben</German>
         </Key>
+        <Key ID="STR_A3USPCM_Supports_MenuSupportsVanillaAssignAs">
+            <English>&lt;t color="#ffcc33"&gt;Assign as %1&lt;/t&gt;</English>
+            <German>&lt;t color="#ffcc33"&gt;Zuweisen als %1&lt;/t&gt;</German>
+        </Key>
         <Key ID="STR_A3USPCM_Supports_MissionSpecialistArtillery">
             <English>Find artillery specialist</English>
             <German>Artilleriespezialist finden</German>
