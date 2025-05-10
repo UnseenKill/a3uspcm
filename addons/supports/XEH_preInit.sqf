@@ -14,6 +14,7 @@ GVAR(tentGuysGroup) setVariable["ace_map_hideBlueForceMarker", true];
 
 [{
     [] call FUNC(appendBuildables);
+    [] call FUNC(initInteractions);
     [] call FUNC(loadSaved);
 }] call FUNCMAIN(utilOnA3UClientInitDone);
 
