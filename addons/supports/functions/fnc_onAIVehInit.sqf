@@ -34,7 +34,7 @@ if !assert(!isNull _vehicle) exitWith {};
 }
 
 _vehicle addAction[
-    localize LSTRING(MenuSupportsAssignAsArtillery),
+    format[localize LSTRING(MenuSupportsVanillaAssignAs), localize LSTRING(MenuSupportsAssignAsArtillery)],
     ASSIGN_ACTION(SUPPORT_TYPE_ARTILLERY),
     [],
     -200,
@@ -46,7 +46,7 @@ _vehicle addAction[
 ];
 
 _vehicle addAction[
-    localize LSTRING(MenuSupportsAssignAsCASPlane),
+    format[localize LSTRING(MenuSupportsVanillaAssignAs), localize LSTRING(MenuSupportsAssignAsCASPlane)],
     ASSIGN_ACTION(SUPPORT_TYPE_CAS_PLANE),
     [],
     -200,
@@ -58,7 +58,7 @@ _vehicle addAction[
 ];
 
 _vehicle addAction[
-    localize LSTRING(MenuSupportsAssignAsCASHelicopter),
+    format[localize LSTRING(MenuSupportsVanillaAssignAs), localize LSTRING(MenuSupportsAssignAsCASHelicopter)],
     ASSIGN_ACTION(SUPPORT_TYPE_CAS_HELICOPTER),
     [],
     -200,
@@ -70,7 +70,7 @@ _vehicle addAction[
 ];
 
 _vehicle addAction[
-    localize LSTRING(MenuSupportsAssignAsTransport),
+    format[localize LSTRING(MenuSupportsVanillaAssignAs), localize LSTRING(MenuSupportsAssignAsTransport)],
     ASSIGN_ACTION(SUPPORT_TYPE_TRANSPORT),
     [],
     -200,
