@@ -361,6 +361,16 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(supports,aiSkill), "SLIDER",
+    [ELSTRING(supports,Settings_aiSkill_DisplayName), ELSTRING(supports,Settings_aiSkill_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(supports,Settings_Category_DisplayName)],
+    [0, 1, 0.75, 2, true], // min,max,default,decimals,isPercentage
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Loadout
 
 [

@@ -109,6 +109,14 @@
             <English>Supports</English>
             <German>Unterstützung</German>
         </Key>
+        <Key ID="STR_A3USPCM_Supports_Settings_aiSkill_DisplayName">
+            <English>AI Skill</English>
+            <German>KI-Fähigkeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Supports_Settings_aiSkill_Tooltip">
+            <English>AI skill for spawned support crew. If set to 0, use the rebels' units current skill.</English>
+            <German>KI-Fähigkeit für die eingesetzten Unterstützungstruppen. Wenn auf 0 gesetzt, wird die aktuelle Fähigkeit der Rebellen-Einheiten verwendet.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Supports_Settings_requireSpecialists_DisplayName">
             <English>Require specialists</English>
             <German>Benötige Spezialisten</German>
