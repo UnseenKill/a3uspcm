@@ -31,4 +31,15 @@ GVAR(revealRadius) = 250;
     true
 ] call ace_interact_menu_fnc_addActionToClass;
 
+[
+    "##Uniform",
+    ["CARGO","BACKPACK_CONTAINER"],
+    LSTRING(WearClothes),
+    [],
+    "",
+    { true },
+    { call FUNC(wearClothes) },
+    true
+] call CBA_fnc_addItemContextMenuOption;
+
 nil;

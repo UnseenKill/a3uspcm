@@ -35,7 +35,7 @@ private _parentPath = [[
         [_position] call FUNC(findStaticEmplacements);
     },
     {
-        [] isNotEqualTo nearestObjects[_this select 0, ["StaticWeapon"], FIND_STATIC_RADIUS, true];
+        nearestObjects[_this select 0, ["StaticWeapon"], FIND_STATIC_RADIUS, true] select { alive _x } isNotEqualTo [];
     }
 ] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
 
@@ -50,7 +50,7 @@ private _parentPath = [[
     },
     {
         [] isNotEqualTo (curatorSelected select 0 select {
-            _x isKindOf "StaticWeapon";
+            (alive _x) && { _x isKindOf "StaticWeapon" };
         });
     }
 ] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
@@ -85,7 +85,7 @@ private _parentPath = [[
         call FUNC(blowUpMines);
     },
     { 
-        [] isNotEqualTo nearestMines[_this select 0, ["MineBase"], 300, false, true];
+        nearestMines[_this select 0, ["MineBase"], 300, false, true] select { alive _x } isNotEqualTo [];
     }
 ] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
 
