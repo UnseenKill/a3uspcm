@@ -14,7 +14,7 @@ Optional:
 Example:
 
 Returns:
-    <BOOL>
+    Nothing
 
 Author:
     goreSplatter
@@ -30,9 +30,18 @@ if !assert(!isNull _vehicle) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
 
 if (crew _vehicle isNotEqualTo []) then {
-    group(crew _vehicle select 0) setVariable[QGVAR(supportType), nil, true];
-    crew _vehicle apply {
-        moveOut _x;
+    private _group = group(crew _vehicle select 0);
+
+    _group setVariable[QGVAR(supportType), nil, true];
+
+    if (_group getVariable[QGVAR(autoSpawned), false]) then {
+        deleteVehicleCrew _vehicle;
+        deleteGroup _group;
+    } else {
+        crew _vehicle apply {
+            moveOut _x;
+            doStop _x;
+        };
     };
 };
 
