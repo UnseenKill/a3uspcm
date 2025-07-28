@@ -861,6 +861,30 @@
             <English>Arsenal was sorted.</English>
             <German>Arsenal wurde sortiert.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AddToUndercoverCaption">
+            <English>Add to undercover vehicles</English>
+            <German>Füge zu Undercover-Fahrzeugen hinzu</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AddToUndercoverHintAddedText">
+            <English>Vehicle "%1" added to undercover vehicles list.</English>
+            <German>Fahrzeug "%1" wurde der Liste der Undercover-Fahrzeuge hinzugefügt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AddToUndercoverHintRemovedText">
+            <English>Vehicle "%1" removed from undercover vehicles list.</English>
+            <German>Fahrzeug "%1" wurde von der Liste der Undercover-Fahrzeuge entfernt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AddToUndercoverNoLandVehicleText">
+            <English>No land vehicle selected.</English>
+            <German>Kein Landfahrzeug ausgewählt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AddToUndercoverNoTargetText">
+            <English>No target selected.</English>
+            <German>Kein Ziel ausgewählt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Vehicles_AddToUndercoverText">
+            <English>Adds the selected vehicle to your undercover vehicles.</English>
+            <German>Fügt das ausgewählte Fahrzeug zu deinen Undercover-Fahrzeugen hinzu.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Vehicles_AirAccessAnywhereCaption">
             <English>Air access anywhere</English>
             <German>Luftfahrzeuge überall</German>

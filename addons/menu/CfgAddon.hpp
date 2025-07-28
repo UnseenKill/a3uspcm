@@ -391,6 +391,13 @@ class GVAR(Config) {
                 action = QFUNCMAIN(vehiclesAirAccessAnywhere);
                 closeDiary = 1;
             };
+
+            class AddToUndercover {
+                caption = CSTRING(Vehicles_AddToUndercoverCaption);
+                text = CSTRING(Vehicles_AddToUndercoverText);
+                action = QFUNCMAIN(vehiclesAddToUndercover);
+                closeDiary = 1;
+            };
         };
 
         class Healing {
