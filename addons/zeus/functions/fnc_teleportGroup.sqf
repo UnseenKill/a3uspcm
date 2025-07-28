@@ -27,8 +27,10 @@ params[
 private _units = units group theBoss;
 private _vehicles = [];
 
-_units apply {
-    _vehicles pushBackUnique objectParent _x;
+if (player isEqualTo theBoss) then {
+    _units apply {
+        _vehicles pushBackUnique objectParent _x;
+    };
 };
 
 _vehicles = _vehicles - [objNull];
@@ -36,6 +38,8 @@ _vehicles = _vehicles - [objNull];
 private _unmounted = _units - flatten(_vehicles apply { crew _x });
 private _positions = [];
 private _curpos = _position;
+
+_unmounted = _unmounted select { !isPlayer _x || { _x isEqualTo player } };
 
 {
     private _vpos = if (_foreachIndex == 0) then {
