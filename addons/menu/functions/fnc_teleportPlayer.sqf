@@ -45,7 +45,7 @@ GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
     INFO_2("teleporting %1 to %2",name player,mapGridPosition _pos);
     TRACE_3("teleporting",player,_pos,GVAR(teleportGroup));
 
-    if GVAR(teleportGroup) exitWith {
+    if (GVAR(teleportGroup) && { player isEqualTo theBoss }) exitWith {
         [_pos] call EFUNC(zeus,teleportGroup);
     };
 

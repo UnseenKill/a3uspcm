@@ -24,4 +24,4 @@ params[
 
 if !assert(!isNull _player) exitWith { false };
 
-_player nearObjects 4 findIf { (alive _x) && (typeOf _x isEqualTo "Snake_random_F") } >= 0;
+_player nearObjects 4 findIf { (alive _x) && {typeOf _x isEqualTo "Snake_random_F"} } >= 0;

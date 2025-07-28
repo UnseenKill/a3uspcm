@@ -63,7 +63,7 @@ _groups apply {
         private _wantEngineDamage = !GVAR(requireVehicleEngineOn) || isEngineOn _vehicle;
 
         {
-            if ((_x find "light" >= 0) || (_wantEngineDamage && (_x find "engine" >= 0))) then {
+            if ((_x find "light" >= 0) || {_wantEngineDamage && {_x find "engine" >= 0}}) then {
                 _damagePoints pushBack _foreachIndex;
             };
         } forEach _allHitpoints;

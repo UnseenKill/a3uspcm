@@ -37,6 +37,7 @@ crew _vehicle apply {
         deleteVehicle _unit;
     } else {
         moveOut _unit;
+        doStop _unit;
     };
 };
 

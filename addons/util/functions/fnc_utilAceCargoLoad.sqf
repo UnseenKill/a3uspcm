@@ -57,8 +57,8 @@ if (_index >= 0) then {
         if (_requireItemPresence) then {
             _index = _nearItems findIf {
                 (isNull attachedTo _x) && 
-                (typeOf _x isEqualTo _item) &&
-                (crew _x isEqualTo [])
+                { typeOf _x isEqualTo _item } &&
+                { crew _x isEqualTo [] }
             };
 
             if (_index < 0) then {

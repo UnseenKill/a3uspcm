@@ -48,7 +48,7 @@ try {
     private _class = _data get "class";
     private _count = _data get "count";
 
-    if (_amount <= 0 || _amount > _count) then { throw false };
+    if (_amount <= 0 || { _amount > _count }) then { throw false };
 
     TRACE_4(QFUNC(onSellItemClick),_class,_price,_amount,_count);
 

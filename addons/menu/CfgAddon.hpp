@@ -9,6 +9,7 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_AddTeamZeusCaption);
                 text = CSTRING(Miscellaneous_AddTeamZeusText);
                 action = QFUNCMAIN(miscAddTeamZeus);
+                condition = QUOTE(allCurators findIf { player isEqualTo getAssignedCuratorUnit _x } >= 0);
                 cmShortcut = 1;
                 closeDiary = 1;
             };
@@ -24,6 +25,7 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_ReinstateLeadershipCaption);
                 text = CSTRING(Miscellaneous_ReinstateLeadershipText);
                 action = QFUNCMAIN(miscReinstateLeadership);
+                condition = QUOTE(player isEqualTo theBoss);
                 closeDiary = 1;
                 separator = 1;
             };
@@ -47,6 +49,13 @@ class GVAR(Config) {
                 text = CSTRING(Miscellaneous_EnlargeNearestMarkerText);
                 action = QFUNCMAIN(miscEnlargeNearestMarker);
                 closeDiary = 1;
+            };
+
+            class RevealLocation {
+                caption = CSTRING(Miscellaneous_RevealLocationCaption);
+                text = CSTRING(Miscellaneous_RevealLocationText);
+                action = QFUNCMAIN(miscRevealLocation);
+                condition = QUOTE(hideEnemyMarkers);
             };
 
             class RepairBuildings {
@@ -123,6 +132,7 @@ class GVAR(Config) {
             image = QUOTE(a3\ui_f\data\igui\cfg\actions\getingunner_ca.paa);
             initCallback = QEFUNC(aafc,onMenuInit);
             updateCallback = QEFUNC(aafc,onMenuUpdate);
+            condition = QUOTE(player isEqualTo theBoss);
 
             class AllFire {
                 caption = CSTRING(AAFireControl_AllFireCaption);
@@ -207,6 +217,7 @@ class GVAR(Config) {
             caption = CSTRING(DiaryRecruitmentCaption);
             text = CSTRING(DiaryRecruitmentText);
             image = QUOTE(a3\ui_f\data\igui\cfg\actions\getincommander_ca.paa);
+            condition = QUOTE(player isEqualTo theBoss);
 
             class LaunchAGM {
                 caption = CSTRING(Recruitment_LaunchAGMCaption);
@@ -391,6 +402,13 @@ class GVAR(Config) {
                 action = QFUNCMAIN(vehiclesAirAccessAnywhere);
                 closeDiary = 1;
             };
+
+            class AddToUndercover {
+                caption = CSTRING(Vehicles_AddToUndercoverCaption);
+                text = CSTRING(Vehicles_AddToUndercoverText);
+                action = QFUNCMAIN(vehiclesAddToUndercover);
+                closeDiary = 1;
+            };
         };
 
         class Healing {
@@ -415,6 +433,7 @@ class GVAR(Config) {
             caption = CSTRING(DiaryA3USettingsCaption);
             text = CSTRING(DiaryA3USettingsText);
             image = QPATHTOF(ui\gear_ca.paa);
+            condition = QUOTE(player isEqualTo theBoss);
 
             class BuilderTime {
                 caption = CSTRING(A3USettings_BuilderTimeCaption);

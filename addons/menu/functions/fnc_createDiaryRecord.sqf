@@ -33,6 +33,19 @@ if !assert(!isNull _player) exitWith { diaryRecordNull };
 if !assert(_subjectId isNotEqualTo "") exitWith { diaryRecordNull };
 if !assert(!isNull _config) exitWith { diaryRecordNull };
 
+private _condition = [_config >> "condition", "STRING", "true"] call CBA_fnc_getConfigEntry;
+private _value = [_config, _player] call compile _condition;
+
+if !(_value isEqualType false) exitWith {
+    WARNING_2("Bad condition return for %1 (%2)",configName _config,RETNIL(_value));
+    diaryRecordNull;
+};
+
+if !(_value) exitWith {
+    TRACE_1("Condition not met for %1",configName _config);
+    diaryRecordNull;
+};
+
 private _record = _player createDiaryRecord[_subjectId, ["","",""]];
 
 [_player, _record, _config] call FUNC(updateDiaryRecord);

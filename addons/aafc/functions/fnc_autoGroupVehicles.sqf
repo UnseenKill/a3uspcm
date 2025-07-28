@@ -31,9 +31,10 @@ TRACE_1(QFUNC(autoGroupVehicles),_this);
 
     private _vehicles = allUnitsUAV select {
         private _vehicle = _x;
-        (_vehicle getVariable[QGVAR(autoGroup), true] isEqualTo true) &&
-        (_vehicle getVariable["ownerSide", sideUnknown] isEqualTo side theBoss) &&
-        (_ignore findIf { _vehicle isKindOf _x } isEqualTo -1)
+        (_vehicle getVariable[QGVAR(autoGroup), true] isEqualTo true) && {
+            (_vehicle getVariable["ownerSide", sideUnknown] isEqualTo side theBoss) &&
+            { _ignore findIf { _vehicle isKindOf _x } isEqualTo -1 }
+        }
     };
 
     while { _vehicles isNotEqualTo [] } do {

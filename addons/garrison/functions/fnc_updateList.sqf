@@ -48,19 +48,19 @@ private _closeLocation = {
 
 private _entries = markersX select {
     (
-        (_showBases && _x in (milbases + airportsX + seaports + ["Synd_HQ"])) ||
-        (_showOutposts && _x in outposts) ||
-        (_showResources && _x in (resourcesX + factories)) ||
-        (_showTowns && _x in citiesX) ||
-        (_showPosts && _x in (aapostsFIA + atpostsFIA + hmgpostsFIA + roadblocksFIA))
+        (_showBases && {_x in (milbases + airportsX + seaports + ["Synd_HQ"])}) ||
+        (_showOutposts && {_x in outposts}) ||
+        (_showResources && {_x in (resourcesX + factories)}) ||
+        (_showTowns && {_x in citiesX}) ||
+        (_showPosts && {_x in (aapostsFIA + atpostsFIA + hmgpostsFIA + roadblocksFIA)})
     ) && (
-        (_showBLUFOR && sidesX getVariable[_x, sideUnknown] isEqualTo west) ||
-        (_showINDEP && sidesX getVariable[_x, sideUnknown] isEqualTo resistance) ||
-        (_showOPFOR && sidesX getVariable[_x, sideUnknown] isEqualTo east)
+        (_showBLUFOR && {sidesX getVariable[_x, sideUnknown] isEqualTo west}) ||
+        (_showINDEP && {sidesX getVariable[_x, sideUnknown] isEqualTo resistance}) ||
+        (_showOPFOR && {sidesX getVariable[_x, sideUnknown] isEqualTo east})
     ) && (
-        !_hideFull || (
+        !_hideFull || {
             count(garrison getVariable[_x, []]) < ([_x] call A3A_fnc_getGarrisonLimit)
-        )
+        }
     )
 } apply {
     private _entry = createHashMapFromArray[

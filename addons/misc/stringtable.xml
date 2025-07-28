@@ -41,5 +41,9 @@
             <English>Squash snake</English>
             <German>Schlange zerquetschen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Misc_WearClothes">
+            <English>Wear clothes</English>
+            <German>Anziehen</German>
+        </Key>
     </Package>
 </Project>

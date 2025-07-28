@@ -38,6 +38,16 @@ if (crew _vehicle isEqualTo []) then {
 
     private _group = side _player createVehicleCrew _vehicle;
     _player hcSetGroup[_group];
+    _group setVariable[QGVAR(autoSpawned), true, true];
+
+    private _skill = GVAR(aiSkill);
+    if (_skill isEqualTo 0) then {
+        _skill = 0.1 + 0.1 * A3A_rebelSkillMul + 0.015 * skillFIA;
+    };
+
+    units _group apply {
+        _x setSkill _skill;
+    };
 } else {
     private _seats = createHashMapFromArray[
         ["driver", driver _vehicle],

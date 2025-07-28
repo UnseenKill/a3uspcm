@@ -38,7 +38,17 @@ _lines pushBack format["<font size='10'>%1</font>", [_config >> "text", "STRING"
 _lines pushBack "";
 
 "true" configClasses _config apply {
-    _lines pushBack format["&#160;&#160;&#160;&#160;%1", [_x] call FUNC(createDiaryRecordAction)];
+    private _condition = [_x >> "condition", "STRING", "true"] call CBA_fnc_getConfigEntry;
+    private _value = [_x, player] call compile _condition;
+
+    if !(_value isEqualType false) then {
+        WARNING_2("Bad condition return for %1 (%2)",configName _x,RETNIL(_value));
+        continue;
+    };
+
+    if (_value) then {
+        _lines pushBack format["&#160;&#160;&#160;&#160;%1", [_x] call FUNC(createDiaryRecordAction)];
+    };
 
     if (getNumber(_x >> "separator") isEqualTo 1) then {
         _lines pushBack "<font size='8'>&#160;</font>";

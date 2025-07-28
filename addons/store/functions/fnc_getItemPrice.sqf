@@ -26,7 +26,7 @@ params[
 ];
 
 try {
-    if (!GVAR(sellForbidden) && (_class in A3U_forbiddenItems)) then {
+    if (!GVAR(sellForbidden) && { _class in A3U_forbiddenItems }) then {
         private _flag = [configFile >> "A3U" >> "forbiddenItems" >> _class >> "unlimited", "NUMBER", 0] call CBA_fnc_getConfigEntry;
         if (_flag isNotEqualTo 0) then {
             throw LSTRING(AdvSell_Reason_ItemForbidden);

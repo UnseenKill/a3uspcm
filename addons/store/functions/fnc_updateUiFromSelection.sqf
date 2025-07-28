@@ -81,7 +81,7 @@ try {
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMPRICE ctrlSetText format["%1 %2", round _price, A3A_faction_civ get "currencySymbol"];
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnSell);
 
-        if (_amount > 0 && _amount <= (_data get "count")) then {
+        if (_amount > 0 && { _amount <= (_data get "count") }) then {
             _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTTOTALSALE ctrlSetText format["%1 %2", round(_price * _amount), A3A_faction_civ get "currencySymbol"];
             _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlEnable true;
         } else {

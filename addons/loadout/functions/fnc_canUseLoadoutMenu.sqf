@@ -30,10 +30,9 @@ params[
 if !assert(!isNull _target) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
 
-(alive _target)
-&& (locked _target < 2)
-&& (getNumber(configOf _target >> "maximumLoad") > 0)
-&& (
-    !GVAR(requireFlagProximity)
-    || (nearestObjects[_target, ["FlagCarrier"], GVAR(flagLoadoutRadius)] isNotEqualTo [])
-);
+if !(alive _target) exitWith { false };
+if (locked _target >= 2) exitWith { false };
+if (getNumber(configOf _target >> "maximumLoad") <= 0) exitWith { false };
+if !(GVAR(requireFlagProximity)) exitWith { true };
+
+nearestObjects[_target, ["FlagCarrier"], GVAR(flagLoadoutRadius)] isNotEqualTo [];
