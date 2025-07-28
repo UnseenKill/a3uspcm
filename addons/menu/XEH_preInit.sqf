@@ -92,6 +92,7 @@ ADDON = true;
 
 GVAR(AdditionalBuildables) = false;
 GVAR(AdditionalStatics) = false;
+GVAR(AdditionalUndercoverVehicles) = false;
 GVAR(AdditionalVehicles) = false;
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
@@ -108,6 +109,7 @@ GVAR(Timers) = [false, false];
         if is3DENPreview exitWith {};
         [] call FUNC(loadAdditionalBuildables);
         [] call FUNC(loadAdditionalStatics);
+        [] call FUNC(loadAdditionalUndercoverVehicles);
         [] call FUNC(loadAdditionalVehicles);
         [] call FUNC(loadMarkerSizes);
         [] call FUNC(timerRestore);
@@ -120,6 +122,7 @@ GVAR(Timers) = [false, false];
 
     [QGVAR(AdditionalBuildables), +GVAR(AdditionalBuildables)] call A3A_fnc_setStatVariable;
     [QGVAR(AdditionalStatics), +GVAR(AdditionalStatics)] call A3A_fnc_setStatVariable;
+    [QGVAR(AdditionalUndercoverVehicles), +GVAR(AdditionalUndercoverVehicles)] call A3A_fnc_setStatVariable;
     [QGVAR(AdditionalVehicles), +GVAR(AdditionalVehicles)] call A3A_fnc_setStatVariable;
     [QGVAR(MarkerSizes), +GVAR(MarkerSizes)] call A3A_fnc_setStatVariable;
 

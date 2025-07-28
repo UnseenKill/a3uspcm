@@ -11,6 +11,7 @@ PREP(intelCleanupHandler);
 PREP(intelCleanupMarker);
 PREP(loadAdditionalBuildables);
 PREP(loadAdditionalStatics);
+PREP(loadAdditionalUndercoverVehicles);
 PREP(loadAdditionalVehicles);
 PREP(loadMarkerSizes);
 PREP(resourcesTransfer);
