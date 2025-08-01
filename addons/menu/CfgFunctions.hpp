@@ -22,6 +22,7 @@ class CfgFunctions {
             PATHTO_FNC(miscShowRoadblocks);
             PATHTO_FNC(miscSpawnLootBox);
             PATHTO_FNC(miscUncompromise);
+            PATHTO_FNC(miscUnstick);
             PATHTO_FNC(recruitForPlayer);
             PATHTO_FNC(recruitLaunchAGM);
             PATHTO_FNC(recruitRenameHC);
