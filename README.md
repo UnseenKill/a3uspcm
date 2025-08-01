@@ -27,6 +27,7 @@ Features
    * Repair damaged (outpost) buildings around player
    * Substitute lame-ass civilian prop plane air support vehicles with F-18
    * Substitute civilian helicopters with MH-9 (some GM helicopters can't slingload -> no lootbox for you...)
+   * Unstick player AI from unresponsiveness
    * Uncompromize team and self so you can go undercover again
    * Autouncompromize after fleeing the scene where you got caught
    * Show roadblocks on map
