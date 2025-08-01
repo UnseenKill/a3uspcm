@@ -489,6 +489,22 @@
             <English>Allow player to go undercover again, also unreport their vehicle.</English>
             <German>Erlaube dem Spieler, wieder in den Undercover-Modus zu wechseln und melde auch sein Fahrzeug nicht.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_UnstickCaption">
+            <English>Make units unstuck</English>
+            <German>Entferne Einheiten aus der Klemme</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_UnstickErrorNoSelectionText">
+            <English>No units selected to unstick.</English>
+            <German>Keine Einheiten ausgewählt, um sie zu befreien.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_UnstickText">
+            <English>Repair unresponsive/stuck units</English>
+            <German>Repariere nicht reagierende/steckengebliebene Einheiten</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_UnstickTimeoutText">
+            <English>Select units to unstick (F1-F10) [%1 second(s) remaining]...</English>
+            <German>Wähle Einheiten zum Reparieren (F1-F10) [%1 Sekunde(n) verbleibend]...</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Recruitment_LaunchAGMCaption">
             <English>Launch AGM</English>
             <German>EGM starten</German>

@@ -21,6 +21,13 @@ class GVAR(Config) {
                 cmShortcut = 1;
             };
 
+            class Unstick {
+                caption = CSTRING(Miscellaneous_UnstickCaption);
+                text = CSTRING(Miscellaneous_UnstickText);
+                action = QFUNCMAIN(miscUnstick);
+                closeDiary = 1;
+            };
+
             class ReinstateLeadership {
                 caption = CSTRING(Miscellaneous_ReinstateLeadershipCaption);
                 text = CSTRING(Miscellaneous_ReinstateLeadershipText);
