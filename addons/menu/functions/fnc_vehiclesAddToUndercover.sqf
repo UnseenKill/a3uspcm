@@ -34,9 +34,11 @@ TRACE_1(QFUNCMAIN(vehiclesAddToUndercover),_this);
             private _class = typeOf _target;
             private _message = if (_class in GVAR(AdditionalUndercoverVehicles)) then {
                 GVAR(AdditionalUndercoverVehicles) = GVAR(AdditionalUndercoverVehicles) - [_class];
+                undercoverVehicles = undercoverVehicles - [_class];
                 format[localize LSTRING(Vehicles_AddToUndercoverHintRemovedText), getText(configOf _target >> "displayName")];
             } else {
                 GVAR(AdditionalUndercoverVehicles) pushBack _class;
+                undercoverVehicles pushBackUnique _class;
                 format[localize LSTRING(Vehicles_AddToUndercoverHintAddedText), getText(configOf _target >> "displayName")];
             };
 
