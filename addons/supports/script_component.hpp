@@ -25,3 +25,7 @@
     [SUPPORT_TYPE_CAS_HELICOPTER, "SupportProvider_CAS_Heli"], \
     [SUPPORT_TYPE_TRANSPORT, "SupportProvider_Transport"] \
 ]
+
+#define A3UEUESRS_ADDON_CHECK_AND_BOUNCE() if isClass(configFile >> "CfgPatches" >> "a3ueunsrs_main") exitWith {\
+    INFO("Addon a3ue-unseenkill-radio-supports detected. Skipping A3USPCM supports addon initialization."); \
+}
