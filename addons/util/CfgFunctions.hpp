@@ -14,6 +14,7 @@ class CfgFunctions {
             PATHTO_FNC(utilIsDaytime);
             PATHTO_FNC(utilLightFlicker);
             PATHTO_FNC(utilOnA3UClientInitDone);
+            PATHTO_FNC(utilOnA3UServerInitDone);
             PATHTO_FNC(utilPromptText);
             PATHTO_FNC(utilRandomRange);
             PATHTO_FNC(utilRange);
