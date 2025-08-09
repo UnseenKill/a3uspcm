@@ -230,6 +230,16 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(aafc,trackContacts), "CHECKBOX",
+    [ELSTRING(aafc,Settings_trackContacts_DisplayName), ELSTRING(aafc,Settings_trackContacts_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(aafc,aiSkill), "SLIDER",
     [ELSTRING(aafc,Settings_aiSkill_DisplayName), ELSTRING(aafc,Settings_aiSkill_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
