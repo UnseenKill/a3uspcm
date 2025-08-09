@@ -2,8 +2,6 @@
 
 GVAR(contacts) = createHashMap;
 GVAR(contactTracker) = false;
-GVAR(contactUpdateInterval) = 1.75; // 1.75 seconds
-GVAR(contactTrackDeadInterval) = 30; // Three minutes
 GVAR(groups) = [];
 
 publicVariable QGVAR(contacts);

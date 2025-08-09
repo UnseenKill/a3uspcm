@@ -97,6 +97,22 @@
             <English>Reload ammunition of AA groups once depleted.</English>
             <German>Munition von AA-Gruppen automatisch nachladen, sobald sie erschöpft ist.</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_contactTrackDeadInterval_DisplayName">
+            <English>Tracking: track dead interval</English>
+            <German>Zielverfolgung: Verfolgung toter Einheiten Intervall</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_contactTrackDeadInterval_Tooltip">
+            <English>Time in seconds to keep tracking dead units (0=disable).</English>
+            <German>Zeit in Sekunden, die Verfolgung toter Einheiten aufrechtzuerhalten (0=deaktivieren).</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_contactUpdateInterval_DisplayName">
+            <English>Tracking: contact update interval</English>
+            <German>Zielverfolgung: Kontaktaktualisierungsintervall</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_contactUpdateInterval_Tooltip">
+            <English>Time in seconds between contact map marker updates.</English>
+            <German>Zeit in Sekunden zwischen Kontaktkartenmarker-Aktualisierungen.</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_defaultInitialMode_Angry">
             <English>Fire at will</English>
             <German>Feuer frei</German>
@@ -146,8 +162,8 @@
             <German>AA Gruppen können den Abschuss einer Rakete auf ein Ziel über den Sidechat melden.</German>
         </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_trackContacts_DisplayName">
-            <English>Track contacts</English>
-            <German>Kontakte verfolgen</German>
+            <English>Tracking: track contacts</English>
+            <German>Zielverfolgung: Kontakte verfolgen</German>
         </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_trackContacts_Tooltip">
             <English>Track contacts of AA groups as map markers.</English>
