@@ -45,11 +45,11 @@ if (GVAR(supportSpecialists) isEqualTo false) then {
     };
 
     if (GVAR(supportSpecialists) isEqualTo false) then {
-        GVAR(supportSpecialists) = [
+        GVAR(supportSpecialists) =
             [SUPPORT_TYPE_ARTILLERY, SUPPORT_TYPE_CAS_HELICOPTER, SUPPORT_TYPE_CAS_PLANE, SUPPORT_TYPE_TRANSPORT] apply {
                 [_x, !isNull(GVAR(supportBuildings) getOrDefault[_x, objNull])]
             }
-        ];
+        ;
     };
 
     GVAR(supportSpecialists) = createHashMapFromArray GVAR(supportSpecialists);
