@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+A3UEUESRS_ADDON_CHECK_AND_BOUNCE();
+
 ADDON = false;
 #include "XEH_PREP.hpp"
 ADDON = true;
