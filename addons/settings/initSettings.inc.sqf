@@ -230,6 +230,36 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(aafc,trackContacts), "CHECKBOX",
+    [ELSTRING(aafc,Settings_trackContacts_DisplayName), ELSTRING(aafc,Settings_trackContacts_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(aafc,contactUpdateInterval), "SLIDER",
+    [ELSTRING(aafc,Settings_contactUpdateInterval_DisplayName), ELSTRING(aafc,Settings_contactUpdateInterval_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    [0.125, 10, 1.75, 2], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(aafc,contactTrackDeadInterval), "SLIDER",
+    [ELSTRING(aafc,Settings_contactTrackDeadInterval_DisplayName), ELSTRING(aafc,Settings_contactTrackDeadInterval_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    [0, 600, 180, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(aafc,aiSkill), "SLIDER",
     [ELSTRING(aafc,Settings_aiSkill_DisplayName), ELSTRING(aafc,Settings_aiSkill_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],

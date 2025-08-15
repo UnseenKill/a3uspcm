@@ -29,8 +29,7 @@ params[
 
 if !assert(!isNull _unit) exitWith {};
 
-// Arma 2.20
-// waitUntil { !(isSwitchingWeapon _unit) };
+waitUntil { !(isSwitchingWeapon _unit) };
 
 private _weapon = currentWeapon _unit;
 
@@ -57,64 +56,82 @@ private _muzzleDevice = _weaponInfo select _weaponType select 1;
 
 TRACE_4(QFUNC(toggleSuppressors),_displayName,_weaponType,_muzzleDevice,_suppressorOn);
 
-if (isNil "_suppressorOn") then {
+private _mimicSuppressorState = if !(isNil "_suppressorOn") then {
+    true;
+} else {
     _suppressorOn = (_muzzleDevice isEqualTo "");
+
+    if (groupSelectedUnits _unit isEqualTo []) then {
+        true;
+    } else {
+        _suppressorOn = !_suppressorOn;
+        false;
+    };
 };
 
-TRACE_1(QFUNC(toggleSuppressors),_suppressorOn);
+TRACE_2(QFUNC(toggleSuppressors),_suppressorOn,_mimicSuppressorState);
 
-if !(_suppressorOn) then {
-    if (_muzzleDevice isEqualTo "") then {
-        _unit groupChat localize LSTRING(Message_NoMuzzleAttached);
-    } else {
-        switch _weaponType do {
-            case 0: { _unit removePrimaryWeaponItem _muzzleDevice };
-            case 1: { _unit removeSecondaryWeaponItem _muzzleDevice };
-            case 2: { _unit removeHandgunItem _muzzleDevice };
-        };
-
-        _unit addItem _muzzleDevice;
-        _unit groupChat localize selectRandom[
-            LSTRING(Message_MuzzleRemoved0),
-            LSTRING(Message_MuzzleRemoved1),
-            LSTRING(Message_MuzzleRemoved2),
-            LSTRING(Message_MuzzleRemoved3)
-        ];
-    };
-} else {
-    if (_muzzleDevice isNotEqualTo "") then {
-        _unit groupChat localize LSTRING(Message_MuzzleAlreadyAttached);
-    } else {
-        private _compatible = configProperties[_config, "getNumber(_x) > 0", true] apply { configName _x };
-        private _intersect = items _unit arrayIntersect _compatible;
-
-        if (_intersect isEqualTo []) then {
-            _unit groupChat format[localize LSTRING(Message_NoCompatibleSuppressors), _displayName];
+if _mimicSuppressorState then {
+    if !(_suppressorOn) then {
+        if (_muzzleDevice isEqualTo "") then {
+            _unit groupChat localize LSTRING(Message_NoMuzzleAttached);
         } else {
-            _muzzleDevice = _intersect select 0;
-
             switch _weaponType do {
-                case 0: { _unit addPrimaryWeaponItem _muzzleDevice };
-                case 1: { _unit addSecondaryWeaponItem _muzzleDevice };
-                case 2: { _unit addHandgunItem _muzzleDevice };
+                case 0: { _unit removePrimaryWeaponItem _muzzleDevice };
+                case 1: { _unit removeSecondaryWeaponItem _muzzleDevice };
+                case 2: { _unit removeHandgunItem _muzzleDevice };
             };
 
-            _unit removeItem _muzzleDevice;
+            _unit addItem _muzzleDevice;
             _unit groupChat localize selectRandom[
-                LSTRING(Message_MuzzleAttached0),
-                LSTRING(Message_MuzzleAttached1),
-                LSTRING(Message_MuzzleAttached2),
-                LSTRING(Message_MuzzleAttached3)
+                LSTRING(Message_MuzzleRemoved0),
+                LSTRING(Message_MuzzleRemoved1),
+                LSTRING(Message_MuzzleRemoved2),
+                LSTRING(Message_MuzzleRemoved3)
             ];
+        };
+    } else {
+        if (_muzzleDevice isNotEqualTo "") then {
+            _unit groupChat localize LSTRING(Message_MuzzleAlreadyAttached);
+        } else {
+            private _compatible = configProperties[_config, "getNumber(_x) > 0", true] apply { configName _x };
+            private _intersect = items _unit arrayIntersect _compatible;
+
+            if (_intersect isEqualTo []) then {
+                _unit groupChat format[localize LSTRING(Message_NoCompatibleSuppressors), _displayName];
+            } else {
+                _muzzleDevice = _intersect select 0;
+
+                switch _weaponType do {
+                    case 0: { _unit addPrimaryWeaponItem _muzzleDevice };
+                    case 1: { _unit addSecondaryWeaponItem _muzzleDevice };
+                    case 2: { _unit addHandgunItem _muzzleDevice };
+                };
+
+                _unit removeItem _muzzleDevice;
+                _unit groupChat localize selectRandom[
+                    LSTRING(Message_MuzzleAttached0),
+                    LSTRING(Message_MuzzleAttached1),
+                    LSTRING(Message_MuzzleAttached2),
+                    LSTRING(Message_MuzzleAttached3)
+                ];
+            };
         };
     };
 };
 
 if (_unit isEqualTo leader group _unit) then {
     TRACE_1("toggleSuppressors",_unit);
-    units group _unit select {
+    private _units = groupSelectedUnits _unit;
+
+    if (_units isEqualTo []) then {
+        _units = units group _unit;
+    };
+
+    _units select {
         !isPlayer _x;
     } apply {
+        _unit groupSelectUnit[_x, false];
         [_x, _suppressorOn] spawn FUNC(toggleSuppressors);
     };
 };
