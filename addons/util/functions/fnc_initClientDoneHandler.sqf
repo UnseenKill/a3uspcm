@@ -3,7 +3,7 @@
 Function: A3USPCM_util_fnc_initClientDoneHandler
 
 Description:
-    Wait for A3U signaling client initialization, then load loadouts.
+    Wait for A3U signaling client initialization, then execute callbacks.
 
 Parameters:
 

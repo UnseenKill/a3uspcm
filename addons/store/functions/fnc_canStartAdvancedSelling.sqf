@@ -18,9 +18,10 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-params[["_container",objNull,[objNull]]];
+params[["_container",objNull,[objNull]], ["_player",objNull,[objNull]]];
 
 if !assert(!isNull _container) exitWith {false};
+if (!isNull _player && { !isNull objectParent _player }) exitWith {false};
 
 if (missionNamespace getVariable["traderX",false] isEqualTo false) exitWith {false};
 if (_container distance2D traderX > ADVANCED_SELLING_RANGE) exitWith {false};

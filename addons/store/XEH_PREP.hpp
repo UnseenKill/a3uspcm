@@ -1,3 +1,4 @@
+PREP(addVanillaSellInteraction);
 PREP(breakdownContainer);
 PREP(canStartAdvancedSelling);
 PREP(filterGroupedByType);

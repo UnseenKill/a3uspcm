@@ -27,12 +27,16 @@ if !assert(!isNull _group) exitWith {};
 _group addEventHandler["EnemyDetected", {
     params[["_group",grpNull,[grpNull]],["_enemy",objNull,[objNull]]];
 
-    INFO_2("'%1' detected enemy '%2'",_group,_enemy);
+    INFO_3("'%1' detected enemy '%2' (isAir=%3)",_group,_enemy,_enemy isKindOf "Air");
 
     if (GVAR(reportAirOnly) && !(_enemy isKindOf "Air")) exitWith {};
 
     if (_enemy getVariable[QGVAR(mseDetected), false] isNotEqualTo false) exitWith {};
     _enemy setVariable[QGVAR(mseDetected), createHashMap];
+
+    [{
+        call CBA_fnc_serverEvent
+    }, [QGVAR(StartContactTracking), [_enemy]]] call CBA_fnc_execNextFrame;
 
     if GVAR(sideChatContact) then {
         leader _group sideChat format[
