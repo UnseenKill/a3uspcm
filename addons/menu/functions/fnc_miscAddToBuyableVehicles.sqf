@@ -68,6 +68,10 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableVehicles),_this);
 
                     private _hasBM = A3U_blackMarketStock findIf { _x select 0 isEqualTo typeOf _target } >= 0;
 
+                    if !(_hasBM) then {
+                        A3U_blackMarketStock pushBack[typeOf _target, _price, _key, { true }];
+                    };
+
                     [
                         localize LSTRING(Miscellaneous_AddToBuyableVehiclesCaption),
                         format [localize ([LSTRING(Miscellaneous_AddToBuyableVehiclesHintSuccessText), LSTRING(Miscellaneous_AddToBuyableVehiclesHintSuccessBMWarningText)] select _hasBM), getText(configOf _target >> "displayName"), _price]
