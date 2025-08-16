@@ -35,7 +35,7 @@ _group addEventHandler["EnemyDetected", {
     _enemy setVariable[QGVAR(mseDetected), createHashMap];
 
     [{
-        call CBA_fnc_serverEvent
+        call CBA_fnc_serverEvent;
     }, [QGVAR(StartContactTracking), [_enemy]]] call CBA_fnc_execNextFrame;
 
     if GVAR(sideChatContact) then {
