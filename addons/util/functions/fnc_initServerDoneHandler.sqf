@@ -21,7 +21,7 @@ TRACE_1(QFUNC(initServerDoneHandler),_this);
 
 _this spawn {
     INFO("waiting for A3U server init");
-    waitUntil { !isNil "initServerDone" };
+    waitUntil { !isNil "serverInitDone" };
     INFO("running server init callbacks");
 
     GVAR(ServerInitCallbacks) apply {
