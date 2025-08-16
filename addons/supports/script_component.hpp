@@ -27,5 +27,6 @@
 ]
 
 #define A3UEUESRS_ADDON_CHECK_AND_BOUNCE() if isClass(configFile >> "CfgPatches" >> "a3ueunsrs_main") exitWith {\
+    FUNC(canUseSupportsMenu) = { false };\
     INFO("Addon a3ue-unseenkill-radio-supports detected. Skipping A3USPCM supports addon initialization."); \
 }
