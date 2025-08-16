@@ -20,12 +20,13 @@ Author:
 TRACE_1(QFUNC(restoreMarkers),_this);
 
 GVAR(storedMarkers) apply {
-    private _markerId = [] call FUNCMAIN(utilGenerateUniqueId);
+	private _counter = ({ 0 isEqualTo (_x find "_USER_DEFINED ") } count allMapMarkers);
+    private _markerId = format["_USER_DEFINED #%1/%2/1", owner theBoss, _counter];
     private _properties = _y;
 
 	GVAR(markerNameMapping) set[_markerId, _x];
 
-    TRACE_3(QFUNC(restoreMarkers),_x,_markerId,_properties);
+    TRACE_4(QFUNC(restoreMarkers),_x,_counter,_markerId,_properties);
 
 	private _marker = createMarker[_markerId, _properties select 6];
 
