@@ -60,7 +60,7 @@ Features
    * (Temporarily) teleport HQ objects (arsenal, garage, map, flag) to your position
  * Permanent map markers
    * Buy a permanent marker and carry it _in the uniform_ to make map markers you place permanent (i.e.: part of the save)
-   * After a load, permanent markers are server created; you won't be able to delete them by pressing "Delete". Double click the permanent marker item or use map self-interaction for deletion.
+   * After a load, permanent markers are restored as user-defined; you should be able to delete them by pressing "Delete". If not, double click the permanent marker item or use map self-interaction for deletion.
  * Replenish player squad outside of HQ
    * Recruit new squad mates in the field
    * "Enemies close" checks can be suppressed via addon settings
