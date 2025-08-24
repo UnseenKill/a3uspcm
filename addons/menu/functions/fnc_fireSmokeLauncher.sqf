@@ -26,7 +26,7 @@ if (isNull objectParent player) exitWith {};
 
 private["_smokeLauncher"];
 private _vehicle = objectParent player;
-private _turrets = allTurrets[_vehicle, false];
+private _turrets = allTurrets[_vehicle, true];
 private _index = _turrets findIf {
     _smokeLauncher = -1;
     _vehicle weaponsTurret _x findIf {
