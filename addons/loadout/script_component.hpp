@@ -8,3 +8,8 @@
 #define FORCE_LOADOUT_TIMEOUT 15
 // Store this many loadouts (FILO)
 #define MAX_LOADOUTS 6
+
+#define A3UEUNSVL_ADDON_CHECK_AND_BOUNCE() if isClass(configFile >> "CfgPatches" >> "a3ueunsvl_main") exitWith {\
+    GVAR(A3UEUNSVL_seen) = true;\
+    INFO("A3U extender a3ue-unseenkill-vehicle-loadouts detected. Skipping A3USPCM loadouts addon initialization."); \
+}
