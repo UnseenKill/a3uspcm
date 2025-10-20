@@ -51,9 +51,9 @@ _group addEventHandler["EnemyDetected", {
     player reveal _enemy;
 
     _enemy addEventHandler["IncomingMissile", {
-        TRACE_5("Incoming missile",_unit,_ammo,_vehicle,_instigator,_projectile);
-
         params["_unit","_ammo","_vehicle","_instigator","_projectile"];
+
+        TRACE_5("Incoming missile",_unit,_ammo,_vehicle,_instigator,_projectile);
 
         if isNil("_projectile") exitWith {};
         if isNil("_vehicle") exitWith {};
