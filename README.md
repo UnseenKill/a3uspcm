@@ -3,6 +3,7 @@ A3USPCM
 
 **Arma ]|[ Antistasi Ultimate Singleplayer Cheat Menu**
 
+[![Discord](https://gitlab.perfect-co.de/arma3/a3ue-unseenkill-vehicle-loadout/-/badges/custom.svg?key_text=Discord&value_text=Link&value_color=db4000)][discord]
 [![pipeline status](https://gitlab.perfect-co.de/arma3/a3uspcm/badges/dev/pipeline.svg)](https://gitlab.perfect-co.de/arma3/a3uspcm/-/commits/dev)
 [![Latest Release](https://gitlab.perfect-co.de/arma3/a3uspcm/-/badges/release.svg)](https://gitlab.perfect-co.de/arma3/a3uspcm/-/releases)
 
@@ -193,6 +194,7 @@ Authors
 [a3ueunsrs-workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=3548283828
 [a3ueunsvl-workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=3548283828
 [arma-tools]: https://store.steampowered.com/app/233800/Arma_3_Tools/
+[discord]: https://discord.gg/TfgYZeRWf4
 [git]: https://git-scm.com/downloads
 [gitlab]: https://gitlab.perfect-co.de/gor3Splatter
 [gitlab-a3uspcm]: https://gitlab.perfect-co.de/arma3/a3uspcm
