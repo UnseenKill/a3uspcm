@@ -7,8 +7,9 @@ Description:
     Updates the amount in the edit box to the selected item
 
 Parameters:
-    0: _control - Listbox control <CONTROL>
-    1: _index - Index of selected item <NUMBER>
+    0: _display - Display object of store dialog <DISPLAY>
+    1: _control - Listbox control <CONTROL>
+    2: _index - Index of selected item <NUMBER>
 
 Optional:
 
@@ -26,6 +27,7 @@ Author:
 TRACE_1(QFUNC(halsStoreDialogUpdateAmount),_this);
 
 params[
+    ["_display", displayNull, [displayNull]],
     ["_control", controlNull, [controlNull]],
     ["_index", 0, [0]]
 ];

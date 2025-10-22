@@ -9,7 +9,7 @@
                 };\
                 class GVAR(LoadoutDump) {\
                     displayName = CSTRING(DumpContents);\
-                    condition = QUOTE(GVAR(aceInteractShowVehicleDumpAction) && {(locked _target < 2) && {call FUNCMAIN(utilVehicleHasCargo)}});\
+                    condition = QUOTE(isNil QQGVAR(A3UEUNSVL_seen) && {GVAR(aceInteractShowVehicleDumpAction) && {(locked _target < 2) && {call FUNCMAIN(utilVehicleHasCargo)}}});\
                     statement = QUOTE(call FUNC(containerDumpContents));\
                     icon = QPATHTOEF(assets,ui\loadout-unload.paa);\
                 };\
@@ -34,7 +34,7 @@ class CfgVehicles {
             class ACE_MainActions {
                 class GVAR(DumpContents) {
                     displayName = CSTRING(DumpContents);
-                    condition = QUOTE(call FUNCMAIN(utilVehicleHasCargo));
+                    condition = QUOTE(isNil QQGVAR(A3UEUNSVL_seen) && {call FUNCMAIN(utilVehicleHasCargo)});
                     statement = QUOTE(call FUNC(containerDumpContents));
                     icon = QPATHTOEF(assets,ui\loadout-unload.paa);\
                 };

@@ -31,7 +31,7 @@ params[
 
 if !assert(!isNull _vehicle) exitWith {};
 if !assert(!isNull _player) exitWith {};
-if !assert(count _loadout > 0) exitWith {};
+if !assert(_loadout isNotEqualTo []) exitWith {};
 
 if (!isServer && hasInterface) exitWith {
     [_vehicle, _player, _loadout, clientOwner] remoteExec[QFUNC(restoreLoadout), 2];

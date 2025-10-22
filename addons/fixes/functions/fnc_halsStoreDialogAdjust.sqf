@@ -57,7 +57,7 @@ _display displayCtrl IDC_LISTBOX ctrlAddEventHandler["LBSelChanged", {
     if (cbChecked(_display displayCtrl(IDC_CHECKBOX + 3))) then {
         if (uiNamespace getVariable[QGVAR(halsStoreAutoUpdateAmount), false]) then {
             TRACE_2(QFUNC(halsStoreDialogAdjust_LBSelChanged),_control,_index);
-            [_control, _index] call FUNC(halsStoreDialogUpdateAmount);
+            [_display, _control, _index] call FUNC(halsStoreDialogUpdateAmount);
         };
     };
 
@@ -72,7 +72,7 @@ _display displayCtrl IDC_LISTBOX ctrlAddEventHandler["LBDblClick", {
     if !assert(!isNull _display) exitWith {};
 
     if (cbChecked(_display displayCtrl(IDC_CHECKBOX + 3))) then {
-        [_control, _index] call FUNC(halsStoreDialogUpdateAmount);
+        [_display, _control, _index] call FUNC(halsStoreDialogUpdateAmount);
     };
 }];
 
