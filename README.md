@@ -3,6 +3,7 @@ A3USPCM
 
 **Arma ]|[ Antistasi Ultimate Singleplayer Cheat Menu**
 
+[![Discord](https://gitlab.perfect-co.de/arma3/a3ue-unseenkill-vehicle-loadout/-/badges/custom.svg?key_text=Discord&value_text=Link&value_color=db4000)][discord]
 [![pipeline status](https://gitlab.perfect-co.de/arma3/a3uspcm/badges/dev/pipeline.svg)](https://gitlab.perfect-co.de/arma3/a3uspcm/-/commits/dev)
 [![Latest Release](https://gitlab.perfect-co.de/arma3/a3uspcm/-/badges/release.svg)](https://gitlab.perfect-co.de/arma3/a3uspcm/-/releases)
 
@@ -42,7 +43,7 @@ Features
    * Enemy detection side chat messages
    * Fire information side chat messages
    * Change ROE of specific groups or all groups
- * Arma built-in radio supports
+ * Arma built-in radio supports (discontinued, see [below](#discontinued-features))
    * Build support tents on your base to unlock radio support
    * Assign captured planes/helicopters as CAS response units
    * Assign mortars, MLRS as artillery support
@@ -86,7 +87,7 @@ Features
    * Filter types, ownership
    * See deployed units of a location at a glance (without having to speed-read a fading notification)
    * Rerecruit for selected location (enemy close/location under attack checks still apply)
- * Vehicle loadout management
+ * Vehicle loadout management (discontinued, see [below](#discontinued-features))
    * Remember a vehicle's inventory and make it available to apply such loadout
    * Save-game safe
    * Requires items present in arsenal to apply loadout
@@ -162,8 +163,23 @@ Once groups have been created, they are available for fire control via the **AA 
 
 ### Required mods
 
- * [Antistasi Ultimate - Mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032) - Latest version where this mod was working: **11.6.0**
+ * [Antistasi Ultimate - Mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032) - Latest version where this mod was working: **11.8.0**
  * [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057) - Not required, but strongly recommended
+
+### Discontinued features
+
+Since this mod is for on single-player gameplay, multiplayer compatibility was
+not a development focus. Some popular features were re-released as A3U extenders
+with full multiplayer compatibility while retaining single-player compatibility
+as well. They will remain a part of A3USPCM but I won't accept bug reports for
+them any longer.
+
+**A3USPCM will detect those extenders and turn off its own addons to avoid
+conflicts. Don't switch during saved games unless you're ready to start from
+scratch; save game data from A3USPCM is not probed by the replacement extenders.**
+
+* Built-in radio supports is continued with [\[A3UE\] Built-in Radio Supports][a3ueunsrs-workshop]
+* Vehicle loadout management is continued with [\[A3UE\] Vehicle Loadouts][a3ueunsvl-workshop]
 
 Bugs
 ----
@@ -175,7 +191,10 @@ Authors
 
 * gor3Splatter
 
+[a3ueunsrs-workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=3548283828
+[a3ueunsvl-workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=3548283828
 [arma-tools]: https://store.steampowered.com/app/233800/Arma_3_Tools/
+[discord]: https://discord.gg/TfgYZeRWf4
 [git]: https://git-scm.com/downloads
 [gitlab]: https://gitlab.perfect-co.de/gor3Splatter
 [gitlab-a3uspcm]: https://gitlab.perfect-co.de/arma3/a3uspcm
