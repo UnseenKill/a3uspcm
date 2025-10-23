@@ -103,7 +103,7 @@ GVAR(Timers) = [false, false];
 [
     {
         allCurators apply {
-            _x addCuratorEditableObjects[[theBoss]];
+            _x addCuratorEditableObjects[[theBoss], false];
         };
 
         [] call FUNC(diaryInitialize);

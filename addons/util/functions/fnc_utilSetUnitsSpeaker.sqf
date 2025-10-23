@@ -29,7 +29,7 @@ params[
     ["_units", [], [[]]]
 ];
 
-if (_voice == "" || count _units == 0) exitWith {};
+if (_voice == "" || _units isEqualTo []) exitWith {};
 
 {
     _x setSpeaker _voice;

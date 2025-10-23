@@ -29,9 +29,9 @@ params[
 
 if !assert(!isNull _target) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
+if !isNil QGVAR(A3UEUNSVL_seen) exitWith { false };
 
-if !(alive _target) exitWith { false };
-if (locked _target >= 2) exitWith { false };
+if (!alive _target || {locked _target >= 2 || {crew _target isNotEqualTo []}}) exitWith { false };
 if (getNumber(configOf _target >> "maximumLoad") <= 0) exitWith { false };
 if !(GVAR(requireFlagProximity)) exitWith { true };
 

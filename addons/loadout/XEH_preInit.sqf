@@ -4,6 +4,8 @@ ADDON = false;
 #include "XEH_PREP.hpp"
 ADDON = true;
 
+A3UEUNSVL_ADDON_CHECK_AND_BOUNCE();
+
 GVAR(Loadouts) = false;
 
 [
