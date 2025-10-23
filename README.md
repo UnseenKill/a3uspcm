@@ -192,7 +192,7 @@ Authors
 * gor3Splatter
 
 [a3ueunsrs-workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=3548283828
-[a3ueunsvl-workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=3548283828
+[a3ueunsvl-workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=3591854774
 [arma-tools]: https://store.steampowered.com/app/233800/Arma_3_Tools/
 [discord]: https://discord.gg/TfgYZeRWf4
 [git]: https://git-scm.com/downloads
