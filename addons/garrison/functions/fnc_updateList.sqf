@@ -38,7 +38,7 @@ private _showTowns = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTO
 private _hideFull = _states get IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKHIDEFULL;
 
 private _closeLocation = {
-    params[["_format","",[""]], ["_entry",false,[createHashMap]]];
+    params[["_format","",[""]], ["_entry",nil,[createHashMap]]];
 
     private _loc = nearestLocations[_entry get "position", ["NameCityCapital","NameCity","NameVillage"], 1500, _entry get "position"];
 
@@ -148,7 +148,7 @@ GVAR(lbEntries) = createHashMap;
 
 _entries sort true;
 _entries apply {
-    _x params[["_label", ""], ["_entry", false, [createHashMap]]];
+    _x params[["_label", ""], ["_entry", nil, [createHashMap]]];
 
     private _index = _listbox lnbAddRow["", _label];
 
