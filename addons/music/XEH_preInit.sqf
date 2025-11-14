@@ -5,7 +5,7 @@ ADDON = false;
 ADDON = true;
 
 GVAR(lastTracks) = [];
-GVAR(tracks) = nil;
+INIT_SAVE_GVAR(tracks);
 GVAR(waitScript) = nil;
 
 [{

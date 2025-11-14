@@ -37,7 +37,6 @@ if (GVAR(Loadouts) isEqualType false) then {
 
             GVAR(Loadouts) = [];
         };
-
     };
 
     TRACE_1("loaded",GVAR(Loadouts));

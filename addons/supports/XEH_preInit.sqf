@@ -9,7 +9,7 @@ ADDON = true;
 GVAR(moduleSupportProvider) = objNull;
 GVAR(moduleProviders) = createHashMap;
 GVAR(supportBuildings) = createHashMap;
-GVAR(supportSpecialists) = false;
+INIT_SAVE_GVAR(supportSpecialists);
 GVAR(supportSpecialistsMissions) = createHashMap;
 GVAR(tentGuysGroup) = createGroup[resistance, false];
 GVAR(tentGuysGroup) setVariable["ace_map_hideBlueForceMarker", true];

@@ -17,25 +17,31 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
+#pragma hemtt ignore_variables ["_markerSizes"]
 TRACE_1(QFUNC(loadMarkerSizes),_this);
 
 if (GVAR(MarkerSizes) isEqualTo false) then {
     INFO("loading changed markers");
 
-    [QGVAR(MarkerSizes)] call A3A_fnc_getStatVariable;
+    private["_markerSizes"];
+
+    ["_markerSizes"] call A3A_fnc_getStatVariable;
     
-    if ((isNil QGVAR(MarkerSizes)) || !(GVAR(MarkerSizes) isEqualType [])) then {
-        INFO("No saved markers found, initializing empty array");
-        GVAR(MarkerSizes) = createHashMap;
+    if (isNil "_markerSizes" || { !(_markerSizes isEqualType []) }) then {
+        INFO("No saved markers found, initializing empty marker sizes hashmap");
+        _markerSizes = createHashMap;
     } else {
         INFO("Loading changed markers from saved data");
+        TRACE_1(QFUNC(loadMarkerSizes),_markerSizes);
 
-        GVAR(MarkerSizes) = createHashMapFromArray GVAR(MarkerSizes);
-        GVAR(MarkerSizes) apply {
+        _markerSizes = createHashMapFromArray _markerSizes;
+        _markerSizes apply {
             TRACE_2(QFUNC(loadMarkerSizes),_x,_y);
             _x setMarkerSize[_y, _y];
         };
     };
+
+    GVAR(MarkerSizes) = _markerSizes;
 };
 
 nil;
