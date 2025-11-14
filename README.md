@@ -30,7 +30,6 @@ Features
    * Substitute civilian helicopters with MH-9 (some GM helicopters can't slingload -> no lootbox for you...)
    * Unstick player AI from unresponsiveness
    * Uncompromize team and self so you can go undercover again
-   * Autouncompromize after fleeing the scene where you got caught
    * Show roadblocks on map
    * Find intel around player's position (configurable via addon options)
    * Emergency invincibility hot-button; press it quickly if you see the APFSDS flying towards you (configurable via addon controls; NO default button).
@@ -39,6 +38,7 @@ Features
    * Access your air assets from any garage. They *are* air assets after all, right?
    * Reveal a random zone if enemy markers are hidden
    * Change many A3U parameters to values of your choice permanently
+   * Use ACE3 fortifications
  * AA Fire Control
    * Enemy detection side chat messages
    * Fire information side chat messages

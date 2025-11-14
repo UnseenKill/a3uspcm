@@ -35,12 +35,7 @@ if (isNull _module) then {
     INFO_2("creating %1 module for %2 support",_class,_role);
 
     private _supporter = [] call FUNC(getSupportProviderModule);
-    // allow bleed through for this special case...
-    private _position = if isNil "_vehicle" then {
-        markerPos "Synd_HQ"
-    } else {
-        getPos _vehicle
-    };
+    private _position = markerPos "Synd_HQ";
 
     GVAR(_module) = false;
 

@@ -18,7 +18,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-params[["_entry",false,[createHashMap]]];
+params[["_entry",nil,[createHashMap]]];
 
 private _marker = _entry get "marker";
 if (sidesX getVariable[_marker, sideUnknown] isNotEqualTo teamPlayer) exitWith {[]};

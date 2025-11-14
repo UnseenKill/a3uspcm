@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#pragma hemtt ignore_variables ["A3USPCM_menu_AdditionalBuildables","A3USPCM_menu_AdditionalStatics","A3USPCM_menu_AdditionalUndercoverVehicles","A3USPCM_menu_AdditionalVehicles","A3USPCM_menu_MarkerSizes"]
 
 ADDON = false;
 
@@ -132,6 +133,7 @@ GVAR(Timers) = [false, false];
         if (_x isEqualType false) then {
             _x;
         } else {
+            ASSUME_VARIABLE_TYPE(_x,createHashMap);
             private _data = +_x;
             _data set["handle", false];
             _data;

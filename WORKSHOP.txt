@@ -1,0 +1,165 @@
+[h1]Arma 3 Antistasi Ultimate Singleplayer Cheat Menu[/h1]
+
+Although Antistasi isn't made primarily with solo-gameplay in mind, it's playable
+if you accept a few discomforts that this mod aims to counteract. Some features
+like AA Fire Control, the [i]Despawn Suppression Beacon™[/i] and accessing your air
+assets from anywhere do [i]help[/i] you with single player gameplay and others are
+outright cheats.
+
+Many features can be configured via the addon settings and tweaked so it doesn't
+completely feel like cheating; more like getting assistance. E.g. you may
+choose that the "find intel" feature places its hints [i]close[/i] to intel instead of
+directly on top of it, transfer FIA money back to your account with a markup, etc.
+
+[url=https://discord.gg/TfgYZeRWf4]Discord[/url] | [url=https://gitlab.perfect-co.de/arma3/a3uspcm/-/wikis/home]Wiki[/url] | [url=https://gitlab.perfect-co.de/arma3/a3uspcm]Source[/url]
+
+[h2]Features[/h2]
+[h3]Gameplay Tools[/h3]
+[list]
+   [*] Add player's team (and vehicle) to Zeus curated objects
+   [*] Add lootbox functionality to any cursor object
+   [*] Create lootbox on the spot
+   [*] Substitute lame-ass civilian prop plane air support vehicles with F-18
+   [*] Substitute civilian helicopters with MH-9 (some GM helicopters can't slingload -> no lootbox for you...)
+   [*] Unstick player AI from unresponsiveness
+   [*] Uncompromize team and self so you can go undercover again
+   [*] Show roadblocks on map
+   [*] Find intel around player's position (configurable via addon options)
+   [*] Emergency invincibility hot-button; press it quickly when you see the APFSDS flying towards you (configurable via addon controls; NO default button).
+   [*] Add any building you're looking at to base buildable object list (added to save-game data)
+   [*] Add any vehicle you're looking at to undercover vehicle list (added to save-game data; suggested by jcferretti2020)
+   [*] Access your air assets from any garage. They [i]are[/i] air assets after all, right?
+   [*] Reveal a random zone if enemy markers are hidden
+   [*] Change many A3U parameters to values of your choice permanently
+   [*] Use ACE3 fortifications
+[/list]
+
+[h3]A/A Fire Control[/h3]
+[list]
+   [*] Create A/A groups with Zeus
+   [*] Change ROE of specific groups or all groups
+   [*] Enemy detection/fire information side chat messages
+   [*] [i]See linked video for instructions.[/i]
+[/list]
+
+[h3]Arma built-in radio supports[/h3]
+[b]Feature is discontinued - see below.[/b]
+
+[h3]Despawn Suppression Beacon™[/h3]
+[list]
+   [*] Tired of dying, respawning and teleporting back to the battlefield only to find the loot and vehicles gone?
+   [*] Tire no more: place the [i]Despawn Suppression Beacon™[/i] in the respawn radius of a location (default 1.1km) and die as often as you like. Nothing will despawn.
+   [*] [i]See linked video for instructions.[/i]
+[/list]
+
+[h3]Electomagnetic Pulse Ammunition[/h3]
+[list]
+   [*] Fire 40mm EMP grenades or use them as a throwable
+   [*] Creates a blackout in a configurable radius
+   [*] Damage running vehicle engines in a configurable radius
+[/list]
+
+[h3]Teleportation[/h3]
+[list]
+   [*] Teleport self anywhere on map without wait delay or "enemies close" checks
+   [*] Teleport stragglers in player group to self
+   [*] (Temporarily) teleport HQ objects (arsenal, garage, map, flag) to your position
+[/list]
+
+[h3]Permanent map markers[/h3]
+[list]
+   [*] Buy a permanent marker and carry it [i]in the uniform[/i] to make map markers you place permanent (i.e.: part of the save)
+   [*] After a load, permanent markers are restored as user-defined; you should be able to delete them by pressing "Delete". If not, double click the permanent marker item or use map self-interaction for deletion.
+[/list]
+
+[h3]Replenish player squad outside of HQ[/h3]
+[list]
+   [*] Recruit new squad mates in the field
+   [*] "Enemies close" checks can be suppressed via addon settings
+[/list]
+
+[h3]Resources[/h3]
+[list]
+   [*] Add money to player and own faction
+   [*] Add HR to faction
+   [*] Transfer money from FIA account to yours (with a configurable markup)
+   [*] See other factions' resources
+[/list]
+
+[h3]Instant healing[/h3]
+[list]
+   [*] Heal self/group instantly
+   [*] Useful when you've driven your Polaris/Qilin through one of those deadly bushes
+[/list]
+
+[h3]Unlocks[/h3]
+[list]
+   [*] Unlock ACE3 Painkillers for arsenal
+   [*] Unlock breaching charges for tanks and APCs
+   [*] Unlock your current loadout
+   [*] Sort that damn mess of an arsenal
+   [*] Unlock from a container that's close to arsenal box (ACE3 interaction)
+   [*] Discard items from arsenal so you're able to sell'em again
+[/list]
+
+[h3]Advanced Garrison Management[/h3]
+[list]
+   [*]See all garrisonable locations in one list
+   [*]Filter types, ownership
+   [*]See deployed units of a location at a glance (without having to speed-read a fading notification)
+   [*]Rerecruit for selected location (enemy close/location under attack checks still apply)
+[/list]
+
+[h3]Vehicle loadout management[/h3]
+[b]Feature is discontinued - see below.[/b]
+
+[h3]Q.O.L.[/h3]
+[list]
+   [*] Music: tired of the same eight songs playing? Get some variety and change the playlists for combat, stealth, night or roaming.
+   [*] Vehicles: fire smoke launcher from any position of a vehicle (requires additional keybind via addon keybinds; does not interfere w/ regular counter-measures keybind)
+   [*] Weapon trader: when selling in the native sell dialog, double-clicking an item updates the amount edit box the the current item's count
+   [*] Weapons dealer: speed-improved advanced selling dialog via ACE3 interaction near the trader
+[/list]
+
+[h3]Weapon trader[/h3]
+[list]
+   [*] Start weapon trader mission early
+   [*] Move weapon trader to another location once unlocked
+[/list]
+
+[h2]Usage[/h2]
+
+A3USPCM is designed to work - and is tested - in Antistasi Ultimate Singleplayer (i.e. locally, LAN-hosted servers), [i]only[/i]. That means fero zucks have been given in regards to what'll happen if a non-host player executes any of the options available in the menu.
+
+It [i]might[/i] work with other Antistasi variants (Community, Plus), but that's also untested.
+
+Features mentioned above are available via the map diary (look for entry [b]A3U Singleplayer Cheat Menu[/b]).
+
+Vehicle loadout functions are available through ACE3 interaction menu with vehicles.
+
+[h3]Required mods[/h3]
+[list]
+    [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032]Antistasi Ultimate - Mod[/url] - Latest version where this mod was working: [b]11.8.0[/b]
+    [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=463939057]ACE3[/url] - not required anymore, but strongly recommended
+[/list]
+
+[h2]Discontinued features[/h2]
+
+Since this mod is for on single-player gameplay, multiplayer compatibility was
+not a development focus. Some popular features were re-released as A3U extenders
+with full multiplayer compatibility while retaining single-player compatibility
+as well. They will remain a part of A3USPCM but I won't accept bug reports for
+them any longer.
+
+[b]A3USPCM will detect those extenders and turn off its own addons to avoid
+conflicts. Don't switch during saved games unless you're ready to start from
+scratch; save game data from A3USPCM is not probed by the replacement extenders.[/b]
+
+[list]
+    [*] Built-in radio supports is continued with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3548283828][b]A3UE - Built-in Radio Supports[/b][/url]
+    [*] Vehicle loadout management is continued with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3591854774][b]A3UE - Vehicle Loadouts[/b][/url]
+[/list]
+
+[hr]
+
+Source code here: https://gitlab.perfect-co.de/arma3/a3uspcm
