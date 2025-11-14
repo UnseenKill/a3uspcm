@@ -38,6 +38,7 @@ Features
    * Access your air assets from any garage. They *are* air assets after all, right?
    * Reveal a random zone if enemy markers are hidden
    * Change many A3U parameters to values of your choice permanently
+   * Use ACE3 fortifications
  * AA Fire Control
    * Enemy detection side chat messages
    * Fire information side chat messages
