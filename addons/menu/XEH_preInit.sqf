@@ -90,15 +90,14 @@ if !hasInterface exitWith {
 
 ADDON = true;
 
-INIT_SAVE_GVAR(AdditionalBuildables);
-INIT_SAVE_GVAR(AdditionalStatics);
-INIT_SAVE_GVAR(AdditionalUndercoverVehicles);
-INIT_SAVE_GVAR(AdditionalVehicles);
-INIT_SAVE_GVAR(IntelCleanup);
-INIT_SAVE_GVAR(MarkerSizes);
-
+GVAR(AdditionalBuildables) = false;
+GVAR(AdditionalStatics) = false;
+GVAR(AdditionalUndercoverVehicles) = false;
+GVAR(AdditionalVehicles) = false;
 GVAR(DiaryActions) = createHashMap;
+GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;
+GVAR(MarkerSizes) = false;
 GVAR(Timers) = [false, false];
 
 [
@@ -133,7 +132,6 @@ GVAR(Timers) = [false, false];
         if (_x isEqualType false) then {
             _x;
         } else {
-            ASSUME_VAR_TYPE(_x,createHashMap);
             private _data = +_x;
             _data set["handle", false];
             _data;

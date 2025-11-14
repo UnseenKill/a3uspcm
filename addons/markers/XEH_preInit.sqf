@@ -5,12 +5,15 @@ ADDON = false;
 ADDON = true;
 
 GVAR(markerNameMapping) = createHashMap;
-INIT_SAVE_GVAR(storedMarkers);
+GVAR(storedMarkers) = false;
 
-[{
-    INFO("loading stored markers");
-    [] call FUNC(loadMarkers);
-}] call FUNCMAIN(utilOnA3UClientInitDone);
+[
+    {
+        INFO("loading stored markers");
+        if is3DENPreview exitWith { GVAR(storedMarkers) = createHashMap };
+        [] call FUNC(loadMarkers);
+    }
+] call FUNCMAIN(utilOnA3UClientInitDone);
 
 [QEGVAR(main,eventMainOnSaveGame), {
     INFO("saving permanent markers");

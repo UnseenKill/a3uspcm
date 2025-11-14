@@ -32,7 +32,6 @@ if isNil QGVAR(Timers) then {
     if (GVAR(Timers) isEqualType []) then {
         GVAR(Timers) = GVAR(Timers) apply {
             if (_x isEqualType []) then {
-                ASSUME_VAR_TYPE(_x,[]);
                 createHashMapFromArray _x;
             } else {
                 _x;

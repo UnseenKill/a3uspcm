@@ -6,7 +6,7 @@ ADDON = true;
 
 A3UEUNSVL_ADDON_CHECK_AND_BOUNCE();
 
-INIT_SAVE_GVAR(Loadouts);
+GVAR(Loadouts) = false;
 
 [
     {

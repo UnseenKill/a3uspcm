@@ -17,38 +17,39 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-#pragma hemtt ignore_variables ["_tracks"]
 TRACE_1(QFUNC(loadTracks),_this);
 
 INFO("Custom playlist not loaded, initializing...");
 
-private _tracks = GVAR(tracks);
+if !(is3DENPreview || is3DENMultiplayer) then {
+    [QGVAR(tracks)] call A3A_fnc_getStatVariable;
+};
 
-if (_tracks isEqualTo false) then {
+if isNil QGVAR(tracks) then {
     INFO("No saved tracks found, using tracks from config");
+    GVAR(tracks) = false;
 } else {
     INFO("Loading saved playlist");
 
-    if !(_tracks isEqualType []) then {
+    if !(GVAR(tracks) isEqualType []) then {
         WARNING("Invalid playlist data type, initializing with config instead");
-        TRACE_1("invalid value",_tracks);
+        TRACE_1("invalid value",GVAR(tracks));
 
-        _tracks = false;
+        GVAR(tracks) = false;
     };
 };
 
-if (_tracks isNotEqualTo false) then {
-    _tracks = createHashMapFromArray _tracks;
+if (GVAR(tracks) isNotEqualTo false) then {
+    GVAR(tracks) = createHashMapFromArray GVAR(tracks);
 } else {
-    _tracks = createHashMap;
+    GVAR(tracks) = createHashMap;
 
     ["Combat","Stealth","Night","Default"] apply {
         private _key = toLower _x;
-        _tracks set[_key, getArray(configFile >> QGVAR(Config) >> "Tracks" >> _x >> "tracks")];
+        GVAR(tracks) set[_key, getArray(configFile >> QGVAR(Config) >> "Tracks" >> _x >> "tracks")];
     };
 };
 
-GVAR(tracks) = _tracks;
 TRACE_1("loaded",GVAR(tracks));
 
 nil;
