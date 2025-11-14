@@ -7,5 +7,5 @@
 #define ASSUME_VAR_TYPE(NAME,VALUE) (if false then { NAME = VALUE })
 #define INIT_SAVE_GVAR(NAME) if true then {\
     GVAR(NAME) = false;\
-    ASSUME_VAR_TYPE(GVAR(NAME),createHashMap);\
+    if false then { GVAR(NAME) = createHashMap };\
 }
