@@ -17,6 +17,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
+#pragma hemtt ignore_variables ["A3USPCM_markers_storedMarkers"]
 TRACE_1(QFUNC(loadMarkers),_this);
 
 if (GVAR(storedMarkers) isEqualTo false) then {

@@ -17,6 +17,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
+#pragma hemtt ignore_variables ["A3USPCM_music_tracks"]
 TRACE_1(QFUNC(loadTracks),_this);
 
 INFO("Custom playlist not loaded, initializing...");

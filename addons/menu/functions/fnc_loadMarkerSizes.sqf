@@ -17,6 +17,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
+#pragma hemtt ignore_variables ["A3USPCM_menu_MarkerSizes"]
 TRACE_1(QFUNC(loadMarkerSizes),_this);
 
 if (GVAR(MarkerSizes) isEqualTo false) then {

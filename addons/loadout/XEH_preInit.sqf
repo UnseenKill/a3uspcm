@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#pragma hemtt ignore_variables ["A3USPCM_loadout_Loadouts"]
 
 ADDON = false;
 #include "XEH_PREP.hpp"

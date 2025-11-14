@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#pragma hemtt ignore_variables ["A3USPCM_supports_supportSpecialists"]
 
 A3UEUESRS_ADDON_CHECK_AND_BOUNCE();
 
