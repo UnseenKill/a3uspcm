@@ -133,6 +133,7 @@ GVAR(Timers) = [false, false];
         if (_x isEqualType false) then {
             _x;
         } else {
+            ASSUME_VARIABLE_TYPE(_x,createHashMap);
             private _data = +_x;
             _data set["handle", false];
             _data;
