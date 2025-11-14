@@ -91,16 +91,6 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(autouncompromize,escapeZoneRadius), "SLIDER",
-    [ELSTRING(autouncompromize,Settings_escapeZoneRadius_DisplayName), ELSTRING(autouncompromize,Settings_escapeZoneRadius_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
-    [0, 2500, 800, 0], // min,max,default,decimals
-    true, // global
-    {}, // onchange
-    true // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
     QEGVAR(garrison,addActionToMapObject), "CHECKBOX",
     [ELSTRING(garrison,Settings_addActionToMapObject_DisplayName), ELSTRING(garrison,Settings_addActionToMapObject_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
