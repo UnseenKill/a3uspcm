@@ -9,6 +9,10 @@ GVAR(revealDuration) = 5;
 GVAR(revealRadius) = 250;
 
 [{
+    if GVAR(aceFortifyEnable) then {
+        [] call FUNC(setupAceFortifyModule);
+    };
+
     if GVAR(addAceTrenchesToBuildings) then {
         [
             "ace_trenches_finished",

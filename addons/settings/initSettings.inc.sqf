@@ -663,6 +663,26 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(misc,aceFortifyEnable), "CHECKBOX",
+    [ELSTRING(misc,Settings_aceFortifyEnable_DisplayName), ELSTRING(misc,Settings_aceFortifyEnable_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(misc,aceFortifyPreset), "EDITBOX",
+    [ELSTRING(misc,Settings_aceFortifyPreset_DisplayName), ELSTRING(misc,Settings_aceFortifyPreset_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    'bigGreen', // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(weapons,vehicleWeaponsAdditionalClasses), "EDITBOX",
     [ELSTRING(weapons,Settings_vehicleWeaponsAdditionalClasses_DisplayName), ELSTRING(weapons,Settings_vehicleWeaponsAdditionalClasses_Tooltip)],
     [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
