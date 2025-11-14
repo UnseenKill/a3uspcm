@@ -2,6 +2,7 @@ PREP(canSnapNeck);
 PREP(canSquashSnake);
 PREP(onAceTrenchesFinished);
 PREP(revealFOV);
+PREP(setupAceFortifyModule);
 PREP(snapNeck);
 PREP(squashSnake);
 PREP(wakeupUnconscious);

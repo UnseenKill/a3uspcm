@@ -21,6 +21,22 @@
             <English>Wake player up from unconsciousness (press hotkey in Zeus when unconscious)</English>
             <German>Spieler aus Bewusstlosigkeit erwecken (Taste in Zeus drücken, wenn bewusstlos)</German>
         </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_aceFortifyEnable_DisplayName">
+            <English>Enable ACE3 fortify</English>
+            <German>ACE3 Befestigungen aktivieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_aceFortifyEnable_Tooltip">
+            <English>Allows the use of ACE3 fortification module</English>
+            <German>Ermöglicht die Verwendung des ACE3 Befestigungsmoduls</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_aceFortifyPreset_DisplayName">
+            <English>ACE3 fortify preset</English>
+            <German>ACE3 Befestigungs-Voreinstellung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_aceFortifyPreset_Tooltip">
+            <English>Preset to use for ACE3 fortify module (as defined in ACE3)</English>
+            <German>Voreinstellung für das ACE3 Befestigungsmodul (wie in den ACE3 definiert)</German>
+        </Key>
         <Key ID="STR_A3USPCM_Misc_Settings_addAceTrenchesToBuildings_DisplayName">
             <English>Add ACE3 dug trenches to save</English>
             <German>ACE3 Schützengräben zum Speichstand hinzufügen</German>
