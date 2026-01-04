@@ -19,7 +19,7 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNCMAIN(vehiclesAirAccessAnywhere),_this);
 
-HR_GRG_Cnd_canAccessAir = { true };
+HR_GRG_Cnd_isAirbase = { true };
 
 [
     localize LSTRING(Vehicles_AirAccessAnywhereCaption),
