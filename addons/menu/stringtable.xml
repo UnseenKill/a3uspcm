@@ -241,6 +241,34 @@
             <English>initializing A3U Singleplayer Cheat Menu v%1</English>
             <German>A3U Singleplayer Cheat Menü v%1 wird initialisiert</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_AddKeysPrompt">
+            <English>Change intel keys to</English>
+            <German>Verschlüsselungscodes ändern zu</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_DecryptionKeysChangedCaption">
+            <English>Decryption keys changed</English>
+            <German>Verschlüsselungscodes geändert</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_DecryptionKeysChangedText">
+            <English>Decryption keys for faction changed to %1.</English>
+            <German>Verschlüsselungscodes für die Fraktion wurden auf %1 geändert.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_DecryptionKeysEastCaption">
+            <English>Decryption keys (Invaders)</English>
+            <German>Verschlüsselungscodes (Eindringlinge)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_DecryptionKeysEastText">
+            <English>Change number of decryption keys for Invaders.</English>
+            <German>Ändere die Anzahl der Verschlüsselungscodes für Eindringlinge.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_DecryptionKeysWestCaption">
+            <English>Decryption keys (Occupiers)</English>
+            <German>Verschlüsselungscodes (Besatzer)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_DecryptionKeysWestText">
+            <English>Change number of decryption keys for Occupiers.</English>
+            <German>Ändere die Anzahl der Verschlüsselungscodes für Besatzer.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Intel_GainIntelCivilianCaption">
             <English>Gain civilian intel</English>
             <German>Erhalte zivile Informationen</German>

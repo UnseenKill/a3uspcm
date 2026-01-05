@@ -17,3 +17,7 @@
     CFGFUNCTION_HEADER;\
     RECOMPILE;\
 }
+
+#ifndef QQUOTE
+    #define QQUOTE(x) QUOTE(QUOTE(x))
+#endif

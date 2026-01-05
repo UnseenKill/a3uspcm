@@ -6,6 +6,7 @@ class CfgFunctions {
             PATHTO_FNC(fireSmokeLauncher);
             PATHTO_FNC(healGroup);
             PATHTO_FNC(healPlayer);
+            PATHTO_FNC(intelDecryptionKeys);
             PATHTO_FNC(intelGain);
             PATHTO_FNC(intelRevealLocation);
             PATHTO_FNC(miscAddTeamZeus);

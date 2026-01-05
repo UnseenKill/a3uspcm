@@ -271,6 +271,20 @@ class GVAR(Config) {
                 params[] = {QUOTE(Civilian), QUOTE(west)};
                 closeDiary = 1;
             };
+
+            class DecryptionKeysWest {
+                caption = CSTRING(Intel_DecryptionKeysWestCaption);
+                text = CSTRING(Intel_DecryptionKeysWestText);
+                action = QFUNCMAIN(intelDecryptionKeys);
+                params[] = {QUOTE(west)};
+            };
+
+            class DecryptionKeysEast {
+                caption = CSTRING(Intel_DecryptionKeysEastCaption);
+                text = CSTRING(Intel_DecryptionKeysEastText);
+                action = QFUNCMAIN(intelDecryptionKeys);
+                params[] = {QUOTE(east)};
+            };
         };
 
         class Trader {
