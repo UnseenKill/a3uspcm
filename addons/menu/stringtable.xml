@@ -247,7 +247,7 @@
         </Key>
         <Key ID="STR_A3USPCM_Menu_Intel_GainIntelCivilianText">
             <English>Traitors, money, decryption keys, weapons.</English>
-            <German>Verräter, Geld, Entschlüsselungsschlüssel, Waffen.</German>
+            <German>Verräter, Geld, Verschlüsselungscodes, Waffen.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Intel_GainIntelLargeEastCaption">
             <English>Gain large intel (Invaders)</English>
@@ -271,7 +271,7 @@
         </Key>
         <Key ID="STR_A3USPCM_Menu_Intel_GainIntelMediumEastText">
             <English>Decryption key packs, convoy routes, medium zone reveal.</English>
-            <German>Entschlüsselungsschlüssel-Pakete, Konvoi-Routen, mittlere Zonenerkennung.</German>
+            <German>Verschlüsselungscodes-Pakete, Konvoi-Routen, mittlere Zonenerkennung.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Intel_GainIntelMediumWestCaption">
             <English>Gain medium intel (Occupiers)</English>
@@ -279,7 +279,7 @@
         </Key>
         <Key ID="STR_A3USPCM_Menu_Intel_GainIntelMediumWestText">
             <English>Decryption key packs, convoy routes, medium zone reveal.</English>
-            <German>Entschlüsselungsschlüssel-Pakete, Konvoi-Routen, mittlere Zonenerkennung.</German>
+            <German>Verschlüsselungscodes-Pakete, Konvoi-Routen, mittlere Zonenerkennung.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Intel_GainIntelSmallEastCaption">
             <English>Gain small intel (Invaders)</English>
@@ -287,7 +287,7 @@
         </Key>
         <Key ID="STR_A3USPCM_Menu_Intel_GainIntelSmallEastText">
             <English>Next attack, defense resources, decryption keys, convoys.</English>
-            <German>Nächster Angriff, Verteidigungsressourcen, Entschlüsselungsschlüssel, Konvois.</German>
+            <German>Nächster Angriff, Verteidigungsressourcen, Verschlüsselungscodes, Konvois.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Intel_GainIntelSmallWestCaption">
             <English>Gain small intel (Occupiers)</English>
@@ -295,7 +295,7 @@
         </Key>
         <Key ID="STR_A3USPCM_Menu_Intel_GainIntelSmallWestText">
             <English>Next attack, defense resources, decryption keys, convoys.</English>
-            <German>Nächster Angriff, Verteidigungsressourcen, Entschlüsselungsschlüssel, Konvois.</German>
+            <German>Nächster Angriff, Verteidigungsressourcen, Verschlüsselungscodes, Konvois.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Intel_RevealLocationCaption">
             <English>Reveal zone</English>
