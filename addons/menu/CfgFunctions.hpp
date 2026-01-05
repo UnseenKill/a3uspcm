@@ -6,6 +6,9 @@ class CfgFunctions {
             PATHTO_FNC(fireSmokeLauncher);
             PATHTO_FNC(healGroup);
             PATHTO_FNC(healPlayer);
+            PATHTO_FNC(intelDecryptionKeys);
+            PATHTO_FNC(intelGain);
+            PATHTO_FNC(intelRevealLocation);
             PATHTO_FNC(miscAddTeamZeus);
             PATHTO_FNC(miscAddToBuildables);
             PATHTO_FNC(miscAddToBuyableStatics);
@@ -18,7 +21,6 @@ class CfgFunctions {
             PATHTO_FNC(miscPlaceBeacon);
             PATHTO_FNC(miscReinstateLeadership);
             PATHTO_FNC(miscRepairBuildings);
-            PATHTO_FNC(miscRevealLocation);
             PATHTO_FNC(miscShowRoadblocks);
             PATHTO_FNC(miscSpawnLootBox);
             PATHTO_FNC(miscUncompromise);

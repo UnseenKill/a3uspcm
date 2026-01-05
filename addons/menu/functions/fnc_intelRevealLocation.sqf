@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_fnc_miscRevealLocation
+Function: A3USPCM_fnc_intelRevealLocation
 
 Description:
     Reveals a location on the map.
@@ -17,7 +17,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNCMAIN(miscRevealLocation),_this);
+TRACE_1(QFUNCMAIN(intelRevealLocation),_this);
 
 [1] call A3U_fnc_revealRandomZones;
 
