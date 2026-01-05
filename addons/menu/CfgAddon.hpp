@@ -58,13 +58,6 @@ class GVAR(Config) {
                 closeDiary = 1;
             };
 
-            class RevealLocation {
-                caption = CSTRING(Miscellaneous_RevealLocationCaption);
-                text = CSTRING(Miscellaneous_RevealLocationText);
-                action = QFUNCMAIN(miscRevealLocation);
-                condition = QUOTE(hideEnemyMarkers);
-            };
-
             class RepairBuildings {
                 caption = CSTRING(Miscellaneous_RepairBuildingsCaption);
                 text = CSTRING(Miscellaneous_RepairBuildingsText);
@@ -204,6 +197,78 @@ class GVAR(Config) {
                 caption = CSTRING(Teleport_TeleportFlagCaption);
                 text = CSTRING(Teleport_TeleportFlagText);
                 action = QFUNCMAIN(teleportRebelFlag);
+                closeDiary = 1;
+            };
+        };
+
+        class Intel {
+            caption = CSTRING(DiaryIntelCaption);
+            text = CSTRING(DiaryIntelText);
+            image = QUOTE(\a3\ui_f\data\igui\cfg\simpletasks\types\search_ca.paa);
+
+            class RevealLocation {
+                caption = CSTRING(Intel_RevealLocationCaption);
+                text = CSTRING(Intel_RevealLocationText);
+                action = QFUNCMAIN(intelRevealLocation);
+                condition = QUOTE(hideEnemyMarkers);
+                separator = 1;
+            };
+
+            class GainIntelSmallWest {
+                caption = CSTRING(Intel_GainIntelSmallWestCaption);
+                text = CSTRING(Intel_GainIntelSmallWestText);
+                action = QFUNCMAIN(intelGain);
+                params[] = {QUOTE(Small), QUOTE(west)};
+                closeDiary = 1;
+            };
+
+            class GainIntelMediumWest {
+                caption = CSTRING(Intel_GainIntelMediumWestCaption);
+                text = CSTRING(Intel_GainIntelMediumWestText);
+                action = QFUNCMAIN(intelGain);
+                params[] = {QUOTE(Medium), QUOTE(west)};
+                closeDiary = 1;
+            };
+
+            class GainIntelLargeWest {
+                caption = CSTRING(Intel_GainIntelLargeWestCaption);
+                text = CSTRING(Intel_GainIntelLargeWestText);
+                action = QFUNCMAIN(intelGain);
+                params[] = {QUOTE(Large), QUOTE(west)};
+                closeDiary = 1;
+                separator = 1;
+            };
+
+            class GainIntelSmallEast {
+                caption = CSTRING(Intel_GainIntelSmallEastCaption);
+                text = CSTRING(Intel_GainIntelSmallEastText);
+                action = QFUNCMAIN(intelGain);
+                params[] = {QUOTE(Small), QUOTE(east)};
+                closeDiary = 1;
+            };
+
+            class GainIntelMediumEast {
+                caption = CSTRING(Intel_GainIntelMediumEastCaption);
+                text = CSTRING(Intel_GainIntelMediumEastText);
+                action = QFUNCMAIN(intelGain);
+                params[] = {QUOTE(Medium), QUOTE(east)};
+                closeDiary = 1;
+            };
+
+            class GainIntelLargeEast {
+                caption = CSTRING(Intel_GainIntelLargeEastCaption);
+                text = CSTRING(Intel_GainIntelLargeEastText);
+                action = QFUNCMAIN(intelGain);
+                params[] = {QUOTE(Large), QUOTE(east)};
+                closeDiary = 1;
+                separator = 1;
+            };
+
+            class GainIntelCivilian {
+                caption = CSTRING(Intel_GainIntelCivilianCaption);
+                text = CSTRING(Intel_GainIntelCivilianText);
+                action = QFUNCMAIN(intelGain);
+                params[] = {QUOTE(Civilian), QUOTE(west)};
                 closeDiary = 1;
             };
         };

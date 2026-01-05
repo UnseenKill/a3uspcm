@@ -121,6 +121,14 @@
             <English>You shall be healed.</English>
             <German>Du sollst geheilt werden.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryIntelCaption">
+            <English>Intel</English>
+            <German>Geheiminformationen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DiaryIntelText">
+            <English>Gain intel and reveal map locations.</English>
+            <German>Erhalte Geheiminformationen und enthülle Kartenstandorte.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_DiaryMiscellaneousCaption">
             <English>Miscellaneous</English>
             <German>Verschiedenes</German>
@@ -232,6 +240,70 @@
         <Key ID="STR_A3USPCM_Menu_InitMessage">
             <English>initializing A3U Singleplayer Cheat Menu v%1</English>
             <German>A3U Singleplayer Cheat Menü v%1 wird initialisiert</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelCivilianCaption">
+            <English>Gain civilian intel</English>
+            <German>Erhalte zivile Informationen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelCivilianText">
+            <English>Traitors, money, decryption keys, weapons.</English>
+            <German>Verräter, Geld, Entschlüsselungsschlüssel, Waffen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelLargeEastCaption">
+            <English>Gain large intel (Invaders)</English>
+            <German>Erhalte große Informationen (Eindringlinge)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelLargeEastText">
+            <English>Traitor intel, large zone reveals, money, weapons.</English>
+            <German>Verräterinformationen, große Zonenerkennung, Geld, Waffen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelLargeWestCaption">
+            <English>Gain large intel (Occupiers)</English>
+            <German>Erhalte große Informationen (Besatzer)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelLargeWestText">
+            <English>Traitor intel, large zone reveals, money, weapons.</English>
+            <German>Verräterinformationen, große Zonenerkennung, Geld, Waffen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelMediumEastCaption">
+            <English>Gain medium intel (Invaders)</English>
+            <German>Erhalte mittlere Informationen (Eindringlinge)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelMediumEastText">
+            <English>Decryption key packs, convoy routes, medium zone reveal.</English>
+            <German>Entschlüsselungsschlüssel-Pakete, Konvoi-Routen, mittlere Zonenerkennung.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelMediumWestCaption">
+            <English>Gain medium intel (Occupiers)</English>
+            <German>Erhalte mittlere Informationen (Besatzer)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelMediumWestText">
+            <English>Decryption key packs, convoy routes, medium zone reveal.</English>
+            <German>Entschlüsselungsschlüssel-Pakete, Konvoi-Routen, mittlere Zonenerkennung.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelSmallEastCaption">
+            <English>Gain small intel (Invaders)</English>
+            <German>Erhalte kleine Informationen (Eindringlinge)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelSmallEastText">
+            <English>Next attack, defense resources, decryption keys, convoys.</English>
+            <German>Nächster Angriff, Verteidigungsressourcen, Entschlüsselungsschlüssel, Konvois.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelSmallWestCaption">
+            <English>Gain small intel (Occupiers)</English>
+            <German>Erhalte kleine Informationen (Besatzer)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_GainIntelSmallWestText">
+            <English>Next attack, defense resources, decryption keys, convoys.</English>
+            <German>Nächster Angriff, Verteidigungsressourcen, Entschlüsselungsschlüssel, Konvois.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_RevealLocationCaption">
+            <English>Reveal zone</English>
+            <German>Zone enthüllen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Intel_RevealLocationText">
+            <English>Reveal a random location on the map.</English>
+            <German>Enthülle einen zufälligenStandort auf der Karte.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddTeamZeusCaption">
             <English>Add team to Zeus</English>
@@ -452,14 +524,6 @@
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RepairBuildingsText">
             <English>Repair damaged buildings around player position.</English>
             <German>Repariere beschädigte Gebäude in der Nähe der Spielerposition.</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_RevealLocationCaption">
-            <English>Reveal zone</English>
-            <German>Zone enthüllen</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Miscellaneous_RevealLocationText">
-            <English>Reveal a random location on the map.</English>
-            <German>Enthülle einen zufälligenStandort auf der Karte.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_RoadblockDestroyedMarkerText">
             <English>Roadblock (destroyed)</English>
