@@ -24,6 +24,6 @@ if !assert(params[
     ["_side", nil, [""]]
 ]) exitWith {};
 
-[_intelType, [east, west] select(_side isEqualTo "west")] call A3A_fnc_selectIntel;
+[_intelType, [east, west] select(_side isEqualTo "west")] remoteExecCall["A3A_fnc_selectIntel", 2];
 
 nil;
