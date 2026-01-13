@@ -138,14 +138,14 @@ class GVAR(Config) {
                 caption = CSTRING(AAFireControl_AllFireCaption);
                 text = CSTRING(AAFireControl_AllFireText);
                 action = QEFUNC(aafc,toggleROEAll);
-                params = QUOTE(openFire);
+                params = QEGVAR(aafc,ModeOpenFire);
             };
 
             class AllHold {
                 caption = CSTRING(AAFireControl_AllHoldCaption);
                 text = CSTRING(AAFireControl_AllHoldText);
                 action = QEFUNC(aafc,toggleROEAll);
-                params = QUOTE(holdFire);
+                params = QEGVAR(aafc,ModeHoldFire);
             };
         };
 
