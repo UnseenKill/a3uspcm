@@ -13,7 +13,7 @@ $[
 	1.063,
 	["RscA3USPCMLoadoutManagerDialog",[["safezoneX","safezoneY","safezoneW","safezoneH"],"safezoneW / 40","safezoneH / 25","GUI_GRID"],2,1,1],
 	[-1000,"StaticBackground",[1,"",["0.3 * safezoneW + safezoneX","0.28 * safezoneH + safezoneY","0.4 * safezoneW","0.4 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],[]],
-	[-1001,"StaticTitle",[1,"Title",["0.3 * safezoneW + safezoneX","0.24 * safezoneH + safezoneY","0.4 * safezoneW","0.032 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1001,"StaticTitle",[1,"Title",["0.3 * safezoneW + safezoneX","0.24 * safezoneH + safezoneY","0.4 * safezoneW","0.032 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],["moving = 1;"]],
 	[-1600,"BtnClose",[1,"X",["0.6825 * safezoneW + safezoneX","0.248 * safezoneH + safezoneY","0.0125 * safezoneW","0.02 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1500,"ListLoadouts",[1,"",["0.3125 * safezoneW + safezoneX","0.3 * safezoneH + safezoneY","0.275 * safezoneW","0.36 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","idcLeft = -1;","idcRight = -1;","drawSideArrows = false;"]],
 	[1601,"BtnSave",[1,"Save",["0.6 * safezoneW + safezoneX","0.38 * safezoneH + safezoneY","0.0875 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.6,0,1],[-1,-1,-1,-1],"Save current loadout","-1"],[]],
@@ -27,6 +27,7 @@ class GVAR(Dialog) {
     idd = 6119823;
     onLoad = QUOTE(call FUNC(onDialogOpen));
     onUnload = QUOTE(uiNamespace setVariable[ARR_2(QQGVAR(menuDisplay),nil)]);
+	movingEnable = 1;
 
     class Controls {
 		////////////////////////////////////////////////////////
@@ -51,6 +52,7 @@ class GVAR(Dialog) {
 			w = QUOTE(0.4 * safezoneW);
 			h = QUOTE(0.032 * safezoneH);
 			colorBackground[] = {0,0.8,0,1};
+			moving = 1;
 		};
 		class BtnClose: RscButton
 		{
