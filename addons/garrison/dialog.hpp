@@ -9,12 +9,12 @@
 //  Search: (^\s*(?:text|tooltip)\s*=\s*)[$]STR_A3_([^;]+)
 //  Replace: $1CSTRING($2)
 
-/* #Hyvygo
+/* #Kudyky
 $[
 	1.063,
 	["RscA3USPCMGarrisonManagerDialog",[["safezoneX","safezoneY","safezoneW","safezoneH"],"safezoneW / 40","safezoneH / 25","GUI_GRID"],2,1,1],
 	[-1000,"StaticBackground",[1,"",["0.15 * safezoneW + safezoneX","0.16 * safezoneH + safezoneY","0.7 * safezoneW","0.72 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],[]],
-	[-1001,"StaticTitle",[1,"Title",["0.15 * safezoneW + safezoneX","0.116 * safezoneH + safezoneY","0.7 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1001,"StaticTitle",[1,"Title",["0.15 * safezoneW + safezoneX","0.116 * safezoneH + safezoneY","0.7 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],["moving = 1;"]],
 	[-1600,"BtnClose",[1,"X",["0.8325 * safezoneW + safezoneX","0.128 * safezoneH + safezoneY","0.0125 * safezoneW","0.02 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[2800,"CheckShowBLUFOR",[1,"",["0.1625 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show locations of BLUFOR faction (usually NATO)","-1"],[]],
 	[1002,"StaticLabelBLUFOR",[1,"BLUFOR",["0.1875 * safezoneW + safezoneX","0.78 * safezoneH + safezoneY","0.04125 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
@@ -46,6 +46,7 @@ class GVAR(dialog) {
     idd = 6119820;
     onLoad = QUOTE(call FUNC(onMenuOpen));
     onUnload = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(menuDisplay),nil)]);
+	movingEnable = 1;
 
     class controls {
 		////////////////////////////////////////////////////////
@@ -70,6 +71,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.7 * safezoneW);
 			h = QUOTE(0.04 * safezoneH);
 			colorBackground[] = {0,0.8,0,1};
+			moving = 1;
 		};
 		class BtnClose: RscButton
 		{

@@ -12,7 +12,7 @@
 $[
 	1.063,
 	["RscA3USPCMStoreSellDialog",[[0,0,1,1],0.025,0.04,"GUI_GRID"],2,1,1],
-	[1000,"StaticTitle",[1,"A3USPCM Faster Loot Selling",["0.215375 * safezoneW + safezoneX","0.181 * safezoneH + safezoneY","0.551719 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1000,"StaticTitle",[1,"A3USPCM Faster Loot Selling",["0.215375 * safezoneW + safezoneX","0.181 * safezoneH + safezoneY","0.551719 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],["moving = 1;"]],
 	[1001,"StaticBackground",[1,"",["0.215313 * safezoneW + safezoneX","0.219 * safezoneH + safezoneY","0.5775 * safezoneW","0.561 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],[]],
 	[1800,"FrameItemInfo",[1,"Item name goes here",["0.62375 * safezoneW + safezoneX","0.236 * safezoneH + safezoneY","0.159844 * safezoneW","0.44 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
 	[1602,"BtnClose",[1,"X",["0.77225 * safezoneW + safezoneX","0.181 * safezoneH + safezoneY","0.020625 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
@@ -41,6 +41,7 @@ class GVAR(sellDialog) {
     idd = 6119821;
     onLoad = QUOTE(call FUNC(onSellDialogOpen));
     onUnload = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(menuDisplay),nil)]);
+	movingEnable = 1;
 
     class Filters {
         class GroupedByType {
@@ -78,6 +79,7 @@ class GVAR(sellDialog) {
 			w = QUOTE(0.551719 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 			colorBackground[] = {0,0.8,0,1};
+			moving = 1;
 		};
 		class StaticBackground: RscText
 		{
