@@ -12,7 +12,7 @@
 $[
 	1.063,
 	["RscA3USPCMTracklistEditorDialog",[[0,0,1,1],0.025,0.04,"GUI_GRID"],2,1,1],
-	[-1000,"StaticTitle",[1,"A3USPCM Playlist Editor",["0.215375 * safezoneW + safezoneX","0.181 * safezoneH + safezoneY","0.551719 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1000,"StaticTitle",[1,"A3USPCM Playlist Editor",["0.215375 * safezoneW + safezoneX","0.181 * safezoneH + safezoneY","0.551719 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],["moving = 1;"]],
 	[-1001,"StaticBackground",[1,"",["0.215313 * safezoneW + safezoneX","0.219 * safezoneH + safezoneY","0.5775 * safezoneW","0.561 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],[]],
 	[-1602,"BtnClose",[1,"X",["0.77225 * safezoneW + safezoneX","0.181 * safezoneH + safezoneY","0.020625 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[-1400,"EditCopyPaste",[1,"",["0.226719 * safezoneW + safezoneX","0.236 * safezoneH + safezoneY","0.33 * safezoneW","0.528 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["style = ST_MULTI;","fade = 1;","font = |EtelkaMonospacePro|;","sizeEx = 0.025;"]],
@@ -29,6 +29,7 @@ class GVAR(dialog) {
     idd = 6119822;
     onLoad = QUOTE(call FUNC(onDialogOpen));
     onUnload = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(menuDisplay),nil)]);
+	movingEnable = 1;
 
     class Controls {
 		////////////////////////////////////////////////////////
@@ -44,6 +45,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.551719 * safezoneW);
 			h = QUOTE(0.033 * safezoneH);
 			colorBackground[] = {0,0.8,0,1};
+			moving = 1;
 		};
 		class StaticBackground: RscText
 		{
