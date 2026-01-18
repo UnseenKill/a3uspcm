@@ -34,19 +34,21 @@ class CfgWeapons {
         };
     };
 
-    class mortar_82mm_RF {
+    class CannonCore;
+    class mortar_82mm: CannonCore {};
+    class mortar_60mm_RF: mortar_82mm {
         class Single1;
         class Burst1;
     };
 
-    class GVAR(mortar_60mm_RF_proxy): mortar_82mm_RF {
+    class GVAR(mortar_60mm_RF_proxy): mortar_60mm_RF {
         magazines[] = {
+            QGVAR(4Rnd_60mm_Mo_Flare_white_RF),
+            QGVAR(4Rnd_60mm_Mo_Smoke_white_RF),
+            QGVAR(4Rnd_60mm_Mo_shells_RF),
             QGVAR(8Rnd_60mm_Mo_shells_RF),
-            QGVAR(8Rnd_60mm_Mo_Flare_white),
-            QGVAR(8Rnd_60mm_Mo_Flare_white_illumination),
-            QGVAR(8Rnd_60mm_Mo_Smoke_white),
-            QGVAR(8Rnd_60mm_Mo_guided),
-            QGVAR(8Rnd_60mm_Mo_LG)
+            QGVAR(8Rnd_60mm_Mo_LG_RF),
+            QGVAR(8Rnd_60mm_Mo_guided_RF)
         };
 
         magazineReloadTime = 0.5;

@@ -5,10 +5,10 @@
     }
 
 class ACE_CSW_Groups {
+    DEFGRP(4Rnd_60mm_Mo_Flare_white_RF);
+    DEFGRP(4Rnd_60mm_Mo_Smoke_white_RF);
+    DEFGRP(4Rnd_60mm_Mo_shells_RF);
     DEFGRP(8Rnd_60mm_Mo_shells_RF);
-    DEFGRP(8Rnd_60mm_Mo_Flare_white);
-    DEFGRP(8Rnd_60mm_Mo_Flare_white_illumination);
-    DEFGRP(8Rnd_60mm_Mo_Smoke_white);
-    DEFGRP(8Rnd_60mm_Mo_guided);
-    DEFGRP(8Rnd_60mm_Mo_LG);
+    DEFGRP(8Rnd_60mm_Mo_LG_RF);
+    DEFGRP(8Rnd_60mm_Mo_guided_RF);
 };

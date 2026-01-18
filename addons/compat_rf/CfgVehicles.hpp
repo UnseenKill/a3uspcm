@@ -10,6 +10,7 @@ class CfgVehicles {
             disassembleTurret = QUOTE(TRIPLES(ace,csw,mortarBaseplate));
             ammoLoadTime = 6;
             ammoUnloadTime = 4;
+            desiredAmmo = 24;
         };
     };
 };
