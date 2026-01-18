@@ -34,33 +34,23 @@ class CfgWeapons {
         };
     };
 
-    class mortar_60mm_RF {
+    class mortar_82mm_RF {
         class Single1;
         class Burst1;
     };
 
-    class GVAR(mortar_60mm_RF_proxy): mortar_60mm_RF {
-        canLock = 0;
-        cursor = "mortar";
-        cursorAim = "EmptyCursor";
-        magazineReloadTime = 0.5;
+    class GVAR(mortar_60mm_RF_proxy): mortar_82mm_RF {
         magazines[] = {
             QGVAR(8Rnd_60mm_Mo_shells_RF),
-            QGVAR(8Rnd_82mm_Mo_Flare_white),
-            QGVAR(8Rnd_82mm_Mo_Flare_white_illumination),
-            QGVAR(8Rnd_82mm_Mo_Smoke_white),
-            QGVAR(8Rnd_82mm_Mo_guided),
-            QGVAR(8Rnd_82mm_Mo_LG)
+            QGVAR(8Rnd_60mm_Mo_Flare_white),
+            QGVAR(8Rnd_60mm_Mo_Flare_white_illumination),
+            QGVAR(8Rnd_60mm_Mo_Smoke_white),
+            QGVAR(8Rnd_60mm_Mo_guided),
+            QGVAR(8Rnd_60mm_Mo_LG)
         };
-        modes[] = {"Single1","Single2","Single3","Burst1"};
-        nameSound = "CannonCore";
-        reloadMagazineSound[] = {"A3\Sounds_F\arsenal\weapons_static\Mortar\reload_magazine_Mortar.wss",1,1,20};
-        reloadSound[] = {"A3\Sounds_F\arsenal\weapons_static\Mortar\reload_mortar.wss",1,1,20};
+
+        magazineReloadTime = 0.5;
         reloadTime = 0.5;
-        scope = 1;
-        sounds[] = {"StandardSound"};
-        soundServo[] = {"",0.0001,1};
-        type = 1;
 
         class Single1: Single1 {
             reloadTime = 0.5;

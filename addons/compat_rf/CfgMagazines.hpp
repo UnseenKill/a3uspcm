@@ -13,9 +13,9 @@
 
 class CfgMagazines {
     DEFMAG(8Rnd_60mm_Mo_shells_RF,"\z\ace\addons\mk6mortar\UI\w_l16_ammo_he_ca.paa");
-    DEFMAG(8Rnd_82mm_Mo_Flare_white,"\z\ace\addons\mk6mortar\UI\w_l16_ammo_illum_ca.paa");
-    DEFMAG(8Rnd_82mm_Mo_Flare_white_illumination,"\z\ace\addons\mk6mortar\UI\w_l16_ammo_illum_ca.paa");
-    DEFMAG(8Rnd_82mm_Mo_Smoke_white,"\z\ace\addons\mk6mortar\UI\w_l16_ammo_smk_white_ca.paa");
-    DEFMAG(8Rnd_82mm_Mo_guided,"\z\ace\addons\mk6mortar\UI\w_l16_ammo_he_ca.paa");
-    DEFMAG(8Rnd_82mm_Mo_LG,"\z\ace\addons\mk6mortar\UI\w_l16_ammo_he_ca.paa");
+    DEFMAG(8Rnd_60mm_Mo_Flare_white,"\z\ace\addons\mk6mortar\UI\w_l16_ammo_illum_ca.paa");
+    DEFMAG(8Rnd_60mm_Mo_Flare_white_illumination,"\z\ace\addons\mk6mortar\UI\w_l16_ammo_illum_ca.paa");
+    DEFMAG(8Rnd_60mm_Mo_Smoke_white,"\z\ace\addons\mk6mortar\UI\w_l16_ammo_smk_white_ca.paa");
+    DEFMAG(8Rnd_60mm_Mo_guided,"\z\ace\addons\mk6mortar\UI\w_l16_ammo_he_ca.paa");
+    DEFMAG(8Rnd_60mm_Mo_LG,"\z\ace\addons\mk6mortar\UI\w_l16_ammo_he_ca.paa");
 };

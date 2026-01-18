@@ -5,11 +5,11 @@ class CfgPatches {
         name = CSTRING(component);
         magazines[] = {
             QGVAR(8Rnd_60mm_Mo_shells_RF),
-            QGVAR(8Rnd_82mm_Mo_Flare_white),
-            QGVAR(8Rnd_82mm_Mo_Flare_white_illumination),
-            QGVAR(8Rnd_82mm_Mo_Smoke_white),
-            QGVAR(8Rnd_82mm_Mo_guided),
-            QGVAR(8Rnd_82mm_Mo_LG)
+            QGVAR(8Rnd_60mm_Mo_Flare_white),
+            QGVAR(8Rnd_60mm_Mo_Flare_white_illumination),
+            QGVAR(8Rnd_60mm_Mo_Smoke_white),
+            QGVAR(8Rnd_60mm_Mo_guided),
+            QGVAR(8Rnd_60mm_Mo_LG)
         };
         units[] = {};
         weapons[] = {
