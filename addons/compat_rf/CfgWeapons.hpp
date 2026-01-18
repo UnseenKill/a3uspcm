@@ -1,15 +1,22 @@
+#define DEFWPN(declaredClass,baseClass) \
+    class GVAR(declaredClass): GVAR(baseClass) { \
+        class ACE_CSW: ACE_CSW { \
+            class assembleTo: assembleTo { \
+                ace_csw_mortarBaseplate = #declaredClass; \
+            }; \
+        }; \
+    }
+
 class CfgWeapons {
     class Launcher;
     class Launcher_Base_F: Launcher {
         class WeaponSlotsInfo;
     };
 
-    class GVAR(mortar_60mm_RF_carry): Launcher_Base_F {
-        displayName = "Folded Commando 60mm Mortar Carry";
+    class GVAR(B_CommandoMortar_RF_carry): Launcher_Base_F {
+        displayName = "Folded Commando 60mm Mortar";
         editorPreview = "\lxRF\editorpreviews_rf\Data\CfgVehicles\B_CommandoMortar_RF.jpg";
-        hiddenSelections[] = {"Camo"};
-        hiddenSelectionsTextures[] = {"\A3\weapons_f\ammoboxes\bags\data\backpack_tortila_blk_co.paa"};
-        model = "\A3\weapons_f\Ammoboxes\bags\Backpack_Tortila.p3d";
+        model = "z\ace\addons\apl\ACE_CSW_Bag.p3d";
 
         scope = 2;
         modes[] = {};
@@ -21,7 +28,7 @@ class CfgWeapons {
             pickupTime = 8;
 
             class assembleTo {
-                ace_csw_m3Tripod = "B_CommandoMortar_RF";
+                ace_csw_mortarBaseplate = "B_CommandoMortar_RF";
             };
         };
 
@@ -33,6 +40,13 @@ class CfgWeapons {
             };
         };
     };
+
+    DEFWPN(B_G_CommandoMortar_RF_carry,B_CommandoMortar_RF_carry);
+    DEFWPN(I_CommandoMortar_RF_carry,B_CommandoMortar_RF_carry);
+    DEFWPN(I_E_CommandoMortar_RF_carry,I_CommandoMortar_RF_carry);
+    DEFWPN(I_G_CommandoMortar_RF_carry,I_CommandoMortar_RF_carry);
+    DEFWPN(O_CommandoMortar_RF_carry,B_CommandoMortar_RF_carry);
+    DEFWPN(O_G_CommandoMortar_RF_carry,O_CommandoMortar_RF_carry);
 
     class CannonCore;
     class mortar_82mm: CannonCore {};

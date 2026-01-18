@@ -13,7 +13,13 @@ class CfgPatches {
         };
         units[] = {};
         weapons[] = {
-            QGVAR(mortar_60mm_RF_carry)
+            QGVAR(B_CommandoMortar_RF_carry),
+            QGVAR(B_G_CommandoMortar_RF_carry),
+            QGVAR(I_CommandoMortar_RF_carry),
+            QGVAR(I_E_CommandoMortar_RF_carry),
+            QGVAR(I_G_CommandoMortar_RF_carry),
+            QGVAR(O_CommandoMortar_RF_carry),
+            QGVAR(O_G_CommandoMortar_RF_carry)
         };
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"a3uspcm_main","ace_csw","RF_Weapons"};
