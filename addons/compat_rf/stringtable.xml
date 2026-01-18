@@ -2,28 +2,28 @@
 <Project name="A3USPCM">
     <Package name="Compat_RF">
         <Key ID="STR_A3USPCM_Compat_RF_CSW_4Rnd_60mm_Mo_Flare_white_RF">
-            <English>[CSW] 4x 60mm Mortar Flare white</English>
-            <German>[CSW] 4x 60mm Mörser Leucht Weiß</German>
+            <English>[CSW] 60mm Mortar Flare white (4x)</English>
+            <German>[CSW] 60mm Mörser Leucht Weiß (4x)</German>
         </Key>
         <Key ID="STR_A3USPCM_Compat_RF_CSW_4Rnd_60mm_Mo_Smoke_white_RF">
-            <English>[CSW] 4x 60mm Mortar Smoke white</English>
-            <German>[CSW] 4x 60mm Mörser Rauch Weiß</German>
+            <English>[CSW] 60mm Mortar Smoke white (4x)</English>
+            <German>[CSW] 60mm Mörser Rauch Weiß (4x)</German>
         </Key>
         <Key ID="STR_A3USPCM_Compat_RF_CSW_4Rnd_60mm_Mo_shells_RF">
-            <English>[CSW] 4x 60mm Mortar HE shells</English>
-            <German>[CSW] 4x 60mm Mörser HE-Granaten</German>
+            <English>[CSW] 60mm Mortar HE shells (4x)</English>
+            <German>[CSW] 60mm Mörser HE-Granaten (4x)</German>
         </Key>
         <Key ID="STR_A3USPCM_Compat_RF_CSW_8Rnd_60mm_Mo_LG_RF">
-            <English>[CSW] 8x 60mm Mortar Laser Guided</English>
-            <German>[CSW] 8x 60mm Mörser Lasergelenkt</German>
+            <English>[CSW] 60mm Mortar Laser Guided (8x)</English>
+            <German>[CSW] 60mm Mörser Lasergelenkt (8x)</German>
         </Key>
         <Key ID="STR_A3USPCM_Compat_RF_CSW_8Rnd_60mm_Mo_guided_RF">
-            <English>[CSW] 8x 60mm Mortar guided</English>
-            <German>[CSW] 8x 60mm Mörser gelenkt</German>
+            <English>[CSW] 60mm Mortar guided (8x)</English>
+            <German>[CSW] 60mm Mörser gelenkt (8x)</German>
         </Key>
         <Key ID="STR_A3USPCM_Compat_RF_CSW_8Rnd_60mm_Mo_shells_RF">
-            <English>[CSW] 8x 60mm Mortar HE shells</English>
-            <German>[CSW] 8x 60mm Mörser HE-Granaten</German>
+            <English>[CSW] 60mm Mortar HE shells (8x)</English>
+            <German>[CSW] 60mm Mörser HE-Granaten (8x)</German>
         </Key>
         <Key ID="STR_A3USPCM_Compat_RF_CSW_Store_Category">
             <English>CSW Magazines</English>
