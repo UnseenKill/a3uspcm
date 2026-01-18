@@ -11,6 +11,8 @@ class CfgPatches {
             QGVAR(Grenade_EMP)
         };
         units[] = {
+            QGVAR(SignHelperArsenal),
+            QGVAR(SignHelperGarage),
             QGVAR(SupplyBoxLarge),
             QGVAR(SupplyBoxMedium),
             QGVAR(SupplyBoxSmall),

@@ -65,6 +65,14 @@
             <English>Whether the vehicle engine must be on for the EMP effect to work.</English>
             <German>Ob der Fahrzeugmotor laufen muss, damit der EMP-Effekt funktioniert.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Assets_SignHelperArsenal_DisplayName">
+            <English>Arsenal Access Point</English>
+            <German>Zugangspunkt Arsenal</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_SignHelperGarage_DisplayName">
+            <English>Garage Access Point</English>
+            <German>Zugangspunkt Garage</German>
+        </Key>
         <Key ID="STR_A3USPCM_Assets_SupplyBoxLarge_DisplayName">
             <English>Large Supply Box</English>
             <German>Große Nachschubkiste</German>

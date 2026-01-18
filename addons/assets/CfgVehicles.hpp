@@ -1,6 +1,74 @@
+class CBA_Extended_EventHandlers_base;
+
 class CfgVehicles {
     class ReammoBox_F;
+    class SignAd_Sponsor_F;
     class ThingX;
+
+    class GVAR(SignHelperBase) : SignAd_Sponsor_F {
+        scope = 0;
+
+        class GVAR(UserActions) {
+            onObjectInit = "";
+
+            class ActionBase {
+                displayName = "";
+                displayNameCode = "";
+                priority = 6;
+                radius = 12;
+                condition = "false";
+                statement = "hint 'Test Action executed!'";
+                hideOnUse = 1;
+                showWindow = 0;
+            };
+        };
+
+        class EventHandlers {
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+        };
+    };
+
+    class GVAR(SignHelperArsenal) : GVAR(SignHelperBase) {
+        scope = 2;
+
+        displayName = CSTRING(SignHelperArsenal_DisplayName);
+        editorPreview = QPATHTO_T(ui\sign_helper_arsenal_preview.jpg);
+        hiddenSelectionsTextures[] = {QPATHTO_T(ui\sign_helper_arsenal_co.paa)};
+
+        class GVAR(UserActions): GVAR(UserActions) {
+            class OpenArsenal: ActionBase {
+                displayNameCode = QUOTE(format[ARR_2(QQUOTE(<img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceArsenal_ca.paa' size='1.6' shadow='2' /> <t size='1'>%1</t>),localize QQUOTE(STR_A3_Arsenal))]);
+                condition = QUOTE(alive _target && {isNull objectParent _this} && {_target distance _this < 5});
+                statement = QUOTE([] call JN_fnc_arsenal_handleAction);
+            };
+        };
+    };
+
+    class GVAR(SignHelperGarage) : GVAR(SignHelperBase) {
+        scope = 2;
+
+        displayName = CSTRING(SignHelperGarage_DisplayName);
+        editorPreview = QPATHTO_T(ui\sign_helper_garage_preview.jpg);
+        hiddenSelectionsTextures[] = {QPATHTO_T(ui\sign_helper_garage_co.paa)};
+
+        class GVAR(UserActions): GVAR(UserActions) {
+            onObjectInit = QUOTE(call HR_GRG_fnc_initGarage);
+
+            class RestoreVehicles: ActionBase {
+                displayNameCode = QUOTE(format[ARR_2(QQUOTE(<img image='\A3\ui_f\data\igui\cfg\simpleTasks\types\use_ca.paa' size='1.6' shadow='2' /> <t size='1'>%1</t>),localize QQUOTE(STR_A3A_actions_restore_units))]);
+                condition = QUOTE((isPlayer _this) && {!A3A_removeRestore} && {isNull objectParent _this} && {_this == _this getVariable[ARR_2('owner',objNull)]} && {side group _this == teamPlayer});
+                statement = QUOTE([] call A3A_fnc_vehicleBoxRestore);
+                priority = 1.25;
+            };
+
+            class BuyStuff: ActionBase {
+                displayNameCode = QUOTE(format[ARR_2(QQUOTE(<img image='a3\ui_f\data\igui\cfg\simpletasks\types\truck_ca.paa' size='1.6' shadow='2' /> <t size='1'>%1</t>),localize QQUOTE(STR_antistasi_actions_buy_vehicle))]);
+                condition = QUOTE((isPlayer _this) && {isNull objectParent _this} && {_this == _this getVariable[ARR_2('owner',objNull)]} && {side group _this == teamPlayer});
+                statement = QUOTE(createDialog QQUOTE(A3A_BuyVehicleDialog));
+                priority = 1.25;
+            };
+        };
+    };
 
     class GVAR(SupplyBoxBase) : ReammoBox_F {
         scope = 0;
