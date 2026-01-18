@@ -5,10 +5,21 @@
         }; \
     }
 
+class CBA_Extended_EventHandlers_base;
+
 class CfgVehicles {
     class CommandoMortar_base_RF;
 
     class B_CommandoMortar_RF: CommandoMortar_base_RF {
+        GVAR(magazines)[] = {
+            {QGVAR(4Rnd_60mm_Mo_Flare_white_RF), QUOTE(4Rnd_60mm_Mo_Flare_white_RF)},
+            {QGVAR(4Rnd_60mm_Mo_Smoke_white_RF), QUOTE(4Rnd_60mm_Mo_Smoke_white_RF)},
+            {QGVAR(4Rnd_60mm_Mo_shells_RF), QUOTE(4Rnd_60mm_Mo_shells_RF)},
+            {QGVAR(8Rnd_60mm_Mo_shells_RF), QUOTE(8Rnd_60mm_Mo_shells_RF)},
+            {QGVAR(8Rnd_60mm_Mo_LG_RF), QUOTE(8Rnd_60mm_Mo_LG_RF)},
+            {QGVAR(8Rnd_60mm_Mo_guided_RF), QUOTE(8Rnd_60mm_Mo_guided_RF)}
+        };
+
         class ACE_CSW {
             enabled = 1;
             proxyWeapon = QGVAR(mortar_60mm_RF_proxy);
@@ -18,6 +29,10 @@ class CfgVehicles {
             ammoLoadTime = 6;
             ammoUnloadTime = 4;
             desiredAmmo = 24;
+        };
+
+        class EventHandlers {
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
         };
     };
 
