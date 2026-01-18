@@ -95,7 +95,7 @@ class CfgVehicles {
         hiddenSelectionsTextures[] = {"A3\Weapons_F\Ammoboxes\data\AmmoBox_signs_CA.paa","A3\Weapons_F\Ammoboxes\data\AmmoVeh_CO.paa"};
         icon = "iconCrateVeh";
         mapSize = 1.53;
-        maximumLoad = 4800;
+        maximumLoad = 14400;
         model = "A3\Weapons_F\Ammoboxes\AmmoVeh_F.p3d";
         slingLoadCargoMemoryPoints[] = {"SlingLoadCargo1","SlingLoadCargo2","SlingLoadCargo3","SlingLoadCargo4"};
     };
@@ -109,7 +109,7 @@ class CfgVehicles {
         editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Box_NATO_Wps_F.jpg";
         icon = "iconCrateWpns";
         mapSize = 1.81;
-        maximumLoad = 2400;
+        maximumLoad = 4800;
         model = "\A3\weapons_F\AmmoBoxes\WpnsBox_F.p3d";
     };
 
@@ -119,7 +119,7 @@ class CfgVehicles {
         displayName = CSTRING(SupplyBoxSmall_DisplayName);
         editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Box_NATO_Ammo_F.jpg";
         icon = "iconCrateAmmo";
-        maximumLoad = 1200;
+        maximumLoad = 2400;
         model = "\A3\weapons_F\AmmoBoxes\AmmoBox_F.p3d";
     };
 

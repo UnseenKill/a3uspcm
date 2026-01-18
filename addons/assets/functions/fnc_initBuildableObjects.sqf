@@ -13,7 +13,7 @@ Returns:
     Nothing
 
 Environment:
-    Client, Unscheduled
+    Client, Scheduled
 
 Author:
     UnseenKill/gor3Splatter
