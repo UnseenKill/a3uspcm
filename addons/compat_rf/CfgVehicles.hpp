@@ -12,6 +12,10 @@ class CfgVehicles {
 
     class B_CommandoMortar_RF: CommandoMortar_base_RF {
         GVAR(magazines)[] = {
+            {QGVAR(2Rnd_60mm_Mo_Flare_white_RF), QUOTE(2Rnd_60mm_Mo_Flare_white_RF)},
+            {QGVAR(2Rnd_60mm_Mo_Smoke_white_RF), QUOTE(2Rnd_60mm_Mo_Smoke_white_RF)},
+            {QGVAR(4Rnd_60mm_Mo_LG_RF), QUOTE(4Rnd_60mm_Mo_LG_RF)},
+            {QGVAR(4Rnd_60mm_Mo_guided_RF), QUOTE(4Rnd_60mm_Mo_guided_RF)},
             {QGVAR(4Rnd_60mm_Mo_Flare_white_RF), QUOTE(4Rnd_60mm_Mo_Flare_white_RF)},
             {QGVAR(4Rnd_60mm_Mo_Smoke_white_RF), QUOTE(4Rnd_60mm_Mo_Smoke_white_RF)},
             {QGVAR(4Rnd_60mm_Mo_shells_RF), QUOTE(4Rnd_60mm_Mo_shells_RF)},

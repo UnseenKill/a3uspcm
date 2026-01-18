@@ -12,7 +12,11 @@
     }
 
 class CfgMagazines {
+    DEFMAG(2Rnd_60mm_Mo_Flare_white_RF,2,w_l16_ammo_illum_ca);
+    DEFMAG(2Rnd_60mm_Mo_Smoke_white_RF,2,w_l16_ammo_smk_white_ca);
     DEFMAG(4Rnd_60mm_Mo_Flare_white_RF,4,w_l16_ammo_illum_ca);
+    DEFMAG(4Rnd_60mm_Mo_LG_RF,4,w_l16_ammo_he_ca);
+    DEFMAG(4Rnd_60mm_Mo_guided_RF,4,w_l16_ammo_he_ca);
     DEFMAG(4Rnd_60mm_Mo_Smoke_white_RF,4,w_l16_ammo_smk_white_ca);
     DEFMAG(4Rnd_60mm_Mo_shells_RF,4,w_l16_ammo_he_ca);
     DEFMAG(8Rnd_60mm_Mo_shells_RF,8,w_l16_ammo_he_ca);

@@ -4,6 +4,10 @@ class CfgPatches {
     class ADDON {
         name = CSTRING(component);
         magazines[] = {
+            QGVAR(2Rnd_60mm_Mo_Flare_white_RF),
+            QGVAR(2Rnd_60mm_Mo_Smoke_white_RF),
+            QGVAR(4Rnd_60mm_Mo_LG_RF),
+            QGVAR(4Rnd_60mm_Mo_guided_RF),
             QGVAR(4Rnd_60mm_Mo_Flare_white_RF),
             QGVAR(4Rnd_60mm_Mo_Smoke_white_RF),
             QGVAR(4Rnd_60mm_Mo_shells_RF),
