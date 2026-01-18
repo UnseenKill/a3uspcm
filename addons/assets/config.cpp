@@ -11,6 +11,9 @@ class CfgPatches {
             QGVAR(Grenade_EMP)
         };
         units[] = {
+            QGVAR(SupplyBoxLarge),
+            QGVAR(SupplyBoxMedium),
+            QGVAR(SupplyBoxSmall),
             QGVAR(DespawnSuppressionBeacon)
         };
         weapons[] = {};
