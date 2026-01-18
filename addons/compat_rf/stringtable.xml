@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Compat_RF">
+        <Key ID="STR_A3USPCM_Compat_RF_Component">
+            <English>A3USPCM - RF Compatibility Component</English>
+            <German>A3USPCM - RF Kompatibilitätskomponente</German>
+        </Key>
+    </Package>
+</Project>
