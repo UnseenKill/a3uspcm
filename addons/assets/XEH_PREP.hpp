@@ -1,5 +1,8 @@
 PREP(blackout);
-PREP(handle40mmFired);
-PREP(initEmpThrowable);
 PREP(empEffect);
 PREP(empEffectLocal);
+PREP(handle40mmFired);
+PREP(handlerSignHelperPostInit);
+PREP(initBuildableObjects);
+PREP(initEmpThrowable);
+PREP(initUtilityItems);

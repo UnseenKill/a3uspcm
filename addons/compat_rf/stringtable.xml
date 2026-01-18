@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Compat_RF">
+        <Key ID="STR_A3USPCM_Compat_RF_CSW_2Rnd_60mm_Mo_Flare_white_RF">
+            <English>[CSW] 60mm Mortar Flare white (2x)</English>
+            <German>[CSW] 60mm Mörser Leucht Weiß (2x)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_RF_CSW_2Rnd_60mm_Mo_Smoke_white_RF">
+            <English>[CSW] 60mm Mortar Smoke white (2x)</English>
+            <German>[CSW] 60mm Mörser Rauch Weiß (2x)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_RF_CSW_4Rnd_60mm_Mo_Flare_white_RF">
+            <English>[CSW] 60mm Mortar Flare white (4x)</English>
+            <German>[CSW] 60mm Mörser Leucht Weiß (4x)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_RF_CSW_4Rnd_60mm_Mo_LG_RF">
+            <English>[CSW] 60mm Mortar Laser Guided (4x)</English>
+            <German>[CSW] 60mm Mörser Lasergelenkt (4x)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_RF_CSW_4Rnd_60mm_Mo_Smoke_white_RF">
+            <English>[CSW] 60mm Mortar Smoke white (4x)</English>
+            <German>[CSW] 60mm Mörser Rauch Weiß (4x)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_RF_CSW_4Rnd_60mm_Mo_guided_RF">
+            <English>[CSW] 60mm Mortar guided (4x)</English>
+            <German>[CSW] 60mm Mörser gelenkt (4x)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_RF_CSW_4Rnd_60mm_Mo_shells_RF">
+            <English>[CSW] 60mm Mortar HE shells (4x)</English>
+            <German>[CSW] 60mm Mörser HE-Granaten (4x)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_RF_CSW_8Rnd_60mm_Mo_LG_RF">
+            <English>[CSW] 60mm Mortar Laser Guided (8x)</English>
+            <German>[CSW] 60mm Mörser Lasergelenkt (8x)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_RF_CSW_8Rnd_60mm_Mo_guided_RF">
+            <English>[CSW] 60mm Mortar guided (8x)</English>
+            <German>[CSW] 60mm Mörser gelenkt (8x)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_RF_CSW_8Rnd_60mm_Mo_shells_RF">
+            <English>[CSW] 60mm Mortar HE shells (8x)</English>
+            <German>[CSW] 60mm Mörser HE-Granaten (8x)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_RF_CSW_Store_Category">
+            <English>CSW Magazines</English>
+            <German>CSW Magazine</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_RF_Component">
+            <English>A3USPCM - RF Compatibility Component</English>
+            <German>A3USPCM - RF Kompatibilitätskomponente</German>
+        </Key>
+    </Package>
+</Project>
