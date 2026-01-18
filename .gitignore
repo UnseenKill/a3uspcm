@@ -1,6 +1,7 @@
 *.pbo
 .hemtt/missions
 .hemttout
+.hemttprivatekey
 .local
 releases
 *.biprivatekey
