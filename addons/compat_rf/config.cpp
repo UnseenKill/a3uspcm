@@ -26,6 +26,7 @@ class CfgPatches {
 };
 
 #include "CfgAceCSW.hpp"
+#include "CfgHalsStore.hpp"
 #include "CfgMagazines.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"
