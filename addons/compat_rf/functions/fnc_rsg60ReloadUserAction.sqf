@@ -65,7 +65,12 @@ _reloadTime = _reloadTime * (_magazineCount / _magazineMaxCount);
     },
     { ERROR(_this) },
     format[localize "STR_ACE_CSW_loadX", _magazineDisplayName],
-    { alive(_this select 0 select 0) && { (_this select 0 select 0) isEqualTo objectParent(_this select 0 select 1) }},
+    {
+        (_this select 0) params["_target","_caller","_fakeMagazineName","","_magazineCount"];
+        alive(_target) && { _target isEqualTo objectParent _caller } && 
+        // In case somebody reaches into the backpack while reloading...
+        { magazinesAmmoCargo backpackContainer _caller findIf { _x isEqualTo [_fakeMagazineName, _magazineCount] } != -1 }
+    },
     ["isNotInside"]
 ] call ace_common_fnc_progressBar;
 

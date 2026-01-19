@@ -37,9 +37,21 @@ getArray(configOf _vehicle >> QGVAR(magazines)) apply {
         false,
         true,
         "",
-        format[QUOTE(_target isEqualTo objectParent _this && { magazinesAmmoCargo backpackContainer _this findIf { _x select 0 isEqualTo QQUOTE(%1) } != -1 }), _fakeMagazine],
+        format[QUOTE((_target isEqualTo objectParent _this) && { magazinesAmmoCargo backpackContainer _this findIf { _x select 0 isEqualTo QQUOTE(%1) } != -1 }), _fakeMagazine],
         5
     ];
 };
+
+_vehicle addAction[
+    LLSTRING(RSG60_DumpAllAmmo),
+    { call FUNC(rsg60DumpAllAmmo) },
+    [],
+    1.45,
+    false,
+    true,
+    "",
+    QUOTE((_target isEqualTo objectParent _this) && { magazines _target isNotEqualTo [] }),
+    5
+];
 
 nil;
