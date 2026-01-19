@@ -9,6 +9,7 @@ class CfgFunctions {
             PATHTO_FNC(utilContainerContentFlattened);
             PATHTO_FNC(utilContainerCargoCopy);
             PATHTO_FNC(utilCursorTargetAction);
+            PATHTO_FNC(utilFindClosestGWH);
             PATHTO_FNC(utilGenerateUniqueID);
             PATHTO_FNC(utilIsArmedVehicle);
             PATHTO_FNC(utilIsDaytime);
