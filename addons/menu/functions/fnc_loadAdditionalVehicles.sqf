@@ -46,6 +46,7 @@ if (GVAR(AdditionalVehicles) isEqualTo false) then {
             TRACE_3(QFUNC(loadAdditionalVehicles),_className,_price,_type);
 
             A3A_faction_reb get _type pushBackUnique _className;
+            server setVariable[_className, _price, true];
 
             if (A3U_blackMarketStock findIf { _x select 0 isEqualTo _className } isNotEqualTo -1) then {
                 WARNING_2("%1(%2): black market config found; not adding to BM",QFUNC(loadAdditionalVehicles),_className);
