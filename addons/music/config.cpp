@@ -7,6 +7,7 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"a3uspcm_main","a3uspcm_util"};
+        skipWhenAnyAddonPresent[] = {"A3A_ultimate_tracklist_editor"};
         author = "$STR_A3USPCM_Author";
         authors[] = {"goreSplatter"};
         url = "$STR_A3USPCM_URL";
