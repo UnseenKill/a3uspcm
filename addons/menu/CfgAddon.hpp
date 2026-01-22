@@ -86,7 +86,7 @@ class GVAR(Config) {
                 action = QFUNCMAIN(miscIngameMusicPlaylistEditor);
                 closeDiary = 1;
                 separator = 1;
-                condition = QUOTE(!isNil QQUOTE(DOUBLES(PREFIX,music)));
+                condition = QUOTE(!isNil QQUOTE(DOUBLES(PREFIX,music)) && { DOUBLES(PREFIX,music) });
             };
 
             class FixVoices {
