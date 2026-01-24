@@ -7,7 +7,7 @@ class Extended_PreInit_EventHandlers {
 class Extended_InitPost_EventHandlers {
     class ReammoBox_F {
         class ADDON {
-            serverInit = QUOTE(call FUNC(addVanillaSellInteraction));
+            clientInit = QUOTE(ADDON && { call FUNC(addVanillaSellInteraction) });
         };
     };
 };
