@@ -17,4 +17,5 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 #include "CfgHalsStore.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgWeapons.hpp"
 #include "dialog.hpp"
