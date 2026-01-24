@@ -4,7 +4,7 @@
             class ACE_MainActions {\
                 class GVAR(AdvancedSelling) {\
                     displayName = CSTRING(AdvSell_InteractionSell_DisplayName);\
-                    condition = QUOTE(call FUNC(canStartAdvancedSelling));\
+                    condition = QUOTE(ADDON && { call FUNC(canStartAdvancedSelling) });\
                     statement = QUOTE(call FUNC(startAdvancedSelling));\
                 };\
             };\
@@ -30,7 +30,7 @@ class CfgVehicles {
             class ACE_MainActions {
                 class GVAR(AdvancedSelling) {
                     displayName = CSTRING(AdvSell_InteractionSell_DisplayName);
-                    condition = QUOTE(call FUNC(canStartAdvancedSelling));
+                    condition = QUOTE(ADDON && { call FUNC(canStartAdvancedSelling) });
                     statement = QUOTE(call FUNC(startAdvancedSelling));
                 };
             };
