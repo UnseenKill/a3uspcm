@@ -40,6 +40,13 @@ if (_vehicles isEqualTo []) exitWith {
     ] call A3A_fnc_customHint;
 };
 
-[_vehicles select 0, boxX] remoteExec["A3A_fnc_ammunitionTransfer", 2];
+private _source = _vehicles select 0;
+
+[
+    localize "STR_A3A_ammunition_transfer_header",
+    format[localize "STR_A3A_ammunition_transfer_success", getText(configOf _source >> "displayName")]
+] call A3A_fnc_customHint;
+
+[_source, boxX] remoteExec["A3A_fnc_ammunitionTransfer", 2];
 
 nil;
