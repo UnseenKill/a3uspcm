@@ -1,3 +1,4 @@
+PREP(arsenalHelperOpenVehicleInventory);
 PREP(blackout);
 PREP(empEffect);
 PREP(empEffectLocal);
