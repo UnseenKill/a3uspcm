@@ -51,7 +51,7 @@ class CfgVehicles {
             class TransferToArsenal: ActionBase {
                 displayNameCode = QUOTE(format[ARR_2(QQUOTE(<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\container_ca.paa' size='1.6' shadow='2' /> <t size='1'>%1</t>),localize QQUOTE(STR_antistasi_actions_transfer_to_arsenal))]);
                 condition = QUOTE(true);
-                statement = QUOTE([] spawn A3A_fnc_empty);
+                statement = QUOTE(call FUNC(arsenalHelperTransferToArsenal));
             };
         };
     };
