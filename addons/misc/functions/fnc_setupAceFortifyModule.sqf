@@ -22,6 +22,10 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(setupAceFortifyModule),_this);
 
+if (EGVAR(main,AceHaveAddon)) exitWith {
+    INFO("ACE3 Fortify Addon not detected, skipping fortification module setup.");
+};
+
 private _group = createGroup[sideLogic, true];
 private _init = [
     QUOTE(GVAR(aceFortifyModule) = this)
