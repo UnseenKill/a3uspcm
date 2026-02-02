@@ -41,6 +41,18 @@ class CfgVehicles {
                 condition = QUOTE(alive _target && {isNull objectParent _this} && {_target distance _this < 5});
                 statement = QUOTE([] call JN_fnc_arsenal_handleAction);
             };
+
+            class VehicleInventory: ActionBase {
+                displayNameCode = QUOTE(format[ARR_2(QQUOTE(<img image='\x\A3A\addons\jeroen_arsenal\Pictures\unloadvehicle.paa' size='1.6' shadow='2' /> <t size='1'>%1</t>),localize QQUOTE(STR_JNA_ACT_CONTAINER_OPEN))]);
+                condition = QUOTE(alive _target && {isNull objectParent _this} && {_target distance _this < 5});
+                statement = QUOTE(call FUNC(arsenalHelperOpenVehicleInventory));
+            };
+
+            class TransferToArsenal: ActionBase {
+                displayNameCode = QUOTE(format[ARR_2(QQUOTE(<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\container_ca.paa' size='1.6' shadow='2' /> <t size='1'>%1</t>),localize QQUOTE(STR_antistasi_actions_transfer_to_arsenal))]);
+                condition = QUOTE(true);
+                statement = QUOTE(call FUNC(arsenalHelperTransferToArsenal));
+            };
         };
     };
 

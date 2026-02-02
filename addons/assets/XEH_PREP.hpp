@@ -1,3 +1,5 @@
+PREP(arsenalHelperOpenVehicleInventory);
+PREP(arsenalHelperTransferToArsenal);
 PREP(blackout);
 PREP(empEffect);
 PREP(empEffectLocal);
