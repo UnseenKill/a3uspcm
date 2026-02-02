@@ -65,6 +65,13 @@ class GVAR(Config) {
                 closeDiary = 1;
             };
 
+            class BuildAll {
+                caption = CSTRING(Miscellaneous_BuildAllCaption);
+                text = CSTRING(Miscellaneous_BuildAllText);
+                action = QFUNCMAIN(miscBuildAll);
+                closeDiary = 1;
+            };
+
             class FindIntel {
                 caption = CSTRING(Miscellaneous_FindIntelCaption);
                 text = CSTRING(Miscellaneous_FindIntelText);
@@ -86,6 +93,7 @@ class GVAR(Config) {
                 action = QFUNCMAIN(miscIngameMusicPlaylistEditor);
                 closeDiary = 1;
                 separator = 1;
+                condition = QUOTE(!isNil QQUOTE(DOUBLES(PREFIX,music)) && { DOUBLES(PREFIX,music) });
             };
 
             class FixVoices {

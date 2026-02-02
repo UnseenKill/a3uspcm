@@ -8,6 +8,9 @@ GVAR(revealCone) = 45;
 GVAR(revealDuration) = 5;
 GVAR(revealRadius) = 250;
 
+[CBA_EVENT_A3U_FLAGACTION, { call FUNC(onA3UFlagActionEvent) }] call CBA_fnc_addEventHandler;
+[] spawn FUNC(overrideFlagActionSQF);
+
 [{
     if GVAR(aceFortifyEnable) then {
         [] call FUNC(setupAceFortifyModule);
