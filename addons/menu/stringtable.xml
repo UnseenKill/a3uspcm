@@ -441,6 +441,18 @@
             <English>Add the current cursor target to list of base buyable vehicles.</English>
             <German>Füge das aktuelle Cursorziel zur Liste der Basis-Fahrzeuge hinzu.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_BuildAllCaption">
+            <English>Build all</English>
+            <German>Baue alles</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_BuildAllNoUnbuiltObjects">
+            <English>There are no unbuilt objects in your base.</English>
+            <German>Es gibt keine ungebauten Objekte in deiner Basis.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_BuildAllText">
+            <English>Instant-build all unbuilt objects.</English>
+            <German>Bau alle ungebauten Objekte sofort.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_EmergencyInvincibilityCooldownHintText">
             <English>You have recently been immortal. That can't happen any time, though. Wait another %1 seconds.</English>
             <German>Du warst erst vor Kurzem unsterblich. Das kann aber nicht jederzeit passieren. Warte weitere %1 Sekunden.</German>
