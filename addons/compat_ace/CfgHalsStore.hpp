@@ -24,8 +24,10 @@ class CfgHALsAddons {
                 displayName = __EVAL(formatText ["%1 %2 %3 %4", "ACE3", localize "STR_A3AU_pointers", localize "STR_A3AU_and", localize "STR_A3AU_flashlights"]);
                 picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemAcc_ca.paa";
 
-                ITEM(ACE_DBAL_A3_Green,50,PN_STOCK)
-                ITEM(ACE_DBAL_A3_Red,50,PN_STOCK)
+                ITEM(ACE_DBAL_A3_Green,250,PN_STOCK)
+                ITEM(ACE_DBAL_A3_Red,250,PN_STOCK)
+                ITEM(ACE_Fortify,250,PN_STOCK)
+                ITEM(ACE_FortifyToken,25,100)
             };
         };
 
