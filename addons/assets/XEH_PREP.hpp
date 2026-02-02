@@ -5,6 +5,7 @@ PREP(empEffect);
 PREP(empEffectLocal);
 PREP(handle40mmFired);
 PREP(handlerSignHelperPostInit);
+PREP(handlerSupplyBoxPostInit);
 PREP(initBuildableObjects);
 PREP(initEmpThrowable);
 PREP(initUtilityItems);
