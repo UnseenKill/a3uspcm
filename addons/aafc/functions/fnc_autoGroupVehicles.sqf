@@ -25,9 +25,12 @@ TRACE_1(QFUNC(autoGroupVehicles),_this);
 
     if !(_ignore isEqualType []) then {
         WARNING_2("%1(): vehicles classes list could not be parsed from %2",QFUNC(autoGroupVehicles),GVAR(autoGroupIgnoreClasses));
+        _ignore = [];
     } else {
         _ignore = _ignore select { _x isEqualType "" };
     };
+
+    _ignore pushBack "Air";
 
     private _vehicles = allUnitsUAV select {
         private _vehicle = _x;

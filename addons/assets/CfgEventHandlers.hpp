@@ -12,4 +12,10 @@ class Extended_InitPost_EventHandlers {
             clientInit = QUOTE(call FUNC(handlerSignHelperPostInit));
         };
     };
+
+    class GVAR(SupplyBoxBase) {
+        class ADDON {
+            clientInit = QUOTE(call FUNC(handlerSupplyBoxPostInit));
+        };
+    };
 };

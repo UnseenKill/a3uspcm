@@ -48,10 +48,10 @@ _lines pushBack "";
 
     if (_value) then {
         _lines pushBack format["&#160;&#160;&#160;&#160;%1", [_x] call FUNC(createDiaryRecordAction)];
-    };
 
-    if (getNumber(_x >> "separator") isEqualTo 1) then {
-        _lines pushBack "<font size='8'>&#160;</font>";
+        if (getNumber(_x >> "separator") isEqualTo 1) then {
+            _lines pushBack "<font size='8'>&#160;</font>";
+        };
     };
 };
 

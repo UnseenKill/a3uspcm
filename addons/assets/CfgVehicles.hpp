@@ -41,6 +41,18 @@ class CfgVehicles {
                 condition = QUOTE(alive _target && {isNull objectParent _this} && {_target distance _this < 5});
                 statement = QUOTE([] call JN_fnc_arsenal_handleAction);
             };
+
+            class VehicleInventory: ActionBase {
+                displayNameCode = QUOTE(format[ARR_2(QQUOTE(<img image='\x\A3A\addons\jeroen_arsenal\Pictures\unloadvehicle.paa' size='1.6' shadow='2' /> <t size='1'>%1</t>),localize QQUOTE(STR_JNA_ACT_CONTAINER_OPEN))]);
+                condition = QUOTE(alive _target && {isNull objectParent _this} && {_target distance _this < 5});
+                statement = QUOTE(call FUNC(arsenalHelperOpenVehicleInventory));
+            };
+
+            class TransferToArsenal: ActionBase {
+                displayNameCode = QUOTE(format[ARR_2(QQUOTE(<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\container_ca.paa' size='1.6' shadow='2' /> <t size='1'>%1</t>),localize QQUOTE(STR_antistasi_actions_transfer_to_arsenal))]);
+                condition = QUOTE(true);
+                statement = QUOTE(call FUNC(arsenalHelperTransferToArsenal));
+            };
         };
     };
 
@@ -81,6 +93,15 @@ class CfgVehicles {
         hiddenSelections[] = {"Camo_Signs","Camo"};
         hiddenSelectionsTextures[] = {"A3\Weapons_F\Ammoboxes\data\AmmoBox_signs_CA.paa","A3\Weapons_F\Ammoboxes\data\AmmoBox_CO.paa"};
         mapSize = 1.47;
+
+        class A3A_logistics_Cargo {
+            offset[] = {0,0,0}; //the offset from the node(s) to load the cargo on too
+            rotation[] = {0,1,0}; //the rotation from the vehicle model front
+            size = 1; //the amount of nodes it occupies
+            recoil = 0; //the recoil a weapon impacts on the vehicle when fired (per projectile)
+            isWeapon = 0; //if the cargo is a weapon (needed for proper handling of mounted weapon)
+            blackList[] = {}; //specific vehicles or models to blacklist from loading this weapon/cargo
+        };
     };
 
     class GVAR(SupplyBoxLarge) : GVAR(SupplyBoxBase) {
@@ -98,6 +119,10 @@ class CfgVehicles {
         maximumLoad = 14400;
         model = "A3\Weapons_F\Ammoboxes\AmmoVeh_F.p3d";
         slingLoadCargoMemoryPoints[] = {"SlingLoadCargo1","SlingLoadCargo2","SlingLoadCargo3","SlingLoadCargo4"};
+
+        class A3A_logistics_Cargo: A3A_logistics_Cargo {
+            size = 2; //the amount of nodes it occupies
+        };
     };
 
     class GVAR(SupplyBoxMedium) : GVAR(SupplyBoxBase) {

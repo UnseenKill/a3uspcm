@@ -1,7 +1,10 @@
 PREP(canSnapNeck);
 PREP(canSquashSnake);
+PREP(onA3UFlagActionEvent);
 PREP(onAceTrenchesFinished);
+PREP(overrideFlagActionSQF);
 PREP(revealFOV);
+PREP(revealLocation);
 PREP(setupAceFortifyModule);
 PREP(snapNeck);
 PREP(squashSnake);
