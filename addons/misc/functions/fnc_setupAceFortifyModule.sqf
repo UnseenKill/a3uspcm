@@ -22,7 +22,7 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(setupAceFortifyModule),_this);
 
-if (EGVAR(main,AceHaveAddon)) exitWith {
+if !EGVAR(main,AceHaveAddon) exitWith {
     INFO("ACE3 Fortify Addon not detected, skipping fortification module setup.");
 };
 
