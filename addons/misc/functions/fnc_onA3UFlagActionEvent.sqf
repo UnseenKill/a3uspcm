@@ -56,7 +56,7 @@ if (hideEnemyMarkers && { _type isEqualTo "take" }) exitWith {
 
 // Hook into "Intel_Small" set on units to later on be able to reveal intel on map
 if (_type isEqualTo "Intel_Small") exitWith {
-    _object setVariable[QGVAR(hasIntel), true];
+    _object setVariable[QEGVAR(menu,hasIntel), true];
 };
 
 nil;
