@@ -28,12 +28,12 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _object) exitWith {};
 
-private _marker = [airportsX + resourcesX + factories + outposts + seaports + milbases, getPosATL _object] call BIS_fnc_nearestPosition;
-
-if !assert(_marker isEqualType "") exitWith {};
-
 // Add "reveal this location on map" action
-if (hideEnemyMarkers && { _type isEqualTo "take" }) then {
+if (hideEnemyMarkers && { _type isEqualTo "take" }) exitWith {
+    private _marker = [airportsX + resourcesX + factories + outposts + seaports + milbases, getPosATL _object] call BIS_fnc_nearestPosition;
+
+    if !assert(_marker isEqualType "") exitWith {};
+
     private _markerAlpha = markerAlpha("Dum" + _marker);
 
     TRACE_2(QFUNC(onA3UFlagActionEvent),_marker,_markerAlpha);
@@ -52,6 +52,11 @@ if (hideEnemyMarkers && { _type isEqualTo "take" }) then {
             4
         ];
     };
+};
+
+// Hook into "Intel_Small" set on units to later on be able to reveal intel on map
+if (_type isEqualTo "Intel_Small") exitWith {
+    _object setVariable[QGVAR(hasIntel), true];
 };
 
 nil;

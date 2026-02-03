@@ -512,16 +512,6 @@
 // Intel
 
 [
-    QEGVAR(menu,findIntelAllSL), "CHECKBOX",
-    [ELSTRING(menu,Settings_findIntelAllSL_DisplayName), ELSTRING(menu,Settings_findIntelAllSL_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryIntel_DisplayName)],
-    true, // default
-    true, // global
-    {}, // onchange
-    false // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
     QEGVAR(menu,findIntelPreciseMarker), "CHECKBOX",
     [ELSTRING(menu,Settings_findIntelPreciseMarker_DisplayName), ELSTRING(menu,Settings_findIntelPreciseMarker_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryIntel_DisplayName)],
