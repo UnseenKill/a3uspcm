@@ -1,7 +1,7 @@
 // Common
 
 [
-    QEGVAR(menu,emergencyInvincibilityDuration), "SLIDER",
+    QEGVAR(menu,emergencyInvincibilityDuration), "TIME",
     [ELSTRING(menu,Settings_emergencyInvincibilityDuration_DisplayName), ELSTRING(menu,Settings_emergencyInvincibilityDuration_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
     [0, 600, 20, 0], // min,max,default,decimals
@@ -11,7 +11,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(menu,emergencyInvincibilityCooldown), "SLIDER",
+    QEGVAR(menu,emergencyInvincibilityCooldown), "TIME",
     [ELSTRING(menu,Settings_emergencyInvincibilityCooldown_DisplayName), ELSTRING(menu,Settings_emergencyInvincibilityCooldown_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
     [0, 600, 60, 0], // min,max,default,decimals
@@ -159,7 +159,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(music,pause), "SLIDER",
+    QEGVAR(music,pause), "TIME",
     [ELSTRING(music,Settings_pause_DisplayName), ELSTRING(music,Settings_pause_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
     [0, 600, 90, -1], // default
@@ -210,7 +210,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(aafc,roeCorrectionInterval), "SLIDER",
+    QEGVAR(aafc,roeCorrectionInterval), "TIME",
     [ELSTRING(aafc,Settings_roeCorrectionInterval_DisplayName), ELSTRING(aafc,Settings_roeCorrectionInterval_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
     [0, 300, 25, -1], // min,max,default,decimals
@@ -240,7 +240,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(aafc,contactTrackDeadInterval), "SLIDER",
+    QEGVAR(aafc,contactTrackDeadInterval), "TIME",
     [ELSTRING(aafc,Settings_contactTrackDeadInterval_DisplayName), ELSTRING(aafc,Settings_contactTrackDeadInterval_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
     [0, 600, 180, 0], // min,max,default,decimals
@@ -434,7 +434,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(loadout,containerDumpContentsDelay), "SLIDER",
+    QEGVAR(loadout,containerDumpContentsDelay), "TIME",
     [ELSTRING(loadout,Settings_containerDumpContentsDelay_DisplayName), ELSTRING(loadout,Settings_containerDumpContentsDelay_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
     [0, 180, 15, 0], // min,max,default,decimals
@@ -446,7 +446,7 @@
 // EMP
 
 [
-    QEGVAR(assets,empEffectDuration), "SLIDER",
+    QEGVAR(assets,empEffectDuration), "TIME",
     [ELSTRING(assets,Settings_empEffectDuration_DisplayName), ELSTRING(assets,Settings_empEffectDuration_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(assets,Settings_Category_DisplayName)],
     [0, 3600, 300, 0], // min,max,default,decimals
@@ -542,7 +542,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(menu,findIntelMarkerTTL), "SLIDER",
+    QEGVAR(menu,findIntelMarkerTTL), "TIME",
     [ELSTRING(menu,Settings_findIntelMarkerTTL_DisplayName), ELSTRING(menu,Settings_findIntelMarkerTTL_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryIntel_DisplayName)],
     [30, 1800, 600, 0], // min,max,default,decimals
