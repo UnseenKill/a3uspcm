@@ -30,4 +30,6 @@ if !assert(params[
 if !assert(!isNull _object) exitWith { false };
 if !assert(!isNull _player) exitWith { false };
 
+if (isNil "traderX") exitWith { false };
+
 true;
