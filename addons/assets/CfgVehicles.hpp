@@ -1,11 +1,22 @@
 class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles {
+    class B_CargoNet_01_ammo_F;
     class Land_PCSet_Intel_01_F;
     class Land_PhoneBooth_02_F;
     class ReammoBox_F;
     class SignAd_Sponsor_F;
     class ThingX;
+
+    class GVAR(RemoteTraderAirdropContainer): B_CargoNet_01_ammo_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = CSTRING(RemoteTraderAirdropContainer_DisplayName);
+
+        class TransportItems {};
+        class TransportMagazines {};
+        class TransportWeapons {};
+    };
 
     class GVAR(RemoteTraderPhoneBooth): Land_PhoneBooth_02_F {
         scope = 2;

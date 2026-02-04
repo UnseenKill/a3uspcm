@@ -12,6 +12,7 @@ class CfgPatches {
         };
         units[] = {
             QGVAR(DespawnSuppressionBeacon),
+            QGVAR(RemoteTraderAirdropContainer),
             QGVAR(RemoteTraderPhoneBooth),
             QGVAR(RemoteTraderTerminal),
             QGVAR(SignHelperArsenal),
