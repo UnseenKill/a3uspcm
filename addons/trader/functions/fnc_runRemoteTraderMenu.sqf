@@ -48,6 +48,7 @@ if !assert(!isNil "traderX") exitWith {};
     [traderX] call HALs_store_fnc_openStore;
     
     waitUntil { !isNull findDisplay IDD_DISPLAY_STORE };
+    uiSleep 0.5;
     [] call FUNC(modifyRscDisplayStore);
 
     waitUntil { isNull findDisplay IDD_DISPLAY_STORE };
