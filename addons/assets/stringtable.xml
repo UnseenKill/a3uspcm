@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="Assets">
+        <Key ID="STR_A3USPCM_Assets_ACE_MainActions_Interactions_DisplayName">
+            <English>Interactions</English>
+            <German>Interaktionen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Assets_Component">
             <English>A3USPCM - Assets Component</English>
             <German>A3USPCM - Assets Komponente</German>

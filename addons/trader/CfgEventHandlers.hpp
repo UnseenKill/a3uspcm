@@ -1,7 +1,13 @@
+class Extended_PreInit_EventHandlers {
+    class ADDON {
+        init = QUOTE(call COMPILE_SCRIPT(XEH_preInit));
+    };
+};
+
 class Extended_InitPost_EventHandlers {
     class EGVAR(assets,RemoteTraderTerminal) {
         class ADDON {
-            clientInit = QUOTE(ADDON && { call FUNC(addVanillaSellInteraction) });
+            clientInit = QUOTE(call FUNC(addVanillaRemoteTraderInteraction));
         };
     };
 };

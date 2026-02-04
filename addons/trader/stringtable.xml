@@ -5,5 +5,9 @@
             <English>A3USPCM - Trader Component</English>
             <German>A3USPCM - Trader Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Trader_MenuRemoteTrader">
+            <English>Connect to remote trader network...</English>
+            <German>Verbindung mit Händlernetzwerk...</German>
+        </Key>
     </Package>
 </Project>

@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"a3uspcm_main"};
+        requiredAddons[] = {"a3uspcm_main","a3uspcm_assets"};
         author = "$STR_A3USPCM_Author";
         authors[] = {"goreSplatter"};
         url = "$STR_A3USPCM_URL";
@@ -15,3 +15,4 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
+#include "CfgVehicles.hpp"
