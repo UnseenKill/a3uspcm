@@ -29,4 +29,8 @@ if !assert(params[
 if !assert(!isNull _object) exitWith {};
 if !assert(!isNull _player) exitWith {};
 
+if !assert(!isNil "traderX") exitWith {};
+
+[traderX] call HALs_store_fnc_openStore;
+
 nil;
