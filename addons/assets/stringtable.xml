@@ -21,6 +21,10 @@
             <English>EMP grenade</English>
             <German>EMP Granate</German>
         </Key>
+        <Key ID="STR_A3USPCM_Assets_RemoteTraderTerminal_DisplayName">
+            <English>Remote Trader Terminal</English>
+            <German>Händler-Terminal</German>
+        </Key>
         <Key ID="STR_A3USPCM_Assets_Settings_Category_DisplayName">
             <English>Electromagnetic pulse ammo</English>
             <German>Elektromagnetische Impulsmunition</German>

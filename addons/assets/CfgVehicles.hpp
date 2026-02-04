@@ -1,9 +1,17 @@
 class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles {
+    class Land_PCSet_Intel_01_F;
     class ReammoBox_F;
     class SignAd_Sponsor_F;
     class ThingX;
+
+    class GVAR(RemoteTraderTerminal): Land_PCSet_Intel_01_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = CSTRING(RemoteTraderTerminal_DisplayName);
+        hiddenSelectionsTextures[] = {QPATHTO_T(ui\RemoteTraderDesktop_co.paa)};
+    };
 
     class GVAR(SignHelperBase) : SignAd_Sponsor_F {
         scope = 0;
