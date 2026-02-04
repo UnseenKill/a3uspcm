@@ -1,4 +1,5 @@
 #include "..\script_component.hpp"
+#include "\x\A3A\addons\hals\Addons\store\dialog\idcs.hpp"
 /* ----------------------------------------------------------------------------
 Function: A3USPCM_trader_fnc_runRemoteTraderMenu
 
@@ -31,6 +32,13 @@ if !assert(!isNull _player) exitWith {};
 
 if !assert(!isNil "traderX") exitWith {};
 
-[traderX] call HALs_store_fnc_openStore;
+[] spawn {
+    GVAR(nearbyVehiclesReference) = player;
+
+    [traderX] call HALs_store_fnc_openStore;
+    waitUntil { isNull findDisplay IDD_DISPLAY_STORE };
+
+    GVAR(nearbyVehiclesReference) = nil;
+};
 
 nil;

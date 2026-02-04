@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"a3uspcm_main","a3uspcm_assets"};
+        requiredAddons[] = {"a3uspcm_main","a3uspcm_assets","A3A_hals"};
         author = "$STR_A3USPCM_Author";
         authors[] = {"goreSplatter"};
         url = "$STR_A3USPCM_URL";
