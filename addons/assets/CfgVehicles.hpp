@@ -2,9 +2,16 @@ class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles {
     class Land_PCSet_Intel_01_F;
+    class Land_PhoneBooth_02_F;
     class ReammoBox_F;
     class SignAd_Sponsor_F;
     class ThingX;
+
+    class GVAR(RemoteTraderPhoneBooth): Land_PhoneBooth_02_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = CSTRING(RemoteTraderPhoneBooth_DisplayName);
+    };
 
     class GVAR(RemoteTraderTerminal): Land_PCSet_Intel_01_F {
         scope = 2;
