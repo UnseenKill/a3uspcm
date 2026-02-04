@@ -600,6 +600,28 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+// Remote trader
+
+[
+    QEGVAR(trader,remoteTraderFee), "SLIDER",
+    [ELSTRING(trader,Settings_remoteTraderFee_DisplayName), ELSTRING(trader,Settings_remoteTraderFee_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(trader,Settings_CategoryTrader_DisplayName)],
+    [0, 50000, 6500, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(trader,showAccessFeeHint), "CHECKBOX",
+    [ELSTRING(trader,Settings_showAccessFeeHint_DisplayName), ELSTRING(trader,Settings_showAccessFeeHint_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(trader,Settings_CategoryTrader_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Experimental
 
 [

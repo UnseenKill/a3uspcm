@@ -5,9 +5,49 @@
             <English>A3USPCM - Trader Component</English>
             <German>A3USPCM - Trader Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Trader_HintCaption">
+            <English>Remote Trader Network</English>
+            <German>Händler Netzwerk</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_HintConfirmAccessFee">
+            <English>Accessing the remote trader network requires an up-front fee of %1%2. You will be refunded this fee if you do not make a purchase. Do you want to proceed?</English>
+            <German>Der Zugriff auf das Händler Netzwerk erfordert eine Vorauszahlung von %1%2. Diese Gebühr wird zurückerstattet, wenn kein Kauf getätigt wird. Möchtest du fortfahren?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_HintNotEnoughMoneyForFee">
+            <English>You do not have enough money to pay the remote trader access fee of %1%2.</English>
+            <German>Du hast nicht genug Geld, um die Händler Fernzugriffsgebühr von %1%2 zu bezahlen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_HintRefundAccessFee">
+            <English>You have been refunded the remote trader access fee of %1%2.</English>
+            <German>Dir wurde die Händler Fernzugriffsgebühr von %1%2 zurückerstattet.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Trader_MenuRemoteTrader">
             <English>Connect to remote trader network...</English>
             <German>Verbindung mit Händlernetzwerk...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_RscDisplayStore_AirdropTarget">
+            <English>Trader airdrop container</English>
+            <German>Händler Abwurfbehälter</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_Settings_CategoryTrader_DisplayName">
+            <English>Remote Blackmarket Access</English>
+            <German>Fernzugriff auf den Schwarzmarkt</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_Settings_remoteTraderFee_DisplayName">
+            <English>Remote Trader Access Fee</English>
+            <German>Händler Fernzugriffsgebühr</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_Settings_remoteTraderFee_Tooltip">
+            <English>Fee charged to access remote trader services. Payment is up-front. Will be refunded if no purchase.</English>
+            <German>Gebühr für den Zugriff auf Händler Fernzugriffsdienste. Zahlung erfolgt im Voraus. Wird erstattet, wenn kein Kauf erfolgt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_Settings_showAccessFeeHint_DisplayName">
+            <English>Show hint before remote-opening store</English>
+            <German>Hinweis vor dem Fernöffnen des Geschäfts anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_Settings_showAccessFeeHint_Tooltip">
+            <English>If enabled, a hint will be shown before opening the remote trader menu, informing about the access fee.</English>
+            <German>Wenn aktiviert, wird ein Hinweis angezeigt, bevor das Fernhändler-Menü geöffnet wird, der über die Zugangsgebühr informiert.</German>
         </Key>
     </Package>
 </Project>
