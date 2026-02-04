@@ -33,6 +33,23 @@ if !assert(!isNull _player) exitWith {};
 if !assert(!isNil "traderX") exitWith {};
 
 [] spawn {
+    if (!isNil QGVAR(airdropContainer)) exitWith {
+        WARNING("A remote trader airdrop is already active; cannot open another remote trader menu.");
+
+        [LLSTRING(HintCaption), LLSTRING(HintAirdropUnderway) ] call A3A_fnc_customHint;
+        playSound "A3AP_UiFailure";
+    };
+
+    if (missionNamespace getVariable[QGVAR(airDropCooldownTime), 0] > time) exitWith {
+        WARNING("Remote trader is on cooldown; cannot open remote trader menu.");
+
+        [
+            LLSTRING(HintCaption),
+            format[LLSTRING(HintAirdropOnCooldown), [(missionNamespace getVariable[QGVAR(airDropCooldownTime), 0]) - time, "MM:SS"] call BIS_fnc_secondsToString]
+        ] call A3A_fnc_customHint;
+        playSound "A3AP_UiFailure";
+    };
+
     if !([] call FUNC(payRemoteAccessFee)) exitWith {
         WARNING("Player could not pay remote access fee; aborting remote trader menu.");
     };
@@ -60,7 +77,7 @@ if !assert(!isNil "traderX") exitWith {};
         GVAR(airdropContainer) = nil;
     };
 
-    GVAR(nearbyVehiclesReference) = nil;
+    [GVAR(airdropContainer), getPosATL player] spawn FUNC(deliverAirdrop);
 };
 
 nil;

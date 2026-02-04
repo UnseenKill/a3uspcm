@@ -622,6 +622,16 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(trader,airDropCooldown), "TIME",
+    [ELSTRING(trader,Settings_airDropCooldown_DisplayName), ELSTRING(trader,Settings_airDropCooldown_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(trader,Settings_CategoryTrader_DisplayName)],
+    [0, 7200, 600], // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Experimental
 
 [

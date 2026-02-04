@@ -28,6 +28,7 @@ if !assert(params[
 private _airdropContainer = QEGVAR(assets,RemoteTraderAirdropContainer) createVehicle[0,0,0];
 _airdropContainer setPosATL _position;
 _airdropContainer lockInventory true;
+_airdropContainer enableRopeAttach true;
 
 #ifndef __A3USPCM_PRODUCTION__
     allCurators apply { _x addCuratorEditableObjects[[_airdropContainer], false] };

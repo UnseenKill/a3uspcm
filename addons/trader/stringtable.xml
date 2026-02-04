@@ -5,6 +5,18 @@
             <English>A3USPCM - Trader Component</English>
             <German>A3USPCM - Trader Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Trader_HelicopterPilotAnnounceDelivery">
+            <English>Trader airdrop incoming. Look for the marked drop zone.</English>
+            <German>Händler Abwurf im Anflug. Suche die markierte Abwurfzone.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_HintAirdropOnCooldown">
+            <English>A remote trader airdrop was recently requested and is still on cooldown. Please wait %1 before opening another remote trader menu.</English>
+            <German>Ein Händler Abwurf wurde kürzlich angefordert und befindet sich noch in der Abklingzeit. Bitte warte %1, bevor du ein weiteres Fernhändler-Menü öffnest.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_HintAirdropUnderway">
+            <English>A remote trader airdrop is already underway. Please wait for it to complete before opening another remote trader menu.</English>
+            <German>Ein Händler Abwurf ist bereits im Gange. Bitte warte, bis dieser abgeschlossen ist, bevor du ein weiteres Fernhändler-Menü öffnest.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Trader_HintCaption">
             <English>Remote Trader Network</English>
             <German>Händler Netzwerk</German>
@@ -32,6 +44,14 @@
         <Key ID="STR_A3USPCM_Trader_Settings_CategoryTrader_DisplayName">
             <English>Remote Blackmarket Access</English>
             <German>Fernzugriff auf den Schwarzmarkt</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_Settings_airDropCooldown_DisplayName">
+            <English>Airdrop Cooldown</English>
+            <German>Abwurf Abklingzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Trader_Settings_airDropCooldown_Tooltip">
+            <English>Minimum time between remote trader airdrop requests.</English>
+            <German>Mindestzeit zwischen Händler Abwurf-Anfragen.</German>
         </Key>
         <Key ID="STR_A3USPCM_Trader_Settings_remoteTraderFee_DisplayName">
             <English>Remote Trader Access Fee</English>
