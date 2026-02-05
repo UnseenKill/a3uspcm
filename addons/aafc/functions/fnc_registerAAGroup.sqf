@@ -66,7 +66,7 @@ switch GVAR(defaultInitialMode) do {
     };
 };
 
-leader _group sideChat localize LSTRING(Message_AARegistered);
+leader _group sideChat LLSTRING(Message_AARegistered);
 [] call FUNC(updateMenu);
 
 nil;

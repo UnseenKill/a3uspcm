@@ -28,8 +28,8 @@ private _groups = GVAR(groups) - [grpNull];
 
 if (_groups isEqualTo []) exitWith {
     [
-        localize LSTRING(ROE_Caption),
-        localize LSTRING(ROE_NoGroups)
+        LLSTRING(ROE_Caption),
+        LLSTRING(ROE_NoGroups)
     ] call A3A_fnc_customHint;
 };
 

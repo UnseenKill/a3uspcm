@@ -38,7 +38,7 @@ keys _items apply {
     params["_container","_unlock"];
 
     private _guiCaption = localize([LSTRING(ArsenalDiscard), LSTRING(ArsenalUnlock)] select _unlock);
-    private _guiText = localize LSTRING(ArsenalProcessContainerCleanConfirm);
+    private _guiText = LLSTRING(ArsenalProcessContainerCleanConfirm);
 
     if ([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) then {
         clearBackpackCargoGlobal _container;

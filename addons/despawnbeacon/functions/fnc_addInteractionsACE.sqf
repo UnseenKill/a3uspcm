@@ -53,7 +53,7 @@ if !assert(!isNull _beacon) exitWith {};
     _beacon, 0, ["ACE_MainActions"],
     [
         QGVAR(ActionBeaconActivate),
-        localize LSTRING(ActionActivateText),
+        LLSTRING(ActionActivateText),
         "",
         { call FUNC(activateBeacon) },
         { call FUNC(canActivate) }
@@ -64,7 +64,7 @@ if !assert(!isNull _beacon) exitWith {};
     _beacon, 0, ["ACE_MainActions"],
     [
         QGVAR(ActionBeaconDeactivate),
-        localize LSTRING(ActionDeactivateText),
+        LLSTRING(ActionDeactivateText),
         "",
         { call FUNC(deactivateBeacon) },
         { call FUNC(canDeactivate) }
@@ -75,7 +75,7 @@ if !assert(!isNull _beacon) exitWith {};
     _beacon, 0, ["ACE_MainActions"],
     [
         QGVAR(ActionBeaconPack),
-        localize LSTRING(ActionBeaconPackText),
+        LLSTRING(ActionBeaconPackText),
         "",
         { call FUNC(packBeacon) },
         { call FUNC(canPack) }

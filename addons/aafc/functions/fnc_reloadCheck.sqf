@@ -47,7 +47,7 @@ _magazines apply {
 
         if GVAR(sideChatContact) then {
             _vehicle turretUnit _turret sideChat format[
-                localize LSTRING(Message_Reloading),
+                LLSTRING(Message_Reloading),
                 getText(configFile >> "CfgMagazines" >> _magazine >> "displayName")
             ];
         };

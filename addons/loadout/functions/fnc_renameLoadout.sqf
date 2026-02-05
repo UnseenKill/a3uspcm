@@ -31,14 +31,14 @@ if !assert(!(GVAR(Loadouts) isEqualType false)) exitWith {};
 
 private _lo = GVAR(Loadouts) select _index;
 
-[localize LSTRING(PromptRenameLoadout), _lo select 0, {
+[LLSTRING(PromptRenameLoadout), _lo select 0, {
     params["_name","_index"];
 
     GVAR(Loadouts) select _index set[0, _name];
 
     [
-        localize LSTRING(HintLoadoutManageCaption),
-        format[localize LSTRING(HintLoadoutRenamedText), _name]
+        LLSTRING(HintLoadoutManageCaption),
+        format[LLSTRING(HintLoadoutRenamedText), _name]
     ] call A3A_fnc_customHint;
 }, _index] call FUNCMAIN(utilPromptText);
 

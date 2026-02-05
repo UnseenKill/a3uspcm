@@ -44,8 +44,8 @@ if (_playNoise) then {
     [QEGVAR(assets,AlarmClock)] remoteExec["playSound", 0];
 
     [
-        localize LSTRING(AlarmClockCaption),
-        format[localize LSTRING(AlarmClockText), _timer get "expiration"]
+        LLSTRING(AlarmClockCaption),
+        format[LLSTRING(AlarmClockText), _timer get "expiration"]
     ] remoteExec["A3A_fnc_customHint", 0];
 };
 

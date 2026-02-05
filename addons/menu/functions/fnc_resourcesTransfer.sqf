@@ -19,7 +19,7 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNCMAIN(resourcesTransfer),_this);
 
-[localize LSTRING(Resources_TransferPrompt) + ":", "1000", {
+[LLSTRING(Resources_TransferPrompt) + ":", "1000", {
     params["_amountStr"];
 
     private _amount = parseNumber _amountStr;
@@ -31,8 +31,8 @@ TRACE_1(QFUNCMAIN(resourcesTransfer),_this);
 
     if ((_amount + _fee) > _resourcesFIAT) exitWith {
         [
-            localize LSTRING(Resources_TransferCaption),
-            localize LSTRING(Resources_TransferFailedText)
+            LLSTRING(Resources_TransferCaption),
+            LLSTRING(Resources_TransferFailedText)
         ] call A3A_fnc_customHint;
         playSound "A3AP_UiFailure";
     };
@@ -43,8 +43,8 @@ TRACE_1(QFUNCMAIN(resourcesTransfer),_this);
         params["_amount", "_percentage", "_fee"];
         uiSleep 1.25;
 
-        private _guiCaption = localize LSTRING(Resources_TransferCaption);
-        private _guiMessage = format[localize LSTRING(Resources_TransferConfirmation), _amount, _percentage, "%", _amount + _fee];
+        private _guiCaption = LLSTRING(Resources_TransferCaption);
+        private _guiMessage = format[LLSTRING(Resources_TransferConfirmation), _amount, _percentage, "%", _amount + _fee];
 
         if ([_guiMessage, _guiCaption, true, true] call BIS_fnc_guiMessage) then {
             [0, -1 * (_amount + _fee)] remoteExec ["A3A_fnc_resourcesFIA", 2];

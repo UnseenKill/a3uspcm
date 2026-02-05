@@ -54,7 +54,7 @@ try {
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_PICTURESELLITEMWEAPON ctrlSetText "#(argb,8,8,3)color(0,0,0,0)";
     };
 
-    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNPROTECT ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnProtect);
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNPROTECT ctrlSetText LLSTRING(RscA3USPCMStoreSellDialog_BtnProtect);
 
     if ((_data get "class") in (_display getVariable QGVAR(protected))) then { throw true };
 
@@ -64,22 +64,22 @@ try {
     if !(_data get "sellable") then {
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMPRICE ctrlSetText "-";
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTTOTALSALE ctrlSetText "-";
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnPurge);
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlSetText LLSTRING(RscA3USPCMStoreSellDialog_BtnPurge);
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlEnable true;
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnPurgeAll);
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL ctrlSetTooltip localize LSTRING(RscA3USPCMStoreSellDialog_BtnPurgeAll_Tooltip);
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL ctrlSetText LLSTRING(RscA3USPCMStoreSellDialog_BtnPurgeAll);
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL ctrlSetTooltip LLSTRING(RscA3USPCMStoreSellDialog_BtnPurgeAll_Tooltip);
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL ctrlEnable true;
 
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText format[localize LSTRING(AdvSell_CantSell), localize(_data get "reason")];
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText format[LLSTRING(AdvSell_CantSell), localize(_data get "reason")];
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetTextColor [1,1,1,1];
     } else {
         _price = _price * HALs_store_sellFactor;
 
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText localize LSTRING(AdvSell_DblClickHint);
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText LLSTRING(AdvSell_DblClickHint);
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetTextColor [1,1,1,1];
 
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTITEMPRICE ctrlSetText format["%1 %2", round _price, A3A_faction_civ get "currencySymbol"];
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnSell);
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlSetText LLSTRING(RscA3USPCMStoreSellDialog_BtnSell);
 
         if (_amount > 0 && { _amount <= (_data get "count") }) then {
             _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_TEXTTOTALSALE ctrlSetText format["%1 %2", round(_price * _amount), A3A_faction_civ get "currencySymbol"];
@@ -89,8 +89,8 @@ try {
             _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlEnable false;
         };
 
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnSellAll);
-        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL ctrlSetTooltip localize LSTRING(RscA3USPCMStoreSellDialog_BtnSellAll_Tooltip);
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL ctrlSetText LLSTRING(RscA3USPCMStoreSellDialog_BtnSellAll);
+        _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL ctrlSetTooltip LLSTRING(RscA3USPCMStoreSellDialog_BtnSellAll_Tooltip);
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL ctrlEnable true;
 
         if !(isNil QGVAR(allowAmountAutoUpdate)) then {
@@ -104,7 +104,7 @@ try {
 } catch {
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL ctrlEnable false;
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL ctrlEnable false;
-    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNPROTECT ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnUnprotect);
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNPROTECT ctrlSetText LLSTRING(RscA3USPCMStoreSellDialog_BtnUnprotect);
 
     if (_exception) then {
         _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNPROTECT ctrlEnable true;

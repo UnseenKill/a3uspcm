@@ -34,7 +34,7 @@ if !assert(!isNull _player) exitWith { [] };
     [
         [
             QGVAR(MenuLoadoutManage),
-            localize LSTRING(MenuLoadoutManage),
+            LLSTRING(MenuLoadoutManage),
             "",
             {},
             { !(GVAR(Loadouts) isEqualType false) },
@@ -64,7 +64,7 @@ if !assert(!isNull _player) exitWith { [] };
                                     [
                                         [
                                             format["%1_%2_apply", QGVAR(MenuLoadoutManage), _index],
-                                            localize LSTRING(MenuLoadoutApply),
+                                            LLSTRING(MenuLoadoutApply),
                                             "",
                                             { [{ call FUNC(restoreLoadout) }, _this] call CBA_fnc_execNextFrame },
                                             { true },
@@ -77,7 +77,7 @@ if !assert(!isNull _player) exitWith { [] };
                                     [
                                         [
                                             format["%1_%2_rename", QGVAR(MenuLoadoutManage), _index],
-                                            localize LSTRING(MenuLoadoutRename),
+                                            LLSTRING(MenuLoadoutRename),
                                             QPATHTOEF(assets,ui\loadout-edit.paa),
                                             { [{ call FUNC(renameLoadout) }, _this] call CBA_fnc_execNextFrame },
                                             { true },
@@ -90,7 +90,7 @@ if !assert(!isNull _player) exitWith { [] };
                                     [
                                         [
                                             format["%1_%2_overwrite", QGVAR(MenuLoadoutManage), _index],
-                                            localize LSTRING(MenuLoadoutOverwrite),
+                                            LLSTRING(MenuLoadoutOverwrite),
                                             QPATHTOEF(assets,ui\loadout-save.paa),
                                             { [{ call FUNC(overwriteLoadout) }, _this] call CBA_fnc_execNextFrame },
                                             { [_this select 0] call FUNCMAIN(utilVehicleHasCargo) },
@@ -103,7 +103,7 @@ if !assert(!isNull _player) exitWith { [] };
                                     [
                                         [
                                             format["%1_%2_delete", QGVAR(MenuLoadoutManage), _index],
-                                            localize LSTRING(MenuLoadoutDelete),
+                                            LLSTRING(MenuLoadoutDelete),
                                             QPATHTOEF(assets,ui\loadout-delete.paa),
                                             { [{ call FUNC(deleteLoadout) }, _this] call CBA_fnc_execNextFrame },
                                             { true },
@@ -116,7 +116,7 @@ if !assert(!isNull _player) exitWith { [] };
                                     [
                                         [
                                             format["%1_%2_dump", QGVAR(MenuLoadoutManage), _index],
-                                            localize LSTRING(MenuLoadoutDump),
+                                            LLSTRING(MenuLoadoutDump),
                                             "",
                                             { [{ call FUNC(dumpLoadout) }, _this] call CBA_fnc_execNextFrame },
                                             { true },
@@ -142,7 +142,7 @@ if !assert(!isNull _player) exitWith { [] };
     [
         [
             QGVAR(MenuLoadConfig),
-            localize LSTRING(MenuConfigLoadout),
+            LLSTRING(MenuConfigLoadout),
             "",
             { [{ [] call FUNC(getLoadouts) }, _this] call CBA_fnc_execNextFrame },
             { GVAR(Loadouts) isEqualType false }
@@ -153,7 +153,7 @@ if !assert(!isNull _player) exitWith { [] };
     [
         [
             QGVAR(MenuLoadoutSave),
-            localize LSTRING(MenuLoadoutSave),
+            LLSTRING(MenuLoadoutSave),
             QPATHTOEF(assets,ui\loadout-save.paa),
             { [{ call FUNC(saveLoadout) }, _this] call CBA_fnc_execNextFrame },
             { call FUNCMAIN(utilVehicleHasCargo) }
@@ -164,7 +164,7 @@ if !assert(!isNull _player) exitWith { [] };
     [
         [
             QGVAR(MenuLoadoutCargoSpace),
-            localize LSTRING(MenuLoadoutCargoSpace),
+            LLSTRING(MenuLoadoutCargoSpace),
             QPATHTOEF(assets,ui\loadout-edit.paa),
             { [{ call FUNC(changeCargoSpace) }, _this] call CBA_fnc_execNextFrame },
             { true }
@@ -175,7 +175,7 @@ if !assert(!isNull _player) exitWith { [] };
     [
         [
             QGVAR(MenuLoadoutSetMaxLoad),
-            localize LSTRING(MenuLoadoutMaxLoad),
+            LLSTRING(MenuLoadoutMaxLoad),
             QPATHTOEF(assets,ui\loadout-edit.paa),
             { [{ call FUNC(changeMaxLoad) }, _this] call CBA_fnc_execNextFrame },
             { true }

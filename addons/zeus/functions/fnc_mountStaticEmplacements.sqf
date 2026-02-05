@@ -43,7 +43,7 @@ _this spawn {
 
     if (_statics isEqualTo []) exitWith {
         INFO("No statics selected by Zeus.");
-        systemChat localize LSTRING(ModuleMSE_NoStaticsFound);
+        systemChat LLSTRING(ModuleMSE_NoStaticsFound);
     };
 
     [_statics] call FUNC(doCrewStatic);

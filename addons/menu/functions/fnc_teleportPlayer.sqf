@@ -32,8 +32,8 @@ if !visibleMap then {
 };
 
 [
-    localize LSTRING(Teleport_TeleportHintStartCaption), 
-    localize LSTRING(Teleport_TeleportHintStartText)
+    LLSTRING(Teleport_TeleportHintStartCaption), 
+    LLSTRING(Teleport_TeleportHintStartText)
 ] call A3A_fnc_customHint;
 
 GVAR(Teleport_Done) = false;
@@ -79,8 +79,8 @@ GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
     if !GVAR(Teleport_Done) exitWith {
         INFO("teleportation aborted");
         [
-            localize LSTRING(Teleport_TeleportHintAbortCaption), 
-            localize LSTRING(Teleport_TeleportHintAbortText)
+            LLSTRING(Teleport_TeleportHintAbortCaption), 
+            LLSTRING(Teleport_TeleportHintAbortText)
         ] call A3A_fnc_customHint;
     };
 

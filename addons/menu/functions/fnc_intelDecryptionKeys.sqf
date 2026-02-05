@@ -25,7 +25,7 @@ if !assert(params[
 private _key = ["invader", "occupants"] select(_faction isEqualTo "west");
 _key = format["%1RadioKeys", _key];
 
-[(localize LSTRING(Intel_AddKeysPrompt)) + ":", str(missionNamespace getVariable[_key, 0]), {
+[(LLSTRING(Intel_AddKeysPrompt)) + ":", str(missionNamespace getVariable[_key, 0]), {
     TRACE_1(QFUNCMAIN(intelDecryptionKeys),_this);
 
     if !assert(params[
@@ -43,8 +43,8 @@ _key = format["%1RadioKeys", _key];
     INFO_3("%1 changed %2 to %3",name player,_key,_amount);
 
     [
-        localize LSTRING(Intel_DecryptionKeysChangedCaption),
-        format[localize LSTRING(Intel_DecryptionKeysChangedText), _amount]
+        LLSTRING(Intel_DecryptionKeysChangedCaption),
+        format[LLSTRING(Intel_DecryptionKeysChangedText), _amount]
     ] call A3A_fnc_customHint;
 }, _key] call FUNCMAIN(utilPromptText);
 

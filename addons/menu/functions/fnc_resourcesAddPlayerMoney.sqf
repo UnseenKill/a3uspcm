@@ -20,7 +20,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-[(localize LSTRING(Resources_AddMoneyPrompt)) + ":", "5000", {
+[(LLSTRING(Resources_AddMoneyPrompt)) + ":", "5000", {
     params["_amount"];
 
     _amount = parseNumber _amount;
@@ -30,8 +30,8 @@ Author:
     [_amount] call A3A_fnc_resourcesPlayer;
 
     [
-        localize LSTRING(Resources_AddPlayerMoneyCaption),
-        format[localize LSTRING(Resources_AddPlayerMoneyText), _amount]
+        LLSTRING(Resources_AddPlayerMoneyCaption),
+        format[LLSTRING(Resources_AddPlayerMoneyText), _amount]
     ] call A3A_fnc_customHint;
 }] call FUNCMAIN(utilPromptText);
 

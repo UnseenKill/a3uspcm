@@ -32,8 +32,8 @@ units group player apply {
 };
 
 [
-    localize LSTRING(Miscellaneous_UncompromiseCaption),
-    localize LSTRING(Miscellaneous_UncompromiseSuccess)
+    LLSTRING(Miscellaneous_UncompromiseCaption),
+    LLSTRING(Miscellaneous_UncompromiseSuccess)
 ] call A3A_fnc_customHint;
 
 [] call A3A_fnc_goUndercover;

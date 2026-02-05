@@ -94,7 +94,7 @@ private _intelFound = 0;
         };
 
         _flag addAction[
-            localize LSTRING(Miscellaneous_FindIntelCleanupActionText),
+            LLSTRING(Miscellaneous_FindIntelCleanupActionText),
             {
                 TRACE_1("cleanup intel marker",_this);
                 
@@ -113,12 +113,12 @@ private _intelFound = 0;
 INFO_1("Found %1 intel",_intelFound);
 
 private _message = if (_intelFound isEqualTo 0) then {
-    format[localize LSTRING(Miscellaneous_FindIntel_NoIntelFoundText), _radius];
+    format[LLSTRING(Miscellaneous_FindIntel_NoIntelFoundText), _radius];
 } else {
-    format[localize LSTRING(Miscellaneous_FindIntel_IntelFoundText), _intelFound];
+    format[LLSTRING(Miscellaneous_FindIntel_IntelFoundText), _intelFound];
 };
 
-[localize LSTRING(Miscellaneous_FindIntelCaption), _message] call A3A_fnc_customHint;
+[LLSTRING(Miscellaneous_FindIntelCaption), _message] call A3A_fnc_customHint;
 [] call FUNC(intelCleanupHandler);
 
 nil;

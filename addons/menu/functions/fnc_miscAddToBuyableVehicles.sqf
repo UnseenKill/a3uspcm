@@ -25,7 +25,7 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableVehicles),_this);
 
         try {
             if (["LandVehicle", "Air", "Ship"] findIf { _target isKindOf _x } isEqualTo -1) then {
-                throw format[localize LSTRING(Miscellaneous_AddToBuyableVehiclesHintNoVehicleText), getText(configOf _target >> "displayName")];
+                throw format[LLSTRING(Miscellaneous_AddToBuyableVehiclesHintNoVehicleText), getText(configOf _target >> "displayName")];
             };
 
             private _isArmed = [_target] call FUNCMAIN(utilIsArmedVehicle);
@@ -43,14 +43,14 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableVehicles),_this);
             TRACE_3(QFUNCMAIN(miscAddToBuyableVehicles),_key,_index,typeOf _target);
 
             if (_index isNotEqualTo -1) then {
-                throw format[localize LSTRING(Miscellaneous_AddToBuyableVehiclesHintAlreadyExistsText), getText(configOf _target >> "displayName")];
+                throw format[LLSTRING(Miscellaneous_AddToBuyableVehiclesHintAlreadyExistsText), getText(configOf _target >> "displayName")];
             };
 
-            private _guiCaption = localize LSTRING(Miscellaneous_AddToBuyableVehiclesCaption);
-            private _guiText = format[localize LSTRING(Miscellaneous_AddToBuyableVehiclesConfirmText), getText(configOf _target >> "displayName")];
+            private _guiCaption = LLSTRING(Miscellaneous_AddToBuyableVehiclesCaption);
+            private _guiText = format[LLSTRING(Miscellaneous_AddToBuyableVehiclesConfirmText), getText(configOf _target >> "displayName")];
 
             if ([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) then {
-                [(localize LSTRING(Miscellaneous_AddToBuyableVehiclesPricePromptText)) + ":", "3750", {
+                [(LLSTRING(Miscellaneous_AddToBuyableVehiclesPricePromptText)) + ":", "3750", {
                     params[
                         ["_price","",[""]],
                         ["_params",[],[[]]]
@@ -73,7 +73,7 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableVehicles),_this);
                     };
 
                     [
-                        localize LSTRING(Miscellaneous_AddToBuyableVehiclesCaption),
+                        LLSTRING(Miscellaneous_AddToBuyableVehiclesCaption),
                         format [localize ([LSTRING(Miscellaneous_AddToBuyableVehiclesHintSuccessText), LSTRING(Miscellaneous_AddToBuyableVehiclesHintSuccessBMWarningText)] select _hasBM), getText(configOf _target >> "displayName"), _price]
                     ] call A3A_fnc_customHint;
 
@@ -82,7 +82,7 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableVehicles),_this);
             };
         } catch {
             [
-                localize LSTRING(Miscellaneous_AddToBuyableVehiclesCaption),
+                LLSTRING(Miscellaneous_AddToBuyableVehiclesCaption),
                 _exception
             ] call A3A_fnc_customHint;
             playSound "A3AP_UiFailure";

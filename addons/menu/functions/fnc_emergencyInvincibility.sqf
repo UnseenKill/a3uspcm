@@ -28,8 +28,8 @@ private _canGoInvincible = try {
         if (_lastUsed isNotEqualTo false) then {
             if (diag_tickTime < _lastUsed + GVAR(emergencyInvincibilityCooldown)) exitWith {
                 [
-                    localize LSTRING(Hotkeys_EmergencyInvincibility),
-                    format[localize LSTRING(Miscellaneous_EmergencyInvincibilityCooldownHintText), round(_lastUsed + GVAR(emergencyInvincibilityCooldown) - diag_tickTime)]
+                    LLSTRING(Hotkeys_EmergencyInvincibility),
+                    format[LLSTRING(Miscellaneous_EmergencyInvincibilityCooldownHintText), round(_lastUsed + GVAR(emergencyInvincibilityCooldown) - diag_tickTime)]
                 ] call A3A_fnc_customHint;
 
                 playSound "A3AP_UiFailure";
@@ -66,7 +66,7 @@ units group player apply {
 };
 
 [
-    localize LSTRING(Hotkeys_EmergencyInvincibility),
+    LLSTRING(Hotkeys_EmergencyInvincibility),
     localize([LSTRING(Miscellaneous_EmergencyInvincibilityOnHintText), LSTRING(Miscellaneous_EmergencyInvincibilityOffHintText)] select _invincible)
 ] call A3A_fnc_customHint;
 

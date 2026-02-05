@@ -64,7 +64,7 @@ if (_timer isEqualTo false) then {
 
         TRACE_3("slider changed",_control,_value,_textCtrl);
 
-        _textCtrl ctrlSetText format[localize LSTRING(CMI_IDC_CM_INJECT_STOPWATCHES_TEXT), _value, [_value * 60, "HH:MM"] call BIS_fnc_secondsToString];
+        _textCtrl ctrlSetText format[LLSTRING(CMI_IDC_CM_INJECT_STOPWATCHES_TEXT), _value, [_value * 60, "HH:MM"] call BIS_fnc_secondsToString];
     }];
     _control sliderSetRange[0, 600];
     _control sliderSetPosition 60;

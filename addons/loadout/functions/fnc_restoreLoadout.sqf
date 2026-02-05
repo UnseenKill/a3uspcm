@@ -46,8 +46,8 @@ private _continue = try {
 
         if (_timeout < diag_tickTime) then {
             [
-                localize LSTRING(HintLoadoutRestoreCaption),
-                format[localize LSTRING(HintLoadoutForceLoadoutText), FORCE_LOADOUT_TIMEOUT]
+                LLSTRING(HintLoadoutRestoreCaption),
+                format[LLSTRING(HintLoadoutForceLoadoutText), FORCE_LOADOUT_TIMEOUT]
             ] remoteExec["A3A_fnc_customHint", _client];
 
             _vehicle setVariable[QGVAR(Timeout), diag_tickTime + FORCE_LOADOUT_TIMEOUT];
@@ -87,7 +87,7 @@ private _error = try {
 };
 
 if !(isNil "_error") exitWith {
-    [localize LSTRING(HintLoadoutRestoreCaption), _error] remoteExec["A3A_fnc_customHint", _client];
+    [LLSTRING(HintLoadoutRestoreCaption), _error] remoteExec["A3A_fnc_customHint", _client];
 };
 
 clearBackpackCargoGlobal _vehicle;
@@ -160,7 +160,7 @@ if (_weapons select 0 isNotEqualTo "0xdeadbeef") then {
     };
 
     _missing apply {
-        _messages pushBack format[localize LSTRING(HintLoadoutItemMissingText), _x];
+        _messages pushBack format[LLSTRING(HintLoadoutItemMissingText), _x];
     };
 };
 
@@ -180,15 +180,15 @@ if (_weapons select 0 isNotEqualTo "0xdeadbeef") then {
             private _displayName = [_baseConfig >> _x >> "displayName", "STRING", _x] call CBA_fnc_getConfigEntry;
 
             if (_count == 0) then {
-                _messages pushBack format[localize LSTRING(HintLoadoutItemMissingText), _displayName];
+                _messages pushBack format[LLSTRING(HintLoadoutItemMissingText), _displayName];
             } else {
                 if (_y > _count) then {
-                    _messages pushBack format[localize LSTRING(HintLoadoutItemExcessText), _displayName, _y - _count];
+                    _messages pushBack format[LLSTRING(HintLoadoutItemExcessText), _displayName, _y - _count];
                     _y = _count;
                 };
 
                 if !(_vehicle canAdd[_x, _y]) then {
-                    _messages pushBack format[localize LSTRING(HintLoadoutItemNoSpaceText), _displayName, _y];
+                    _messages pushBack format[LLSTRING(HintLoadoutItemNoSpaceText), _displayName, _y];
                 } else {
                     [_vehicle, _x, _y] call _callback;
                     [_index, _x, _y] call jn_fnc_arsenal_removeItem;
@@ -253,7 +253,7 @@ if (_turretWeapons isNotEqualTo false) then {
 private _message = [LSTRING(HintLoadoutRestoredPartialText), LSTRING(HintLoadoutRestoredText)] select (_messages isEqualTo []);
 
 [
-    localize LSTRING(HintLoadoutRestoreCaption),
+    LLSTRING(HintLoadoutRestoreCaption),
     format[localize _message, _title, getText(configOf _vehicle >> "displayName")]
 ] remoteExec["A3A_fnc_customHint", _client];
 

@@ -20,7 +20,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-[(localize LSTRING(Resources_AddHRPrompt)) + ":", "8", {
+[(LLSTRING(Resources_AddHRPrompt)) + ":", "8", {
     params["_amount"];
 
     _amount = parseNumber _amount;
@@ -30,8 +30,8 @@ Author:
     [_amount,0] remoteExec ["A3A_fnc_resourcesFIA",2];
 
     [
-        localize LSTRING(Resources_AddHRCaption),
-        format[localize LSTRING(Resources_AddHRText), _amount]
+        LLSTRING(Resources_AddHRCaption),
+        format[LLSTRING(Resources_AddHRText), _amount]
     ] call A3A_fnc_customHint;
 }] call FUNCMAIN(utilPromptText);
 

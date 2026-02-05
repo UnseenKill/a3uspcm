@@ -35,7 +35,7 @@ params[
     ["ACE_MainActions"],
     [
         QGVAR(MortarSupport),
-        localize LSTRING(MenuSupports),
+        LLSTRING(MenuSupports),
         "",
         {},
         { call FUNC(canUseSupportsMenu) },
@@ -46,7 +46,7 @@ params[
                 [
                     [
                         QGVAR(MenuSupportsAssignRole),
-                        localize LSTRING(MenuSupportsAssignRole),
+                        LLSTRING(MenuSupportsAssignRole),
                         "",
                         {},
                         { call FUNC(canUseAssignSupportRoleMenu) },
@@ -57,7 +57,7 @@ params[
                                 [
                                     [
                                         QGVAR(MenuSupportsAssignRoleArtillery),
-                                        localize LSTRING(MenuSupportsAssignAsArtillery),
+                                        LLSTRING(MenuSupportsAssignAsArtillery),
                                         "",
                                         { (_this select 0) call FUNC(assignSupportRoleToVehicle) },
                                         { (_this select 0) call FUNC(canAssignSupport) }
@@ -74,7 +74,7 @@ params[
                 [
                     [
                         QGVAR(MenuSupportsRevokeRole),
-                        localize LSTRING(MenuSupportsRevokeRole),
+                        LLSTRING(MenuSupportsRevokeRole),
                         "",
                         { call FUNC(revokeSupportRoleFromVehicle) },
                         { call FUNC(canRevokeSupportRole) }
@@ -85,7 +85,7 @@ params[
                 [
                     [
                         QGVAR(MenuSupportsEjectCrew),
-                        localize LSTRING(MenuSupportsEjectCrew),
+                        LLSTRING(MenuSupportsEjectCrew),
                         "",
                         { call FUNC(ejectCrew) },
                         { call FUNC(canEjectCrew) }

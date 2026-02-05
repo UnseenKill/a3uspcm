@@ -61,7 +61,7 @@ _this spawn {
     _marker setMarkerTypeLocal "hd_dot_noShadow";
     _marker setMarkerShapeLocal "ICON";
     _marker setMarkerColorLocal "ColorBlack";
-    _marker setMarkerTextLocal localize LSTRING(MarkerText);
+    _marker setMarkerTextLocal LLSTRING(MarkerText);
 
     _beacon setVariable[QGVAR(marker), _marker];
 
