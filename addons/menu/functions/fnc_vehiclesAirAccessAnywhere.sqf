@@ -22,8 +22,8 @@ TRACE_1(QFUNCMAIN(vehiclesAirAccessAnywhere),_this);
 HR_GRG_Cnd_isAirbase = { true };
 
 [
-    localize LSTRING(Vehicles_AirAccessAnywhereCaption),
-    localize LSTRING(Vehicles_AirAccessAnywhereHintDone)
+    LLSTRING(Vehicles_AirAccessAnywhereCaption),
+    LLSTRING(Vehicles_AirAccessAnywhereHintDone)
 ] call A3A_fnc_customHint;
 
 playSound "A3AP_UiSuccess";

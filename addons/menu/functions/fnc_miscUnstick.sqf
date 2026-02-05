@@ -23,7 +23,7 @@ TRACE_1(QFUNCMAIN(miscUnstick),_this);
     private _timeout = 5;
 
     while { _timeout > 0 } do {
-        systemChat format[localize LSTRING(Miscellaneous_UnstickTimeoutText), _timeout];
+        systemChat format[LLSTRING(Miscellaneous_UnstickTimeoutText), _timeout];
         DEC(_timeout);
         uiSleep 1;
     };
@@ -32,8 +32,8 @@ TRACE_1(QFUNCMAIN(miscUnstick),_this);
 
     if (_units isEqualTo []) exitWith {
         [
-            localize LSTRING(Miscellaneous_UnstickCaption),
-            localize LSTRING(Miscellaneous_UnstickErrorNoSelectionText)
+            LLSTRING(Miscellaneous_UnstickCaption),
+            LLSTRING(Miscellaneous_UnstickErrorNoSelectionText)
         ] call A3A_fnc_customHint;
 
         playSound "A3AP_UiFailure";

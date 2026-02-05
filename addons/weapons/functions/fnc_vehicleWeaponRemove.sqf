@@ -41,8 +41,8 @@ if !assert(_weapon isNotEqualTo "") exitWith {};
         ["_weapon", "", [""]],
         "_path"
     ];
-    private _guiCaption = localize LSTRING(VehicleWeaponsSelfActionsRemoveWeaponText);
-    private _guiText = format[localize LSTRING(VehicleWeaponsSelfActionsRemoveWeaponConfirm), getText(configFile >> "CfgWeapons" >> _weapon >> "displayName")];
+    private _guiCaption = LLSTRING(VehicleWeaponsSelfActionsRemoveWeaponText);
+    private _guiText = format[LLSTRING(VehicleWeaponsSelfActionsRemoveWeaponConfirm), getText(configFile >> "CfgWeapons" >> _weapon >> "displayName")];
 
     if !([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) exitWith {};
 

@@ -29,7 +29,7 @@ params[
 ];
 
 if !assert(!isNull _container) exitWith {};
-if !([_container] call FUNCMAIN(utilVehicleHasCargo)) exitWith { systemChat localize LSTRING(DumpContentsEmpty) };
+if !([_container] call FUNCMAIN(utilVehicleHasCargo)) exitWith { systemChat LLSTRING(DumpContentsEmpty) };
 
 [
     GVAR(containerDumpContentsDelay),
@@ -53,7 +53,7 @@ if !([_container] call FUNCMAIN(utilVehicleHasCargo)) exitWith { systemChat loca
         [_container, _gwh] call FUNCMAIN(utilContainerCargoCopy);
         playSound3D["x\A3A\addons\core\Sounds\Misc\LootSuccess.ogg", _gwh];
 
-        systemChat format[localize LSTRING(DumpContentsSuccess), getText(configOf _container >> "displayName")];
+        systemChat format[LLSTRING(DumpContentsSuccess), getText(configOf _container >> "displayName")];
     }
 ] call ace_common_fnc_progressBar;
 

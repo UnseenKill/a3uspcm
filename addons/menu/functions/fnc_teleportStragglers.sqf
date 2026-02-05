@@ -24,8 +24,8 @@ INFO_1("player %1 summoned stragglers",name player);
 
 if (count units group player isEqualTo 1) exitWith {
     [
-        localize LSTRING(Teleport_StragglersHintCaption), 
-        localize LSTRING(Teleport_StragglersHintNoTeam)
+        LLSTRING(Teleport_StragglersHintCaption), 
+        LLSTRING(Teleport_StragglersHintNoTeam)
     ] call A3A_fnc_customHint;
 };
 
@@ -37,8 +37,8 @@ TRACE_1("team",_stragglers);
 
 if (_stragglers isEqualTo []) exitWith {
     [
-        localize LSTRING(Teleport_StragglersHintCaption), 
-        format[localize LSTRING(Teleport_StragglersHintNoStragglers), STRAGGLERS_MIN_DISTANCE]
+        LLSTRING(Teleport_StragglersHintCaption), 
+        format[LLSTRING(Teleport_StragglersHintNoStragglers), STRAGGLERS_MIN_DISTANCE]
     ] call A3A_fnc_customHint;
 };
 
@@ -62,20 +62,20 @@ _stragglers spawn {
 
     if (_count isEqualTo 0) exitWith {
         [
-            localize LSTRING(Teleport_StragglersHintCaption), 
-            localize LSTRING(Teleport_StragglersHintNoPosition)
+            LLSTRING(Teleport_StragglersHintCaption), 
+            LLSTRING(Teleport_StragglersHintNoPosition)
         ] call A3A_fnc_customHint;
     };
 
     if (_count isEqualTo count _this) then {
         [
-            localize LSTRING(Teleport_StragglersHintCaption), 
-            localize LSTRING(Teleport_StragglersHintSummonedAll)
+            LLSTRING(Teleport_StragglersHintCaption), 
+            LLSTRING(Teleport_StragglersHintSummonedAll)
         ] call A3A_fnc_customHint;
     } else {
         [
-            localize LSTRING(Teleport_StragglersHintCaption), 
-            format[localize LSTRING(Teleport_StragglersHintSummonedPartial), _count, count _this]
+            LLSTRING(Teleport_StragglersHintCaption), 
+            format[LLSTRING(Teleport_StragglersHintSummonedPartial), _count, count _this]
         ] call A3A_fnc_customHint;
     };
 };

@@ -33,9 +33,9 @@ if (_vehicles isEqualTo []) then {
     private _alive = _vehicles select { alive _x };
 
     if (count _alive isEqualTo count _vehicles) then {
-        _vehicles = format["%1x %2 (100%3)", count _vehicles, localize LSTRING(VehicleAbbreviation), "%"];
+        _vehicles = format["%1x %2 (100%3)", count _vehicles, LLSTRING(VehicleAbbreviation), "%"];
     } else {
-        _vehicles = format["%1/%2 %3 (%4%5)", count _alive, count _vehicles, localize LSTRING(VehicleAbbreviation), round((count _alive / count _vehicles) * 100), "%"];
+        _vehicles = format["%1/%2 %3 (%4%5)", count _alive, count _vehicles, LLSTRING(VehicleAbbreviation), round((count _alive / count _vehicles) * 100), "%"];
     };
 
     _vehicles = format[", %1", _vehicles];

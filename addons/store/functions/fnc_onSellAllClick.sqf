@@ -38,7 +38,7 @@ if (_confirm < diag_tickTime) exitWith {
     (allControls _display - [_control]) apply { _x ctrlEnable false };
 
     _control setVariable[QGVAR(confirm), diag_tickTime + 5];
-    _control ctrlSetText localize LSTRING(RscA3USPCMStoreSellDialog_BtnAgain);
+    _control ctrlSetText LLSTRING(RscA3USPCMStoreSellDialog_BtnAgain);
     _control ctrlSetTooltip localize([
         LSTRING(RscA3USPCMStoreSellDialog_BtnPurgeAll_Tooltip_Confirm),
         LSTRING(RscA3USPCMStoreSellDialog_BtnSellAll_Tooltip_Confirm)

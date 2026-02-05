@@ -22,7 +22,7 @@ TRACE_1(QFUNC(miscEnlargeNearestMarker),_this);
 private _sites = markersX select { sidesX getVariable[_x, sideUnknown] == teamPlayer };
 private _markerX = [_sites, player] call BIS_fnc_nearestPosition;
 
-[format[localize LSTRING(Miscellaneous_EnlargeNearestMarkerPrompt), _markerX], str ((markerSize _markerX select 0) max (markerSize _markerX select 1)), {
+[format[LLSTRING(Miscellaneous_EnlargeNearestMarkerPrompt), _markerX], str ((markerSize _markerX select 0) max (markerSize _markerX select 1)), {
     params["_amount","_markerX"];
 
     _amount = parseNumber _amount;

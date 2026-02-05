@@ -52,10 +52,10 @@ if GVAR(showNowPlaying) then {
     private _title = [_config >> "name", "STRING", _track] call CBA_fnc_getConfigEntry;
 
     [
-        localize LSTRING(NowPlaying),
+        LLSTRING(NowPlaying),
         parseText format[
             "%1:<br /><br /><t color='#00fccc'>%2</t> (%3)",
-            localize LSTRING(NowPlaying), _title,
+            LLSTRING(NowPlaying), _title,
             [getNumber(_config >> "duration"), "MM:SS"] call BIS_fnc_secondsToString
         ],
         true

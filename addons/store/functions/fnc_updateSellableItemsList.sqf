@@ -46,8 +46,8 @@ if !(cbChecked(_display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_CHECKSHOWUNSEL
 
 if (_quitIfListEmpty && { _items isEqualTo [] }) exitWith {
     [
-        localize LSTRING(AdvSell_DisplayNameShort),
-        localize LSTRING(AdvSell_NothingToSell)
+        LLSTRING(AdvSell_DisplayNameShort),
+        LLSTRING(AdvSell_NothingToSell)
     ] call A3A_fnc_customHint;
     playSound "A3AP_UiFailure";
     closeDialog 0;

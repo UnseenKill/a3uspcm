@@ -11,12 +11,15 @@ class CfgPatches {
             QGVAR(Grenade_EMP)
         };
         units[] = {
+            QGVAR(DespawnSuppressionBeacon),
+            QGVAR(RemoteTraderAirdropContainer),
+            QGVAR(RemoteTraderPhoneBooth),
+            QGVAR(RemoteTraderTerminal),
             QGVAR(SignHelperArsenal),
             QGVAR(SignHelperGarage),
             QGVAR(SupplyBoxLarge),
             QGVAR(SupplyBoxMedium),
-            QGVAR(SupplyBoxSmall),
-            QGVAR(DespawnSuppressionBeacon)
+            QGVAR(SupplyBoxSmall)
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

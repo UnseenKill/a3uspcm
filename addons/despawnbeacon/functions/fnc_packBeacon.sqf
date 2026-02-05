@@ -54,7 +54,7 @@ if !EGVAR(main,AceHaveAddon) exitWith {
     [_beacon, _player],
     PACKUP(),
     {},
-    localize LSTRING(PackingBeaconProgressText)
+    LLSTRING(PackingBeaconProgressText)
 ] call ace_common_fnc_progressBar;
 
 nil;

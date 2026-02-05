@@ -33,8 +33,8 @@ if !assert(!(GVAR(Loadouts) isEqualType false)) exitWith {};
 [_index, _vehicle] spawn {
     params["_index","_vehicle"];
 
-    private _guiCaption = localize LSTRING(HintLoadoutManageCaption);
-    private _guiText = format[localize LSTRING(HintLoadoutConfirmOverwriteText), GVAR(Loadouts) select _index select 0];
+    private _guiCaption = LLSTRING(HintLoadoutManageCaption);
+    private _guiText = format[LLSTRING(HintLoadoutConfirmOverwriteText), GVAR(Loadouts) select _index select 0];
 
     if !([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) exitWith {};
 
@@ -43,8 +43,8 @@ if !assert(!(GVAR(Loadouts) isEqualType false)) exitWith {};
     GVAR(Loadouts) set[_index, _thisLoadout];
 
     [
-        localize LSTRING(HintLoadoutManageCaption),
-        format[localize LSTRING(HintLoadoutOverwrittenText), GVAR(Loadouts) select _index select 0]
+        LLSTRING(HintLoadoutManageCaption),
+        format[LLSTRING(HintLoadoutOverwrittenText), GVAR(Loadouts) select _index select 0]
     ] call A3A_fnc_customHint;
 
     playSound "A3AP_UiSuccess";

@@ -32,16 +32,16 @@ if !assert(!(GVAR(Loadouts) isEqualType false)) exitWith {};
 [_index] spawn {
     params["_index"];
 
-    private _guiCaption = localize LSTRING(HintLoadoutManageCaption);
-    private _guiText = format[localize LSTRING(HintLoadoutConfirmDeletionText), GVAR(Loadouts) select _index select 0];
+    private _guiCaption = LLSTRING(HintLoadoutManageCaption);
+    private _guiText = format[LLSTRING(HintLoadoutConfirmDeletionText), GVAR(Loadouts) select _index select 0];
 
     if !([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) exitWith {};
 
     private _lo = GVAR(Loadouts) deleteAt _index;
 
     [
-        localize LSTRING(HintLoadoutManageCaption),
-        format[localize LSTRING(HintLoadoutDeletedText), _lo select 0]
+        LLSTRING(HintLoadoutManageCaption),
+        format[LLSTRING(HintLoadoutDeletedText), _lo select 0]
     ] call A3A_fnc_customHint;
 };
 

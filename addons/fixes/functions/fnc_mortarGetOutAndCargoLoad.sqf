@@ -36,20 +36,20 @@ TRACE_6(QFUNC(mortarGetOutAndCargoLoad),_unit,_caller,_actionId,_vehicle,_mortar
 
 if !(alive _mortar) exitWith {
     _unit groupRadio "SentSupportNotAvailable";
-    _unit groupChat localize LSTRING(Text_Chat_MortarDestroyed);
+    _unit groupChat LLSTRING(Text_Chat_MortarDestroyed);
 };
 
 if !(alive _vehicle) exitWith {
     _unit groupRadio "SentSupportNotAvailable";
-    _unit groupChat localize LSTRING(Text_Chat_VehicleDestroyed);
+    _unit groupChat LLSTRING(Text_Chat_VehicleDestroyed);
 };
 
 if (_mortar distance _vehicle > CARGO_LOAD_MAX_DISTANCE) exitWith {
     _unit groupRadio "SentSupportNotAvailable";
-    _unit groupChat format[localize LSTRING(Text_Chat_VehicleTooFarAway), CARGO_LOAD_MAX_DISTANCE];
+    _unit groupChat format[LLSTRING(Text_Chat_VehicleTooFarAway), CARGO_LOAD_MAX_DISTANCE];
 };
 
-_unit groupChat localize LSTRING(Text_Chat_CargoLoadingMortar);
+_unit groupChat LLSTRING(Text_Chat_CargoLoadingMortar);
 
 [_unit, _mortar, _vehicle] spawn {
     params[
@@ -76,10 +76,10 @@ _unit groupChat localize LSTRING(Text_Chat_CargoLoadingMortar);
 
     if ([_mortar, _vehicle, true] call ace_cargo_fnc_loadItem) then {
         _unit groupRadio "SentSupportDone";
-        _unit groupChat localize LSTRING(Text_Chat_MortarCargoLoaded);
+        _unit groupChat LLSTRING(Text_Chat_MortarCargoLoaded);
     } else {
         _unit groupRadio "SentSupportNotAvailable";
-        _unit groupChat localize LSTRING(Text_Chat_MortarCargoLoadFailed);
+        _unit groupChat LLSTRING(Text_Chat_MortarCargoLoadFailed);
     };
 };
 

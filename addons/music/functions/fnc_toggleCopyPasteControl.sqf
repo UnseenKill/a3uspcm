@@ -49,15 +49,15 @@ _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_EDITCOPYPASTE ctrlCommi
 
 switch true do {
     case !_enable: {
-        _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNSAVEPLAYLIST ctrlSetText localize LSTRING(RscA3USPCMTracklistEditorDialog_BtnSavePlaylist);
+        _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNSAVEPLAYLIST ctrlSetText LLSTRING(RscA3USPCMTracklistEditorDialog_BtnSavePlaylist);
         _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNSAVEPLAYLIST setVariable[QGVAR(copyPasteMode), nil];
     };
     case (_mode isEqualTo "import"): {
-        _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNSAVEPLAYLIST ctrlSetText localize LSTRING(RscA3USPCMTracklistEditorDialog_BtnImport);
+        _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNSAVEPLAYLIST ctrlSetText LLSTRING(RscA3USPCMTracklistEditorDialog_BtnImport);
         _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNSAVEPLAYLIST setVariable[QGVAR(copyPasteMode), _mode];
     };
     case (_mode isEqualTo "export"): {
-        _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNSAVEPLAYLIST ctrlSetText localize LSTRING(RscA3USPCMTracklistEditorDialog_BtnDone);
+        _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNSAVEPLAYLIST ctrlSetText LLSTRING(RscA3USPCMTracklistEditorDialog_BtnDone);
         _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNSAVEPLAYLIST setVariable[QGVAR(copyPasteMode), _mode];
     };
 };

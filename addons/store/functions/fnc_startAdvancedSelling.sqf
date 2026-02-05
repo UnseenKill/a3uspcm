@@ -23,8 +23,8 @@ _this spawn {
 
     if !assert(!isNull _container) exitWith {};
 
-    private _guiCaption = localize LSTRING(AdvSell_DisplayNameShort);
-    private _guiText = localize LSTRING(AdvSell_ConfirmBreakdown);
+    private _guiCaption = LLSTRING(AdvSell_DisplayNameShort);
+    private _guiText = LLSTRING(AdvSell_ConfirmBreakdown);
 
     if !([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) exitWith {};
 

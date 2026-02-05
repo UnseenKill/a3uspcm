@@ -1,7 +1,5 @@
 #include "script_component.hpp"
 
-if !hasInterface exitWith {};
-
-INFO_1(localize LSTRING(InitMessage),QUOTE(VERSION_STR));
+INFO_1(LLSTRING(InitMessage),QUOTE(VERSION_STR));
 
 nil;

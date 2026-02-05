@@ -21,14 +21,14 @@ if !GVAR(enhanceZenContextMenu) exitWith { INFO("zen context menu enhancements d
 
 private _parentPath = [[
     QGVAR(zenMainMenu),
-    localize LSTRING(ModuleCategory),
+    LLSTRING(ModuleCategory),
     "",
     {}
 ] call zen_context_menu_fnc_createAction, [], 29] call zen_context_menu_fnc_addAction;
 
 [[
     QGVAR(zenMenu_FindEmplacements),
-    localize LSTRING(ModuleFSE_DisplayName),
+    LLSTRING(ModuleFSE_DisplayName),
     "",
     {
         params[["_position",[],[[]]]];
@@ -41,7 +41,7 @@ private _parentPath = [[
 
 [[
     QGVAR(zenMenu_MountEmplacements),
-    localize LSTRING(ModuleMSE_DisplayName),
+    LLSTRING(ModuleMSE_DisplayName),
     "",
     {
         TRACE_1("Mounting static emplacements",_this);
@@ -57,7 +57,7 @@ private _parentPath = [[
 
 [[
     QGVAR(zenMenu_FindGWH),
-    localize LSTRING(ModuleFindGWH_DisplayName),
+    LLSTRING(ModuleFindGWH_DisplayName),
     "",
     {
         call FUNC(findGWH);
@@ -69,7 +69,7 @@ private _parentPath = [[
 
 [[
     QGVAR(zenMenu_TeleportGroup),
-    localize LSTRING(ModuleTeleportGroup_DisplayName),
+    LLSTRING(ModuleTeleportGroup_DisplayName),
     "",
     {
         call FUNC(teleportGroup);
@@ -79,7 +79,7 @@ private _parentPath = [[
 
 [[
     QGVAR(zenMenu_BlowupMines),
-    localize LSTRING(ModuleBlowupMines_DisplayName),
+    LLSTRING(ModuleBlowupMines_DisplayName),
     "",
     {
         call FUNC(blowUpMines);
@@ -91,7 +91,7 @@ private _parentPath = [[
 
 [[
     QGVAR(zenMenu_ReorientObjects),
-    localize LSTRING(ModuleRO_DisplayName),
+    LLSTRING(ModuleRO_DisplayName),
     "",
     {
         params["",["_units",[],[[]]]];
@@ -104,7 +104,7 @@ private _parentPath = [[
 
 [[
     QGVAR(zenMenu_GarageVehicles),
-    localize LSTRING(ModuleGarageVehicles_DisplayName),
+    LLSTRING(ModuleGarageVehicles_DisplayName),
     "",
     {
         call FUNC(garageVehicles);
@@ -116,7 +116,7 @@ private _parentPath = [[
 
 [[
     QGVAR(zenMenu_RemoveHC),
-    localize LSTRING(ModuleRemoveHC_DisplayName),
+    LLSTRING(ModuleRemoveHC_DisplayName),
     "",
     {
         hcSelected theBoss apply { theBoss hcRemoveGroup _x };

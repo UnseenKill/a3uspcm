@@ -21,8 +21,8 @@ TRACE_1(QFUNCMAIN(miscPlaceBeacon),_this);
 
 if ((player getVariable["moneyX", 0] < GVAR(dsbCost))) exitWith {
     [
-        localize LSTRING(Miscellaneous_PlaceBeaconCaption),
-        format[localize LSTRING(Miscellaneous_PlaceBeaconHintNoMoneyText), GVAR(dsbCost)]
+        LLSTRING(Miscellaneous_PlaceBeaconCaption),
+        format[LLSTRING(Miscellaneous_PlaceBeaconHintNoMoneyText), GVAR(dsbCost)]
     ] call A3A_fnc_customHint;
     playSound "A3AP_UiFailure";
 };

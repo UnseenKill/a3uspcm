@@ -29,8 +29,8 @@ TRACE_1(QFUNCMAIN(miscMakeLootBox),_this);
 
         if (0 == getNumber(configOf _target >> "maximumLoad")) exitWith {
             [
-                localize LSTRING(Miscellaneous_MakeLootBoxCaption),
-                format[localize LSTRING(Miscellaneous_MakeLootBoxHintNoCargoSpaceText), getText(configOf _target >> "displayName")]
+                LLSTRING(Miscellaneous_MakeLootBoxCaption),
+                format[LLSTRING(Miscellaneous_MakeLootBoxHintNoCargoSpaceText), getText(configOf _target >> "displayName")]
             ] call A3A_fnc_customHint;
             playSound "A3AP_UiFailure";
         };
@@ -38,8 +38,8 @@ TRACE_1(QFUNCMAIN(miscMakeLootBox),_this);
         [_target] remoteExec["SCRT_fnc_loot_addActionLoot", [teamPlayer, civilian], _target];
         
         [
-            localize LSTRING(Miscellaneous_MakeLootBoxCaption),
-            format[localize LSTRING(Miscellaneous_MakeLootBoxHintSuccessText), getText(configOf _target >> "displayName")]
+            LLSTRING(Miscellaneous_MakeLootBoxCaption),
+            format[LLSTRING(Miscellaneous_MakeLootBoxHintSuccessText), getText(configOf _target >> "displayName")]
         ] call A3A_fnc_customHint;
         playSound "A3AP_UiSuccess";
     },

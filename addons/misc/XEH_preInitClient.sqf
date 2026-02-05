@@ -30,7 +30,7 @@ GVAR(revealRadius) = 250;
     ["ACE_MainActions"],
     [
         QGVAR(SquashSnake),
-        localize LSTRING(SquashSnake),
+        LLSTRING(SquashSnake),
         "",
         { call FUNC(squashSnake) },
         { alive _target }

@@ -31,7 +31,7 @@ if !assert(!isNull _display) exitWith {};
 if !_doImport exitWith {
     [true, "import"] call FUNC(toggleCopyPasteControl);
 
-    _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_EDITCOPYPASTE ctrlSetText localize LSTRING(RscA3USPCMTracklistEditorDialog_EditCopyPasteImport);
+    _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_EDITCOPYPASTE ctrlSetText LLSTRING(RscA3USPCMTracklistEditorDialog_EditCopyPasteImport);
     ctrlSetFocus(_display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_EDITCOPYPASTE);
 };
 
@@ -47,7 +47,7 @@ try {
 
     TRACE_1("import version",_version);
 
-    if (_version isNotEqualTo '"1.0"') then { throw format[localize LSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorVersion), _lineNo + 1] };
+    if (_version isNotEqualTo '"1.0"') then { throw format[LLSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorVersion), _lineNo + 1] };
 
     while { _import isNotEqualTo [] } do {
         INC(_lineNo);
@@ -62,7 +62,7 @@ try {
             continue;
         };
 
-        if (_section isEqualTo false) then { throw format[localize LSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorSection), _lineNo] };
+        if (_section isEqualTo false) then { throw format[LLSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorSection), _lineNo] };
 
         private _tracks = _result getOrDefault[_section, []];
         if !isClass(configFile >> "CfgMusic" >> _line) then {
@@ -78,18 +78,18 @@ try {
 
     if ((_resultKeys - _needKeys) isNotEqualTo []) then {
         WARNING_1("imported playlist has unknown sections: %1",_resultKeys-_needKeys);
-        throw format[localize LSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorSectionUnknown), (_resultKeys-_needKeys) joinString ", "];
+        throw format[LLSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorSectionUnknown), (_resultKeys-_needKeys) joinString ", "];
     };
 
     _needKeys apply {
         if !(_x in _result) then {
             WARNING_1("missing section '%1' in imported playlist",_x);
-            throw format[localize LSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorSectionMissing), _x];
+            throw format[LLSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorSectionMissing), _x];
         };
 
         if (count(_result get _x) < REMEMBER_TRACKS) then {
             WARNING_2("section '%1' has less than %2 tracks",_x,REMEMBER_TRACKS);
-            throw format[localize LSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorSectionTracks), _x, REMEMBER_TRACKS];
+            throw format[LLSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorSectionTracks), _x, REMEMBER_TRACKS];
         };
     };
 
@@ -98,7 +98,7 @@ try {
 
 } catch {
     [
-        localize LSTRING(RscA3USPCMTracklistEditorDialog_ImportError),
+        LLSTRING(RscA3USPCMTracklistEditorDialog_ImportError),
         _exception
     ] call A3A_fnc_customHint;
     playSound "A3AP_UiFailure";

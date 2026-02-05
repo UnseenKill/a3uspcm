@@ -25,20 +25,20 @@ TRACE_1(QFUNCMAIN(miscAddToBuildables),_this);
 
         try {
             if !(_target isKindOf "Building") then {
-                throw format[localize LSTRING(Miscellaneous_AddToBuildablesHintNoBuildingText), getText(configOf _target >> "displayName")];
+                throw format[LLSTRING(Miscellaneous_AddToBuildablesHintNoBuildingText), getText(configOf _target >> "displayName")];
             };
 
             private _index = A3A_buildableObjects findIf { _x select 0 isEqualTo typeOf _target };
 
             if (_index isNotEqualTo -1) then {
-                throw format[localize LSTRING(Miscellaneous_AddToBuildablesHintAlreadyExistsText), getText(configOf _target >> "displayName")];
+                throw format[LLSTRING(Miscellaneous_AddToBuildablesHintAlreadyExistsText), getText(configOf _target >> "displayName")];
             };
 
-            private _guiCaption = localize LSTRING(Miscellaneous_AddToBuildablesCaption);
-            private _guiText = format[localize LSTRING(Miscellaneous_AddToBuildablesConfirmText), getText(configOf _target >> "displayName")];
+            private _guiCaption = LLSTRING(Miscellaneous_AddToBuildablesCaption);
+            private _guiText = format[LLSTRING(Miscellaneous_AddToBuildablesConfirmText), getText(configOf _target >> "displayName")];
 
             if ([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) then {
-                [(localize LSTRING(Miscellaneous_AddToBuildablesPricePromptText)) + ":", "150", {
+                [(LLSTRING(Miscellaneous_AddToBuildablesPricePromptText)) + ":", "150", {
                     params[["_price","",[""]],["_target",objNull,[objNull]]];
 
                     private _buildable = [typeOf _target, parseNumber _price];
@@ -47,8 +47,8 @@ TRACE_1(QFUNCMAIN(miscAddToBuildables),_this);
                     GVAR(AdditionalBuildables) pushBack _buildable;
 
                     [
-                        localize LSTRING(Miscellaneous_AddToBuildablesCaption),
-                        format [localize LSTRING(Miscellaneous_AddToBuildablesHintSuccessText), getText(configOf _target >> "displayName"), _price]
+                        LLSTRING(Miscellaneous_AddToBuildablesCaption),
+                        format [LLSTRING(Miscellaneous_AddToBuildablesHintSuccessText), getText(configOf _target >> "displayName"), _price]
                     ] call A3A_fnc_customHint;
 
                     playSound "A3AP_UiSuccess";
@@ -56,7 +56,7 @@ TRACE_1(QFUNCMAIN(miscAddToBuildables),_this);
             };
         } catch {
             [
-                localize LSTRING(Miscellaneous_AddToBuildablesCaption),
+                LLSTRING(Miscellaneous_AddToBuildablesCaption),
                 _exception
             ] call A3A_fnc_customHint;
             playSound "A3AP_UiFailure";

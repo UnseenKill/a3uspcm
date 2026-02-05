@@ -44,7 +44,7 @@ if !assert(!isNull _player) exitWith {};
         [_target, 10, "Head", QGVAR(neckSnap), _player] remoteExec["ace_medical_fnc_addDamageToUnit", 2];
     },
     {},
-    localize LSTRING(SnappingNeckProgressText)
+    LLSTRING(SnappingNeckProgressText)
 ] call ace_common_fnc_progressBar;
 
 nil;

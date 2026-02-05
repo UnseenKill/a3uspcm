@@ -40,7 +40,7 @@ _group addEventHandler["EnemyDetected", {
 
     if GVAR(sideChatContact) then {
         leader _group sideChat format[
-            localize LSTRING(Message_EnemyDetected), 
+            LLSTRING(Message_EnemyDetected), 
             DISPLAY_NAME_UNIT(_enemy), 
             mapGridPosition getPosATL _enemy, 
             abs((leader _group distance _enemy) / 1000) toFixed 1, 
@@ -90,7 +90,7 @@ _group addEventHandler["EnemyDetected", {
                 };
             };
 
-            _sender sideChat format[localize LSTRING(Message_EnemyFiredAt), _missile, DISPLAY_NAME_UNIT(_unit)];
+            _sender sideChat format[LLSTRING(Message_EnemyFiredAt), _missile, DISPLAY_NAME_UNIT(_unit)];
         };
     }];
 }];

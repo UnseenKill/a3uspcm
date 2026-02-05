@@ -67,7 +67,7 @@ _control ctrlAddEventHandler["ButtonClick", {
 
     private _lo = GVAR(Loadouts) deleteAt _index;
 
-    systemChat format[localize LSTRING(HintLoadoutDeletedText), _lo select 0];
+    systemChat format[LLSTRING(HintLoadoutDeletedText), _lo select 0];
     _list lnbDeleteRow lnbCurSelRow _list;
 }];
 

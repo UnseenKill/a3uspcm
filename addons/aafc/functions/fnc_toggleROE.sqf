@@ -45,13 +45,13 @@ switch _roe do {
         _group setVariable[QGVAR(ROE), _roe];
         _group setBehaviourStrong "COMBAT";
         _group setCombatMode "RED";
-        leader _group sideChat localize LSTRING(Message_ROE_AcceptFire);
+        leader _group sideChat LLSTRING(Message_ROE_AcceptFire);
     };
     case MODE_HOLDFIRE: {
         _group setVariable[QGVAR(ROE), _roe];
         _group setBehaviourStrong "SAFE";
         _group setCombatMode "BLUE";
-        leader _group sideChat localize LSTRING(Message_ROE_AcceptHold);
+        leader _group sideChat LLSTRING(Message_ROE_AcceptHold);
     };
     default {
         ERROR_2("%1: Invalid ROE %2",QFUNC(toggleROE),_roe);
