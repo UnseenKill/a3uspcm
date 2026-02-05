@@ -21,6 +21,14 @@
             <English>Security</English>
             <German>Sicherheit</German>
         </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_GuardFront_DisplayName">
+            <English>Guard front</English>
+            <German>Vorne sichern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_GuardRear_DisplayName">
+            <English>Guard rear</English>
+            <German>Hinten sichern</German>
+        </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Pull360_DisplayName">
             <English>Pull 360</English>
             <German>360° Deckung</German>

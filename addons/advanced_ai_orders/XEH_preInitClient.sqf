@@ -8,6 +8,8 @@ if (!is3DEN) then {
 [CBA_EVENT_AAIO_RADIO_EQUIPPED, { call FUNC(onRadioEquipped) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_AAIO_RADIO_UNEQUIPPED, { call FUNC(onRadioUnequipped) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_SECURITY_PULL360, { call FUNC(securityPull360) }] call CBA_fnc_addEventHandler;
+[CBA_EVENT_SECURITY_GUARD_FRONT, { call FUNC(securityGuardFront) }] call CBA_fnc_addEventHandler;
+[CBA_EVENT_SECURITY_GUARD_REAR, { call FUNC(securityGuardRear) }] call CBA_fnc_addEventHandler;
 
 GVAR(securityDistance) = 20;
 

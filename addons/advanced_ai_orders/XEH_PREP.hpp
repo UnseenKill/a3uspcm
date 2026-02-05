@@ -3,5 +3,7 @@ PREP(onPlayerEventLoadout);
 PREP(onRadioEquipped);
 PREP(onRadioUnequipped);
 PREP(pullSecurity);
+PREP(securityGuardFront);
+PREP(securityGuardRear);
 PREP(securityPull360);
 PREP(updateCommsMenu);

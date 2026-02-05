@@ -1,9 +1,9 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_advanced_ai_orders_fnc_securityPull360
+Function: A3USPCM_advanced_ai_orders_fnc_securityGuardRear
 
 Description:
-    Make selected units pull security in a 360 degree radius around them.
+    Guard points behind center.
 
 Parameters:
 
@@ -18,18 +18,19 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(securityPull360),_this);
+TRACE_1(QFUNC(securityGuardRear),_this);
 
 // [degrees,maxUnitsCount,minUnitsCount]
 private _positionsTemplate = [
-    [-40, nil, nil],
-    [40, nil, nil],
-    [120, nil, 4],
+    [140, nil, nil],
+    [220, nil, nil],
     [180, 3, nil],
-    [210, nil, 4]
+    [-245, nil, 4],
+    [245, nil, 4]
 ];
 
 [_positionsTemplate, player, groupSelectedUnits player, vehicle player, GVAR(securityDistance)] call FUNC(pullSecurity);
 showCommandingMenu "";
 
 nil;
+

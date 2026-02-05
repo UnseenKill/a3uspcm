@@ -34,6 +34,18 @@ class PREFIX {
                     expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_PULL360)] call CBA_fnc_localEvent);
                     isActive = QUOTE(NotEmpty);
                 };
+
+                class GuardFront: Pull360 {
+                    itemName = CSTRING(Menu_Security_Item_GuardFront_DisplayName);
+                    assignedKey[] = {3};
+                    expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_GUARD_FRONT)] call CBA_fnc_localEvent);
+                };
+
+                class GuardRear: Pull360 {
+                    itemName = CSTRING(Menu_Security_Item_GuardRear_DisplayName);
+                    assignedKey[] = {4};
+                    expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_GUARD_REAR)] call CBA_fnc_localEvent);
+                };
             };
 
             class Unstick: ItemBase {
