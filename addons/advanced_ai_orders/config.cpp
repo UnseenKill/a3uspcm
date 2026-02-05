@@ -14,6 +14,7 @@ class CfgPatches {
     };
 };
 
+#include "CfgAddon.hpp"
 #include "CfgCommunicationMenu.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgWeapons.hpp"

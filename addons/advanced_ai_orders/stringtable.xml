@@ -13,6 +13,22 @@
             <English>Radio used to issue advanced AI orders.</English>
             <German>Funkgerät zum Ausgeben fortgeschrittener KI-Befehle.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_DisplayName">
+            <English>Security</English>
+            <German>Sicherheit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Pull360_DisplayName">
+            <English>Pull 360</English>
+            <German>360° Deckung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_DisplayName">
+            <English>Settings</English>
+            <German>Einstellungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_Distance_DisplayName">
+            <English>Security distance</English>
+            <German>Sicherungsentfernung</German>
+        </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Title">
             <English>A3USPCM - AI Orders</English>
             <German>A3USPCM - KI-Befehle</German>

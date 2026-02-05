@@ -21,14 +21,15 @@ TRACE_1(QFUNCMAIN(miscUnstick),_this);
 
 [] spawn {
     private _timeout = 5;
+    private _units = groupSelectedUnits player;
 
-    while { _timeout > 0 } do {
+    while { _units isEqualTo [] && { _timeout > 0 } } do {
         systemChat format[LLSTRING(Miscellaneous_UnstickTimeoutText), _timeout];
         DEC(_timeout);
         uiSleep 1;
     };
 
-    private _units = groupSelectedUnits player;
+    _units = groupSelectedUnits player;
 
     if (_units isEqualTo []) exitWith {
         [
