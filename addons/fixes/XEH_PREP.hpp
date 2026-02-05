@@ -1,3 +1,4 @@
+PREP(buyVehicleDialogInit);
 PREP(fixSaveLoop);
 PREP(halsStoreDialogAdjust);
 PREP(halsStoreDialogInit);
