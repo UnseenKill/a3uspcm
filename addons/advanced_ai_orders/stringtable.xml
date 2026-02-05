@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Advanced_AI_Orders">
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Component">
+            <English>A3USPCM - Advanced AI Orders Component</English>
+            <German>A3USPCM - Advanced AI Orders Komponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_ItemRadio_DisplayName">
+            <English>A3USPCM AAIO Radio</English>
+            <German>A3USPCM AAIO Radio</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_ItemRadio_ShortDescription">
+            <English>Radio used to issue advanced AI orders.</English>
+            <German>Funkgerät zum Ausgeben fortgeschrittener KI-Befehle.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Title">
+            <English>A3USPCM - AI Orders</English>
+            <German>A3USPCM - KI-Befehle</German>
+        </Key>
+    </Package>
+</Project>
