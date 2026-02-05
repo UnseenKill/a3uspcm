@@ -27,8 +27,10 @@ uiSleep 1.5;
 private _before = "A3AU_RebHelipad_Square_F";
 private _index = (A3A_buildableObjects findIf { _x select 0 isEqualTo _before }) max 0;
 private _buildableObjects = [
-    [QGVAR(SignHelperArsenal), 1250],
-    [QGVAR(SignHelperGarage), 1250]
+    [QGVAR(RemoteTraderPhoneBooth), 1250],
+    [QGVAR(RemoteTraderTerminal), 1250],
+    [QGVAR(SignHelperArsenal), 750],
+    [QGVAR(SignHelperGarage), 750]
 ];
 
 A3A_buildableObjects insert[_index, _buildableObjects];
