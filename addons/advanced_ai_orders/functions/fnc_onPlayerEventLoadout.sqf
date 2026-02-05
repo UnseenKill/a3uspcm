@@ -11,6 +11,8 @@ Parameters:
     2: _oldUnitLoadout - Old unit loadout <ARRAY>
 
 Optional:
+    3: _execute - Whether to execute the loadout change immediately or delay it
+        (default: false) <BOOL>
 
 Returns:
     Nothing
@@ -21,7 +23,7 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(onPlayerEventLoadout),_this);
+//TRACE_1(QFUNC(onPlayerEventLoadout),_this);
 
 if !assert(params[
     ["_unit", nil, [objNull]],
@@ -30,7 +32,24 @@ if !assert(params[
 ]) exitWith {};
 
 if !assert(!isNull _unit) exitWith {};
-if (_unit isNotEqualTo player) exitWith {};
+if (_unit isNotEqualTo player) exitWith {}; // Don't really know, if this is necessary
+
+private _execute = param[3, false, [true]];
+
+// Suppress repeated calls to this function when user dumps his inventory
+if !(_execute) exitWith {
+    GVAR(fireLoadoutEventAfter) = diag_tickTime + (missionNamespace getVariable[QGVAR(waitAndExecuteDelay), 5]);
+
+    if (isNil QGVAR(fireLoadoutScript)) then {
+        GVAR(fireLoadoutScript) = (_this + [true]) spawn {
+            waitUntil { diag_tickTime > GVAR(fireLoadoutEventAfter) };
+            GVAR(fireLoadoutScript) = nil;
+
+            TRACE_1(QFUNC(onPlayerEventLoadout),_this);
+            call FUNC(onPlayerEventLoadout);
+        };
+    };
+};
 
 private _hadRadio = _unit getVariable[QGVAR(lastRadioEquipped), false];
 private _hasRadio = QGVAR(ItemRadio) in assignedItems _unit;
