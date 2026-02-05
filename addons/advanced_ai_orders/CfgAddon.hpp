@@ -34,28 +34,6 @@ class PREFIX {
                     expression = QUOTE(call FUNC(securityPull360));
                     isActive = QUOTE(NotEmpty);
                 };
-
-                class Sep0: SeparatorBase {};
-
-                class Settings: SubmenuBase {
-                    displayName = CSTRING(Menu_Security_Item_Settings_DisplayName);
-
-                    class SecurityDistance: SubmenuBase {
-                        displayName = CSTRING(Menu_Security_Item_Settings_Distance_DisplayName);
-                        #define ITEM_DISTANCE(distance) \
-                            class SecurityDistance##distance##m: ItemBase { \
-                                itemName = QUOTE(distance meters); \
-                                expression = QUOTE([distance] call FUNC(securitySetDistance)); \
-                            }
-
-                        ITEM_DISTANCE(5);
-                        ITEM_DISTANCE(10);
-                        ITEM_DISTANCE(20);
-                        ITEM_DISTANCE(30);
-                        ITEM_DISTANCE(40);
-                        ITEM_DISTANCE(50);
-                    };
-                };
             };
 
             class Unstick: ItemBase {
@@ -64,6 +42,28 @@ class PREFIX {
                 expression = QUOTE(call FUNCMAIN(miscUnstick));
                 isActive = QUOTE(NotEmpty);
                 iconPath = "\a3\ui_f\data\map\markers\military\warning_ca.paa";
+            };
+
+            class Sep0: SeparatorBase {};
+
+            class Settings: SubmenuBase {
+                displayName = CSTRING(Menu_Security_Item_Settings_DisplayName);
+
+                class SecurityDistance: SubmenuBase {
+                    displayName = CSTRING(Menu_Security_Item_Settings_Distance_DisplayName);
+                    #define ITEM_DISTANCE(distance) \
+                        class SecurityDistance##distance##m: ItemBase { \
+                            itemName = QUOTE(distance meters); \
+                            expression = QUOTE([distance] call FUNC(securitySetDistance)); \
+                        }
+
+                    ITEM_DISTANCE(5);
+                    ITEM_DISTANCE(10);
+                    ITEM_DISTANCE(20);
+                    ITEM_DISTANCE(30);
+                    ITEM_DISTANCE(40);
+                    ITEM_DISTANCE(50);
+                };
             };
         };
     };

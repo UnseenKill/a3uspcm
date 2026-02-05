@@ -37,7 +37,8 @@ _config = _config >> QPREFIX >> QADDON >> "Menu";
 private _buildMenu = {
     if !assert(params[
         ["_config", nil, [configNull]],
-        ["_prefix", nil, [""]]
+        ["_prefix", nil, [""]],
+        ["_path", nil, []]
     ]) exitWith {};
     if !assert(!isNull _config) exitWith {[]};
 
@@ -45,7 +46,7 @@ private _buildMenu = {
         private _item = _x;
 
         if !isNumber(_item >> "subMenu") then {continueWith[
-            getText(_item >> "itemName"),
+            getText(_item >> "itemName") + "                                             ",
             getArray(_item >> "assignedKey"),
             "",
             getNumber(_item >> "command"),
@@ -56,9 +57,10 @@ private _buildMenu = {
         ]};
 
         private _key = format["%1_%2", _prefix, configName _item];
-        missionNamespace setVariable[_key, [[getText(_item >> "displayName"), true]] + ([_item, _key] call _buildMenu)];
+        private _thisPath = _path + [getText(_item >> "displayName")];
+        missionNamespace setVariable[_key, [[_thisPath joinString " >> ", true]] + ([_item, _key, _thisPath] call _buildMenu)];
         [
-            getText(_item >> "displayName"),
+            (_thisPath select -1) + "                                             ",
             getArray(_item >> "assignedKey"),
             format["#USER:%1", _key],
             getNumber(_item >> "command"), [],
@@ -71,7 +73,7 @@ private _buildMenu = {
 
 GVAR(topLevelMenu) = [[LLSTRING(Menu_Title), true]];
 
-private _menu = [_config, QGVAR(topLevelMenu)] call _buildMenu;
+private _menu = [_config, QGVAR(topLevelMenu), [LLSTRING(Menu_Title)]] call _buildMenu;
 GVAR(topLevelMenu) append _menu;
 
 nil;
