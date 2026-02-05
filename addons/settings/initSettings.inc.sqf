@@ -136,6 +136,16 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(fixes,noBuyVehicleCooldown), "CHECKBOX",
+    [ELSTRING(fixes,Settings_noBuyVehicleCooldown_DisplayName), ELSTRING(fixes,Settings_noBuyVehicleCooldown_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Music
 
 [
