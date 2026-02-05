@@ -18,6 +18,7 @@ class CfgVehicles {
     class LandVehicle;
     class Ship;
     class ThingX;
+    class Weapon_Bag_Base;
 
     SELL_ACTION_FOR_CLASS(Car,LandVehicle);
     SELL_ACTION_FOR_CLASS(Helicopter,Air);
@@ -39,5 +40,25 @@ class CfgVehicles {
         class EventHandlers {
             class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
         };
+    };
+
+    class B_UAV_01_backpack_F: Weapon_Bag_Base {
+        GVAR(fallbackSellPrice) = 3500;
+    };
+
+    class B_G_UAV_02_IED_backpack_lxWS: Weapon_Bag_Base {
+        GVAR(fallbackSellPrice) = 3500;
+    };
+
+    class I_UAV_02_backpack_lxWS: Weapon_Bag_Base {
+        GVAR(fallbackSellPrice) = 3500;
+    };
+
+    class UAV_06_backpack_base_F: Weapon_Bag_Base {
+        GVAR(fallbackSellPrice) = 3500;
+    };
+
+    class UGV_02_backpack_base_F: Weapon_Bag_Base {
+        GVAR(fallbackSellPrice) = 3500;
     };
 };
