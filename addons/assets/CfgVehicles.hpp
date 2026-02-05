@@ -16,6 +16,15 @@ class CfgVehicles {
         class TransportItems {};
         class TransportMagazines {};
         class TransportWeapons {};
+
+        class A3A_logistics_Cargo {
+            offset[] = {0,0,0.81};
+            rotation[] = {0,1,0};
+            size = 2;
+            recoil = 0;
+            isWeapon = 0;
+            blackList[] = {};
+        };
     };
 
     class GVAR(RemoteTraderPhoneBooth): Land_PhoneBooth_02_F {
