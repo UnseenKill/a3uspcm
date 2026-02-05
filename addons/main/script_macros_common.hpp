@@ -18,6 +18,10 @@
     RECOMPILE;\
 }
 
+#ifndef LQLSTRING
+    #define LQLSTRING(var1) localize QQUOTE(TRIPLES(STR,ADDON,var1))
+#endif
+
 #ifndef QADDON
     #define QADDON QUOTE(ADDON)
 #endif

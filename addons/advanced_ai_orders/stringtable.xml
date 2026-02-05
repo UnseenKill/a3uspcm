@@ -5,6 +5,10 @@
             <English>A3USPCM - Advanced AI Orders Component</English>
             <German>A3USPCM - Advanced AI Orders Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SecurityDistanceSet">
+            <English>Security distance set to %1 meters.</English>
+            <German>Sicherungsentfernung auf %1 Meter gesetzt.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_ItemRadio_DisplayName">
             <English>A3USPCM AAIO Radio</English>
             <German>A3USPCM AAIO Radio</German>

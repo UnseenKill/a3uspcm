@@ -31,7 +31,7 @@ class PREFIX {
                 class Pull360: ItemBase {
                     itemName = CSTRING(Menu_Security_Item_Pull360_DisplayName);
                     assignedKey[] = {2};
-                    expression = QUOTE(call FUNC(securityPull360));
+                    expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_PULL360)] call CBA_fnc_localEvent);
                     isActive = QUOTE(NotEmpty);
                 };
             };
@@ -51,18 +51,19 @@ class PREFIX {
 
                 class SecurityDistance: SubmenuBase {
                     displayName = CSTRING(Menu_Security_Item_Settings_Distance_DisplayName);
+
                     #define ITEM_DISTANCE(distance) \
                         class SecurityDistance##distance##m: ItemBase { \
                             itemName = QUOTE(distance meters); \
-                            expression = QUOTE([distance] call FUNC(securitySetDistance)); \
+                            expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_SETTINGS_SET_SECURITY_DISTANCE),distance)] call CBA_fnc_localEvent); \
                         }
-
                     ITEM_DISTANCE(5);
                     ITEM_DISTANCE(10);
                     ITEM_DISTANCE(20);
                     ITEM_DISTANCE(30);
                     ITEM_DISTANCE(40);
                     ITEM_DISTANCE(50);
+                    #undef ITEM_DISTANCE
                 };
             };
         };
