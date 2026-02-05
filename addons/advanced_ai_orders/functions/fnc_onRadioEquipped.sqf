@@ -37,6 +37,6 @@ private _menuItemId = if (_notify) then {
 };
 
 _unit setVariable[QGVAR(commsMenuItemId), _menuItemId];
-[] call FUNC(updateCommsMenu);
+[_unit] call FUNC(updateCommsMenu);
 
 nil;
