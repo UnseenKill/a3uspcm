@@ -386,6 +386,12 @@ class GVAR(Config) {
                 action = QFUNCMAIN(recruitForPlayer);
                 params = QUOTE(unitExp);
             };
+
+            class SquadLeader {
+                caption = "$STR_antistasi_dialogs_hq_garrisons_squad_leader";
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitSL);
+            };
         };
 
         class Resources {
