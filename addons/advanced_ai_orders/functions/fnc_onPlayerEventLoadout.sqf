@@ -46,28 +46,8 @@ INFO_3("Player loadout for %1 changed. Has AAIO radio: %2 (previously had: %3)",
 if (_hadRadio isEqualTo _hasRadio) exitWith {};
 _unit setVariable[QGVAR(lastRadioEquipped), _hasRadio];
 
-if !(_hasRadio) exitWith {
-    INFO_1("Player %1 unequipped AAIO radio.",str name _unit);
+private _event = [CBA_EVENT_AAIO_RADIO_UNEQUIPPED, CBA_EVENT_AAIO_RADIO_EQUIPPED] select _hasRadio;
 
-    if !(isNil { _unit getVariable QGVAR(commsMenuItemId) }) then {
-        private _menuItemId = _unit getVariable QGVAR(commsMenuItemId);
-        _unit setVariable[QGVAR(commsMenuItemId), nil];
-        
-        INFO_2("Removing AAIO comms menu for player %1 (item ID: %2).",str name _unit,_menuItemId);
-        [_unit, _menuItemId] call BIS_fnc_removeCommMenuItem;
-    };
-};
-
-private _notify = diag_tickTime > (_unit getVariable[QGVAR(nextEquipNotification), 0]);
-_unit setVariable[QGVAR(nextEquipNotification), diag_tickTime + 15];
-
-INFO_1("Player %1 equipped AAIO radio.",str name _unit);
-private _menuItemId = if (_notify) then {
-    [_unit, QGVAR(CommunicationMenu)] call BIS_fnc_addCommMenuItem;
-} else {
-    [_unit, QGVAR(CommunicationMenu), nil, nil, ""] call BIS_fnc_addCommMenuItem;
-};
-
-_unit setVariable[QGVAR(commsMenuItemId), _menuItemId];
+[_event, [_unit]] call CBA_fnc_localEvent;
 
 nil;
