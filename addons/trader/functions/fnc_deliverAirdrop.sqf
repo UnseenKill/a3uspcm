@@ -56,7 +56,7 @@ _heli setPosATL [getPosATL _heli select 0, getPosATL _heli select 1, 600];
 _heli disableAI "TARGET";
 _heli disableAI "AUTOTARGET";
 _heli flyInHeight 120;
-_heli allowDamage false;
+_heli allowDamage false; // TODO: change to damage EH
 _heli enableRopeAttach true;
 
 #ifndef __A3USPCM_PRODUCTION__
