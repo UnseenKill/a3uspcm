@@ -14,6 +14,7 @@ class CfgFunctions {
             PATHTO_FNC(utilIsArmedVehicle);
             PATHTO_FNC(utilIsDaytime);
             PATHTO_FNC(utilLightFlicker);
+            PATHTO_FNC(utilNormalizeDirection);
             PATHTO_FNC(utilOnA3UClientInitDone);
             PATHTO_FNC(utilOnA3UServerInitDone);
             PATHTO_FNC(utilPromptText);

@@ -8,6 +8,7 @@ class CfgHALsAddons {
                 A3U_STORE_DEFITEM(EGVAR(assets,40mm_EMP),75,A3U_STORE_MISC_STOCK);
                 A3U_STORE_DEFITEM(EGVAR(assets,Grenade_EMP),275,A3U_STORE_MISC_STOCK);
                 A3U_STORE_DEFITEM(EGVAR(markers,PermanentMarker),25,A3U_STORE_MISC_STOCK);
+                A3U_STORE_DEFITEM(EGVAR(advanced_ai_orders,ItemRadio),650,A3U_STORE_MISC_STOCK);
             };
 
             class launchersRhs {
