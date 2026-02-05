@@ -33,11 +33,9 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _unit) exitWith {};
 
-private["_watch","_sphere"];
+private["_watch","_timeout"];
 
 _watch = _position getPos[100, _direction];
-_sphere = "Sign_Sphere100cm_F" createVehicleLocal[0,0,0];
-_sphere setPosATL _watch;
 
 if !(isNull _commander) then {
     _commander groupChat format["%1, pull security %2°", name _unit, (5 * floor(_direction / 5)) toFixed 0];
@@ -49,25 +47,21 @@ if !(isNull objectParent _unit) then {
 };
 
 INFO_1("Waiting for disembarkment: %1",_unit);
-waitUntil { (stopped _unit) || { isNull objectParent _unit } };
-
-if (stopped _unit) exitWith { INFO_1("Unit stopped: %1",_unit) };
+waitUntil { isNull objectParent _unit };
 
 INFO_1("Unit disembarked: %1",_unit);
 
 _unit commandMove _position;
 
+_timeout = diag_tickTime + 60;
 INFO_1("Waiting for move completion: %1",_unit);
-waitUntil { (stopped _unit) || { moveToCompleted _unit } };
+waitUntil { (diag_tickTime > _timeout) || { moveToCompleted _unit } };
 
-if (stopped _unit) exitWith { INFO_1("Unit stopped: %1",_unit) };
+if (diag_tickTime > _timeout) exitWith { INFO_1("Unit timed out: %1",_unit) };
 
 INFO_2("Unit move complete: %1, watch %2",_unit,_watch);
 _unit commandWatch _watch;
 _unit setFormDir _direction;
 _unit setDir _direction;
-
-uiSleep 6;
-deleteVehicle _sphere;
 
 nil;
