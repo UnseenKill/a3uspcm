@@ -131,7 +131,7 @@ _control ctrlAddEventHandler["CheckedChanged", {
     waitUntil { isNull _display || { GVAR(sellContainerReady) } };
     TRACE_1("sellContainerReady",GVAR(sellContainerReady));
 
-    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText localize LSTRING(AdvSell_DblClickHint);
+    _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetText LLSTRING(AdvSell_DblClickHint);
     _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_STATICWAITFORBREAKDOWN ctrlSetTextColor [1,1,1,1];
 
     [true] call FUNC(updateSellableItemsList);

@@ -29,7 +29,7 @@ params[
 if !assert(!isNull _vehicle) exitWith {};
 
 _vehicle addAction[
-    localize LSTRING(HintLoadoutManageCaption),
+    LLSTRING(HintLoadoutManageCaption),
     { call FUNC(openLoadoutManagementDialog) },
     [],
     -200,

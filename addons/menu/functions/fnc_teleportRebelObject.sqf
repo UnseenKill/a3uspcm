@@ -49,7 +49,7 @@ if (_object getVariable[QGVAR(teleportOrigin), false] isEqualTo false) then {
 
     [_object] spawn FUNC(teleportObjectBackTimer);
     _object setVariable[QGVAR(teleportActionId), _object addAction[
-        format["<t color='#ff0000'>%1</t>", localize LSTRING(Teleport_TeleportObjectBack)],
+        format["<t color='#ff0000'>%1</t>", LLSTRING(Teleport_TeleportObjectBack)],
         {
             params[
                 ["_object", objNull, [objNull]],
@@ -80,8 +80,8 @@ TRACE_2("teleported to",_objectVariableName,_position);
 TRACE_2("return timeout set",_objectVariableName,TELEPORT_BACK_TIMEOUT);
 
 [
-    localize LSTRING(DiaryTeleportCaption),
-    format[localize LSTRING(Teleport_TeleportSuccess), getText(configOf _object >> "displayName"), TELEPORT_BACK_TIMEOUT]
+    LLSTRING(DiaryTeleportCaption),
+    format[LLSTRING(Teleport_TeleportSuccess), getText(configOf _object >> "displayName"), TELEPORT_BACK_TIMEOUT]
 ] call A3A_fnc_customHint;
 
 nil;

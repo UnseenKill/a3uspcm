@@ -33,8 +33,8 @@ private _thisLoadout = [_vehicle] call FUNC(serializeLoadout);
 
 if !(_thisLoadout isEqualType []) exitWith {
     [
-        localize LSTRING(HintLoadoutSaveCaption),
-        localize LSTRING(HintLoadoutNotSavedText)
+        LLSTRING(HintLoadoutSaveCaption),
+        LLSTRING(HintLoadoutNotSavedText)
     ] call A3A_fnc_customHint;
 };
 
@@ -47,8 +47,8 @@ while {count _loadouts > MAX_LOADOUTS} do {
 GVAR(Loadouts) = _loadouts;
 
 [
-    localize LSTRING(HintLoadoutSaveCaption),
-    localize LSTRING(HintLoadoutSavedText)
+    LLSTRING(HintLoadoutSaveCaption),
+    LLSTRING(HintLoadoutSavedText)
 ] call A3A_fnc_customHint;
 
 nil;

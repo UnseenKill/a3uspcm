@@ -1,7 +1,7 @@
 // Common
 
 [
-    QEGVAR(menu,emergencyInvincibilityDuration), "SLIDER",
+    QEGVAR(menu,emergencyInvincibilityDuration), "TIME",
     [ELSTRING(menu,Settings_emergencyInvincibilityDuration_DisplayName), ELSTRING(menu,Settings_emergencyInvincibilityDuration_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
     [0, 600, 20, 0], // min,max,default,decimals
@@ -11,7 +11,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(menu,emergencyInvincibilityCooldown), "SLIDER",
+    QEGVAR(menu,emergencyInvincibilityCooldown), "TIME",
     [ELSTRING(menu,Settings_emergencyInvincibilityCooldown_DisplayName), ELSTRING(menu,Settings_emergencyInvincibilityCooldown_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
     [0, 600, 60, 0], // min,max,default,decimals
@@ -136,6 +136,16 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(fixes,noBuyVehicleCooldown), "CHECKBOX",
+    [ELSTRING(fixes,Settings_noBuyVehicleCooldown_DisplayName), ELSTRING(fixes,Settings_noBuyVehicleCooldown_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Music
 
 [
@@ -159,7 +169,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(music,pause), "SLIDER",
+    QEGVAR(music,pause), "TIME",
     [ELSTRING(music,Settings_pause_DisplayName), ELSTRING(music,Settings_pause_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
     [0, 600, 90, -1], // default
@@ -210,7 +220,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(aafc,roeCorrectionInterval), "SLIDER",
+    QEGVAR(aafc,roeCorrectionInterval), "TIME",
     [ELSTRING(aafc,Settings_roeCorrectionInterval_DisplayName), ELSTRING(aafc,Settings_roeCorrectionInterval_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
     [0, 300, 25, -1], // min,max,default,decimals
@@ -240,7 +250,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(aafc,contactTrackDeadInterval), "SLIDER",
+    QEGVAR(aafc,contactTrackDeadInterval), "TIME",
     [ELSTRING(aafc,Settings_contactTrackDeadInterval_DisplayName), ELSTRING(aafc,Settings_contactTrackDeadInterval_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
     [0, 600, 180, 0], // min,max,default,decimals
@@ -434,7 +444,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(loadout,containerDumpContentsDelay), "SLIDER",
+    QEGVAR(loadout,containerDumpContentsDelay), "TIME",
     [ELSTRING(loadout,Settings_containerDumpContentsDelay_DisplayName), ELSTRING(loadout,Settings_containerDumpContentsDelay_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
     [0, 180, 15, 0], // min,max,default,decimals
@@ -446,7 +456,7 @@
 // EMP
 
 [
-    QEGVAR(assets,empEffectDuration), "SLIDER",
+    QEGVAR(assets,empEffectDuration), "TIME",
     [ELSTRING(assets,Settings_empEffectDuration_DisplayName), ELSTRING(assets,Settings_empEffectDuration_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(assets,Settings_Category_DisplayName)],
     [0, 3600, 300, 0], // min,max,default,decimals
@@ -512,16 +522,6 @@
 // Intel
 
 [
-    QEGVAR(menu,findIntelAllSL), "CHECKBOX",
-    [ELSTRING(menu,Settings_findIntelAllSL_DisplayName), ELSTRING(menu,Settings_findIntelAllSL_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryIntel_DisplayName)],
-    true, // default
-    true, // global
-    {}, // onchange
-    false // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
     QEGVAR(menu,findIntelPreciseMarker), "CHECKBOX",
     [ELSTRING(menu,Settings_findIntelPreciseMarker_DisplayName), ELSTRING(menu,Settings_findIntelPreciseMarker_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryIntel_DisplayName)],
@@ -542,7 +542,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(menu,findIntelMarkerTTL), "SLIDER",
+    QEGVAR(menu,findIntelMarkerTTL), "TIME",
     [ELSTRING(menu,Settings_findIntelMarkerTTL_DisplayName), ELSTRING(menu,Settings_findIntelMarkerTTL_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryIntel_DisplayName)],
     [30, 1800, 600, 0], // min,max,default,decimals
@@ -595,6 +595,38 @@
     [ELSTRING(markers,Settings_saveLimit_DisplayName), ELSTRING(markers,Settings_saveLimit_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(markers,Settings_CategoryMarkers_DisplayName)],
     [1, 500, 20, -1], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+// Remote trader
+
+[
+    QEGVAR(trader,remoteTraderFee), "SLIDER",
+    [ELSTRING(trader,Settings_remoteTraderFee_DisplayName), ELSTRING(trader,Settings_remoteTraderFee_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(trader,Settings_CategoryTrader_DisplayName)],
+    [0, 50000, 6500, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(trader,showAccessFeeHint), "CHECKBOX",
+    [ELSTRING(trader,Settings_showAccessFeeHint_DisplayName), ELSTRING(trader,Settings_showAccessFeeHint_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(trader,Settings_CategoryTrader_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(trader,airDropCooldown), "TIME",
+    [ELSTRING(trader,Settings_airDropCooldown_DisplayName), ELSTRING(trader,Settings_airDropCooldown_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(trader,Settings_CategoryTrader_DisplayName)],
+    [0, 7200, 600], // default
     true, // global
     {}, // onchange
     false // Needs mission restart

@@ -46,7 +46,7 @@ private _ehID = _mortar addEventHandler["GetIn", {
 
     if (_unit in playableUnits) exitWith {};
     if (_unit getVariable[QGVAR(getOutAndCargoLoad), false] isNotEqualTo false) exitWith {
-        _unit setUserActionText[_unit getVariable[QGVAR(getOutAndCargoLoad), -1], localize LSTRING(Text_Action_GetOutAndCargoLoad)];
+        _unit setUserActionText[_unit getVariable[QGVAR(getOutAndCargoLoad), -1], LLSTRING(Text_Action_GetOutAndCargoLoad)];
     };
 
     if !isNull(_mortar getVariable[QGVAR(owner), objNull]) then {
@@ -58,7 +58,7 @@ private _ehID = _mortar addEventHandler["GetIn", {
     _mortar setVariable[QGVAR(owner), _unit, true];
 
     private _actionId = _unit addAction[
-        localize LSTRING(Text_Action_GetOutAndCargoLoad),
+        LLSTRING(Text_Action_GetOutAndCargoLoad),
         {
             call FUNC(mortarGetOutAndCargoLoad);
         },
@@ -80,7 +80,7 @@ private _ehID = _mortar addEventHandler["GetIn", {
             _unit setVariable[QGVAR(getOutAndCargoLoad), nil, true];
         };
 
-        _unit setUserActionText[_unit getVariable[QGVAR(getOutAndCargoLoad), -1], localize LSTRING(Text_Action_CargoLoadMortar)];
+        _unit setUserActionText[_unit getVariable[QGVAR(getOutAndCargoLoad), -1], LLSTRING(Text_Action_CargoLoadMortar)];
     }];
 
     _unit setVariable[QGVAR(getOutAndCargoLoad), _actionId, true];

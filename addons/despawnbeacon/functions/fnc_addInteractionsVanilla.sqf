@@ -27,7 +27,7 @@ params[
 if !assert(!isNull _beacon) exitWith {};
 
 _beacon addAction[
-    localize LSTRING(ActionActivateText),
+    LLSTRING(ActionActivateText),
     { call FUNC(activateBeacon) },
     [],
     -20,    // priority
@@ -39,7 +39,7 @@ _beacon addAction[
 ];
 
 _beacon addAction[
-    localize LSTRING(ActionDeactivateText),
+    LLSTRING(ActionDeactivateText),
     { call FUNC(deactivateBeacon) },
     [],
     -20,    // priority
@@ -51,7 +51,7 @@ _beacon addAction[
 ];
 
 _beacon addAction[
-    localize LSTRING(ActionBeaconPackText),
+    LLSTRING(ActionBeaconPackText),
     { call FUNC(packBeacon) },
     [],
     -20,    // priority

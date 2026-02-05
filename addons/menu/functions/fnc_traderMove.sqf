@@ -23,8 +23,8 @@ if (disableTrader) exitWith {
     INFO("Trader is disabled.");
 
     [
-        localize LSTRING(Trader_MoveCaption),
-        localize LSTRING(Trader_HintFeatureDisabled)
+        LLSTRING(Trader_MoveCaption),
+        LLSTRING(Trader_HintFeatureDisabled)
     ] call A3A_fnc_customHint;
 };
 
@@ -33,8 +33,8 @@ INFO_1("'%1' wants trader to move",name player);
 if (!isNil QGVAR(Trader_MoveInProgress)) exitWith {};
 
 [
-    localize LSTRING(Trader_MoveCaption),
-    localize LSTRING(Trader_HintChooseNewLocation)
+    LLSTRING(Trader_MoveCaption),
+    LLSTRING(Trader_HintChooseNewLocation)
 ] call A3A_fnc_customHint;
 
 GVAR(Trader_PositionCandidates) = controlsX select {(!isOnRoad getMarkerPos _x) /*&& (sidesX getVariable [_x,sideUnknown] != teamPlayer)*/};
@@ -72,8 +72,8 @@ GVAR(Trader_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
         INFO("Trader move aborted.");
 
         [
-            localize LSTRING(Trader_MoveCaption),
-            localize LSTRING(Trader_HintMoveAborted)
+            LLSTRING(Trader_MoveCaption),
+            LLSTRING(Trader_HintMoveAborted)
         ] call A3A_fnc_customHint;
     };
 

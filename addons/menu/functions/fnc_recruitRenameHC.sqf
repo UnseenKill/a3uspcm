@@ -23,7 +23,7 @@ TRACE_1(QFUNCMAIN(recruitRenameHC),_this);
     private _timeout = 5;
 
     while { _timeout > 0 } do {
-        systemChat format[localize LSTRING(Recruitment_RenameCountdownText), _timeout];
+        systemChat format[LLSTRING(Recruitment_RenameCountdownText), _timeout];
         DEC(_timeout);
         uiSleep 1;
     };
@@ -32,8 +32,8 @@ TRACE_1(QFUNCMAIN(recruitRenameHC),_this);
 
     if (count _units isNotEqualTo 1) exitWith {
         [
-            localize LSTRING(Recruitment_RenameHCCaption),
-            localize LSTRING(Recruitment_RenameHCError)
+            LLSTRING(Recruitment_RenameHCCaption),
+            LLSTRING(Recruitment_RenameHCError)
         ] call A3A_fnc_customHint;
 
         playSound "A3AP_UiFailure";
@@ -42,7 +42,7 @@ TRACE_1(QFUNCMAIN(recruitRenameHC),_this);
     _units params["_group"];
     private _name = groupId _group;
 
-    [(localize LSTRING(Recruitment_RenameHCCaption)) + ":", _name, {
+    [(LLSTRING(Recruitment_RenameHCCaption)) + ":", _name, {
         params[["_name","",[""]],["_group",grpNull,[grpNull]]];
 
         if !(assert !isNull _group) exitWith {};

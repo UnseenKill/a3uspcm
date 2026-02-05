@@ -34,14 +34,14 @@ waitUntil { !(isSwitchingWeapon _unit) };
 private _weapon = currentWeapon _unit;
 
 if (_weapon isEqualTo "") exitWith {
-    _unit groupChat localize LSTRING(Message_NoWeaponInHand);
+    _unit groupChat LLSTRING(Message_NoWeaponInHand);
 };
 
 private _config = configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems";
 private _displayName = getText(configFile >> "CfgWeapons" >> _weapon >> "displayName");
 
 if !isClass(_config) exitWith {
-    _unit groupChat localize LSTRING(Message_NoMuzzleConfigurable);
+    _unit groupChat LLSTRING(Message_NoMuzzleConfigurable);
 };
 
 private _weaponInfo = getUnitLoadout _unit select [0, 3];
@@ -74,7 +74,7 @@ TRACE_2(QFUNC(toggleSuppressors),_suppressorOn,_mimicSuppressorState);
 if _mimicSuppressorState then {
     if !(_suppressorOn) then {
         if (_muzzleDevice isEqualTo "") then {
-            _unit groupChat localize LSTRING(Message_NoMuzzleAttached);
+            _unit groupChat LLSTRING(Message_NoMuzzleAttached);
         } else {
             switch _weaponType do {
                 case 0: { _unit removePrimaryWeaponItem _muzzleDevice };
@@ -92,13 +92,13 @@ if _mimicSuppressorState then {
         };
     } else {
         if (_muzzleDevice isNotEqualTo "") then {
-            _unit groupChat localize LSTRING(Message_MuzzleAlreadyAttached);
+            _unit groupChat LLSTRING(Message_MuzzleAlreadyAttached);
         } else {
             private _compatible = configProperties[_config, "getNumber(_x) > 0", true] apply { configName _x };
             private _intersect = items _unit arrayIntersect _compatible;
 
             if (_intersect isEqualTo []) then {
-                _unit groupChat format[localize LSTRING(Message_NoCompatibleSuppressors), _displayName];
+                _unit groupChat format[LLSTRING(Message_NoCompatibleSuppressors), _displayName];
             } else {
                 _muzzleDevice = _intersect select 0;
 

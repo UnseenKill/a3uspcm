@@ -1,9 +1,44 @@
 class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles {
+    class B_CargoNet_01_ammo_F;
+    class Land_PCSet_Intel_01_F;
+    class Land_PhoneBooth_02_F;
     class ReammoBox_F;
     class SignAd_Sponsor_F;
     class ThingX;
+
+    class GVAR(RemoteTraderAirdropContainer): B_CargoNet_01_ammo_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = CSTRING(RemoteTraderAirdropContainer_DisplayName);
+
+        class TransportItems {};
+        class TransportMagazines {};
+        class TransportWeapons {};
+
+        class A3A_logistics_Cargo {
+            offset[] = {0,0,0.81};
+            rotation[] = {0,1,0};
+            size = 2;
+            recoil = 0;
+            isWeapon = 0;
+            blackList[] = {};
+        };
+    };
+
+    class GVAR(RemoteTraderPhoneBooth): Land_PhoneBooth_02_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = CSTRING(RemoteTraderPhoneBooth_DisplayName);
+    };
+
+    class GVAR(RemoteTraderTerminal): Land_PCSet_Intel_01_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = CSTRING(RemoteTraderTerminal_DisplayName);
+        hiddenSelectionsTextures[] = {QPATHTO_T(ui\RemoteTraderDesktop_co.paa)};
+    };
 
     class GVAR(SignHelperBase) : SignAd_Sponsor_F {
         scope = 0;
@@ -121,7 +156,9 @@ class CfgVehicles {
         slingLoadCargoMemoryPoints[] = {"SlingLoadCargo1","SlingLoadCargo2","SlingLoadCargo3","SlingLoadCargo4"};
 
         class A3A_logistics_Cargo: A3A_logistics_Cargo {
-            size = 2; //the amount of nodes it occupies
+            offset[] = {0,0,0.81};
+            rotation[] = {1,0,0};
+            size = 2;
         };
     };
 
@@ -136,6 +173,10 @@ class CfgVehicles {
         mapSize = 1.81;
         maximumLoad = 4800;
         model = "\A3\weapons_F\AmmoBoxes\WpnsBox_F.p3d";
+
+        class A3A_logistics_Cargo: A3A_logistics_Cargo {
+            offset[] = {0,0,0.17};
+        };
     };
 
     class GVAR(SupplyBoxSmall) : GVAR(SupplyBoxBase) {
@@ -146,6 +187,11 @@ class CfgVehicles {
         icon = "iconCrateAmmo";
         maximumLoad = 2400;
         model = "\A3\weapons_F\AmmoBoxes\AmmoBox_F.p3d";
+
+        class A3A_logistics_Cargo: A3A_logistics_Cargo {
+            offset[] = {0,0,0.27};
+            rotation[] = {1,0,0};
+        };
     };
 
     class GVAR(DespawnSuppressionBeacon) : ThingX {

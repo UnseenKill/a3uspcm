@@ -46,8 +46,8 @@ jna_datalist = jna_datalist apply {
 };
 
 [
-    localize LSTRING(Unlocks_SortArsenalCaption),
-    localize LSTRING(Unlocks_SortArsenalTextSuccess)
+    LLSTRING(Unlocks_SortArsenalCaption),
+    LLSTRING(Unlocks_SortArsenalTextSuccess)
 ] call A3A_fnc_customHint;
 
 playSound "A3AP_UiSuccess";

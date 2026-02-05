@@ -5,6 +5,14 @@
             <English>A3USPCM - A3U Fixes Component</English>
             <German>A3USPCM - A3U Fixes Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Fixes_Settings_noBuyVehicleCooldown_DisplayName">
+            <English>No cooldown for buy vehicle dialog</English>
+            <German>Kein Cooldown für Fahrzeugkauf-Dialog</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Fixes_Settings_noBuyVehicleCooldown_Tooltip">
+            <English>Remove cooldown for buy vehicle dialog, allowing repeated purchases without waiting.</English>
+            <German>Entfernt Cooldown für Fahrzeugkauf-Dialog, sodass wiederholt ohne Wartezeit eingekauft werden kann.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Fixes_Settings_storeQuickSell_DisplayName">
             <English>Weapons dealer quick sell</English>
             <German>Waffenhändlerschnellverkauf</German>

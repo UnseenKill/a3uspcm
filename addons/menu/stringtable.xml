@@ -741,14 +741,6 @@
             <English>When transferring money back from FIA to player account, add this percentage fee.</English>
             <German>Bei der Rücküberweisung von Geld von FIA auf das Spielerkonto wird diese prozentuale Gebühr erhoben.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Menu_Settings_findIntelAllSL_DisplayName">
-            <English>Find all squad leaders</English>
-            <German>Finde alle Anführer</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_Settings_findIntelAllSL_Tooltip">
-            <English>When finding squad leaders, mark them irregardless of them actually having any intel to share</English>
-            <German>Wenn Anführer gefunden werden, markiere sie, unabhängig davon, ob sie tatsächlich Informationen zum Teilen haben.</German>
-        </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_findIntelLargeFlags_DisplayName">
             <English>Use large flags</English>
             <German>Verwende große Flaggen</German>

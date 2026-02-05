@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="Assets">
+        <Key ID="STR_A3USPCM_Assets_ACE_MainActions_Interactions_DisplayName">
+            <English>Interactions</English>
+            <German>Interaktionen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Assets_Component">
             <English>A3USPCM - Assets Component</English>
             <German>A3USPCM - Assets Komponente</German>
@@ -20,6 +24,18 @@
         <Key ID="STR_A3USPCM_Assets_Mag_Grenade_EMP_DisplayName">
             <English>EMP grenade</English>
             <German>EMP Granate</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_RemoteTraderAirdropContainer_DisplayName">
+            <English>Blackmarket Cargo Box</English>
+            <German>Schwarzmarkt Frachtkiste</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_RemoteTraderPhoneBooth_DisplayName">
+            <English>Remote Trader Phone Booth</English>
+            <German>Händler-Telefonzelle</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_RemoteTraderTerminal_DisplayName">
+            <English>Remote Trader Terminal</English>
+            <German>Händler-Terminal</German>
         </Key>
         <Key ID="STR_A3USPCM_Assets_Settings_Category_DisplayName">
             <English>Electromagnetic pulse ammo</English>

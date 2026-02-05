@@ -21,8 +21,8 @@ TRACE_1(QFUNC(miscSpawnLootBox),_this);
 
 if ((player getVariable["moneyX", 0] < GVAR(lootboxCost))) exitWith {
     [
-        localize LSTRING(Miscellaneous_MakeLootBoxCaption),
-        format[localize LSTRING(Miscellaneous_MakeLootBoxHintNoMoneyText), GVAR(lootboxCost)]
+        LLSTRING(Miscellaneous_MakeLootBoxCaption),
+        format[LLSTRING(Miscellaneous_MakeLootBoxHintNoMoneyText), GVAR(lootboxCost)]
     ] call A3A_fnc_customHint;
     playSound "A3AP_UiFailure";
 };

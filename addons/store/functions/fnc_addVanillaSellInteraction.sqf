@@ -32,7 +32,7 @@ if !assert(params[
 if !assert(!isNull _object) exitWith {};
 
 _object addAction[
-    localize LSTRING(AdvSell_InteractionSell_DisplayName),
+    LLSTRING(AdvSell_InteractionSell_DisplayName),
     QUOTE(call FUNC(startAdvancedSelling)), nil, 20, false, true, "",
     QUOTE([ARR_2(_originalTarget,_this)] call FUNC(canStartAdvancedSelling)), 8
 ];

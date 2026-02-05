@@ -63,7 +63,7 @@ if (_index >= 0) then {
 
             if (_index < 0) then {
                 WARNING_2("No unattached %1 around %2 meters of vehicle",_item,ACE_CARGO_LOAD_RADIUS);
-                throw [format[localize LSTRING(ACELoadNoEntityNear), getText(configFile >> "CfgVehicles" >> _item >> "displayName"), ACE_CARGO_LOAD_RADIUS]];
+                throw [format[LLSTRING(ACELoadNoEntityNear), getText(configFile >> "CfgVehicles" >> _item >> "displayName"), ACE_CARGO_LOAD_RADIUS]];
             };
 
             _item = _nearItems deleteAt _index;

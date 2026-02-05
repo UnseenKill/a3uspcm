@@ -31,8 +31,8 @@ if !visibleMap then {
 };
 
 [
-    localize LSTRING(HintCaption),
-    localize LSTRING(HintEraseMarkers)
+    LLSTRING(HintCaption),
+    LLSTRING(HintEraseMarkers)
 ] call A3A_fnc_customHint;
 
 GVAR(MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
@@ -42,8 +42,8 @@ GVAR(MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
 
     if !(_nearestMarker in GVAR(markerNameMapping)) exitWith {
         [
-            localize LSTRING(HintCaption),
-            localize LSTRING(HintNoMarkerFound)
+            LLSTRING(HintCaption),
+            LLSTRING(HintNoMarkerFound)
         ] call A3A_fnc_customHint;
         playSound "A3AP_UiFailure";
     };

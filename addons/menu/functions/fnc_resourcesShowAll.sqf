@@ -21,8 +21,8 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 [
-    localize LSTRING(Resources_ShowResourcesAllCaption),
-    format[localize LSTRING(Resources_ShowAllText),
+    LLSTRING(Resources_ShowResourcesAllCaption),
+    format[LLSTRING(Resources_ShowAllText),
         A3A_resourcesDefenceOcc,
         A3A_resourcesAttackOcc,
         A3A_resourcesDefenceInv,
