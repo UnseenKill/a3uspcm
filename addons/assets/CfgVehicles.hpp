@@ -121,7 +121,9 @@ class CfgVehicles {
         slingLoadCargoMemoryPoints[] = {"SlingLoadCargo1","SlingLoadCargo2","SlingLoadCargo3","SlingLoadCargo4"};
 
         class A3A_logistics_Cargo: A3A_logistics_Cargo {
-            size = 2; //the amount of nodes it occupies
+            offset[] = {0,0,0.81};
+            rotation[] = {1,0,0};
+            size = 2;
         };
     };
 
@@ -136,6 +138,10 @@ class CfgVehicles {
         mapSize = 1.81;
         maximumLoad = 4800;
         model = "\A3\weapons_F\AmmoBoxes\WpnsBox_F.p3d";
+
+        class A3A_logistics_Cargo: A3A_logistics_Cargo {
+            offset[] = {0,0,0.17};
+        };
     };
 
     class GVAR(SupplyBoxSmall) : GVAR(SupplyBoxBase) {
@@ -146,6 +152,11 @@ class CfgVehicles {
         icon = "iconCrateAmmo";
         maximumLoad = 2400;
         model = "\A3\weapons_F\AmmoBoxes\AmmoBox_F.p3d";
+
+        class A3A_logistics_Cargo: A3A_logistics_Cargo {
+            offset[] = {0,0,0.27};
+            rotation[] = {1,0,0};
+        };
     };
 
     class GVAR(DespawnSuppressionBeacon) : ThingX {
