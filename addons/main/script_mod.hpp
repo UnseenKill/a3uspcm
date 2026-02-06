@@ -2,7 +2,6 @@
 #define PREFIX A3USPCM
 
 #include "script_production.hpp"
-#include "script_macros_a3u.hpp"
 #include "script_version.hpp"
 
 #define VERSION     MAJOR.MINOR
