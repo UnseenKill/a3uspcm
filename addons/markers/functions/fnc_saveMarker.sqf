@@ -50,7 +50,7 @@ if (!_created && { !(_marker in _markerProperties) }) then {
     WARNING_1("Marker %1 not found in stored markers, but was updated. Saving it anyway.",str _marker);
 };
 
-INFO_2("Considering created marker %1 for saving (owner=%2)",str _marker,_owner);
+INFO_1("Considering created marker %1 for saving",str _marker);
 GVAR(storedMarkers) set[_marker, _markerProperties];
 
 nil;
