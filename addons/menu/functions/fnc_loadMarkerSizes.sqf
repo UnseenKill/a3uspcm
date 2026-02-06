@@ -20,7 +20,7 @@ Author:
 #pragma hemtt ignore_variables ["A3USPCM_menu_MarkerSizes"]
 TRACE_1(QFUNC(loadMarkerSizes),_this);
 
-if (GVAR(MarkerSizes) isEqualTo false) then {
+if isNil(QGVAR(MarkerSizes)) then {
     INFO("loading changed markers");
 
     [QGVAR(MarkerSizes)] call A3A_fnc_getStatVariable;
