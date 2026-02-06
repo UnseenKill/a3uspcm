@@ -21,7 +21,7 @@ GVAR(tentGuysGroup) setVariable["ace_map_hideBlueForceMarker", true];
     [] call FUNC(loadSaved);
 }] call FUNCMAIN(utilOnA3UClientInitDone);
 
-[QEGVAR(main,eventMainOnSaveGame), {
+[CBA_EVENT_SERVER_SAVEGAME_BEFORE, {
     INFO("saving supports");
     [QGVAR(supportSpecialists), +GVAR(supportSpecialists)] call A3A_fnc_setStatVariable;
 }] call CBA_fnc_addEventHandler;

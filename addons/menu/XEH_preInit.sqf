@@ -120,7 +120,7 @@ GVAR(Timers) = [false, false];
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);
 
-[QEGVAR(main,eventMainOnSaveGame), {
+[CBA_EVENT_SERVER_SAVEGAME_BEFORE, {
     INFO("saving game variables");
 
     [QGVAR(AdditionalBuildables), +GVAR(AdditionalBuildables)] call A3A_fnc_setStatVariable;

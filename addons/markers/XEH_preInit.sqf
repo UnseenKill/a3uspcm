@@ -15,7 +15,7 @@ GVAR(storedMarkers) = false;
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);
 
-[QEGVAR(main,eventMainOnSaveGame), {
+[CBA_EVENT_SERVER_SAVEGAME_BEFORE, {
     INFO("saving permanent markers");
     [QGVAR(storedMarkers), +GVAR(storedMarkers)] call A3A_fnc_setStatVariable;
 }] call CBA_fnc_addEventHandler;
