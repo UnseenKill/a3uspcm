@@ -103,6 +103,28 @@ GVAR(Timers) = [false, false];
             ];
         };
     };
+
+    if (!isNil QGVAR(AdditionalVehicles) && { GVAR(AdditionalVehicles) isEqualType [] }) then {
+        INFO("Applying additional vehicles from server");
+        GVAR(AdditionalVehicles) apply {
+            _x params[["_className","",[""]],["_price",0,[0]],["_type","",[""]]];
+
+            TRACE_3(QFUNC(loadAdditionalVehicles),_className,_price,_type);
+
+            A3A_faction_reb get _type pushBackUnique _className;
+
+            if (A3U_blackMarketStock findIf { _x select 0 isEqualTo _className } isNotEqualTo -1) then {
+                WARNING_2("%1(%2): black market config found; not adding to BM",QFUNC(loadAdditionalVehicles),_className);
+            } else {
+                A3U_blackMarketStock pushBack [
+                    _className, // classname
+                    _price, // price
+                    _typeMap get _type, // type
+                    {true} // condition
+                ];
+            };
+        };
+    };
 }] call FUNCMAIN(utilOnA3UClientInitDone);
 
 nil;

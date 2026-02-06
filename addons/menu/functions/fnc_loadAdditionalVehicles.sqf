@@ -19,7 +19,7 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(loadAdditionalVehicles),_this);
 
-if (GVAR(AdditionalVehicles) isEqualTo false) then {
+if isNil(QGVAR(AdditionalVehicles)) then {
     INFO("loading additional vehicles");
 
     [QGVAR(AdditionalVehicles)] call A3A_fnc_getStatVariable;
@@ -45,21 +45,11 @@ if (GVAR(AdditionalVehicles) isEqualTo false) then {
 
             TRACE_3(QFUNC(loadAdditionalVehicles),_className,_price,_type);
 
-            A3A_faction_reb get _type pushBackUnique _className;
             server setVariable[_className, _price, true];
-
-            if (A3U_blackMarketStock findIf { _x select 0 isEqualTo _className } isNotEqualTo -1) then {
-                WARNING_2("%1(%2): black market config found; not adding to BM",QFUNC(loadAdditionalVehicles),_className);
-            } else {
-                A3U_blackMarketStock pushBack [
-                    _className, // classname
-                    _price, // price
-                    _typeMap get _type, // type
-                    {true} // condition
-                ];
-            };
         };
     };
 };
+
+publicVariable QGVAR(AdditionalVehicles);
 
 nil;
