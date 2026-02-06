@@ -1,8 +1,5 @@
 #include "script_component.hpp"
 
-ADDON = false;
-#include "XEH_PREP.hpp"
-
 [
     ELSTRING(main,Title),
     QGVAR(InstantHeal),
@@ -66,8 +63,6 @@ ADDON = false;
     {},
     { [""] call EFUNC(aafc,toggleROEAll) }
 ] call CBA_fnc_addKeybind;
-
-ADDON = true;
 
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
