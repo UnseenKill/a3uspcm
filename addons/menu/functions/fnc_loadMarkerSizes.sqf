@@ -25,7 +25,7 @@ if (GVAR(MarkerSizes) isEqualTo false) then {
 
     [QGVAR(MarkerSizes)] call A3A_fnc_getStatVariable;
     
-    if ((isNil QGVAR(MarkerSizes)) || !(GVAR(MarkerSizes) isEqualType [])) then {
+    if ((isNil QGVAR(MarkerSizes)) || { !(GVAR(MarkerSizes) isEqualType []) }) then {
         INFO("No saved markers found, initializing empty array");
         GVAR(MarkerSizes) = createHashMap;
     } else {
