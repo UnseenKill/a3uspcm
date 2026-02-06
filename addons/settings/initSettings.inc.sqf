@@ -1,6 +1,16 @@
 // Common
 
 [
+    QEGVAR(menu,autoFixVoices), "CHECKBOX",
+    [ELSTRING(menu,Settings_autoFixVoices_DisplayName), ELSTRING(menu,Settings_autoFixVoices_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    false, // default
+    false, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(menu,emergencyInvincibilityDuration), "TIME",
     [ELSTRING(menu,Settings_emergencyInvincibilityDuration_DisplayName), ELSTRING(menu,Settings_emergencyInvincibilityDuration_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
