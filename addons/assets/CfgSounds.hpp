@@ -1,6 +1,13 @@
 class CfgSounds {
 	sounds[] = {};
 
+	// Sampled from https://pixabay.com/sound-effects/film-special-effects-04-alarms-amp-beeps-scanning-for-hostiles-b-343791/
+	class GVAR(AafcContact) {
+		name = "A/A FC contact alarm";
+		sound[] = {QPATHTOF(sound\aafc-contact-343791.ogg), 1, 1, 50};
+		titles[] = {};
+	};
+
 	// From https://pixabay.com/sound-effects/alarm-clock-90867/
 	class GVAR(AlarmClock) {
 		name = "Digital alarm clock";
