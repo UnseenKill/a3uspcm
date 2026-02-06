@@ -53,16 +53,20 @@ GVAR(MarkerSizes) = nil;
         [QGVAR(MarkerSizes), +GVAR(MarkerSizes)] call A3A_fnc_setStatVariable;
     };
 
-    [QGVAR(Timers), GVAR(Timers) apply {
-        if (_x isEqualType false) then {
-            _x;
-        } else {
-            ASSUME_VARIABLE_TYPE(_x,createHashMap);
-            private _data = +_x;
-            _data set["handle", false];
-            _data;
-        };
-    }] call A3A_fnc_setStatVariable;
+    // We accept a client/server "scope-break" here. If LAN hosted, this works
+    // just fine since `A3USPCM_menu_fnc_timerSave` is called on the "server".
+    if (!isNil QGVAR(Timers)) then {
+        [QGVAR(Timers), GVAR(Timers) apply {
+            if (_x isEqualType false) then {
+                _x;
+            } else {
+                ASSUME_VARIABLE_TYPE(_x,createHashMap);
+                private _data = +_x;
+                _data set["handle", false];
+                _data;
+            };
+        }] call A3A_fnc_setStatVariable;
+    };
 }] call CBA_fnc_addEventHandler;
 
 nil;
