@@ -17,8 +17,20 @@
             <English>40mm EMP</English>
             <German>40mm EMP</German>
         </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyBase_HintDocumentReadNewCount">
+            <English>You've read the %1 decryption key document. You can now decrypt %2 message(s).</English>
+            <German>Du hast das %1 Verschlüsselungscodes-Dokument gelesen. Du kannst jetzt %2 Nachricht(en) entschlüsseln.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyBase_HintDocumentsReadNewCount">
+            <English>You've read the %1 decryption key documents. You can now decrypt %2 message(s).</English>
+            <German>Du hast die %1 Verschlüsselungscodes-Dokumente gelesen. Du kannst jetzt %2 Nachricht(en) entschlüsseln.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyBase_ReadDocumentsContextMenuLabel">
+            <English>Read decryption documents</English>
+            <German>Verschlüsselungsdokumente lesen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_B_DescriptionShort">
-            <English>A pack of decryption keys for Occupiers radio messages.</English>
+            <English>A pack of decryption keys for occupiers radio messages.</English>
             <German>Ein Paket mit Verschlüsselungscodes für Besatzer-Systeme.</German>
         </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_B_DisplayName">
@@ -26,15 +38,15 @@
             <German>Verschlüsselungscodes-Paket - Besatzer</German>
         </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_O_DescriptionShort">
-            <English>A pack of decryption keys for Invader radio messages.</English>
+            <English>A pack of decryption keys for invaders radio messages.</English>
             <German>Ein Paket mit Verschlüsselungscodes für Invasoren-Systeme.</German>
         </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_O_DisplayName">
-            <English>Decryption keys pack - Invader</English>
+            <English>Decryption keys pack - Invaders</English>
             <German>Verschlüsselungscodes-Paket - Invasoren</German>
         </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_B_DescriptionShort">
-            <English>A single decryption key for Occupiers radio messages.</English>
+            <English>A single decryption key for occupiers radio messages.</English>
             <German>Ein einzelner Verschlüsselungscodes für Besatzer-Systeme.</German>
         </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_B_DisplayName">
@@ -42,11 +54,11 @@
             <German>Verschlüsselungscodes (einzeln) - Besatzer</German>
         </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_O_DescriptionShort">
-            <English>A single decryption key for Invader radio messages.</English>
+            <English>A single decryption key for invaders radio messages.</English>
             <German>Ein einzelner Verschlüsselungscodes für Invasoren-Systeme.</German>
         </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_O_DisplayName">
-            <English>Decryption key (single) - Invader</English>
+            <English>Decryption key (single) - Invaders</English>
             <German>Verschlüsselungscodes (einzeln) - Invasoren</German>
         </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_Grenade_EMP_DescriptionShort">
