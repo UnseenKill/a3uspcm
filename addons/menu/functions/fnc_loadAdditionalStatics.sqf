@@ -19,7 +19,7 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(loadAdditionalStatics),_this);
 
-if (GVAR(AdditionalStatics) isEqualTo false) then {
+if isNil(QGVAR(AdditionalStatics)) then {
     INFO("loading additional buildable objects");
 
     [QGVAR(AdditionalStatics)] call A3A_fnc_getStatVariable;
@@ -29,18 +29,9 @@ if (GVAR(AdditionalStatics) isEqualTo false) then {
         GVAR(AdditionalStatics) = [];
     } else {
         INFO("Loading additional statics from saved data");
-        GVAR(AdditionalStatics) apply {
-            TRACE_1(QFUNC(loadAdditionalStatics),_x);
-
-            A3A_faction_reb get "staticMGs" pushBackUnique (_x select 0);
-            A3U_blackMarketStock pushBack [
-                _x select 0, // classname
-                _x select 1, // price
-                "STATICMG", // type
-                {true} // condition
-            ];
-        };
     };
 };
+
+publicVariable QGVAR(AdditionalStatics);
 
 nil;

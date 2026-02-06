@@ -89,6 +89,20 @@ GVAR(Timers) = [false, false];
         };
     };
 
+    if (!isNil QGVAR(AdditionalStatics) && { GVAR(AdditionalStatics) isEqualType [] }) then {
+        INFO("Applying additional statics from server");
+        GVAR(AdditionalStatics) apply {
+            TRACE_1(QFUNC(loadAdditionalStatics),_x);
+
+            A3A_faction_reb get "staticMGs" pushBackUnique (_x select 0);
+            A3U_blackMarketStock pushBack [
+                _x select 0, // classname
+                _x select 1, // price
+                "STATICMG", // type
+                {true} // condition
+            ];
+        };
+    };
 }] call FUNCMAIN(utilOnA3UClientInitDone);
 
 nil;
