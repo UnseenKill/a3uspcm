@@ -45,5 +45,17 @@
             <English>A3USPCM - AI Orders</English>
             <German>A3USPCM - KI-Befehle</German>
         </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Settings_Category_DisplayName">
+            <English>Advanced AI Orders</English>
+            <German>Fortgeschrittene KI-Befehle</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Settings_requireRadioEquipped_DisplayName">
+            <English>Require radio equipped</English>
+            <German>Funkgerät erforderlich</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Settings_requireRadioEquipped_Tooltip">
+            <English>When enabled, the player must have the A3USPCM AAIO Radio equipped to issue advanced AI orders. Otherwise carrying it around is enough.</English>
+            <German>Wenn aktiviert, muss der Spieler das A3USPCM AAIO Funkgerät ausgerüstet haben, um fortgeschrittene KI-Befehle auszugeben. Andernfalls reicht es aus, es bei sich zu tragen.</German>
+        </Key>
     </Package>
 </Project>

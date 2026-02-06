@@ -359,6 +359,18 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+// AAIO
+
+[
+    QEGVAR(advanced_ai_orders,requireRadioEquipped), "CHECKBOX",
+    [ELSTRING(advanced_ai_orders,Settings_requireRadioEquipped_DisplayName), ELSTRING(advanced_ai_orders,Settings_requireRadioEquipped_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(advanced_ai_orders,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Supports
 
 [
