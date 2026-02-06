@@ -17,6 +17,70 @@
             <English>40mm EMP</English>
             <German>40mm EMP</German>
         </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyBase_HintDocumentReadNewCount">
+            <English>You've read the %1 decryption key document. You can now decrypt %2 message(s).</English>
+            <German>Du hast das %1 Verschlüsselungscodes-Dokument gelesen. Du kannst jetzt %2 Nachricht(en) entschlüsseln.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyBase_HintDocumentsReadNewCount">
+            <English>You've read the %1 decryption key documents. You can now decrypt %2 message(s).</English>
+            <German>Du hast die %1 Verschlüsselungscodes-Dokumente gelesen. Du kannst jetzt %2 Nachricht(en) entschlüsseln.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyBase_ReadDocumentsContextMenuLabel">
+            <English>Read decryption documents</English>
+            <German>Verschlüsselungsdokumente lesen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_B_DescriptionShort">
+            <English>A pack of decryption keys for occupiers radio messages.</English>
+            <German>Ein Paket mit Verschlüsselungscodes für Besatzer-Systeme.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_B_DisplayName">
+            <English>Decryption keys pack - Occupiers</English>
+            <German>Verschlüsselungscodes-Paket - Besatzer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_O_DescriptionShort">
+            <English>A pack of decryption keys for invaders radio messages.</English>
+            <German>Ein Paket mit Verschlüsselungscodes für Invasoren-Systeme.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_O_DisplayName">
+            <English>Decryption keys pack - Invaders</English>
+            <German>Verschlüsselungscodes-Paket - Invasoren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyRefuse_DescriptionShort">
+            <English>A decryption document that you've already read.&lt;br/&gt;It contains no more useful information.</English>
+            <German>Ein Verschlüsselungsdokument, das du bereits gelesen hast.&lt;br/&gt;Es enthält keine nützlichen Informationen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyRefuse_DisplayName">
+            <English>Read decryption document</English>
+            <German>Gelesenes Verschlüsselungsdokument</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyRefuse_HintDocumentRereadNoYield">
+            <English>We told you that that document contains no more useful information.</English>
+            <German>Wir haben dir gesagt, dass dieses Dokument keine nützlichen Informationen mehr enthält.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyRefuse_HintDocumentRereadRandomYield">
+            <English>Well, butter me up and call me biscuit! That ol' crumbled up piece of paper yielded another random key.</English>
+            <German>Na, butter mich und nenn mich Stulle! Dieses alte zerknüllte Stück Papier hat einen weiteren zufälligen Schlüssel ergeben.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyRefuse_ReadDocumentsContextMenuLabel">
+            <English>Reread read document</English>
+            <German>Gelesenes Dokument erneut lesen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_B_DescriptionShort">
+            <English>A single decryption key for occupiers radio messages.</English>
+            <German>Ein einzelner Verschlüsselungscodes für Besatzer-Systeme.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_B_DisplayName">
+            <English>Decryption key (single) - Occupiers</English>
+            <German>Verschlüsselungscodes (einzeln) - Besatzer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_O_DescriptionShort">
+            <English>A single decryption key for invaders radio messages.</English>
+            <German>Ein einzelner Verschlüsselungscodes für Invasoren-Systeme.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_O_DisplayName">
+            <English>Decryption key (single) - Invaders</English>
+            <German>Verschlüsselungscodes (einzeln) - Invasoren</German>
+        </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_Grenade_EMP_DescriptionShort">
             <English>Throwable EMP grenade. Lights out, mofo.</English>
             <German>Werfbare EMP Granate. Licht aus.</German>

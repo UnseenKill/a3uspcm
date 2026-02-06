@@ -8,6 +8,10 @@ class CfgPatches {
         };
         magazines[] = {
             QGVAR(40mm_EMP),
+            QGVAR(DecryptKeyPack_B),
+            QGVAR(DecryptKeyPack_O),
+            QGVAR(DecryptKeySingle_B),
+            QGVAR(DecryptKeySingle_O),
             QGVAR(Grenade_EMP)
         };
         units[] = {
@@ -21,7 +25,10 @@ class CfgPatches {
             QGVAR(SupplyBoxMedium),
             QGVAR(SupplyBoxSmall)
         };
-        weapons[] = {};
+        weapons[] = {
+            QGVAR(DecryptKeyRefuse),
+            QGVAR(DecryptKeyRefuseReread)
+        };
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"a3uspcm_main"};
         author = "$STR_A3USPCM_Author";
