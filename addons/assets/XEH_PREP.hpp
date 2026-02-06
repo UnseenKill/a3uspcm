@@ -2,6 +2,7 @@ PREP(arsenalHelperOpenVehicleInventory);
 PREP(arsenalHelperTransferToArsenal);
 PREP(blackout);
 PREP(decryptKeysRead);
+PREP(decryptRefuseRead);
 PREP(empEffect);
 PREP(empEffectLocal);
 PREP(handle40mmFired);

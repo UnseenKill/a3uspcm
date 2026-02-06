@@ -31,7 +31,6 @@ if !assert(params[
     ["_container", nil, [objNull]],
     ["_documentClass", nil, [""]]
 ]) exitWith {};
-if !assert(!isNull _player) exitWith {};
 
 private _class = configFile >> "CfgMagazines" >> _documentClass;
 if !assert(isClass _class && { !isNull _class }) exitWith {};
@@ -49,11 +48,13 @@ private _code = compile format[QUOTE(missionNamespace setVariable[ARR_3(QQUOTE(%
 TRACE_1(QFUNC(decryptKeysRead),_code);
 [_code] remoteExecCall["call", 2];
 
-private _message = [LSTRING(Mag_DecryptKeyBase_HintDocumentReadNewCount), LSTRING(Mag_DecryptKeyBase_HintDocumentsReadNewCount)] select(_count > 1);
-_message = format[localize _message, _faction get "name", _before + _count];
+if !isNull(_player) then {
+    private _message = [LSTRING(Mag_DecryptKeyBase_HintDocumentReadNewCount), LSTRING(Mag_DecryptKeyBase_HintDocumentsReadNewCount)] select(_count > 1);
+    _message = format[localize _message, _faction get "name", _before + _count];
 
-[getText(_class >> "displayNameShort"), _message] call A3A_fnc_customHint;
-playSound "A3AP_UiSuccess";
+    [getText(_class >> "displayNameShort"), _message] call A3A_fnc_customHint;
+    playSound "A3AP_UiSuccess";
+};
 
 if !isNull(_container) then {
     _container addItemCargoGlobal[QGVAR(DecryptKeyRefuse), _count];

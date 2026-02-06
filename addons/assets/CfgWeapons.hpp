@@ -17,6 +17,8 @@ class CfgWeapons {
         };
     };
 
+    class GVAR(DecryptKeyRefuseReread): GVAR(DecryptKeyRefuse) {};
+
 	class Throw : GrenadeLauncher {
 		muzzles[] += { QGVAR(EMPGrenadeMuzzle) };
 

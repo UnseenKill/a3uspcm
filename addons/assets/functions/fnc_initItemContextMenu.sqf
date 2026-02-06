@@ -31,4 +31,15 @@ TRACE_1(QFUNC(initItemContextMenu),_this);
     true
 ] call CBA_fnc_addItemContextMenuOption;
 
+[
+    QGVAR(DecryptKeyRefuse),
+    "ALL",
+    LSTRING(Mag_DecryptKeyRefuse_ReadDocumentsContextMenuLabel),
+    [],
+    "",
+    [{ true }, { (_this select 2) isEqualTo QGVAR(DecryptKeyRefuse) }],
+    { call FUNC(decryptRefuseRead) },
+    true
+] call CBA_fnc_addItemContextMenuOption;
+
 nil;

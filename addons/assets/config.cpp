@@ -26,7 +26,8 @@ class CfgPatches {
             QGVAR(SupplyBoxSmall)
         };
         weapons[] = {
-            QGVAR(DecryptKeyRefuse)
+            QGVAR(DecryptKeyRefuse),
+            QGVAR(DecryptKeyRefuseReread)
         };
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"a3uspcm_main"};
