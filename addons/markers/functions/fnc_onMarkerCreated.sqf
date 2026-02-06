@@ -23,14 +23,12 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onMarkerCreated),_this);
 
-if !assert(isServer) exitWith {};
-
-params[
-    ["_marker", "", [""]],
-    ["_channel", 0, [0]],
-    ["_owner", objNull, [objNull]],
-    ["_local", false, [false]]
-];
+if !assert(params[
+    ["_marker", nil, [""]],
+    ["_channel", nil, [0]],
+    ["_owner", nil, [objNull]],
+    ["_local", nil, [false]]
+]) exitWith {};
 
 if (isNull _owner) exitWith { TRACE_1(QFUNC(onMarkerCreated),_owner) };
 if (count keys GVAR(storedMarkers) >= GVAR(saveLimit)) exitWith {
@@ -58,6 +56,7 @@ private _markerProperties = [
     /* 11 */ markerType _marker
 ];
 
+INFO_2("Considering created marker %1 for saving (owner=%2)",str _marker,_owner);
 GVAR(storedMarkers) set[_marker, _markerProperties];
 
 nil;

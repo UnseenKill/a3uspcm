@@ -20,27 +20,23 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
+if !isServer exitWith {};
+
 TRACE_1(QFUNC(initEventHandlers),_this);
 
-if !hasInterface exitWith {};
 if !GVAR(allowPersistentMarkers) exitWith { false };
 
-#define BAIL_OUT_OR_CALL(localIndex,func) if true then {\
-    if ((_this select localIndex) && {(_this select 0) find "_USER_DEFINED" isEqualTo 0} && {[] call FUNC(canEraseMarkers)}) then {\
-        _this remoteExec[QUOTE(func), 2];\
-    };\
+#define ADD_MISSION_EH(eventName,localIndex,func) if true then {\
+    addMissionEventHandler[QUOTE(eventName), { \
+        TRACE_1(QFUNC(eventName),_this); \
+        if (!(_this select localIndex) && {(_this select 0) find "_USER_DEFINED" isEqualTo 0} && {[] call FUNC(canEraseMarkers)}) then {\
+            _this remoteExec[QUOTE(func), 2];\
+        };\
+    }]; \
 }
 
-addMissionEventHandler["MarkerCreated", {
-    BAIL_OUT_OR_CALL(3,FUNC(onMarkerCreated));
-}];
-
-addMissionEventHandler["MarkerDeleted", {
-    BAIL_OUT_OR_CALL(1,FUNC(onMarkerDeleted));
-}];
-
-addMissionEventHandler["MarkerUpdated", {
-    BAIL_OUT_OR_CALL(1,FUNC(onMarkerUpdated));
-}];
+ADD_MISSION_EH(MarkerCreated,3,FUNC(onMarkerCreated));
+ADD_MISSION_EH(MarkerDeleted,1,FUNC(onMarkerDeleted));
+ADD_MISSION_EH(MarkerUpdated,1,FUNC(onMarkerUpdated));
 
 nil;
