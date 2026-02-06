@@ -26,17 +26,14 @@ TRACE_1(QFUNC(initEventHandlers),_this);
 
 if !GVAR(allowPersistentMarkers) exitWith { false };
 
-#define ADD_MISSION_EH(eventName,localIndex,func) if true then {\
-    addMissionEventHandler[QUOTE(eventName), { \
-        TRACE_1(QFUNC(eventName),_this); \
-        if (!(_this select localIndex) && {(_this select 0) find "_USER_DEFINED" isEqualTo 0} && {[] call FUNC(canEraseMarkers)}) then {\
-            _this remoteExec[QUOTE(func), 2];\
-        };\
-    }]; \
-}
+[CBA_EVENT_SERVER_MARKERS_RESTORE, {
+    if !assert(params[
+        ["_player", nil, [objNull]]
+    ]) exitWith {};
 
-ADD_MISSION_EH(MarkerCreated,3,FUNC(onMarkerCreated));
-ADD_MISSION_EH(MarkerDeleted,1,FUNC(onMarkerDeleted));
-ADD_MISSION_EH(MarkerUpdated,1,FUNC(onMarkerUpdated));
+    if GVAR(markersRestored) exitWith { INFO("Markers already restored, skipping...") };
+
+    [_player] call FUNC(restoreMarkers);
+}] call CBA_fnc_addEventHandler;
 
 nil;

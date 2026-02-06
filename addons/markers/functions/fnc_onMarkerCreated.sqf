@@ -27,7 +27,7 @@ if !assert(params[
     ["_marker", nil, [""]],
     ["_channel", nil, [0]],
     ["_owner", nil, [objNull]],
-    ["_local", nil, [false]]
+    ["_local", nil, [true]]
 ]) exitWith {};
 
 if (isNull _owner) exitWith { TRACE_1(QFUNC(onMarkerCreated),_owner) };
@@ -41,22 +41,6 @@ if (count keys GVAR(storedMarkers) >= GVAR(saveLimit)) exitWith {
     ["A3AP_UiFailure"] remoteExec["playSound", owner _owner];
 };
 
-private _markerProperties = [
-    /* 00 */ markerAlpha _marker,
-    /* 01 */ markerBrush _marker,
-    /* 02 */ markerChannel _marker,
-    /* 03 */ markerColor _marker,
-    /* 04 */ markerDir _marker,
-    /* 05 */ markerPolyline _marker,
-    /* 06 */ markerPos _marker,
-    /* 07 */ markerShadow _marker,
-    /* 08 */ markerShape _marker,
-    /* 09 */ markerSize _marker,
-    /* 10 */ markerText _marker,
-    /* 11 */ markerType _marker
-];
-
-INFO_2("Considering created marker %1 for saving (owner=%2)",str _marker,_owner);
-GVAR(storedMarkers) set[_marker, _markerProperties];
+[_marker, true] call FUNC(saveMarker);
 
 nil;

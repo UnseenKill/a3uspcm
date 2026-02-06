@@ -36,7 +36,6 @@ if (isNil QGVAR(storedMarkers)) then {
 
     if (GVAR(storedMarkers) isEqualType []) then {
         GVAR(storedMarkers) = createHashMapFromArray GVAR(storedMarkers);
-        [] call FUNC(restoreMarkers);
     } else {
         WARNING("Invalid markers data type, initializing with empty array");
         TRACE_1("invalid value",GVAR(storedMarkers));

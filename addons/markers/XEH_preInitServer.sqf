@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 
 GVAR(markerNameMapping) = createHashMap;
+GVAR(markersRestored) = false;
 GVAR(storedMarkers) = nil;
 
 [{
