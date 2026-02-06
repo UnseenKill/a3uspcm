@@ -42,11 +42,9 @@ TRACE_1(QFUNCMAIN(vehiclesAddToUndercover),_this);
                 format[LLSTRING(Vehicles_AddToUndercoverHintAddedText), getText(configOf _target >> "displayName")];
             };
 
-            [
-                LLSTRING(Vehicles_AddToUndercoverCaption),
-                _message
-            ] call A3A_fnc_customHint;
+            [CBA_EVENT_MENU_SYNCGVAR, [player, QGVAR(AdditionalUndercoverVehicles), GVAR(AdditionalUndercoverVehicles)]] call CBA_fnc_serverEvent;
 
+            [LLSTRING(Vehicles_AddToUndercoverCaption), _message] call A3A_fnc_customHint;
             playSound "A3AP_UiSuccess";
         } catch {
             [
