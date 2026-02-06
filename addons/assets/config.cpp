@@ -10,6 +10,7 @@ class CfgPatches {
             QGVAR(40mm_EMP),
             QGVAR(DecryptKeyPack_B),
             QGVAR(DecryptKeyPack_O),
+            QGVAR(DecryptKeyRefuse),
             QGVAR(DecryptKeySingle_B),
             QGVAR(DecryptKeySingle_O),
             QGVAR(Grenade_EMP)

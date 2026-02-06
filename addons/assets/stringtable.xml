@@ -45,6 +45,14 @@
             <English>Decryption keys pack - Invaders</English>
             <German>Verschlüsselungscodes-Paket - Invasoren</German>
         </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyRefuse_DescriptionShort">
+            <English>A decryption document that you've already read.&lt;br/&gt;It contains no more useful information.</English>
+            <German>Ein Verschlüsselungsdokument, das du bereits gelesen hast.&lt;br/&gt;Es enthält keine nützlichen Informationen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyRefuse_DisplayName">
+            <English>Read decryption document</English>
+            <German>Gelesenes Verschlüsselungsdokument</German>
+        </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_B_DescriptionShort">
             <English>A single decryption key for occupiers radio messages.</English>
             <German>Ein einzelner Verschlüsselungscodes für Besatzer-Systeme.</German>

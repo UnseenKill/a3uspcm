@@ -20,10 +20,22 @@ class CfgMagazines {
         deleteIfEmpty = 0;
     };
 
-    class GVAR(DecryptKeyBase) : CA_Magazine {
+    class GVAR(DecryptKeyBase): CA_Magazine {
         scope = 0;
         count = 0;
         mass = 0;
+    };
+
+    class GVAR(DecryptKeyRefuse): CA_Magazine {
+        scope = 2;
+        displayName = CSTRING(Mag_DecryptKeyRefuse_DisplayName);
+        displayNameShort = CSTRING(Mag_DecryptKeyRefuse_DisplayName);
+        descriptionShort = CSTRING(Mag_DecryptKeyRefuse_DescriptionShort);
+        model = "\a3\Weapons_F_Orange\Ammo\leaflet_05_f.p3d";
+        editorPreview = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Leaflet_05_F.jpg";
+        picture = QPATHTOF(ui\DecryptKeysRefuse.paa);
+        count = 1;
+        mass = 0.25;
     };
 
     class GVAR(DecryptKeySingleBase): GVAR(DecryptKeyBase) {
