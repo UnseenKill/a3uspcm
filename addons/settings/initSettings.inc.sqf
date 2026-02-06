@@ -75,7 +75,7 @@
     [ELSTRING(util,Settings_cursorTargetActionDelay_DisplayName), ELSTRING(util,Settings_cursorTargetActionDelay_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
     [0, 5, 2.5, 1], // min,max,default,decimals
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -105,7 +105,7 @@
     [ELSTRING(garrison,Settings_allowTakeOverAnything_DisplayName), ELSTRING(garrison,Settings_allowTakeOverAnything_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
     false, // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -121,7 +121,7 @@
             ELSTRING(menu,Settings_inject_End)
         ], 1
     ],
-    true, // global
+    false, // global
     {}, // onchange
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -153,7 +153,7 @@
     [ELSTRING(music,Settings_overrideMusic_DisplayName), ELSTRING(music,Settings_overrideMusic_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -163,7 +163,7 @@
     [ELSTRING(music,Settings_showNowPlaying_DisplayName), ELSTRING(music,Settings_showNowPlaying_DisplayName)],
     [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -173,7 +173,7 @@
     [ELSTRING(music,Settings_pause_DisplayName), ELSTRING(music,Settings_pause_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
     [0, 600, 90, -1], // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -183,7 +183,7 @@
     [ELSTRING(music,Settings_volume_DisplayName), ELSTRING(music,Settings_volume_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
     [0, 5, 0.5, 3], // default
-    true, // global
+    false, // global
     {
         params[["_volume",0.5,[0]]];
         2 fadeMusic _volume;
@@ -324,7 +324,7 @@
     [ELSTRING(aafc,Settings_sideChatContact_DisplayName), ELSTRING(aafc,Settings_sideChatContact_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -334,7 +334,7 @@
     [ELSTRING(aafc,Settings_sideChatFired_DisplayName), ELSTRING(aafc,Settings_sideChatFired_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -639,7 +639,7 @@
     [ELSTRING(fixes,Settings_storeQuickSell_DisplayName), ELSTRING(fixes,Settings_storeQuickSell_Tooltip)],
     [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -649,7 +649,7 @@
     [ELSTRING(store,Settings_playKaching_DisplayName), ELSTRING(store,Settings_playKaching_Tooltip)],
     [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -659,7 +659,7 @@
     [ELSTRING(store,Settings_sellDelay_DisplayName), ELSTRING(store,Settings_sellDelay_Tooltip)],
     [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
     [0, 1, 0.25, 3], // min,max,default,decimals
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;

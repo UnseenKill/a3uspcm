@@ -39,6 +39,7 @@ private _count = _tree tvCount[];
 };
 
 TRACE_1("save playlist",GVAR(tracks));
+[CBA_EVENT_MENU_SYNCGVAR, [player, QGVAR(tracks), GVAR(tracks)]] call CBA_fnc_serverEvent;
 
 closeDialog 0;
 nil;

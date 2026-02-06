@@ -55,6 +55,7 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_EnlargeNearestMarkerCaption);
                 text = CSTRING(Miscellaneous_EnlargeNearestMarkerText);
                 action = QFUNCMAIN(miscEnlargeNearestMarker);
+                condition = QUOTE(player isEqualTo theBoss);
                 closeDiary = 1;
             };
 

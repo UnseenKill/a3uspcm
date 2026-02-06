@@ -21,9 +21,11 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onMarkerUpdated),_this);
 
-params[
-    ["_marker", "", [""]],
-    ["_local", false, [false]]
-];
+if !assert(params[
+    ["_marker", nil, [""]],
+    ["_local", nil, [true]]
+]) exitWith {};
+
+[_marker, false] call FUNC(saveMarker);
 
 nil;

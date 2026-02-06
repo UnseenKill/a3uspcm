@@ -17,18 +17,15 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-#pragma hemtt ignore_variables ["A3USPCM_music_tracks"]
 TRACE_1(QFUNC(loadTracks),_this);
 
 INFO("Custom playlist not loaded, initializing...");
 
-if !(is3DENPreview || is3DENMultiplayer) then {
-    [QGVAR(tracks)] call A3A_fnc_getStatVariable;
-};
+[QGVAR(tracks)] call A3A_fnc_getStatVariable;
 
 if isNil QGVAR(tracks) then {
     INFO("No saved tracks found, using tracks from config");
-    GVAR(tracks) = false;
+    GVAR(tracks) = [];
 } else {
     INFO("Loading saved playlist");
 
@@ -36,11 +33,11 @@ if isNil QGVAR(tracks) then {
         WARNING("Invalid playlist data type, initializing with config instead");
         TRACE_1("invalid value",GVAR(tracks));
 
-        GVAR(tracks) = false;
+        GVAR(tracks) = [];
     };
 };
 
-if (GVAR(tracks) isNotEqualTo false) then {
+if (GVAR(tracks) isNotEqualTo []) then {
     GVAR(tracks) = createHashMapFromArray GVAR(tracks);
 } else {
     GVAR(tracks) = createHashMap;
@@ -52,5 +49,6 @@ if (GVAR(tracks) isNotEqualTo false) then {
 };
 
 TRACE_1("loaded",GVAR(tracks));
+publicVariable QGVAR(tracks);
 
 nil;
