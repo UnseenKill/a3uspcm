@@ -56,7 +56,7 @@ _message = format[localize _message, _faction get "name", _before + _count];
 playSound "A3AP_UiSuccess";
 
 if !isNull(_container) then {
-    _container addMagazineCargoGlobal[QGVAR(DecryptKeyRefuse), _count];
+    _container addItemCargoGlobal[QGVAR(DecryptKeyRefuse), _count];
 };
 
 nil;
