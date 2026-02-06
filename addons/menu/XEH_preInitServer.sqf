@@ -14,11 +14,6 @@ GVAR(MarkerSizes) = nil;
     [] call FUNC(loadAdditionalUndercoverVehicles);
     [] call FUNC(loadAdditionalVehicles);
     [] call FUNC(loadMarkerSizes);
-
-    if is3DENPreview exitWith {};
-
-    [] call FUNC(timerRestore);
-    [] call FUNC(commanderMenuAppend);
 }] call FUNCMAIN(utilOnA3UServerInitDone);
 
 [CBA_EVENT_MENU_SYNCGVAR, {

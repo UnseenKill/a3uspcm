@@ -80,6 +80,8 @@ GVAR(Timers) = [false, false];
     };
 
     [] call FUNC(diaryInitialize);
+    [] call FUNC(timerRestore);
+    [] call FUNC(commanderMenuAppend);
 
     if (!isNil QGVAR(AdditionalBuildables) && { GVAR(AdditionalBuildables) isEqualType [] }) then {
         INFO("Applying additional buildables from server");
