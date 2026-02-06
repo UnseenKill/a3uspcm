@@ -1,6 +1,21 @@
 #include "\x\A3A\addons\hals\Addons\store\config.hpp"
 
 class A3U {
+    class forbiddenItems {
+        class forbidden_limited_base;
+
+        class GVAR(ForbiddenItemsBase): forbidden_limited_base {
+            addons[] = {"a3uspcm_assets"};
+        };
+
+        class EGVAR(assets,DecryptKeyPack_B): GVAR(ForbiddenItemsBase) {};
+        class EGVAR(assets,DecryptKeyPack_O): GVAR(ForbiddenItemsBase) {};
+        class EGVAR(assets,DecryptKeyRefuse): GVAR(ForbiddenItemsBase) {};
+        class EGVAR(assets,DecryptKeyRefuseReread): GVAR(ForbiddenItemsBase) {};
+        class EGVAR(assets,DecryptKeySingle_B): GVAR(ForbiddenItemsBase) {};
+        class EGVAR(assets,DecryptKeySingle_O): GVAR(ForbiddenItemsBase) {};
+    };
+
     class traderAddons {
         class addons_base;
         class addons_a3uspcm: addons_base {
@@ -28,6 +43,10 @@ class CfgHALsAddons {
                 ITEM(EGVAR(assets,Grenade_EMP),275,PN_STOCK)
                 ITEM(EGVAR(despawnbeacon,PackedBeacon),750,PN_STOCK)
                 ITEM(EGVAR(markers,PermanentMarker),25,PN_STOCK)
+                ITEM(EGVAR(assets,DecryptKeyPack_B),6800,3)
+                ITEM(EGVAR(assets,DecryptKeySingle_B),875,20)
+                ITEM(EGVAR(assets,DecryptKeyPack_O),6800,3)
+                ITEM(EGVAR(assets,DecryptKeySingle_O),875,20)
             };
         };
 
