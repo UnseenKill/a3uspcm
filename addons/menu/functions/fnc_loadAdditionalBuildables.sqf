@@ -30,7 +30,7 @@ if isNil(QGVAR(AdditionalBuildables)) then {
 
     [QGVAR(AdditionalBuildables)] call A3A_fnc_getStatVariable;
     
-    if ((isNil QGVAR(AdditionalBuildables)) || !(GVAR(AdditionalBuildables) isEqualType [])) then {
+    if ((isNil QGVAR(AdditionalBuildables)) || { !(GVAR(AdditionalBuildables) isEqualType []) }) then {
         INFO("No saved additional buildables found, initializing empty array");
         GVAR(AdditionalBuildables) = [];
     } else {

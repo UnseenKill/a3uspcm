@@ -24,7 +24,7 @@ if isNil(QGVAR(AdditionalVehicles)) then {
 
     [QGVAR(AdditionalVehicles)] call A3A_fnc_getStatVariable;
     
-    if ((isNil QGVAR(AdditionalVehicles)) || !(GVAR(AdditionalVehicles) isEqualType [])) then {
+    if ((isNil QGVAR(AdditionalVehicles)) || { !(GVAR(AdditionalVehicles) isEqualType []) }) then {
         INFO("No saved additional Vehicles found, initializing empty array");
         GVAR(AdditionalVehicles) = [];
     } else {
