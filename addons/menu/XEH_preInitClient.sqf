@@ -80,6 +80,15 @@ GVAR(Timers) = [false, false];
     };
 
     [] call FUNC(diaryInitialize);
+
+    if (!isNil QGVAR(AdditionalBuildables) && { GVAR(AdditionalBuildables) isEqualType [] }) then {
+        INFO("Applying additional buildables from server");
+        GVAR(AdditionalBuildables) apply {
+            TRACE_1(QFUNC(loadAdditionalBuildables),_x);
+            A3A_buildableObjects pushBackUnique _x;
+        };
+    };
+
 }] call FUNCMAIN(utilOnA3UClientInitDone);
 
 nil;

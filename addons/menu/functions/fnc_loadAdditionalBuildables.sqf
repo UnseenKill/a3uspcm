@@ -19,7 +19,7 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(loadAdditionalBuildables),_this);
 
-if (GVAR(AdditionalBuildables) isEqualTo false) then {
+if isNil(QGVAR(AdditionalBuildables)) then {
     INFO("loading additional buildable objects");
 
     if GVAR(additionalBuildablesStartEmpty) exitWith {
@@ -35,11 +35,9 @@ if (GVAR(AdditionalBuildables) isEqualTo false) then {
         GVAR(AdditionalBuildables) = [];
     } else {
         INFO("Loading additional buildables from saved data");
-        GVAR(AdditionalBuildables) apply {
-            TRACE_1(QFUNC(loadAdditionalBuildables),_x);
-            A3A_buildableObjects pushBack _x;
-        };
     };
 };
+
+publicVariable QGVAR(AdditionalBuildables);
 
 nil;
