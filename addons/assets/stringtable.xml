@@ -17,6 +17,38 @@
             <English>40mm EMP</English>
             <German>40mm EMP</German>
         </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_B_DescriptionShort">
+            <English>A pack of decryption keys for Occupiers radio messages.</English>
+            <German>Ein Paket mit Verschlüsselungscodes für Besatzer-Systeme.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_B_DisplayName">
+            <English>Decryption keys pack - Occupiers</English>
+            <German>Verschlüsselungscodes-Paket - Besatzer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_O_DescriptionShort">
+            <English>A pack of decryption keys for Invader radio messages.</English>
+            <German>Ein Paket mit Verschlüsselungscodes für Invasoren-Systeme.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeyPack_O_DisplayName">
+            <English>Decryption keys pack - Invader</English>
+            <German>Verschlüsselungscodes-Paket - Invasoren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_B_DescriptionShort">
+            <English>A single decryption key for Occupiers radio messages.</English>
+            <German>Ein einzelner Verschlüsselungscodes für Besatzer-Systeme.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_B_DisplayName">
+            <English>Decryption key (single) - Occupiers</English>
+            <German>Verschlüsselungscodes (einzeln) - Besatzer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_O_DescriptionShort">
+            <English>A single decryption key for Invader radio messages.</English>
+            <German>Ein einzelner Verschlüsselungscodes für Invasoren-Systeme.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Assets_Mag_DecryptKeySingle_O_DisplayName">
+            <English>Decryption key (single) - Invader</English>
+            <German>Verschlüsselungscodes (einzeln) - Invasoren</German>
+        </Key>
         <Key ID="STR_A3USPCM_Assets_Mag_Grenade_EMP_DescriptionShort">
             <English>Throwable EMP grenade. Lights out, mofo.</English>
             <German>Werfbare EMP Granate. Licht aus.</German>

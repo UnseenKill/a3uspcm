@@ -8,6 +8,10 @@ class CfgPatches {
         };
         magazines[] = {
             QGVAR(40mm_EMP),
+            QGVAR(DecryptKeyPack_B),
+            QGVAR(DecryptKeyPack_O),
+            QGVAR(DecryptKeySingle_B),
+            QGVAR(DecryptKeySingle_O),
             QGVAR(Grenade_EMP)
         };
         units[] = {
