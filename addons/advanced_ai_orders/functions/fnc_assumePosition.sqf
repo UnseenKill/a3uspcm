@@ -51,7 +51,8 @@ waitUntil { isNull objectParent _unit };
 
 INFO_1("Unit disembarked: %1",_unit);
 
-_unit commandMove _position;
+doStop _unit;
+_unit doMove _position;
 
 _timeout = diag_tickTime + 60;
 INFO_1("Waiting for move completion: %1",_unit);
