@@ -617,6 +617,10 @@
             <English>Advanced Garrison Manager</English>
             <German>Erweiterter Garnisonsmanager</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Recruitment_RecruitUnitWrapper">
+            <English>Recruit %1</English>
+            <German>Rekrutiere %1</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Recruitment_RenameCountdownText">
             <English>Make your HC selection (%1 seconds remaining)</English>
             <German>Triff deine HC-Auswahl (noch %1 Sekunden)</German>

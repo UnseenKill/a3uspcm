@@ -388,9 +388,10 @@ class GVAR(Config) {
             };
 
             class SquadLeader {
-                caption = "$STR_antistasi_dialogs_hq_garrisons_squad_leader";
+                caption = __EVAL(formatText["%1 %2", LLSTRING(Recruitment_RecruitUnitWrapper), localize "STR_antistasi_dialogs_hq_garrisons_squad_leader"]);
                 action = QFUNCMAIN(recruitForPlayer);
                 params = QUOTE(unitSL);
+                yetHemttThisStringtableKeyIsInUse = CSTRING(Recruitment_RecruitUnitWrapper);
             };
         };
 
