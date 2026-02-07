@@ -70,7 +70,7 @@ _sadMissions set[_event, _mission];
 TRACE_1(QFUNC(searchAndDestroy),_maxDistance);
 
 // Need a rally point if max distance > 10
-if (_maxDistance > 10) then {
+if (_maxDistance > 10 || { _units findIf { !isNull objectParent _x } != -1 }) then {
     private _rally = _center;
     private _handler = [_event, {
         params["_unit","_finished"];
@@ -144,14 +144,10 @@ if (_maxDistance > 10) then {
             private _event = _unit getVariable QGVAR(missionId);
             private _mission = missionNamespace getVariable QGVAR(sadMissions) get _event;
 
-            TRACE_2(QFUNC(searchAndDestroyKilled),_event,RETNIL(_mission));
-
             if (isNil "_mission") exitWith {};
 
             private _alive = (_mission get "units") findIf { alive _x };
             private _leader = leader group _unit;
-
-            TRACE_3(QFUNC(searchAndDestroyKilled),_unit,_alive,_leader);
 
             if (_unit isNotEqualTo _leader) then {
                 _leader sideChat format[LLSTRING(OrdersSAD_Hint_UnitKilledNonLeader), groupId _unit, name _unit];
@@ -167,6 +163,7 @@ if (_maxDistance > 10) then {
         }]];
 
         [_x] join _group;
+        unassignVehicle _x;
 
         if _needLeader then {
             _needLeader = false;
@@ -176,7 +173,7 @@ if (_maxDistance > 10) then {
 
     allCurators apply { _x addCuratorEditableObjects[units _group, false] };
 
-    _group setBehaviour "AWARE";
+    _group setCombatBehaviour "AWARE";
     _group setCombatMode "YELLOW";
     leader _group sideChat LLSTRING(OrdersSAD_Hint_StartingTasking);
 
@@ -211,7 +208,6 @@ if (_maxDistance > 10) then {
 
     waitUntil { (_mission get "abort") || { currentWaypoint _group isEqualTo 4 } };
 
-    [CBA_EVENT_UPDATE_COMMS_MENU, [_mission get "player"]] call CBA_fnc_localEvent;
     [_mission get "wpEvent", _mission get "wpEventHandler"] call CBA_fnc_removeEventHandler;
     deleteMarker _marker;
 
@@ -227,6 +223,9 @@ if (_maxDistance > 10) then {
         INFO_1("SAD mission %1: completed",_event);
         ["TaskSucceeded", [LLSTRING(Menu_OrdersSAD_DisplayName), LLSTRING(OrdersSAD_Hint_MissionAbortSuccess)]] call BIS_fnc_showNotification;
     };
+
+    missionNamespace getVariable QGVAR(sadMissions) deleteAt _event;
+    [CBA_EVENT_UPDATE_COMMS_MENU, [_mission get "player"]] call CBA_fnc_localEvent;
 
     leader _group sideChat format[LLSTRING(OrdersSAD_Hint_RejoiningGroup), groupId _playerGroup];
     (_mission get "units") select { alive _x } apply {
