@@ -89,7 +89,14 @@ private _buildMenu = {
 
         private _key = format["%1_%2", _prefix, configName _item];
         private _thisPath = _path + [getText(_item >> "displayName")];
-        missionNamespace setVariable[_key, [[_thisPath joinString " >> ", true]] + ([_item, _key, _thisPath] call _buildMenu)];
+        private _items = if (getText(_item >> "subMenuFrom") isEqualTo "") then {
+            [_item, _key, _thisPath] call _buildMenu;
+        } else {
+            [_item, _key, _thisPath] call compile getText(_item >> "subMenuFrom");
+        };
+
+        missionNamespace setVariable[_key, [[_thisPath joinString " >> ", true]] + _items];
+
         [
             [_thisPath select -1, PAD_WIDTH, false] call FUNCMAIN(utilPadString),
             getArray(_item >> "assignedKey"),

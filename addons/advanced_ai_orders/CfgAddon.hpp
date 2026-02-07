@@ -24,6 +24,7 @@ class PREFIX {
             class SubmenuBase: ItemBase {
                 displayName = "";
                 subMenu = 1;
+                subMenuFrom = "";
             };
 
             class Definitions {
@@ -104,6 +105,13 @@ class PREFIX {
                     expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_SEARCH_AND_DESTROY),[ARR_2(player,_pos)])] call CBA_fnc_localEvent);
                     isActive = QUOTE((NotEmpty + NotEmptyRedTeam) * cursorOnGround);
                     iconPath = "\a3\ui_f\data\map\markers\military\warning_ca.paa";
+                };
+
+                class SADRunning: SubmenuBase {
+                    displayName = __EVAL(formatText["%1...", LLSTRING(Menu_OrdersSAD_DisplayName)]);
+                    assignedKey[] = {DIK_3};
+                    conditionVisible = QUOTE(keys(missionNamespace getVariable[ARR_2(QQGVAR(sadMissions),createHashmap)]) isNotEqualTo []);
+                    subMenuFrom = QUOTE(call FUNC(getSADMenuItems));
                 };
 
 #ifdef __A3USPCM_PRODUCTION__

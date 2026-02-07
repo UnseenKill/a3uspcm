@@ -28,8 +28,14 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _player) exitWith {};
 
+if (missionNamespace getVariable[QGVAR(sadSettingUp), false]) exitWith {
+    WARNING("Search and Destroy: Mission already being set up, aborting.");
+    [CBA_EVENT_SHOW_NOTIFICATION, [_player, "Search and Destroy", "Another mission is being set up, aborting."]] call CBA_fnc_localEvent;
+};
+
 private _sadMissions = missionNamespace getVariable[QGVAR(sadMissions), createHashMap];
 missionNamespace setVariable[QGVAR(sadMissions), _sadMissions];
+missionNamespace getVariable[QGVAR(sadSettingUp), true];
 
 private _units = [_player] call FUNC(getGroupSelection);
 private _event = [] call CBA_fnc_createUUID;
@@ -44,7 +50,9 @@ if (_immobileUnits isNotEqualTo []) exitWith {
         WARNING_1("Search and Destroy: Unit is immobile, aborting: %1",_x);
         _x groupRadio "SentSupportNotAvailable";
     };
-    _player groupChat "Search and Destroy: One or more units are immobile, aborting.";
+
+    [CBA_EVENT_SHOW_NOTIFICATION, [_player, "Search and Destroy", "One or more units are immobile, aborting."]] call CBA_fnc_localEvent;
+    missionNamespace setVariable[QGVAR(sadSettingUp), nil];
 };
 
 private _mission = createHashMapFromArray[
@@ -97,6 +105,8 @@ if (_maxDistance > 10) then {
     INFO_1("SAD mission %1: waiting for rally",_event);
     waitUntil { _mission get "waitingOn" isEqualTo [] };
 
+    missionNamespace setVariable[QGVAR(sadSettingUp), nil];
+
     if (_mission get "abort") exitWith {
         INFO_1("SAD mission %1: aborted",_event);
         missionNamespace getVariable QGVAR(sadMissions) deleteAt _event;
@@ -114,6 +124,7 @@ if (_maxDistance > 10) then {
     _marker setMarkerColorLocal "ColorGUER";
     _marker setMarkerTextLocal format["%1 SAD", groupId _group];
 
+    _mission set["group", _group];
     _mission set["wpEventHandler", [
         _mission get "wpEvent", {
             params["_unit"];
@@ -169,6 +180,8 @@ if (_maxDistance > 10) then {
     _group setCombatMode "YELLOW";
     leader _group sideChat "Engage and destroy all hostiles in the area.";
 
+    [CBA_EVENT_UPDATE_COMMS_MENU, [_mission get "player"]] call CBA_fnc_localEvent;
+
     sleep 2;
 
     _pos = (_mission get "position") getPos[100, (_mission get "position") getDir leader _group];
@@ -197,22 +210,28 @@ if (_maxDistance > 10) then {
 
     waitUntil { (_mission get "abort") || { currentWaypoint _group isEqualTo 4 } };
 
+    [CBA_EVENT_UPDATE_COMMS_MENU, [_mission get "player"]] call CBA_fnc_localEvent;
     [_mission get "wpEvent", _mission get "wpEventHandler"] call CBA_fnc_removeEventHandler;
     deleteMarker _marker;
 
     if (_mission get "abort") then {
         INFO_1("SAD mission %1: aborted during execution",_event);
-        ["TaskFailed", ["Search and destroy", "Group is dead."]] call BIS_fnc_showNotification;
+
+        if ((_mission get "units") findIf { alive _x } == -1) then {
+            ["TaskFailed", ["Search and destroy", "Group is dead."]] call BIS_fnc_showNotification;
+        } else {
+            ["TaskFailed", ["Search and destroy", "Tasking was aborted."]] call BIS_fnc_showNotification;
+        };
     } else {
         INFO_1("SAD mission %1: completed",_event);
         ["TaskSucceeded", ["Search and destroy", "Group has finished its tasking."]] call BIS_fnc_showNotification;
+    };
 
-        leader _group sideChat format["Rejoining %1", groupId _playerGroup];
-        (_mission get "units") apply {
-            _x removeEventHandler["Killed", _x getVariable QGVAR(killedEH)];
-            _x joinAs[_playerGroup, _x getVariable QGVAR(groupId)];
-            _x assignTeam(_x getVariable QGVAR(assignedTeam));
-        };
+    leader _group sideChat format["Rejoining %1", groupId _playerGroup];
+    (_mission get "units") select { alive _x } apply {
+        _x removeEventHandler["Killed", _x getVariable QGVAR(killedEH)];
+        _x joinAs[_playerGroup, _x getVariable QGVAR(groupId)];
+        _x assignTeam(_x getVariable QGVAR(assignedTeam));
     };
 };
 
