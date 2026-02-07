@@ -1,6 +1,4 @@
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
-#undef true
-#undef false
 
 class PREFIX {
     class ADDON {
@@ -30,26 +28,69 @@ class PREFIX {
 
             class Definitions {
                 class Security: SubmenuBase {
-                    displayName = CSTRING(Menu_Security_DisplayName);
+                    displayName = CSTRING(Menu_OrdersSecurity_DisplayName);
                     assignedKey[] = {DIK_1};
 
                     class Pull360: ItemBase {
-                        itemName = CSTRING(Menu_Security_Item_Pull360_DisplayName);
+                        itemName = CSTRING(Menu_OrdersSecurity_Item_Pull360_DisplayName);
                         assignedKey[] = {DIK_1};
                         expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_PULL360)] call CBA_fnc_localEvent);
                         isActive = QUOTE(NotEmpty);
                     };
 
                     class GuardFront: Pull360 {
-                        itemName = CSTRING(Menu_Security_Item_GuardFront_DisplayName);
+                        itemName = CSTRING(Menu_OrdersSecurity_Item_GuardFront_DisplayName);
                         assignedKey[] = {DIK_2};
                         expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_GUARD_FRONT)] call CBA_fnc_localEvent);
                     };
 
                     class GuardRear: Pull360 {
-                        itemName = CSTRING(Menu_Security_Item_GuardRear_DisplayName);
+                        itemName = CSTRING(Menu_OrdersSecurity_Item_GuardRear_DisplayName);
                         assignedKey[] = {DIK_3};
                         expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_GUARD_REAR)] call CBA_fnc_localEvent);
+                    };
+                };
+
+                class Advance: SubmenuBase {
+                    displayName = CSTRING(Menu_OrdersAdvance_DisplayName);
+                    assignedKey[] = {DIK_2};
+                    yesHemttThisStringtableKeyIsUsed = CSTRING(Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName);
+
+                    class Forward: ItemBase {
+                        itemName = CSTRING(Menu_OrdersAdvance_Item_AdvanceForward_DisplayName);
+                        assignedKey[] = {};
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),_pos)] call CBA_fnc_localEvent);
+                        isActive = QUOTE(NotEmpty * cursorOnGround);
+                    };
+
+                    class Forward50: ItemBase {
+                        itemName = __EVAL(formatText [LLSTRING(Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName), 50]);
+                        assignedKey[] = {DIK_1};
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),50)] call CBA_fnc_localEvent);
+                        isActive = QUOTE(NotEmpty);
+                    };
+
+                    class Forward75: ItemBase {
+                        itemName = __EVAL(formatText [LLSTRING(Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName), 75]);
+                        assignedKey[] = {DIK_2};
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),75)] call CBA_fnc_localEvent);
+                        isActive = QUOTE(NotEmpty);
+                    };
+
+                    class Forward100: ItemBase {
+                        itemName = __EVAL(formatText [LLSTRING(Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName), 100]);
+                        assignedKey[] = {DIK_3};
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),100)] call CBA_fnc_localEvent);
+                        isActive = QUOTE(NotEmpty);
+                    };
+
+                    class Sep0: SeparatorBase {};
+
+                    class ToMe: ItemBase {
+                        itemName = CSTRING(Menu_OrdersAdvance_Item_AdvanceToMe_DisplayName);
+                        assignedKey[] = {DIK_0};
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),player)] call CBA_fnc_localEvent);
+                        isActive = QUOTE(NotEmpty);
                     };
                 };
 

@@ -1,3 +1,4 @@
+PREP(advanceForward);
 PREP(assumePosition);
 PREP(onPlayerEventLoadout);
 PREP(onRadioEquipped);

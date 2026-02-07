@@ -17,19 +17,35 @@
             <English>Radio used to issue advanced AI orders.</English>
             <German>Funkgerät zum Ausgeben fortgeschrittener KI-Befehle.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_DisplayName">
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersAdvance_DisplayName">
+            <English>Advance</English>
+            <German>Vorrücken</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName">
+            <English>Advance forward %1 meters</English>
+            <German>Vorrücken um %1 Meter</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersAdvance_Item_AdvanceForward_DisplayName">
+            <English>Advance to cursor</English>
+            <German>Vorrücken zum Cursor</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersAdvance_Item_AdvanceToMe_DisplayName">
+            <English>Advance to me</English>
+            <German>Vorrücken zu mir</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSecurity_DisplayName">
             <English>Security</English>
             <German>Sicherheit</German>
         </Key>
-        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_GuardFront_DisplayName">
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSecurity_Item_GuardFront_DisplayName">
             <English>Guard front</English>
             <German>Vorne sichern</German>
         </Key>
-        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_GuardRear_DisplayName">
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSecurity_Item_GuardRear_DisplayName">
             <English>Guard rear</English>
             <German>Hinten sichern</German>
         </Key>
-        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Pull360_DisplayName">
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSecurity_Item_Pull360_DisplayName">
             <English>Pull 360</English>
             <German>360° Deckung</German>
         </Key>
