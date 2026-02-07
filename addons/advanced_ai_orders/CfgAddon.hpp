@@ -107,8 +107,8 @@ class PREFIX {
                     iconPath = "\a3\ui_f\data\map\markers\military\warning_ca.paa";
                 };
 
-                class SADRunning: SubmenuBase {
-                    displayName = __EVAL(formatText["%1...", LLSTRING(Menu_OrdersSAD_DisplayName)]);
+                class OpsRunning: SubmenuBase {
+                    displayName = CSTRING(Menu_CancelRunningOps_DisplayName);
                     assignedKey[] = {DIK_3};
                     conditionVisible = QUOTE(keys(missionNamespace getVariable[ARR_2(QQGVAR(sadMissions),createHashmap)]) isNotEqualTo []);
                     subMenuFrom = QUOTE(call FUNC(getSADMenuItems));

@@ -37,7 +37,7 @@ missionNamespace getVariable[QGVAR(sadMissions), createHashMap] apply {
     INC(_index);
 
     [
-        format["Search and Destroy: %1", groupId(_mission get "group")],
+        format["%1: %2", LLSTRING(Menu_OrdersSADShort_DisplayName), groupId(_mission get "group")],
         [DIK_1 + _index], "", -5,
         [["expression", format[QUOTE([ARR_2(QUOTE(CBA_EVENT_SAD_TERMINATE),[ARR_2(player,QQUOTE(%1))])] call CBA_fnc_localEvent), _event]]],
         "1", "1", ""

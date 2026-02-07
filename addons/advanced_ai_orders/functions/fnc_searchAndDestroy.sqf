@@ -30,7 +30,7 @@ if !assert(!isNull _player) exitWith {};
 
 if (missionNamespace getVariable[QGVAR(sadSettingUp), false]) exitWith {
     WARNING("Search and Destroy: Mission already being set up, aborting.");
-    [CBA_EVENT_SHOW_NOTIFICATION, [_player, "Search and Destroy", "Another mission is being set up, aborting."]] call CBA_fnc_localEvent;
+    [CBA_EVENT_SHOW_NOTIFICATION, [_player, LLSTRING(Menu_OrdersSAD_DisplayName), LLSTRING(OrdersSAD_Hint_AbortMissionPreparing)]] call CBA_fnc_localEvent;
 };
 
 private _sadMissions = missionNamespace getVariable[QGVAR(sadMissions), createHashMap];
@@ -51,7 +51,7 @@ if (_immobileUnits isNotEqualTo []) exitWith {
         _x groupRadio "SentSupportNotAvailable";
     };
 
-    [CBA_EVENT_SHOW_NOTIFICATION, [_player, "Search and Destroy", "One or more units are immobile, aborting."]] call CBA_fnc_localEvent;
+    [CBA_EVENT_SHOW_NOTIFICATION, [_player, LLSTRING(Menu_OrdersSAD_DisplayName), LLSTRING(OrdersSAD_Hint_AbortUnitsImmobile)]] call CBA_fnc_localEvent;
     missionNamespace setVariable[QGVAR(sadSettingUp), nil];
 };
 
@@ -122,14 +122,14 @@ if (_maxDistance > 10) then {
     _marker = createMarkerLocal[hashValue _group, _mission get "position"];
     _marker setMarkerTypeLocal "mil_end_noShadow";
     _marker setMarkerColorLocal "ColorGUER";
-    _marker setMarkerTextLocal format["%1 SAD", groupId _group];
+    _marker setMarkerTextLocal format["%1 %2", groupId _group, LLSTRING(Menu_OrdersSADShort_DisplayName)];
 
     _mission set["group", _group];
     _mission set["wpEventHandler", [
         _mission get "wpEvent", {
             params["_unit"];
             private _wp = currentWaypoint group _unit;
-            _unit sideChat format["Reached waypoint %1", str waypointDescription(waypoints group _unit select _wp)];
+            _unit sideChat format[LLSTRING(OrdersSAD_Hint_ReachedWaypoint), str waypointDescription(waypoints group _unit select _wp)];
         }
     ] call CBA_fnc_addEventHandler];
 
@@ -146,7 +146,7 @@ if (_maxDistance > 10) then {
 
             TRACE_2(QFUNC(searchAndDestroyKilled),_event,RETNIL(_mission));
 
-            if (isNil "_mission") exitWith { diag_log "ASKFJHKJH" };
+            if (isNil "_mission") exitWith {};
 
             private _alive = (_mission get "units") findIf { alive _x };
             private _leader = leader group _unit;
@@ -154,12 +154,12 @@ if (_maxDistance > 10) then {
             TRACE_3(QFUNC(searchAndDestroyKilled),_unit,_alive,_leader);
 
             if (_unit isNotEqualTo _leader) then {
-                _leader sideChat format["%1 is down! %2 is down!", groupId _unit, name _unit];
+                _leader sideChat format[LLSTRING(OrdersSAD_Hint_UnitKilledNonLeader), groupId _unit, name _unit];
             } else {
                 if (_alive >= 0) then {
                     private _newLeader = (_mission get "units") select _alive;
                     group _unit selectLeader _newLeader;
-                    _newLeader sideChat format["Lead is down! %1 is down! Assuming lead.", name _unit];
+                    _newLeader sideChat format[LLSTRING(OrdersSAD_Hint_UnitKilledLeader), name _unit];
                 };
             };
 
@@ -178,7 +178,7 @@ if (_maxDistance > 10) then {
 
     _group setBehaviour "AWARE";
     _group setCombatMode "YELLOW";
-    leader _group sideChat "Engage and destroy all hostiles in the area.";
+    leader _group sideChat LLSTRING(OrdersSAD_Hint_StartingTasking);
 
     [CBA_EVENT_UPDATE_COMMS_MENU, [_mission get "player"]] call CBA_fnc_localEvent;
 
@@ -186,7 +186,7 @@ if (_maxDistance > 10) then {
 
     _pos = (_mission get "position") getPos[100, (_mission get "position") getDir leader _group];
     _wp = _group addWaypoint[_pos, 0];
-    _wp setWaypointDescription "Staging";
+    _wp setWaypointDescription LLSTRING(OrdersSAD_WaypointName_Staging);
     _wp setWaypointType "MOVE";
     _wp setWaypointSpeed "NORMAL";
     _wp setWaypointBehaviour "AWARE";
@@ -194,14 +194,14 @@ if (_maxDistance > 10) then {
     _wp setWaypointStatements["true", format[QUOTE(if (local this) then {[ARR_2(QQUOTE(%1),[this])] call CBA_fnc_localEvent}), _mission get "wpEvent"]];
 
     _wp = _group addWaypoint[_mission get "position", 0];
-    _wp setWaypointDescription "Objective";
+    _wp setWaypointDescription LLSTRING(OrdersSAD_WaypointName_Objective);
     _wp setWaypointType "SAD";
     _wp setWaypointTimeout[10, 10, 10];
     _wp setWaypointCompletionRadius 30;
     _wp setWaypointStatements["true", format[QUOTE(if (local this) then {[ARR_2(QQUOTE(%1),[this])] call CBA_fnc_localEvent}), _mission get "wpEvent"]];
 
     _wp = _group addWaypoint[_pos, 50];
-    _wp setWaypointDescription "Rally";
+    _wp setWaypointDescription LLSTRING(OrdersSAD_WaypointName_Rally);
     _wp setWaypointType "MOVE";
     _wp setWaypointSpeed "NORMAL";
     _wp setWaypointBehaviour "AWARE";
@@ -218,16 +218,16 @@ if (_maxDistance > 10) then {
         INFO_1("SAD mission %1: aborted during execution",_event);
 
         if ((_mission get "units") findIf { alive _x } == -1) then {
-            ["TaskFailed", ["Search and destroy", "Group is dead."]] call BIS_fnc_showNotification;
+            ["TaskFailed", [LLSTRING(Menu_OrdersSAD_DisplayName), LLSTRING(OrdersSAD_Hint_MissionAbortAllDead)]] call BIS_fnc_showNotification;
         } else {
-            ["TaskFailed", ["Search and destroy", "Tasking was aborted."]] call BIS_fnc_showNotification;
+            ["TaskFailed", [LLSTRING(Menu_OrdersSAD_DisplayName), LLSTRING(OrdersSAD_Hint_MissionAbortTasking)]] call BIS_fnc_showNotification;
         };
     } else {
         INFO_1("SAD mission %1: completed",_event);
-        ["TaskSucceeded", ["Search and destroy", "Group has finished its tasking."]] call BIS_fnc_showNotification;
+        ["TaskSucceeded", [LLSTRING(Menu_OrdersSAD_DisplayName), LLSTRING(OrdersSAD_Hint_MissionAbortSuccess)]] call BIS_fnc_showNotification;
     };
 
-    leader _group sideChat format["Rejoining %1", groupId _playerGroup];
+    leader _group sideChat format[LLSTRING(OrdersSAD_Hint_RejoiningGroup), groupId _playerGroup];
     (_mission get "units") select { alive _x } apply {
         _x removeEventHandler["Killed", _x getVariable QGVAR(killedEH)];
         _x joinAs[_playerGroup, _x getVariable QGVAR(groupId)];
