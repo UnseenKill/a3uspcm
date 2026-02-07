@@ -26,6 +26,8 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(updateCommsMenu),_this);
 
+#define PAD_WIDTH 70
+
 if !assert(params[
     ["_unit", nil, [objNull]]
 ]) exitWith {};
@@ -42,8 +44,15 @@ private _buildMenu = {
     ]) exitWith {};
     if !assert(!isNull _config) exitWith {[]};
 
-    (QUOTE(!isNull inheritsFrom _x) configClasses _config) apply {
+    ((QUOTE(!isNull inheritsFrom _x) configClasses _config) apply {
         private _item = _x;
+
+        if (!(call compile getText(_item >> "conditionVisible"))) then {
+            continueWith[];
+        };
+
+        // Addition isText check needed for separators
+        private _isActive = ["0", getText(_item >> "isActive")] select(isText(_item >> "conditionActive") && {call compile getText(_item >> "conditionActive")});
 
         if !isNumber(_item >> "subMenu") then {
             private _title = getText(_item >> "itemName");
@@ -53,7 +62,7 @@ private _buildMenu = {
             if (_selected) then {
                 _title = parseText format["&gt; <t color='#00c8fd'>%1</t>", _title];
             } else {
-                _title = [_title, 70, false] call FUNCMAIN(utilPadString);
+                _title = [_title, PAD_WIDTH, false] call FUNCMAIN(utilPadString);
             };
 
             if (getNumber(_item >> "command") isEqualTo -5) then {
@@ -73,7 +82,7 @@ private _buildMenu = {
                 getNumber(_item >> "command"),
                 _expression,
                 getText(_item >> "isVisible"),
-                getText(_item >> "isActive"),
+                _isActive,
                 getText(_item >> "iconPath")
             ];
         };
@@ -82,15 +91,15 @@ private _buildMenu = {
         private _thisPath = _path + [getText(_item >> "displayName")];
         missionNamespace setVariable[_key, [[_thisPath joinString " >> ", true]] + ([_item, _key, _thisPath] call _buildMenu)];
         [
-            (_thisPath select -1) + "                                             ",
+            [_thisPath select -1, PAD_WIDTH, false] call FUNCMAIN(utilPadString),
             getArray(_item >> "assignedKey"),
             format["#USER:%1", _key],
             getNumber(_item >> "command"), [],
             getText(_item >> "isVisible"),
-            getText(_item >> "isActive"),
+            _isActive,
             getText(_item >> "iconPath")
         ];
-    };
+    }) - [[]];
 };
 
 GVAR(topLevelMenu) = [[LLSTRING(Menu_Title), true]];

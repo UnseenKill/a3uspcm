@@ -1,4 +1,6 @@
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
+#undef true
+#undef false
 
 class PREFIX {
     class ADDON {
@@ -8,6 +10,8 @@ class PREFIX {
                 assignedKey[] = {};
                 command = -5;
                 expression = QUOTE(nil);
+                conditionActive = QUOTE(true);
+                conditionVisible = QUOTE(true);
                 isActive = QUOTE(1);
                 isVisible = QUOTE(1);
                 iconPath = "";
@@ -19,13 +23,9 @@ class PREFIX {
                 command = -1;
             };
 
-            class SubmenuBase {
+            class SubmenuBase: ItemBase {
                 displayName = "";
                 subMenu = 1;
-                assignedKey[] = {};
-                command = -5;
-                isActive = QUOTE(1);
-                isVisible = QUOTE(1);
             };
 
             class Definitions {
