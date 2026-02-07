@@ -17,8 +17,7 @@ directly on top of it, transfer FIA money back to your account with a markup, et
 [h3]Gameplay Tools[/h3]
 [list]
    [*] Add player's team (and vehicle) to Zeus curated objects
-   [*] Add lootbox functionality to any cursor object
-   [*] Create lootbox on the spot
+   [*] Black market remote access
    [*] Substitute lame-ass civilian prop plane air support vehicles with F-18
    [*] Substitute civilian helicopters with MH-9 (some GM helicopters can't slingload -> no lootbox for you...)
    [*] Unstick player AI from unresponsiveness
@@ -26,10 +25,11 @@ directly on top of it, transfer FIA money back to your account with a markup, et
    [*] Show roadblocks on map
    [*] Find intel around player's position (configurable via addon options)
    [*] Emergency invincibility hot-button; press it quickly when you see the APFSDS flying towards you (configurable via addon controls; NO default button).
-   [*] Add any building you're looking at to base buildable object list (added to save-game data)
+   [*] Add any building/static/vehicle you're looking at to base buildable object list (added to save-game data)
    [*] Add any vehicle you're looking at to undercover vehicle list (added to save-game data; suggested by jcferretti2020)
    [*] Access your air assets from any garage. They [i]are[/i] air assets after all, right?
    [*] Reveal a random zone if enemy markers are hidden
+   [*] Buy decryption keys on the black market or right away change the amount of keys you have
    [*] Change many A3U parameters to values of your choice permanently
    [*] Use ACE3 fortifications
 [/list]
@@ -94,7 +94,7 @@ directly on top of it, transfer FIA money back to your account with a markup, et
 
 [h3]Unlocks[/h3]
 [list]
-   [*] Unlock ACE3 Painkillers for arsenal
+   [*] Unlock ACE3 items for arsenal
    [*] Unlock breaching charges for tanks and APCs
    [*] Unlock your current loadout
    [*] Sort that damn mess of an arsenal
@@ -129,17 +129,17 @@ directly on top of it, transfer FIA money back to your account with a markup, et
 
 [h2]Usage[/h2]
 
-A3USPCM is designed to work - and is tested - in Antistasi Ultimate Singleplayer (i.e. locally, LAN-hosted servers), [i]only[/i]. That means fero zucks have been given in regards to what'll happen if a non-host player executes any of the options available in the menu.
+A3USPCM is designed to work - and is tested - in Antistasi Ultimate Singleplayer (i.e. locally, LAN-hosted servers), [i]only[/i]. [strike]That means fero zucks have been given in regards to what'll happen if a non-host player executes any of the options available in the menu.[/strike]
+
+[pullquote][b]Fully MP compatible:[/b] in regards to the occasional user asking and the maturity of the project, code has been adjusted for multiplayer compatibility. Some features are restricted to the commander, but nothing should mess your A3U saves anymore.[/pullquote]
 
 It [i]might[/i] work with other Antistasi variants (Community, Plus), but that's also untested.
 
 Features mentioned above are available via the map diary (look for entry [b]A3U Singleplayer Cheat Menu[/b]).
 
-Vehicle loadout functions are available through ACE3 interaction menu with vehicles.
-
 [h3]Required mods[/h3]
 [list]
-    [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032]Antistasi Ultimate - Mod[/url] - Latest version where this mod was working: [b]11.8.0[/b]
+    [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3020755032]Antistasi Ultimate - Mod[/url] - Latest version where this mod was working: [b]11.9.0[/b]
     [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=463939057]ACE3[/url] - not required anymore, but strongly recommended
 [/list]
 
