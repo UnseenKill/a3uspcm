@@ -17,6 +17,7 @@ class CfgFunctions {
             PATHTO_FNC(utilNormalizeDirection);
             PATHTO_FNC(utilOnA3UClientInitDone);
             PATHTO_FNC(utilOnA3UServerInitDone);
+            PATHTO_FNC(utilPadString);
             PATHTO_FNC(utilPromptText);
             PATHTO_FNC(utilRandomRange);
             PATHTO_FNC(utilRange);
