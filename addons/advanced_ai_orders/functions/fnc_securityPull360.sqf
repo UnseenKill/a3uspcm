@@ -29,7 +29,7 @@ private _positionsTemplate = [
     [210, nil, 4]
 ];
 
-[_positionsTemplate, player, groupSelectedUnits player, vehicle player, GVAR(securityDistance)] call FUNC(pullSecurity);
+[_positionsTemplate, player, [player] call FUNC(getGroupSelection), vehicle player, GVAR(securityDistance)] call FUNC(pullSecurity);
 showCommandingMenu "";
 
 nil;

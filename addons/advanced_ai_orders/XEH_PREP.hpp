@@ -1,5 +1,6 @@
 PREP(advanceForward);
 PREP(assumePosition);
+PREP(getGroupSelection);
 PREP(onPlayerEventLoadout);
 PREP(onRadioEquipped);
 PREP(onRadioUnequipped);
