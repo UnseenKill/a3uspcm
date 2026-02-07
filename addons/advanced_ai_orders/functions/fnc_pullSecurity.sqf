@@ -61,14 +61,13 @@ private _positions = (_positionsTemplate apply {
     [_units deleteAt 0, _direction, _center getPos[_distance, _direction]];
 }) - [[]];
 
-diag_log text format["Units left.....: %1", _units];
-diag_log text format["Positions......: %1", _positions];
-{
-    diag_log text format["        %1: %2", _foreachIndex, _x];
-} forEach _positions;
-
 _positions apply {
     _x params["_unit","_direction","_position"];
+
+    if !(isNull _commander) then {
+        _commander groupChat format["%1, pull security %2°", name _unit, (5 * floor(_direction / 5)) toFixed 0];
+    };
+
     [_commander, _unit, _position, _direction] spawn FUNC(assumePosition);
 };
 

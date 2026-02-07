@@ -42,10 +42,6 @@ if (currentCommand _unit isEqualTo "STOP") exitWith {
     _unit groupRadio "SentSupportNotAvailable";
 };
 
-if !(isNull _commander) then {
-    _commander groupChat format["%1, pull security %2°", name _unit, (5 * floor(_direction / 5)) toFixed 0];
-};
-
 if !(isNull objectParent _unit) then {
     INFO_1("Ordering unit to disembark: %1",_unit);
     commandGetOut _unit;
