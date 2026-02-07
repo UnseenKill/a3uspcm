@@ -20,7 +20,7 @@ Author:
 TRACE_1(QFUNC(loadAdditionalStatics),_this);
 
 if isNil(QGVAR(AdditionalStatics)) then {
-    INFO("loading additional buildable objects");
+    INFO("loading additional static weapons");
 
     [QGVAR(AdditionalStatics)] call A3A_fnc_getStatVariable;
     
@@ -30,6 +30,10 @@ if isNil(QGVAR(AdditionalStatics)) then {
     } else {
         INFO("Loading additional statics from saved data");
     };
+};
+
+([GVAR(additionalStaticsClassList)] call FUNCMAIN(utilParseAdditionalsList)) apply {
+    GVAR(AdditionalStatics) pushBackUnique _x;
 };
 
 publicVariable QGVAR(AdditionalStatics);
