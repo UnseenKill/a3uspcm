@@ -12,6 +12,8 @@ Parameters:
     3: _direction - Direction to face <NUMBER>
 
 Optional:
+    4: _whenDoneEvent - Event to trigger when the unit has reached the position
+        and is facing the correct direction <STRING>
 
 Returns:
     Nothing
@@ -33,12 +35,19 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _unit) exitWith {};
 
+#define SEND_EVENT(finished) if (!isNil "_whenDoneEvent") then { \
+    [_whenDoneEvent, [_unit, finished]] call CBA_fnc_localEvent; \
+}
+
+private _whenDoneEvent = param[4, nil, [""]];
 private["_watch","_timeout"];
 
 _watch = _position getPos[100, _direction];
 
-if !(isNull _commander) then {
-    _commander groupChat format["%1, pull security %2°", name _unit, (5 * floor(_direction / 5)) toFixed 0];
+// Unit won't move if stopped...
+if (currentCommand _unit isEqualTo "STOP") exitWith {
+    _unit groupRadio "SentSupportNotAvailable";
+    SEND_EVENT(false);
 };
 
 if !(isNull objectParent _unit) then {
@@ -46,23 +55,27 @@ if !(isNull objectParent _unit) then {
     commandGetOut _unit;
 };
 
-INFO_1("Waiting for disembarkment: %1",_unit);
+INFO_2("Waiting for disembarkment: %1 (CC: %2)",_unit,currentCommand _unit);
 waitUntil { isNull objectParent _unit };
 
-INFO_1("Unit disembarked: %1",_unit);
+INFO_2("Unit disembarked: %1 (CC: %2)",_unit,currentCommand _unit);
 
 doStop _unit;
 _unit doMove _position;
 
-_timeout = diag_tickTime + 60;
-INFO_1("Waiting for move completion: %1",_unit);
-waitUntil { (diag_tickTime > _timeout) || { moveToCompleted _unit } };
+INFO_2("Waiting for move completion: %1 (CC: %2)",_unit,currentCommand _unit);
+waitUntil { moveToCompleted _unit || { currentCommand _unit isNotEqualTo "MOVE" } };
 
-if (diag_tickTime > _timeout) exitWith { INFO_1("Unit timed out: %1",_unit) };
+if (currentCommand _unit isEqualTo "STOP") exitWith {
+    INFO_2("Unit stopped: %1 (CC: %2)",_unit,currentCommand _unit);
+    SEND_EVENT(false);
+};
 
-INFO_2("Unit move complete: %1, watch %2",_unit,_watch);
+INFO_3("Unit move complete: %1, watch %2 (CC: %3)",_unit,_watch,currentCommand _unit);
 _unit commandWatch _watch;
 _unit setFormDir _direction;
 _unit setDir _direction;
+
+SEND_EVENT(true);
 
 nil;

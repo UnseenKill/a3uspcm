@@ -1,9 +1,15 @@
+PREP(advanceForward);
 PREP(assumePosition);
+PREP(getGroupSelection);
+PREP(getSADMenuItems);
 PREP(onPlayerEventLoadout);
 PREP(onRadioEquipped);
 PREP(onRadioUnequipped);
 PREP(pullSecurity);
+PREP(sadTerminate);
+PREP(searchAndDestroy);
 PREP(securityGuardFront);
 PREP(securityGuardRear);
 PREP(securityPull360);
+PREP(showNotification);
 PREP(updateCommsMenu);

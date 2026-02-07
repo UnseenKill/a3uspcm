@@ -11,6 +11,7 @@ class CfgFunctions {
             PATHTO_FNC(utilCursorTargetAction);
             PATHTO_FNC(utilFindClosestGWH);
             PATHTO_FNC(utilGenerateUniqueID);
+            PATHTO_FNC(utilGetCenter);
             PATHTO_FNC(utilGetVehicleTemplateKey);
             PATHTO_FNC(utilIsArmedVehicle);
             PATHTO_FNC(utilIsDaytime);
@@ -18,6 +19,7 @@ class CfgFunctions {
             PATHTO_FNC(utilNormalizeDirection);
             PATHTO_FNC(utilOnA3UClientInitDone);
             PATHTO_FNC(utilOnA3UServerInitDone);
+            PATHTO_FNC(utilPadString);
             PATHTO_FNC(utilParseAdditionalsList);
             PATHTO_FNC(utilPromptText);
             PATHTO_FNC(utilRandomRange);

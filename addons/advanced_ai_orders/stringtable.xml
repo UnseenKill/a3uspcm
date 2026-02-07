@@ -5,6 +5,18 @@
             <English>A3USPCM - Advanced AI Orders Component</English>
             <German>A3USPCM - Advanced AI Orders Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SADRallyDistanceSet">
+            <English>SAD rally distance set to %1 meters.</English>
+            <German>SAD Sammelentfernung auf %1 Meter gesetzt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SADStagingDistanceSet">
+            <English>SAD staging distance set to %1 meters.</English>
+            <German>SAD Verfügungsraum auf %1 Meter gesetzt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SADSweepTimeSet">
+            <English>SAD sweep time set to %1 seconds.</English>
+            <German>SAD Suchzeit auf %1 Sekunden gesetzt.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SecurityDistanceSet">
             <English>Security distance set to %1 meters.</English>
             <German>Sicherungsentfernung auf %1 Meter gesetzt.</German>
@@ -17,19 +29,47 @@
             <English>Radio used to issue advanced AI orders.</English>
             <German>Funkgerät zum Ausgeben fortgeschrittener KI-Befehle.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_DisplayName">
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_CancelRunningOps_DisplayName">
+            <English>Cancel running ops...</English>
+            <German>Laufende Einsätze abbrechen...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersAdvance_DisplayName">
+            <English>Advance</English>
+            <German>Vorrücken</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName">
+            <English>Advance %1 meters</English>
+            <German>Vorrücken um %1 Meter</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersAdvance_Item_AdvanceForward_DisplayName">
+            <English>Advance to cursor</English>
+            <German>Vorrücken zum Cursor</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersAdvance_Item_AdvanceToMe_DisplayName">
+            <English>Advance to me</English>
+            <German>Vorrücken zu mir</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSADShort_DisplayName">
+            <English>SAD</English>
+            <German>SAD</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSAD_DisplayName">
+            <English>Search and destroy</English>
+            <German>Suchen und zerstören</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSecurity_DisplayName">
             <English>Security</English>
             <German>Sicherheit</German>
         </Key>
-        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_GuardFront_DisplayName">
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSecurity_Item_GuardFront_DisplayName">
             <English>Guard front</English>
             <German>Vorne sichern</German>
         </Key>
-        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_GuardRear_DisplayName">
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSecurity_Item_GuardRear_DisplayName">
             <English>Guard rear</English>
             <German>Hinten sichern</German>
         </Key>
-        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Pull360_DisplayName">
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSecurity_Item_Pull360_DisplayName">
             <English>Pull 360</English>
             <German>360° Deckung</German>
         </Key>
@@ -41,9 +81,85 @@
             <English>Security distance</English>
             <German>Sicherungsentfernung</German>
         </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_RallyDistance_DisplayName">
+            <English>SAD: rally distance</English>
+            <German>SAD: Sammelentfernung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_SADSweepTimeLong_DisplayName">
+            <English>Long SAD sweeps</English>
+            <German>Lange SAD Suchzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_SADSweepTimeNormal_DisplayName">
+            <English>Normal SAD sweeps</English>
+            <German>Normale SAD Suchzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_SADSweepTimeShort_DisplayName">
+            <English>Short SAD sweeps</English>
+            <German>Kurze SAD Suchzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_SADSweepTime_DisplayName">
+            <English>SAD: sweep time</English>
+            <German>SAD: Suchzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_StagingDistance_DisplayName">
+            <English>SAD: staging distance</English>
+            <German>SAD: Verfügungsraum</German>
+        </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Title">
             <English>A3USPCM - AI Orders</English>
             <German>A3USPCM - KI-Befehle</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_Hint_AbortMissionPreparing">
+            <English>Another mission is being set up, aborting.</English>
+            <German>Eine andere Mission wird gerade eingerichtet, Abbruch.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_Hint_AbortUnitsImmobile">
+            <English>One or more units are immobile, aborting.</English>
+            <German>Eine oder mehrere Einheiten sind unbeweglich, Abbruch.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_Hint_MissionAbortAllDead">
+            <English>All units are dead, tasking is aborted.</English>
+            <German>Alle Einheiten sind tot, Abbruch.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_Hint_MissionAbortSuccess">
+            <English>Tasking was successfully executed.</English>
+            <German>Einsatz wurde erfolgreich ausgeführt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_Hint_MissionAbortTasking">
+            <English>Tasking was aborted.</English>
+            <German>Einsatz abgebrochen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_Hint_ReachedWaypoint">
+            <English>We've reached waypoint %1.</English>
+            <German>Wir haben Wegpunkt %1 erreicht.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_Hint_RejoiningGroup">
+            <English>Rejoining group %1.</English>
+            <German>Treten Gruppe %1 wieder bei.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_Hint_StartingTasking">
+            <English>Engaging all hostiles in the tasking area.</English>
+            <German>Bekämpfen alle Feinde im Einsatzgebiet.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_Hint_UnitKilledLeader">
+            <English>Lead is down! %1 is dead! Assuming lead.</English>
+            <German>Der Anführer ist gefallen! %1 ist tot! Übernehme Führung.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_Hint_UnitKilledNonLeader">
+            <English>%1 is down! %2 is dead!</English>
+            <German>%1 ist gefallen! %2 ist tot!</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_WaypointName_Objective">
+            <English>Objective</English>
+            <German>Auftragziel</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_WaypointName_Rally">
+            <English>Rally</English>
+            <German>Sammelpunkt</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_WaypointName_Staging">
+            <English>Staging</English>
+            <German>Verfügungsraum</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Settings_Category_DisplayName">
             <English>Advanced AI Orders</English>
