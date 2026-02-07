@@ -5,6 +5,7 @@ PREP(onPlayerEventLoadout);
 PREP(onRadioEquipped);
 PREP(onRadioUnequipped);
 PREP(pullSecurity);
+PREP(searchAndDestroy);
 PREP(securityGuardFront);
 PREP(securityGuardRear);
 PREP(securityPull360);

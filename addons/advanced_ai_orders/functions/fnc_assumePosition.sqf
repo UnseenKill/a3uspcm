@@ -12,6 +12,8 @@ Parameters:
     3: _direction - Direction to face <NUMBER>
 
 Optional:
+    4: _whenDoneEvent - Event to trigger when the unit has reached the position
+        and is facing the correct direction <STRING>
 
 Returns:
     Nothing
@@ -33,6 +35,11 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _unit) exitWith {};
 
+#define SEND_EVENT(finished) if (!isNil "_whenDoneEvent") then { \
+    [_whenDoneEvent, [_unit, finished]] call CBA_fnc_localEvent; \
+}
+
+private _whenDoneEvent = param[4, nil, [""]];
 private["_watch","_timeout"];
 
 _watch = _position getPos[100, _direction];
@@ -40,6 +47,7 @@ _watch = _position getPos[100, _direction];
 // Unit won't move if stopped...
 if (currentCommand _unit isEqualTo "STOP") exitWith {
     _unit groupRadio "SentSupportNotAvailable";
+    SEND_EVENT(false);
 };
 
 if !(isNull objectParent _unit) then {
@@ -58,11 +66,16 @@ _unit doMove _position;
 INFO_2("Waiting for move completion: %1 (CC: %2)",_unit,currentCommand _unit);
 waitUntil { moveToCompleted _unit || { currentCommand _unit isNotEqualTo "MOVE" } };
 
-if (currentCommand _unit isEqualTo "STOP") exitWith { INFO_2("Unit stopped: %1 (CC: %2)",_unit,currentCommand _unit) };
+if (currentCommand _unit isEqualTo "STOP") exitWith {
+    INFO_2("Unit stopped: %1 (CC: %2)",_unit,currentCommand _unit);
+    SEND_EVENT(false);
+};
 
 INFO_3("Unit move complete: %1, watch %2 (CC: %3)",_unit,_watch,currentCommand _unit);
 _unit commandWatch _watch;
 _unit setFormDir _direction;
 _unit setDir _direction;
+
+SEND_EVENT(true);
 
 nil;

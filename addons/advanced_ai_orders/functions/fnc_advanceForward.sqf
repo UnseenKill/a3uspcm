@@ -41,10 +41,7 @@ _objects = [];
 // Steps:
 // 1. Find current selection center
 
-private _center = getPosATL(_units select 0);
-_units apply {
-    _center = (_center vectorAdd getPosATL _x) vectorMultiply 0.5;
-};
+private _center = [_units apply { getPosATL _x }] call FUNCMAIN(utilGetCenter);
 
 #ifdef __WANT_SPHERES__
 _sphere = "Sign_Sphere100cm_F" createVehicle[0,0,0];

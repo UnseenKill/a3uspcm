@@ -98,6 +98,14 @@ class PREFIX {
                     };
                 };
 
+                class SAD: ItemBase {
+                    itemName = CSTRING(Menu_OrdersSAD_DisplayName);
+                    assignedKey[] = {DIK_3};
+                    expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_SEARCH_AND_DESTROY),[ARR_2(player,_pos)])] call CBA_fnc_localEvent);
+                    isActive = QUOTE((NotEmpty + NotEmptyRedTeam) * cursorOnGround);
+                    iconPath = "\a3\ui_f\data\map\markers\military\warning_ca.paa";
+                };
+
 #ifdef __A3USPCM_PRODUCTION__
     #define LAST_ASSIGNED_KEY DIK_0
 #else

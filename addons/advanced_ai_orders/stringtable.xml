@@ -33,6 +33,10 @@
             <English>Advance to me</English>
             <German>Vorrücken zu mir</German>
         </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSAD_DisplayName">
+            <English>Search and destroy</English>
+            <German>Suchen und zerstören</German>
+        </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSecurity_DisplayName">
             <English>Security</English>
             <German>Sicherheit</German>
