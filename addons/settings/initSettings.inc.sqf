@@ -191,6 +191,38 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+// Menu additionals
+
+[
+    QEGVAR(menu,additionalBuildablesClassList), "EDITBOX",
+    [ELSTRING(menu,Settings_additionalBuildablesClassList_DisplayName), ELSTRING(menu,Settings_additionalBuildablesClassList_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryAdditionals_DisplayName)],
+    '', // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,additionalStaticsClassList), "EDITBOX",
+    [ELSTRING(menu,Settings_additionalStaticsClassList_DisplayName), ELSTRING(menu,Settings_additionalStaticsClassList_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryAdditionals_DisplayName)],
+    '', // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,additionalVehiclesClassList), "EDITBOX",
+    [ELSTRING(menu,Settings_additionalVehiclesClassList_DisplayName), ELSTRING(menu,Settings_additionalVehiclesClassList_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryAdditionals_DisplayName)],
+    '', // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Zeus
 
 [
