@@ -26,8 +26,6 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(updateCommsMenu),_this);
 
-#define PAD_WIDTH 70
-
 if !assert(params[
     ["_unit", nil, [objNull]]
 ]) exitWith {};
