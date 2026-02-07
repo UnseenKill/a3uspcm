@@ -38,6 +38,10 @@ if isNil(QGVAR(AdditionalBuildables)) then {
     };
 };
 
+([GVAR(additionalBuildablesClassList)] call FUNCMAIN(utilParseAdditionalsList)) apply {
+    GVAR(AdditionalBuildables) pushBackUnique _x;
+};
+
 publicVariable QGVAR(AdditionalBuildables);
 
 nil;
