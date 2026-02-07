@@ -103,6 +103,17 @@ GVAR(Timers) = [false, false];
 
     if (!isNil QGVAR(AdditionalVehicles) && { GVAR(AdditionalVehicles) isEqualType [] }) then {
         INFO("Applying additional vehicles from server");
+
+        private _typeMap = createHashMapFromArray[
+            ["vehiclesLightArmed", "TANK"],
+            ["vehiclesCivCar", "UNARMEDCAR"],
+            ["vehiclesCivHeli", "HELI"],
+            ["vehiclesCivPlane", "PLANE"],
+            ["vehiclesCivBoat", "BOAT"],
+            ["vehiclesPlane", "PLANE"],
+            ["vehiclesBoat", "BOAT"]
+        ];
+
         GVAR(AdditionalVehicles) apply {
             _x params[["_className","",[""]],["_price",0,[0]],["_type","",[""]]];
 

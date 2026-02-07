@@ -28,26 +28,24 @@ if isNil(QGVAR(AdditionalVehicles)) then {
         INFO("No saved additional Vehicles found, initializing empty array");
         GVAR(AdditionalVehicles) = [];
     } else {
-        private _typeMap = createHashMapFromArray[
-            ["vehiclesLightArmed", "TANK"],
-            ["vehiclesCivCar", "UNARMEDCAR"],
-            ["vehiclesCivHeli", "HELI"],
-            ["vehiclesCivPlane", "PLANE"],
-            ["vehiclesCivBoat", "BOAT"],
-            ["vehiclesPlane", "PLANE"],
-            ["vehiclesBoat", "BOAT"]
-        ];
-
         INFO("Loading additional Vehicles from saved data");
-
-        GVAR(AdditionalVehicles) apply {
-            _x params[["_className","",[""]],["_price",0,[0]],["_type","",[""]]];
-
-            TRACE_3(QFUNC(loadAdditionalVehicles),_className,_price,_type);
-
-            server setVariable[_className, _price, true];
-        };
     };
+};
+
+([GVAR(additionalVehiclesClassList)] call FUNCMAIN(utilParseAdditionalsList)) apply {
+    _x params["_className","_price"];
+
+    private _key = [_className] call FUNCMAIN(utilGetVehicleTemplateKey);
+
+    GVAR(AdditionalVehicles) pushBackUnique[_className, _price, _key];
+};
+
+GVAR(AdditionalVehicles) apply {
+    _x params[["_className","",[""]],["_price",0,[0]],["_type","",[""]]];
+
+    TRACE_3(QFUNC(loadAdditionalVehicles),_className,_price,_type);
+
+    server setVariable[_className, _price, true];
 };
 
 publicVariable QGVAR(AdditionalVehicles);
