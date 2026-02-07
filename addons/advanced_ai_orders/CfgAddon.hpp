@@ -59,27 +59,34 @@ class PREFIX {
                     class Forward: ItemBase {
                         itemName = CSTRING(Menu_OrdersAdvance_Item_AdvanceForward_DisplayName);
                         assignedKey[] = {};
-                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),_pos)] call CBA_fnc_localEvent);
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),[ARR_2(player,_pos)])] call CBA_fnc_localEvent);
                         isActive = QUOTE((NotEmpty + NotEmptyRedTeam) * cursorOnGround);
+                        iconPath = "\A3\ui_f\data\IGUI\Cfg\Cursors\waypointMark_ca.paa";
                     };
 
                     class Forward50: ItemBase {
                         itemName = __EVAL(formatText [LLSTRING(Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName), 50]);
                         assignedKey[] = {DIK_1};
-                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),50)] call CBA_fnc_localEvent);
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),[ARR_2(player,50)])] call CBA_fnc_localEvent);
                         isActive = QUOTE(NotEmpty + NotEmptyRedTeam);
                     };
 
                     class Forward75: Forward50 {
                         itemName = __EVAL(formatText [LLSTRING(Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName), 75]);
                         assignedKey[] = {DIK_2};
-                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),75)] call CBA_fnc_localEvent);
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),[ARR_2(player,75)])] call CBA_fnc_localEvent);
                     };
 
                     class Forward100: Forward50 {
                         itemName = __EVAL(formatText [LLSTRING(Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName), 100]);
                         assignedKey[] = {DIK_3};
-                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),100)] call CBA_fnc_localEvent);
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),[ARR_2(player,100)])] call CBA_fnc_localEvent);
+                    };
+
+                    class Forward200: Forward50 {
+                        itemName = __EVAL(formatText [LLSTRING(Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName), 200]);
+                        assignedKey[] = {DIK_4};
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),[ARR_2(player,200)])] call CBA_fnc_localEvent);
                     };
 
                     class Sep0: SeparatorBase {};
@@ -87,7 +94,7 @@ class PREFIX {
                     class ToMe: Forward50 {
                         itemName = CSTRING(Menu_OrdersAdvance_Item_AdvanceToMe_DisplayName);
                         assignedKey[] = {DIK_0};
-                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),player)] call CBA_fnc_localEvent);
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_FORWARD),[ARR_2(player,player)])] call CBA_fnc_localEvent);
                     };
                 };
 

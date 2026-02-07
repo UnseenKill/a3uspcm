@@ -37,6 +37,11 @@ private["_watch","_timeout"];
 
 _watch = _position getPos[100, _direction];
 
+// Unit won't move if stopped...
+if (currentCommand _unit isEqualTo "STOP") exitWith {
+    _unit groupRadio "SentSupportNotAvailable";
+};
+
 if !(isNull _commander) then {
     _commander groupChat format["%1, pull security %2°", name _unit, (5 * floor(_direction / 5)) toFixed 0];
 };
@@ -46,21 +51,20 @@ if !(isNull objectParent _unit) then {
     commandGetOut _unit;
 };
 
-INFO_1("Waiting for disembarkment: %1",_unit);
+INFO_2("Waiting for disembarkment: %1 (CC: %2)",_unit,currentCommand _unit);
 waitUntil { isNull objectParent _unit };
 
-INFO_1("Unit disembarked: %1",_unit);
+INFO_2("Unit disembarked: %1 (CC: %2)",_unit,currentCommand _unit);
 
 doStop _unit;
 _unit doMove _position;
 
-_timeout = diag_tickTime + 60;
-INFO_1("Waiting for move completion: %1",_unit);
-waitUntil { (diag_tickTime > _timeout) || { moveToCompleted _unit } };
+INFO_2("Waiting for move completion: %1 (CC: %2)",_unit,currentCommand _unit);
+waitUntil { moveToCompleted _unit || { currentCommand _unit isNotEqualTo "MOVE" } };
 
-if (diag_tickTime > _timeout) exitWith { INFO_1("Unit timed out: %1",_unit) };
+if (currentCommand _unit isEqualTo "STOP") exitWith { INFO_2("Unit stopped: %1 (CC: %2)",_unit,currentCommand _unit) };
 
-INFO_2("Unit move complete: %1, watch %2",_unit,_watch);
+INFO_3("Unit move complete: %1, watch %2 (CC: %3)",_unit,_watch,currentCommand _unit);
 _unit commandWatch _watch;
 _unit setFormDir _direction;
 _unit setDir _direction;

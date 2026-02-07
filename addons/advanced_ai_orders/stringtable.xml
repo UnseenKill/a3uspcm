@@ -22,7 +22,7 @@
             <German>Vorrücken</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName">
-            <English>Advance forward %1 meters</English>
+            <English>Advance %1 meters</English>
             <German>Vorrücken um %1 Meter</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersAdvance_Item_AdvanceForward_DisplayName">
