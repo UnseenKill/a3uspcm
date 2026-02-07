@@ -34,10 +34,11 @@ private _index = -1;
 missionNamespace getVariable[QGVAR(sadMissions), createHashMap] apply {
     private _event = _x;
     private _mission = _y;
+    private _label = format["%1: %2", LLSTRING(Menu_OrdersSADShort_DisplayName), groupId(_mission get "group")];
     INC(_index);
 
     [
-        format["%1: %2", LLSTRING(Menu_OrdersSADShort_DisplayName), groupId(_mission get "group")],
+        [_label, PAD_WIDTH, false] call FUNCMAIN(utilPadString),
         [DIK_1 + _index], "", -5,
         [["expression", format[QUOTE([ARR_2(QUOTE(CBA_EVENT_SAD_TERMINATE),[ARR_2(player,QQUOTE(%1))])] call CBA_fnc_localEvent), _event]]],
         "1", "1", ""

@@ -2,6 +2,8 @@
 #include "\z\a3uspcm\addons\main\script_mod.hpp"
 #include "\z\a3uspcm\addons\main\script_macros.hpp"
 
+#define PAD_WIDTH 70
+
 #define CBA_EVENT_ADVANCE_FORWARD QUOTE(TRIPLES(PREFIX,events,advanceForward))
 #define CBA_EVENT_AAIO_RADIO_EQUIPPED QUOTE(TRIPLES(PREFIX,events,aaioRadioEquipped))
 #define CBA_EVENT_AAIO_RADIO_UNEQUIPPED QUOTE(TRIPLES(PREFIX,events,aaioRadioUnequipped))
