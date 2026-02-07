@@ -21,6 +21,8 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(advanceForward),_this);
 
+//#define __WANT_SPHERES__
+
 if !assert(params[
     ["_player", nil, [objNull]],
     ["_reference", nil, [0, objNull, []], 3]
@@ -31,10 +33,10 @@ private _units = [player] call FUNC(getGroupSelection);
 
 if (_units isEqualTo []) exitWith { systemChat "No units selected" };
 
-#ifndef __A3USPCM_PRODUCTION__
+#ifdef __WANT_SPHERES__
 private["_objects","_sphere"];
 _objects = [];
-#endif // __A3USPCM_PRODUCTION__
+#endif // __WANT_SPHERES__
 
 // Steps:
 // 1. Find current selection center
@@ -44,11 +46,11 @@ _units apply {
     _center = (_center vectorAdd getPosATL _x) vectorMultiply 0.5;
 };
 
-#ifndef __A3USPCM_PRODUCTION__
+#ifdef __WANT_SPHERES__
 _sphere = "Sign_Sphere100cm_F" createVehicle[0,0,0];
 _sphere setPosATL _center;
 _objects pushBack _sphere;
-#endif // __A3USPCM_PRODUCTION__
+#endif // __WANT_SPHERES__
 
 private _position = if (_reference isEqualType []) then {
     _reference;
@@ -80,32 +82,32 @@ private _position = if (_reference isEqualType []) then {
 
 if !assert(!isNil "_position") exitWith { ERROR("sumting wong") };
 
-#ifndef __A3USPCM_PRODUCTION__
+#ifdef __WANT_SPHERES__
 _sphere = "Sign_Sphere100cm_F" createVehicle[0,0,0];
 _sphere setPosATL _position;
 _objects pushBack _sphere;
-#endif // __A3USPCM_PRODUCTION__
+#endif // __WANT_SPHERES__
 
 _units apply {
     private _diff = getPosATL _x vectorAdd(_center vectorMultiply -1);
     private _movePos = _position vectorAdd _diff;
     private _watchDir = _center getDir _movePos;
 
-#ifndef __A3USPCM_PRODUCTION__
+#ifdef __WANT_SPHERES__
     _sphere = "Sign_Sphere100cm_F" createVehicle[0,0,0];
     _sphere setPosATL _movePos;
     _sphere setObjectTextureGlobal[0, "#(rgb,8,8,3)color(1,0,0,1)"];
     _objects pushBack _sphere;
-#endif // __A3USPCM_PRODUCTION__
+#endif // __WANT_SPHERES__
 
     [_player, _x, _movePos, _watchDir] spawn FUNC(assumePosition);
 };
 
-#ifndef __A3USPCM_PRODUCTION__
+#ifdef __WANT_SPHERES__
 _objects spawn {
     uiSleep 5;
     _this apply { deleteVehicle _x };
 };
-#endif // __A3USPCM_PRODUCTION__
+#endif // __WANT_SPHERES__
 
 nil;
