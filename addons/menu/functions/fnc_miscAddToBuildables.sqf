@@ -46,6 +46,8 @@ TRACE_1(QFUNCMAIN(miscAddToBuildables),_this);
                     A3A_buildableObjects pushBack _buildable;
                     GVAR(AdditionalBuildables) pushBack _buildable;
 
+                    [CBA_EVENT_MENU_SYNCGVAR, [player, QGVAR(AdditionalBuildables), GVAR(AdditionalBuildables)]] call CBA_fnc_serverEvent;
+
                     [
                         LLSTRING(Miscellaneous_AddToBuildablesCaption),
                         format [LLSTRING(Miscellaneous_AddToBuildablesHintSuccessText), getText(configOf _target >> "displayName"), _price]

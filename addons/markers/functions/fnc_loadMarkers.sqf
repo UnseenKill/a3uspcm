@@ -20,26 +20,27 @@ Author:
 #pragma hemtt ignore_variables ["A3USPCM_markers_storedMarkers"]
 TRACE_1(QFUNC(loadMarkers),_this);
 
-if (GVAR(storedMarkers) isEqualTo false) then {
-    INFO("Markers not loaded, initializing...");
+if !(isNil QGVAR(storedMarkers)) exitWith {
+    INFO("Markers already loaded, skipping...");
+};
 
-    [QGVAR(storedMarkers)] call A3A_fnc_getStatVariable;
+INFO("Markers not loaded, initializing...");
 
-    if (isNil QGVAR(storedMarkers)) then {
-        INFO("No saved markers found, initializing empty map");
-        GVAR(storedMarkers) = createHashMap;
+[QGVAR(storedMarkers)] call A3A_fnc_getStatVariable;
+
+if (isNil QGVAR(storedMarkers)) then {
+    INFO("No saved markers found, initializing empty map");
+    GVAR(storedMarkers) = createHashMap;
+} else {
+    INFO("Loading saved markers");
+
+    if (GVAR(storedMarkers) isEqualType []) then {
+        GVAR(storedMarkers) = createHashMapFromArray GVAR(storedMarkers);
     } else {
-        INFO("Loading saved markers");
+        WARNING("Invalid markers data type, initializing with empty array");
+        TRACE_1("invalid value",GVAR(storedMarkers));
 
-        if (GVAR(storedMarkers) isEqualType []) then {
-            GVAR(storedMarkers) = createHashMapFromArray GVAR(storedMarkers);
-            [] call FUNC(restoreMarkers);
-        } else {
-            WARNING("Invalid markers data type, initializing with empty array");
-            TRACE_1("invalid value",GVAR(storedMarkers));
-
-            GVAR(storedMarkers) = createHashMap;
-        };
+        GVAR(storedMarkers) = createHashMap;
     };
 };
 

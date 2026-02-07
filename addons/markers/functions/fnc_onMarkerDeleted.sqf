@@ -21,12 +21,10 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onMarkerDeleted),_this);
 
-if !assert(isServer) exitWith {};
-
-params[
-    ["_marker", "", [""]],
-    ["_local", false, [false]]
-];
+if !assert(params[
+    ["_marker", nil, [""]],
+    ["_local", nil, [false]]
+]) exitWith {};
 
 GVAR(storedMarkers) deleteAt _marker;
 

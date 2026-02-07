@@ -45,7 +45,8 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableStatics),_this);
 
                     A3A_faction_reb get "staticMGs" pushBackUnique typeOf _target;
                     GVAR(AdditionalStatics) pushBack _static;
-
+                    [CBA_EVENT_MENU_SYNCGVAR, [player, QGVAR(AdditionalStatics), GVAR(AdditionalStatics)]] call CBA_fnc_serverEvent;
+    
                     [
                         LLSTRING(Miscellaneous_AddToBuyableStaticsCaption),
                         format [LLSTRING(Miscellaneous_AddToBuyableStaticsHintSuccessText), getText(configOf _target >> "displayName"), _price]

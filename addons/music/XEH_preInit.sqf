@@ -23,7 +23,7 @@ GVAR(waitScript) = nil;
     };
 }] call FUNCMAIN(utilOnA3UClientInitDone);
 
-[QEGVAR(main,eventMainOnSaveGame), {
+[CBA_EVENT_SERVER_SAVEGAME_BEFORE, {
     INFO("saving playlists");
     [QGVAR(tracks), +GVAR(tracks)] call A3A_fnc_setStatVariable;
 }] call CBA_fnc_addEventHandler;
