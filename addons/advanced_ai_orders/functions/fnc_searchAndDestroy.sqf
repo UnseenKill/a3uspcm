@@ -114,6 +114,13 @@ if (_maxDistance > 10 || { _units findIf { !isNull objectParent _x } != -1 }) th
 
     INFO_1("SAD mission %1: rally reached; assuming mission",_event);
 
+    if !GVAR(haveGlobalKillEventHandler) then {
+        ["CAManBase", "killed", {
+            params["_unit","_killer","_instigator"];
+        }, true, [], true] call CBA_fnc_addClassEventHandler;
+        GVAR(haveGlobalKillEventHandler) = true;
+    };
+
     private _playerGroup = group(_mission get "player");
     private _group = createGroup[side(_mission get "player"), true];
     private _needLeader = true;

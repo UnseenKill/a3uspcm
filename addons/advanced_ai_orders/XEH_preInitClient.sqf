@@ -16,6 +16,7 @@ if (!is3DEN) then {
 [CBA_EVENT_SHOW_NOTIFICATION, { call FUNC(showNotification) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_UPDATE_COMMS_MENU, { call FUNC(updateCommsMenu) }] call CBA_fnc_addEventHandler;
 
+GVAR(haveGlobalKillEventHandler) = true;
 GVAR(securityDistance) = 20;
 GVAR(sadRallyDistance) = 100;
 GVAR(sadSweepTime) = 240;
