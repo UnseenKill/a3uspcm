@@ -31,6 +31,7 @@ class PREFIX {
                 class Security: SubmenuBase {
                     displayName = CSTRING(Menu_OrdersSecurity_DisplayName);
                     assignedKey[] = {DIK_1};
+                    isActive = QUOTE(IsLeader * (1 - IsAlone));
 
                     class Pull360: ItemBase {
                         itemName = CSTRING(Menu_OrdersSecurity_Item_Pull360_DisplayName);
@@ -55,6 +56,7 @@ class PREFIX {
                 class Advance: SubmenuBase {
                     displayName = CSTRING(Menu_OrdersAdvance_DisplayName);
                     assignedKey[] = {DIK_2};
+                    isActive = QUOTE(IsLeader * (1 - IsAlone));
                     yesHemttThisStringtableKeyIsUsed = CSTRING(Menu_OrdersAdvance_Item_AdvanceForwardMeters_DisplayName);
 
                     class Forward: ItemBase {
@@ -103,7 +105,7 @@ class PREFIX {
                     itemName = CSTRING(Menu_OrdersSAD_DisplayName);
                     assignedKey[] = {DIK_3};
                     expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_SEARCH_AND_DESTROY),[ARR_2(player,_pos)])] call CBA_fnc_localEvent);
-                    isActive = QUOTE((NotEmpty + NotEmptyRedTeam) * cursorOnGround);
+                    isActive = QUOTE(IsLeader * (1 - IsAlone) * (NotEmpty + NotEmptyRedTeam) * cursorOnGround);
                     iconPath = "\a3\ui_f\data\map\markers\military\warning_ca.paa";
                 };
 
@@ -123,7 +125,7 @@ class PREFIX {
                     itemName = ECSTRING(menu,Miscellaneous_UnstickCaption);
                     assignedKey[] = {LAST_ASSIGNED_KEY};
                     expression = QUOTE(call FUNCMAIN(miscUnstick));
-                    isActive = QUOTE(NotEmpty);
+                    isActive = QUOTE(NotEmpty * IsLeader * (1 - IsAlone));
                     iconPath = "\a3\ui_f\data\map\markers\military\warning_ca.paa";
                 };
 
@@ -158,6 +160,63 @@ class PREFIX {
                         ITEM_DISTANCE(DIK_5,40);
                         ITEM_DISTANCE(DIK_6,50);
                         #undef ITEM_DISTANCE
+                    };
+
+                    class Sep0: SeparatorBase {};
+
+                    class SADSweepTime: SubmenuBase {
+                        displayName = CSTRING(Menu_Security_Item_Settings_SADSweepTime_DisplayName);
+
+                        #define ITEM_SAD_SWEEP_TIME(keyBind,llstring,time) \
+                            class SADSweepTime##time##s: ItemBase { \
+                                assignedKey[] = {keyBind}; \
+                                itemName = CSTRING(llstring); \
+                                expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_SETTINGS_SET_SAD_SWEEP_TIME),time)] call CBA_fnc_localEvent); \
+                                selected = QUOTE(GVAR(sadSweepTime) == time); \
+                                updateAfterExecution = 1; \
+                            }
+                        ITEM_SAD_SWEEP_TIME(DIK_1,Menu_Security_Item_Settings_SADSweepTimeShort_DisplayName,10);
+                        ITEM_SAD_SWEEP_TIME(DIK_2,Menu_Security_Item_Settings_SADSweepTimeNormal_DisplayName,120);
+                        ITEM_SAD_SWEEP_TIME(DIK_3,Menu_Security_Item_Settings_SADSweepTimeLong_DisplayName,240);
+                        #undef ITEM_SAD_SWEEP_TIME
+                    };
+
+                    class SADStagingDistance: SubmenuBase {
+                        displayName = CSTRING(Menu_Security_Item_Settings_StagingDistance_DisplayName);
+
+                        #define ITEM_SAD_STAGING_DISTANCE(keyBind,distance) \
+                            class SADStagingDist##distance##m: ItemBase { \
+                                assignedKey[] = {keyBind}; \
+                                itemName = QUOTE(distance meters); \
+                                expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_SETTINGS_SET_SAD_STAGING_DISTANCE),distance)] call CBA_fnc_localEvent); \
+                                selected = QUOTE(GVAR(sadStagingDistance) == distance); \
+                                updateAfterExecution = 1; \
+                            }
+                        ITEM_SAD_STAGING_DISTANCE(DIK_1,20);
+                        ITEM_SAD_STAGING_DISTANCE(DIK_2,50);
+                        ITEM_SAD_STAGING_DISTANCE(DIK_3,100);
+                        ITEM_SAD_STAGING_DISTANCE(DIK_4,150);
+                        ITEM_SAD_STAGING_DISTANCE(DIK_5,200);
+                        #undef ITEM_SAD_STAGING_DISTANCE
+                    };
+
+                    class SADRallyDistance: SubmenuBase {
+                        displayName = CSTRING(Menu_Security_Item_Settings_RallyDistance_DisplayName);
+
+                        #define ITEM_SAD_RALLY_DISTANCE(keyBind,distance) \
+                            class SADRallyDist##distance##m: ItemBase { \
+                                assignedKey[] = {keyBind}; \
+                                itemName = QUOTE(distance meters); \
+                                expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_SETTINGS_SET_SAD_RALLY_DISTANCE),distance)] call CBA_fnc_localEvent); \
+                                selected = QUOTE(GVAR(sadRallyDistance) == distance); \
+                                updateAfterExecution = 1; \
+                            }
+                        ITEM_SAD_RALLY_DISTANCE(DIK_1,20);
+                        ITEM_SAD_RALLY_DISTANCE(DIK_2,50);
+                        ITEM_SAD_RALLY_DISTANCE(DIK_3,100);
+                        ITEM_SAD_RALLY_DISTANCE(DIK_4,150);
+                        ITEM_SAD_RALLY_DISTANCE(DIK_5,200);
+                        #undef ITEM_SAD_RALLY_DISTANCE
                     };
                 };
             };

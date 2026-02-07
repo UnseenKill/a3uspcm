@@ -5,6 +5,18 @@
             <English>A3USPCM - Advanced AI Orders Component</English>
             <German>A3USPCM - Advanced AI Orders Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SADRallyDistanceSet">
+            <English>SAD rally distance set to %1 meters.</English>
+            <German>SAD Sammelentfernung auf %1 Meter gesetzt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SADStagingDistanceSet">
+            <English>SAD staging distance set to %1 meters.</English>
+            <German>SAD Verfügungsraum auf %1 Meter gesetzt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SADSweepTimeSet">
+            <English>SAD sweep time set to %1 seconds.</English>
+            <German>SAD Suchzeit auf %1 Sekunden gesetzt.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SecurityDistanceSet">
             <English>Security distance set to %1 meters.</English>
             <German>Sicherungsentfernung auf %1 Meter gesetzt.</German>
@@ -68,6 +80,30 @@
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_Distance_DisplayName">
             <English>Security distance</English>
             <German>Sicherungsentfernung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_RallyDistance_DisplayName">
+            <English>SAD: rally distance</English>
+            <German>SAD: Sammelentfernung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_SADSweepTimeLong_DisplayName">
+            <English>Long SAD sweeps</English>
+            <German>Lange SAD Suchzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_SADSweepTimeNormal_DisplayName">
+            <English>Normal SAD sweeps</English>
+            <German>Normale SAD Suchzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_SADSweepTimeShort_DisplayName">
+            <English>Short SAD sweeps</English>
+            <German>Kurze SAD Suchzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_SADSweepTime_DisplayName">
+            <English>SAD: sweep time</English>
+            <German>SAD: Suchzeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_StagingDistance_DisplayName">
+            <English>SAD: staging distance</English>
+            <German>SAD: Verfügungsraum</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Title">
             <English>A3USPCM - AI Orders</English>

@@ -17,6 +17,24 @@ if (!is3DEN) then {
 [CBA_EVENT_UPDATE_COMMS_MENU, { call FUNC(updateCommsMenu) }] call CBA_fnc_addEventHandler;
 
 GVAR(securityDistance) = 20;
+GVAR(sadRallyDistance) = 100;
+GVAR(sadSweepTime) = 240;
+GVAR(sadStagingDistance) = 100;
+
+[CBA_EVENT_SETTINGS_SET_SAD_RALLY_DISTANCE, {
+    GVAR(sadRallyDistance) = _this;
+    systemChat format[LLSTRING(Hint_SADRallyDistanceSet), GVAR(sadRallyDistance)];
+}] call CBA_fnc_addEventHandler;
+
+[CBA_EVENT_SETTINGS_SET_SAD_STAGING_DISTANCE, {
+    GVAR(sadStagingDistance) = _this;
+    systemChat format[LLSTRING(Hint_SADStagingDistanceSet), GVAR(sadStagingDistance)];
+}] call CBA_fnc_addEventHandler;
+
+[CBA_EVENT_SETTINGS_SET_SAD_SWEEP_TIME, {
+    GVAR(sadSweepTime) = _this;
+    systemChat format[LLSTRING(Hint_SADSweepTimeSet), GVAR(sadSweepTime)];
+}] call CBA_fnc_addEventHandler;
 
 [CBA_EVENT_SETTINGS_SET_SECURITY_DISTANCE, {
     GVAR(securityDistance) = _this;

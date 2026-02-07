@@ -184,7 +184,7 @@ if (_maxDistance > 10) then {
 
     sleep 2;
 
-    _pos = (_mission get "position") getPos[100, (_mission get "position") getDir leader _group];
+    _pos = (_mission get "position") getPos[GVAR(sadStagingDistance), (_mission get "position") getDir leader _group];
     _wp = _group addWaypoint[_pos, 0];
     _wp setWaypointDescription LLSTRING(OrdersSAD_WaypointName_Staging);
     _wp setWaypointType "MOVE";
@@ -196,11 +196,12 @@ if (_maxDistance > 10) then {
     _wp = _group addWaypoint[_mission get "position", 0];
     _wp setWaypointDescription LLSTRING(OrdersSAD_WaypointName_Objective);
     _wp setWaypointType "SAD";
-    _wp setWaypointTimeout[10, 10, 10];
+    _wp setWaypointTimeout[GVAR(sadSweepTime) * 2 / 3, GVAR(sadSweepTime), GVAR(sadSweepTime) * 4 / 3];
     _wp setWaypointCompletionRadius 30;
     _wp setWaypointStatements["true", format[QUOTE(if (local this) then {[ARR_2(QQUOTE(%1),[this])] call CBA_fnc_localEvent}), _mission get "wpEvent"]];
 
-    _wp = _group addWaypoint[_pos, 50];
+    _pos = (_mission get "position") getPos[GVAR(sadRallyDistance), (_mission get "position") getDir leader _group];
+    _wp = _group addWaypoint[_pos, 20];
     _wp setWaypointDescription LLSTRING(OrdersSAD_WaypointName_Rally);
     _wp setWaypointType "MOVE";
     _wp setWaypointSpeed "NORMAL";
