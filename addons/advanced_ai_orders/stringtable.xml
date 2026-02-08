@@ -98,12 +98,12 @@
             <German>Einstellungen</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_Distance_DisplayName">
-            <English>Security distance</English>
-            <German>Sicherungsentfernung</German>
+            <English>Security</English>
+            <German>Absicherung</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_RallyDistance_DisplayName">
-            <English>SAD: rally distance</English>
-            <German>SAD: Sammelentfernung</German>
+            <English>Rally distance</English>
+            <German>Sammelentfernung</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_Reference_DisplayName">
             <English>Set reference</English>
@@ -122,12 +122,16 @@
             <German>Kurze SAD Suchzeit</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_SADSweepTime_DisplayName">
-            <English>SAD: sweep time</English>
-            <German>SAD: Suchzeit</German>
+            <English>Sweep time</English>
+            <German>Suchzeit</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_StagingDistance_DisplayName">
-            <English>SAD: staging distance</English>
-            <German>SAD: Verfügungsraum</German>
+            <English>Staging distance</English>
+            <German>Entfernung Verfügungsraum</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_StartTasking_DisplayName">
+            <English>Start tasking: %1</English>
+            <German>Einsatz starten: %1</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Title">
             <English>A3USPCM - AI Orders</English>
