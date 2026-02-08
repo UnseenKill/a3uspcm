@@ -11,5 +11,6 @@ PREP(searchAndDestroy);
 PREP(securityGuardFront);
 PREP(securityGuardRear);
 PREP(securityPull360);
+PREP(securityReturnToPosition);
 PREP(showNotification);
 PREP(updateCommsMenu);

@@ -51,6 +51,15 @@ class PREFIX {
                         assignedKey[] = {DIK_3};
                         expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_GUARD_REAR)] call CBA_fnc_localEvent);
                     };
+
+                    class Sep0: SeparatorBase {};
+
+                    class ReturnToPosition: ItemBase {
+                        itemName = CSTRING(Menu_OrdersSecurity_Item_ReturnToPosition_DisplayName);
+                        assignedKey[] = {DIK_9};
+                        expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_RETURN_TO_POSITION)] call CBA_fnc_localEvent);
+                        isActive = QUOTE(NotEmpty + CursorOnGroupMember);
+                    };
                 };
 
                 class Advance: SubmenuBase {
