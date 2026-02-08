@@ -20,22 +20,17 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(securityReturnToVehicle),_this);
 
+private _units = [player] call FUNC(getGroupSelection);
 
-private _units = switch true do {
-    // Because of "CursorOnGroupMember" condition
-    case (groupSelectedUnits player isEqualTo []): {
-        [cursorTarget]
-    };
-    default {
-        [player] call FUNC(getGroupSelection);
-    };
-};
-
-(_units select {
-    !isNull _x && { !isNil { _x getVariable QGVAR(previousVehicle) } }
+_units =_units select {
+    !isNil { _x getVariable QGVAR(previousVehicle) }
 } apply {
     _x assignAsCargo(_x getVariable QGVAR(previousVehicle));
     _x;
-}) orderGetIn true;
+};
+
+diag_log str _units;
+
+_units orderGetIn true;
 
 nil;

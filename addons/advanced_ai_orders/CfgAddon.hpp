@@ -77,7 +77,8 @@ class PREFIX {
                         itemName = CSTRING(Menu_OrdersSecurity_Item_ReturnToVehicle_DisplayName);
                         assignedKey[] = {DIK_8};
                         expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_RETURN_TO_VEHICLE)] call CBA_fnc_localEvent);
-                        isActive = QUOTE(NotEmpty + NotEmptyRedTeam + CursorOnGroupMember);
+                        isActive = QUOTE(NotEmpty + NotEmptyRedTeam);
+                        isVisible = "0"; // No worky for now
                     };
 
                     class ReturnToPosition: ItemBase {
