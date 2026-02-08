@@ -50,8 +50,10 @@ if (currentCommand _unit isEqualTo "STOP") exitWith {
     SEND_EVENT(false);
 };
 
-if !(isNull objectParent _unit) then {
-    INFO_1("Ordering unit to disembark: %1",_unit);
+if (isNull objectParent _unit) then {
+    unassignVehicle _unit;
+} else {
+    _unit setVariable[QGVAR(previousVehicle), objectParent _unit];
     commandGetOut _unit;
 };
 
@@ -60,7 +62,7 @@ waitUntil { isNull objectParent _unit };
 
 INFO_2("Unit disembarked: %1 (CC: %2)",_unit,currentCommand _unit);
 
-doStop _unit;
+// doStop _unit; // That one necessary?
 _unit doMove _position;
 
 INFO_2("Waiting for move completion: %1 (CC: %2)",_unit,currentCommand _unit);

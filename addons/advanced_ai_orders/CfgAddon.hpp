@@ -73,6 +73,13 @@ class PREFIX {
 
                     class Sep1: SeparatorBase {};
 
+                    class ReturnToVehicle: ItemBase {
+                        itemName = CSTRING(Menu_OrdersSecurity_Item_ReturnToVehicle_DisplayName);
+                        assignedKey[] = {DIK_8};
+                        expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_RETURN_TO_VEHICLE)] call CBA_fnc_localEvent);
+                        isActive = QUOTE(NotEmpty + NotEmptyRedTeam + CursorOnGroupMember);
+                    };
+
                     class ReturnToPosition: ItemBase {
                         itemName = CSTRING(Menu_OrdersSecurity_Item_ReturnToPosition_DisplayName);
                         assignedKey[] = {DIK_9};
