@@ -58,11 +58,12 @@ private _positions = (_positionsTemplate apply {
 
     private _direction = [_heading + _degrees] call FUNCMAIN(utilNormalizeDirection);
 
-    [_units deleteAt 0, _direction, _center getPos[_distance, _direction]];
+    [_degrees, _units deleteAt 0, _direction, _center getPos[_distance, _direction]];
 }) - [[]];
 
+_positions sort true;
 _positions apply {
-    _x params["_unit","_direction","_position"];
+    _x params["","_unit","_direction","_position"];
 
     if !(isNull _commander) then {
         _commander groupChat format["%1, pull security %2°", name _unit, (5 * floor(_direction / 5)) toFixed 0];
