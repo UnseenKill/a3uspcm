@@ -73,6 +73,10 @@
             <English>Pull 360</English>
             <German>360° Deckung</German>
         </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSecurity_Item_ReturnToPosition_DisplayName">
+            <English>Return/reassume position</English>
+            <German>Position wiederaufnehmen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_DisplayName">
             <English>Settings</English>
             <German>Einstellungen</German>
@@ -160,6 +164,10 @@
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSAD_WaypointName_Staging">
             <English>Staging</English>
             <German>Verfügungsraum</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSecurity_Hint_ResumeTooFar">
+            <English>Can't resume position; %1m is just too far to leg it.</English>
+            <German>Kann Position nicht wieder aufnehmen; der Fußbus fährt keine %1m.</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Settings_Category_DisplayName">
             <English>Advanced AI Orders</English>

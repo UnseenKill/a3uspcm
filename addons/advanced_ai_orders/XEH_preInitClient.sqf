@@ -13,6 +13,7 @@ if (!is3DEN) then {
 [CBA_EVENT_SECURITY_PULL360, { call FUNC(securityPull360) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_SECURITY_GUARD_FRONT, { call FUNC(securityGuardFront) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_SECURITY_GUARD_REAR, { call FUNC(securityGuardRear) }] call CBA_fnc_addEventHandler;
+[CBA_EVENT_SECURITY_RETURN_TO_POSITION, { call FUNC(securityReturnToPosition) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_SHOW_NOTIFICATION, { call FUNC(showNotification) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_UPDATE_COMMS_MENU, { call FUNC(updateCommsMenu) }] call CBA_fnc_addEventHandler;
 
