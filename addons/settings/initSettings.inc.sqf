@@ -1,6 +1,16 @@
 // Common
 
 [
+    QEGVAR(menu,autoFixVoices), "CHECKBOX",
+    [ELSTRING(menu,Settings_autoFixVoices_DisplayName), ELSTRING(menu,Settings_autoFixVoices_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    false, // default
+    false, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(menu,emergencyInvincibilityDuration), "TIME",
     [ELSTRING(menu,Settings_emergencyInvincibilityDuration_DisplayName), ELSTRING(menu,Settings_emergencyInvincibilityDuration_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
@@ -75,7 +85,7 @@
     [ELSTRING(util,Settings_cursorTargetActionDelay_DisplayName), ELSTRING(util,Settings_cursorTargetActionDelay_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
     [0, 5, 2.5, 1], // min,max,default,decimals
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -105,7 +115,7 @@
     [ELSTRING(garrison,Settings_allowTakeOverAnything_DisplayName), ELSTRING(garrison,Settings_allowTakeOverAnything_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
     false, // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -121,7 +131,7 @@
             ELSTRING(menu,Settings_inject_End)
         ], 1
     ],
-    true, // global
+    false, // global
     {}, // onchange
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -153,7 +163,7 @@
     [ELSTRING(music,Settings_overrideMusic_DisplayName), ELSTRING(music,Settings_overrideMusic_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -163,7 +173,7 @@
     [ELSTRING(music,Settings_showNowPlaying_DisplayName), ELSTRING(music,Settings_showNowPlaying_DisplayName)],
     [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -173,7 +183,7 @@
     [ELSTRING(music,Settings_pause_DisplayName), ELSTRING(music,Settings_pause_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
     [0, 600, 90, -1], // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -183,12 +193,44 @@
     [ELSTRING(music,Settings_volume_DisplayName), ELSTRING(music,Settings_volume_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(music,Settings_Category_DisplayName)],
     [0, 5, 0.5, 3], // default
-    true, // global
+    false, // global
     {
         params[["_volume",0.5,[0]]];
         2 fadeMusic _volume;
     }, // onchange
     false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+// Menu additionals
+
+[
+    QEGVAR(menu,additionalBuildablesClassList), "EDITBOX",
+    [ELSTRING(menu,Settings_additionalBuildablesClassList_DisplayName), ELSTRING(menu,Settings_additionalBuildablesClassList_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryAdditionals_DisplayName)],
+    '', // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,additionalStaticsClassList), "EDITBOX",
+    [ELSTRING(menu,Settings_additionalStaticsClassList_DisplayName), ELSTRING(menu,Settings_additionalStaticsClassList_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryAdditionals_DisplayName)],
+    '', // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,additionalVehiclesClassList), "EDITBOX",
+    [ELSTRING(menu,Settings_additionalVehiclesClassList_DisplayName), ELSTRING(menu,Settings_additionalVehiclesClassList_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryAdditionals_DisplayName)],
+    '', // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
 // Zeus
@@ -320,11 +362,21 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(aafc,playContactSound), "CHECKBOX",
+    [ELSTRING(aafc,Settings_playContactSound_DisplayName), ELSTRING(aafc,Settings_playContactSound_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    true, // default
+    false, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(aafc,sideChatContact), "CHECKBOX",
     [ELSTRING(aafc,Settings_sideChatContact_DisplayName), ELSTRING(aafc,Settings_sideChatContact_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -334,7 +386,7 @@
     [ELSTRING(aafc,Settings_sideChatFired_DisplayName), ELSTRING(aafc,Settings_sideChatFired_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -354,6 +406,18 @@
     [ELSTRING(zeus,Settings_moduleMSE_transferHC_DisplayName), ELSTRING(zeus,Settings_moduleMSE_transferHC_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
     false, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+// AAIO
+
+[
+    QEGVAR(advanced_ai_orders,requireRadioEquipped), "CHECKBOX",
+    [ELSTRING(advanced_ai_orders,Settings_requireRadioEquipped_DisplayName), ELSTRING(advanced_ai_orders,Settings_requireRadioEquipped_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(advanced_ai_orders,Settings_Category_DisplayName)],
+    true, // default
     true, // global
     {}, // onchange
     false // Needs mission restart
@@ -639,7 +703,7 @@
     [ELSTRING(fixes,Settings_storeQuickSell_DisplayName), ELSTRING(fixes,Settings_storeQuickSell_Tooltip)],
     [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -649,7 +713,7 @@
     [ELSTRING(store,Settings_playKaching_DisplayName), ELSTRING(store,Settings_playKaching_Tooltip)],
     [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
     true, // default
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
@@ -659,7 +723,7 @@
     [ELSTRING(store,Settings_sellDelay_DisplayName), ELSTRING(store,Settings_sellDelay_Tooltip)],
     [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
     [0, 1, 0.25, 3], // min,max,default,decimals
-    true, // global
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;

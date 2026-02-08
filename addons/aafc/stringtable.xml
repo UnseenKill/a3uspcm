@@ -129,6 +129,14 @@
             <English>AA groups will enter this combat mode once spawned.</English>
             <German>AA Gruppen werden in diesen Kampfmodus eintreten, sobald sie gespawnt sind.</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_playContactSound_DisplayName">
+            <English>Play contact sound</English>
+            <German>Ton bei Kontakt abspielen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_playContactSound_Tooltip">
+            <English>Play a sound when an AA group detects a new contact.</English>
+            <German>Spiele einen Ton ab, wenn eine Fla-Gruppe einen neuen Kontakt entdeckt.</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_reportAirOnly_DisplayName">
             <English>Report air contacts only</English>
             <German>Nur Luftkontakte melden</German>

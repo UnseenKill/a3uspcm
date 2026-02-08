@@ -20,9 +20,11 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
+if !hasInterface exitWith {};
+
 TRACE_1(QFUNC(initItemContextMenu),_this);
 
-if !GVAR(allowPersistentMarkers) exitWith { false };
+if !GVAR(allowPersistentMarkers) exitWith {};
 
 [
     QGVAR(PermanentMarker),

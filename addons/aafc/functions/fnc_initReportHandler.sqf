@@ -48,6 +48,10 @@ _group addEventHandler["EnemyDetected", {
         ];
     };
 
+    if GVAR(playContactSound) then {
+        playSound QEGVAR(assets,AafcContact);
+    };
+
     player reveal _enemy;
 
     _enemy addEventHandler["IncomingMissile", {

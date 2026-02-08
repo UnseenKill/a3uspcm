@@ -55,6 +55,7 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_EnlargeNearestMarkerCaption);
                 text = CSTRING(Miscellaneous_EnlargeNearestMarkerText);
                 action = QFUNCMAIN(miscEnlargeNearestMarker);
+                condition = QUOTE(player isEqualTo theBoss);
                 closeDiary = 1;
             };
 
@@ -385,6 +386,13 @@ class GVAR(Config) {
                 caption = "$STR_antistasi_dialogs_unit_recruit_explosive_text";
                 action = QFUNCMAIN(recruitForPlayer);
                 params = QUOTE(unitExp);
+            };
+
+            class SquadLeader {
+                caption = __EVAL(formatText[LLSTRING(Recruitment_RecruitUnitWrapper), localize "STR_antistasi_dialogs_hq_garrisons_squad_leader"]);
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitSL);
+                yetHemttThisStringtableKeyIsInUse = CSTRING(Recruitment_RecruitUnitWrapper);
             };
         };
 

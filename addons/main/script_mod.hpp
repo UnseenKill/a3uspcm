@@ -2,7 +2,6 @@
 #define PREFIX A3USPCM
 
 #include "script_production.hpp"
-#include "script_macros_a3u.hpp"
 #include "script_version.hpp"
 
 #define VERSION     MAJOR.MINOR
@@ -36,7 +35,11 @@
     #define DEBUG_ENABLED_VERSIONING
 */
 
-// Remove CfgFunction adding headers and disable SCRIPT macro (comment out to enable for debugging)
-#define SKIP_FUNCTION_HEADER // [Enable for release]
-#define SKIP_SCRIPT_NAME // [Enable for release]
-// #define RECOMPILE // [Disable for release]
+#ifdef __A3USPCM_PRODUCTION__
+    // Remove CfgFunction adding headers and disable SCRIPT macro (comment out to enable for debugging)
+    #define SKIP_FUNCTION_HEADER // [Enable for release]
+    #define SKIP_SCRIPT_NAME // [Enable for release]
+#else
+    #define RECOMPILE // [Disable for release]
+    #define DISABLE_COMPILE_CACHE
+#endif

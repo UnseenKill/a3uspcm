@@ -19,23 +19,25 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNCMAIN(miscUnstick),_this);
 
-[] spawn {
-    private _timeout = 5;
+[groupSelectedUnits player] spawn {
+    params[["_units", [], [[]]]];
 
-    while { _timeout > 0 } do {
-        systemChat format[LLSTRING(Miscellaneous_UnstickTimeoutText), _timeout];
-        DEC(_timeout);
-        uiSleep 1;
+    if (_units isEqualTo []) then {
+        private _timeout = 5;
+
+        while { _timeout > 0 } do {
+            systemChat format[LLSTRING(Miscellaneous_UnstickTimeoutText), _timeout];
+            DEC(_timeout);
+            uiSleep 1;
+        };
+
+        _units = groupSelectedUnits player;
     };
 
-    private _units = groupSelectedUnits player;
+    _units = _units select { isNull objectParent _x };
 
     if (_units isEqualTo []) exitWith {
-        [
-            LLSTRING(Miscellaneous_UnstickCaption),
-            LLSTRING(Miscellaneous_UnstickErrorNoSelectionText)
-        ] call A3A_fnc_customHint;
-
+        [LLSTRING(Miscellaneous_UnstickCaption), LLSTRING(Miscellaneous_UnstickErrorNoSelectionText)] call A3A_fnc_customHint;
         playSound "A3AP_UiFailure";
     };
 

@@ -28,9 +28,10 @@ private _markerX = [_sites, player] call BIS_fnc_nearestPosition;
     _amount = parseNumber _amount;
     if (_amount isEqualType false || 0 == _amount) exitWith {};
 
-    _markerX setMarkerSize[_amount, _amount];
+    [_markerX, [_amount, _amount]] remoteExecCall["setMarkerSize", 2];
 
     GVAR(MarkerSizes) set[_markerX, _amount];
+    [CBA_EVENT_MENU_SYNCGVAR, [player, QGVAR(MarkerSizes), GVAR(MarkerSizes)]] call CBA_fnc_serverEvent;
 
     systemChat "Done";
 }, _markerX] call FUNCMAIN(utilPromptText);

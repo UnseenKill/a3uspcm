@@ -6,7 +6,7 @@ Description:
     Checks if the vehicle is armed or not.
 
 Parameters:
-    0: _vehicle - Vehicle <OBJECT>
+    0: _vehicle - Vehicle class or object <STRING,OBJECT>
 
 Optional:
 
@@ -23,14 +23,20 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNCMAIN(utilIsArmedVehicle),_this);
 
-params[
-    ["_vehicle", objNull, [objNull]]
-];
+if !assert(params[
+    ["_vehicle", objNull, ["", objNull]]
+]) exitWith { false };
+if (_vehicle isEqualType objNull && { isNull _vehicle }) exitWith { false };
 
-if (isNull _vehicle) exitWith { false };
+private _config = if (_vehicle isEqualType "") then {
+    configFile >> "CfgVehicles" >> _vehicle
+} else {
+    configOf _vehicle
+};
 
-magazinesAllTurrets[_vehicle, true] findIf {
-    _x params["_magName"];
-    // "type" == 0 means it's a weapon, not e.g. a chaff/flare dispenser
-    (getNumber(configFile >> "CfgMagazines" >> _magName >> "type") == 0)
-} >= 0;
+("true" configClasses(_config >> "Turrets")) findIf {
+    getArray(_x >> "magazines") findIf {
+        // "type" == 0 means it's a weapon, not e.g. a chaff/flare dispenser
+        getNumber(configFile >> "CfgMagazines" >> _x >> "type") == 0;
+    } != -1;
+} != -1;

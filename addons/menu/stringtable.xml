@@ -617,6 +617,10 @@
             <English>Advanced Garrison Manager</English>
             <German>Erweiterter Garnisonsmanager</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Recruitment_RecruitUnitWrapper">
+            <English>Recruit %1</English>
+            <German>Rekrutiere %1</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Recruitment_RenameCountdownText">
             <English>Make your HC selection (%1 seconds remaining)</English>
             <German>Triff deine HC-Auswahl (noch %1 Sekunden)</German>
@@ -697,6 +701,10 @@
             <English>Get money back from FIA</English>
             <German>Hole Geld von FIA zurück</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_CategoryAdditionals_DisplayName">
+            <English>Additionals classes</English>
+            <German>Zusätzliche Klassen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_CategoryIntel_DisplayName">
             <English>Intelligence finder</English>
             <German>Geheiminformationen auffinden</German>
@@ -705,6 +713,14 @@
             <English>Common settings</English>
             <German>Allgemeine Einstellungen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalBuildablesClassList_DisplayName">
+            <English>Additional buildables class list</English>
+            <German>Klassenliste für zusätzliche Bauobjekte</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalBuildablesClassList_Tooltip">
+            <English>Comma-separated list of classnames of additional buildable objects. These will be added to the list of buildable objects on the start of the game.&lt;br/&gt;Format: classname1,classname2=price,classname3=price,...</English>
+            <German>Komma-getrennte Liste von Klassennamen zusätzlicher Bauobjekte. Diese werden zu der Liste der Bauobjekte beim Spielstart hinzugefügt.&lt;br/&gt;Format: classname1,classname2=price,classname3=price,...</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_additionalBuildablesStartEmpty_DisplayName">
             <English>Start with empty additional buildings</English>
             <German>Starte mit leeren zusätzlichen Gebäuden</German>
@@ -712,6 +728,30 @@
         <Key ID="STR_A3USPCM_Menu_Settings_additionalBuildablesStartEmpty_Tooltip">
             <English>When loading a save, do not load additional buildables added by this mod. Don't forget to reset this setting when persisting new additional buildables!</English>
             <German>Wenn du einen Spielstand lädst, lade keine zusätzlichen, von diesem Mod hinzugefügten, Bauobjekte. Vergiss nicht, diese Einstellung zurückzusetzen, wenn du neue zusätzliche Bauobjekte speicherst!</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalStaticsClassList_DisplayName">
+            <English>Additional buyable statics class list</English>
+            <German>Klassenliste für zusätzliche kaufbare Stellungen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalStaticsClassList_Tooltip">
+            <English>Comma-separated list of classnames of additional buyable static emplacements. These will be added to the list of buyable statics on the start of the game.&lt;br/&gt;Format: classname1,classname2=price,classname3=price,...</English>
+            <German>Komma-getrennte Liste von Klassennamen zusätzlicher kaufbarer Stellungen. Diese werden zu der Liste der kaufbaren Stellungen beim Spielstart hinzugefügt.&lt;br/&gt;Format: classname1,classname2=price,classname3=price,...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalVehiclesClassList_DisplayName">
+            <English>Additional buyable vehicles class list</English>
+            <German>Klassenliste für zusätzliche kaufbare Fahrzeuge</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalVehiclesClassList_Tooltip">
+            <English>Comma-separated list of classnames of additional buyable vehicles. These will be added to the list of buyable vehicles on the start of the game.&lt;br/&gt;Format: classname1,classname2=price,classname3=price,...</English>
+            <German>Komma-getrennte Liste von Klassennamen zusätzlicher kaufbarer Fahrzeuge. Diese werden zu der Liste der kaufbaren Fahrzeuge beim Spielstart hinzugefügt.&lt;br/&gt;Format: classname1,classname2=price,classname3=price,...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoFixVoices_DisplayName">
+            <English>Auto-fix voices at startup</English>
+            <German>Stimmen automatisch reparieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoFixVoices_Tooltip">
+            <English>Automatically fix voices at the start of each game.</English>
+            <German>Repariere automatisch die Stimmen am Anfang jedes Spiels.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_dsbCost_DisplayName">
             <English>Despawn Suppressor Beacon™ cost</English>
