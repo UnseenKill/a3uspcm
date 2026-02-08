@@ -49,16 +49,23 @@ private _buildMenu = {
             continueWith[];
         };
 
-        // Addition isText check needed for separators
+        // Additional isText check needed for separators
         private _isActive = ["0", getText(_item >> "isActive")] select(isText(_item >> "conditionActive") && {call compile getText(_item >> "conditionActive")});
+        // Submenu as set as global variable
+        private _subMenuKey = format["%1_%2", _prefix, configName _item];
 
         if !isNumber(_item >> "subMenu") then {
-            private _title = getText(_item >> "itemName");
+            private _title = if (getText(_item >> "itemNameFrom") isNotEqualTo "") then {
+                call compile getText(_item >> "itemNameFrom");
+            } else {
+                getText(_item >> "itemName");
+            };
+
             private _selected = isText(_item >> "selected") && { getText(_item >> "selected") isNotEqualTo "" } && { call compile getText(_item >> "selected") };
             private _expression = [["expression", ""]];
 
             if (_selected) then {
-                _title = parseText format["&gt; <t color='#00c8fd'>%1</t>", _title];
+                _title = parseText format["<t color='#00c8fd'>%1</t> (%2)", _title, LLSTRING(Menu_CurrentSetting_DisplayName)];
             } else {
                 _title = [_title, PAD_WIDTH, false] call FUNCMAIN(utilPadString);
             };
@@ -73,6 +80,12 @@ private _buildMenu = {
                 _expression = [["expression", format["%1;%2", _code, QUOTE([player] call FUNC(updateCommsMenu))]]];
             };
 
+            if (getNumber(_item >> "reopenAfterExecution") isNotEqualTo 0) then {
+                // Again with the arrays, but at least this way we don't have to worry about order of execution
+                (_expression select -1) params["","_code"];
+                _expression = [["expression", format[QUOTE(%1;[ARR_2({showCommandingMenu _this},QQUOTE(#USER:%2))] call CBA_fnc_execNextFrame), _code, _prefix]]];
+            };
+
             continueWith[
                 _title,
                 getArray(_item >> "assignedKey"),
@@ -85,20 +98,19 @@ private _buildMenu = {
             ];
         };
 
-        private _key = format["%1_%2", _prefix, configName _item];
         private _thisPath = _path + [getText(_item >> "displayName")];
         private _items = if (getText(_item >> "subMenuFrom") isEqualTo "") then {
-            [_item, _key, _thisPath] call _buildMenu;
+            [_item, _subMenuKey, _thisPath] call _buildMenu;
         } else {
-            [_item, _key, _thisPath] call compile getText(_item >> "subMenuFrom");
+            [_item, _subMenuKey, _thisPath] call compile getText(_item >> "subMenuFrom");
         };
 
-        missionNamespace setVariable[_key, [[_thisPath joinString " >> ", true]] + _items];
+        missionNamespace setVariable[_subMenuKey, [[_thisPath joinString " >> ", true]] + _items];
 
         [
             [_thisPath select -1, PAD_WIDTH, false] call FUNCMAIN(utilPadString),
             getArray(_item >> "assignedKey"),
-            format["#USER:%1", _key],
+            format["#USER:%1", _subMenuKey],
             getNumber(_item >> "command"), [],
             getText(_item >> "isVisible"),
             _isActive,
