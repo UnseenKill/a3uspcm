@@ -20,6 +20,7 @@ class PREFIX {
                 isVisible = QUOTE(1);
                 iconPath = "";
                 selected = "";
+                reopenAfterExecution = 0;
                 updateAfterExecution = 0;
             };
 
@@ -66,6 +67,7 @@ class PREFIX {
                         assignedKey[] = {DIK_5};
                         conditionVisible = QUOTE(!isNil QQGVAR(securityReference));
                         expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_CYCLE_REFERENCE),player)] call CBA_fnc_localEvent);
+                        reopenAfterExecution = 1;
                         updateAfterExecution = 1;
                     };
 
