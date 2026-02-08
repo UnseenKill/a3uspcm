@@ -25,9 +25,7 @@ params[
 ];
 
 if !assert(!isNull _beacon) exitWith {};
-if EGVAR(main,AceHaveAddon) then {
-    [_beacon] call FUNC(addInteractionsACE);
-} else {
+if !EGVAR(main,AceHaveAddon) then {
     [_beacon] call FUNC(addInteractionsVanilla);
 };
 

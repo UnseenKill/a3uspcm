@@ -1,8 +1,8 @@
 class CfgWeapons {
-    class ACE_ItemCore;
+    class CBA_MiscItem;
     class CBA_MiscItem_ItemInfo;
 
-    class GVAR(PermanentMarker): ACE_ItemCore {
+    class GVAR(PermanentMarker): CBA_MiscItem {
         scope = 2;
         author = "$STR_A3USPCM_Author";
         displayName = CSTRING(PermanentMarker);

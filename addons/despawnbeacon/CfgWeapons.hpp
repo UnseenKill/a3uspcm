@@ -1,8 +1,8 @@
 class CfgWeapons {
-    class ACE_ItemCore;
+    class CBA_MiscItem;
     class CBA_MiscItem_ItemInfo;
 
-    class GVAR(PackedBeacon): ACE_ItemCore {
+    class GVAR(PackedBeacon): CBA_MiscItem {
         scope = 2;
         author = "$STR_A3USPCM_Author";
         displayName = CSTRING(PackedBeacon);

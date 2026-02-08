@@ -21,13 +21,11 @@ TRACE_1(QFUNC(fixSaveLoop),_this);
 
 if !isServer exitWith {};
 
-GVAR(orignalSaveLoop) = A3A_fnc_saveLoop;
+GVAR(A3A_fnc_saveLoop) = A3A_fnc_saveLoop;
 A3A_fnc_saveLoop = {
-    if !savingServer then {
-        [QEGVAR(main,eventMainOnSaveGame), []] call CBA_fnc_serverEvent;
-    };
-
-    call GVAR(orignalSaveLoop);
+    (!savingServer) && { [CBA_EVENT_SERVER_SAVEGAME_BEFORE, []] call CBA_fnc_localEvent };
+    call GVAR(A3A_fnc_saveLoop);
+    (!savingServer) && { [CBA_EVENT_SERVER_SAVEGAME_AFTER, []] call CBA_fnc_localEvent };
 };
 
 nil;

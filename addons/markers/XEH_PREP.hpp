@@ -7,3 +7,4 @@ PREP(onMarkerCreated);
 PREP(onMarkerDeleted);
 PREP(onMarkerUpdated);
 PREP(restoreMarkers);
+PREP(saveMarker);

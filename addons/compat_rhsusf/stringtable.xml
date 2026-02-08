@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Compat_RHSUSF">
+        <Key ID="STR_A3USPCM_Compat_RHSUSF_Component">
+            <English>A3USPCM - RHSUSF Compatibility Component</English>
+            <German>A3USPCM - RHSUSF Kompatibilitätskomponente</German>
+        </Key>
+    </Package>
+</Project>
