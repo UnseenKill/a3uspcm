@@ -47,9 +47,15 @@ if !assert(_params params[
     ["_heading", nil, [0]]
 ]) exitWith {};
 
-private _numUnits = count _units;
-private _positions = (_positionsTemplate apply {
-    if (_units isEqualTo []) then { breakWith[] };
+private _sortedUnits = _units apply { [groupId _x, _x] };
+_sortedUnits sort true;
+
+private _numUnits = count _sortedUnits;
+private _positions = +_positionsTemplate;
+
+_positions sort true;
+_positions = (_positions apply {
+    if (_sortedUnits isEqualTo []) then { breakWith[] };
 
     _x params["_degrees","_maxUnitsCount","_minUnitsCount"];
 
@@ -58,16 +64,19 @@ private _positions = (_positionsTemplate apply {
 
     private _direction = [_heading + _degrees] call FUNCMAIN(utilNormalizeDirection);
 
-    [_degrees, _units deleteAt 0, _direction, _center getPos[_distance, _direction]];
+    [_sortedUnits deleteAt 0 select -1, _direction, _center getPos[_distance, _direction]];
 }) - [[]];
 
-_positions sort true;
 _positions apply {
-    _x params["","_unit","_direction","_position"];
-
+    _x params["_unit","_direction","_position"];
+    
     if !(isNull _commander) then {
-        _commander groupChat format["%1, pull security %2°", name _unit, (5 * floor(_direction / 5)) toFixed 0];
+        _commander groupChat format["%1, pull security %2°", name _unit, [_direction, 5] call FUNCMAIN(utilCutNumber)];
     };
+
+    unassignVehicle _unit;
+
+    _unit setVariable[QGVAR(securityPosition), [_position, _direction]];
 
     [_commander, _unit, _position, _direction] spawn FUNC(assumePosition);
 };
