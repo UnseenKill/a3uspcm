@@ -5,6 +5,7 @@ class PREFIX {
         class Menu {
             class ItemBase {
                 itemName = "";
+                itemNameFrom = "";
                 assignedKey[] = {};
                 command = -5;
                 expression = QUOTE(nil);
@@ -52,7 +53,20 @@ class PREFIX {
                         expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_GUARD_REAR)] call CBA_fnc_localEvent);
                     };
 
-                    class Sep0: SeparatorBase {};
+                    class Sep0: SeparatorBase {
+                        conditionVisible = QUOTE(!isNil QQGVAR(securityReference));
+                    };
+
+                    class CycleReference: ItemBase {
+                        itemNameFrom = QUOTE(call FUNC(getSecurityReferenceMenuItemName));
+                        assignedKey[] = {DIK_5};
+                        conditionVisible = QUOTE(!isNil QQGVAR(securityReference));
+                        expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_CYCLE_REFERENCE),player)] call CBA_fnc_localEvent);
+                        isActive = QUOTE(NotEmpty + NotEmptyRedTeam);
+                        updateAfterExecution = 1;
+                    };
+
+                    class Sep1: SeparatorBase {};
 
                     class ReturnToPosition: ItemBase {
                         itemName = CSTRING(Menu_OrdersSecurity_Item_ReturnToPosition_DisplayName);
@@ -169,6 +183,16 @@ class PREFIX {
                         ITEM_DISTANCE(DIK_5,40);
                         ITEM_DISTANCE(DIK_6,50);
                         #undef ITEM_DISTANCE
+
+                        class Sep0: SeparatorBase {};
+
+                        class SetReference: ItemBase {
+                            itemName = CSTRING(Menu_Security_Item_Settings_Reference_DisplayName);
+                            assignedKey[] = {DIK_9};
+                            expression = QUOTE([QUOTE(CBA_EVENT_SETTINGS_SET_SECURITY_REFERENCE)] call CBA_fnc_localEvent);
+                            updateAfterExecution = 1;
+                            isActive = QUOTE((1 - NotEmpty) * (CursorOnVehicleCanGetIn + CursorOnGround));
+                        };
                     };
 
                     class Sep0: SeparatorBase {};

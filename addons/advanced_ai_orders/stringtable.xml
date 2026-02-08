@@ -21,6 +21,18 @@
             <English>Security distance set to %1 meters.</English>
             <German>Sicherungsentfernung auf %1 Meter gesetzt.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SecurityReferenceSet_NoTarget">
+            <English>Did not set security reference: no valid target.</English>
+            <German>Keine gültige Zielreferenz für Sicherung gesetzt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SecurityReferenceSet_Position">
+            <English>Security reference set to position %1.</English>
+            <German>Sicherungsreferenz auf Position %1 gesetzt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Hint_SecurityReferenceSet_Vehicle">
+            <English>Security reference set to vehicle %1.</English>
+            <German>Sicherungsreferenz auf Fahrzeug %1 gesetzt.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_ItemRadio_DisplayName">
             <English>A3USPCM AAIO Radio</English>
             <German>A3USPCM AAIO Radio</German>
@@ -32,6 +44,10 @@
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_CancelRunningOps_DisplayName">
             <English>Cancel running ops...</English>
             <German>Laufende Einsätze abbrechen...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_CurrentSetting_DisplayName">
+            <English>current setting</English>
+            <German>Aktuelle Einstellung</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersAdvance_DisplayName">
             <English>Advance</English>
@@ -88,6 +104,10 @@
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_RallyDistance_DisplayName">
             <English>SAD: rally distance</English>
             <German>SAD: Sammelentfernung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_Reference_DisplayName">
+            <English>Set reference</English>
+            <German>Referenz setzen</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_SADSweepTimeLong_DisplayName">
             <English>Long SAD sweeps</English>
@@ -168,6 +188,10 @@
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSecurity_Hint_ResumeTooFar">
             <English>Can't resume position; %1m is just too far to leg it.</English>
             <German>Kann Position nicht wieder aufnehmen; der Fußbus fährt keine %1m.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_OrdersSecurity_Item_CycleReference_DisplayName">
+            <English>Reference: %1</English>
+            <German>Referenz: %1</German>
         </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Settings_Category_DisplayName">
             <English>Advanced AI Orders</English>
