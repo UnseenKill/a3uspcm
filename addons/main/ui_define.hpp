@@ -7,9 +7,6 @@
     #define FORWARD(className) import className
 #endif // __A3USPCM_IS_3DEN__
 
-#define true 1
-#define false 0
-
 #define CT_STATIC           0
 #define CT_BUTTON           1
 #define CT_EDIT             2

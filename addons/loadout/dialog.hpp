@@ -19,7 +19,7 @@ $[
 	[-1000,"StaticBackground",[1,"",["0.3 * safezoneW + safezoneX","0.28 * safezoneH + safezoneY","0.4 * safezoneW","0.4 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],[]],
 	[-1001,"StaticTitle",[1,"Title",["0.3 * safezoneW + safezoneX","0.24 * safezoneH + safezoneY","0.4 * safezoneW","0.032 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"","-1"],["moving = 1;"]],
 	[-1600,"BtnClose",[1,"X",["0.6825 * safezoneW + safezoneX","0.248 * safezoneH + safezoneY","0.0125 * safezoneW","0.02 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1500,"ListLoadouts",[1,"",["0.3125 * safezoneW + safezoneX","0.3 * safezoneH + safezoneY","0.275 * safezoneW","0.36 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","idcLeft = -1;","idcRight = -1;","drawSideArrows = false;"]],
+	[1500,"ListLoadouts",[1,"",["0.3125 * safezoneW + safezoneX","0.3 * safezoneH + safezoneY","0.275 * safezoneW","0.36 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","idcLeft = -1;","idcRight = -1;","drawSideArrows = 0;"]],
 	[1601,"BtnSave",[1,"Save",["0.6 * safezoneW + safezoneX","0.38 * safezoneH + safezoneY","0.0875 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.6,0,1],[-1,-1,-1,-1],"Save current loadout","-1"],[]],
 	[1602,"BtnRename",[1,"Rename",["0.6 * safezoneW + safezoneX","0.44 * safezoneH + safezoneY","0.0875 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.6,0,1],[-1,-1,-1,-1],"Rename current loadout","-1"],[]],
 	[1603,"BtnOverwrite",[1,"Overwrite",["0.6 * safezoneW + safezoneX","0.5 * safezoneH + safezoneY","0.0875 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.6,0,1],[-1,-1,-1,-1],"Overwrite current loadout","-1"],[]],
@@ -72,7 +72,7 @@ class GVAR(Dialog) {
 			type = CT_LISTNBOX;
 			idcLeft = -1;
 			idcRight = -1;
-			drawSideArrows = false;
+			drawSideArrows = 0;
 
 			idc = IDC_RSCA3USPCMLOADOUTMANAGERDIALOG_LISTLOADOUTS;
 			x = QUOTE(0.3125 * safezoneW + safezoneX);
