@@ -3,7 +3,7 @@
 #define TABLET_SCREEN_WIDTH (safeZoneW * 0.5125 + pixelW * 10)
 #define TABLET_CLIENTAREA_HEIGHT (UI_GRID_H * 22)
 #define TABLET_CLIENTAREA_WIDTH (TABLET_SCREEN_WIDTH - pixelW * 64)
-#define UI_ASPECT ((safezoneW / safezoneH) min 1.2)
+#define UI_ASPECT ((safeZoneW / safeZoneH) min 1.2)
 #define UI_GRID_H_20 ((UI_ASPECT / 1.2) / 20)
 #define UI_GRID_H ((UI_ASPECT / 1.2) / 25)
 #define UI_GRID_W (UI_ASPECT / 40)
