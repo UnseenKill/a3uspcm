@@ -177,6 +177,66 @@
             <English>Track contacts of AA groups as map markers.</English>
             <German>Kontakte von AA-Gruppen verfolgen und als Kartenmarker anzeigen.</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_BtnTab_Configuration_Text">
+            <English>Configuration</English>
+            <German>Konfiguration</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_BtnTab_Overview_Text">
+            <English>ROE + Status</English>
+            <German>ROE + Status</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_BtnTab_Targets_Text">
+            <English>Targets</English>
+            <German>Ziele</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_Caption_Text">
+            <English>A/A Fire Control Configuration</English>
+            <German>Konfiguration Luftabwehr Feuerkontrolle</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnFireAtWill_Text">
+            <English>Fire at will</English>
+            <German>Feuer frei</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnFireAtWill_Tooltip">
+            <English>Set AA group to fire at will (engage any target).</English>
+            <German>Setze die AA Gruppe auf Feuer frei (greife jedes Ziel an).</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnFireCIWSOnly_Text">
+            <English>CIWS only</English>
+            <German>Nur CIWS</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnFireCIWSOnly_Tooltip">
+            <English>Allow fire for Close-in weapon systems, only.</English>
+            <German>Feuererlaubnis nur für Nahbereichsverteidigungssysteme (CIWS).</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnFireLRSAM_Text">
+            <English>LR/SAM</English>
+            <German>LR/SAM</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnFireLRSAM_Tooltip">
+            <English>Allow fire for long-range surface-to-air missiles, additionally.</English>
+            <German>Feuererlaubnis zusätzlich für Langstrecken-Flugabwehrraketen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnFireSRSAM_Text">
+            <English>SR/SAM</English>
+            <German>SR/SAM</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnFireSRSAM_Tooltip">
+            <English>Allow fire for short-range surface-to-air missiles, additionally.</English>
+            <German>Feuererlaubnis zusätzlich für Kurzstrecken-Flugabwehrraketen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnHoldFire_Text">
+            <English>Hold fire</English>
+            <German>Nicht feuern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnHoldFire_Tooltip">
+            <English>Friendly mode.</English>
+            <German>Stopfen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_FrameROE_Caption_Text">
+            <English>Rules of Engagement</English>
+            <German>Feuerkontrollregeln</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_VehicleAbbreviation">
             <English>veh</English>
             <German>Fzg</German>

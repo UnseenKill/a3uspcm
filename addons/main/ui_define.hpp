@@ -50,6 +50,9 @@
 #define ST_DOWN             0x04
 #define ST_UP               0x08
 #define ST_VCENTER          0x0C
+#define ST_ROUNDED_CORNER   ST_GROUP_BOX + ST_CENTER
+#define ST_ROUNDED_CORNER2  ST_GROUP_BOX2 + ST_CENTER
+#define ST_UPPERCASE        0xC0
 
 #define ST_TYPE             0xF0
 #define ST_SINGLE           0

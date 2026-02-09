@@ -14,4 +14,6 @@ class CfgPatches {
     };
 };
 
+#include "RscConst.hpp"
+#include "RscDialog.hpp"
 #include "CfgEventHandlers.hpp"
