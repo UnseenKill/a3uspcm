@@ -222,7 +222,7 @@ class GVAR(ConfigTablet) {
                                     colorText[] = {1,0,0,1};
                                 };
 
-                                class BtnFireCIWSOnly: GVAR(RscButton) {
+                                class BtnCIWSOnly: GVAR(RscButton) {
                                     idc = IDC_OVERVIEW_BTN_CIWSONLY;
                                     x = QUOTE((TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 6) / 2 - UI_GRID_W * 7);
                                     y = QUOTE(UI_GRID_H * 1.5);
@@ -232,21 +232,21 @@ class GVAR(ConfigTablet) {
                                     tooltip = CSTRING(Tablet_TabhostOverview_BtnFireCIWSOnly_Tooltip);
                                 };
 
-                                class BtnFireSRSAM: BtnFireCIWSOnly {
+                                class BtnSRSAM: BtnCIWSOnly {
                                     idc = IDC_OVERVIEW_BTN_SRSAM;
                                     x = QUOTE((TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 6) / 2);
                                     text = CSTRING(Tablet_TabhostOverview_BtnFireSRSAM_Text);
                                     tooltip = CSTRING(Tablet_TabhostOverview_BtnFireSRSAM_Tooltip);
                                 };
 
-                                class BtnFireLRSAM: BtnFireCIWSOnly {
+                                class BtnLRSAM: BtnCIWSOnly {
                                     idc = IDC_OVERVIEW_BTN_LRSAM;
                                     x = QUOTE((TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 6) / 2 + UI_GRID_W * 7);
                                     text = CSTRING(Tablet_TabhostOverview_BtnFireLRSAM_Text);
                                     tooltip = CSTRING(Tablet_TabhostOverview_BtnFireLRSAM_Tooltip);
                                 };
 
-                                class BtnHoldFire: BtnFireCIWSOnly {
+                                class BtnHoldFire: BtnCIWSOnly {
                                     idc = IDC_OVERVIEW_BTN_HOLDFIRE;
                                     x = QUOTE((TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 6) / 2 + UI_GRID_W * 14);
                                     text = CSTRING(Tablet_TabhostOverview_BtnHoldFire_Text);

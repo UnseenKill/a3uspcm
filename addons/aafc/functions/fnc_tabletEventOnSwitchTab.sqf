@@ -3,7 +3,7 @@
 Function: A3USPCM_aafc_fnc_tabletEventOnSwitchTab
 
 Description:
-    CBA_EVENT_AAFC_DIALOG_SWITCHTAB event handler.
+    CBA_EVENT_AAFC_DIALOG_TABSWITCH event handler.
 
 Parameters:
     0: _idcTarget - Tab host control IDC <NUMBER>
@@ -52,11 +52,15 @@ if !(isNil "_oldTab") then {
     _ctlOldTabHost ctrlEnable false;
     _ctlOldTabHost ctrlSetFade 1;
 
+    _oldTab set["active", false];
+
     (_oldTab get "button") ctrlSetBackgroundColor getArray(configFile >> QGVAR(RscButtonTab) >> "colorBackground");
 };
 
-[CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_BEFORE, [RETNIL(_oldTab), _newTab]] call CBA_fnc_localEvent;
-[CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_BEFORE, [_newTab, RETNIL(_oldTab)]] call CBA_fnc_localEvent;
+_newTab set["active", true];
+
+CBA_TRIGGER(CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_BEFORE,[ARR_2(RETNIL(_oldTab),_newTab)]);
+CBA_TRIGGER(CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_BEFORE,[ARR_2(_newTab,RETNIL(_oldTab))]);
 
 (_newTab get "button") ctrlSetBackgroundColor getArray(configFile >> QGVAR(RscButtonTab) >> "colorBackgroundTabActive");
 _ctlNewTabHost = _newTab get "tabhost";
@@ -79,7 +83,7 @@ _ctlNewTabHost ctrlEnable true;
 _display setVariable[QGVAR(currentTab), _idcTarget];
 _display setVariable[QGVAR(tabSwitchLocked), nil];
 
-[CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_AFTER, [_newTab, RETNIL(_oldTab)]] call CBA_fnc_localEvent;
-[CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_AFTER, [RETNIL(_oldTab), _newTab]] call CBA_fnc_localEvent;
+CBA_TRIGGER(CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_AFTER,[ARR_2(_newTab,RETNIL(_oldTab))]);
+CBA_TRIGGER(CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_AFTER,[ARR_2(RETNIL(_oldTab),_newTab)]);
 
 nil;

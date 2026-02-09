@@ -20,7 +20,13 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(tabletRscOnUnload),_this);
 
-[CBA_EVENT_AAFC_DIALOG_CLOSED, [uiNamespace getVariable QGVAR(display)]] call CBA_fnc_localEvent;
+CBA_TRIGGER(CBA_EVENT_AAFC_DIALOG_CLOSED,[uiNamespace getVariable QGVAR(display)]);
+
+uiNamespace getVariable QGVAR(events) apply {
+    _x call CBA_fnc_removeEventHandler;
+};
+
 uiNamespace setVariable[QGVAR(display), nil];
+uiNamespace setVariable[QGVAR(events), nil];
 
 nil;

@@ -8,17 +8,37 @@
 #define MODE_OPENFIRE QGVAR(ModeOpenFire)
 #define MODE_HOLDFIRE QGVAR(ModeHoldFire)
 
+#define ROE_FIREATWILL 0
+#define ROE_CIWSONLY 1
+#define ROE_SRSAM 2
+#define ROE_LRSAM 3
+#define ROE_HOLDFIRE 4
+
 // Parameters: [Display display]
-#define CBA_EVENT_AAFC_DIALOG_CLOSED QGVAR(TRIPLES(ADDON,events,dialogClosed))
+#define CBA_EVENT_AAFC_DIALOG_CLOSED QUOTE(TRIPLES(ADDON,events,dialogClosed))
 // Parameters: [Display display]
-#define CBA_EVENT_AAFC_DIALOG_OPENED QGVAR(TRIPLES(ADDON,events,dialogOpened))
+#define CBA_EVENT_AAFC_DIALOG_OPENED QUOTE(TRIPLES(ADDON,events,dialogOpened))
+// Parameters: [Display display, Control ctlTabHost, Hashmap tabInfo]
+#define CBA_EVENT_AAFC_DIALOG_TABSETUP QUOTE(TRIPLES(ADDON,events,dialogSetupTab))
 // Parameters: [Number idcNewTab]
-#define CBA_EVENT_AAFC_DIALOG_SWITCHTAB QGVAR(TRIPLES(ADDON,events,dialogSwitchTab))
+#define CBA_EVENT_AAFC_DIALOG_TABSWITCH QUOTE(TRIPLES(ADDON,events,dialogSwitchTab))
 // Parameters: [Hashmap focusedTab[, Hashmap unfocusedTab]]
-#define CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_AFTER QGVAR(TRIPLES(ADDON,events,dialogTabFocusAfter))
+#define CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_AFTER QUOTE(TRIPLES(ADDON,events,dialogTabFocusAfter))
 // Parameters: [Hashmap focusedTab[, Hashmap unfocusedTab]]
-#define CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_BEFORE QGVAR(TRIPLES(ADDON,events,dialogTabFocusBefore))
+#define CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_BEFORE QUOTE(TRIPLES(ADDON,events,dialogTabFocusBefore))
 // Parameters: [Hashmap unfocusedTab[, Hashmap focusedTab]]
-#define CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_AFTER QGVAR(TRIPLES(ADDON,events,dialogTabUnfocusAfter))
+#define CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_AFTER QUOTE(TRIPLES(ADDON,events,dialogTabUnfocusAfter))
 // Parameters: [Hashmap unfocusedTab[, Hashmap focusedTab]]
-#define CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_BEFORE QGVAR(TRIPLES(ADDON,events,dialogTabUnfocusBefore))
+#define CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_BEFORE QUOTE(TRIPLES(ADDON,events,dialogTabUnfocusBefore))
+
+// Parameters: [Number roeLevel]
+#define CBA_EVENT_AAFC_SET_ROE_GLOBAL QUOTE(TRIPLES(ADDON,events,setROEGlobal))
+
+#ifdef __A3USPCM_PRODUCTION__
+    #define CBA_TRIGGER(eventName,params) [eventName, params] call CBA_fnc_localEvent
+#else
+    #define CBA_TRIGGER(eventName,params) if true then { \
+        TRACE_1("CBA_TRIGGER:"+eventName,params); \
+        [eventName, params] call CBA_fnc_localEvent; \
+    }
+#endif // __A3USPCM_PRODUCTION__
