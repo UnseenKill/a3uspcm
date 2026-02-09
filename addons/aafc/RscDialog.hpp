@@ -124,7 +124,10 @@ class GVAR(ConfigTablet) {
     onUnload = QUOTE(call FUNC(tabletRscOnUnload));
 
     class Controls {
-        class FocusStealer: RscButton { w = 0; };
+        class FocusStealer: RscButton {
+            idc = IDC_BTN_STEAL_THIS_FOCUS;
+            w = 0;
+        };
 
         class ScreenBlack: GVAR(RscText) {
             x = QUOTE(safeZoneX + safeZoneW * 0.25 - pixelW * 4);

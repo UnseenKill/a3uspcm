@@ -1,4 +1,5 @@
 #include "..\script_component.hpp"
+#include "..\RscConst.hpp"
 /* ----------------------------------------------------------------------------
 Function: A3USPCM_aafc_fnc_tabletEventOnSwitchTab
 
@@ -79,6 +80,7 @@ if !(isNil "_ctlOldTabHost") then {
 };
 
 _ctlNewTabHost ctrlEnable true;
+ctrlSetFocus(_display displayCtrl IDC_BTN_STEAL_THIS_FOCUS);
 
 _display setVariable[QGVAR(currentTab), _idcTarget];
 _display setVariable[QGVAR(tabSwitchLocked), nil];
