@@ -54,6 +54,15 @@ private _aaTypes = createHashMapFromArray[
     [AA_TYPE_SRSAM, [2, "SR/SAM", "Short-range SAM"]]
 ];
 
+private _dotColors = [
+    [[0.2,0.2,0.2,1], QUOTE(!alive _vehicle)],
+    [[1,1,1,0], QUOTE(_aaType isEqualTo QUOTE(AA_TYPE_RADAR))],
+    [[0.8,0.6,0,1], QUOTE(isNull gunner _vehicle)],
+    [[0.6,0,0,1], QUOTE(unitCombatMode gunner _vehicle isEqualTo QQUOTE(BLUE))],
+    [[0,0.8,0,1], QUOTE(true)]
+];
+
+// [Individual groups tabhost] -------------------------------------------------
 private _index = -1;
 private _groups = GVAR(groups) apply { [groupId _x, _x] };
 _groups sort true;
@@ -90,42 +99,49 @@ _groups apply {
     _control ctrlCommit 0;
 
     _group getVariable QGVAR(vehicles) select { !isNull _x } apply {
-        private _aaTypeInfo = _aaTypes getOrDefault[[_x] call FUNC(getAAType), ["0", "???", "Unknown"]];
+        private _vehicle = _x;
+        private _aaType = [_vehicle] call FUNC(getAAType);
+        private _aaTypeInfo = _aaTypes getOrDefault[_aaType, ["0", "???", "Unknown"]];
         _aaTypeInfo params["_aaTypeSort","_aaTypeShort","_aaTypeLong"];
 
         private _columnData = [];
 
-        _columnData pushBack([0, [2, 1] select isNull gunner _x] select alive _x);
+        _columnData pushBack([0, [2, 1] select isNull gunner _vehicle] select alive _vehicle);
         _columnData pushBack _aaTypeSort;
-        _columnData pushBack groupId gunner _x;
+        _columnData pushBack groupId gunner _vehicle;
 
         private _index = _control lnbAddRow[
             "",
-            (((1 - damage _x) * 100) toFixed 0) + "%",
+            (((1 - damage _vehicle) * 100) toFixed 0) + "%",
             _aaTypeShort,
-            getText(configOf _x >> "displayName")
+            getText(configOf _vehicle >> "displayName")
         ];
 
         _control lnbSetData[[_index, 0], str _columnData];
-        _control lnbSetData[[_index, 1], _x call BIS_fnc_netId];
+        _control lnbSetData[[_index, 1], _vehicle call BIS_fnc_netId];
 
-        TRACE_2(QFUNC(tabletOverviewFocus),_x,_columnData);
+        TRACE_2(QFUNC(tabletOverviewFocus),_vehicle,_columnData);
+
+        private _dotColor = {
+            _x params["_color","_code"];
+            if (call compile _code) exitWith { _color };
+        } forEach _dotColors;
 
         private _combatModeInfo = switch true do {
-            case (isNull gunner _x): { "No gunner" };
-            default { ["Fire at will", "Hold fire"] select (unitCombatMode _x isEqualTo "BLUE") };
+            case (isNull gunner _vehicle): { "No gunner" };
+            default { ["Fire at will", "Hold fire"] select (unitCombatMode _vehicle isEqualTo "BLUE") };
         };
 
         private _gunnerInfo = switch true do {
-            case (isNull gunner _x): { "No gunner" };
-            case (getText(configOf gunner _x >> "simulation") isEqualTo "UAVPilot"): {
-                getText(configOf gunner _x >> "displayName"); // Will most likely result in "AI"
+            case (isNull gunner _vehicle): { "No gunner" };
+            case (getText(configOf gunner _vehicle >> "simulation") isEqualTo "UAVPilot"): {
+                getText(configOf gunner _vehicle >> "displayName"); // Will most likely result in "AI"
             };
-            default { name gunner _x };
+            default { name gunner _vehicle };
         };
 
         _control lnbSetPicture[[_index, 0], QPATHTOEF(assets,ui\bullet-point.paa)];
-        _control lnbSetPictureColor[[_index, 0], [[[0,0.8,0,1], [0.8,0.6,0,1]] select(unitCombatMode gunner _x isEqualTo "ERROR"), [0.6,0,0,1]] select(unitCombatMode gunner _x isEqualTo "BLUE")];
+        _control lnbSetPictureColor[[_index, 0], RETDEF(_dotColor,[ARR_4(1,0,1,1)])];
         _control lnbSetTooltip[[_index, 0], format[
             [
                 "%1",
@@ -135,17 +151,19 @@ _groups apply {
                 "Combat mode: %2",
                 "Gunner: %5"
             ] joinString "\n",
-            getText(configOf _x >> "displayName"),
-            _combatModeInfo, (damage _x * 100) toFixed 0, "%",
+            getText(configOf _vehicle >> "displayName"),
+            _combatModeInfo, (damage _vehicle * 100) toFixed 0, "%",
             _gunnerInfo, RETDEF(_aaTypeLong,"WTF")
         ]];
 
-        _control lnbSetColor[[_index, 1], [damage _x, [1,1,1,1], [1,0,0,1]] call FUNCMAIN(utilInterpolateColor)];
+        _control lnbSetColor[[_index, 1], [damage _vehicle, [1,1,1,1], [1,0,0,1]] call FUNCMAIN(utilInterpolateColor)];
         _control lnbSetColor[[_index, 2], _nonMajorColumnColor];
     };
 
     [_control, 0] lnbSortBy["DATA"];
 };
+
+// [ROE buttons update] --------------------------------------------------------
 
 [
     [ROE_FIREATWILL, "btnFireAtWill"],
@@ -164,6 +182,8 @@ _groups apply {
 
     _button ctrlSetBackgroundColor _color;
 };
+
+// [Send focus nowhere] --------------------------------------------------------
 
 STEAL_FOCUS();
 
