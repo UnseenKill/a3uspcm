@@ -192,24 +192,23 @@ class GVAR(ConfigTablet) {
 
                     class Controls {
                         class TabhostOverview: GVAR(RscControlsGroup) {
-                            x = QUOTE(UI_GRID_W);
                             y = QUOTE(UI_GRID_H);
-                            w = QUOTE(TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 2);
+                            w = QUOTE(TABLET_CLIENTAREA_WIDTH);
                             h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
 
                             class Controls {
                                 class FrameROE: GVAR(RscFrame) {
                                     x = QUOTE(pixelW * 1);
-                                    w = QUOTE(TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 2 - pixelW * 1);
+                                    w = QUOTE(TABLET_CLIENTAREA_WIDTH - pixelW * 1);
                                     h = QUOTE(UI_GRID_H * 4);
                                     text = CSTRING(Tablet_TabhostOverview_FrameROE_Caption_Text);
                                 };
 
                                 class BtnFireAtWill: GVAR(RscButton) {
                                     idc = IDC_OVERVIEW_BTN_FIREATWILL;
-                                    x = QUOTE(UI_GRID_W);
+                                    x = QUOTE((TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 6) / 2 - UI_GRID_W * 14);
                                     y = QUOTE(UI_GRID_H * 1.5);
-                                    w = QUOTE(UI_GRID_W * 7);
+                                    w = QUOTE(UI_GRID_W * 6);
                                     h = QUOTE(UI_GRID_H * 2);
                                     text = CSTRING(Tablet_TabhostOverview_BtnFireAtWill_Text);
                                     tooltip = CSTRING(Tablet_TabhostOverview_BtnFireAtWill_Tooltip);
@@ -218,7 +217,7 @@ class GVAR(ConfigTablet) {
 
                                 class BtnFireCIWSOnly: GVAR(RscButton) {
                                     idc = IDC_OVERVIEW_BTN_CIWSONLY;
-                                    x = QUOTE(UI_GRID_W * 9);
+                                    x = QUOTE((TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 6) / 2 - UI_GRID_W * 7);
                                     y = QUOTE(UI_GRID_H * 1.5);
                                     w = QUOTE(UI_GRID_W * 6);
                                     h = QUOTE(UI_GRID_H * 2);
@@ -228,21 +227,21 @@ class GVAR(ConfigTablet) {
 
                                 class BtnFireSRSAM: BtnFireCIWSOnly {
                                     idc = IDC_OVERVIEW_BTN_SRSAM;
-                                    x = QUOTE(UI_GRID_W * 16);
+                                    x = QUOTE((TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 6) / 2);
                                     text = CSTRING(Tablet_TabhostOverview_BtnFireSRSAM_Text);
                                     tooltip = CSTRING(Tablet_TabhostOverview_BtnFireSRSAM_Tooltip);
                                 };
 
                                 class BtnFireLRSAM: BtnFireCIWSOnly {
                                     idc = IDC_OVERVIEW_BTN_LRSAM;
-                                    x = QUOTE(UI_GRID_W * 23);
+                                    x = QUOTE((TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 6) / 2 + UI_GRID_W * 7);
                                     text = CSTRING(Tablet_TabhostOverview_BtnFireLRSAM_Text);
                                     tooltip = CSTRING(Tablet_TabhostOverview_BtnFireLRSAM_Tooltip);
                                 };
 
                                 class BtnHoldFire: BtnFireCIWSOnly {
                                     idc = IDC_OVERVIEW_BTN_HOLDFIRE;
-                                    x = QUOTE(UI_GRID_W * 30);
+                                    x = QUOTE((TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 6) / 2 + UI_GRID_W * 14);
                                     text = CSTRING(Tablet_TabhostOverview_BtnHoldFire_Text);
                                     tooltip = CSTRING(Tablet_TabhostOverview_BtnHoldFire_Tooltip);
                                 };
@@ -250,7 +249,7 @@ class GVAR(ConfigTablet) {
                                 class FrameGroups: GVAR(RscFrame) {
                                     x = QUOTE(pixelW * 1);
                                     y = QUOTE(UI_GRID_H * 5);
-                                    w = QUOTE(TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 2 - pixelW * 1);
+                                    w = QUOTE(TABLET_CLIENTAREA_WIDTH - pixelW * 1);
                                     h = QUOTE(UI_GRID_H * 16);
                                     text = "A/A Groups";
                                 };
