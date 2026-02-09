@@ -233,6 +233,10 @@
             <English>Friendly mode.</English>
             <German>Stopfen.</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_FrameGroups_Caption_Text">
+            <English>A/A Groups</English>
+            <German>Flugabwehrgruppen</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_FrameROE_Caption_Text">
             <English>Rules of Engagement</English>
             <German>Feuerkontrollregeln</German>

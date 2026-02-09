@@ -13,3 +13,9 @@ PREP(toggleROEAll);
 PREP(trackContact);
 PREP(updateContactTracks);
 PREP(updateMenu);
+
+// Tablet UI
+PREP(tabletEventOnOpen);
+PREP(tabletEventOnSwitchTab);
+PREP(tabletRscOnLoad);
+PREP(tabletRscOnUnload);

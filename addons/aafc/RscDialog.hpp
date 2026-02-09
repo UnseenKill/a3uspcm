@@ -65,6 +65,7 @@ class GVAR(RscButtonTab): GVAR(RscButton) {
     style = QUOTE(ST_UPPERCASE + ST_CENTER);
     colorBackground[] = {0.2,0.2,0.2,0.5};
     colorBackgroundActive[] = {0.2,0.2,0.2,1};
+    colorBackgroundTabActive[] = {0.6,0.6,0.6,1};
 };
 
 class GVAR(RscControlsGroup) {
@@ -119,7 +120,8 @@ class GVAR(RscText): RscText {
 
 class GVAR(ConfigTablet) {
     idd = 6119823;
-    onLoad = QUOTE(call FUNC(onTabletOpen));
+    onLoad = QUOTE(call FUNC(tabletRscOnLoad));
+    onUnload = QUOTE(call FUNC(tabletRscOnUnload));
 
     class Controls {
         class FocusStealer: RscButton { w = 0; };
@@ -137,7 +139,7 @@ class GVAR(ConfigTablet) {
             y = QUOTE(safeZoneY + safeZoneH * 0.2);
             w = QUOTE(TABLET_SCREEN_WIDTH);
             h = QUOTE(safeZoneH * 0.6);
-            colorBackground[] = {0,0.8,0,0.1};
+            colorBackground[] = {0,0.1,0,1};
         };
 
         class Main: GVAR(RscControlsGroup) {
@@ -256,7 +258,7 @@ class GVAR(ConfigTablet) {
                                     y = QUOTE(UI_GRID_H * 5);
                                     w = QUOTE(TABLET_CLIENTAREA_WIDTH - pixelW * 1);
                                     h = QUOTE(UI_GRID_H * 16);
-                                    text = "A/A Groups";
+                                    text = CSTRING(Tablet_TabhostOverview_FrameGroups_Caption_Text);
                                 };
 
                                 class HostGroups: GVAR(RscControlsGroup) {
@@ -310,7 +312,7 @@ class GVAR(ConfigTablet) {
         };
 
         class TabletBackground: RscPicture {
-            fade = 0;
+            moving = 1;
             text = QPATHTOEF(assets,ui\aafc-tablet.paa);
             x = QUOTE(safeZoneX + safeZoneW * 0.1);
             y = QUOTE(safeZoneY + safeZoneH * 0.1);
