@@ -39,6 +39,8 @@ allControls _ctlTabHost apply { ctrlDelete _x };
 ctrlPosition _ctlTabHost params["","","_tw","_th"];
 _startX = -16 * UI_GRID_W;
 
+CBA_TRIGGER(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[GVAR(globalROE)]);
+
 if (GVAR(groups) isEqualTo []) exitWith {
     _control = _display ctrlCreate[QGVAR(RscTextCentered), 0, _ctlTabHost];
     _control ctrlSetPosition[0, 0, _tw, _th];
@@ -117,7 +119,5 @@ _groups apply {
         _control lnbSetColor[[_index, 1], [damage _x, [1,1,1,1], [1,0,0,1]] call FUNCMAIN(utilInterpolateColor)];
     };
 };
-
-CBA_TRIGGER(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[GVAR(globalROE)]);
 
 nil;
