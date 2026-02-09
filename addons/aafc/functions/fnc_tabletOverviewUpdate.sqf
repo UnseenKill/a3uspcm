@@ -44,7 +44,8 @@ if !(_tab get "active") exitWith {};
     ] select(GVAR(globalROE) isEqualTo _mode);
 
     _button ctrlSetBackgroundColor _color;
-    _button ctrlSetActiveColor [1,0,0,1];
 };
+
+STEAL_FOCUS();
 
 nil;

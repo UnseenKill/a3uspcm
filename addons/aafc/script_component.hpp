@@ -8,6 +8,13 @@
 #define MODE_OPENFIRE QGVAR(ModeOpenFire)
 #define MODE_HOLDFIRE QGVAR(ModeHoldFire)
 
+#define AA_TYPE_UNKNOWN QUOTE(unknown)
+#define AA_TYPE_RADAR QUOTE(radar)
+#define AA_TYPE_CIWS QUOTE(ciws)
+#define AA_TYPE_SRSAM QUOTE(srSAM)
+#define AA_TYPE_LRSAM QUOTE(lrSAM)
+#define AA_TYPE_SPAA QUOTE(selfPropelledAA)
+
 #define ROE_FIREATWILL 0
 #define ROE_CIWSONLY 1
 #define ROE_SRSAM 2

@@ -48,12 +48,22 @@ if (GVAR(groups) isEqualTo []) exitWith {
     _control ctrlCommit 0;
 };
 
+private _aaTypes = createHashMapFromArray[
+    [AA_TYPE_UNKNOWN, [0, "???", "Unknown"]],
+    [AA_TYPE_CIWS, [1, "CIWS", "Close-in weapon system"]],
+    [AA_TYPE_LRSAM, [3, "LR/SAM", "Long-range SAM"]],
+    [AA_TYPE_RADAR, [9, "RDR", "Radar"]],
+    [AA_TYPE_SPAA, [4, "SPAAG", "Self propelled AA"]],
+    [AA_TYPE_SRSAM, [2, "SR/SAM", "Short-range SAM"]]
+];
+
 private _index = -1;
 private _groups = GVAR(groups) apply { [groupId _x, _x] };
 _groups sort true;
 _groups apply {
     private _group = _x select -1;
     private _backgroundColor = [1,1,1,[0.1, 0.25] select (_index mod 2)];
+    private _nonMajorColumnColor = [0.7,0.7,0.7,1];
 
     _startY = -UI_GRID_H - pixelH * 4;
 
@@ -79,18 +89,34 @@ _groups apply {
     _control lnbAddColumn 0;
     _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 1 * UI_GRID_W, 0, 1];
     _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 3 * UI_GRID_W, 0, 1];
+    _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 6 * UI_GRID_W, 0, 1];
     _control ctrlCommit 0;
 
-    _group getVariable QGVAR(vehicles) apply {
+    _group getVariable QGVAR(vehicles) select { !isNull _x } apply {
+        private _aaTypeInfo = _aaTypes getOrDefault[[_x] call FUNC(getAAType), ["0", "???", "Unknown"]];
+        _aaTypeInfo params["_aaTypeSort","_aaTypeShort","_aaTypeLong"];
+
+        private _columnData = [];
+
+        _columnData pushBack([0, [2, 1] select isNull gunner _x] select alive _x);
+        _columnData pushBack _aaTypeSort;
+        _columnData pushBack groupId gunner _x;
+
         private _index = _control lnbAddRow[
             "",
             (((1 - damage _x) * 100) toFixed 0) + "%",
+            _aaTypeShort,
             getText(configOf _x >> "displayName")
         ];
 
+        _control lnbSetData[[_index, 0], str _columnData];
+        _control lnbSetData[[_index, 1], _x call BIS_fnc_netId];
+
+        TRACE_2(QFUNC(tabletOverviewFocus),_x,_columnData);
+
         private _combatModeInfo = switch true do {
             case (isNull gunner _x): { "No gunner" };
-            default { ["Fire at will", "Hold fire"] select (unitCombatMode _x isEqualTo "BLUE") }
+            default { ["Fire at will", "Hold fire"] select (unitCombatMode _x isEqualTo "BLUE") };
         };
 
         private _gunnerInfo = switch true do {
@@ -108,16 +134,20 @@ _groups apply {
                 "%1",
                 "",
                 "Damage: %3%4",
+                "Type: %6",
                 "Combat mode: %2",
                 "Gunner: %5"
             ] joinString "\n",
             getText(configOf _x >> "displayName"),
             _combatModeInfo, (damage _x * 100) toFixed 0, "%",
-            _gunnerInfo
+            _gunnerInfo, RETDEF(_aaTypeLong,"WTF")
         ]];
 
         _control lnbSetColor[[_index, 1], [damage _x, [1,1,1,1], [1,0,0,1]] call FUNCMAIN(utilInterpolateColor)];
+        _control lnbSetColor[[_index, 2], _nonMajorColumnColor];
     };
+
+    [_control, 0] lnbSortBy["DATA"];
 };
 
 nil;

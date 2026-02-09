@@ -50,6 +50,13 @@ _group addEventHandler["Deleted", {
     [] call FUNC(updateMenu);
 }];
 
+_group addEventHandler["VehicleAdded", {
+    TRACE_1(QFUNC(vehicleAdded),_this);
+    params["_group","_vehicle"];
+
+    _group getVariable QGVAR(vehicles) pushBackUnique _vehicle;
+}];
+
 GVAR(groups) pushBackUnique _group;
 
 [_group] call FUNC(initReportHandler);

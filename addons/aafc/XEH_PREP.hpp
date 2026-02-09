@@ -1,4 +1,6 @@
 PREP(autoGroupVehicles);
+PREP(enforceROE);
+PREP(getAAType);
 PREP(getGroupMenuActions);
 PREP(getGroupMenuText);
 PREP(initReportHandler);
