@@ -2,44 +2,10 @@
 #define __HAS_A3USPCM_UI_DEFINE_HPP__
 
 #ifndef __A3USPCM_IS_3DEN__
-class RscText;
-class RscStructuredText;
-class RscPicture;
-class RscEdit;
-class RscCombo;
-class RscListbox;
-class RscButton;
-class RscShortcutButton;
-class RscShortcutButtonMain;
-class RscFrame;
-class RscSlider;
-class IGUIBack;
-class RscCheckbox;
-class RscTextCheckBox;
-class RscButtonMenu;
-class RscButtonMenuOK;
-class RscButtonMenuCancel;
-class RscControlsGroup;
+    #define FORWARD(className) class className
 #else
-import RscText;
-import RscStructuredText;
-import RscPicture;
-import RscEdit;
-import RscCombo;
-import RscListbox;
-import RscButton;
-import RscShortcutButton;
-import RscShortcutButtonMain;
-import RscFrame;
-import RscSlider;
-import IGUIBack;
-import RscCheckbox;
-import RscTextCheckBox;
-import RscButtonMenu;
-import RscButtonMenuOK;
-import RscButtonMenuCancel;
-import RscControlsGroup;
-#endif
+    #define FORWARD(className) import className
+#endif // __A3USPCM_IS_3DEN__
 
 #define true 1
 #define false 0

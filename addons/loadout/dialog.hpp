@@ -1,6 +1,10 @@
 #include "\z\a3uspcm\addons\main\ui_define.hpp"
 #include "RscDefine.hpp"
 
+FORWARD(RscButton);
+FORWARD(RscListbox);
+FORWARD(RscText);
+
 // Replace attributes:
 //  Search: (^\s*(?:sizeEx|[xywh])) = ([^;]+)
 //  Replace: $1 = QUOTE($2)

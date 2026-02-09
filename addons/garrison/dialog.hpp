@@ -2,6 +2,12 @@
 #include "mapcontrol.hpp"
 #include "RscDefine.hpp"
 
+FORWARD(RscButton);
+FORWARD(RscCheckbox);
+FORWARD(RscFrame);
+FORWARD(RscListbox);
+FORWARD(RscText);
+
 // Replace attributes:
 //  Search: (^\s*(?:sizeEx|[xywh])) = ([^;]+)
 //  Replace: $1 = QUOTE($2)
