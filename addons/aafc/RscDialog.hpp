@@ -4,6 +4,7 @@
 FORWARD(RscButton);
 FORWARD(RscFrame);
 FORWARD(RscLine);
+FORWARD(RscListNBox);
 FORWARD(RscPicture);
 FORWARD(RscText);
 
@@ -96,6 +97,12 @@ class GVAR(RscControlsGroup) {
 
 class GVAR(RscFrame): RscFrame {
     sizeEx = QUOTE(safeZoneH * 0.02);
+    DEFAULT_FONT;
+};
+
+class GVAR(RscListNBox): RscListNBox {
+    tooltipPerColumn = 1;
+
     DEFAULT_FONT;
 };
 

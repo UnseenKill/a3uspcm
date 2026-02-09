@@ -66,29 +66,55 @@ _groups apply {
     _control ctrlSetBackgroundColor _backgroundColor;
     _control ctrlCommit 0;
 
-    _tabHost = _display ctrlCreate[QGVAR(RscControlsGroup), 0, _ctlTabHost];
-    _tabHost ctrlSetPosition[_startX, UI_GRID_H + pixelH * 4, 16 * UI_GRID_W, _th - UI_GRID_H - pixelH * 4];
-    _tabHost ctrlCommit 0;
+    _control = _display ctrlCreate[QGVAR(RscListNBox), 0, _ctlTabHost];
+    _control ctrlSetPosition[_startX, UI_GRID_H + pixelH * 4, 16 * UI_GRID_W, _th - UI_GRID_H - pixelH * 4];
+    lnbClear _control;
+
+    // For some reason, when dynamically creating a listbox, it comes pre-filled with columns.
+    // No way to read out the count, hence the hack.
+    lnbGetColumnsPosition _control apply { _control lnbDeleteColumn 0 };
+
+    _control lnbAddColumn 0;
+    _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 1 * UI_GRID_W, 0, 1];
+    _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 3 * UI_GRID_W, 0, 1];
+    _control ctrlCommit 0;
 
     _group getVariable QGVAR(vehicles) apply {
-        private _color = [damage _x, [1,1,1,1], [1,0,0,1]] call FUNCMAIN(utilInterpolateColor);
+        private _index = _control lnbAddRow[
+            "",
+            (((1 - damage _x) * 100) toFixed 0) + "%",
+            getText(configOf _x >> "displayName")
+        ];
 
-        ADD(_startY,UI_GRID_H + pixelH * 4);
+        private _combatModeInfo = switch true do {
+            case (isNull gunner _x): { "No gunner" };
+            default { ["Fire at will", "Hold fire"] select (unitCombatMode _x isEqualTo "BLUE") }
+        };
 
-        private _combatMode = unitCombatMode _x;
+        private _gunnerInfo = switch true do {
+            case (isNull gunner _x): { "No gunner" };
+            case (getText(configOf gunner _x >> "simulation") isEqualTo "UAVPilot"): {
+                getText(configOf gunner _x >> "displayName"); // Will most likely result in "AI"
+            };
+            default { name gunner _x };
+        };
 
-        _control = _display ctrlCreate["RscPictureKeepAspect", 0, _tabHost];
-        _control ctrlSetPosition[0, _startY, UI_GRID_W, UI_GRID_H];
-        _control ctrlSetTextColor((_combatMode call CBA_fnc_cssColorToDecimal) + [1]);
-        _control ctrlSetText getText(configOf _x >> "picture");
-        _control ctrlSetTooltip format["%1", _combatMode];
-        _control ctrlCommit 0;
+        _control lnbSetPicture[[_index, 0], QPATHTOEF(assets,ui\bullet-point.paa)];
+        _control lnbSetPictureColor[[_index, 0], [[[0,0.8,0,1], [0.8,0.6,0,1]] select(unitCombatMode gunner _x isEqualTo "ERROR"), [0.6,0,0,1]] select(unitCombatMode gunner _x isEqualTo "BLUE")];
+        _control lnbSetTooltip[[_index, 0], format[
+            [
+                "%1",
+                "",
+                "Damage: %3%4",
+                "Combat mode: %2",
+                "Gunner: %5"
+            ] joinString "\n",
+            getText(configOf _x >> "displayName"),
+            _combatModeInfo, (damage _x * 100) toFixed 0, "%",
+            _gunnerInfo
+        ]];
 
-        _control = _display ctrlCreate[QGVAR(RscStructuredText), 0, _tabHost];
-        _control ctrlSetPosition[UI_GRID_W, _startY, 15 * UI_GRID_W, UI_GRID_H];
-        _control ctrlSetStructuredText parseText format["%1 (<t color='%4'>%2%3</t>)", getText(configOf _x >> "displayName"), ((1 - damage _x) * 100) toFixed 0, "%", _color call BIS_fnc_colorRGBtoHTML];
-        _control ctrlSetBackgroundColor _backgroundColor;
-        _control ctrlCommit 0;
+        _control lnbSetColor[[_index, 1], [damage _x, [1,1,1,1], [1,0,0,1]] call FUNCMAIN(utilInterpolateColor)];
     };
 };
 
