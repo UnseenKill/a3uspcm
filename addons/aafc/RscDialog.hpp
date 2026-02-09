@@ -199,6 +199,8 @@ class GVAR(ConfigTablet) {
 
                     class Controls {
                         class TabhostOverview: GVAR(RscTabHostControl) {
+                            idc = IDC_TABHOST_OVERVIEW;
+
                             class Controls {
                                 class FrameROE: GVAR(RscFrame) {
                                     x = QUOTE(pixelW * 1);
@@ -258,6 +260,7 @@ class GVAR(ConfigTablet) {
                                 };
 
                                 class HostGroups: GVAR(RscControlsGroup) {
+                                    idc = IDC_OVERVIEW_HOSTCTL_GROUPS;
                                     x = QUOTE(pixelW * 8);
                                     y = QUOTE(UI_GRID_H * 6);
                                     w = QUOTE(TABLET_CLIENTAREA_WIDTH - pixelW * 16);
@@ -272,6 +275,32 @@ class GVAR(ConfigTablet) {
                                             colorBackground[] = {1,0,0,0.5};
                                         };
                                     };
+                                };
+                            };
+                        };
+
+                        class TabhostTargets: GVAR(RscTabHostControl) {
+                            idc = IDC_TABHOST_TARGETS;
+
+                            class Controls {
+                                class BG: GVAR(RscText) {
+                                    w = QUOTE(TABLET_CLIENTAREA_WIDTH);
+                                    h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
+                                    colorBackground[] = {0,0,1,1};
+                                    text = "Targets tab content goes here.";
+                                };
+                            };
+                        };
+
+                        class TabhostConfiguration: GVAR(RscTabHostControl) {
+                            idc = IDC_TABHOST_CONFIGURATION;
+
+                            class Controls {
+                                class BG: GVAR(RscText) {
+                                    w = QUOTE(TABLET_CLIENTAREA_WIDTH);
+                                    h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
+                                    colorBackground[] = {1,0,1,1};
+                                    text = "Configuration tab content goes here.";
                                 };
                             };
                         };
