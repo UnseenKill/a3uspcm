@@ -14,6 +14,7 @@ class CfgFunctions {
             PATHTO_FNC(utilGenerateUniqueID);
             PATHTO_FNC(utilGetCenter);
             PATHTO_FNC(utilGetVehicleTemplateKey);
+            PATHTO_FNC(utilInterpolateColor);
             PATHTO_FNC(utilIsArmedVehicle);
             PATHTO_FNC(utilIsDaytime);
             PATHTO_FNC(utilLightFlicker);

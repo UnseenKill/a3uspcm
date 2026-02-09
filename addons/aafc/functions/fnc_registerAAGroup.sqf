@@ -31,7 +31,8 @@ if !assert(!isNull _group) exitWith {};
 
 private _vehicles = [];
 {
-    _vehicles pushBackUnique _x
+    _group addVehicle _x;
+    _vehicles pushBackUnique _x;
 } forEach (units _group apply { objectParent _x } select { !isNull _x });
 
 _group setVariable[QGVAR(vehicles), _vehicles apply { 

@@ -37,7 +37,8 @@ if (IDC_TABHOST_OVERVIEW isNotEqualTo ctrlIDC _ctlTabHost) exitWith {};
     ["btnCIWSOnly", IDC_OVERVIEW_BTN_CIWSONLY],
     ["btnSRSAM", IDC_OVERVIEW_BTN_SRSAM],
     ["btnLRSAM", IDC_OVERVIEW_BTN_LRSAM],
-    ["btnHoldFire", IDC_OVERVIEW_BTN_HOLDFIRE]
+    ["btnHoldFire", IDC_OVERVIEW_BTN_HOLDFIRE],
+    ["ctlGroupsHost", IDC_OVERVIEW_HOSTCTL_GROUPS]
 ] apply {
     _x params["_varName","_idc"];
 

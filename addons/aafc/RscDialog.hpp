@@ -1,4 +1,5 @@
 #include "\z\a3uspcm\addons\main\ui_define.hpp"
+#include "RscConst.hpp"
 
 FORWARD(RscButton);
 FORWARD(RscFrame);
@@ -13,15 +14,6 @@ FORWARD(RscText);
     defaultA
 
 #define PROFILE_BCG(alpha) PROFILE_COLOR(GUI_BCG_RGB,0.13,0.54,0.21,alpha)
-
-#define DEFAULT_FONT font = "PuristaMedium"
-#define TABLET_SCREEN_WIDTH (safeZoneW * 0.5125 + pixelW * 10)
-#define TABLET_CLIENTAREA_HEIGHT (UI_GRID_H * 22)
-#define TABLET_CLIENTAREA_WIDTH (TABLET_SCREEN_WIDTH - pixelW * 64)
-#define UI_ASPECT ((safezoneW / safezoneH) min 1.2)
-#define UI_GRID_H_20 ((UI_ASPECT / 1.2) / 20)
-#define UI_GRID_H ((UI_ASPECT / 1.2) / 25)
-#define UI_GRID_W (UI_ASPECT / 40)
 
 class GVAR(RscButton) {
     type = CT_BUTTON;
@@ -107,6 +99,32 @@ class GVAR(RscFrame): RscFrame {
     DEFAULT_FONT;
 };
 
+class GVAR(RscStructuredText) {
+    type = CT_STRUCTURED_TEXT;
+    style = 0;
+    idc = -1;
+    x = 0;
+    y = 0;
+    w = 0.1;
+    h = 0.035;
+    access = 0;
+    colorText[] = {1,1,1,1};
+    deletable = 0;
+    fade = 0;
+    shadow = 1;
+    size = QUOTE(UI_GRID_H);
+    text = "";
+
+    class Attributes {
+        align = "left";
+        color = "#ffffff";
+        colorLink = "#D09B43";
+        shadow = 1;
+
+        DEFAULT_FONT;
+    };
+};
+
 class GVAR(RscTabHostControl): GVAR(RscControlsGroup) {
     fade = 1;
     y = QUOTE(UI_GRID_H);
@@ -116,6 +134,10 @@ class GVAR(RscTabHostControl): GVAR(RscControlsGroup) {
 
 class GVAR(RscText): RscText {
     DEFAULT_FONT;
+};
+
+class GVAR(RscTextCentered): GVAR(RscText) {
+    style = QUOTE(ST_CENTER + ST_MULTI);
 };
 
 class GVAR(ConfigTablet) {

@@ -39,7 +39,7 @@ _group setGroupIdGlobal[_groupName];
 
 [_group] spawn {
     uiSleep 2.5;
-    [_this] remoteExecCall[QEFUNC(aafc,registerAAGroup), 2];
+    _this remoteExecCall[QEFUNC(aafc,registerAAGroup), 2];
 };
 
 _vehicles apply {
