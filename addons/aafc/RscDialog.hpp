@@ -106,6 +106,13 @@ class GVAR(RscFrame): RscFrame {
     DEFAULT_FONT;
 };
 
+class GVAR(RscTabHostControl): GVAR(RscControlsGroup) {
+    fade = 1;
+    y = QUOTE(UI_GRID_H);
+    w = QUOTE(TABLET_CLIENTAREA_WIDTH);
+    h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
+};
+
 class GVAR(RscText): RscText {
     DEFAULT_FONT;
 };
@@ -191,11 +198,7 @@ class GVAR(ConfigTablet) {
                     h = QUOTE(safeZoneH * 0.6 - UI_GRID_H_20 * 2 - pixelH * 64);
 
                     class Controls {
-                        class TabhostOverview: GVAR(RscControlsGroup) {
-                            y = QUOTE(UI_GRID_H);
-                            w = QUOTE(TABLET_CLIENTAREA_WIDTH);
-                            h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
-
+                        class TabhostOverview: GVAR(RscTabHostControl) {
                             class Controls {
                                 class FrameROE: GVAR(RscFrame) {
                                     x = QUOTE(pixelW * 1);
@@ -252,6 +255,23 @@ class GVAR(ConfigTablet) {
                                     w = QUOTE(TABLET_CLIENTAREA_WIDTH - pixelW * 1);
                                     h = QUOTE(UI_GRID_H * 16);
                                     text = "A/A Groups";
+                                };
+
+                                class HostGroups: GVAR(RscControlsGroup) {
+                                    x = QUOTE(pixelW * 8);
+                                    y = QUOTE(UI_GRID_H * 6);
+                                    w = QUOTE(TABLET_CLIENTAREA_WIDTH - pixelW * 16);
+                                    h = QUOTE(UI_GRID_H * 15);
+
+                                    class Controls {
+                                        class DeleteMe: GVAR(RscText) {
+                                            text = "This is where the groups will be listed.";
+                                            deletable = 1;
+                                            w = QUOTE(TABLET_CLIENTAREA_WIDTH - pixelW * 16);
+                                            h = QUOTE(UI_GRID_H * 15 - pixelH * 8);
+                                            colorBackground[] = {1,0,0,0.5};
+                                        };
+                                    };
                                 };
                             };
                         };
