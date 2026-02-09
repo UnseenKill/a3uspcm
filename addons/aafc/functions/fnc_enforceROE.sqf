@@ -36,6 +36,7 @@ private _roeMap = createHashMapFromArray[
 private _allowTypes = _roeMap get _roeMode;
 
 GVAR(groups) apply {
+    _x setVariable[QGVAR(vehicles), _x getVariable QGVAR(vehicles) select { !isNull _x }, true];
     _x getVariable QGVAR(vehicles) apply {
         private _vehicle = _x;
         private _aaType = [_x] call FUNC(getAAType);
