@@ -84,6 +84,65 @@ _groups apply {
     _control ctrlSetBackgroundColor _backgroundColor;
     _control ctrlCommit 0;
 
+    _control = _display ctrlCreate[QGVAR(RscButtonUnlink), 0, _ctlTabHost];
+    _control ctrlSetPosition[_startX + UI_GRID_W * 15, 0, UI_GRID_W, UI_GRID_H];
+    _control ctrlSetTooltip "Unlink from global ROE; follow custom rules.\nDouble click units in list to change their ROE manually.";
+    [{
+        params["_control","_group"];
+        _control ctrlEnable !(_group getVariable[QGVAR(unlinkROE), false]);
+        _control ctrlShow !(_group getVariable[QGVAR(unlinkROE), false]);
+    }, [_control, _group]] call CBA_fnc_execNextFrame;
+    _control ctrlCommit 0;
+    _control setVariable[QGVAR(group), _group];
+    _control setVariable[QGVAR(unlink), true];
+    _control ctrlAddEventHandler["ButtonClick", {
+        TRACE_1(QFUNC(tabletOverviewUpdate),_this);
+        params["_control"];
+
+        _control getVariable QGVAR(group) setVariable[QGVAR(unlinkROE), true];
+        _control ctrlEnable false;
+        _control ctrlShow false;
+        allControls ctrlParentControlsGroup _control apply {
+            if ((_x getVariable[QGVAR(link), false]) &&
+                {_x getVariable[QGVAR(group), grpNull] isEqualTo (_control getVariable QGVAR(group))}) exitWith {
+                TRACE_1(QFUNC(tabletOverviewUpdate),_x);
+                _x ctrlEnable true;
+                _x ctrlShow true;
+                _x ctrlCommit 0;
+            };
+        };
+    }];
+
+    _control = _display ctrlCreate[QGVAR(RscButtonLink), 0, _ctlTabHost];
+    _control ctrlSetPosition[_startX + UI_GRID_W * 15, 0, UI_GRID_W, UI_GRID_H];
+    _control ctrlSetTooltip "Go back and adhere to global ROE.";
+    _control ctrlSetTextColor [0.5,0,0,1];
+    [{
+        params["_control","_group"];
+        _control ctrlEnable (_group getVariable[QGVAR(unlinkROE), false]);
+        _control ctrlShow (_group getVariable[QGVAR(unlinkROE), false]);
+    }, [_control, _group]] call CBA_fnc_execNextFrame;
+    _control ctrlCommit 0;
+    _control setVariable[QGVAR(group), _group];
+    _control setVariable[QGVAR(link), true];
+    _control ctrlAddEventHandler["ButtonClick", {
+        TRACE_1(QFUNC(tabletOverviewUpdate),_this);
+        params["_control"];
+
+        _control getVariable QGVAR(group) setVariable[QGVAR(unlinkROE), false];
+        _control ctrlEnable false;
+        _control ctrlShow false;
+        allControls ctrlParentControlsGroup _control apply {
+            if ((_x getVariable[QGVAR(unlink), false]) &&
+                {_x getVariable[QGVAR(group), grpNull] isEqualTo (_control getVariable QGVAR(group))}) exitWith {
+                TRACE_1(QFUNC(tabletOverviewUpdate),_x);
+                _x ctrlEnable true;
+                _x ctrlShow true;
+                _x ctrlCommit 0;
+            };
+        };
+    }];
+
     _control = _display ctrlCreate[QGVAR(RscListNBox), 0, _ctlTabHost];
     _control ctrlSetPosition[_startX, UI_GRID_H + pixelH * 4, 16 * UI_GRID_W, _th - UI_GRID_H - pixelH * 4];
     lnbClear _control;
@@ -93,10 +152,29 @@ _groups apply {
     lnbGetColumnsPosition _control apply { _control lnbDeleteColumn 0 };
 
     _control lnbAddColumn 0;
-    _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 1 * UI_GRID_W, 0, 1];
-    _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 3 * UI_GRID_W, 0, 1];
-    _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 6 * UI_GRID_W, 0, 1];
+    _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 2 * UI_GRID_W, 0, 1];
+    _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 4 * UI_GRID_W, 0, 1];
+    _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 7 * UI_GRID_W, 0, 1];
     _control ctrlCommit 0;
+
+    _control ctrlAddEventHandler["LBDblClick", {
+        TRACE_1(QFUNC(tabletOverviewUpdate),_this);
+        params["_control","_index"];
+
+        private _data = _control lnbData[_index, 0] splitString ",";
+        if (_data select 0 isNotEqualTo "2") exitWith { /* fuck me this is hacky */ };
+        private _group = (_control lnbData[_index, 2]) call BIS_fnc_groupFromNetId;
+        private _vehicle = (_control lnbData[_index, 1]) call BIS_fnc_objectFromNetId;
+
+        if !(_group getVariable[QGVAR(unlinkROE), false]) exitWith {};
+        private _holdingFire = unitCombatMode gunner _vehicle isEqualTo "BLUE";
+
+        crew _vehicle select { alive _x } apply {
+            _x setUnitCombatMode(["BLUE", "YELLOW"] select _holdingFire);
+        };
+
+        CBA_TRIGGER(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[GVAR(globalROE)]);
+    }];
 
     _group getVariable QGVAR(vehicles) select { !isNull _x } apply {
         private _vehicle = _x;
@@ -111,14 +189,15 @@ _groups apply {
         _columnData pushBack groupId gunner _vehicle;
 
         private _index = _control lnbAddRow[
-            "",
+            ["", "F"] select(alive _vehicle && { !isNull gunner _vehicle } && { unitCombatMode gunner _vehicle isNotEqualTo "BLUE" }),
             (((1 - damage _vehicle) * 100) toFixed 0) + "%",
             _aaTypeShort,
             getText(configOf _vehicle >> "displayName")
         ];
 
-        _control lnbSetData[[_index, 0], str _columnData];
+        _control lnbSetData[[_index, 0], _columnData joinString ","];
         _control lnbSetData[[_index, 1], _vehicle call BIS_fnc_netId];
+        _control lnbSetData[[_index, 2], _group call BIS_fnc_netId];
 
         TRACE_2(QFUNC(tabletOverviewFocus),_vehicle,_columnData);
 

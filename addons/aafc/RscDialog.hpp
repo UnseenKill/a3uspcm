@@ -1,12 +1,12 @@
 #include "\z\a3uspcm\addons\main\ui_define.hpp"
 #include "RscConst.hpp"
 
+FORWARD(RscActivePictureKeepAspect);
 FORWARD(RscButton);
 FORWARD(RscFrame);
 FORWARD(RscLine);
 FORWARD(RscListNBox);
 FORWARD(RscPicture);
-FORWARD(RscShortcutButton);
 FORWARD(RscText);
 
 #define PROFILE_COLOR(profileKey,defaultR,defaultG,defaultB,defaultA) \
@@ -62,33 +62,12 @@ class GVAR(RscButtonTab): GVAR(RscButton) {
     colorBackgroundTabActive[] = {0.6,0.6,0.6,1};
 };
 
-class GVAR(RscButtonUnlink): RscShortcutButton {
-    textureNoShortcut = QPATHTOEF(assets,ui\icon-unlinked.paa);
-
-    animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
-    animTextureNormal = "#(argb,8,8,3)color(0.4,0.4,0.4,0)";
-    animTextureDisabled = "#(argb,8,8,3)color(0,0,0,0)";
-    animTextureOver = "#(argb,8,8,3)color(0.4,0.4,0.4,0)";
-    animTextureFocused = "#(argb,8,8,3)color(0.4,0.4,0.4,0)";
-    animTexturePressed = "#(argb,8,8,3)color(1,1,1,1)";
-
-    color[] = {0.5,0.5,0.5,1};
-    color2[] = {1,1,1,1};
-
-    period = 0;
-    periodFocus = 0;
-    periodOver = 0;
-
-    class ShortcutPos {
-        left = 0;
-        top = 0;
-        w = QUOTE(UI_GRID_W);
-        h = QUOTE(UI_GRID_H);
-    };
+class GVAR(RscButtonLink): RscActivePictureKeepAspect {
+    text = QPATHTOEF(assets,ui\icon-linked.paa);
 };
 
-class GVAR(RscButtonLink): GVAR(RscButtonUnlink) {
-    textureNoShortcut = QPATHTOEF(assets,ui\icon-linked.paa);
+class GVAR(RscButtonUnlink): GVAR(RscButtonLink) {
+    text = QPATHTOEF(assets,ui\icon-unlinked.paa);
 };
 
 class GVAR(RscControlsGroup) {
