@@ -6,6 +6,7 @@ FORWARD(RscFrame);
 FORWARD(RscLine);
 FORWARD(RscListNBox);
 FORWARD(RscPicture);
+FORWARD(RscShortcutButton);
 FORWARD(RscText);
 
 #define PROFILE_COLOR(profileKey,defaultR,defaultG,defaultB,defaultA) \
@@ -59,6 +60,35 @@ class GVAR(RscButtonTab): GVAR(RscButton) {
     colorBackground[] = {0.2,0.2,0.2,0.5};
     colorBackgroundActive[] = {0.2,0.2,0.2,1};
     colorBackgroundTabActive[] = {0.6,0.6,0.6,1};
+};
+
+class GVAR(RscButtonUnlink): RscShortcutButton {
+    textureNoShortcut = QPATHTOEF(assets,ui\icon-unlinked.paa);
+
+    animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
+    animTextureNormal = "#(argb,8,8,3)color(0.4,0.4,0.4,0)";
+    animTextureDisabled = "#(argb,8,8,3)color(0,0,0,0)";
+    animTextureOver = "#(argb,8,8,3)color(0.4,0.4,0.4,0)";
+    animTextureFocused = "#(argb,8,8,3)color(0.4,0.4,0.4,0)";
+    animTexturePressed = "#(argb,8,8,3)color(1,1,1,1)";
+
+    color[] = {0.5,0.5,0.5,1};
+    color2[] = {1,1,1,1};
+
+    period = 0;
+    periodFocus = 0;
+    periodOver = 0;
+
+    class ShortcutPos {
+        left = 0;
+        top = 0;
+        w = QUOTE(UI_GRID_W);
+        h = QUOTE(UI_GRID_H);
+    };
+};
+
+class GVAR(RscButtonLink): GVAR(RscButtonUnlink) {
+    textureNoShortcut = QPATHTOEF(assets,ui\icon-linked.paa);
 };
 
 class GVAR(RscControlsGroup) {
@@ -195,7 +225,23 @@ class GVAR(ConfigTablet) {
                     y = QUOTE(UI_GRID_H_20 * 2 - pixelH * 4);
                     w = QUOTE(TABLET_SCREEN_WIDTH - pixelW * 32);
                 };
+/*
+                class FooHost: GVAR(RscControlsGroup) {
+                    x = QUOTE(pixelW * 32);
+                    y = QUOTE(UI_GRID_H_20 * 2);
+                    w = QUOTE(UI_GRID_W * 2);
+                    h = QUOTE(UI_GRID_H * 2);
 
+                    class Controls {
+                        class Btn: GVAR(RscButtonUnlink) {
+                            x = QUOTE(UI_GRID_W * 0.5);
+                            y = QUOTE(UI_GRID_H * 0.5);
+                            w = QUOTE(UI_GRID_W * 1.0);
+                            h = QUOTE(UI_GRID_H * 1.0);
+                        };
+                    };
+                };
+*/
                 class TabButtons: GVAR(RscControlsGroup) {
                     x = QUOTE(pixelW * 32);
                     y = QUOTE(UI_GRID_H_20 * 2);
