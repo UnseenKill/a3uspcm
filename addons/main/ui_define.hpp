@@ -7,25 +7,6 @@
     #define FORWARD(className) import className
 #endif // __A3USPCM_IS_3DEN__
 
-FORWARD(IGUIBack);
-FORWARD(RscButton);
-FORWARD(RscButtonMenu);
-FORWARD(RscButtonMenuCancel);
-FORWARD(RscButtonMenuOK);
-FORWARD(RscCheckbox);
-FORWARD(RscCombo);
-FORWARD(RscControlsGroup);
-FORWARD(RscEdit);
-FORWARD(RscFrame);
-FORWARD(RscListbox);
-FORWARD(RscPicture);
-FORWARD(RscShortcutButton);
-FORWARD(RscShortcutButtonMain);
-FORWARD(RscSlider);
-FORWARD(RscStructuredText);
-FORWARD(RscText);
-FORWARD(RscTextCheckBox);
-
 #define true 1
 #define false 0
 
