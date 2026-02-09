@@ -31,7 +31,7 @@ class GVAR(RscButton) {
     colorBackgroundDisabled[] = {0,0,0,0.5};
     colorBorder[] = {0,0,0,1};
     colorDisabled[] = {1,1,1,0.25};
-    colorFocused[] = {0,0,0,1};
+    colorFocused[] = { PROFILE_BCG(0.5) };
     colorShadow[] = {0,0,0,0};
     colorText[] = {1,1,1,1};
     default = 0;
