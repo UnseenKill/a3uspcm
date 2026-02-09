@@ -21,7 +21,7 @@ $[
 	[-1001,"StaticBackground",[1,"",["0.215313 * safezoneW + safezoneX","0.219 * safezoneH + safezoneY","0.5775 * safezoneW","0.561 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],[]],
 	[-1602,"BtnClose",[1,"X",["0.77225 * safezoneW + safezoneX","0.181 * safezoneH + safezoneY","0.020625 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[-1400,"EditCopyPaste",[1,"",["0.226719 * safezoneW + safezoneX","0.236 * safezoneH + safezoneY","0.33 * safezoneW","0.528 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["style = ST_MULTI;","fade = 1;","font = |EtelkaMonospacePro|;","sizeEx = 0.025;"]],
-	[1500,"ListAllTracks",[1,"",["0.226719 * safezoneW + safezoneX","0.236 * safezoneH + safezoneY","0.33 * safezoneW","0.528 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","idcLeft = -1;","idcRight = -1;","drawSideArrows = false;"]],
+	[1500,"ListAllTracks",[1,"",["0.226719 * safezoneW + safezoneX","0.236 * safezoneH + safezoneY","0.33 * safezoneW","0.528 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","idcLeft = -1;","idcRight = -1;","drawSideArrows = 0;"]],
 	[1002,"StaticTreePosition",[1,"",["0.561875 * safezoneW + safezoneX","0.28 * safezoneH + safezoneY","0.221719 * safezoneW","0.44 * safezoneH"],[-1,-1,-1,-1],[0.4,0,0,1],[-1,-1,-1,-1],"","-1"],["deletable = 1;","onLoad = QUOTE(_this spawn FUNC(onInitPlaylistTree));","fade = 1;"]],
 	[1600,"BtnRemove",[1,"<<",["0.675312 * safezoneW + safezoneX","0.236 * safezoneH + safezoneY","0.108281 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"Remove selection","-1"],[]],
 	[1601,"BtnAddSelection",[1,">>",["0.561875 * safezoneW + safezoneX","0.236 * safezoneH + safezoneY","0.108281 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0.8,0,1],[-1,-1,-1,-1],"Add to selection from track list","-1"],[]],
@@ -88,7 +88,7 @@ class GVAR(dialog) {
 			type = CT_LISTNBOX;
 			idcLeft = -1;
 			idcRight = -1;
-			drawSideArrows = false;
+			drawSideArrows = 0;
 
 			idc = IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_LISTALLTRACKS;
 			x = QUOTE(0.226719 * safezoneW + safezoneX);

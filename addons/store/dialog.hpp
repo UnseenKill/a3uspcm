@@ -30,7 +30,7 @@ $[
 	[1201,"PictureSellItemWeapon",[1,"#(argb,8,8,3)color(0,0,0,0)",["0.628906 * safezoneW + safezoneX","0.258 * safezoneH + safezoneY","0.0979687 * safezoneW","0.077 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1200,"PictureSellItemSquare",[1,"#(argb,8,8,3)color(0,0,0,0)",["0.732031 * safezoneW + safezoneX","0.258 * safezoneH + safezoneY","0.04125 * safezoneW","0.077 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[2100,"DropFilterSelect",[1,"",["0.220531 * safezoneW + safezoneX","0.236 * safezoneH + safezoneY","0.391875 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1500,"ListContainerContent",[1,"",["0.22053 * safezoneW + safezoneX","0.269 * safezoneH + safezoneY","0.391875 * safezoneW","0.495 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = true;","idcLeft = -1;","idcRight = -1;","tooltipPerColumn = true;","sizeEx = 0.08;"]],
+	[1500,"ListContainerContent",[1,"",["0.22053 * safezoneW + safezoneX","0.269 * safezoneH + safezoneY","0.391875 * safezoneW","0.495 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = 1;","idcLeft = -1;","idcRight = -1;","tooltipPerColumn = 1;","sizeEx = 0.08;"]],
 	[1002,"LabelShowUnsellable",[1,"Show unsellable items",["0.649531 * safezoneW + safezoneX","0.7222 * safezoneH + safezoneY","0.118594 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[2800,"CheckShowUnsellable",[1,"",["0.62375 * safezoneW + safezoneX","0.7332 * safezoneH + safezoneY","0.020625 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1003,"LabelAmount",[1,"Amount:",["0.628906 * safezoneW + safezoneX","0.577 * safezoneH + safezoneY","0.0464063 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
@@ -161,10 +161,10 @@ class GVAR(sellDialog) {
 		class ListContainerContent: RscListbox
 		{
 			type = CT_LISTNBOX;
-			drawSideArrows = true;
+			drawSideArrows = 1;
 			idcLeft = -1;
 			idcRight = -1;
-			tooltipPerColumn = true;
+			tooltipPerColumn = 1;
 			sizeEx = QUOTE(0.08);
 
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINERCONTENT;
