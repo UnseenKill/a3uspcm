@@ -36,6 +36,8 @@ CBA_SUBSCRIBE(CBA_EVENT_AAFC_DIALOG_TABSETUP,{call FUNC(tabletOverviewSetup)});
 CBA_SUBSCRIBE(CBA_EVENT_AAFC_DIALOG_TABSWITCH,{call FUNC(tabletEventOnSwitchTab)});
 CBA_SUBSCRIBE(CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_BEFORE,{call FUNC(tabletOverviewFocus)});
 
+CBA_SUBSCRIBE(CBA_EVENT_AAFC_SET_ROE_GLOBAL,{call FUNC(tabletOverviewUpdate)});
+
 uiNamespace setVariable[QGVAR(display), _display];
 CBA_TRIGGER(CBA_EVENT_AAFC_DIALOG_OPENED,[_display]);
 

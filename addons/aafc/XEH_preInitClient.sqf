@@ -2,6 +2,14 @@
 
 GVAR(globalROE) = ROE_HOLDFIRE;
 
+[CBA_EVENT_AAFC_SET_ROE_GLOBAL, {
+    if !assert(params[
+        ["_newROE", nil, [0]]
+    ]) exitWith {};
+
+    GVAR(globalROE) = _newROE;
+}] call CBA_fnc_addEventHandler;
+
 [CBA_EVENT_AAFC_UPDATE_GROUP, {
     if !assert(params[
         ["_group", nil, [grpNull]]

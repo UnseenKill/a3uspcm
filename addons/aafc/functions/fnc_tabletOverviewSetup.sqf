@@ -32,17 +32,27 @@ if !assert(params[
 
 if (IDC_TABHOST_OVERVIEW isNotEqualTo ctrlIDC _ctlTabHost) exitWith {};
 
+_tabHost set["ctlGroupsHost", _ctlTabHost controlsGroupCtrl IDC_OVERVIEW_HOSTCTL_GROUPS];
+
 [
-    ["btnFireAtWill", IDC_OVERVIEW_BTN_FIREATWILL],
-    ["btnCIWSOnly", IDC_OVERVIEW_BTN_CIWSONLY],
-    ["btnSRSAM", IDC_OVERVIEW_BTN_SRSAM],
-    ["btnLRSAM", IDC_OVERVIEW_BTN_LRSAM],
-    ["btnHoldFire", IDC_OVERVIEW_BTN_HOLDFIRE],
-    ["ctlGroupsHost", IDC_OVERVIEW_HOSTCTL_GROUPS]
+    ["btnFireAtWill", IDC_OVERVIEW_BTN_FIREATWILL, ROE_FIREATWILL],
+    ["btnCIWSOnly", IDC_OVERVIEW_BTN_CIWSONLY, ROE_CIWSONLY],
+    ["btnSRSAM", IDC_OVERVIEW_BTN_SRSAM, ROE_SRSAM],
+    ["btnLRSAM", IDC_OVERVIEW_BTN_LRSAM, ROE_LRSAM],
+    ["btnHoldFire", IDC_OVERVIEW_BTN_HOLDFIRE, ROE_HOLDFIRE]
 ] apply {
-    _x params["_varName","_idc"];
+    _x params["_varName","_idc","_roeMode"];
 
     private _button = _ctlTabHost controlsGroupCtrl _idc;
+    _button setVariable[QGVAR(roeMode), _roeMode];
+    _button ctrlAddEventHandler["ButtonClick", {
+        if !assert(params[
+            ["_control", nil, [controlNull]]
+        ]) exitWith {};
+
+        CBA_TRIGGER(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[_control getVariable QGVAR(roeMode)]);
+    }];
+
     _tabHost set[_varName, _button];
 };
 
