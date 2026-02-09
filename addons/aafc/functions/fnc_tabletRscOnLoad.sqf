@@ -34,7 +34,7 @@ uiNamespace setVariable[QGVAR(events), []];
 CBA_SUBSCRIBE(CBA_EVENT_AAFC_DIALOG_OPENED,{call FUNC(tabletEventOnOpen)});
 CBA_SUBSCRIBE(CBA_EVENT_AAFC_DIALOG_TABSETUP,{call FUNC(tabletOverviewSetup)});
 CBA_SUBSCRIBE(CBA_EVENT_AAFC_DIALOG_TABSWITCH,{call FUNC(tabletEventOnSwitchTab)});
-CBA_SUBSCRIBE(CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_BEFORE,{call FUNC(tabletOverviewInit)});
+CBA_SUBSCRIBE(CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_BEFORE,{call FUNC(tabletOverviewFocus)});
 
 uiNamespace setVariable[QGVAR(display), _display];
 CBA_TRIGGER(CBA_EVENT_AAFC_DIALOG_OPENED,[_display]);

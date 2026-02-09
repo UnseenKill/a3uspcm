@@ -17,7 +17,7 @@ PREP(updateMenu);
 // Tablet UI
 PREP(tabletEventOnOpen);
 PREP(tabletEventOnSwitchTab);
-PREP(tabletOverviewInit);
+PREP(tabletOverviewFocus);
 PREP(tabletOverviewSetup);
 PREP(tabletRscOnLoad);
 PREP(tabletRscOnUnload);

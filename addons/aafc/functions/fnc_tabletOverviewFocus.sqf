@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 #include "..\RscConst.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_aafc_fnc_tabletOverviewInit
+Function: A3USPCM_aafc_fnc_tabletOverviewFocus
 
 Description:
     Runs everytime, the overview tab is focused. Triggered by CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_BEFORE.
@@ -21,7 +21,7 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(tabletOverviewInit),_this);
+TRACE_1(QFUNC(tabletOverviewFocus),_this);
 
 if !assert(params[
     ["_tabFocused", nil, [createHashMap]]
