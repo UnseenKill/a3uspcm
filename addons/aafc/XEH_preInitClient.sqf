@@ -11,7 +11,6 @@ GVAR(globalROE) = ROE_HOLDFIRE;
 }] call CBA_fnc_addEventHandler;
 
 [CBA_EVENT_AAFC_SET_ROE_GLOBAL, { call FUNC(enforceROE) }] call CBA_fnc_addEventHandler;
-[CBA_EVENT_AAFC_UNIT_ROE_CHANGED, { call FUNC(acknowledgeROEChange) }] call CBA_fnc_addEventHandler;
 
 [CBA_EVENT_AAFC_UPDATE_GROUP, {
     if !assert(params[

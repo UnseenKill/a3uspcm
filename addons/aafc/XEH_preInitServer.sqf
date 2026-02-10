@@ -7,6 +7,8 @@ GVAR(groups) = [];
 publicVariable QGVAR(contacts);
 publicVariable QGVAR(groups);
 
+[CBA_EVENT_AAFC_UNIT_ROE_CHANGED, { call FUNC(acknowledgeROEChange) }] call CBA_fnc_addEventHandler;
+
 [{
     [QGVAR(StartContactTracking), { call FUNC(onStartContactTracking) }] call CBA_fnc_addEventHandler;
 
@@ -22,3 +24,5 @@ publicVariable QGVAR(groups);
         [] spawn FUNC(roeCorrectionMonitor);
     };
 }] call FUNCMAIN(utilOnA3UServerInitDone);
+
+nil;

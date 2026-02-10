@@ -14,13 +14,14 @@ Returns:
     Nothing
 
 Environment:
-    Client, Unscheduled
+    Server, Unscheduled
 
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(enforceROE),_this);
 
+if !assert(isServer) exitWith {};
 if !assert(params[
     ["_roeMode", nil, [0]]
 ]) exitWith {};
