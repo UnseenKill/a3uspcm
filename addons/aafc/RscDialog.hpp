@@ -143,7 +143,6 @@ class GVAR(RscStructuredText) {
 
 class GVAR(RscTabHostControl): GVAR(RscControlsGroup) {
     fade = 1;
-    y = QUOTE(UI_GRID_H);
     w = QUOTE(TABLET_CLIENTAREA_WIDTH);
     h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
 };
@@ -238,9 +237,9 @@ class GVAR(ConfigTablet) {
 
                 class Main: GVAR(RscControlsGroup) {
                     x = QUOTE(pixelW * 32);
-                    y = QUOTE(UI_GRID_H_20 * 2 + pixelH * 32);
+                    y = QUOTE(UI_GRID_H_20 * 2 + UI_GRID_H * 2);
                     w = QUOTE(TABLET_SCREEN_WIDTH - pixelW * 64);
-                    h = QUOTE(safeZoneH * 0.6 - UI_GRID_H_20 * 2 - pixelH * 64);
+                    h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
 
                     class Controls {
                         class TabhostOverview: GVAR(RscTabHostControl) {
@@ -300,7 +299,7 @@ class GVAR(ConfigTablet) {
                                     x = QUOTE(pixelW * 1);
                                     y = QUOTE(UI_GRID_H * 5);
                                     w = QUOTE(TABLET_CLIENTAREA_WIDTH - pixelW * 1);
-                                    h = QUOTE(UI_GRID_H * 16);
+                                    h = QUOTE(TABLET_CLIENTAREA_HEIGHT - UI_GRID_H * 5);
                                     text = CSTRING(Tablet_TabhostOverview_FrameGroups_Caption_Text);
                                 };
 
@@ -309,14 +308,14 @@ class GVAR(ConfigTablet) {
                                     x = QUOTE(pixelW * 8);
                                     y = QUOTE(UI_GRID_H * 6);
                                     w = QUOTE(TABLET_CLIENTAREA_WIDTH - pixelW * 16);
-                                    h = QUOTE(UI_GRID_H * 15);
+                                    h = QUOTE(TABLET_CLIENTAREA_HEIGHT - UI_GRID_H * 6);
 
                                     class Controls {
                                         class DeleteMe: GVAR(RscText) {
                                             text = "This is where the groups will be listed.";
                                             deletable = 1;
                                             w = QUOTE(TABLET_CLIENTAREA_WIDTH - pixelW * 16);
-                                            h = QUOTE(UI_GRID_H * 15 - pixelH * 8);
+                                            h = QUOTE(TABLET_CLIENTAREA_HEIGHT - UI_GRID_H * 6);
                                             colorBackground[] = {1,0,0,0.5};
                                         };
                                     };
