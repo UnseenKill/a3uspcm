@@ -17,6 +17,7 @@ PREP(updateContactTracks);
 PREP(updateMenu);
 
 // Tablet UI
+PREP(tabletEventOnAfterTabFocus);
 PREP(tabletEventOnOpen);
 PREP(tabletEventOnSwitchTab);
 PREP(tabletOverviewFocus);

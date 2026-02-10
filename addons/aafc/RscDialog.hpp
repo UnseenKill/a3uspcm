@@ -161,12 +161,7 @@ class GVAR(ConfigTablet) {
     onLoad = QUOTE(call FUNC(tabletRscOnLoad));
     onUnload = QUOTE(call FUNC(tabletRscOnUnload));
 
-    class Controls {
-        class FocusStealer: RscButton {
-            idc = IDC_BTN_STEAL_THIS_FOCUS;
-            w = 0;
-        };
-
+    class ControlsBackground {
         class ScreenBlack: GVAR(RscText) {
             x = QUOTE(safeZoneX + safeZoneW * 0.25 - pixelW * 4);
             y = QUOTE(safeZoneY + safeZoneH * 0.2);
@@ -181,6 +176,13 @@ class GVAR(ConfigTablet) {
             w = QUOTE(TABLET_SCREEN_WIDTH);
             h = QUOTE(safeZoneH * 0.6);
             colorBackground[] = {0,0.1,0,1};
+        };
+    };
+
+    class Controls {
+        class FocusStealer: RscButton {
+            idc = IDC_BTN_STEAL_THIS_FOCUS;
+            w = 0;
         };
 
         class Main: GVAR(RscControlsGroup) {
@@ -204,23 +206,7 @@ class GVAR(ConfigTablet) {
                     y = QUOTE(UI_GRID_H_20 * 2 - pixelH * 4);
                     w = QUOTE(TABLET_SCREEN_WIDTH - pixelW * 32);
                 };
-/*
-                class FooHost: GVAR(RscControlsGroup) {
-                    x = QUOTE(pixelW * 32);
-                    y = QUOTE(UI_GRID_H_20 * 2);
-                    w = QUOTE(UI_GRID_W * 2);
-                    h = QUOTE(UI_GRID_H * 2);
 
-                    class Controls {
-                        class Btn: GVAR(RscButtonUnlink) {
-                            x = QUOTE(UI_GRID_W * 0.5);
-                            y = QUOTE(UI_GRID_H * 0.5);
-                            w = QUOTE(UI_GRID_W * 1.0);
-                            h = QUOTE(UI_GRID_H * 1.0);
-                        };
-                    };
-                };
-*/
                 class TabButtons: GVAR(RscControlsGroup) {
                     x = QUOTE(pixelW * 32);
                     y = QUOTE(UI_GRID_H_20 * 2);

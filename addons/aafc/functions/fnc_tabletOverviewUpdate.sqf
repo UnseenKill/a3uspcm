@@ -4,7 +4,7 @@
 Function: A3USPCM_aafc_fnc_tabletOverviewUpdate
 
 Description:
-    Update tablet overview controls after ROE change
+    Update tablet overview controls after tab focus
 
 Parameters:
     0: _newROE - New ROE mode <NUMBER>
@@ -78,12 +78,14 @@ _groups apply {
     INC(_index);
     ADD(_startX,16 * UI_GRID_W + pixelW * 4);
 
+    // [Group name label] ------------------------------------------------------
     _control = _display ctrlCreate[QGVAR(RscText), 0, _ctlTabHost];
     _control ctrlSetPosition[_startX, 0, 16 * UI_GRID_W, UI_GRID_H];
     _control ctrlSetText format["%1", groupId _group];
     _control ctrlSetBackgroundColor _backgroundColor;
     _control ctrlCommit 0;
 
+    // [Unlink from ROE button] ------------------------------------------------
     _control = _display ctrlCreate[QGVAR(RscButtonUnlink), 0, _ctlTabHost];
     _control ctrlSetPosition[_startX + UI_GRID_W * 15, 0, UI_GRID_W, UI_GRID_H];
     _control ctrlSetTooltip "Unlink from global ROE; follow custom rules.\nDouble click units in list to change their ROE manually.";
@@ -91,7 +93,7 @@ _groups apply {
         params["_control","_group"];
         _control ctrlEnable !(_group getVariable[QGVAR(unlinkROE), false]);
         _control ctrlShow !(_group getVariable[QGVAR(unlinkROE), false]);
-    }, [_control, _group]] call CBA_fnc_execNextFrame;
+    }, [_control, _group], 3] call CBA_fnc_execAfterNFrames;
     _control ctrlCommit 0;
     _control setVariable[QGVAR(group), _group];
     _control setVariable[QGVAR(unlink), true];
@@ -113,6 +115,7 @@ _groups apply {
         };
     }];
 
+    // [Link to ROE button] ----------------------------------------------------
     _control = _display ctrlCreate[QGVAR(RscButtonLink), 0, _ctlTabHost];
     _control ctrlSetPosition[_startX + UI_GRID_W * 15, 0, UI_GRID_W, UI_GRID_H];
     _control ctrlSetTooltip "Go back and adhere to global ROE.";
@@ -121,7 +124,7 @@ _groups apply {
         params["_control","_group"];
         _control ctrlEnable (_group getVariable[QGVAR(unlinkROE), false]);
         _control ctrlShow (_group getVariable[QGVAR(unlinkROE), false]);
-    }, [_control, _group]] call CBA_fnc_execNextFrame;
+    }, [_control, _group], 3] call CBA_fnc_execAfterNFrames;
     _control ctrlCommit 0;
     _control setVariable[QGVAR(group), _group];
     _control setVariable[QGVAR(link), true];
@@ -143,6 +146,7 @@ _groups apply {
         };
     }];
 
+    // [Unit/vehicle list] -----------------------------------------------------
     _control = _display ctrlCreate[QGVAR(RscListNBox), 0, _ctlTabHost];
     _control ctrlSetPosition[_startX, UI_GRID_H + pixelH * 4, 16 * UI_GRID_W, _th - UI_GRID_H - pixelH * 4];
     lnbClear _control;
@@ -261,9 +265,5 @@ _groups apply {
 
     _button ctrlSetBackgroundColor _color;
 };
-
-// [Send focus nowhere] --------------------------------------------------------
-
-STEAL_FOCUS();
 
 nil;
