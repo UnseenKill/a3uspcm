@@ -48,9 +48,9 @@ _group addEventHandler["EnemyDetected", {
         abs((leader _group distance _enemy) / 1000) toFixed 1, 
         getDir _enemy toFixed 1, speed _enemy toFixed 1
     ];
-    CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT_CONTACT,[ARR_2(leader _group,_message)]);
 
-    player reveal _enemy;
+    CBA_EVENT_REMOTE(CBA_EVENT_AAFC_CONTACT_UPDATE,[_enemy]);
+    CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT_CONTACT,[ARR_2(leader _group,_message)]);
 
     _enemy addEventHandler["IncomingMissile", {
         params["_unit","_ammo","_vehicle","_instigator","_projectile"];

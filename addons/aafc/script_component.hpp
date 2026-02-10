@@ -38,6 +38,8 @@
 // Parameters: [Hashmap unfocusedTab[, Hashmap focusedTab]]
 #define CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_BEFORE QUOTE(TRIPLES(ADDON,events,dialogTabUnfocusBefore))
 
+// Parameters: [Object contact]
+#define CBA_EVENT_AAFC_CONTACT_UPDATE QUOTE(TRIPLES(ADDON,events,contactUpdate))
 // Parameters: [Number roeLevel]
 #define CBA_EVENT_AAFC_SET_ROE_GLOBAL QUOTE(TRIPLES(ADDON,events,setROEGlobal))
 // Parameters: [Object sender, String message]

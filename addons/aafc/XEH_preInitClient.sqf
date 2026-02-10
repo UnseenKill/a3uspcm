@@ -1,5 +1,14 @@
 #include "script_component.hpp"
 
+[CBA_EVENT_AAFC_CONTACT_UPDATE, {
+    if !assert(params[
+        ["_contact", nil, [objNull]]
+    ]) exitWith {};
+    if !assert(!isNull _contact) exitWith {};
+
+    player reveal _contact;
+}] call CBA_fnc_addEventHandler;
+
 [CBA_EVENT_AAFC_SIDECHAT, {
     if !assert(params[
         ["_sender", nil, [objNull]],
