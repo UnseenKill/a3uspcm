@@ -13,7 +13,7 @@
 #define AA_TYPE_CIWS QUOTE(ciws)
 #define AA_TYPE_SRSAM QUOTE(srSAM)
 #define AA_TYPE_LRSAM QUOTE(lrSAM)
-#define AA_TYPE_SPAA QUOTE(selfPropelledAA)
+#define AA_TYPE_SPAAG QUOTE(selfPropelledAA)
 
 #define ROE_FIREATWILL 0
 #define ROE_CIWSONLY 1

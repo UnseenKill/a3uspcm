@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="AAFC">
+        <Key ID="STR_A3USPCM_AAFC_AAType_CIWS">
+            <English>Close-in weapon system</English>
+            <German>Nahbereichsverteidigungssystem</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_AAType_LRSAM">
+            <English>Long-range SAM</English>
+            <German>Langstrecken-Flugabwehrrakete</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_AAType_RADAR">
+            <English>Radar system</English>
+            <German>Radarsystem</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_AAType_SPAAG">
+            <English>Self-propelled AA gun</English>
+            <German>Selbstfahrende Flak</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_AAType_SRSAM">
+            <English>Short-range SAM</English>
+            <German>Kurzstrecken-Flugabwehrrakete</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_AAType_Unknown">
+            <English>Unknown</English>
+            <German>Unbekannt</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Component">
             <English>A3USPCM - AAFC Component</English>
             <German>A3USPCM - AAFC Komponente</German>
@@ -217,6 +241,14 @@
             <English>Friendly mode.</English>
             <German>Stopfen.</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnLink_Tooltip">
+            <English>Link to global ROE; discard custom rules.</English>
+            <German>Mit globalen ROE verknüpfen; benutzerdefinierte Regeln verwerfen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnUnlink_Tooltip">
+            <English>Unlink from global ROE; follow custom rules.\nDouble click units in list to change their ROE manually.</English>
+            <German>Vom globalen ROE entkoppeln; benutzerdefinierten Regeln folgen.\nDoppelklick auf Einheiten in der Liste, um deren ROE manuell zu ändern.</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_FrameGroups_Caption_Text">
             <English>A/A Groups</English>
             <German>Flugabwehrgruppen</German>
@@ -224,6 +256,18 @@
         <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_FrameROE_Caption_Text">
             <English>Rules of Engagement</English>
             <German>Feuerkontrollregeln</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_HintLnbUnits_Tooltip">
+            <English>%1\n\nDamage: %3%4\nType: %6\nCombat mode: %2\nGunner: %5</English>
+            <German>%1\n\nSchaden: %3%4\nTyp: %6\nKampfmodus: %2\nBesatzung: %5</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_HintNoGroups_Text">
+            <English>No A/A groups assigned</English>
+            <German>Keine Fla-Gruppen zugewiesen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_HintNoGunner_Text">
+            <English>No gunner</English>
+            <German>Keine Besatzung</German>
         </Key>
     </Package>
 </Project>

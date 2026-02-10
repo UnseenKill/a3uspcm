@@ -41,17 +41,17 @@ _startX = -16 * UI_GRID_W;
 if (GVAR(groups) isEqualTo []) exitWith {
     _control = _display ctrlCreate[QGVAR(RscTextCentered), 0, _ctlTabHost];
     _control ctrlSetPosition[0, 0, _tw, _th];
-    _control ctrlSetText "No A/A groups assigned, yet.";
+    _control ctrlSetText LLSTRING(Tablet_TabhostOverview_HintNoGroups_Text);
     _control ctrlCommit 0;
 };
 
 private _aaTypes = createHashMapFromArray[
-    [AA_TYPE_UNKNOWN, [0, "???", "Unknown"]],
-    [AA_TYPE_CIWS, [1, "CIWS", "Close-in weapon system"]],
-    [AA_TYPE_LRSAM, [3, "LR/SAM", "Long-range SAM"]],
-    [AA_TYPE_RADAR, [9, "RDR", "Radar"]],
-    [AA_TYPE_SPAA, [4, "SPAAG", "Self propelled AA"]],
-    [AA_TYPE_SRSAM, [2, "SR/SAM", "Short-range SAM"]]
+    [AA_TYPE_UNKNOWN, [0, "???", LLSTRING(AAType_Unknown)]],
+    [AA_TYPE_CIWS, [1, "CIWS", LLSTRING(AAType_CIWS)]],
+    [AA_TYPE_LRSAM, [3, "LR/SAM", LLSTRING(AAType_LRSAM)]],
+    [AA_TYPE_RADAR, [9, "RDR", LLSTRING(AAType_RADAR)]],
+    [AA_TYPE_SPAAG, [4, "SPAAG", LLSTRING(AAType_SPAAG)]],
+    [AA_TYPE_SRSAM, [2, "SR/SAM", LLSTRING(AAType_SRSAM)]]
 ];
 
 private _dotColors = [
@@ -88,7 +88,7 @@ _groups apply {
     // [Unlink from ROE button] ------------------------------------------------
     _control = _display ctrlCreate[QGVAR(RscButtonUnlink), 0, _ctlTabHost];
     _control ctrlSetPosition[_startX + UI_GRID_W * 15, 0, UI_GRID_W, UI_GRID_H];
-    _control ctrlSetTooltip "Unlink from global ROE; follow custom rules.\nDouble click units in list to change their ROE manually.";
+    _control ctrlSetTooltip LLSTRING(Tablet_TabhostOverview_BtnUnlink_Tooltip);
     [{
         params["_control","_group"];
         _control ctrlEnable !(_group getVariable[QGVAR(unlinkROE), false]);
@@ -118,7 +118,7 @@ _groups apply {
     // [Link to ROE button] ----------------------------------------------------
     _control = _display ctrlCreate[QGVAR(RscButtonLink), 0, _ctlTabHost];
     _control ctrlSetPosition[_startX + UI_GRID_W * 15, 0, UI_GRID_W, UI_GRID_H];
-    _control ctrlSetTooltip "Go back and adhere to global ROE.";
+    _control ctrlSetTooltip LLSTRING(Tablet_TabhostOverview_BtnLink_Tooltip);
     _control ctrlSetTextColor [0.5,0,0,1];
     [{
         params["_control","_group"];
@@ -183,7 +183,7 @@ _groups apply {
     _group getVariable QGVAR(vehicles) select { !isNull _x } apply {
         private _vehicle = _x;
         private _aaType = [_vehicle] call FUNC(getAAType);
-        private _aaTypeInfo = _aaTypes getOrDefault[_aaType, ["0", "???", "Unknown"]];
+        private _aaTypeInfo = _aaTypes getOrDefault[_aaType, ["0", "???", LLSTRING(AAType_Unknown)]];
         _aaTypeInfo params["_aaTypeSort","_aaTypeShort","_aaTypeLong"];
 
         private _columnData = [];
@@ -211,12 +211,12 @@ _groups apply {
         } forEach _dotColors;
 
         private _combatModeInfo = switch true do {
-            case (isNull gunner _vehicle): { "No gunner" };
-            default { ["Fire at will", "Hold fire"] select (unitCombatMode _vehicle isEqualTo "BLUE") };
+            case (isNull gunner _vehicle): { LLSTRING(Tablet_TabhostOverview_HintNoGunner_Text) };
+            default { [LLSTRING(Tablet_TabhostOverview_BtnFireAtWill_Text), LLSTRING(Tablet_TabhostOverview_BtnHoldFire_Text)] select (unitCombatMode _vehicle isEqualTo "BLUE") };
         };
 
         private _gunnerInfo = switch true do {
-            case (isNull gunner _vehicle): { "No gunner" };
+            case (isNull gunner _vehicle): { LLSTRING(Tablet_TabhostOverview_HintNoGunner_Text) };
             case (getText(configOf gunner _vehicle >> "simulation") isEqualTo "UAVPilot"): {
                 getText(configOf gunner _vehicle >> "displayName"); // Will most likely result in "AI"
             };
@@ -226,14 +226,7 @@ _groups apply {
         _control lnbSetPicture[[_index, 0], QPATHTOEF(assets,ui\bullet-point.paa)];
         _control lnbSetPictureColor[[_index, 0], RETDEF(_dotColor,[ARR_4(1,0,1,1)])];
         _control lnbSetTooltip[[_index, 0], format[
-            [
-                "%1",
-                "",
-                "Damage: %3%4",
-                "Type: %6",
-                "Combat mode: %2",
-                "Gunner: %5"
-            ] joinString "\n",
+            LLSTRING(Tablet_TabhostOverview_HintLnbUnits_Tooltip),
             getText(configOf _vehicle >> "displayName"),
             _combatModeInfo, (damage _vehicle * 100) toFixed 0, "%",
             _gunnerInfo, RETDEF(_aaTypeLong,"WTF")

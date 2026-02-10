@@ -46,6 +46,6 @@ switch true do {
     case (_vehicle isKindOf "StaticMGWeapon"): { AA_TYPE_CIWS };
     // RAM-1500 AA, Shilka and the likes
     case (_vehicle isKindOf "Car");
-    case (_vehicle isKindOf "Tank"): { AA_TYPE_SPAA };
+    case (_vehicle isKindOf "Tank"): { AA_TYPE_SPAAG };
     default { AA_TYPE_UNKNOWN };
 };
