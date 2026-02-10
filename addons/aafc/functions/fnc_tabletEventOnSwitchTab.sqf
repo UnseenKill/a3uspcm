@@ -60,8 +60,8 @@ if !(isNil "_oldTab") then {
 
 _newTab set["active", true];
 
-CBA_TRIGGER(CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_BEFORE,[ARR_2(RETNIL(_oldTab),_newTab)]);
-CBA_TRIGGER(CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_BEFORE,[ARR_2(_newTab,RETNIL(_oldTab))]);
+CBA_EVENT_LOCAL(CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_BEFORE,[ARR_2(RETNIL(_oldTab),_newTab)]);
+CBA_EVENT_LOCAL(CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_BEFORE,[ARR_2(_newTab,RETNIL(_oldTab))]);
 
 (_newTab get "button") ctrlSetBackgroundColor getArray(configFile >> QGVAR(RscButtonTab) >> "colorBackgroundTabActive");
 _ctlNewTabHost = _newTab get "tabhost";
@@ -85,7 +85,7 @@ ctrlSetFocus(_display displayCtrl IDC_BTN_STEAL_THIS_FOCUS);
 _display setVariable[QGVAR(currentTab), _idcTarget];
 _display setVariable[QGVAR(tabSwitchLocked), nil];
 
-CBA_TRIGGER(CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_AFTER,[ARR_2(_newTab,RETNIL(_oldTab))]);
-CBA_TRIGGER(CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_AFTER,[ARR_2(RETNIL(_oldTab),_newTab)]);
+CBA_EVENT_LOCAL(CBA_EVENT_AAFC_DIALOG_TAB_FOCUS_AFTER,[ARR_2(_newTab,RETNIL(_oldTab))]);
+CBA_EVENT_LOCAL(CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_AFTER,[ARR_2(RETNIL(_oldTab),_newTab)]);
 
 nil;

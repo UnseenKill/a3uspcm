@@ -57,7 +57,7 @@ GVAR(groups) select { !(_x getVariable[QGVAR(unlinkROE), false]) } apply {
 };
 
 _updateEventsFor apply {
-    CBA_TRIGGER(CBA_EVENT_AAFC_UNIT_ROE_CHANGED,_x);
+    CBA_EVENT_LOCAL(CBA_EVENT_AAFC_UNIT_ROE_CHANGED,_x);
 };
 
 nil;

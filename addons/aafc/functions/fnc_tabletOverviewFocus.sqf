@@ -29,6 +29,6 @@ if !assert(params[
 
 if (_tabFocused get "idc" isNotEqualTo IDC_TABHOST_OVERVIEW) exitWith {};
 
-CBA_TRIGGER(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[GVAR(globalROE)]);
+CBA_EVENT_LOCAL(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[GVAR(globalROE)]);
 
 nil;

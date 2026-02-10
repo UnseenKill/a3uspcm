@@ -46,10 +46,10 @@
 #define CBA_EVENT_AAFC_UNIT_ROE_CHANGED QUOTE(TRIPLES(ADDON,events,unitROEChanged))
 
 #ifdef __A3USPCM_PRODUCTION__
-    #define CBA_TRIGGER(eventName,params) [eventName, params] call CBA_fnc_localEvent
+    #define CBA_EVENT_LOCAL(eventName,params) [eventName, params] call CBA_fnc_localEvent
 #else
-    #define CBA_TRIGGER(eventName,params) if true then { \
-        TRACE_1("CBA_TRIGGER:"+eventName,params); \
+    #define CBA_EVENT_LOCAL(eventName,params) if true then { \
+        TRACE_1("CBA_EVENT_LOCAL:"+eventName,params); \
         [eventName, params] call CBA_fnc_localEvent; \
     }
 #endif // __A3USPCM_PRODUCTION__

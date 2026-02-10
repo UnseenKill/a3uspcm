@@ -73,7 +73,7 @@ _groups apply {
 
     _startY = -UI_GRID_H - pixelH * 4;
 
-    CBA_TRIGGER(CBA_EVENT_AAFC_UPDATE_GROUP,[_group]);
+    CBA_EVENT_LOCAL(CBA_EVENT_AAFC_UPDATE_GROUP,[_group]);
 
     INC(_index);
     ADD(_startX,16 * UI_GRID_W + pixelW * 4);
@@ -177,7 +177,7 @@ _groups apply {
             _x setUnitCombatMode(["BLUE", "YELLOW"] select _holdingFire);
         };
 
-        CBA_TRIGGER(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[GVAR(globalROE)]);
+        CBA_EVENT_LOCAL(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[GVAR(globalROE)]);
     }];
 
     _group getVariable QGVAR(vehicles) select { !isNull _x } apply {
