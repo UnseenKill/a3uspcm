@@ -66,7 +66,7 @@ TRACE_1(QFUNC(autoGroupVehicles),_this);
             INC(_index);
         };
 
-        [_x] call A3USPCM_zeus_fnc_doCrewStatic;
+        [_x] call EFUNC(zeus,doCrewStatic);
     } forEach _grouped;
 }, _this, AUTO_GROUP_DELAY] call CBA_fnc_waitAndExecute;
 

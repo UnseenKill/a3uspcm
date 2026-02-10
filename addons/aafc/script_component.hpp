@@ -42,6 +42,8 @@
 #define CBA_EVENT_AAFC_SET_ROE_GLOBAL QUOTE(TRIPLES(ADDON,events,setROEGlobal))
 // Parameters: [Group group]
 #define CBA_EVENT_AAFC_UPDATE_GROUP QUOTE(TRIPLES(ADDON,events,updateGroup))
+// Parameters: [Object vehicle, Number roeLevel, Boolean allowFire]
+#define CBA_EVENT_AAFC_UNIT_ROE_CHANGED QUOTE(TRIPLES(ADDON,events,unitROEChanged))
 
 #ifdef __A3USPCM_PRODUCTION__
     #define CBA_TRIGGER(eventName,params) [eventName, params] call CBA_fnc_localEvent

@@ -1,3 +1,4 @@
+PREP(acknowledgeROEChange);
 PREP(autoGroupVehicles);
 PREP(enforceROE);
 PREP(getAAType);

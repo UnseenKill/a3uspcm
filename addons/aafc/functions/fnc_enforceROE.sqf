@@ -34,6 +34,7 @@ private _roeMap = createHashMapFromArray[
 ];
 
 private _allowTypes = _roeMap get _roeMode;
+private _updateEventsFor = [];
 
 GVAR(groups) select { !(_x getVariable[QGVAR(unlinkROE), false]) } apply {
     _x setVariable[QGVAR(vehicles), _x getVariable QGVAR(vehicles) select { !isNull _x }, true];
@@ -45,9 +46,17 @@ GVAR(groups) select { !(_x getVariable[QGVAR(unlinkROE), false]) } apply {
         TRACE_4(QFUNC(enforceROE),_roeMode,_vehicle,_aaType,_combatMode);
         crew _x select { alive _x } apply {
             TRACE_2(QFUNC(enforceROE),_x,_combatMode);
-            _x setUnitCombatMode _combatMode;
+
+            if (unitCombatMode _x isNotEqualTo _combatMode) then {
+                _updateEventsFor pushBack[_vehicle, _roeMode, _combatMode isNotEqualTo "BLUE"];
+                _x setUnitCombatMode _combatMode;
+            };
         };
     };
+};
+
+_updateEventsFor apply {
+    CBA_TRIGGER(CBA_EVENT_AAFC_UNIT_ROE_CHANGED,_x);
 };
 
 nil;

@@ -18,22 +18,27 @@ Example:
 Returns:
     Nothing
 
+Scope:
+    Server, Unscheduled
+
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(registerAAGroup),_this);
 
-params[
-    ["_group", grpNull, [grpNull]]
-];
-
+if !assert(params[
+    ["_group", nil, [grpNull]]
+]) exitWith {};
 if !assert(!isNull _group) exitWith {};
 
 private _vehicles = [];
-{
-    _group addVehicle _x;
-    _vehicles pushBackUnique _x;
-} forEach (units _group apply { objectParent _x } select { !isNull _x });
+
+units _group apply { objectParent _x } select { !isNull _x } apply {
+    if ((_vehicles pushBackUnique _x) isNotEqualTo -1) then {
+        _group addVehicle _x;
+        _x setVariable[QGVAR(group), _group, true];
+    };
+};
 
 _group setVariable[QGVAR(vehicles), _vehicles apply { 
     _x addEventHandler["Killed", {
@@ -55,6 +60,7 @@ _group addEventHandler["VehicleAdded", {
     params["_group","_vehicle"];
 
     _group getVariable QGVAR(vehicles) pushBackUnique _vehicle;
+    _vehicle setVariable[QGVAR(group), _group, true];
 }];
 
 GVAR(groups) pushBackUnique _group;
@@ -63,18 +69,15 @@ GVAR(groups) pushBackUnique _group;
 
 switch GVAR(defaultInitialMode) do {
     case "FC_DEFAULT_ANGRY": {
-        _group setBehaviourStrong "COMBAT";
-        _group setCombatMode "RED";
-        _group setVariable[QGVAR(ROE), MODE_OPENFIRE];
+        units _group apply { _x setUnitCombatMode "YELLOW" };
     };
     case "FC_DEFAULT_CALM": {
-        _group setBehaviourStrong "SAFE";
-        _group setCombatMode "BLUE";
-        _group setVariable[QGVAR(ROE), MODE_HOLDFIRE];
+        units _group apply { _x setUnitCombatMode "BLUE" };
     };
 };
 
-leader _group sideChat LLSTRING(Message_AARegistered);
+[leader _group, LLSTRING(Message_AARegistered)] remoteExec["sideChat", -2];
+
 [] call FUNC(updateMenu);
 
 nil;
