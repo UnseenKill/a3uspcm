@@ -35,11 +35,18 @@ if !assert(!isNil "_group") exitWith {};
 if !assert(!isNull _group) exitWith {};
 
 private _message = [LSTRING(Message_ROE_AcceptHold), LSTRING(Message_ROE_AcceptFire)] select _allowFire;
+private _who = switch true do {
+    case !(isNull commander _vehicle): { commander _vehicle };
+    case !(isNull gunner _vehicle): { gunner _vehicle };
+    default { leader _group };
+};
+
+_message = format["[%1] %2", getText(configOf _vehicle >> "displayName"), localize _message];
 
 if (is3DENPreview) then {
-    leader _group sideChat localize _message;
+    _who sideChat _message;
 } else {
-    [leader _group, localize _message] remoteExec["sideChat", -2];
+    [_who, _message] remoteExec["sideChat", -2];
 };
 
 nil;
