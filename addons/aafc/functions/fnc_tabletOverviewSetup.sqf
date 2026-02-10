@@ -50,7 +50,8 @@ _tabHost set["ctlGroupsHost", _ctlTabHost controlsGroupCtrl IDC_OVERVIEW_HOSTCTL
             ["_control", nil, [controlNull]]
         ]) exitWith {};
 
-        CBA_EVENT_LOCAL(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[_control getVariable QGVAR(roeMode)]);
+        private _roe = _control getVariable QGVAR(roeMode);
+        CBA_EVENT_SERVER(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[_roe]);
     }];
 
     _tabHost set[_varName, _button];

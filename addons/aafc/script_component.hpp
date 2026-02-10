@@ -46,10 +46,25 @@
 #define CBA_EVENT_AAFC_UNIT_ROE_CHANGED QUOTE(TRIPLES(ADDON,events,unitROEChanged))
 
 #ifdef __A3USPCM_PRODUCTION__
+    #define CBA_EVENT_GLOBAL(eventName,params) [eventName, params] call CBA_fnc_globalEvent
     #define CBA_EVENT_LOCAL(eventName,params) [eventName, params] call CBA_fnc_localEvent
+    #define CBA_EVENT_REMOTE(eventName,params) [eventName, params] call CBA_fnc_remoteEvent
+    #define CBA_EVENT_SERVER(eventName,params) [eventName, params] call CBA_fnc_serverEvent
 #else
+    #define CBA_EVENT_GLOBAL(eventName,params) if true then { \
+        TRACE_1("CBA_EVENT_GLOBAL:"+eventName,params); \
+        [eventName, params] call CBA_fnc_globalEvent; \
+    }
     #define CBA_EVENT_LOCAL(eventName,params) if true then { \
         TRACE_1("CBA_EVENT_LOCAL:"+eventName,params); \
         [eventName, params] call CBA_fnc_localEvent; \
+    }
+    #define CBA_EVENT_REMOTE(eventName,params) if true then { \
+        TRACE_1("CBA_EVENT_REMOTE:"+eventName,params); \
+        [eventName, params] call CBA_fnc_remoteEvent; \
+    }
+    #define CBA_EVENT_SERVER(eventName,params) if true then { \
+        TRACE_1("CBA_EVENT_SERVER:"+eventName,params); \
+        [eventName, params] call CBA_fnc_serverEvent; \
     }
 #endif // __A3USPCM_PRODUCTION__

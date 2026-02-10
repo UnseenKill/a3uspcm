@@ -2,11 +2,23 @@
 
 GVAR(contacts) = createHashMap;
 GVAR(contactTracker) = false;
+GVAR(globalROE) = ROE_HOLDFIRE;
 GVAR(groups) = [];
 
 publicVariable QGVAR(contacts);
+publicVariable QGVAR(globalROE);
 publicVariable QGVAR(groups);
 
+[CBA_EVENT_AAFC_SET_ROE_GLOBAL, {
+    if !assert(params[
+        ["_newROE", nil, [0]]
+    ]) exitWith {};
+
+    GVAR(globalROE) = _newROE;
+    publicVariable QGVAR(globalROE);
+}] call CBA_fnc_addEventHandler;
+
+[CBA_EVENT_AAFC_SET_ROE_GLOBAL, { call FUNC(enforceROE) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_AAFC_UNIT_ROE_CHANGED, { call FUNC(acknowledgeROEChange) }] call CBA_fnc_addEventHandler;
 
 [{

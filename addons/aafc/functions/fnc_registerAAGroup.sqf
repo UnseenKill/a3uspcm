@@ -30,6 +30,7 @@ if !assert(params[
     ["_group", nil, [grpNull]]
 ]) exitWith {};
 if !assert(!isNull _group) exitWith {};
+if !assert(isServer) exitWith {};
 
 private _vehicles = [];
 
@@ -52,6 +53,7 @@ _group setVariable[QGVAR(vehicles), _vehicles apply {
 _group addEventHandler["Deleted", {
     TRACE_1(QFUNC(groupDeleted),_this);
     GVAR(groups) = GVAR(groups) - [_this select 0];
+    publicVariable QGVAR(groups);
     [] call FUNC(updateMenu);
 }];
 
@@ -61,9 +63,11 @@ _group addEventHandler["VehicleAdded", {
 
     _group getVariable QGVAR(vehicles) pushBackUnique _vehicle;
     _vehicle setVariable[QGVAR(group), _group, true];
+    publicVariable QGVAR(groups);
 }];
 
 GVAR(groups) pushBackUnique _group;
+publicVariable QGVAR(groups);
 
 [_group] call FUNC(initReportHandler);
 

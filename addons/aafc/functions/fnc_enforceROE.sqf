@@ -56,8 +56,10 @@ GVAR(groups) select { !(_x getVariable[QGVAR(unlinkROE), false]) } apply {
     };
 };
 
+CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[_roeMode]);
+
 _updateEventsFor apply {
-    CBA_EVENT_LOCAL(CBA_EVENT_AAFC_UNIT_ROE_CHANGED,_x);
+    CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_UNIT_ROE_CHANGED,_x);
 };
 
 nil;
