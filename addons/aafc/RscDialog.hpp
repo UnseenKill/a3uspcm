@@ -9,6 +9,43 @@ FORWARD(RscListNBox);
 FORWARD(RscPicture);
 FORWARD(RscText);
 
+class RscMapControl {
+    class ActiveMarker;
+    class Bunker;
+    class Bush;
+    class BusStop;
+    class Chapel;
+    class Church;
+    class Command;
+    class Cross;
+    class CustomMark;
+    class Fortress;
+    class Fountain;
+    class Fuelstation;
+    class Hospital;
+    class Legend;
+    class Lighthouse;
+    class LineMarker;
+    class power;
+    class powersolar;
+    class powerwave;
+    class powerwind;
+    class Quay;
+    class Rock;
+    class Ruin;
+    class Shipwreck;
+    class SmallTree;
+    class Stack;
+    class Task;
+    class Tourism;
+    class Transmitter;
+    class Tree;
+    class ViewTower;
+    class Watertower;
+    class Waypoint;
+    class WaypointCompleted;
+};
+
 #define PROFILE_COLOR(profileKey,defaultR,defaultG,defaultB,defaultA) \
     QUOTE(profileNamespace getVariable[ARR_2('DOUBLES(profileKey,R)',defaultR)]), \
     QUOTE(profileNamespace getVariable[ARR_2('DOUBLES(profileKey,G)',defaultG)]), \
@@ -113,6 +150,78 @@ class GVAR(RscListNBox): RscListNBox {
     tooltipPerColumn = 1;
 
     DEFAULT_FONT;
+};
+
+class GVAR(RscMapControl): RscMapControl {
+    colorBackground[] = {1,1,1,1};
+    colorCountlinesWater[] = {0,0,0,0};
+    colorCountlines[] = {0,0,0,0};
+    colorForestBorder[] = {0,0,0,0};
+    colorForest[] = {0,0,0,0};
+    colorGridMap[] = {0,1,0,1};
+    colorGrid[] = {0,1,0,1};
+    colorLevels[] = {0,0,0,0};
+    colorMainCountlinesWater[] = {0,0,0,0};
+    colorMainCountlines[] = {0,0,0,0};
+    colorNames[] = {1,0,1,1};
+    colorOutside[] = {0,0.15,0,1};
+    colorPowerLines[] = {0,0,0,0};
+    colorRailWay[] = {0,0,0,0};
+    colorRocksBorder[] = {0,0,0,0};
+    colorRocks[] = {0,0,0,0};
+    colorSea[] = {0,0.15,0,1};
+
+    colorMainRoads[] = {0,0.4,0,1};
+    colorMainRoadsFill[] = {0,0.6,0,1};
+    colorRoads[] = {0,0.4,0,1};
+    colorRoadsFill[] = {0,0.6,0,1};
+    colorTracks[] = {0,0.4,0,1};
+    colorTracksFill[] = {0,0.6,0,1};
+
+    DEFAULT_FONT;
+    fontGrid = DEFAULT_FONT_NAME;
+    fontInfo = DEFAULT_FONT_NAME;
+    fontLabel = DEFAULT_FONT_NAME;
+    fontLevel = DEFAULT_FONT_NAME;
+    fontNames = DEFAULT_FONT_NAME;
+    fontUnits = DEFAULT_FONT_NAME;
+
+    showCountourInterval = 0; // sic
+
+    class ActiveMarker: ActiveMarker { color[] = {0,0,0,0}; };
+    class Bunker: Bunker { color[] = {0,0,0,0}; };
+    class Bush: Bush { color[] = {0,0,0,0}; };
+    class BusStop: BusStop { color[] = {0,0,0,0}; };
+    class Chapel: Chapel { color[] = {0,0,0,0}; };
+    class Church: Church { color[] = {0,0,0,0}; };
+    class Command: Command { color[] = {0,0,0,0}; };
+    class Cross: Cross { color[] = {0,0,0,0}; };
+    class CustomMark: CustomMark { color[] = {0,0,0,0}; };
+    class Fortress: Fortress { color[] = {0,0,0,0}; };
+    class Fountain: Fountain { color[] = {0,0,0,0}; };
+    class Fuelstation: Fuelstation { color[] = {0,0,0,0}; };
+    class Hospital: Hospital { color[] = {0,0,0,0}; };
+    class Legend: Legend { color[] = {0,0,0,0}; };
+    class Lighthouse: Lighthouse { color[] = {0,0,0,0}; };
+    class LineMarker: LineMarker { color[] = {0,0,0,0}; };
+    class power: power { color[] = {0,0,0,0}; };
+    class powersolar: powersolar { color[] = {0,0,0,0}; };
+    class powerwave: powerwave { color[] = {0,0,0,0}; };
+    class powerwind: powerwind { color[] = {0,0,0,0}; };
+    class Quay: Quay { color[] = {0,0,0,0}; };
+    class Rock: Rock { color[] = {0,0,0,0}; };
+    class Ruin: Ruin { color[] = {0,0,0,0}; };
+    class Shipwreck: Shipwreck { color[] = {0,0,0,0}; };
+    class SmallTree: SmallTree { color[] = {0,0,0,0}; };
+    class Stack: Stack { color[] = {0,0,0,0}; };
+    class Task: Task { color[] = {0,0,0,0}; };
+    class Tourism: Tourism { color[] = {0,0,0,0}; };
+    class Transmitter: Transmitter { color[] = {0,0,0,0}; };
+    class Tree: Tree { color[] = {0,0,0,0}; };
+    class ViewTower: ViewTower { color[] = {0,0,0,0}; };
+    class Watertower: Watertower { color[] = {0,0,0,0}; };
+    class Waypoint: Waypoint { color[] = {0,0,0,0}; };
+    class WaypointCompleted: WaypointCompleted { color[] = {0,0,0,0}; };
 };
 
 class GVAR(RscStructuredText) {

@@ -37,17 +37,20 @@ if !(isNull(_tabFocused get "ctlMap")) then {
 } else {
     INFO("Setting up map control for targets tab");
 
-    _ctlMap = _display ctrlCreate["RscText", 0];
+    _ctlMap = _display ctrlCreate[QGVAR(RscMapControl), 0];
     private _mapPos = _tabFocused get "mapPosition";
     private _mapSize = _tabFocused get "mapSize";
     _ctlMap ctrlSetPosition[_mapPos select 0, _mapPos select 1, _mapSize select 0, _mapSize select 1];
     _ctlMap ctrlSetBackgroundColor [0,1,0,1];
     _ctlMap ctrlCommit 0;
+    _ctlMap ctrlMapSetPosition [];
 
     _tabFocused set["ctlMap", _ctlMap];
 };
 
 _ctlMap ctrlShow true;
 _ctlMap ctrlEnable true;
+_ctlMap ctrlMapAnimAdd[1, 0.25, player];
+ctrlMapAnimCommit _ctlMap;
 
 nil;

@@ -1,5 +1,6 @@
 // Macros ----------------------------------------------------------------------
-#define DEFAULT_FONT font = "PuristaMedium"
+#define DEFAULT_FONT font = DEFAULT_FONT_NAME
+#define DEFAULT_FONT_NAME "PuristaMedium"
 #define GET_CONFIG_COLOR(className,propertyName) getArray(configFile >> className >> propertyName) apply { if (_x isEqualType 0) then[{ _x },{ call compile _x }] }
 #define STEAL_FOCUS() (ctrlSetFocus(uiNamespace getVariable QGVAR(display) displayCtrl IDC_BTN_STEAL_THIS_FOCUS))
 #define TABLET_SCREEN_WIDTH (safeZoneW * 0.5125 + pixelW * 10)
