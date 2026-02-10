@@ -46,6 +46,8 @@
 #define CBA_EVENT_AAFC_SIDECHAT QUOTE(TRIPLES(ADDON,events,sideChat))
 // Parameters: [Object sender, String message]
 #define CBA_EVENT_AAFC_SIDECHAT_CONTACT QUOTE(TRIPLES(ADDON,events,sideChatContact))
+// Parameters: [Object sender, String message]
+#define CBA_EVENT_AAFC_SIDECHAT_FIRED QUOTE(TRIPLES(ADDON,events,sideChatFired))
 // Parameters: [Object vehicle]
 #define CBA_EVENT_AAFC_START_CONTACT_TRACK QUOTE(TRIPLES(ADDON,events,startContactTrack))
 // Parameters: [Group group]

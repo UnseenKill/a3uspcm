@@ -66,8 +66,6 @@ _group addEventHandler["EnemyDetected", {
 
         [_vehicle] call FUNC(reloadCheck);
 
-        if !GVAR(sideChatFired) exitWith {};
-
         private _key = hashValue _projectile;
 
         if (_key in (_unit getVariable QGVAR(mseDetected))) exitWith { TRACE_1("Ignoring duplicate missile report",_projectile) };
@@ -92,7 +90,8 @@ _group addEventHandler["EnemyDetected", {
                 };
             };
 
-            _sender sideChat format[LLSTRING(Message_EnemyFiredAt), _missile, DISPLAY_NAME_UNIT(_unit)];
+            private _message = format[LLSTRING(Message_EnemyFiredAt), _missile, DISPLAY_NAME_UNIT(_unit)];
+            CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT_FIRED,[ARR_2(_sender,_message)]);
         };
     }];
 }];
