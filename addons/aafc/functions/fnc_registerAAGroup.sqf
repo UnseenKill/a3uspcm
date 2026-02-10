@@ -69,14 +69,8 @@ publicVariable QGVAR(groups);
 
 [_group] call FUNC(initReportHandler);
 
-switch GVAR(defaultInitialMode) do {
-    case "FC_DEFAULT_ANGRY": {
-        units _group apply { _x setUnitCombatMode "YELLOW" };
-    };
-    case "FC_DEFAULT_CALM": {
-        units _group apply { _x setUnitCombatMode "BLUE" };
-    };
-};
+private _combatMode = ["YELLOW", "BLUE"] select(GVAR(globalROE) isEqualTo ROE_HOLDFIRE);
+units _group apply { _x setUnitCombatMode _combatMode };
 
 CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(leader _group,LLSTRING(Message_AARegistered))]);
 

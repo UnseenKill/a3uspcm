@@ -5,9 +5,6 @@
 // Wait this many seconds after client init done before auto-grouping A/A
 #define AUTO_GROUP_DELAY 15
 
-#define MODE_OPENFIRE QGVAR(ModeOpenFire)
-#define MODE_HOLDFIRE QGVAR(ModeHoldFire)
-
 #define AA_TYPE_UNKNOWN QUOTE(unknown)
 #define AA_TYPE_RADAR QUOTE(radar)
 #define AA_TYPE_CIWS QUOTE(ciws)

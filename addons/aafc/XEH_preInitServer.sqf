@@ -2,7 +2,6 @@
 
 GVAR(contacts) = createHashMap;
 GVAR(contactTracker) = false;
-GVAR(globalROE) = ROE_HOLDFIRE;
 GVAR(groups) = [];
 
 publicVariable QGVAR(contacts);
@@ -22,6 +21,14 @@ publicVariable QGVAR(groups);
 [CBA_EVENT_AAFC_UNIT_ROE_CHANGED, { call FUNC(acknowledgeROEChange) }] call CBA_fnc_addEventHandler;
 
 [{
+    if (isNil QGVAR(defaultInitialMode)) then {
+        INFO("Setting default ROE to 'Hold Fire' since CBA setting not found.");
+        GVAR(globalROE) = ROE_HOLDFIRE;
+    } else {
+        GVAR(globalROE) = [ROE_HOLDFIRE, ROE_FIREATWILL] select(GVAR(defaultInitialMode) isEqualTo "FC_DEFAULT_ANGRY");
+        INFO_2("Setting default ROE to %1 based on CBA setting %2",GVAR(globalROE),GVAR(defaultInitialMode));
+    };
+
     [CBA_EVENT_AAFC_START_CONTACT_TRACK, { call FUNC(onStartContactTracking) }] call CBA_fnc_addEventHandler;
 
     if GVAR(autoGroupAtStart) then {
