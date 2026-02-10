@@ -1,5 +1,6 @@
 PREP(acknowledgeROEChange);
 PREP(autoGroupVehicles);
+PREP(drawVehicleEffectiveRangesMarkers);
 PREP(enforceROE);
 PREP(getAAType);
 PREP(initReportHandler);

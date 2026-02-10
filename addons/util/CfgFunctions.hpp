@@ -13,6 +13,7 @@ class CfgFunctions {
             PATHTO_FNC(utilFindClosestGWH);
             PATHTO_FNC(utilGenerateUniqueID);
             PATHTO_FNC(utilGetCenter);
+            PATHTO_FNC(utilGetVehicleEffectiveRanges);
             PATHTO_FNC(utilGetVehicleTemplateKey);
             PATHTO_FNC(utilInterpolateColor);
             PATHTO_FNC(utilIsArmedVehicle);
