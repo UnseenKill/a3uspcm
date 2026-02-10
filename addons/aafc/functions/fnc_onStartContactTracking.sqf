@@ -3,7 +3,8 @@
 Function: A3USPCM_aafc_fnc_onStartContactTracking
 
 Description:
-    Handler for StartContactTracking event to initialize contact tracking
+    Handler for CBA_EVENT_AAFC_START_CONTACT_TRACK event to initialize contact
+    tracking.
 
 Parameters:
     0: _unit - Unit to track <OBJECT>

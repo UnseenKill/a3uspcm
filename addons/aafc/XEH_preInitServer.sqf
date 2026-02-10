@@ -22,7 +22,7 @@ publicVariable QGVAR(groups);
 [CBA_EVENT_AAFC_UNIT_ROE_CHANGED, { call FUNC(acknowledgeROEChange) }] call CBA_fnc_addEventHandler;
 
 [{
-    [QGVAR(StartContactTracking), { call FUNC(onStartContactTracking) }] call CBA_fnc_addEventHandler;
+    [CBA_EVENT_AAFC_START_CONTACT_TRACK, { call FUNC(onStartContactTracking) }] call CBA_fnc_addEventHandler;
 
     if GVAR(autoGroupAtStart) then {
         INFO("Auto-grouping A/A vehicles");

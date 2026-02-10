@@ -40,6 +40,8 @@
 
 // Parameters: [Number roeLevel]
 #define CBA_EVENT_AAFC_SET_ROE_GLOBAL QUOTE(TRIPLES(ADDON,events,setROEGlobal))
+// Parameters: [Object vehicle]
+#define CBA_EVENT_AAFC_START_CONTACT_TRACK QUOTE(TRIPLES(ADDON,events,startContactTrack))
 // Parameters: [Group group]
 #define CBA_EVENT_AAFC_UPDATE_GROUP QUOTE(TRIPLES(ADDON,events,updateGroup))
 // Parameters: [Object vehicle, Number roeLevel, Boolean allowFire]

@@ -34,9 +34,7 @@ _group addEventHandler["EnemyDetected", {
     if (_enemy getVariable[QGVAR(mseDetected), false] isNotEqualTo false) exitWith {};
     _enemy setVariable[QGVAR(mseDetected), createHashMap];
 
-    [{
-        call CBA_fnc_serverEvent;
-    }, [QGVAR(StartContactTracking), [_enemy]]] call CBA_fnc_execNextFrame;
+    CBA_EVENT_SERVER(CBA_EVENT_AAFC_START_CONTACT_TRACK,[_enemy]);
 
     if GVAR(sideChatContact) then {
         leader _group sideChat format[
