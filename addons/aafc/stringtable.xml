@@ -13,14 +13,6 @@
             <English>Toggle A/A fire control rules of engagement for all A/A groups</English>
             <German>Fla-Feuerkontrolle ROE für alle Fla-Gruppen wechseln</German>
         </Key>
-        <Key ID="STR_A3USPCM_AAFC_Menu_ROE_Fire">
-            <English>Fire</English>
-            <German>Feuer</German>
-        </Key>
-        <Key ID="STR_A3USPCM_AAFC_Menu_ROE_Hold">
-            <English>Hold</English>
-            <German>Stopfen</German>
-        </Key>
         <Key ID="STR_A3USPCM_AAFC_Message_AARegistered">
             <English>AA group reporting in</English>
             <German>AA Gruppe meldet Bereitschaft</German>
@@ -44,14 +36,6 @@
         <Key ID="STR_A3USPCM_AAFC_Message_Reloading">
             <English>Reloading %1</English>
             <German>Lade %1 nach</German>
-        </Key>
-        <Key ID="STR_A3USPCM_AAFC_ROE_Caption">
-            <English>Change AA ROE</English>
-            <German>Ändere AA ROE</German>
-        </Key>
-        <Key ID="STR_A3USPCM_AAFC_ROE_NoGroups">
-            <English>You need Zeus assigned AA groups before thinking about changing their ROE.</English>
-            <German>Du brauchst vom Zeus zugewiesene AA Gruppen, bevor du darüber nachdenkst, ihre ROE zu ändern.</German>
         </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_Category_DisplayName">
             <English>AA fire control</English>
@@ -240,10 +224,6 @@
         <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_FrameROE_Caption_Text">
             <English>Rules of Engagement</English>
             <German>Feuerkontrollregeln</German>
-        </Key>
-        <Key ID="STR_A3USPCM_AAFC_VehicleAbbreviation">
-            <English>veh</English>
-            <German>Fzg</German>
         </Key>
     </Package>
 </Project>

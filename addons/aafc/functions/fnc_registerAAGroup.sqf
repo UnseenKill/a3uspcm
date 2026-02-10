@@ -44,7 +44,6 @@ units _group apply { objectParent _x } select { !isNull _x } apply {
 _group setVariable[QGVAR(vehicles), _vehicles apply { 
     _x addEventHandler["Killed", {
         TRACE_1(QFUNC(vehicleKilled),_this);
-        [] call FUNC(updateMenu);
     }];
 
     _x;
@@ -54,7 +53,6 @@ _group addEventHandler["Deleted", {
     TRACE_1(QFUNC(groupDeleted),_this);
     GVAR(groups) = GVAR(groups) - [_this select 0];
     publicVariable QGVAR(groups);
-    [] call FUNC(updateMenu);
 }];
 
 _group addEventHandler["VehicleAdded", {
@@ -81,7 +79,5 @@ switch GVAR(defaultInitialMode) do {
 };
 
 [leader _group, LLSTRING(Message_AARegistered)] remoteExec["sideChat", -2];
-
-[] call FUNC(updateMenu);
 
 nil;
