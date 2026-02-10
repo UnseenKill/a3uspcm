@@ -41,20 +41,14 @@ _group addEventHandler["EnemyDetected", {
 
     CBA_EVENT_LOCAL(CBA_EVENT_AAFC_START_CONTACT_TRACK,[_enemy]);
 
-    if GVAR(sideChatContact) then {
-        private _message = format[
-            LLSTRING(Message_EnemyDetected), 
-            DISPLAY_NAME_UNIT(_enemy), 
-            mapGridPosition getPosATL _enemy, 
-            abs((leader _group distance _enemy) / 1000) toFixed 1, 
-            getDir _enemy toFixed 1, speed _enemy toFixed 1
-        ];
-        CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(leader _group,_message)]);
-    };
-
-    if GVAR(playContactSound) then {
-        playSound QEGVAR(assets,AafcContact);
-    };
+    private _message = format[
+        LLSTRING(Message_EnemyDetected), 
+        DISPLAY_NAME_UNIT(_enemy), 
+        mapGridPosition getPosATL _enemy, 
+        abs((leader _group distance _enemy) / 1000) toFixed 1, 
+        getDir _enemy toFixed 1, speed _enemy toFixed 1
+    ];
+    CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT_CONTACT,[ARR_2(leader _group,_message)]);
 
     player reveal _enemy;
 

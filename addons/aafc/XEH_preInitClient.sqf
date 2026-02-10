@@ -10,6 +10,22 @@
     _sender sideChat _message;
 }] call CBA_fnc_addEventHandler;
 
+[CBA_EVENT_AAFC_SIDECHAT_CONTACT, {
+    if !assert(params[
+        ["_sender", nil, [objNull]],
+        ["_message", nil, [""]]
+    ]) exitWith {};
+    if !assert(!isNull _sender) exitWith {};
+
+    if GVAR(sideChatContact) then {
+        _sender sideChat _message;
+    };
+
+    if GVAR(playContactSound) then {
+        playSound QEGVAR(assets,AafcContact);
+    };
+}] call CBA_fnc_addEventHandler;
+
 [CBA_EVENT_AAFC_UPDATE_GROUP, {
     if !assert(params[
         ["_group", nil, [grpNull]]
