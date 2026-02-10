@@ -19,5 +19,8 @@ PREP(tabletEventOnSwitchTab);
 PREP(tabletOverviewFocus);
 PREP(tabletOverviewSetup);
 PREP(tabletOverviewUpdate);
+PREP(tabletTargetsFocus);
+PREP(tabletTargetsSetup);
+PREP(tabletTargetsUnfocus);
 PREP(tabletRscOnLoad);
 PREP(tabletRscOnUnload);

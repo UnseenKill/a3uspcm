@@ -327,11 +327,18 @@ class GVAR(ConfigTablet) {
                             idc = IDC_TABHOST_TARGETS;
 
                             class Controls {
-                                class BG: GVAR(RscText) {
-                                    w = QUOTE(TABLET_CLIENTAREA_WIDTH);
+                                class Contacts: GVAR(RscText) {
+                                    w = QUOTE(UI_GRID_W * 10);
                                     h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
-                                    colorBackground[] = {0,0,1,1};
-                                    text = "Targets tab content goes here.";
+                                    colorBackground[] = {0,0,1,0.5};
+                                };
+
+                                class Map: GVAR(RscText) {
+                                    idc = IDC_TARGETS_CTL_MAP;
+                                    x = QUOTE(UI_GRID_W * 10.5);
+                                    w = QUOTE(TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 10.5);
+                                    h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
+                                    colorBackground[] = {0,1,0,0.5};
                                 };
                             };
                         };
