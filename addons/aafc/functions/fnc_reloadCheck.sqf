@@ -44,14 +44,14 @@ _magazines apply {
         _vehicle removeMagazinesTurret[_magazine, _turret];
         _vehicle addMagazineTurret[_magazine, _turret];
 
-        if GVAR(sideChatContact) then {
+        if GVAR(sideChatFired) then {
             private _sender = _vehicle turretUnit _turret;
             private _message = format[
                 LLSTRING(Message_Reloading),
                 getText(configFile >> "CfgMagazines" >> _magazine >> "displayName")
             ];
 
-            CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(_sender,_message)]);
+            CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT_FIRED,[ARR_2(_sender,_message)]);
         };
     };
 };
