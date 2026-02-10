@@ -78,6 +78,10 @@ switch GVAR(defaultInitialMode) do {
     };
 };
 
-[leader _group, LLSTRING(Message_AARegistered)] remoteExec["sideChat", -2];
+if (is3DENPreview) then {
+    leader _group sideChat LLSTRING(Message_AARegistered);
+} else {
+    [leader _group, LLSTRING(Message_AARegistered)] remoteExec["sideChat", -2];
+};
 
 nil;

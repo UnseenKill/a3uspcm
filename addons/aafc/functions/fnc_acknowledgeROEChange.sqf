@@ -35,6 +35,11 @@ if !assert(!isNil "_group") exitWith {};
 if !assert(!isNull _group) exitWith {};
 
 private _message = [LSTRING(Message_ROE_AcceptHold), LSTRING(Message_ROE_AcceptFire)] select _allowFire;
-[leader _group, localize _message] remoteExec["sideChat", -2];
+
+if (is3DENPreview) then {
+    leader _group sideChat localize _message;
+} else {
+    [leader _group, localize _message] remoteExec["sideChat", -2];
+};
 
 nil;
