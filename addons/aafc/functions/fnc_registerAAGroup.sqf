@@ -78,10 +78,6 @@ switch GVAR(defaultInitialMode) do {
     };
 };
 
-if (is3DENPreview) then {
-    leader _group sideChat LLSTRING(Message_AARegistered);
-} else {
-    [leader _group, LLSTRING(Message_AARegistered)] remoteExec["sideChat", -2];
-};
+CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(leader _group,LLSTRING(Message_AARegistered))]);
 
 nil;

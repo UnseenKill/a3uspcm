@@ -15,35 +15,41 @@ Example:
 Returns:
     Nothing
 
+Scope:
+    Server, Unscheduled
+
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-params[
-    ["_group", grpNull, [grpNull]]
-];
-
+if !assert(params[
+    ["_group", nil, [grpNull]]
+]) exitWith {};
 if !assert(!isNull _group) exitWith {};
 
 _group addEventHandler["EnemyDetected", {
-    params[["_group",grpNull,[grpNull]],["_enemy",objNull,[objNull]]];
+    params[
+        ["_group", nil, [grpNull]],
+        ["_enemy", nil, [objNull]]
+    ];
 
     INFO_3("'%1' detected enemy '%2' (isAir=%3)",_group,_enemy,_enemy isKindOf "Air");
 
     if (GVAR(reportAirOnly) && !(_enemy isKindOf "Air")) exitWith {};
 
-    if (_enemy getVariable[QGVAR(mseDetected), false] isNotEqualTo false) exitWith {};
+    if (!isNil { _enemy getVariable QGVAR(mseDetected) }) exitWith {};
     _enemy setVariable[QGVAR(mseDetected), createHashMap];
 
-    CBA_EVENT_SERVER(CBA_EVENT_AAFC_START_CONTACT_TRACK,[_enemy]);
+    CBA_EVENT_LOCAL(CBA_EVENT_AAFC_START_CONTACT_TRACK,[_enemy]);
 
     if GVAR(sideChatContact) then {
-        leader _group sideChat format[
+        private _message = format[
             LLSTRING(Message_EnemyDetected), 
             DISPLAY_NAME_UNIT(_enemy), 
             mapGridPosition getPosATL _enemy, 
             abs((leader _group distance _enemy) / 1000) toFixed 1, 
             getDir _enemy toFixed 1, speed _enemy toFixed 1
         ];
+        CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(leader _group,_message)]);
     };
 
     if GVAR(playContactSound) then {

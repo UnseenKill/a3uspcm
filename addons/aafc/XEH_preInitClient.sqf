@@ -1,5 +1,15 @@
 #include "script_component.hpp"
 
+[CBA_EVENT_AAFC_SIDECHAT, {
+    if !assert(params[
+        ["_sender", nil, [objNull]],
+        ["_message", nil, [""]]
+    ]) exitWith {};
+    if !assert(!isNull _sender) exitWith {};
+
+    _sender sideChat _message;
+}] call CBA_fnc_addEventHandler;
+
 [CBA_EVENT_AAFC_UPDATE_GROUP, {
     if !assert(params[
         ["_group", nil, [grpNull]]

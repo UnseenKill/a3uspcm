@@ -17,7 +17,7 @@ Returns:
     Nothing
 
 Environment:
-    Client, Unscheduled
+    Server, Unscheduled
 
 Author:
     UnseenKill/gor3Splatter
@@ -42,11 +42,6 @@ private _who = switch true do {
 };
 
 _message = format["[%1] %2", getText(configOf _vehicle >> "displayName"), localize _message];
-
-if (is3DENPreview) then {
-    _who sideChat _message;
-} else {
-    [_who, _message] remoteExec["sideChat", -2];
-};
+CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(_who,_message)]);
 
 nil;
