@@ -151,10 +151,6 @@ _groups apply {
     _control ctrlSetPosition[_startX, UI_GRID_H + pixelH * 4, 16 * UI_GRID_W, _th - UI_GRID_H - pixelH * 4];
     lnbClear _control;
 
-    // For some reason, when dynamically creating a listbox, it comes pre-filled with columns.
-    // No way to read out the count, hence the hack.
-    lnbGetColumnsPosition _control apply { _control lnbDeleteColumn 0 };
-
     _control lnbAddColumn 0;
     _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 2 * UI_GRID_W, 0, 1];
     _control lnbAddColumn linearConversion[0, UI_GRID_W * 16, 4 * UI_GRID_W, 0, 1];

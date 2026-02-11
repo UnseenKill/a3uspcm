@@ -147,6 +147,7 @@ class GVAR(RscFrame): RscFrame {
 };
 
 class GVAR(RscListNBox): RscListNBox {
+    columns[] = {};
     tooltipPerColumn = 1;
 
     DEFAULT_FONT;
