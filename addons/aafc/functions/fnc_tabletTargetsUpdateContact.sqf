@@ -38,10 +38,16 @@ private _tabHost = _display getVariable QGVAR(tabs) get IDC_TABHOST_TARGETS;
 private _control = _tabHost get "ctlContacts";
 
 private _contact = GVAR(contacts) get _targetKey;
-if !assert(!isNil "_contact") exitWith {};
-
 private _index = ([0, (lnbSize _control select 0) - 1] call FUNCMAIN(utilRange)) findIf {
     _control lnbData[_x, 0] isEqualTo _targetKey;
+};
+
+// Last update call; dead-tracking is done.
+if (!isNil "_contact") exitWith {
+    // It should still be in the list...
+    if assert(_index >= 0) then {
+        _control lnbDeleteRow _index;
+    };
 };
 
 if (_index isEqualTo -1) exitWith {
