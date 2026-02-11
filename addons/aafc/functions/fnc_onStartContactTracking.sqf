@@ -26,10 +26,11 @@ if !assert(params[
 ]) exitWith {};
 
 if !assert(!isNull _unit) exitWith {};
-if !GVAR(trackContacts) exitWith {};
 
 private _key = hashValue _unit;
+_unit setVariable[QGVAR(contactKey), _key, true];
 
+if !GVAR(trackContacts) exitWith {};
 TRACE_1(QFUNC(onStartContactTracking),_key);
 
 if (GVAR(contacts) getOrDefault[_key, false] isNotEqualTo false) exitWith {

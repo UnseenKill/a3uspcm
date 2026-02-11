@@ -40,6 +40,8 @@
 #define CBA_EVENT_AAFC_DIALOG_TAB_UNFOCUS_BEFORE QUOTE(TRIPLES(ADDON,events,dialogTabUnfocusBefore))
 
 // Parameters: [Object contact]
+#define CBA_EVENT_AAFC_CONTACT_ADDED QUOTE(TRIPLES(ADDON,events,contactAdded))
+// Parameters: [Object contact]
 #define CBA_EVENT_AAFC_CONTACT_UPDATE QUOTE(TRIPLES(ADDON,events,contactUpdate))
 // Parameters: [Number roeLevel]
 #define CBA_EVENT_AAFC_SET_ROE_GLOBAL QUOTE(TRIPLES(ADDON,events,setROEGlobal))
@@ -72,7 +74,7 @@
     }
     #define CBA_EVENT_REMOTE(eventName,params) if true then { \
         TRACE_1("CBA_EVENT_REMOTE:"+eventName,params); \
-        if (is3DENPreview && {eventName in [CBA_EVENT_AAFC_SIDECHAT, CBA_EVENT_AAFC_SIDECHAT_CONTACT, CBA_EVENT_AAFC_SIDECHAT_FIRED]}) then { \
+        if (is3DENPreview && {eventName in [CBA_EVENT_AAFC_CONTACT_UPDATE, CBA_EVENT_AAFC_SIDECHAT, CBA_EVENT_AAFC_SIDECHAT_CONTACT, CBA_EVENT_AAFC_SIDECHAT_FIRED]}) then { \
             [eventName, params] call CBA_fnc_localEvent; \
         } else { \
             [eventName, params] call CBA_fnc_remoteEvent; \

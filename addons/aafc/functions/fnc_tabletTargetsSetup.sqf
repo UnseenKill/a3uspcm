@@ -34,6 +34,13 @@ TRACE_1(QFUNC(tabletTargetsSetup),_this);
 
 private["_control","_mapPosition"];
 
+[CBA_EVENT_AAFC_CONTACT_UPDATE, {
+    if !assert(params[["_unit", nil, [objNull]]]) exitWith {};
+    private _contactKey = _unit getVariable QGVAR(contactKey);
+    if !assert(!isNil "_contactKey") exitWith {};
+    [_contactKey] spawn FUNC(tabletTargetsUpdateContact);
+}] call CBA_fnc_addEventHandler;
+
 _control = _ctlTabHost controlsGroupCtrl IDC_TARGETS_LNB_CONTACTS;
 ctrlPosition _control params["","","_lw","_lh"];
 _control lnbAddColumn 0;

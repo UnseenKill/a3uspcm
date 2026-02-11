@@ -29,6 +29,15 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _control) exitWith {};
 
+private _contactKey = _control lnbData[_index, 0];
+private _contact = GVAR(contacts) get _contactKey;
+if !assert(!isNil "_contact") exitWith {};
 
+private _display = uiNamespace getVariable QGVAR(display);
+private _tabHost = _display getVariable QGVAR(tabs) get IDC_TABHOST_TARGETS;
+private _control = _tabHost get "ctlMap";
+
+_control ctrlMapAnimAdd[1, 0.75, getPosATL(_contact get "unit")];
+ctrlMapAnimCommit _control;
 
 nil;

@@ -46,7 +46,7 @@ private _index = ([0, (lnbSize _control select 0) - 1] call FUNCMAIN(utilRange))
 
 if (_index isEqualTo -1) exitWith {
     if !(_mayRecurse) throw "WTF";
-    [_targetKey, _lnbSort] call FUNC(tabletTargetsAddContact);
+    [_targetKey, _lnbSort] spawn FUNC(tabletTargetsAddContact);
 };
 
 private _unit = _contact get "unit";

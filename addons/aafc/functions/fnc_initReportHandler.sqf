@@ -40,6 +40,7 @@ _group addEventHandler["EnemyDetected", {
     _enemy setVariable[QGVAR(mseDetected), createHashMap];
 
     CBA_EVENT_LOCAL(CBA_EVENT_AAFC_START_CONTACT_TRACK,[_enemy]);
+    CBA_EVENT_REMOTE(CBA_EVENT_AAFC_CONTACT_ADDED,[_enemy]);
 
     private _message = format[
         LLSTRING(Message_EnemyDetected), 
@@ -51,6 +52,10 @@ _group addEventHandler["EnemyDetected", {
 
     CBA_EVENT_REMOTE(CBA_EVENT_AAFC_CONTACT_UPDATE,[_enemy]);
     CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT_CONTACT,[ARR_2(leader _group,_message)]);
+
+    _enemy addEventHandler["Killed", {
+        CBA_EVENT_REMOTE(CBA_EVENT_AAFC_CONTACT_UPDATE,_this);
+    }];
 
     _enemy addEventHandler["IncomingMissile", {
         params["_unit","_ammo","_vehicle","_instigator","_projectile"];
