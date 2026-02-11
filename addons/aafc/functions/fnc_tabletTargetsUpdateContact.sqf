@@ -43,7 +43,7 @@ private _index = ([0, (lnbSize _control select 0) - 1] call FUNCMAIN(utilRange))
 };
 
 // Last update call; dead-tracking is done.
-if (!isNil "_contact") exitWith {
+if (isNil "_contact") exitWith {
     // It should still be in the list...
     if assert(_index >= 0) then {
         _control lnbDeleteRow _index;
