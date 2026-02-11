@@ -25,6 +25,7 @@ PREP(tabletTargetsAddContact);
 PREP(tabletTargetsCreateMapControl);
 PREP(tabletTargetsFocus);
 PREP(tabletTargetsOnContactDblClick);
+PREP(tabletTargetsOnContactUpdate);
 PREP(tabletTargetsSetup);
 PREP(tabletTargetsUnfocus);
 PREP(tabletTargetsUpdateContact);

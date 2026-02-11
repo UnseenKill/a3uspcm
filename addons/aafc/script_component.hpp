@@ -87,3 +87,7 @@
         [eventName, params] call CBA_fnc_serverEvent; \
     }
 #endif // __A3USPCM_PRODUCTION__
+
+#define CBA_UI_SUBSCRIBE(eventName,function) \
+    TRACE_1("CBA_UI_SUBSCRIBE",eventName); \
+    uiNamespace getVariable QGVAR(events) pushBack[eventName, [eventName, function] call CBA_fnc_addEventHandler]
