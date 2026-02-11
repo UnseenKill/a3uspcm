@@ -54,13 +54,25 @@ _vehicles apply {
         };
     };
 
-    allTurrets[_vehicle, false] apply {
-        private _unit = _group createUnit[_crewClassType, getPosATL _vehicle, [], 0, "NONE"];
+    fullCrew[_vehicle, "", true] apply {
+        _x params["_unit","_role","","_turretPath"];
 
-        _unit moveInTurret[_vehicle, _x];
+        if !assert(isNull _unit) then { ERROR_3("%1: non-null unit in %2 slot: %3",_vehicle,_role,_unit); continue; };
+        if (_role in["driver","cargo"]) then { TRACE_2(QFUNC(doCrewStatic),_vehicle,_role); continue };
+
+        _unit = _group createUnit[_crewClassType, getPosATL _vehicle, [], 0, "NONE"];
         _unit setSkill _skill;
 
-        TRACE_3("Crewed static",_vehicle,_unit,_x);
+        switch true do {
+            case (_role isEqualTo "gunner");
+            case (_role isEqualTo "commander"): {
+                TRACE_4(QFUNC(doCrewStatic),_vehicle,_unit,_role,_turretPath);
+                _unit moveInTurret[_vehicle, _turretPath];
+            };
+            default {
+                WARNING_3("%1: unhandled crew role %2 for vehicle %3",QFUNC(doCrewStatic),_role,_vehicle);
+            };
+        };
     };
 
     _vehicle allowCrewInImmobile true;
@@ -71,7 +83,15 @@ _vehicles apply {
 };
 
 allCurators apply { _x addCuratorEditableObjects[_vehicles, true] };
-_this remoteExecCall[QEFUNC(aafc,registerAAGroup), 2];
+
+// Zeus is local, so propagate to server. On the other hand,
+// `A3USPCM_zeus_fnc_doCrewStatic` can also be invoked by the server while
+// auto-grouping vehicles...
+if !(isServer) then {
+    [_group] remoteExecCall[QEFUNC(aafc,registerAAGroup), 2];
+} else {
+    [_group] call EFUNC(aafc,registerAAGroup);
+};
 
 if (!GVAR(moduleMSE_useAI) && GVAR(moduleMSE_transferHC)) then {
     [_group] spawn {
