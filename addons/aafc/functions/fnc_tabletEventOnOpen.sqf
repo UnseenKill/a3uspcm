@@ -44,7 +44,6 @@ _display setVariable[QGVAR(tabs), createHashMapFromArray([
     _ctlButton ctrlAddEventHandler["ButtonClick", {
         params["_control"];
         CBA_EVENT_LOCAL(CBA_EVENT_AAFC_DIALOG_TABSWITCH,[_control getVariable QGVAR(idcTabHost)]);
-        //[CBA_EVENT_AAFC_DIALOG_TABSWITCH, [_control getVariable QGVAR(idcTabHost)]] call CBA_fnc_localEvent;
     }];
 
     private _tabHost = createHashMapFromArray[
