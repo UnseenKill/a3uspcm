@@ -269,5 +269,13 @@
             <English>No gunner</English>
             <German>Keine Besatzung</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostTargets_BtnFocusMap_Text">
+            <English>Focus map</English>
+            <German>Karte fokussieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostTargets_BtnFocusMap_Tooltip">
+            <English>For some unexplicable reason, the map control cannot be focused in this dialog.\nClick this button to send focus to map control to be able to move/zoom it.</English>
+            <German>Aus unerklärlichen Gründen kann die Karte in diesem Dialog nicht fokussiert werden.\nKlicke auf diese Schaltfläche, um den Fokus auf die Karte zu senden, um sie bewegen/zoomen zu können.</German>
+        </Key>
     </Package>
 </Project>

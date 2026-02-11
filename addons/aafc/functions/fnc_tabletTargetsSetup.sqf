@@ -35,11 +35,21 @@ TRACE_1(QFUNC(tabletTargetsSetup),_this);
 private["_control","_mapPosition"];
 
 [CBA_EVENT_AAFC_CONTACT_UPDATE, {
+    TRACE_1(QFUNC(tabletTargetsSetup_ContactUpdate),_this);
     if !assert(params[["_unit", nil, [objNull]]]) exitWith {};
     private _contactKey = _unit getVariable QGVAR(contactKey);
     if !assert(!isNil "_contactKey") exitWith {};
     [_contactKey] spawn FUNC(tabletTargetsUpdateContact);
 }] call CBA_fnc_addEventHandler;
+
+_control = _ctlTabHost controlsGroupCtrl IDC_TARGETS_BTN_FOCUSMAP;
+_control ctrlAddEventHandler["ButtonClick", {
+    TRACE_1(QFUNC(tabletTargetsSetup_focusEH),_this);
+    private _display = uiNamespace getVariable QGVAR(display);
+    private _tabHost = _display getVariable QGVAR(tabs) get IDC_TABHOST_TARGETS;
+    private _control = _tabHost get "ctlMap";
+    ctrlSetFocus _control;
+}];
 
 _control = _ctlTabHost controlsGroupCtrl IDC_TARGETS_LNB_CONTACTS;
 ctrlPosition _control params["","","_lw","_lh"];
