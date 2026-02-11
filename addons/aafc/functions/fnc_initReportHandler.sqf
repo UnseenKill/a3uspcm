@@ -26,6 +26,14 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _group) exitWith {};
 
+/*
+CIWS fire report?
+
+_group getVariable QGVAR(vehicles) apply { _x addEventHandler["Fired", {
+    TRACE_1(QFUNC(initReportHandler),_this);
+}]};
+*/
+
 _group addEventHandler["EnemyDetected", {
     params[
         ["_group", nil, [grpNull]],
