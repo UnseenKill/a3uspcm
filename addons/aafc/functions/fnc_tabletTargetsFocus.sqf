@@ -37,7 +37,7 @@ if !(isNull(_tabFocused get "ctlMap")) then {
 } else {
     INFO("Setting up map control for targets tab");
 
-    _ctlMap = _display ctrlCreate[QGVAR(RscMapControl), 0];
+    _ctlMap = _display ctrlCreate[QGVAR(RscMapControl), IDC_TARGETS_CTL_MAP];
     private _mapPos = _tabFocused get "mapPosition";
     private _mapSize = _tabFocused get "mapSize";
     _ctlMap ctrlSetPosition[_mapPos select 0, _mapPos select 1, _mapSize select 0, _mapSize select 1];

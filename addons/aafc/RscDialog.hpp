@@ -443,11 +443,12 @@ class GVAR(ConfigTablet) {
                                 };
 
                                 class Map: GVAR(RscText) {
-                                    idc = IDC_TARGETS_CTL_MAP;
+                                    idc = IDC_TARGETS_CTL_MAP_PROXY;
                                     x = QUOTE(UI_GRID_W * 10.5);
                                     w = QUOTE(TABLET_CLIENTAREA_WIDTH - UI_GRID_W * 10.5);
                                     h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
                                     colorBackground[] = {0,1,0,0.5};
+                                    deletable = 1;
                                 };
                             };
                         };

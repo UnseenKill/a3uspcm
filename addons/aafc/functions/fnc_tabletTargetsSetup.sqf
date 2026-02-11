@@ -35,12 +35,8 @@ if (IDC_TABHOST_TARGETS isNotEqualTo ctrlIDC _ctlTabHost) exitWith {};
 private["_control","_mapPosition"];
 
 _mapPosition = [0,0];
-_control = _ctlTabHost controlsGroupCtrl IDC_TARGETS_CTL_MAP;
-_control ctrlShow false;
-_control ctrlEnable false;
+_control = _ctlTabHost controlsGroupCtrl IDC_TARGETS_CTL_MAP_PROXY;
 ctrlPosition _control params["","","_mw","_mh"];
-
-_tabHost set["ctlMapPlaceholder", _control];
 
 while { (!isNull _control) && { !(_control isEqualType displayNull) } } do {
     ctrlPosition _control params["_px","_py"];
@@ -57,5 +53,7 @@ TRACE_1(QFUNC(tabletTargetsSetup),_mapPosition);
 _tabHost set["mapPosition", _mapPosition];
 _tabHost set["mapSize", [_mw, _mh]];
 _tabHost set["ctlMap", controlNull];
+
+ctrlDelete(_ctlTabHost controlsGroupCtrl IDC_TARGETS_CTL_MAP_PROXY);
 
 nil;
