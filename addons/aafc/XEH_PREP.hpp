@@ -5,6 +5,7 @@ PREP(drawVehicleEffectiveRangesMarkers);
 PREP(enforceROE);
 PREP(getAAType);
 PREP(initReportHandler);
+PREP(missileSafetyNetCheck);
 PREP(onStartContactTracking);
 PREP(registerAAGroup);
 PREP(reloadCheck);
