@@ -41,19 +41,19 @@ GVAR(groups) select { !(_x getVariable[QGVAR(unlinkROE), false]) } apply {
     _x setVariable[QGVAR(vehicles), _x getVariable QGVAR(vehicles) select { !isNull _x }, true];
     _x getVariable QGVAR(vehicles) apply {
         private _vehicle = _x;
-        private _aaType = [_x] call FUNC(getAAType);
-        private _combatMode = ["BLUE","YELLOW"] select (_aaType in _allowTypes);
+        private _aaType = [_vehicle] call FUNC(getAAType);
+        private _canFire = (_aaType in _allowTypes);
         private _didChange = false;
 
-        crew _x select { alive _x } apply {
-            if (unitCombatMode _x isNotEqualTo _combatMode) then {
+        crew _x apply {
+            if (([_x] call FUNC(canUnitFire)) isNotEqualTo _canFire) then {
+                [_x, _canFire] call FUNC(setUnitCanFire);
                 _didChange = true;
-                _x setUnitCombatMode _combatMode;
             };
         };
 
         if (_didChange) then {
-            _updateEventsFor pushBack[_vehicle, _roeMode, _combatMode isNotEqualTo "BLUE"];
+            _updateEventsFor pushBack[_vehicle, _roeMode, _canFire];
         };
     };
 };

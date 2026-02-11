@@ -69,8 +69,13 @@ publicVariable QGVAR(groups);
 
 [_group] call FUNC(initReportHandler);
 
-private _combatMode = ["YELLOW", "BLUE"] select(GVAR(globalROE) isEqualTo ROE_HOLDFIRE);
-units _group apply { _x setUnitCombatMode _combatMode };
+_group setCombatBehaviour "AWARE";
+_group setCombatMode "YELLOW";
+
+units _group apply {
+    _x disableAI "FIREWEAPON";
+    _x setVariable[QGVAR(canFire), false, true];
+};
 
 CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(leader _group,LLSTRING(Message_AARegistered))]);
 

@@ -58,8 +58,8 @@ private _dotColors = [
     [[0.2,0.2,0.2,1], QUOTE(!alive _vehicle)],
     [[1,1,1,0], QUOTE(_aaType isEqualTo QUOTE(AA_TYPE_RADAR))],
     [[0.8,0.6,0,1], QUOTE(isNull gunner _vehicle)],
-    [[0.6,0,0,1], QUOTE(unitCombatMode gunner _vehicle isEqualTo QQUOTE(BLUE))],
-    [[0,0.8,0,1], QUOTE(true)]
+    [[0,0.8,0,1], QUOTE([_vehicle] call FUNC(canUnitFire))],
+    [[0.6,0,0,1], QUOTE(true)]
 ];
 
 // [Individual groups tabhost] -------------------------------------------------
@@ -167,12 +167,9 @@ _groups apply {
         private _vehicle = (_control lnbData[_index, 1]) call BIS_fnc_objectFromNetId;
 
         if !(_group getVariable[QGVAR(unlinkROE), false]) exitWith {};
-        private _holdingFire = unitCombatMode gunner _vehicle isEqualTo "BLUE";
+        private _canFire = [_vehicle] call FUNC(canUnitFire);
 
-        crew _vehicle select { alive _x } apply {
-            _x setUnitCombatMode(["BLUE", "YELLOW"] select _holdingFire);
-        };
-
+        CBA_EVENT_SERVER(CBA_EVENT_AAFC_SET_UNIT_CANFIRE,[ARR_2(_vehicle,!_canFire)]);
         CBA_EVENT_LOCAL(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[GVAR(globalROE)]);
     }];
 
@@ -189,7 +186,7 @@ _groups apply {
         _columnData pushBack groupId gunner _vehicle;
 
         private _index = _control lnbAddRow[
-            ["", "F"] select(alive _vehicle && { !isNull gunner _vehicle } && { unitCombatMode gunner _vehicle isNotEqualTo "BLUE" }),
+            ["", "F"] select(alive _vehicle && { !isNull gunner _vehicle } && { [_vehicle] call FUNC(canUnitFire) }),
             (((1 - damage _vehicle) * 100) toFixed 0) + "%",
             _aaTypeShort,
             getText(configOf _vehicle >> "displayName")
@@ -208,7 +205,7 @@ _groups apply {
 
         private _combatModeInfo = switch true do {
             case (isNull gunner _vehicle): { LLSTRING(Tablet_TabhostOverview_HintNoGunner_Text) };
-            default { [LLSTRING(Tablet_TabhostOverview_BtnFireAtWill_Text), LLSTRING(Tablet_TabhostOverview_BtnHoldFire_Text)] select (unitCombatMode _vehicle isEqualTo "BLUE") };
+            default { [LLSTRING(Tablet_TabhostOverview_BtnHoldFire_Text), LLSTRING(Tablet_TabhostOverview_BtnFireAtWill_Text)] select ([_vehicle] call FUNC(canUnitFire)) };
         };
 
         private _gunnerInfo = switch true do {

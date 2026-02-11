@@ -1,5 +1,6 @@
 PREP(acknowledgeROEChange);
 PREP(autoGroupVehicles);
+PREP(canUnitFire);
 PREP(drawVehicleEffectiveRangesMarkers);
 PREP(enforceROE);
 PREP(getAAType);
@@ -8,6 +9,7 @@ PREP(onStartContactTracking);
 PREP(registerAAGroup);
 PREP(reloadCheck);
 PREP(roeCorrectionMonitor);
+PREP(setUnitCanFire);
 PREP(toggleROEAll);
 PREP(trackContact);
 PREP(updateContactTracks);

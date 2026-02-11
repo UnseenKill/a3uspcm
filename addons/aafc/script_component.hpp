@@ -45,6 +45,8 @@
 #define CBA_EVENT_AAFC_CONTACT_UPDATE QUOTE(TRIPLES(ADDON,events,contactUpdate))
 // Parameters: [Number roeLevel]
 #define CBA_EVENT_AAFC_SET_ROE_GLOBAL QUOTE(TRIPLES(ADDON,events,setROEGlobal))
+// Parameters: [Object unitOrVehicle, Boolean canFire]
+#define CBA_EVENT_AAFC_SET_UNIT_CANFIRE QUOTE(TRIPLES(ADDON,events,setUnitCanFire))
 // Parameters: [Object sender, String message]
 #define CBA_EVENT_AAFC_SIDECHAT QUOTE(TRIPLES(ADDON,events,sideChat))
 // Parameters: [Object sender, String message]
