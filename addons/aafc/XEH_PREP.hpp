@@ -19,6 +19,7 @@ PREP(tabletEventOnSwitchTab);
 PREP(tabletOverviewFocus);
 PREP(tabletOverviewSetup);
 PREP(tabletOverviewUpdate);
+PREP(tabletTargetsCreateMapControl);
 PREP(tabletTargetsFocus);
 PREP(tabletTargetsSetup);
 PREP(tabletTargetsUnfocus);

@@ -35,16 +35,7 @@ private _display = uiNamespace getVariable QGVAR(display);
 if !(isNull(_tabFocused get "ctlMap")) then {
     _ctlMap = _tabFocused get "ctlMap";
 } else {
-    INFO("Setting up map control for targets tab");
-
-    _ctlMap = _display ctrlCreate[QGVAR(RscMapControl), IDC_TARGETS_CTL_MAP];
-    private _mapPos = _tabFocused get "mapPosition";
-    private _mapSize = _tabFocused get "mapSize";
-    _ctlMap ctrlSetPosition[_mapPos select 0, _mapPos select 1, _mapSize select 0, _mapSize select 1];
-    _ctlMap ctrlSetBackgroundColor [0,1,0,1];
-    _ctlMap ctrlCommit 0;
-    _ctlMap ctrlMapSetPosition [];
-
+    _ctlMap = [_display, _tabFocused get "mapPosition", _tabFocused get "mapSize" ] call FUNC(tabletTargetsCreateMapControl);
     _tabFocused set["ctlMap", _ctlMap];
 };
 

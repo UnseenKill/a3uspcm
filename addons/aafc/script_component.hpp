@@ -3,7 +3,11 @@
 #include "\z\a3uspcm\addons\main\script_macros.hpp"
 
 // Wait this many seconds after client init done before auto-grouping A/A
-#define AUTO_GROUP_DELAY 15
+#ifdef __A3USPCM_PRODUCTION__
+    #define AUTO_GROUP_DELAY 15
+#else
+    #define AUTO_GROUP_DELAY ([15,1] select is3DENPreview)
+#endif // __A3USPCM_PRODUCTION__
 
 #define AA_TYPE_UNKNOWN QUOTE(unknown)
 #define AA_TYPE_RADAR QUOTE(radar)
