@@ -58,6 +58,6 @@ _display setVariable[QGVAR(tabs), createHashMapFromArray([
     [_idcTabHost, _tabHost];
 })];
     
-[CBA_EVENT_AAFC_DIALOG_TABSWITCH, [IDC_TABHOST_OVERVIEW]] call CBA_fnc_localEvent;
+CBA_EVENT_LOCAL(CBA_EVENT_AAFC_DIALOG_TABSWITCH,[IDC_TABHOST_OVERVIEW]);
 
 nil;
