@@ -34,6 +34,13 @@ TRACE_1(QFUNC(tabletTargetsSetup),_this);
 
 private["_control","_mapPosition"];
 
+_control = _ctlTabHost controlsGroupCtrl IDC_TARGETS_LNB_CONTACTS;
+ctrlPosition _control params["","","_lw","_lh"];
+_control lnbAddColumn 0;
+_control lnbAddColumn linearConversion[0, _lw, UI_GRID_W * 2, 0, 1];
+_control ctrlAddEventHandler["LBDblClick", { call FUNC(tabletTargetsOnContactDblClick) }];
+_tabHost set["ctlContacts", _control];
+
 _mapPosition = [0,0];
 _control = _ctlTabHost controlsGroupCtrl IDC_TARGETS_CTL_MAP_PROXY;
 ctrlPosition _control params["","","_mw","_mh"];

@@ -29,19 +29,29 @@ if (_tabFocused get "idc" isNotEqualTo IDC_TABHOST_TARGETS) exitWith {};
 
 TRACE_1(QFUNC(tabletTargetsFocus),_this);
 
-private["_ctlMap"];
+private["_control"];
 private _display = uiNamespace getVariable QGVAR(display);
 
 if !(isNull(_tabFocused get "ctlMap")) then {
-    _ctlMap = _tabFocused get "ctlMap";
+    _control = _tabFocused get "ctlMap";
 } else {
-    _ctlMap = [_display, _tabFocused get "mapPosition", _tabFocused get "mapSize" ] call FUNC(tabletTargetsCreateMapControl);
-    _tabFocused set["ctlMap", _ctlMap];
+    _control = [_display, _tabFocused get "mapPosition", _tabFocused get "mapSize" ] call FUNC(tabletTargetsCreateMapControl);
+    _tabFocused set["ctlMap", _control];
 };
 
-_ctlMap ctrlShow true;
-_ctlMap ctrlEnable true;
-_ctlMap ctrlMapAnimAdd[1, 0.25, player];
-ctrlMapAnimCommit _ctlMap;
+_control ctrlShow true;
+_control ctrlEnable true;
+_control ctrlMapAnimAdd[1, 0.25, player];
+ctrlMapAnimCommit _control;
+
+_control = _tabFocused get "ctlContacts";
+lnbClear _control;
+
+if (keys GVAR(contacts) isEqualTo []) exitWith {
+    _control lnbAddRow["No contacts reported."];
+};
+
+keys GVAR(contacts) apply { [_x, false] call FUNC(tabletTargetsAddContact) };
+[_control, 1] lnbSortBy["DATA"];
 
 nil;
