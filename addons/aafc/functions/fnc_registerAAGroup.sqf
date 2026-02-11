@@ -77,6 +77,6 @@ units _group apply {
     _x setVariable[QGVAR(canFire), false, true];
 };
 
-CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(leader _group,LLSTRING(Message_AARegistered))]);
+CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(leader _group,LLSTRING(Message_AARegistered))]);
 
 nil;

@@ -48,7 +48,7 @@ _group addEventHandler["EnemyDetected", {
     _enemy setVariable[QGVAR(mseDetected), createHashMap];
 
     CBA_EVENT_LOCAL(CBA_EVENT_AAFC_START_CONTACT_TRACK,[_enemy]);
-    CBA_EVENT_REMOTE(CBA_EVENT_AAFC_CONTACT_ADDED,[_enemy]);
+    CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_CONTACT_ADDED,[_enemy]);
 
     private _message = format[
         LLSTRING(Message_EnemyDetected), 
@@ -58,11 +58,11 @@ _group addEventHandler["EnemyDetected", {
         getDir _enemy toFixed 1, speed _enemy toFixed 1
     ];
 
-    CBA_EVENT_REMOTE(CBA_EVENT_AAFC_CONTACT_UPDATE,[_enemy]);
-    CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT_CONTACT,[ARR_2(leader _group,_message)]);
+    CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_CONTACT_UPDATE,[_enemy]);
+    CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT_CONTACT,[ARR_2(leader _group,_message)]);
 
     _enemy addEventHandler["Killed", {
-        CBA_EVENT_REMOTE(CBA_EVENT_AAFC_CONTACT_UPDATE,_this);
+        CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_CONTACT_UPDATE,_this);
     }];
 
     _enemy addEventHandler["IncomingMissile", {
@@ -109,7 +109,7 @@ _group addEventHandler["EnemyDetected", {
             };
 
             private _message = format[LLSTRING(Message_EnemyFiredAt), _missile, DISPLAY_NAME_UNIT(_unit)];
-            CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT_FIRED,[ARR_2(_sender,_message)]);
+            CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT_FIRED,[ARR_2(_sender,_message)]);
         };
     }];
 }];

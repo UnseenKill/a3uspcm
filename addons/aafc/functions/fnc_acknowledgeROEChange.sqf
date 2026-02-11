@@ -42,6 +42,6 @@ private _who = switch true do {
 };
 
 _message = format["[%1] %2", getText(configOf _vehicle >> "displayName"), localize _message];
-CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(_who,_message)]);
+CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(_who,_message)]);
 
 nil;

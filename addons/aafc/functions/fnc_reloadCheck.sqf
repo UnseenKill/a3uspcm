@@ -51,7 +51,7 @@ _magazines apply {
                 getText(configFile >> "CfgMagazines" >> _magazine >> "displayName")
             ];
 
-            CBA_EVENT_REMOTE(CBA_EVENT_AAFC_SIDECHAT_FIRED,[ARR_2(_sender,_message)]);
+            CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT_FIRED,[ARR_2(_sender,_message)]);
         };
     };
 };
