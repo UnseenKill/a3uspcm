@@ -440,13 +440,22 @@ class GVAR(ConfigTablet) {
                                 class Contacts: GVAR(RscListNBox) {
                                     idc = IDC_TARGETS_LNB_CONTACTS;
                                     w = QUOTE(UI_GRID_W * 10);
-                                    h = QUOTE(TABLET_CLIENTAREA_HEIGHT - UI_GRID_H);
+                                    h = QUOTE(TABLET_CLIENTAREA_HEIGHT - UI_GRID_H * 2 - pixelH * 16);
                                     colorBackground[] = {0,0.15,0,1};
+                                };
+
+                                class BtnShowAreas: GVAR(RscButton) {
+                                    idc = IDC_TARGETS_BTN_SHOWAREAS;
+                                    y = QUOTE(TABLET_CLIENTAREA_HEIGHT - UI_GRID_H * 2 - pixelH * 8);
+                                    w = QUOTE(UI_GRID_W * 10);
+                                    h = QUOTE(UI_GRID_H);
+                                    text = CSTRING(Tablet_TabhostTargets_BtnShowAreas_Text);
+                                    tooltip = CSTRING(Tablet_TabhostTargets_BtnShowAreas_Tooltip);
                                 };
 
                                 class BtnFocusMap: GVAR(RscButton) {
                                     idc = IDC_TARGETS_BTN_FOCUSMAP;
-                                    y = QUOTE(TABLET_CLIENTAREA_HEIGHT - UI_GRID_H);
+                                    y = QUOTE(TABLET_CLIENTAREA_HEIGHT - UI_GRID_H * 1 - pixelH * 0);
                                     w = QUOTE(UI_GRID_W * 10);
                                     h = QUOTE(UI_GRID_H);
                                     text = CSTRING(Tablet_TabhostTargets_BtnFocusMap_Text);

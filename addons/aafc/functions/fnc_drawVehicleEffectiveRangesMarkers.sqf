@@ -19,6 +19,8 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
+TRACE_1(QFUNC(drawVehicleEffectiveRangesMarkers),_this);
+
 if !assert(params[
     ["_vehicle", nil, [objNull]]
 ]) exitWith {};

@@ -277,5 +277,13 @@
             <English>For some unexplicable reason, the map control cannot be focused in this dialog.\nClick this button to send focus to map control to be able to move/zoom it.</English>
             <German>Aus unerklärlichen Gründen kann die Karte in diesem Dialog nicht fokussiert werden.\nKlicke auf diese Schaltfläche, um den Fokus auf die Karte zu senden, um sie bewegen/zoomen zu können.</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostTargets_BtnShowAreas_Text">
+            <English>Show A/A ranges</English>
+            <German>Zeige Fla-Bereiche</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostTargets_BtnShowAreas_Tooltip">
+            <English>Show engagement areas of AA groups on the map as circles.</English>
+            <German>Zeige Einsatzbereiche von Fla-Gruppen als Kreise auf der Karte an.</German>
+        </Key>
     </Package>
 </Project>

@@ -51,6 +51,21 @@ _control ctrlAddEventHandler["ButtonClick", {
     ctrlSetFocus _control;
 }];
 
+_control = _ctlTabHost controlsGroupCtrl IDC_TARGETS_BTN_SHOWAREAS;
+_control ctrlAddEventHandler["ButtonClick", {
+    if !(isNil QGVAR(showAreas)) exitWith {
+        GVAR(showAreas) apply { deleteMarker _x };
+        GVAR(showAreas) = nil;
+    };
+
+    GVAR(showAreas) = [];
+    GVAR(groups) apply {
+        _x getVariable QGVAR(vehicles) apply {
+            GVAR(showAreas) append ([_x] call FUNC(drawVehicleEffectiveRangesMarkers));
+        };
+    };
+}];
+
 _control = _ctlTabHost controlsGroupCtrl IDC_TARGETS_LNB_CONTACTS;
 ctrlPosition _control params["","","_lw","_lh"];
 _control lnbAddColumn 0;
