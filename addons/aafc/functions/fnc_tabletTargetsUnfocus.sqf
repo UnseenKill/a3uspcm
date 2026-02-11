@@ -21,14 +21,14 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(tabletTargetsUnfocus),_this);
-
 params[
     ["_tabUnfocused", nil, [createHashMap]]
 ];
 
 if (isNil "_tabUnfocused") exitWith {};
 if (_tabUnfocused get "idc" isNotEqualTo IDC_TABHOST_TARGETS) exitWith {};
+
+TRACE_1(QFUNC(tabletTargetsUnfocus),_this);
 
 if !isNull(_tabUnfocused get "ctlMap") then {
     (_tabUnfocused get "ctlMap") ctrlShow false;

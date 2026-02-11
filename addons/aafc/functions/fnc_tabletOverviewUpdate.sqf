@@ -20,13 +20,13 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(tabletOverviewUpdate),_this);
-
 private _display = uiNamespace getVariable QGVAR(display);
 private _tab = _display getVariable QGVAR(tabs) get IDC_TABHOST_OVERVIEW;
 
 if !assert(!isNil "_tab") exitWith {};
 if !(_tab get "active") exitWith {};
+
+TRACE_1(QFUNC(tabletOverviewUpdate),_this);
 
 private _ctlTabHost = _tab get "ctlGroupsHost";
 private["_tabHost","_control","_startX","_startY"];

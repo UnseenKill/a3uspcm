@@ -21,13 +21,13 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(tabletOverviewFocus),_this);
-
 if !assert(params[
     ["_tabFocused", nil, [createHashMap]]
 ]) exitWith {};
 
 if (_tabFocused get "idc" isNotEqualTo IDC_TABHOST_OVERVIEW) exitWith {};
+
+TRACE_1(QFUNC(tabletOverviewFocus),_this);
 
 CBA_EVENT_LOCAL(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[GVAR(globalROE)]);
 

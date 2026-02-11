@@ -21,13 +21,13 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(tabletTargetsFocus),_this);
-
 if !assert(params[
     ["_tabFocused", nil, [createHashMap]]
 ]) exitWith {};
 
 if (_tabFocused get "idc" isNotEqualTo IDC_TABHOST_TARGETS) exitWith {};
+
+TRACE_1(QFUNC(tabletTargetsFocus),_this);
 
 private["_ctlMap"];
 private _display = uiNamespace getVariable QGVAR(display);

@@ -22,8 +22,6 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(tabletTargetsSetup),_this);
-
 if !assert(params[
     ["_display", nil, [displayNull]],
     ["_ctlTabHost", nil, [controlNull]],
@@ -31,6 +29,8 @@ if !assert(params[
 ]) exitWith {};
 
 if (IDC_TABHOST_TARGETS isNotEqualTo ctrlIDC _ctlTabHost) exitWith {};
+
+TRACE_1(QFUNC(tabletTargetsSetup),_this);
 
 private["_control","_mapPosition"];
 
