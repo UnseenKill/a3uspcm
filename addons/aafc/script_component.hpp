@@ -68,7 +68,11 @@
     }
     #define CBA_EVENT_REMOTE(eventName,params) if true then { \
         TRACE_1("CBA_EVENT_REMOTE:"+eventName,params); \
-        [eventName, params] call CBA_fnc_remoteEvent; \
+        if (is3DENPreview && {eventName in [CBA_EVENT_AAFC_SIDECHAT, CBA_EVENT_AAFC_SIDECHAT_CONTACT, CBA_EVENT_AAFC_SIDECHAT_FIRED]}) then { \
+            [eventName, params] call CBA_fnc_localEvent; \
+        } else { \
+            [eventName, params] call CBA_fnc_remoteEvent; \
+        }; \
     }
     #define CBA_EVENT_SERVER(eventName,params) if true then { \
         TRACE_1("CBA_EVENT_SERVER:"+eventName,params); \
