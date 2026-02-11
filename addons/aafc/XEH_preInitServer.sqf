@@ -3,6 +3,10 @@
 GVAR(contacts) = createHashMap;
 GVAR(contactTracker) = false;
 GVAR(groups) = [];
+// Additionally check if a missile fired by an A/A unit is allowed to "live";
+// i.e. if that unit isn't allowed to fire, but Arma still thinks so, delete
+// the projectile...
+GVAR(missileSafetyNet) = true;
 
 publicVariable QGVAR(contacts);
 publicVariable QGVAR(globalROE);

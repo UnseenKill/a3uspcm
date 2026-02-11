@@ -76,6 +76,11 @@ _group addEventHandler["EnemyDetected", {
         if (_key in (_unit getVariable QGVAR(mseDetected))) exitWith { TRACE_1("Ignoring duplicate missile report",_projectile) };
         _unit getVariable QGVAR(mseDetected) set[_key, true];
 
+        if (GVAR(missileSafetyNet) && { !([_vehicle] call FUNC(canUnitFire)) }) exitWith {
+            INFO_2("Deleting unauthorized missile '%1' from '%2'",_projectile,_vehicle);
+            deleteVehicle _projectile;
+        };
+
         private _sender = _instigator;
 
         if (isNull _sender) then {
