@@ -32,7 +32,8 @@ params[
 
 if !assert(!isNil "_min") exitWith {[]};
 if !assert(!isNil "_max") exitWith {[]};
-if (_min >= _max) exitWith {[]};
+if (_min > _max) exitWith {[]};
+if (_min == _max) exitWith {[_min call _fncValue]};
 
 private _n = _min;
 private _result = [];
