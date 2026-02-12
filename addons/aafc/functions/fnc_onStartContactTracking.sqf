@@ -3,7 +3,8 @@
 Function: A3USPCM_aafc_fnc_onStartContactTracking
 
 Description:
-    Handler for StartContactTracking event to initialize contact tracking
+    Handler for CBA_EVENT_AAFC_START_CONTACT_TRACK event to initialize contact
+    tracking.
 
 Parameters:
     0: _unit - Unit to track <OBJECT>
@@ -25,10 +26,11 @@ if !assert(params[
 ]) exitWith {};
 
 if !assert(!isNull _unit) exitWith {};
-if !GVAR(trackContacts) exitWith {};
 
 private _key = hashValue _unit;
+_unit setVariable[QGVAR(contactKey), _key, true];
 
+if !GVAR(trackContacts) exitWith {};
 TRACE_1(QFUNC(onStartContactTracking),_key);
 
 if (GVAR(contacts) getOrDefault[_key, false] isNotEqualTo false) exitWith {

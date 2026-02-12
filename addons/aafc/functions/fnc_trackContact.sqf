@@ -58,6 +58,7 @@ GVAR(contacts) set[_key, createHashMapFromArray[
     ["lastSpeed", speed _unit],
     ["nextUpdate", diag_tickTime + GVAR(contactUpdateInterval)]
 ]];
+publicVariable QGVAR(contacts);
 
 [] call FUNC(updateContactTracks);
 

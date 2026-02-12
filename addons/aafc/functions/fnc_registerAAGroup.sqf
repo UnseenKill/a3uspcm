@@ -18,26 +18,32 @@ Example:
 Returns:
     Nothing
 
+Scope:
+    Server, Unscheduled
+
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(registerAAGroup),_this);
 
-params[
-    ["_group", grpNull, [grpNull]]
-];
-
+if !assert(params[
+    ["_group", nil, [grpNull]]
+]) exitWith {};
 if !assert(!isNull _group) exitWith {};
+if !assert(isServer) exitWith {};
 
 private _vehicles = [];
-{
-    _vehicles pushBackUnique _x
-} forEach (units _group apply { objectParent _x } select { !isNull _x });
+
+units _group apply { objectParent _x } select { !isNull _x } apply {
+    if ((_vehicles pushBackUnique _x) isNotEqualTo -1) then {
+        _group addVehicle _x;
+        _x setVariable[QGVAR(group), _group, true];
+    };
+};
 
 _group setVariable[QGVAR(vehicles), _vehicles apply { 
     _x addEventHandler["Killed", {
         TRACE_1(QFUNC(vehicleKilled),_this);
-        [] call FUNC(updateMenu);
     }];
 
     _x;
@@ -46,27 +52,31 @@ _group setVariable[QGVAR(vehicles), _vehicles apply {
 _group addEventHandler["Deleted", {
     TRACE_1(QFUNC(groupDeleted),_this);
     GVAR(groups) = GVAR(groups) - [_this select 0];
-    [] call FUNC(updateMenu);
+    publicVariable QGVAR(groups);
+}];
+
+_group addEventHandler["VehicleAdded", {
+    TRACE_1(QFUNC(vehicleAdded),_this);
+    params["_group","_vehicle"];
+
+    _group getVariable QGVAR(vehicles) pushBackUnique _vehicle;
+    _vehicle setVariable[QGVAR(group), _group, true];
+    publicVariable QGVAR(groups);
 }];
 
 GVAR(groups) pushBackUnique _group;
+publicVariable QGVAR(groups);
 
 [_group] call FUNC(initReportHandler);
 
-switch GVAR(defaultInitialMode) do {
-    case "FC_DEFAULT_ANGRY": {
-        _group setBehaviourStrong "COMBAT";
-        _group setCombatMode "RED";
-        _group setVariable[QGVAR(ROE), MODE_OPENFIRE];
-    };
-    case "FC_DEFAULT_CALM": {
-        _group setBehaviourStrong "SAFE";
-        _group setCombatMode "BLUE";
-        _group setVariable[QGVAR(ROE), MODE_HOLDFIRE];
-    };
+_group setCombatBehaviour "AWARE";
+_group setCombatMode "YELLOW";
+
+units _group apply {
+    _x disableAI "FIREWEAPON";
+    _x setVariable[QGVAR(canFire), false, true];
 };
 
-leader _group sideChat LLSTRING(Message_AARegistered);
-[] call FUNC(updateMenu);
+CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(leader _group,LLSTRING(Message_AARegistered))]);
 
 nil;

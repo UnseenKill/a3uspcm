@@ -61,7 +61,7 @@
     QEGVAR(aafc,HotkeysToggleROEAll),
     [ELSTRING(aafc,HotkeysToggleROEAll), ELSTRING(aafc,HotkeysToggleROEAllTooltip)],
     {},
-    { [""] call EFUNC(aafc,toggleROEAll) }
+    { call EFUNC(aafc,toggleROEAll) }
 ] call CBA_fnc_addKeybind;
 
 GVAR(DiaryActions) = createHashMap;

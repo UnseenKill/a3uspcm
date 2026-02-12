@@ -6,7 +6,6 @@ Description:
     Toggle ROE for all groups
 
 Parameters:
-    0: _mode - Mode to set ("openFire","holdFire") <STRING>
 
 Optional:
 
@@ -15,33 +14,17 @@ Example:
 Returns:
     Nothing
 
+Scope:
+    Client, Unscheduled
+
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(toggleROEAll),_this);
 
-params[
-    ["_mode", "", [""]]
-];
+private _newROE = [ROE_FIREATWILL, ROE_HOLDFIRE] select(GVAR(globalROE) isNotEqualTo ROE_HOLDFIRE);
 
-private _groups = GVAR(groups) - [grpNull];
-
-if (_groups isEqualTo []) exitWith {
-    [
-        LLSTRING(ROE_Caption),
-        LLSTRING(ROE_NoGroups)
-    ] call A3A_fnc_customHint;
-};
-
-if (_mode isEqualTo "") then {
-    _mode = [MODE_OPENFIRE, MODE_HOLDFIRE] select ((_groups select 0) getVariable[QGVAR(ROE), MODE_OPENFIRE] isEqualTo MODE_OPENFIRE);
-    TRACE_2(QFUNC(toggleROEAll),_this,_mode);
-};
-
-{
-    [_x, _mode, false] call EFUNC(aafc,toggleROE);
-} forEach _groups;
-
-[] call FUNC(updateMenu);
+TRACE_1(QFUNC(toggleROEAll),_newROE);
+CBA_EVENT_SERVER(CBA_EVENT_AAFC_SET_ROE_GLOBAL,[_newROE]);
 
 nil;

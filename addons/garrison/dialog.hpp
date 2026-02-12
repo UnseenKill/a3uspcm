@@ -2,6 +2,12 @@
 #include "mapcontrol.hpp"
 #include "RscDefine.hpp"
 
+FORWARD(RscButton);
+FORWARD(RscCheckbox);
+FORWARD(RscFrame);
+FORWARD(RscListbox);
+FORWARD(RscText);
+
 // Replace attributes:
 //  Search: (^\s*(?:sizeEx|[xywh])) = ([^;]+)
 //  Replace: $1 = QUOTE($2)
@@ -30,11 +36,11 @@ $[
 	[1007,"StaticLabelResources",[1,"Resources",["0.65 * safezoneW + safezoneX","0.776 * safezoneH + safezoneY","0.0875 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[2806,"CheckShowTowns",[1,"",["0.7375 * safezoneW + safezoneX","0.788 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show towns/villages","-1"],[]],
 	[1008,"StaticLabelTowns",[1,"Towns/villages",["0.76 * safezoneW + safezoneX","0.776 * safezoneH + safezoneY","0.0875 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1500,"ListOverview",[1,"",["0.1625 * safezoneW + safezoneX","0.18 * safezoneH + safezoneY","0.675 * safezoneW","0.3 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = false;","idcLeft = -1;","idcRight = -1;","tooltipPerColumn = true;"]],
+	[1500,"ListOverview",[1,"",["0.1625 * safezoneW + safezoneX","0.18 * safezoneH + safezoneY","0.675 * safezoneW","0.3 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = 0;","idcLeft = -1;","idcRight = -1;","tooltipPerColumn = 1;"]],
 	[1602,"BtnRecruit",[1,"Recruit",["0.3425 * safezoneW + safezoneX","0.728 * safezoneH + safezoneY","0.075 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[0,0.6,0,1],[-1,-1,-1,-1],"","-1"],[]],
 	[-1800,"StaticRecruitFrame",[1,"Recruit reinforcements",["0.1625 * safezoneW + safezoneX","0.5 * safezoneH + safezoneY","0.2625 * safezoneW","0.28 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
 	[-1801,"StaticMapFrame",[1,"Map view",["0.4375 * safezoneW + safezoneX","0.5 * safezoneH + safezoneY","0.4 * safezoneW","0.28 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["sizeEx = 0.03;"]],
-	[1501,"ListRecruitTypes",[1,"",["0.1675 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.25 * safezoneW","0.2 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = false;","idcLeft = -1;","idcRight = -1;"]],
+	[1501,"ListRecruitTypes",[1,"",["0.1675 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.25 * safezoneW","0.2 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["type = CT_LISTNBOX;","drawSideArrows = 0;","idcLeft = -1;","idcRight = -1;"]],
 	[1009,"MapControl",[1,"",["0.45 * safezoneW + safezoneX","0.52 * safezoneH + safezoneY","0.375 * safezoneW","0.24 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[2807,"CheckHideFull",[1,"",["0.7375 * safezoneW + safezoneX","0.832 * safezoneH + safezoneY","0.025 * safezoneW","0.04 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Show towns/villages","-1"],[]],
 	[1010,"StaticLabelFull",[1,"Hide full",["0.76 * safezoneW + safezoneX","0.82 * safezoneH + safezoneY","0.0875 * safezoneW","0.06 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
@@ -211,10 +217,10 @@ class GVAR(dialog) {
 		class ListOverview: RscListbox
 		{
 			type = CT_LISTNBOX;
-			drawSideArrows = false;
+			drawSideArrows = 0;
 			idcLeft = -1;
 			idcRight = -1;
-			tooltipPerColumn = true;
+			tooltipPerColumn = 1;
 
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTOVERVIEW;
 			x = QUOTE(0.1625 * safezoneW + safezoneX);
@@ -257,7 +263,7 @@ class GVAR(dialog) {
 		class ListRecruitTypes: RscListbox
 		{
 			type = CT_LISTNBOX;
-			drawSideArrows = false;
+			drawSideArrows = 0;
 			idcLeft = -1;
 			idcRight = -1;
 

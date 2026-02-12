@@ -2,47 +2,10 @@
 #define __HAS_A3USPCM_UI_DEFINE_HPP__
 
 #ifndef __A3USPCM_IS_3DEN__
-class RscText;
-class RscStructuredText;
-class RscPicture;
-class RscEdit;
-class RscCombo;
-class RscListbox;
-class RscButton;
-class RscShortcutButton;
-class RscShortcutButtonMain;
-class RscFrame;
-class RscSlider;
-class IGUIBack;
-class RscCheckbox;
-class RscTextCheckBox;
-class RscButtonMenu;
-class RscButtonMenuOK;
-class RscButtonMenuCancel;
-class RscControlsGroup;
+    #define FORWARD(className) class className
 #else
-import RscText;
-import RscStructuredText;
-import RscPicture;
-import RscEdit;
-import RscCombo;
-import RscListbox;
-import RscButton;
-import RscShortcutButton;
-import RscShortcutButtonMain;
-import RscFrame;
-import RscSlider;
-import IGUIBack;
-import RscCheckbox;
-import RscTextCheckBox;
-import RscButtonMenu;
-import RscButtonMenuOK;
-import RscButtonMenuCancel;
-import RscControlsGroup;
-#endif
-
-#define true 1
-#define false 0
+    #define FORWARD(className) import className
+#endif // __A3USPCM_IS_3DEN__
 
 #define CT_STATIC           0
 #define CT_BUTTON           1
@@ -87,6 +50,9 @@ import RscControlsGroup;
 #define ST_DOWN             0x04
 #define ST_UP               0x08
 #define ST_VCENTER          0x0C
+#define ST_ROUNDED_CORNER   ST_GROUP_BOX + ST_CENTER
+#define ST_ROUNDED_CORNER2  ST_GROUP_BOX2 + ST_CENTER
+#define ST_UPPERCASE        0xC0
 
 #define ST_TYPE             0xF0
 #define ST_SINGLE           0

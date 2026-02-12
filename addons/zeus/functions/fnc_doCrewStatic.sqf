@@ -33,60 +33,64 @@ private _groupName = format["%1 %2-%3",
     [configFile >> QGVAR(Config) >> "moduleMSE" >> "groupName", "STRING"] call CBA_fnc_getConfigEntry,
     [configFile >> QGVAR(Config) >> "moduleMSE" >> "groupPrefix", "NUMBER"] call CBA_fnc_getConfigEntry,
     GVAR(groupsCount)];
+private _skill = EGVAR(aafc,aiSkill);
+if (_skill isEqualTo 0) then {
+    _skill = 0.1 + 0.1 * A3A_rebelSkillMul + 0.015 * skillFIA;
+};
 
 TRACE_1(QFUNC(doCrewStatic),_groupName);
 _group setGroupIdGlobal[_groupName];
 
-[_group] spawn {
-    uiSleep 2.5;
-    call EFUNC(aafc,registerAAGroup);
-};
-
 _vehicles apply {
-    crew _x apply {
-        private _crew = _x;
+    private _vehicle = _x;
 
-        if (["B_UAV_AI","O_UAV_AI","I_UAV_AI","C_UAV_AI"] findIf { _crew isKindOf _x } >= 0) then {
-            deleteVehicle _crew;
+    crew _vehicle apply {
+        if (getText(configOf _x >> "simulation") isEqualTo "UAVPilot") then {
+            deleteVehicle _x;
         } else {
-            _crew allowDamage false;
-            moveOut _crew;
-            _crew spawn {
-                uiSleep 3.5;
-                _this allowDamage true;
+            [{ _this allowDamage true }, _x, 3.5] call CBA_fnc_waitAndExecute;
+            _x allowDamage false;
+            moveOut _x;
+        };
+    };
+
+    fullCrew[_vehicle, "", true] apply {
+        _x params["_unit","_role","","_turretPath"];
+
+        if !assert(isNull _unit) then { ERROR_3("%1: non-null unit in %2 slot: %3",_vehicle,_role,_unit); continue; };
+        if (_role in["driver","cargo"]) then { TRACE_2(QFUNC(doCrewStatic),_vehicle,_role); continue };
+
+        _unit = _group createUnit[_crewClassType, getPosATL _vehicle, [], 0, "NONE"];
+        _unit setSkill _skill;
+
+        switch true do {
+            case (_role isEqualTo "gunner");
+            case (_role isEqualTo "commander"): {
+                TRACE_4(QFUNC(doCrewStatic),_vehicle,_unit,_role,_turretPath);
+                _unit moveInTurret[_vehicle, _turretPath];
+            };
+            default {
+                WARNING_3("%1: unhandled crew role %2 for vehicle %3",QFUNC(doCrewStatic),_role,_vehicle);
             };
         };
     };
 
-    [_group, _x, _crewClassType] spawn {
-        uiSleep 0.5;
-        params["_group","_vehicle","_type"];
+    _vehicle allowCrewInImmobile true;
+    _vehicle setVariable[QGVAR(crewed), true, true];
+    _vehicle setVehicleRadar 1;
+    _vehicle setVehicleReceiveRemoteTargets true;
+    _vehicle setVehicleReportRemoteTargets true;
+};
 
-        private _skill = EGVAR(aafc,aiSkill);
-        if (_skill isEqualTo 0) then {
-            _skill = 0.1 + 0.1 * A3A_rebelSkillMul + 0.015 * skillFIA;
-        };
+allCurators apply { _x addCuratorEditableObjects[_vehicles, true] };
 
-        allTurrets[_vehicle, false] apply {
-            private _turret = _x;
-            private _unit = _group createUnit[_type, getPosATL _vehicle, [], 0, "NONE"];
-
-            _unit moveInTurret[_vehicle, _turret];
-            _unit setSkill _skill;
-
-            TRACE_3("Crewed static",_vehicle,_unit,_turret);
-        };
-
-        _vehicle allowCrewInImmobile true;
-        _vehicle setVariable[QGVAR(crewed), true, true];
-        _vehicle setVehicleRadar 1;
-        _vehicle setVehicleReceiveRemoteTargets true;
-        _vehicle setVehicleReportRemoteTargets true;
-
-        allCurators apply {
-            _x addCuratorEditableObjects[[_vehicle], true];
-        };
-    };
+// Zeus is local, so propagate to server. On the other hand,
+// `A3USPCM_zeus_fnc_doCrewStatic` can also be invoked by the server while
+// auto-grouping vehicles...
+if !(isServer) then {
+    [_group] remoteExecCall[QEFUNC(aafc,registerAAGroup), 2];
+} else {
+    [_group] call EFUNC(aafc,registerAAGroup);
 };
 
 if (!GVAR(moduleMSE_useAI) && GVAR(moduleMSE_transferHC)) then {

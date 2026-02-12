@@ -49,21 +49,13 @@
             <English>Vehicle lockpick duration.</English>
             <German>Dauer zum Schlossknacken.</German>
         </Key>
-        <Key ID="STR_A3USPCM_Menu_AAFireControl_AllFireCaption">
-            <English>All fire</English>
-            <German>Alle feuer frei</German>
+        <Key ID="STR_A3USPCM_Menu_AAFireControl_OpenTabletCaption">
+            <English>A/A FC Tablet</English>
+            <German>Fla-Kontrolle Tablet</German>
         </Key>
-        <Key ID="STR_A3USPCM_Menu_AAFireControl_AllFireText">
-            <English>Allow all AA to fire away freely</English>
-            <German>Erlaube allen Flugabwehrsystemen, frei zu feuern</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_AAFireControl_AllHoldCaption">
-            <English>All hold</English>
-            <German>Alle stopfen</German>
-        </Key>
-        <Key ID="STR_A3USPCM_Menu_AAFireControl_AllHoldText">
-            <English>All AA disregard recognized threats</English>
-            <German>Alle Flugabwehrsysteme ignorieren erkannte Bedrohungen</German>
+        <Key ID="STR_A3USPCM_Menu_AAFireControl_OpenTabletText">
+            <English>Open AA fire control tablet.</English>
+            <German>Öffne das Tablet zur Kontrolle der Flugabwehr.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_AlarmClockCaption">
             <English>Timer has expired</English>

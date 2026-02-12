@@ -20,6 +20,7 @@ class PREFIX {
                 isVisible = QUOTE(1);
                 iconPath = "";
                 selected = "";
+                reopenAfterExecution = 0;
                 updateAfterExecution = 0;
             };
 
@@ -66,10 +67,19 @@ class PREFIX {
                         assignedKey[] = {DIK_5};
                         conditionVisible = QUOTE(!isNil QQGVAR(securityReference));
                         expression = QUOTE([ARR_2(QUOTE(CBA_EVENT_ADVANCE_CYCLE_REFERENCE),player)] call CBA_fnc_localEvent);
+                        reopenAfterExecution = 1;
                         updateAfterExecution = 1;
                     };
 
                     class Sep1: SeparatorBase {};
+
+                    class ReturnToVehicle: ItemBase {
+                        itemName = CSTRING(Menu_OrdersSecurity_Item_ReturnToVehicle_DisplayName);
+                        assignedKey[] = {DIK_8};
+                        expression = QUOTE([QUOTE(CBA_EVENT_SECURITY_RETURN_TO_VEHICLE)] call CBA_fnc_localEvent);
+                        isActive = QUOTE(NotEmpty + NotEmptyRedTeam);
+                        isVisible = "0"; // No worky for now
+                    };
 
                     class ReturnToPosition: ItemBase {
                         itemName = CSTRING(Menu_OrdersSecurity_Item_ReturnToPosition_DisplayName);
