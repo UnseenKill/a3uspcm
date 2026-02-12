@@ -63,7 +63,7 @@ private _parentPath = [[
         call FUNC(findGWH);
     },
     {
-        [] isNotEqualTo nearestObjects[_this select 0, ["GroundWeaponHolder","WeaponHolderSimulated"], 300, true];
+        [] isNotEqualTo TEST_NOCIGS_IN_GWH(_this select 0);
     }
 ] call zen_context_menu_fnc_createAction, _parentPath, 0] call zen_context_menu_fnc_addAction;
 

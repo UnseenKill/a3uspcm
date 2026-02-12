@@ -10,3 +10,14 @@
     { (VEHICLE) isKindOf "Air" } ||\
     { (VEHICLE) isKindOf "Ship" } \
 )
+
+#define TEST_NOCIGS_IN_GWH(testPosition) \
+    (nearestObjects[testPosition, ["GroundWeaponHolder","WeaponHolderSimulated"], 300, true] select { \
+        !(_x isKindOf "cigs_base_cigpackItem") && { \
+            (weaponCargo _x isNotEqualTo []) || \
+            {backpackCargo _x isNotEqualTo []} || { \
+                (itemCargo _x findIf { _x find "cigs_" isEqualTo 0 } isEqualTo -1) && \
+                {magazineCargo _x findIf { _x find "cigs_" isEqualTo 0 } isEqualTo -1} \
+            } \
+        }; \
+    })
