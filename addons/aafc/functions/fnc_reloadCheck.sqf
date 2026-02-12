@@ -23,10 +23,9 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(reloadCheck),_this);
 
-params[
+if !assert(params[
     ["_vehicle", objNull, [objNull]]
-];
-
+]) exitWith {};
 if !assert(!isNull _vehicle) exitWith {};
 
 private _turret = assignedVehicleRole gunner _vehicle select 1;
@@ -45,11 +44,14 @@ _magazines apply {
         _vehicle removeMagazinesTurret[_magazine, _turret];
         _vehicle addMagazineTurret[_magazine, _turret];
 
-        if GVAR(sideChatContact) then {
-            _vehicle turretUnit _turret sideChat format[
+        if GVAR(sideChatFired) then {
+            private _sender = _vehicle turretUnit _turret;
+            private _message = format[
                 LLSTRING(Message_Reloading),
                 getText(configFile >> "CfgMagazines" >> _magazine >> "displayName")
             ];
+
+            CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT_FIRED,[ARR_2(_sender,_message)]);
         };
     };
 };

@@ -59,6 +59,9 @@ TRACE_1(QFUNCMAIN(miscUnstick),_this);
         _clone setSpeaker speaker _unit;
         _clone setSkill skill _unit;
         _clone setUnitPos unitPos _unit;
+        _clone setVariable["owner", player];
+        _clone setVariable[GVAR(assignedTeam), assignedTeam _unit];
+        _clone setVariable[GVAR(groupId), groupId _unit];
 
         deleteVehicle _unit;
 
@@ -67,14 +70,20 @@ TRACE_1(QFUNCMAIN(miscUnstick),_this);
 
         [{
             params["_clone"];
-            commandStop _clone;
+
+            _clone joinAs[group player, _clone getVariable GVAR(groupId)];
+            _clone assignTeam(_clone getVariable GVAR(assignedTeam));
+
+            _clone setVariable[GVAR(assignedTeam), nil];
+            _clone setVariable[GVAR(groupId), nil];
+
         }, [_clone], 0.15] call CBA_fnc_waitAndExecute;
 
         _clone;
     };
 
     private _group = createGroup side player;
-    (_units apply { [_x, _group] call _unstick }) joinSilent group player;
+    _units apply { [_x, _group] call _unstick };
     deleteGroup _group;
 };
 

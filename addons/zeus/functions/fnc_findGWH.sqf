@@ -25,7 +25,7 @@ params[
 ];
 
 allCurators apply {
-    _x addCuratorEditableObjects[nearestObjects[_position, ["GroundWeaponHolder","WeaponHolderSimulated"], 300], false];
+    _x addCuratorEditableObjects[TEST_NOCIGS_IN_GWH(_position), false];
 };
 
 nil;

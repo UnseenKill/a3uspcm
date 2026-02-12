@@ -15,44 +15,55 @@ Example:
 Returns:
     Nothing
 
+Scope:
+    Server, Unscheduled
+
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-params[
-    ["_group", grpNull, [grpNull]]
-];
-
+if !assert(params[
+    ["_group", nil, [grpNull]]
+]) exitWith {};
 if !assert(!isNull _group) exitWith {};
 
+/*
+CIWS fire report?
+
+_group getVariable QGVAR(vehicles) apply { _x addEventHandler["Fired", {
+    TRACE_1(QFUNC(initReportHandler),_this);
+}]};
+*/
+
 _group addEventHandler["EnemyDetected", {
-    params[["_group",grpNull,[grpNull]],["_enemy",objNull,[objNull]]];
+    params[
+        ["_group", nil, [grpNull]],
+        ["_enemy", nil, [objNull]]
+    ];
 
     INFO_3("'%1' detected enemy '%2' (isAir=%3)",_group,_enemy,_enemy isKindOf "Air");
 
     if (GVAR(reportAirOnly) && !(_enemy isKindOf "Air")) exitWith {};
 
-    if (_enemy getVariable[QGVAR(mseDetected), false] isNotEqualTo false) exitWith {};
+    if (!isNil { _enemy getVariable QGVAR(mseDetected) }) exitWith {};
     _enemy setVariable[QGVAR(mseDetected), createHashMap];
 
-    [{
-        call CBA_fnc_serverEvent;
-    }, [QGVAR(StartContactTracking), [_enemy]]] call CBA_fnc_execNextFrame;
+    CBA_EVENT_LOCAL(CBA_EVENT_AAFC_START_CONTACT_TRACK,[_enemy]);
+    CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_CONTACT_ADDED,[_enemy]);
 
-    if GVAR(sideChatContact) then {
-        leader _group sideChat format[
-            LLSTRING(Message_EnemyDetected), 
-            DISPLAY_NAME_UNIT(_enemy), 
-            mapGridPosition getPosATL _enemy, 
-            abs((leader _group distance _enemy) / 1000) toFixed 1, 
-            getDir _enemy toFixed 1, speed _enemy toFixed 1
-        ];
-    };
+    private _message = format[
+        LLSTRING(Message_EnemyDetected), 
+        DISPLAY_NAME_UNIT(_enemy), 
+        mapGridPosition getPosATL _enemy, 
+        abs((leader _group distance _enemy) / 1000) toFixed 1, 
+        getDir _enemy toFixed 1, speed _enemy toFixed 1
+    ];
 
-    if GVAR(playContactSound) then {
-        playSound QEGVAR(assets,AafcContact);
-    };
+    CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_CONTACT_UPDATE,[_enemy]);
+    CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT_CONTACT,[ARR_2(leader _group,_message)]);
 
-    player reveal _enemy;
+    _enemy addEventHandler["Killed", {
+        CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_CONTACT_UPDATE,_this);
+    }];
 
     _enemy addEventHandler["IncomingMissile", {
         params["_unit","_ammo","_vehicle","_instigator","_projectile"];
@@ -68,12 +79,14 @@ _group addEventHandler["EnemyDetected", {
 
         [_vehicle] call FUNC(reloadCheck);
 
-        if !GVAR(sideChatFired) exitWith {};
-
         private _key = hashValue _projectile;
 
         if (_key in (_unit getVariable QGVAR(mseDetected))) exitWith { TRACE_1("Ignoring duplicate missile report",_projectile) };
         _unit getVariable QGVAR(mseDetected) set[_key, true];
+
+        if GVAR(missileSafetyNet) then {
+            [_vehicle, _projectile] spawn FUNC(missileSafetyNetCheck);
+        };
 
         private _sender = _instigator;
 
@@ -94,7 +107,8 @@ _group addEventHandler["EnemyDetected", {
                 };
             };
 
-            _sender sideChat format[LLSTRING(Message_EnemyFiredAt), _missile, DISPLAY_NAME_UNIT(_unit)];
+            private _message = format[LLSTRING(Message_EnemyFiredAt), _missile, DISPLAY_NAME_UNIT(_unit)];
+            CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT_FIRED,[ARR_2(_sender,_message)]);
         };
     }];
 }];

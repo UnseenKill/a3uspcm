@@ -6,6 +6,8 @@ like AA Fire Control, the [i]Despawn Suppression Beacon™[/i] and accessing you
 assets from anywhere do [i]help[/i] you with single player gameplay and others are
 outright cheats.
 
+[pullquote][b]Fully MP compatible:[/b] in regards to the occasional user asking and the maturity of the project, code has been adjusted for multiplayer compatibility. Some features are restricted to the commander, but nothing should mess with your MP A3U saves anymore.[/pullquote]
+
 Many features can be configured via the addon settings and tweaked so it doesn't
 completely feel like cheating; more like getting assistance. E.g. you may
 choose that the "find intel" feature places its hints [i]close[/i] to intel instead of
@@ -23,10 +25,10 @@ directly on top of it, transfer FIA money back to your account with a markup, et
    [*] Unstick player AI from unresponsiveness
    [*] Uncompromize team and self so you can go undercover again
    [*] Show roadblocks on map
-   [*] Find intel around player's position (configurable via addon options)
-   [*] Emergency invincibility hot-button; press it quickly when you see the APFSDS flying towards you (configurable via addon controls; NO default button).
-   [*] Add any building/static/vehicle you're looking at to base buildable object list (added to save-game data)
-   [*] Add any vehicle you're looking at to undercover vehicle list (added to save-game data; suggested by jcferretti2020)
+   [*] Find intel around player's position
+   [*] Emergency invincibility hot-button; press it quickly when you see the APFSDS flying towards you
+   [*] Add any building/static/vehicle you're looking at to base buildable object list
+   [*] Add any vehicle you're looking at to undercover vehicle list
    [*] Access your air assets from any garage. They [i]are[/i] air assets after all, right?
    [*] Reveal a random zone if enemy markers are hidden
    [*] Buy decryption keys on the black market or right away change the amount of keys you have
@@ -130,8 +132,6 @@ directly on top of it, transfer FIA money back to your account with a markup, et
 [h2]Usage[/h2]
 
 A3USPCM is designed to work - and is tested - in Antistasi Ultimate Singleplayer (i.e. locally, LAN-hosted servers), [i]only[/i]. [strike]That means fero zucks have been given in regards to what'll happen if a non-host player executes any of the options available in the menu.[/strike]
-
-[pullquote][b]Fully MP compatible:[/b] in regards to the occasional user asking and the maturity of the project, code has been adjusted for multiplayer compatibility. Some features are restricted to the commander, but nothing should mess your A3U saves anymore.[/pullquote]
 
 It [i]might[/i] work with other Antistasi variants (Community, Plus), but that's also untested.
 

@@ -2,6 +2,7 @@ class CfgFunctions {
     class PREFIX {
         class COMPONENT {
             PATHTO_FNC(a3uChangeParameter);
+            PATHTO_FNC(aafcOpenTablet);
             PATHTO_FNC(emergencyInvincibility);
             PATHTO_FNC(fireSmokeLauncher);
             PATHTO_FNC(healGroup);

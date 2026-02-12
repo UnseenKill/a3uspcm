@@ -7,11 +7,13 @@ Description:
 
 Parameters:
     0: _unit - Unit whose loadout changed <OBJECT>
-    1: _newUnitLoadout - New unit loadout <ARRAY>
-    2: _oldUnitLoadout - Old unit loadout <ARRAY>
+    1: _slotItemName - Name of the item that was equipped/unequipped in the slot <STRING>
+    2: _slot - Number of the slot that was changed <NUMBER>
+    3: _assigned - Whether the item was assigned (true) or unassigned (false) <BOOL>
+    4: weapon - The weapon object that was changed, if applicable (otherwise "") <STRING>
 
 Optional:
-    3: _execute - Whether to execute the loadout change immediately or delay it
+    5: _execute - Whether to execute the loadout change immediately or delay it
         (default: false) <BOOL>
 
 Returns:
@@ -23,18 +25,16 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-//TRACE_1(QFUNC(onPlayerEventLoadout),_this);
+TRACE_1(QFUNC(onPlayerEventLoadout),_this);
 
 if !assert(params[
-    ["_unit", nil, [objNull]],
-    ["_newUnitLoadout", nil, [[]]],
-    ["_oldUnitLoadout", nil, [[]]]
+    ["_unit", nil, [objNull]]
 ]) exitWith {};
 
 if !assert(!isNull _unit) exitWith {};
 if (_unit isNotEqualTo player) exitWith {}; // Don't really know, if this is necessary
 
-private _execute = param[3, false, [true]];
+private _execute = param[5, false, [true]];
 
 // Suppress repeated calls to this function when user dumps his inventory
 if !(_execute) exitWith {
