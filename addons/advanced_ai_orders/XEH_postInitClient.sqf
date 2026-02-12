@@ -13,6 +13,8 @@ GVAR(securityReferenceSetting) = player;
             GVAR(securityReferenceSetting) = player;
         };
     }];
+
+    player addEventHandler["SlotItemChanged", { call FUNC(onPlayerEventLoadout) }];
 }] call FUNCMAIN(utilOnA3UClientInitDone);
 
 nil;
