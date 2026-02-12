@@ -68,7 +68,9 @@ _control ctrlAddEventHandler["ButtonClick", {
 
     GVAR(showAreas) = [];
     GVAR(groups) apply {
-        _x getVariable QGVAR(vehicles) apply {
+        _x getVariable QGVAR(vehicles) select {
+            _x call FUNC(canUnitFire);
+        } apply {
             GVAR(showAreas) append ([_x] call FUNC(drawVehicleEffectiveRangesMarkers));
         };
     };

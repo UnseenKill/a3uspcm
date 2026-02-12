@@ -99,7 +99,7 @@ private _drawMainMarkers = {
     };
 };
 
-["weaponsMissiles", "#(0.6,0,0)", 0] call _drawMainMarkers;
+["weaponsMissiles", "#(1,0,0)", 0] call _drawMainMarkers;
 ["weaponsGuns", "#(0.6,0,0.6)", 45] call _drawMainMarkers;
 
 _markers;
