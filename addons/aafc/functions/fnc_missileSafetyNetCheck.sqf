@@ -39,11 +39,11 @@ if ([_vehicle] call FUNC(canUnitFire)) exitWith {};
 
 private _index = GVAR(groups) findIf {
     _x getVariable QGVAR(vehicles) findIf {
-        [_x] call FUNC(canUnitFire);
+        (_x isEqualTo _vehicle) && { !([_x] call FUNC(canUnitFire)) };
     } != -1;
 };
 
-if (_index isEqualTo -1) then {
+if (_index isNotEqualTo -1) then {
     INFO_2("Deleting unauthorized missile '%1' from '%2'",_projectile,_vehicle);
     deleteVehicle _projectile;
 };
