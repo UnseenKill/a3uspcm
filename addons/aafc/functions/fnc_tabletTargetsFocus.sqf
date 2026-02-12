@@ -45,6 +45,11 @@ _control ctrlEnable true;
 _control ctrlMapAnimAdd[1, 0.25, player];
 ctrlMapAnimCommit _control;
 
+_control spawn {
+    waitUntil { ctrlMapAnimDone _this };
+    ctrlSetFocus _this;
+};
+
 _control = _tabFocused get "ctlContacts";
 lnbClear _control;
 

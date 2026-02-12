@@ -37,6 +37,11 @@ private _control = _tabHost get "ctlContacts";
 private _contact = GVAR(contacts) get _targetKey;
 if !assert(!isNil "_contact") exitWith {};
 
+// "No contacts reported" placeholder can leave once we add real contacts.
+if (_control lnbData[0,0] isEqualTo "") then {
+    _control lnbDeleteRow 0;
+};
+
 private _unit = _contact get "unit";
 private _index = _control lnbAddRow["", getText(configOf _unit >> "displayName")];
 

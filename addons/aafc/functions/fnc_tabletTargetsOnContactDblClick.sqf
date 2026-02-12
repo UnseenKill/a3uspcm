@@ -40,4 +40,9 @@ private _control = _tabHost get "ctlMap";
 _control ctrlMapAnimAdd[1, 0.75, getPosATL(_contact get "unit")];
 ctrlMapAnimCommit _control;
 
+_control spawn {
+    waitUntil { ctrlMapAnimDone _this };
+    ctrlSetFocus _this;
+};
+
 nil;
