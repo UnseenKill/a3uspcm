@@ -26,6 +26,7 @@ if !assert(params[
 ]) exitWith {};
 
 if (_tabFocused get "idc" isNotEqualTo IDC_TABHOST_TARGETS) exitWith {};
+if !GVAR(trackContacts) exitWith {};
 
 TRACE_1(QFUNC(tabletTargetsFocus),_this);
 
@@ -48,7 +49,7 @@ _control = _tabFocused get "ctlContacts";
 lnbClear _control;
 
 if (keys GVAR(contacts) isEqualTo []) exitWith {
-    _control lnbAddRow["No contacts reported."];
+    _control lnbAddRow[LLSTRING(Tablet_TabhostTargets_HintNoContactsReported_Text)];
 };
 
 keys GVAR(contacts) apply { [_x, false] call FUNC(tabletTargetsAddContact) };

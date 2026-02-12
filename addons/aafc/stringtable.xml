@@ -201,6 +201,10 @@
             <English>A/A Fire Control Configuration</English>
             <German>Konfiguration Luftabwehr Feuerkontrolle</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostConfig_HintConfigViaMenu_Text">
+            <English>Please configure the addon via the CONFIGURE ADDONS option from the main menu.\n\nLook for the A3USPCM section - A/A FC.</English>
+            <German>Bitte konfiguriere das Addon über die OPTION ADDONS KONFIGURIEREN im Hauptmenü.\n\nSuche nach dem A3USPCM Abschnitt - A/A FC.</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostOverview_BtnFireAtWill_Text">
             <English>Fire at will</English>
             <German>Feuer frei</German>
@@ -284,6 +288,14 @@
         <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostTargets_BtnShowAreas_Tooltip">
             <English>Show engagement areas of AA groups on the map as circles.</English>
             <German>Zeige Einsatzbereiche von Fla-Gruppen als Kreise auf der Karte an.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostTargets_HintNoContactsReported_Text">
+            <English>No contacts reported.</English>
+            <German>Keine Kontakte gemeldet.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Tablet_TabhostTargets_HintTrackingDisabled_Text">
+            <English>You have disabled contact tracking via the addons options.</English>
+            <German>Du hast die Zielverfolgung über die Addon-Optionen deaktiviert.</German>
         </Key>
     </Package>
 </Project>

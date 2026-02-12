@@ -34,7 +34,21 @@ TRACE_1(QFUNC(tabletTargetsSetup),_this);
 
 private["_control","_mapPosition"];
 
+if !GVAR(trackContacts) exitWith {
+    allControls _ctlTabHost apply {
+        if (ctrlIDC _x isNotEqualTo IDC_TARGETS_LBL_DISABLED) then {
+            _x ctrlShow false;
+            _x ctrlSetPositionW 0;
+            _x ctrlSetPositionH 0;
+            _x ctrlCommit 0;
+        };
+    };
+};
+
 CBA_UI_SUBSCRIBE(CBA_EVENT_AAFC_CONTACT_UPDATE,{call FUNC(tabletTargetsOnContactUpdate)});
+
+_control = _ctlTabHost controlsGroupCtrl IDC_TARGETS_LBL_DISABLED;
+ctrlDelete _control;
 
 _control = _ctlTabHost controlsGroupCtrl IDC_TARGETS_BTN_FOCUSMAP;
 _control ctrlAddEventHandler["ButtonClick", {

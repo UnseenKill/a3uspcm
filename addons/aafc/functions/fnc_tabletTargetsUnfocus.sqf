@@ -27,6 +27,7 @@ params[
 
 if (isNil "_tabUnfocused") exitWith {};
 if (_tabUnfocused get "idc" isNotEqualTo IDC_TABHOST_TARGETS) exitWith {};
+if !GVAR(trackContacts) exitWith {};
 
 TRACE_1(QFUNC(tabletTargetsUnfocus),_this);
 

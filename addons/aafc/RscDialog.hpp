@@ -437,6 +437,15 @@ class GVAR(ConfigTablet) {
                             idc = IDC_TABHOST_TARGETS;
 
                             class Controls {
+                                class TrackingDisableHint: GVAR(RscText) {
+                                    idc = IDC_TARGETS_LBL_DISABLED;
+                                    deletable = 1;
+                                    style = QUOTE(ST_MULTI + ST_CENTER);
+                                    w = QUOTE(TABLET_CLIENTAREA_WIDTH);
+                                    h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
+                                    text = CSTRING(Tablet_TabhostTargets_HintTrackingDisabled_Text);
+                                };
+
                                 class Contacts: GVAR(RscListNBox) {
                                     idc = IDC_TARGETS_LNB_CONTACTS;
                                     w = QUOTE(UI_GRID_W * 10);
@@ -476,11 +485,12 @@ class GVAR(ConfigTablet) {
                             idc = IDC_TABHOST_CONFIGURATION;
 
                             class Controls {
-                                class BG: GVAR(RscText) {
+                                class Hint: GVAR(RscText) {
+                                    style = QUOTE(ST_MULTI + ST_CENTER);
+                                    y = QUOTE((TABLET_CLIENTAREA_HEIGHT - UI_GRID_H * 3) / 2);
                                     w = QUOTE(TABLET_CLIENTAREA_WIDTH);
-                                    h = QUOTE(TABLET_CLIENTAREA_HEIGHT);
-                                    colorBackground[] = {1,0,1,1};
-                                    text = "Configuration tab content goes here.";
+                                    h = QUOTE(UI_GRID_H * 3);
+                                    text = CSTRING(Tablet_TabhostConfig_HintConfigViaMenu_Text);
                                 };
                             };
                         };
