@@ -14,5 +14,6 @@ PREP(securityGuardFront);
 PREP(securityGuardRear);
 PREP(securityPull360);
 PREP(securityReturnToPosition);
+PREP(securityReturnToVehicle);
 PREP(showNotification);
 PREP(updateCommsMenu);

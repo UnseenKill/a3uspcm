@@ -28,6 +28,8 @@ _this spawn {
     INFO_2("player %1 wants %2 recruited",name player,_typeUnit);
     TRACE_1(QFUNCMAIN(recruitForPlayer),GVAR(recruitSkipEnemyCheck));
 
+    recruitCooldown = 0;
+
     if !GVAR(recruitSkipEnemyCheck) then {
         [A3A_faction_reb get _typeUnit] call A3A_fnc_reinfPlayer;
     } else {

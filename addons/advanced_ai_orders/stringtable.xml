@@ -93,6 +93,10 @@
             <English>Return/reassume position</English>
             <German>Position wiederaufnehmen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_OrdersSecurity_Item_ReturnToVehicle_DisplayName">
+            <English>Return to and board vehicle</English>
+            <German>Zum Fahrzeug zurückkehren und einsteigen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Advanced_AI_Orders_Menu_Security_Item_Settings_DisplayName">
             <English>Settings</English>
             <German>Einstellungen</German>
