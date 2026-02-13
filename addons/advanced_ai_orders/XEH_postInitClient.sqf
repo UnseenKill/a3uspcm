@@ -15,6 +15,10 @@ GVAR(securityReferenceSetting) = player;
     }];
 
     player addEventHandler["SlotItemChanged", { call FUNC(onPlayerEventLoadout) }];
+
+    [{
+        [player] call FUNC(onPlayerEventLoadout);
+    }, nil, 10] call CBA_fnc_waitAndExecute;
 }] call FUNCMAIN(utilOnA3UClientInitDone);
 
 nil;
