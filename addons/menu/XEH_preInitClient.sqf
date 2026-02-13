@@ -64,6 +64,14 @@
     { call EFUNC(aafc,toggleROEAll) }
 ] call CBA_fnc_addKeybind;
 
+[
+    ELSTRING(main,Title),
+    QEGVAR(aafc,HotkeysToggleUI),
+    [ELSTRING(aafc,HotkeysToggleUI), ELSTRING(aafc,HotkeysToggleUITooltip)],
+    {},
+    { createDialog QEGVAR(aafc,ConfigTablet) }
+] call CBA_fnc_addKeybind;
+
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;
