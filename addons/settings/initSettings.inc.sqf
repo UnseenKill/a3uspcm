@@ -769,6 +769,38 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(misc,augmentHelipads), "LIST",
+    [ELSTRING(misc,Settings_augmentHelipads_DisplayName), ELSTRING(misc,Settings_augmentHelipads_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    [ // default
+        ["none","pink","red","blue","green","white","yellow","custom"],
+        [
+            ELSTRING(misc,Settings_augmentHelipads_Type_None),
+            ELSTRING(misc,Settings_augmentHelipads_Type_Pink),
+            ELSTRING(misc,Settings_augmentHelipads_Type_Red),
+            ELSTRING(misc,Settings_augmentHelipads_Type_Blue),
+            ELSTRING(misc,Settings_augmentHelipads_Type_Green),
+            ELSTRING(misc,Settings_augmentHelipads_Type_White),
+            ELSTRING(misc,Settings_augmentHelipads_Type_Yellow),
+            ELSTRING(misc,Settings_augmentHelipads_Type_Custom)
+        ], 2
+    ],
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(misc,augmentHelipadsCustom), "EDITBOX",
+    [ELSTRING(misc,Settings_augmentHelipadsCustom_DisplayName), ELSTRING(misc,Settings_augmentHelipadsCustom_Tooltip)],
+    [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
+    "", // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(weapons,vehicleWeaponsAdditionalClasses), "EDITBOX",
     [ELSTRING(weapons,Settings_vehicleWeaponsAdditionalClasses_DisplayName), ELSTRING(weapons,Settings_vehicleWeaponsAdditionalClasses_Tooltip)],
     [ELSTRING(main,Title), LSTRING(CategoryExperimental_DisplayName)],
