@@ -20,11 +20,16 @@ Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(augmentHelipad),_this);
+//#define ATTACH_LIGHTS
 
 if !assert(params[
     ["_object", nil, [objNull]]
 ]) exitWith {};
 if !assert(!isNull _object) exitWith {};
+
+// Let the lights move around with the preview object, sacrifice some of the
+// precision of not doing that.
+private _attachLights = !(isNil "A3A_building_EHDB");
 
 if (GVAR(augmentHelipads) isEqualTo "none") exitWith {};
 if !(isClass(configFile >> "CfgPatches" >> "A3_Data_F_Heli")) exitWith {
@@ -46,7 +51,7 @@ if (_types isEqualTo []) exitWith {
 };
 
 // Clean up old lights; only used in debugging, since this is a postInit handler...
-attachedObjects _object apply {
+_object getVariable[QGVAR(lights), []] apply {
     if (_x getVariable[QGVAR(augmentHelipadLight), false]) then {
         detach _x;
         deleteVehicle _x;
@@ -58,6 +63,19 @@ private _stepAngle = 360 / (count _types); // Halp, step angle, I'm stuck!
 private _angle = -_stepAngle;
 private _circular = getText(configOf _object >> "model") find "Square" isEqualTo -1;
 private _radius = [5.6, 7] select _circular;
+
+if (isNil { _object getVariable QGVAR(ehDeleted) }) then {
+    _object setVariable[QGVAR(ehDeleted), _object addEventHandler["Deleted", {
+        params["_object"];
+        INFO_1("Cleaning up lights after %1 deletion.",_object);
+        _object getVariable[QGVAR(lights), []] apply {
+            if (_x getVariable[QGVAR(augmentHelipadLight), false]) then {
+                detach _x;
+                deleteVehicle _x;
+            };
+        };
+    }]];
+};
 
 _object setVariable[QGVAR(lights), _types apply {
     ADD(_angle,_stepAngle);
@@ -94,7 +112,16 @@ _object setVariable[QGVAR(lights), _types apply {
 
     TRACE_4(QFUNC(augmentHelipad),_circular,_class,_offsetAngle,_offset);
     private _light = createVehicle[_class, [0,0,0], [], 0, "NONE"];
-    _light attachTo[_object, _offset];
+
+    if (_attachLights) then {
+        _light attachTo[_object, _offset];
+    } else {
+        private _pos = _object modelToWorld _offset;
+        _pos set[2, getTerrainHeightASL _pos];
+        _light setVectorUp surfaceNormal _pos;
+        _light setPosASL _pos;
+    };
+
     _light setVariable[QGVAR(augmentHelipadLight), true];
     _light;
 }];
