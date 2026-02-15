@@ -49,6 +49,54 @@
             <English>Add ACE3 dug trenches to saved buildings list (WARNING: they're subject to garbage collection)</English>
             <German>Füge ACE3 Schützengräben zur Liste gespeicherter Gebäude hinzu (WARNUNG: sie unterliegen dann der Garbage Collection)</German>
         </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipadsCustom_DisplayName">
+            <English>Custom helipad augmentation</English>
+            <German>Benutzerdefinierte Helipad-Erweiterung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipadsCustom_Tooltip">
+            <English>Comma-separated list of landing pad lights in clock-wise order (R,G,B,W,Y,P).\nTo place six lights each at 60° steps, enter: R,G,R,G,R,B (alternate between red and green, last one blue).</English>
+            <German>Komma-getrennte Liste von Landeplatzlichtern im Uhrzeigersinn (R,G,B,W,Y,P).\nUm sechs Lichter in 60°-Schritten zu platzieren, gib das ein: R,G,R,G,R,B (abwechselnd rot und grün, das letzte blau).</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipads_DisplayName">
+            <English>Augment helipads</English>
+            <German>Helipads erweitern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipads_Tooltip">
+            <English>Adds landing lights to A3U helipads. Requires Helicopters DLC.</English>
+            <German>Fügt A3U Helipads Landelichter hinzu. Benötigt Helicopters DLC.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipads_Type_Blue">
+            <English>Blue</English>
+            <German>Blau</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipads_Type_Custom">
+            <English>Custom</English>
+            <German>Benutzerdefiniert</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipads_Type_Green">
+            <English>Green</English>
+            <German>Grün</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipads_Type_None">
+            <English>None</English>
+            <German>Keine</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipads_Type_Pink">
+            <English>Pink</English>
+            <German>Pink</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipads_Type_Red">
+            <English>Red</English>
+            <German>Rot</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipads_Type_White">
+            <English>White</English>
+            <German>Weiß</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Misc_Settings_augmentHelipads_Type_Yellow">
+            <English>Yellow</English>
+            <German>Gelb</German>
+        </Key>
         <Key ID="STR_A3USPCM_Misc_SnapNeck">
             <English>Snap neck</English>
             <German>Genick brechen</German>
