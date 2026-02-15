@@ -1,12 +1,7 @@
 #include "script_component.hpp"
 
-GVAR(markerNameMapping) = createHashMap;
-GVAR(markersRestored) = false;
-GVAR(storedMarkers) = nil;
-
 [{
     INFO("loading stored markers");
-    if is3DENPreview exitWith { GVAR(storedMarkers) = createHashMap };
     [] call FUNC(loadMarkers);
 }] call FUNCMAIN(utilOnA3UServerInitDone);
 
@@ -19,7 +14,17 @@ GVAR(storedMarkers) = nil;
         TRACE_1("invalid value",GVAR(storedMarkers));
     };
 
-    [QGVAR(storedMarkers), +GVAR(storedMarkers)] call A3A_fnc_setStatVariable;
+    GVAR(storedMarkers) apply { TRACE_2(CBA_EVENT_SERVER_SAVEGAME_BEFORE,_x,_y) };
+
+    private _index = 499;
+    private _storedData = GVAR(storedMarkers) apply {
+        INC(_index);
+        private _id = format["%1#%2", QGVAR(markerId), _index];
+        TRACE_3(CBA_EVENT_SERVER_SAVEGAME_BEFORE,_x,_id,_y);
+        [_id, _y];
+    };
+
+    [QGVAR(storedMarkers), _storedData] call A3A_fnc_setStatVariable;
 }] call CBA_fnc_addEventHandler;
 
 nil;
