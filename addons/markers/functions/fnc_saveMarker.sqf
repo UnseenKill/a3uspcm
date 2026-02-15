@@ -42,11 +42,11 @@ private _markerProperties = [
     /* 11 */ markerType _marker
 ];
 
-if (_created && { _marker in _markerProperties }) then {
+if (_created && { _marker in GVAR(storedMarkers) }) then {
     WARNING_1("Forced to overwrite marker %1",str _marker);
 };
 
-if (!_created && { !(_marker in _markerProperties) }) then {
+if (!_created && { !(_marker in GVAR(storedMarkers)) }) then {
     WARNING_1("Marker %1 not found in stored markers, but was updated. Saving it anyway.",str _marker);
 };
 
