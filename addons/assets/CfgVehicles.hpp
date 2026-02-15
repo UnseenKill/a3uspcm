@@ -128,7 +128,7 @@ class CfgVehicles {
         hiddenSelections[] = {"Camo_Signs","Camo"};
         hiddenSelectionsTextures[] = {
             QPATHTO_T(ui\assets-SupplyBoxBase_decals_ca.paa),
-            "\a3\Supplies_F_Enoch\Ammoboxes\Data\AmmoBox_EAF_CO.paa"
+            "A3\Weapons_F\Ammoboxes\data\AmmoBox_CO.paa"
         };
         mapSize = 1.47;
 
