@@ -126,7 +126,10 @@ class CfgVehicles {
         ace_dragging_canDrag = 1;
 
         hiddenSelections[] = {"Camo_Signs","Camo"};
-        hiddenSelectionsTextures[] = {"A3\Weapons_F\Ammoboxes\data\AmmoBox_signs_CA.paa","A3\Weapons_F\Ammoboxes\data\AmmoBox_CO.paa"};
+        hiddenSelectionsTextures[] = {
+            QPATHTO_T(ui\assets-SupplyBoxBase_decals_ca.paa),
+            "\a3\Supplies_F_Enoch\Ammoboxes\Data\AmmoBox_EAF_CO.paa"
+        };
         mapSize = 1.47;
 
         class A3A_logistics_Cargo {
@@ -148,7 +151,6 @@ class CfgVehicles {
 
         displayName = CSTRING(SupplyBoxLarge_DisplayName);
         editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Box_NATO_AmmoVeh_F.jpg";
-        hiddenSelectionsTextures[] = {"A3\Weapons_F\Ammoboxes\data\AmmoBox_signs_CA.paa","A3\Weapons_F\Ammoboxes\data\AmmoVeh_CO.paa"};
         icon = "iconCrateVeh";
         mapSize = 1.53;
         maximumLoad = 14400;
@@ -169,6 +171,7 @@ class CfgVehicles {
 
         displayName = CSTRING(SupplyBoxMedium_DisplayName);
         editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Box_NATO_Wps_F.jpg";
+        hiddenSelectionsMaterials[] = {"a3\data_f\default_alpha.rvmat","a3\Supplies_F_Enoch\Ammoboxes\Data\AmmoBox_EAF.rvmat"};
         icon = "iconCrateWpns";
         mapSize = 1.81;
         maximumLoad = 4800;
@@ -176,6 +179,15 @@ class CfgVehicles {
 
         class A3A_logistics_Cargo: A3A_logistics_Cargo {
             offset[] = {0,0,0.17};
+        };
+
+        class SimpleObject {
+            animate[] = {};
+            eden = 1;
+            hide[] = {};
+            init = "''";
+            verticalOffset = 0.189;
+            verticalOffsetWorld = 0;
         };
     };
 
@@ -191,6 +203,38 @@ class CfgVehicles {
         class A3A_logistics_Cargo: A3A_logistics_Cargo {
             offset[] = {0,0,0.27};
             rotation[] = {1,0,0};
+        };
+
+        class AnimationSources {
+            class Ammo_source {
+                animPeriod = 1;
+                initPhase = 1;
+                source = "user";
+            };
+            class AmmoOrd_source {
+                animPeriod = 1;
+                initPhase = 1;
+                source = "user";
+            };
+            class Grenades_source {
+                animPeriod = 1;
+                initPhase = 1;
+                source = "user";
+            };
+            class Support_source {
+                animPeriod = 1;
+                initPhase = 0;
+                source = "user";
+            };
+        };
+
+        class SimpleObject {
+            animate[] = {{"ammo_hide",1},{"ammoord_hide",1},{"grenades_hide",1},{"support_hide",0}};
+            eden = 1;
+            hide[] = {};
+            init = "''";
+            verticalOffset = 0.284;
+            verticalOffsetWorld = 0;
         };
     };
 
