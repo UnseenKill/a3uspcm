@@ -2,12 +2,14 @@
 
 [] call FUNC(initItemContextMenu);
 
-#define ADD_MISSION_EH(eventName,localIndex,func) if true then {\
+#define ADD_MISSION_EH(eventName,localIndex,func) if true then { \
     addMissionEventHandler[QUOTE(eventName), { \
-        if ((_this select localIndex) && {(_this select 0) find "_USER_DEFINED" isEqualTo 0} && {[] call FUNC(canEraseMarkers)}) then {\
+        if (GVAR(markersRestored) && { _this select localIndex } && \
+                { (_this select 0) find "_USER_DEFINED" isEqualTo 0 } && \
+                { [] call FUNC(canEraseMarkers) }) then { \
             TRACE_1(QFUNC(eventName),_this); \
-            _this remoteExec[QUOTE(func), 2];\
-        };\
+            _this remoteExec[QUOTE(func), 2]; \
+        }; \
     }]; \
 }
 

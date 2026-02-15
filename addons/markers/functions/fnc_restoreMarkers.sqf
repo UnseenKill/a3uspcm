@@ -78,5 +78,6 @@ GVAR(storedMarkers) apply {
 };
 
 GVAR(markersRestored) = true;
+publicVariable QGVAR(markersRestored);
 
 nil;

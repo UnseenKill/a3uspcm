@@ -33,6 +33,7 @@ if (isNil QGVAR(storedMarkers)) then {
     GVAR(storedMarkers) = createHashMap;
 } else {
     INFO("Loading saved markers");
+    TRACE_2(QFUNC(loadMarkers),typeName GVAR(storedMarkers),GVAR(storedMarkers));
 
     if (GVAR(storedMarkers) isEqualType []) then {
         GVAR(storedMarkers) = createHashMapFromArray GVAR(storedMarkers);

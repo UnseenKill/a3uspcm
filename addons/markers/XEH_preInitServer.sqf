@@ -1,12 +1,9 @@
 #include "script_component.hpp"
 
 GVAR(markerNameMapping) = createHashMap;
-GVAR(markersRestored) = false;
-GVAR(storedMarkers) = nil;
 
 [{
     INFO("loading stored markers");
-    if is3DENPreview exitWith { GVAR(storedMarkers) = createHashMap };
     [] call FUNC(loadMarkers);
 }] call FUNCMAIN(utilOnA3UServerInitDone);
 
