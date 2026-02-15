@@ -38,7 +38,7 @@ private _execute = param[5, false, [true]];
 
 // Suppress repeated calls to this function when user dumps his inventory
 if !(_execute) exitWith {
-    GVAR(fireLoadoutEventAfter) = diag_tickTime + (missionNamespace getVariable[QGVAR(waitAndExecuteDelay), 5]);
+    GVAR(fireLoadoutEventAfter) = diag_tickTime + (missionNamespace getVariable[QGVAR(waitAndExecuteDelay), 3]);
 
     if (isNil QGVAR(fireLoadoutScript)) then {
         GVAR(fireLoadoutScript) = (_this + [true]) spawn {

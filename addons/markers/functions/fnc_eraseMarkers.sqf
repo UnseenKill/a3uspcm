@@ -40,7 +40,7 @@ GVAR(MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
 
     private _nearestMarker = [allMapMarkers, _pos] call BIS_fnc_nearestPosition;
 
-    if !(_nearestMarker in GVAR(markerNameMapping)) exitWith {
+    if !(_nearestMarker in GVAR(storedMarkers)) exitWith {
         [
             LLSTRING(HintCaption),
             LLSTRING(HintNoMarkerFound)
@@ -48,11 +48,8 @@ GVAR(MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
         playSound "A3AP_UiFailure";
     };
 
-    private _markerId = GVAR(markerNameMapping) get _nearestMarker;
     deleteMarker _nearestMarker;
-
-    GVAR(markerNameMapping) deleteAt _nearestMarker;
-    GVAR(storedMarkers) deleteAt _markerId;
+    GVAR(storedMarkers) deleteAt _nearestMarker;
 }];
 
 [] spawn {

@@ -37,6 +37,14 @@
             <English>Toggle A/A fire control rules of engagement for all A/A groups</English>
             <German>Fla-Feuerkontrolle ROE für alle Fla-Gruppen wechseln</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_HotkeysToggleUI">
+            <English>Toggle A/A FC UI</English>
+            <German>A/A FC UI aufrufen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_HotkeysToggleUITooltip">
+            <English>Toggle A/A fire control configuration UI</English>
+            <German>A/A Feuerkontrolle Konfigurations-UI aufrufen</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Message_AARegistered">
             <English>AA group reporting in</English>
             <German>AA Gruppe meldet Bereitschaft</German>
