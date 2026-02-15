@@ -51,6 +51,7 @@ if (!_created && { !(_marker in GVAR(storedMarkers)) }) then {
 };
 
 INFO_1("Considering created marker %1 for saving",str _marker);
+TRACE_2(QFUNC(saveMarker),_marker,_markerProperties);
 GVAR(storedMarkers) set[_marker, _markerProperties];
 
 nil;

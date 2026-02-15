@@ -45,4 +45,6 @@ if (isNil QGVAR(storedMarkers)) then {
     };
 };
 
+GVAR(storedMarkers) apply { TRACE_2(QFUNC(loadMarkers),_x,_y) };
+
 nil;

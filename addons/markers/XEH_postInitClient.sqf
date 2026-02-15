@@ -15,6 +15,6 @@
 
 ADD_MISSION_EH(MarkerCreated,3,FUNC(onMarkerCreated));
 ADD_MISSION_EH(MarkerDeleted,1,FUNC(onMarkerDeleted));
-ADD_MISSION_EH(MarkerUpdated,1,FUNC(onMarkerUpdated));
+//ADD_MISSION_EH(MarkerUpdated,1,FUNC(onMarkerUpdated));
 
 nil;
