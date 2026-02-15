@@ -116,10 +116,13 @@ _object setVariable[QGVAR(lights), _types apply {
     if (_attachLights) then {
         _light attachTo[_object, _offset];
     } else {
-        private _pos = _object modelToWorld _offset;
-        _pos set[2, getTerrainHeightASL _pos];
-        _light setVectorUp surfaceNormal _pos;
-        _light setPosASL _pos;
+        isNil {
+            private _pos = _object modelToWorld _offset;
+            _pos set[2, getTerrainHeightASL _pos];
+            _light setVelocity [0,0,0];
+            _light setVectorUp surfaceNormal _pos;
+            _light setPosASL _pos;
+        };
     };
 
     _light setVariable[QGVAR(augmentHelipadLight), true];
