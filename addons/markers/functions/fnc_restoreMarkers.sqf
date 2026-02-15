@@ -28,36 +28,23 @@ if !assert(params[
 if !assert(!isNull _player) exitWith {};
 
 private _ownerId = owner _player;
-private _nextId = {
-    private _n = -1;
-    private _id = "";
 
-    while { true } do {
-        INC(_n);
+keys GVAR(storedMarkers) apply {
+    private _properties = GVAR(storedMarkers) get _x;
 
-        _id = format["_USER_DEFINED #%1/%2/1", _ownerId, _n];
+    _x splitString "#" params["_markerPrefix","_markerId"];
+    TRACE_3(QFUNC(restoreMarkers),_x,_markerPrefix,_markerId);
 
-        if (markerType _id isEqualTo "") then {
-            break;
-        };
+    if (_markerPrefix isEqualTo QGVAR(markerId)) then {
+        _markerId = format["_USER_DEFINED #%1/%2/1", _ownerId, _markerId];
+        GVAR(storedMarkers) deleteAt _x;
+        GVAR(storedMarkers) set[_markerId, _properties];
+    } else {
+        WARNING_1("Keeping out-of-date marker id: %1",_x);
+        _markerId = _x;
     };
 
-    _id;
-};
-
-GVAR(storedMarkers) apply {
-    private _markerId = [] call _nextId;
-    private _properties = _y;
-
-    // while-loop terminates after hard-coded 10k iterations. If we have this
-    // many markers, we have bigger problems than a few missing ones.
-    if (_markerId isEqualTo "") exitWith {
-        WARNING_1("Failed to restore marker for %1: while-loop limit reached",_ownerId);
-    };
-
-    GVAR(markerNameMapping) set[_markerId, _x];
-
-    TRACE_3(QFUNC(restoreMarkers),_x,_markerId,_properties);
+    TRACE_2(QFUNC(restoreMarkers),_markerId,_properties);
 
     private _marker = createMarker[_markerId, _properties select 6];
 
@@ -78,5 +65,6 @@ GVAR(storedMarkers) apply {
 };
 
 GVAR(markersRestored) = true;
+publicVariable QGVAR(markersRestored);
 
 nil;
