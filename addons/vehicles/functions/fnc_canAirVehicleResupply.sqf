@@ -29,8 +29,6 @@ if !assert(params[
 if !assert(!isNull _target) exitWith {};
 if !assert(!isNull _player) exitWith {};
 
-if true exitWith { true };
-
-alive _target && {
-    !(_target getVariable[QGVAR(willResupply), false])
-};
+(alive _target) && 
+{ crew _target isNotEqualTo [] } &&
+{ !(_target getVariable[QGVAR(willResupply), false]) };

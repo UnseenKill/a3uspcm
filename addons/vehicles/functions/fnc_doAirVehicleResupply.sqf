@@ -33,11 +33,6 @@ _target setVariable[QGVAR(willResupply), true, true];
 
 private _group = group driver _target;
 
-_target removeAllEventHandlers "Engine";
-_target addEventHandler["Engine", {
-    TRACE_1("Engine",_this);
-}];
-
 _group removeAllEventHandlers "WaypointComplete";
 _group addEventHandler["WaypointComplete", { call FUNC(resupplyOnWaypointComplete) }];
 
