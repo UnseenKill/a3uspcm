@@ -31,7 +31,16 @@ if (isPlayer leader _group) exitWith {};
 
 private _wp = waypoints _group select _wpIndex;
 
-if (waypointStatements _wp findIf {_x find "LAND" isNotEqualTo -1} isEqualTo -1) exitWith { TRACE_1("IGNORE",waypointStatements _wp)};
+TRACE_1(QFUNC(resupplyOnWaypointComplete),waypointType _wp);
+TRACE_1(QFUNC(resupplyOnWaypointComplete),waypointName _wp);
+TRACE_1(QFUNC(resupplyOnWaypointComplete),waypointDescription _wp);
+TRACE_1(QFUNC(resupplyOnWaypointComplete),waypointStatements _wp);
+TRACE_1(QFUNC(resupplyOnWaypointComplete),waypointPosition _wp);
+
+if (
+    (waypointType _wp isNotEqualTo "SCRIPTED" || { waypointDescription _wp isNotEqualTo "Land" }) &&
+    {waypointStatements _wp findIf {_x find "LAND" isNotEqualTo -1} isEqualTo -1}
+) exitWith { TRACE_1("IGNORE",waypointStatements _wp)};
 
 [leader _group, LLSTRING(Resupply_UAVPilot_AnnounceLanding_Text)] call FUNC(resupplyPilotAnnounce);
 [leader _group, objectParent leader _group] spawn FUNC(resupplyWaitForVehicle);
