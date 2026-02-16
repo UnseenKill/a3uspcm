@@ -77,6 +77,10 @@
             <English>Vehicle will be resupplied after landings.</English>
             <German>Fahrzeug wird nach Landungen versorgt.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceRotorFailed_Text">
+            <English>Failed to restore rotor animation within time limit.</English>
+            <German>Rotoranimation konnte innerhalb des Zeitlimits nicht wiederhergestellt werden.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceVehicleReady_Text">
             <English>Vehicle is ready for resupply.</English>
             <German>Fahrzeug ist bereit für Nachschub.</German>
