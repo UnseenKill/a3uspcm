@@ -699,6 +699,36 @@
 // Vehicles
 
 [
+    QEGVAR(vehicles,resupplyDelay), "TIME",
+    [ELSTRING(vehicles,Settings_resupplyDelay_DisplayName), ELSTRING(vehicles,Settings_resupplyDelay_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    [0, 3600, 300, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(vehicles,resupplyRequireEngineer), "CHECKBOX",
+    [ELSTRING(vehicles,Settings_resupplyRequireEngineer_DisplayName), ELSTRING(vehicles,Settings_resupplyRequireEngineer_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(vehicles,resupplyUseGarageBoxMethod), "CHECKBOX",
+    [ELSTRING(vehicles,Settings_resupplyUseGarageBoxMethod_DisplayName), ELSTRING(vehicles,Settings_resupplyUseGarageBoxMethod_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(vehicles,seatsUseFallback), "CHECKBOX",
     [ELSTRING(vehicles,Settings_seatsUseFallback_DisplayName), ELSTRING(vehicles,Settings_seatsUseFallback_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],

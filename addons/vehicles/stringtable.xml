@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3USPCM">
     <Package name="Vehicles">
+        <Key ID="STR_A3USPCM_Vehicles_AirVehicleResupply_Action_DisplayName">
+            <English>Resupply after landing</English>
+            <German>Nachschub nach der Landung</German>
+        </Key>
         <Key ID="STR_A3USPCM_Vehicles_Component">
             <English>A3USPCM - Vehicles Component</English>
             <German>A3USPCM - Fahrzeuge Komponente</German>
@@ -13,29 +17,117 @@
             <English>Switch to the gunner seat or any other configured seat of a vehicle.</English>
             <German>Wechselt in den Geschützmannssitz oder einen anderen konfigurierten Sitz eines Fahrzeugs.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_Type_AmmoYes">
+            <English>rearmed</English>
+            <German>neubewaffnet</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_Type_FuelYes">
+            <English>refueled</English>
+            <German>betankt</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_Type_RepairYes">
+            <English>repaired</English>
+            <German>repariert</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceEngineOffFailed_Text">
+            <English>Failed to turn off engine within time limit.</English>
+            <German>Motor innerhalb des Zeitlimits nicht ausgeschaltet.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceLandingFailed_Text">
+            <English>Failed to land within time limit.</English>
+            <German>Landung innerhalb des Zeitlimits fehlgeschlagen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceLandingSuccess_Text">
+            <English>Feet are dry.</English>
+            <German>Füße sind trocken.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceLanding_Text">
+            <English>Coming in for a landing...</English>
+            <German>Landung für Nachschub...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceNoResupplyAirborne_Text">
+            <English>Mechanics told us, it's our turn to get resupplied. Alas, we're airborne again...</English>
+            <German>Die Mechaniker haben uns gesagt, dass wir an der Reihe sind, Nachschub zu bekommen. Leider sind wir wieder in der Luft...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceNoResupplyEngineOn_Text">
+            <English>Cannot resupply, engine is still on...</English>
+            <German>Nachschub nicht möglich, Motor ist noch an...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceNoResupplyNoEngineer_Text">
+            <English>Cannot resupply, no engineer in the garrison...</English>
+            <German>Nachschub nicht möglich, kein Mechaniker in der Garnison...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceNoResupplyNoMarker_Text">
+            <English>Cannot resupply, we've landed in the boondocks, Sir...</English>
+            <German>Nachschub nicht möglich, wir sind in der Pampa gelandet, Sir...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceNoResupplyTooFar_Text">
+            <English>Cannot resupply, we've landed, but not within the nearest location (%1).</English>
+            <German>Nachschub nicht möglich, wir sind zu weit von der nächsten Örtlichkeit (%1) entfernt gelandet...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceResupplyComplete_Text">
+            <English>Resupply complete. Vehicle has been: %1.</English>
+            <German>Nachschub abgeschlossen. Fahrzeug wurde: %1.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceResupplyNothing_Text">
+            <English>The mechanics have polished the exterior. We have no resupply sources in the garage, so that's all they could do...</English>
+            <German>Die Mechaniker haben die Außenseite poliert. Es gibt keine Nachschubquellen in der Garage, also war das alles, was sie tun konnten...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceResupply_Text">
+            <English>Vehicle will be resupplied after landings.</English>
+            <German>Fahrzeug wird nach Landungen versorgt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Resupply_UAVPilot_AnnounceVehicleReady_Text">
+            <English>Vehicle is ready for resupply.</English>
+            <German>Fahrzeug ist bereit für Nachschub.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Vehicles_Settings_Category_DisplayName">
             <English>Vehicles</English>
             <German>Fahrzeuge</German>
         </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Settings_resupplyDelay_DisplayName">
+            <English>[Resupply] Air vehicle resupply delay</English>
+            <German>[Nachschub] Nachschubverzögerung für Luftfahrzeuge</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Settings_resupplyDelay_Tooltip">
+            <English>Time in seconds between landing and resupply of an air vehicle.</English>
+            <German>Zeit in Sekunden zwischen der Landung und der Versorgung eines Luftfahrzeugs.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Settings_resupplyRequireEngineer_DisplayName">
+            <English>[Resupply] Require engineer</English>
+            <German>[Nachschub] Mechaniker erforderlich</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Settings_resupplyRequireEngineer_Tooltip">
+            <English>Requires an engineer to be part of the garrison where a vehicle lands.</English>
+            <German>Erfordert einen Mechaniker, der Teil der Garnison ist, in der ein Fahrzeug landet.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Settings_resupplyUseGarageBoxMethod_DisplayName">
+            <English>[Resupply] Use garage box method</English>
+            <German>[Nachschub] Garage-Box-Methode verwenden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Settings_resupplyUseGarageBoxMethod_Tooltip">
+            <English>Uses garage box "restore nearby units" method for resupply.\nChecks garage, if refueling/rearming/repairing is possible.</English>
+            <German>Verwendet die Garage-Box-Methode "Fahrzeuge in der Nähe versorgen" für den Nachschub.\nÜberprüft die Garage, ob Betanken/Neubewaffnen/Reparieren möglich ist.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Vehicles_Settings_seatsConfigSetting_DisplayName">
-            <English>Seats switcher configuration</English>
-            <German>Sitzwechselkonfiguration</German>
+            <English>[SSW] Seats switcher configuration</English>
+            <German>[SSW] Sitzwechselkonfiguration</German>
         </Key>
         <Key ID="STR_A3USPCM_Vehicles_Settings_seatsConfigSetting_Tooltip">
             <English>Configuration for the seats switcher hotkey action.\nFormat: [["vehicleClass", turretPathOrCargoSeatIndex0, turretPathOrCargoSeatIndex1], ...].\nBest look at the wiki for more details.</English>
             <German>Konfiguration für die Aktion der Sitzwechsel-Hotkey.\nFormat: [["Fahrzeugklasse", GeschützPfadOderSitzIndex0, GeschützPfadOderSitzIndex1], ...].\nAm besten die Wiki für weitere Details ansehen.</German>
         </Key>
         <Key ID="STR_A3USPCM_Vehicles_Settings_seatsSwitchSequenceInterval_DisplayName">
-            <English>Seats switch sequence interval</English>
-            <German>Intervall für Sitzwechsel-Sequenz</German>
+            <English>[SSW] Seats switch sequence interval</English>
+            <German>[SSW] Intervall für Sitzwechsel-Sequenz</German>
         </Key>
         <Key ID="STR_A3USPCM_Vehicles_Settings_seatsSwitchSequenceInterval_Tooltip">
             <English>Time in seconds within cycling through configured sequence is possible. After expiration, switch to first configured seat again. Only makes sense for configurations with more than two configured seats.</English>
             <German>Zeit in Sekunden, innerhalb derer das Durchlaufen der konfigurierten Sequenz möglich ist. Nach Ablauf wird wieder zum ersten konfigurierten Sitz gewechselt. Macht nur Sinn für Konfigurationen mit mehr als zwei konfigurierten Sitzen.</German>
         </Key>
         <Key ID="STR_A3USPCM_Vehicles_Settings_seatsUseFallback_DisplayName">
-            <English>Use fallback seat switching solution</English>
-            <German>Fallback Sitzwechselmethode verwenden</German>
+            <English>[SSW] Use fallback seat switching solution</English>
+            <German>[SSW] Fallback Sitzwechselmethode verwenden</German>
         </Key>
         <Key ID="STR_A3USPCM_Vehicles_Settings_seatsUseFallback_Tooltip">
             <English>If current vehicle is unconfigured, switch between driver and gunner seat. This is a fallback solution that works in most cases but may not be desired for all vehicles.</English>
