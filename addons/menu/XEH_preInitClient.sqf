@@ -72,6 +72,14 @@
     { createDialog QEGVAR(aafc,ConfigTablet) }
 ] call CBA_fnc_addKeybind;
 
+[
+    ELSTRING(main,Title),
+    QEGVAR(vehicles,HotkeysSwitchSeat),
+    [ELSTRING(vehicles,HotkeysSwitchSeat), ELSTRING(vehicles,HotkeysSwitchSeatTooltip)],
+    {},
+    { [] call EFUNC(vehicles,switchSeat) }
+] call CBA_fnc_addKeybind;
+
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;

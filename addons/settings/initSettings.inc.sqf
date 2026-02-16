@@ -696,6 +696,38 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+// Vehicles
+
+[
+    QEGVAR(vehicles,seatsUseFallback), "CHECKBOX",
+    [ELSTRING(vehicles,Settings_seatsUseFallback_DisplayName), ELSTRING(vehicles,Settings_seatsUseFallback_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    true, // default
+    false, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(vehicles,seatsSwitchSequenceInterval), "SLIDER",
+    [ELSTRING(vehicles,Settings_seatsSwitchSequenceInterval_DisplayName), ELSTRING(vehicles,Settings_seatsSwitchSequenceInterval_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    [0, 5, 0.75, 3], // min,max,default,decimals
+    false, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(vehicles,seatsConfigSetting), "EDITBOX",
+    [ELSTRING(vehicles,Settings_seatsConfigSetting_DisplayName), ELSTRING(vehicles,Settings_seatsConfigSetting_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    "[]", // default
+    false, // global
+    { call EFUNC(vehicles,onSeatsConfigSettingChanged) }, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Experimental
 
 [
