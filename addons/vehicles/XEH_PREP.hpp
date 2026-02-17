@@ -1,0 +1,9 @@
+PREP(canAirVehicleResupply);
+PREP(doAirVehicleResupply);
+PREP(onSeatsConfigSettingChanged);
+PREP(resupplyAirVehicle);
+PREP(resupplyCheckEngineer);
+PREP(resupplyOnWaypointComplete);
+PREP(resupplyPilotAnnounce);
+PREP(resupplyWaitForVehicle);
+PREP(switchSeat);
