@@ -141,6 +141,25 @@ GVAR(Timers) = [false, false];
             };
         };
     };
+
+    private _uniforms = GVAR(additionalUndercoverClothesClassList) splitString "," apply { trim _x } select {
+        !isNil {
+            switch true do {
+                case !(_x isKindOf["Uniform_Base", configFile >> "CfgWeapons"]): {
+                    WARNING_2("%1: classname %2 is not a valid uniform class",QFUNC(loadAdditionalUndercoverClothes),str _x);
+                };
+                case (_x in (A3A_faction_civ get "uniforms")): {
+                    WARNING_2("%1: classname %2 is already in the list of available undercover clothes",QFUNC(loadAdditionalUndercoverClothes),str _x);
+                };
+                default {
+                    INFO_2("%1: adding %2 to list of available undercover clothes",QFUNC(loadAdditionalUndercoverClothes),str _x);
+                    true;
+                };
+            };
+        };
+    };
+
+    A3A_faction_civ get "uniforms" append _uniforms;
 }] call FUNCMAIN(utilOnA3UClientInitDone);
 
 nil;

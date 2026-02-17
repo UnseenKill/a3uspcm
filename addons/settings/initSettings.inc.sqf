@@ -233,6 +233,16 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(menu,additionalUndercoverClothesClassList), "EDITBOX",
+    [ELSTRING(menu,Settings_additionalUndercoverClothesClassList_DisplayName), ELSTRING(menu,Settings_additionalUndercoverClothesClassList_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryAdditionals_DisplayName)],
+    '', // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Zeus
 
 [

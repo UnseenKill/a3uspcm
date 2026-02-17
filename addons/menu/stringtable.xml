@@ -729,6 +729,14 @@
             <English>Comma-separated list of classnames of additional buyable static emplacements. These will be added to the list of buyable statics on the start of the game.&lt;br/&gt;Format: classname1,classname2=price,classname3=price,...</English>
             <German>Komma-getrennte Liste von Klassennamen zusätzlicher kaufbarer Stellungen. Diese werden zu der Liste der kaufbaren Stellungen beim Spielstart hinzugefügt.&lt;br/&gt;Format: classname1,classname2=price,classname3=price,...</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalUndercoverClothesClassList_DisplayName">
+            <English>Additional undercover clothes</English>
+            <German>Zusätzliche zivile Kleidung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalUndercoverClothesClassList_Tooltip">
+            <English>Comma-separated list of classnames of additional undercover clothes. These will be added to the list of available undercover clothes on the start of the game.&lt;br/&gt;Format: classname1,classname2,...</English>
+            <German>Komma-getrennte Liste von Klassennamen zusätzlicher ziviler Kleidung. Diese werden zu der Liste der verfügbaren zivilen Kleidung beim Spielstart hinzugefügt.&lt;br/&gt;Format: classname1,classname2,...</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_additionalVehiclesClassList_DisplayName">
             <English>Additional buyable vehicles class list</English>
             <German>Klassenliste für zusätzliche kaufbare Fahrzeuge</German>
