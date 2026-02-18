@@ -12,6 +12,16 @@ publicVariable QGVAR(contacts);
 publicVariable QGVAR(globalROE);
 publicVariable QGVAR(groups);
 
+[CBA_EVENT_AAFC_ROE_MONITOR, {
+    [_thisType, _thisId] call CBA_fnc_removeEventHandler;
+
+    if (GVAR(roeCorrectionInterval) isNotEqualTo 0) then {
+        INFO("Starting ROE correction monitor");
+
+        [] spawn FUNC(roeCorrectionMonitor);
+    };
+}] call CBA_fnc_addEventHandlerArgs;
+
 [CBA_EVENT_AAFC_SET_ROE_GLOBAL, {
     if !assert(params[
         ["_newROE", nil, [0]]
@@ -40,12 +50,6 @@ publicVariable QGVAR(groups);
         INFO("Auto-grouping A/A vehicles");
 
         [] call FUNC(autoGroupVehicles);
-    };
-
-    if (GVAR(roeCorrectionInterval) isNotEqualTo 0) then {
-        INFO("Starting ROE correction monitor");
-
-        [] spawn FUNC(roeCorrectionMonitor);
     };
 }] call FUNCMAIN(utilOnA3UServerInitDone);
 
