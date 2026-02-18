@@ -25,6 +25,7 @@ class CfgFunctions {
             PATHTO_FNC(miscRepairBuildings);
             PATHTO_FNC(miscShowRoadblocks);
             PATHTO_FNC(miscSpawnLootBox);
+            PATHTO_FNC(miscToggleMarkerVisibility);
             PATHTO_FNC(miscUncompromise);
             PATHTO_FNC(miscUnstick);
             PATHTO_FNC(recruitForPlayer);

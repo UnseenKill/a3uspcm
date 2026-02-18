@@ -49,7 +49,14 @@ class GVAR(Config) {
                 text = CSTRING(Miscellaneous_PlaceBeaconText);
                 action = QFUNCMAIN(miscPlaceBeacon);
                 closeDiary = 1;
+                separator = 1;
             };
+
+            class ToggleMarkerVisibility {
+                caption = CSTRING(Miscellaneous_ToggleMarkerVisibilityCaption);
+                text = CSTRING(Miscellaneous_ToggleMarkerVisibilityText);
+                action = QFUNCMAIN(miscToggleMarkerVisibility);
+             };
 
             class EnlargeNearestMarker {
                 caption = CSTRING(Miscellaneous_EnlargeNearestMarkerCaption);
@@ -57,6 +64,7 @@ class GVAR(Config) {
                 action = QFUNCMAIN(miscEnlargeNearestMarker);
                 condition = QUOTE(player isEqualTo theBoss);
                 closeDiary = 1;
+                separator = 1;
             };
 
             class RepairBuildings {
