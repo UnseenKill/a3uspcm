@@ -6,7 +6,7 @@ Description:
     Unlocks the specified item of equipment for use in the arsenal.
 
 Parameters:
-    0: _className - Item class to unlock <STRING>
+    0: _className - Item class name or class names to unlock <ARRAY,STRING>
 
 Optional:
     1: _silent - Suppress hint message for already unlocked items <BOOL>
@@ -23,54 +23,71 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-params[
-    ["_className", "", [""]],
-    ["_silent", false, [false]],
-    ["_unlock", true, [false]]
-];
+TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_this);
 
-TRACE_2(QFUNCMAIN(utilUnlockArsenalItem),_unlock,_className);
+if !assert(params[
+    ["_classNames", nil, [[], ""]]
+]) exitWith {};
 
-private _index = _className call jn_fnc_arsenal_itemType;
-private _arsenal = jna_datalist select _index;
-private _count = [_arsenal, _className] call jn_fnc_arsenal_itemCount;
+private _silent = param[1, false, [true]];
+private _unlock = param[2, true, [true]];
 
-private _message = if (_count < 0) then {
-    if _unlock then {
-        [LSTRING(ArsenalItemNotUnlocked), ""] select _silent;
-    } else {
-        TRACE_1("arsenal",_arsenal);
-        _arsenal = _arsenal select { _x isNotEqualTo[_className, -1] };
-        jna_datalist set[_index, _arsenal];
-        LSTRING(ArsenalItemDiscarded);
-    };
-} else {
-    if !_unlock then {
-        [LSTRING(ArsenalItemNotDiscarded), ""] select _silent;
-    } else {
-        private _result = [_className] call A3A_fnc_unlockEquipment;
-        TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_result);
-        LSTRING(ArsenalItemUnlocked);
-    };
+if !(isServer) exitWith {
+    [_classNames, _silent, _unlock] remoteExecCall[QFUNCMAIN(utilUnlockArsenalItem), 2];
 };
 
-if (_message isNotEqualTo "") then {
-    private _caption = switch true do {
-        case isText(configFile >> "CfgMagazines" >> _className >> "displayName"): {
-            getText(configFile >> "CfgMagazines" >> _className >> "displayName");
+if (_classNames isEqualType "") then {
+    _classNames = [_classNames];
+};
+
+_classNames apply {
+    private _className = _x;
+
+    private _index = _className call jn_fnc_arsenal_itemType;
+    private _arsenal = jna_datalist select _index;
+    private _count = [_arsenal, _className] call jn_fnc_arsenal_itemCount;
+
+    private _message = if (_count < 0) then {
+        if _unlock then {
+            [LSTRING(ArsenalItemNotUnlocked), ""] select _silent;
+        } else {
+            TRACE_1("arsenal",_arsenal);
+            _arsenal = _arsenal select { _x isNotEqualTo[_className, -1] };
+            jna_datalist set[_index, _arsenal];
+            LSTRING(ArsenalItemDiscarded);
         };
-        case isText(configFile >> "CfgWeapons" >> _className >> "displayName"): {
-            getText(configFile >> "CfgWeapons" >> _className >> "displayName");
-        };
-        case isText(configFile >> "CfgVehicles" >> _className >> "displayName"): {
-            getText(configFile >> "CfgVehicles" >> _className >> "displayName");
-        };
-        default {
-            format["Unknown %1", _className]
+    } else {
+        if !_unlock then {
+            [LSTRING(ArsenalItemNotDiscarded), ""] select _silent;
+        } else {
+            private _result = [_className] call A3A_fnc_unlockEquipment;
+            TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_result);
+            LSTRING(ArsenalItemUnlocked);
         };
     };
 
-    [_caption, localize _message] call A3A_fnc_customHint;
+    if (_message isNotEqualTo "") then {
+        private _caption = switch true do {
+            case isText(configFile >> "CfgMagazines" >> _className >> "displayName"): {
+                getText(configFile >> "CfgMagazines" >> _className >> "displayName");
+            };
+            case isText(configFile >> "CfgWeapons" >> _className >> "displayName"): {
+                getText(configFile >> "CfgWeapons" >> _className >> "displayName");
+            };
+            case isText(configFile >> "CfgVehicles" >> _className >> "displayName"): {
+                getText(configFile >> "CfgVehicles" >> _className >> "displayName");
+            };
+            default {
+                format["Unknown %1", _className]
+            };
+        };
+
+        if (isRemoteExecuted) then {
+            [_caption, localize _message] remoteExecCall["A3A_fnc_customHint", remoteExecutedOwner];
+        } else {
+            [_caption, localize _message] call A3A_fnc_customHint;
+        };
+    };
 };
 
 nil;

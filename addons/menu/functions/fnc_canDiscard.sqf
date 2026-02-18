@@ -1,27 +1,24 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_fnc_unlockLoadout
+Function: A3USPCM_menu_fnc_canDiscard
 
 Description:
-    Unlock everything from player's current loadout
+    Callback condition if container's contents can be discarded from arsenal
 
 Parameters:
+    0: _container - Container object <OBJECT>
 
 Optional:
 
 Example:
     (begin example)
-    [] call A3USPCM_fnc_unlockLoadout;
+    [box1] call A3USPCM_menu_fnc_canDiscard;
     (end example)
 
 Returns:
-    Nothing
+    <BOOL>
 
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-INFO_1("'%1' is unlocking everything in their current loadout",name player);
-
-[getUnitLoadout player] call FUNCMAIN(utilUnlockLoadout);
-
-nil;
+call FUNC(canUnlock);

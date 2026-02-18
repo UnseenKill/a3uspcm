@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_fnc_unlockPurgeArsenal
+Function: A3USPCM_menu_fnc_unlockPurgeArsenal
 
 Description:
     Remove items in arsenal missing after maybe a mod deactivation.
@@ -18,6 +18,10 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(unlockPurgeArsenal),_this);
+
+if !(isServer) exitWith {
+    _this remoteExecCall[QFUNC(unlockSortArsenal), 2];
+};
 
 #define KEEP(class) ([class] call {\
     params["_item"]; \
@@ -37,6 +41,11 @@ jna_datalist = jna_datalist apply {
 
         _x;
     } select { KEEP(_x # 0) };
+};
+
+if (isRemoteExecuted) exitWith {
+    [LLSTRING(Unlocks_PurgeArsenalCaption), format[LLSTRING(Unlocks_PurgeArsenalTextSuccess), _purged]] remoteExecCall["A3A_fnc_customHint", remoteExecutedOwner];
+    "A3AP_UiSuccess" remoteExecCall["playSound", remoteExecutedOwner];
 };
 
 [
