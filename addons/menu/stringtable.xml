@@ -65,6 +65,18 @@
             <English>A timer set for %1 minutes has just expired.</English>
             <German>Ein Timer, der auf %1 Minuten eingestellt wurde, ist gerade abgelaufen.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_ArsenalDiscard">
+            <English>Discard contents from arsenal</English>
+            <German>Inhalt aus Arsenal entfernen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_ArsenalProcessContainerCleanConfirm">
+            <English>Items processed. Clear container now?</English>
+            <German>Gegenstände verarbeitet. Container jetzt leeren?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_ArsenalUnlock">
+            <English>Unlock contents in arsenal</English>
+            <German>Inhalt im Arsenal freischalten</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_CMI_IDC_CM_INJECT_STOPWATCHES_START">
             <English>Start</English>
             <German>Starten</German>
@@ -180,6 +192,18 @@
         <Key ID="STR_A3USPCM_Menu_DiaryVehiclesText">
             <English>Vehicle related actions</English>
             <German>Fahrzeugbezogene Aktionen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DumpContents">
+            <English>Dump contents</English>
+            <German>Inhalt entladen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DumpContentsEmpty">
+            <English>Container is empty</English>
+            <German>Gibt nichts zu entladen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DumpContentsSuccess">
+            <English>Contents of %1 dumped</English>
+            <German>Inhalt von %1 wurde entladen</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Healing_HealGroupCaption">
             <English>Heal your group</English>

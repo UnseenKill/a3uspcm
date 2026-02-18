@@ -17,4 +17,5 @@ class CfgPatches {
 #include "CfgAddon.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgFunctions.hpp"
+#include "CfgVehicles.hpp"
 #include "commanderMenu.hpp"
