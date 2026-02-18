@@ -6,7 +6,7 @@ class CfgVehicles {
             class ACE_MainActions {
                 class GVAR(DumpContents) {
                     displayName = CSTRING(DumpContents);
-                    condition = QUOTE(isNil QQGVAR(A3UEUNSVL_seen) && {call FUNCMAIN(utilVehicleHasCargo)});
+                    condition = QUOTE(!GVAR(A3UEUNSVL_seen) && {call FUNCMAIN(utilVehicleHasCargo)});
                     statement = QUOTE(call FUNC(containerDumpContents));
                     icon = QPATHTOEF(assets,ui\loadout-unload.paa);\
                 };
