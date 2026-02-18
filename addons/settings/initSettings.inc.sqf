@@ -11,6 +11,36 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(menu,autoReinstateWakeUp), "CHECKBOX",
+    [ELSTRING(menu,Settings_autoReinstateWakeUp_DisplayName), ELSTRING(menu,Settings_autoReinstateWakeUp_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    false, // default
+    false, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,autoWakeUpDelay), "TIME",
+    [ELSTRING(menu,Settings_autoWakeUpDelay_DisplayName), ELSTRING(menu,Settings_autoWakeUpDelay_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [0, 60, 10, 1], // min,max,default,decimals
+    false, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,autoWakeUpMagicEffectsDuration), "TIME",
+    [ELSTRING(menu,Settings_autoWakeUpMagicEffectsDuration_DisplayName), ELSTRING(menu,Settings_autoWakeUpMagicEffectsDuration_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [0, 180, 20, 1], // min,max,default,decimals
+    false, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(menu,emergencyInvincibilityDuration), "TIME",
     [ELSTRING(menu,Settings_emergencyInvincibilityDuration_DisplayName), ELSTRING(menu,Settings_emergencyInvincibilityDuration_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
