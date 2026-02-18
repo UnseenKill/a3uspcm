@@ -23,13 +23,18 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-params[
-    ["_className", "", [""]],
-    ["_silent", false, [false]],
-    ["_unlock", true, [false]]
-];
+TRACE_1(QFUNCMAIN(utilUnlockArsenalItem),_this);
 
-TRACE_2(QFUNCMAIN(utilUnlockArsenalItem),_unlock,_className);
+if !assert(params[
+    ["_className", nil, [""]]
+]) exitWith {};
+
+private _silent = param[1, false, [true]];
+private _unlock = param[2, true, [true]];
+
+if !(isServer) exitWith {
+    [_className, _silent, _unlock] remoteExecCall[QFUNCMAIN(utilUnlockArsenalItem), 2];
+};
 
 private _index = _className call jn_fnc_arsenal_itemType;
 private _arsenal = jna_datalist select _index;
@@ -70,7 +75,11 @@ if (_message isNotEqualTo "") then {
         };
     };
 
-    [_caption, localize _message] call A3A_fnc_customHint;
+    if (isRemoteExecuted) then {
+        [_caption, localize _message] remoteExecCall["A3A_fnc_customHint", remoteExecutedOwner];
+    } else {
+        [_caption, localize _message] call A3A_fnc_customHint;
+    };
 };
 
 nil;
