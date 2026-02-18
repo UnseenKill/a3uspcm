@@ -41,7 +41,8 @@ if !(_execute) exitWith {
     GVAR(fireLoadoutEventAfter) = diag_tickTime + (missionNamespace getVariable[QGVAR(waitAndExecuteDelay), 3]);
 
     if (isNil QGVAR(fireLoadoutScript)) then {
-        GVAR(fireLoadoutScript) = (_this + [true]) spawn {
+        private _args = [_this + [true], _this] select(count _this isEqualTo 6);
+        GVAR(fireLoadoutScript) = _args spawn {
             waitUntil { diag_tickTime > GVAR(fireLoadoutEventAfter) };
             GVAR(fireLoadoutScript) = nil;
 
