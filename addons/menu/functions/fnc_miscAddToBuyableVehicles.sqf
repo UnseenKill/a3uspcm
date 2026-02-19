@@ -28,7 +28,7 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableVehicles),_this);
                 throw format[LLSTRING(Miscellaneous_AddToBuyableVehiclesHintNoVehicleText), getText(configOf _target >> "displayName")];
             };
 
-            private _key = [_className] call FUNCMAIN(utilGetVehicleTemplateKey);
+            private _key = [_target] call FUNCMAIN(utilGetVehicleTemplateKey);
             private _index = (A3A_faction_reb get _key) findIf { _x isEqualTo typeOf _target };
 
             TRACE_3(QFUNCMAIN(miscAddToBuyableVehicles),_key,_index,typeOf _target);
