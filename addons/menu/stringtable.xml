@@ -597,6 +597,22 @@
             <English>Temporarily reveal roadblocks on map.</English>
             <German>Zeige temporär Straßensperren auf der Karte.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ToggleMarkerVisibilityCaption">
+            <English>Marker visibility</English>
+            <German>Marker-Sichtbarkeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ToggleMarkerVisibilityMessageHidden">
+            <English>Current location marker %1 is now hidden.</English>
+            <German>Der Marker für die aktuelle Position %1 ist jetzt versteckt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ToggleMarkerVisibilityMessageVisible">
+            <English>Current location marker %1 is now visible.</English>
+            <German>Der Marker für die aktuelle Position %1 ist jetzt sichtbar.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ToggleMarkerVisibilityText">
+            <English>Toggle visibility of current location marker on map.</English>
+            <German>Wechsle die Sichtbarkeit des Markers für die aktuelle Position auf der Karte.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_UncompromiseCaption">
             <English>Uncompromise</English>
             <German>Unentdeckt</German>
@@ -776,6 +792,30 @@
         <Key ID="STR_A3USPCM_Menu_Settings_autoFixVoices_Tooltip">
             <English>Automatically fix voices at the start of each game.</English>
             <German>Repariere automatisch die Stimmen am Anfang jedes Spiels.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoReinstateWakeUp_DisplayName">
+            <English>Auto-reinstate leadership after waking up</English>
+            <German>Führung nach Aufwachen automatisch wiederherstellen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoReinstateWakeUp_Tooltip">
+            <English>Automatically reinstate leadership after waking up from unconsciousness (ACE only).</English>
+            <German>Stellt die Führung nach dem Aufwachen aus der Bewusstlosigkeit automatisch wieder her (nur ACE).</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoWakeUpDelay_DisplayName">
+            <English>Auto-wake up delay</English>
+            <German>Verzögerung für automatisches Aufwachen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoWakeUpDelay_Tooltip">
+            <English>Automatically wake up after being unconscious for this many seconds. Set to zero to disable.</English>
+            <German>Wache automatisch auf, nachdem du so viele Sekunden lang bewusstlos warst. Auf Null setzen, um zu deaktivieren.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoWakeUpMagicEffectsDuration_DisplayName">
+            <English>Auto-wake up magic effects duration</English>
+            <German>Dauer der magischen Effekte beim automatischen Aufwachen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoWakeUpMagicEffectsDuration_Tooltip">
+            <English>Duration of increased bandage effectiveness applied when automatically waking up. Set to zero to disable.</English>
+            <German>Dauer der erhöhten Verbandmaterialwirksamkeit, die beim automatischen Aufwachen angewendet wird. Auf Null setzen, um zu deaktivieren.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_dsbCost_DisplayName">
             <English>Despawn Suppressor Beacon™ cost</English>

@@ -78,5 +78,6 @@ units _group apply {
 };
 
 CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(leader _group,LLSTRING(Message_AARegistered))]);
+CBA_EVENT_LOCAL(CBA_EVENT_AAFC_ROE_MONITOR,[]);
 
 nil;
