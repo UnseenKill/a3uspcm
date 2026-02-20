@@ -43,6 +43,8 @@
 #define CBA_EVENT_AAFC_CONTACT_ADDED QUOTE(TRIPLES(ADDON,events,contactAdded))
 // Parameters: [Object contact]
 #define CBA_EVENT_AAFC_CONTACT_UPDATE QUOTE(TRIPLES(ADDON,events,contactUpdate))
+// Parameters: []
+#define CBA_EVENT_AAFC_ROE_MONITOR QUOTE(TRIPLES(ADDON,events,ROEMonitor))
 // Parameters: [Number roeLevel]
 #define CBA_EVENT_AAFC_SET_ROE_GLOBAL QUOTE(TRIPLES(ADDON,events,setROEGlobal))
 // Parameters: [Object unitOrVehicle, Boolean canFire]

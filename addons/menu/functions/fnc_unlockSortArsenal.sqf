@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_fnc_unlockSortArsenal
+Function: A3USPCM_menu_fnc_unlockSortArsenal
 
 Description:
     SORT THAT FRIGGIN MESS OF AN ARSENAL
@@ -18,6 +18,10 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(unlockSortArsenal),_this);
+
+if !(isServer) exitWith {
+    _this remoteExecCall[QFUNC(unlockSortArsenal), 2];
+};
 
 jna_datalist = jna_datalist apply {
     private _list = _x apply {
@@ -43,6 +47,11 @@ jna_datalist = jna_datalist apply {
     _list apply {
         [_x # 1, _x # 2]
     };
+};
+
+if (isRemoteExecuted) exitWith {
+    [LLSTRING(Unlocks_SortArsenalCaption), LLSTRING(Unlocks_SortArsenalTextSuccess)] remoteExecCall["A3A_fnc_customHint", remoteExecutedOwner];
+    "A3AP_UiSuccess" remoteExecCall["playSound", remoteExecutedOwner];
 };
 
 [

@@ -41,4 +41,6 @@ CBA_UI_SUBSCRIBE(CBA_EVENT_AAFC_SET_ROE_GLOBAL,{call FUNC(tabletOverviewUpdate)}
 uiNamespace setVariable[QGVAR(display), _display];
 CBA_EVENT_LOCAL(CBA_EVENT_AAFC_DIALOG_OPENED,[_display]);
 
+setMousePosition[0.5, 0.5];
+
 nil;

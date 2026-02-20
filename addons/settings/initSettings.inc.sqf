@@ -11,6 +11,36 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QEGVAR(menu,autoReinstateWakeUp), "CHECKBOX",
+    [ELSTRING(menu,Settings_autoReinstateWakeUp_DisplayName), ELSTRING(menu,Settings_autoReinstateWakeUp_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    false, // default
+    false, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,autoWakeUpDelay), "TIME",
+    [ELSTRING(menu,Settings_autoWakeUpDelay_DisplayName), ELSTRING(menu,Settings_autoWakeUpDelay_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [0, 60, 10, 1], // min,max,default,decimals
+    false, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(menu,autoWakeUpMagicEffectsDuration), "TIME",
+    [ELSTRING(menu,Settings_autoWakeUpMagicEffectsDuration_DisplayName), ELSTRING(menu,Settings_autoWakeUpMagicEffectsDuration_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [0, 180, 20, 1], // min,max,default,decimals
+    false, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
     QEGVAR(menu,emergencyInvincibilityDuration), "TIME",
     [ELSTRING(menu,Settings_emergencyInvincibilityDuration_DisplayName), ELSTRING(menu,Settings_emergencyInvincibilityDuration_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
@@ -233,6 +263,16 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(menu,additionalUndercoverClothesClassList), "EDITBOX",
+    [ELSTRING(menu,Settings_additionalUndercoverClothesClassList_DisplayName), ELSTRING(menu,Settings_additionalUndercoverClothesClassList_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_CategoryAdditionals_DisplayName)],
+    '', // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Zeus
 
 [
@@ -423,100 +463,6 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
-// Supports
-
-[
-    QEGVAR(supports,requireSupportBuildings), "CHECKBOX",
-    [ELSTRING(supports,Settings_requireSupportBuildings_DisplayName), ELSTRING(supports,Settings_requireSupportBuildings_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(supports,Settings_Category_DisplayName)],
-    true, // default
-    true, // global
-    {}, // onchange
-    true // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
-    QEGVAR(supports,supportBuildingCost), "SLIDER",
-    [ELSTRING(supports,Settings_supportBuildingCost_DisplayName), ELSTRING(supports,Settings_supportBuildingCost_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(supports,Settings_Category_DisplayName)],
-    [0, 1500, 2500, 0], // min,max,default,decimals
-    true, // global
-    {}, // onchange
-    true // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
-    QEGVAR(supports,requireSpecialists), "CHECKBOX",
-    [ELSTRING(supports,Settings_requireSpecialists_DisplayName), ELSTRING(supports,Settings_requireSpecialists_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(supports,Settings_Category_DisplayName)],
-    true, // default
-    true, // global
-    {}, // onchange
-    true // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
-    QEGVAR(supports,aiSkill), "SLIDER",
-    [ELSTRING(supports,Settings_aiSkill_DisplayName), ELSTRING(supports,Settings_aiSkill_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(supports,Settings_Category_DisplayName)],
-    [0, 1, 0.75, 2, true], // min,max,default,decimals,isPercentage
-    true, // global
-    {}, // onchange
-    false // Needs mission restart
-] call CBA_fnc_addSetting;
-
-// Loadout
-
-[
-    QEGVAR(loadout,unloadWheels), "CHECKBOX",
-    [ELSTRING(loadout,Settings_unloadWheels_DisplayName), ELSTRING(loadout,Settings_unloadWheels_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
-    false, // default
-    true, // global
-    {}, // onchange
-    false // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
-    QEGVAR(loadout,requireFlagProximity), "CHECKBOX",
-    [ELSTRING(loadout,Settings_requireFlagProximity_DisplayName), ELSTRING(loadout,Settings_requireFlagProximity_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
-    true, // default
-    true, // global
-    {}, // onchange
-    false // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
-    QEGVAR(loadout,aceInteractShowVehicleDumpAction), "CHECKBOX",
-    [ELSTRING(loadout,Settings_aceInteractShowVehicleDumpAction_DisplayName), ELSTRING(loadout,Settings_aceInteractShowVehicleDumpAction_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
-    true, // default
-    true, // global
-    {}, // onchange
-    false // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
-    QEGVAR(loadout,flagLoadoutRadius), "SLIDER",
-    [ELSTRING(loadout,Settings_flagLoadoutRadius_DisplayName), ELSTRING(loadout,Settings_flagLoadoutRadius_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
-    [10, 500, 25, 0], // min,max,default,decimals
-    true, // global
-    {}, // onchange
-    false // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
-    QEGVAR(loadout,containerDumpContentsDelay), "TIME",
-    [ELSTRING(loadout,Settings_containerDumpContentsDelay_DisplayName), ELSTRING(loadout,Settings_containerDumpContentsDelay_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(loadout,Settings_Category_DisplayName)],
-    [0, 180, 15, 0], // min,max,default,decimals
-    true, // global
-    {}, // onchange
-    false // Needs mission restart
-] call CBA_fnc_addSetting;
-
 // EMP
 
 [
@@ -693,6 +639,68 @@
     [0, 7200, 600], // default
     true, // global
     {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+// Vehicles
+
+[
+    QEGVAR(vehicles,resupplyDelay), "TIME",
+    [ELSTRING(vehicles,Settings_resupplyDelay_DisplayName), ELSTRING(vehicles,Settings_resupplyDelay_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    [0, 3600, 300, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(vehicles,resupplyRequireEngineer), "CHECKBOX",
+    [ELSTRING(vehicles,Settings_resupplyRequireEngineer_DisplayName), ELSTRING(vehicles,Settings_resupplyRequireEngineer_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(vehicles,resupplyUseGarageBoxMethod), "CHECKBOX",
+    [ELSTRING(vehicles,Settings_resupplyUseGarageBoxMethod_DisplayName), ELSTRING(vehicles,Settings_resupplyUseGarageBoxMethod_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(vehicles,seatsUseFallback), "CHECKBOX",
+    [ELSTRING(vehicles,Settings_seatsUseFallback_DisplayName), ELSTRING(vehicles,Settings_seatsUseFallback_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    true, // default
+    false, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(vehicles,seatsSwitchSequenceInterval), "SLIDER",
+    [ELSTRING(vehicles,Settings_seatsSwitchSequenceInterval_DisplayName), ELSTRING(vehicles,Settings_seatsSwitchSequenceInterval_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    [0, 5, 0.75, 3], // min,max,default,decimals
+    false, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(vehicles,seatsConfigSetting), "EDITBOX",
+    [ELSTRING(vehicles,Settings_seatsConfigSetting_DisplayName), ELSTRING(vehicles,Settings_seatsConfigSetting_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(vehicles,Settings_Category_DisplayName)],
+    "[]", // default
+    false, // global
+    { call EFUNC(vehicles,onSeatsConfigSettingChanged) }, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
