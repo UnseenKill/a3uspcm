@@ -31,8 +31,7 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _unit) exitWith {};
 
-private _config = [configFile, missionConfigFile] select is3DENPreview;
-_config = _config >> QPREFIX >> QADDON >> "Menu" >> "Definitions";
+private _config = configFile >> QPREFIX >> QADDON >> "Menu" >> "Definitions";
 
 private _buildMenu = {
     if !assert(params[

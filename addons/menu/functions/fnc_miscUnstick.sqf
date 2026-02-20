@@ -60,8 +60,8 @@ TRACE_1(QFUNCMAIN(miscUnstick),_this);
         _clone setSkill skill _unit;
         _clone setUnitPos unitPos _unit;
         _clone setVariable["owner", player];
-        _clone setVariable[GVAR(assignedTeam), assignedTeam _unit];
-        _clone setVariable[GVAR(groupId), groupId _unit];
+        _clone setVariable[QGVAR(assignedTeam), assignedTeam _unit];
+        _clone setVariable[QGVAR(groupId), groupId _unit];
 
         deleteVehicle _unit;
 
@@ -72,10 +72,10 @@ TRACE_1(QFUNCMAIN(miscUnstick),_this);
             params["_clone"];
 
             _clone joinAs[group player, _clone getVariable GVAR(groupId)];
-            _clone assignTeam(_clone getVariable GVAR(assignedTeam));
+            _clone assignTeam(_clone getVariable QGVAR(assignedTeam));
 
-            _clone setVariable[GVAR(assignedTeam), nil];
-            _clone setVariable[GVAR(groupId), nil];
+            _clone setVariable[QGVAR(assignedTeam), nil];
+            _clone setVariable[QGVAR(groupId), nil];
 
         }, [_clone], 0.15] call CBA_fnc_waitAndExecute;
 
