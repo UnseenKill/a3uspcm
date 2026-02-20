@@ -22,6 +22,6 @@ Author:
 ---------------------------------------------------------------------------- */
 INFO_1("'%1' is unlocking everything in their current loadout",name player);
 
-[getUnitLoadout player] call A3USPCM_fnc_utilUnlockLoadout;
+[getUnitLoadout player] call FUNCMAIN(utilUnlockLoadout);
 
 nil;

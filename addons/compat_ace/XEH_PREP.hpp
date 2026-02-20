@@ -1,0 +1,2 @@
+PREP(hasStableVitals);
+PREP(onAceMedicalUnconscious);

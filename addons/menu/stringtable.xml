@@ -65,6 +65,18 @@
             <English>A timer set for %1 minutes has just expired.</English>
             <German>Ein Timer, der auf %1 Minuten eingestellt wurde, ist gerade abgelaufen.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_ArsenalDiscard">
+            <English>Discard contents from arsenal</English>
+            <German>Inhalt aus Arsenal entfernen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_ArsenalProcessContainerCleanConfirm">
+            <English>Items processed. Clear container now?</English>
+            <German>Gegenstände verarbeitet. Container jetzt leeren?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_ArsenalUnlock">
+            <English>Unlock contents in arsenal</English>
+            <German>Inhalt im Arsenal freischalten</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_CMI_IDC_CM_INJECT_STOPWATCHES_START">
             <English>Start</English>
             <German>Starten</German>
@@ -180,6 +192,18 @@
         <Key ID="STR_A3USPCM_Menu_DiaryVehiclesText">
             <English>Vehicle related actions</English>
             <German>Fahrzeugbezogene Aktionen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DumpContents">
+            <English>Dump contents</English>
+            <German>Inhalt entladen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DumpContentsEmpty">
+            <English>Container is empty</English>
+            <German>Gibt nichts zu entladen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_DumpContentsSuccess">
+            <English>Contents of %1 dumped</English>
+            <German>Inhalt von %1 wurde entladen</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Healing_HealGroupCaption">
             <English>Heal your group</English>
@@ -573,6 +597,22 @@
             <English>Temporarily reveal roadblocks on map.</English>
             <German>Zeige temporär Straßensperren auf der Karte.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ToggleMarkerVisibilityCaption">
+            <English>Marker visibility</English>
+            <German>Marker-Sichtbarkeit</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ToggleMarkerVisibilityMessageHidden">
+            <English>Current location marker %1 is now hidden.</English>
+            <German>Der Marker für die aktuelle Position %1 ist jetzt versteckt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ToggleMarkerVisibilityMessageVisible">
+            <English>Current location marker %1 is now visible.</English>
+            <German>Der Marker für die aktuelle Position %1 ist jetzt sichtbar.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ToggleMarkerVisibilityText">
+            <English>Toggle visibility of current location marker on map.</English>
+            <German>Wechsle die Sichtbarkeit des Markers für die aktuelle Position auf der Karte.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_UncompromiseCaption">
             <English>Uncompromise</English>
             <German>Unentdeckt</German>
@@ -729,6 +769,14 @@
             <English>Comma-separated list of classnames of additional buyable static emplacements. These will be added to the list of buyable statics on the start of the game.&lt;br/&gt;Format: classname1,classname2=price,classname3=price,...</English>
             <German>Komma-getrennte Liste von Klassennamen zusätzlicher kaufbarer Stellungen. Diese werden zu der Liste der kaufbaren Stellungen beim Spielstart hinzugefügt.&lt;br/&gt;Format: classname1,classname2=price,classname3=price,...</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalUndercoverClothesClassList_DisplayName">
+            <English>Additional undercover clothes</English>
+            <German>Zusätzliche zivile Kleidung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_additionalUndercoverClothesClassList_Tooltip">
+            <English>Comma-separated list of classnames of additional undercover clothes. These will be added to the list of available undercover clothes on the start of the game.&lt;br/&gt;Format: classname1,classname2,...</English>
+            <German>Komma-getrennte Liste von Klassennamen zusätzlicher ziviler Kleidung. Diese werden zu der Liste der verfügbaren zivilen Kleidung beim Spielstart hinzugefügt.&lt;br/&gt;Format: classname1,classname2,...</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_additionalVehiclesClassList_DisplayName">
             <English>Additional buyable vehicles class list</English>
             <German>Klassenliste für zusätzliche kaufbare Fahrzeuge</German>
@@ -744,6 +792,30 @@
         <Key ID="STR_A3USPCM_Menu_Settings_autoFixVoices_Tooltip">
             <English>Automatically fix voices at the start of each game.</English>
             <German>Repariere automatisch die Stimmen am Anfang jedes Spiels.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoReinstateWakeUp_DisplayName">
+            <English>Auto-reinstate leadership after waking up</English>
+            <German>Führung nach Aufwachen automatisch wiederherstellen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoReinstateWakeUp_Tooltip">
+            <English>Automatically reinstate leadership after waking up from unconsciousness (ACE only).</English>
+            <German>Stellt die Führung nach dem Aufwachen aus der Bewusstlosigkeit automatisch wieder her (nur ACE).</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoWakeUpDelay_DisplayName">
+            <English>Auto-wake up delay</English>
+            <German>Verzögerung für automatisches Aufwachen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoWakeUpDelay_Tooltip">
+            <English>Automatically wake up after being unconscious for this many seconds. Set to zero to disable.</English>
+            <German>Wache automatisch auf, nachdem du so viele Sekunden lang bewusstlos warst. Auf Null setzen, um zu deaktivieren.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoWakeUpMagicEffectsDuration_DisplayName">
+            <English>Auto-wake up magic effects duration</English>
+            <German>Dauer der magischen Effekte beim automatischen Aufwachen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_autoWakeUpMagicEffectsDuration_Tooltip">
+            <English>Duration of increased bandage effectiveness applied when automatically waking up. Set to zero to disable.</English>
+            <German>Dauer der erhöhten Verbandmaterialwirksamkeit, die beim automatischen Aufwachen angewendet wird. Auf Null setzen, um zu deaktivieren.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_dsbCost_DisplayName">
             <English>Despawn Suppressor Beacon™ cost</English>

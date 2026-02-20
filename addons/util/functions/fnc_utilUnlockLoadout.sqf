@@ -27,11 +27,10 @@ params[
 
 TRACE_1(QFUNCMAIN(utilUnlockLoadout),_this);
 
-flatten _loadout select {
-    (_x isEqualType "") && (_x isNotEqualTo "");
-} apply {
-    TRACE_1(QFUNCMAIN(utilUnlockLoadout),_x);
-    [_x, true] call FUNCMAIN(utilUnlockArsenalItem);
+private _items = flatten _loadout select {
+    (_x isEqualType "") && { _x isNotEqualTo "" };
 };
+
+[_items, true] call FUNCMAIN(utilUnlockArsenalItem);
 
 nil;

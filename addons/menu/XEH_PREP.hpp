@@ -1,8 +1,14 @@
+PREP(arsenalDiscard);
+PREP(arsenalProcessContainer);
+PREP(arsenalUnlock);
+PREP(canDiscard);
+PREP(canUnlock);
 PREP(commanderMenuAction);
 PREP(commanderMenuAppend);
 PREP(commanderMenuInit);
 PREP(commanderMenuStopWatchesInit);
 PREP(commanderMenuStopWatchToggle);
+PREP(containerDumpContents);
 PREP(createDiaryRecord);
 PREP(createDiaryRecordAction);
 PREP(diaryExecuteAction);

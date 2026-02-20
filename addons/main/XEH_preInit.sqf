@@ -2,6 +2,6 @@
 
 ADDON = true;
 
-GVAR(AceHaveAddon) = isClass(configFile >> "CfgPatches" >> "ace_main");
+GVAR(AceHaveAddon) = false;
 
 nil;
