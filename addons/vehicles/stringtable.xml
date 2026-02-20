@@ -21,6 +21,22 @@
             <English>Meep Meep</English>
             <German>Meep Meep</German>
         </Key>
+        <Key ID="STR_A3USPCM_Vehicles_MeepMeep_AnnounceCommanderHostile_Text">
+            <English>Yeah, that %1 %2 won't be too impressed by our puny car horn...</English>
+            <German>Ja, dieser %1 %2 wird von unserer winzigen Autohupe nicht besonders beeindruckt sein...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_MeepMeep_AnnounceCommanderNoTargets_Text">
+            <English>Umm... Road is clear. Nobody's in our way...</English>
+            <German>Ähm... Die Straße ist frei. Niemand steht uns im Weg...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_MeepMeep_AnnounceCommanderWait_Text">
+            <English>Give the guys some time to react; they're moving already...</English>
+            <German>Gib den Jungs etwas Zeit zu reagieren; sie bewegen sich schon...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_MeepMeep_AnnouncePetrosAintGonnaMove_Text">
+            <English>Yeah, I ain't moving, bro. Find a way around me...</English>
+            <German>Nee, ich bewege mich nicht, Bruder. Finde einen Weg um mich herum...</German>
+        </Key>
         <Key ID="STR_A3USPCM_Vehicles_Resupply_Type_AmmoYes">
             <English>rearmed</English>
             <German>neubewaffnet</German>

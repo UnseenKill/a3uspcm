@@ -35,7 +35,7 @@ private _actionId = _object addAction[
 
 _object setUserActionText[
     _actionId, LLSTRING(MeepMeep_Action_DisplayName),
-    format["<img size='2' image='%1' />", QPATHTOEF(assets,ui\vehicles-icon-meepmeep.paa)]
+    format["<img size='1' image='%1' />", QPATHTOEF(assets,ui\vehicles-icon-meepmeep.paa)]
 ];
 
 nil;
