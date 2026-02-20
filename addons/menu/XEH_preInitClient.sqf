@@ -80,6 +80,18 @@
     { [] call EFUNC(vehicles,switchSeat) }
 ] call CBA_fnc_addKeybind;
 
+[
+    ELSTRING(main,Title),
+    QEGVAR(vehicles,HotkeysMeepMeep),
+    [ELSTRING(vehicles,HotkeysMeepMeep), ELSTRING(vehicles,HotkeysMeepMeepTooltip)],
+    {},
+    {
+        !(isNull objectParent player) &&
+        {[objectParent player, player] call EFUNC(vehicles,meepMeepCanDoAction)} &&
+        {[objectParent player, player] call EFUNC(vehicles,meepMeepDoAction)}
+    }
+] call CBA_fnc_addKeybind;
+
 GVAR(DiaryActions) = createHashMap;
 GVAR(IntelCleanup) = false;
 GVAR(IntelMarkers) = createHashMap;

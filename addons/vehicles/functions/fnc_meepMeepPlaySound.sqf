@@ -26,7 +26,7 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _target) exitWith {};
 
-private _sound = [QGVAR(MeepMeep), QGVAR(TruckHorn)] select(random 1 < 0.9);
+private _sound = [QGVAR(MeepMeep), QGVAR(TruckHorn)] select((random 1) < 0.9);
 playSound _sound;
 [_target, _sound] remoteExec["say3D"];
 

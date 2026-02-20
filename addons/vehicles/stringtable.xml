@@ -9,6 +9,14 @@
             <English>A3USPCM - Vehicles Component</English>
             <German>A3USPCM - Fahrzeuge Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Vehicles_HotkeysMeepMeep">
+            <English>Meep Meep</English>
+            <German>Meep Meep</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Vehicles_HotkeysMeepMeepTooltip">
+            <English>Use the car horn to shoo nearby units away from the vehicle. Works on vehicles without a horn, too.</English>
+            <German>Benutze die Autohupe, um nahe Einheiten vom Fahrzeug wegzujagen. Funktioniert auch bei Fahrzeugen ohne Hupe.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Vehicles_HotkeysSwitchSeat">
             <English>Switch Seat</English>
             <German>Sitz wechseln</German>
