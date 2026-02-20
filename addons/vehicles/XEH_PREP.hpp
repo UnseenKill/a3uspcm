@@ -1,8 +1,13 @@
 PREP(canAirVehicleResupply);
 PREP(doAirVehicleResupply);
+PREP(initVanillaInteractions);
+PREP(meepMeepCanDoAction);
+PREP(meepMeepDoAction);
+PREP(meepMeepInitInteractions);
 PREP(onSeatsConfigSettingChanged);
 PREP(resupplyAirVehicle);
 PREP(resupplyCheckEngineer);
+PREP(resupplyInitInteractions);
 PREP(resupplyOnWaypointComplete);
 PREP(resupplyPilotAnnounce);
 PREP(resupplyWaitForVehicle);

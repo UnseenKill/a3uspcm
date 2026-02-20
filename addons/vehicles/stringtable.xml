@@ -17,6 +17,10 @@
             <English>Switch to the gunner seat or any other configured seat of a vehicle.</English>
             <German>Wechselt in den Geschützmannssitz oder einen anderen konfigurierten Sitz eines Fahrzeugs.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Vehicles_MeepMeep_Action_DisplayName">
+            <English>Meep Meep</English>
+            <German>Meep Meep</German>
+        </Key>
         <Key ID="STR_A3USPCM_Vehicles_Resupply_Type_AmmoYes">
             <English>rearmed</English>
             <German>neubewaffnet</German>
