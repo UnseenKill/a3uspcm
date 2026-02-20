@@ -7,13 +7,9 @@ Description:
 
 Parameters:
     0: _unit - Unit whose loadout changed <OBJECT>
-    1: _slotItemName - Name of the item that was equipped/unequipped in the slot <STRING>
-    2: _slot - Number of the slot that was changed <NUMBER>
-    3: _assigned - Whether the item was assigned (true) or unassigned (false) <BOOL>
-    4: weapon - The weapon object that was changed, if applicable (otherwise "") <STRING>
 
 Optional:
-    5: _execute - Whether to execute the loadout change immediately or delay it
+    1: _execute - Whether to execute the loadout change immediately or delay it
         (default: false) <BOOL>
 
 Returns:
@@ -34,14 +30,14 @@ if !assert(params[
 if !assert(!isNull _unit) exitWith {};
 if (_unit isNotEqualTo player) exitWith {}; // Don't really know, if this is necessary
 
-private _execute = param[5, false, [true]];
+private _execute = param[1, false, [true]];
 
 // Suppress repeated calls to this function when user dumps his inventory
 if !(_execute) exitWith {
     GVAR(fireLoadoutEventAfter) = diag_tickTime + (missionNamespace getVariable[QGVAR(waitAndExecuteDelay), 3]);
 
     if (isNil QGVAR(fireLoadoutScript)) then {
-        private _args = [_this + [true], _this] select(count _this isEqualTo 6);
+        private _args = [_this + [true], _this] select(count _this isEqualTo 2);
         GVAR(fireLoadoutScript) = _args spawn {
             waitUntil { diag_tickTime > GVAR(fireLoadoutEventAfter) };
             GVAR(fireLoadoutScript) = nil;

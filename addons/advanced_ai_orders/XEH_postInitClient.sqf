@@ -34,7 +34,7 @@ GVAR(securityReferenceSetting) = player;
         };
     }];
 
-    player addEventHandler["SlotItemChanged", { call FUNC(onPlayerEventLoadout) }];
+    player addEventHandler["SlotItemChanged", { [_this select 0] call FUNC(onPlayerEventLoadout) }];
 
     [{
         [player] call FUNC(onPlayerEventLoadout);
