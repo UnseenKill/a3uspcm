@@ -41,8 +41,6 @@ if !(_execute) exitWith {
         GVAR(fireLoadoutScript) = _args spawn {
             waitUntil { diag_tickTime > GVAR(fireLoadoutEventAfter) };
             GVAR(fireLoadoutScript) = nil;
-
-            TRACE_1(QFUNC(onPlayerEventLoadout),_this);
             call FUNC(onPlayerEventLoadout);
         };
     };
