@@ -20,7 +20,7 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(initVanillaInteractions),_this);
 
-if (EGVAR(main,AceHaveAddon)) then {
+if !(EGVAR(main,AceHaveAddon)) then {
     ["Air", "init", { call FUNC(resupplyInitInteractions) }] call CBA_fnc_addClassEventHandler;
 };
 
