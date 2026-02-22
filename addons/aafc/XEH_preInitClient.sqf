@@ -9,6 +9,8 @@
     player reveal _contact;
 }] call CBA_fnc_addEventHandler;
 
+[CBA_EVENT_AAFC_RADAR_STROBE, { call FUNC(radarStrobeLight) }] call CBA_fnc_addEventHandler;
+
 [CBA_EVENT_AAFC_SIDECHAT, {
     if !assert(params[
         ["_sender", nil, [objNull]],

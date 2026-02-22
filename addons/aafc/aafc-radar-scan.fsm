@@ -1,0 +1,524 @@
+/*%FSM<COMPILE "G:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, a3uspcm-aafc-radar-scan">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"A_A_FC_Radar_Sca",0,250,-108.471878,-271.935059,-18.471878,-221.935059,0.000000,"A/A FC" \n "Radar" \n "Scan"};
+item1[] = {"Initialize",2,250,-113.489693,-64.893860,-23.489670,-14.893875,0.000000,"Initialize"};
+item2[] = {"_",8,218,-77.985825,-164.580399,-43.183578,-131.291641,0.000000,""};
+item3[] = {"_",8,218,2.531982,-54.184937,37.334229,-20.896179,0.000000,""};
+item4[] = {"Loop",2,4346,69.815582,-62.451752,159.815598,-12.451752,0.000000,"Loop"};
+item5[] = {"__20__Dead_or_go",4,218,69.054688,-164.797363,159.054688,-114.797363,20.000000,"(20)" \n "Dead" \n "or gone"};
+item6[] = {"Done",1,250,69.435181,-267.142883,159.435211,-217.142960,0.000000,"Done"};
+item7[] = {"Reiterate",2,250,280.982391,209.774170,576.581360,260.786987,0.000000,"Reiterate"};
+item8[] = {"Delay",2,250,68.800232,211.799805,158.800247,261.799805,0.000000,"Delay"};
+item9[] = {"continue",4,218,69.883392,8.608795,159.883392,58.608795,0.000000,"continue"};
+item10[] = {"_",8,218,200.970917,217.876648,235.773163,251.165405,0.000000,""};
+item11[] = {"_",8,218,410.437988,132.933578,445.240173,166.222336,0.000000,""};
+item12[] = {"Bad_init",4,218,-17.217621,-208.130890,72.782379,-158.130890,1.000000,"Bad" \n "init"};
+item13[] = {"__10__need_POI_update",4,218,231.786545,-19.698990,321.786560,30.301010,10.000000,"(10)" \n "need POI" \n "update?"};
+item14[] = {"POI_refresh",2,250,320.060364,59.909943,410.060364,109.909943,0.000000,"POI" \n "refresh"};
+item15[] = {"__5__need_POI_",4,218,284.317505,-50.026199,374.317505,-0.026199,5.000000,"(5)" \n "need" \n "POI?"};
+item16[] = {"POI_pick",2,250,428.371704,60.993057,518.371704,110.993057,0.000000,"POI" \n "pick"};
+item17[] = {"_",8,218,338.473419,-79.811783,428.473419,-29.811783,0.000000,""};
+item18[] = {"Look_at_POI",2,250,453.283386,-79.811905,543.283386,-29.811905,0.000000,"Look at" \n "POI"};
+item19[] = {"__5__POI_is_marker",4,218,582.174011,-120.428673,672.174011,-70.428665,5.000000,"(5)" \n "POI is" \n "marker?"};
+item20[] = {"_",8,218,581.632507,-50.026245,671.632507,-0.026245,0.000000,""};
+item21[] = {"Translate_to_pos",2,250,701.858154,-122.053360,791.858154,-72.053345,0.000000,"Translate" \n "to position"};
+item22[] = {"Swivel_to_positi",2,250,701.858215,-40.819733,791.858215,9.180267,0.000000,"Swivel" \n "to position"};
+item23[] = {"_",8,218,839.413757,-74.937851,874.215942,-41.649094,0.000000,""};
+item24[] = {"Look",2,250,817.209839,204.505707,907.209839,254.505707,0.000000,"Look"};
+item25[] = {"_",8,218,662.866028,212.087494,697.668213,245.376251,0.000000,""};
+item26[] = {"__10__POI_expired",4,218,583.257080,16.585327,673.257080,66.585327,10.000000,"(10)" \n "POI" \n "expired?"};
+item27[] = {"Reset_POI_info",2,250,585.423401,90.237122,675.423401,140.237122,0.000000,"Reset POI" \n "info"};
+link0[] = {0,2};
+link1[] = {1,3};
+link2[] = {1,12};
+link3[] = {2,1};
+link4[] = {3,4};
+link5[] = {4,5};
+link6[] = {4,13};
+link7[] = {4,15};
+link8[] = {4,17};
+link9[] = {5,6};
+link10[] = {7,10};
+link11[] = {8,9};
+link12[] = {9,4};
+link13[] = {10,8};
+link14[] = {11,7};
+link15[] = {12,6};
+link16[] = {13,14};
+link17[] = {14,11};
+link18[] = {15,16};
+link19[] = {16,11};
+link20[] = {17,18};
+link21[] = {18,19};
+link22[] = {18,20};
+link23[] = {18,26};
+link24[] = {19,21};
+link25[] = {20,22};
+link26[] = {21,23};
+link27[] = {22,23};
+link28[] = {23,24};
+link29[] = {24,25};
+link30[] = {25,7};
+link31[] = {26,27};
+link32[] = {27,25};
+globals[] = {0.000000,0,0,0,0,640,480,1,36,6316128,1,-4.332458,923.896790,426.544189,-281.812744,1714,1308,1};
+window[] = {0,-1,-1,-1,-1,1698,152,3216,152,1,1741};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "a3uspcm-aafc-radar-scan";
+        class States
+        {
+                /*%FSM<STATE "A_A_FC_Radar_Sca">*/
+                class A_A_FC_Radar_Sca
+                {
+                        name = "A_A_FC_Radar_Sca";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"diag_log text format[""[A3USPCM] (aafc-fsm) Entry point; _this=%1"", _this];" \n
+                         "" \n
+                         "if !assert(params[" \n
+                         "    [""_vehicle"", nil, [objNull]]" \n
+                         "]) exitWith {};" \n
+                         "" \n
+                         "private _debug = param[1, false, [true]];" \n
+                         "private[""_TRACE""];" \n
+                         "" \n
+                         "if !(_debug) then {" \n
+                         "    _TRACE = {};" \n
+                         "} else {" \n
+                         "    _TRACE = {" \n
+                         "        diag_log text format[""[A3USPCM] (aafc-fsm) [%1] %2"", _vehicle, format _this];" \n
+                         "    };" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 2;
+                                        priority = 0.000000;
+                                        to="Initialize";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Initialize">*/
+                class Initialize
+                {
+                        name = "Initialize";
+                        itemno = 1;
+                        init = /*%FSM<STATEINIT""">*/"[""Initialize""] call _TRACE;" \n
+                         "" \n
+                         "private _ranges = [_vehicle] call A3USPCM_fnc_utilGetVehicleEffectiveRanges;" \n
+                         "private _initOK = false;" \n
+                         "" \n
+                         "if (crew _vehicle isEqualTo []) exitWith {[""vehicle is uncrewed""] call _TRACE};" \n
+                         "if (isNil { _ranges get ""sensorsActive"" }) exitWith {[""vehicle has no radar""] call _TRACE};" \n
+                         "if !(_ranges get ""sensorsActive"") exitWith {[""vehicle has no active sensors""] call _TRACE};" \n
+                         "" \n
+                         "_initOK = true;" \n
+                         "" \n
+                         "private _sensorsMax = _ranges get ""sensorsMax"";" \n
+                         "private _sensorsMin = _ranges get ""sensorsMin"";" \n
+                         "private _interestSweepTTL = 10;" \n
+                         "private _interestPOITTL = 20;" \n
+                         "" \n
+                         "[""ranges=%1"", _ranges] call _TRACE;" \n
+                         "" \n
+                         "[[], 0] params[""_poiList"",""_poiScan"",""_poiCurrent"",""_poiIteration""];" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Bad_init">*/
+                                class Bad_init
+                                {
+                                        itemno = 12;
+                                        priority = 1.000000;
+                                        to="Done";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!_initOK;" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Loop">*/
+                class Loop
+                {
+                        name = "Loop";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"[""Loop: poiList=%1,poiScan=%2"", _poiList, _poiScan - diag_ticktime] call _TRACE;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__20__Dead_or_go">*/
+                                class __20__Dead_or_go
+                                {
+                                        itemno = 5;
+                                        priority = 20.000000;
+                                        to="Done";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isNull _vehicle || { !alive _vehicle }"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__10__need_POI_update">*/
+                                class __10__need_POI_update
+                                {
+                                        itemno = 13;
+                                        priority = 10.000000;
+                                        to="POI_refresh";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_tickTime > _poiScan) &&" \n
+                                         "{ _poiList isEqualTo [] };" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__5__need_POI_">*/
+                                class __5__need_POI_
+                                {
+                                        itemno = 15;
+                                        priority = 5.000000;
+                                        to="POI_pick";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isNil ""_poiCurrent"";" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 17;
+                                        priority = 0.000000;
+                                        to="Look_at_POI";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Done">*/
+                class Done
+                {
+                        name = "Done";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"[""Done""] call _TRACE;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Reiterate">*/
+                class Reiterate
+                {
+                        name = "Reiterate";
+                        itemno = 7;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 10;
+                                        priority = 0.000000;
+                                        to="Delay";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Delay">*/
+                class Delay
+                {
+                        name = "Delay";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"private _delay = diag_tickTime + 2;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "continue">*/
+                                class continue
+                                {
+                                        itemno = 9;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_tickTime > _delay"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "POI_refresh">*/
+                class POI_refresh
+                {
+                        name = "POI_refresh";
+                        itemno = 14;
+                        init = /*%FSM<STATEINIT""">*/"[""POI refresh""] call _TRACE;" \n
+                         "" \n
+                         "private _markers = (airportsX + milbases + [""NATO_Carrier"",""CSAT_Carrier""]) select {" \n
+                         "    [""POI: %1=%2"", _x, markerType _x] call _TRACE;" \n
+                         "    markerType _x isNotEqualTo """";" \n
+                         "} select {" \n
+                         "    sidesX getVariable[_x, sideUnknown] isNotEqualTo side _vehicle;" \n
+                         "};" \n
+                         "" \n
+                         "[""markers=%1"", _markers] call _TRACE;" \n
+                         "" \n
+                         "_poiList = [_markers] call CBA_fnc_shuffle;" \n
+                         "_poiScan = diag_tickTime + 180;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Reiterate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "POI_pick">*/
+                class POI_pick
+                {
+                        name = "POI_pick";
+                        itemno = 16;
+                        init = /*%FSM<STATEINIT""">*/"private _randomSweep = (random 100) < 25;" \n
+                         "" \n
+                         "if (_randomSweep || { _poiList isEqualTo [] }) then {" \n
+                         "    _poiCurrent = [diag_tickTime + _interestSweepTTL, false];" \n
+                         "} else {" \n
+                         "    _poiCurrent = [diag_tickTime + _interestPOITTL, _poiList deleteAt 0];" \n
+                         "};" \n
+                         "" \n
+                         "[""new POI=%1 -------------------------------------------------"", _poiCurrent] call _TRACE;" \n
+                         "_poiIteration = -1;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Reiterate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Look_at_POI">*/
+                class Look_at_POI
+                {
+                        name = "Look_at_POI";
+                        itemno = 18;
+                        init = /*%FSM<STATEINIT""">*/"_poiCurrent params[""_poiTTL"",""_poiPosIn""];" \n
+                         "" \n
+                         "private[""_poiPos""];" \n
+                         "" \n
+                         "_poiIteration = _poiIteration + 1;" \n
+                         "[""Look at POI: TTL=%1,Iter=%2,Pos=%3"", _poiTTL - diag_tickTime, _poiIteration, _poiPosIn] call _TRACE;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__10__POI_expired">*/
+                                class __10__POI_expired
+                                {
+                                        itemno = 26;
+                                        priority = 10.000000;
+                                        to="Reset_POI_info";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_tickTime > _poiTTL;" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__5__POI_is_marker">*/
+                                class __5__POI_is_marker
+                                {
+                                        itemno = 19;
+                                        priority = 5.000000;
+                                        to="Translate_to_pos";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_poiPosIn isEqualType """";" \n
+                                         "" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 20;
+                                        priority = 0.000000;
+                                        to="Swivel_to_positi";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Translate_to_pos">*/
+                class Translate_to_pos
+                {
+                        name = "Translate_to_pos";
+                        itemno = 21;
+                        init = /*%FSM<STATEINIT""">*/"_poiPos = markerPos _poiPosIn vectorAdd[0, 0, 500];" \n
+                         "" \n
+                         "private _offsets = [0, -20, 0, 20];" \n
+                         "private _direction = (_vehicle getDir _poiPos) + (_offsets select(_poiIteration % 4));" \n
+                         "" \n
+                         "_poiPos = _vehicle getPos[_vehicle distance _poiPos, _direction];" \n
+                         "" \n
+                         "[""POI marker=%1,direction=%2,iteration=%3,offset=%4"", _poiPos, _direction, _poiIteration, _offsets select(_poiIteration % 4)] call _TRACE;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 23;
+                                        priority = 0.000000;
+                                        to="Look";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Swivel_to_positi">*/
+                class Swivel_to_positi
+                {
+                        name = "Swivel_to_positi";
+                        itemno = 22;
+                        init = /*%FSM<STATEINIT""">*/"private _direction = [-deg(_vehicle animationSourcePhase ""mainturret"")] call A3USPCM_fnc_utilNormalizeDirection;" \n
+                         "_direction = _direction + 91.5;" \n
+                         "" \n
+                         "_poiPos = _vehicle getPos[_sensorsMax, _direction] vectorAdd[0,0,500];" \n
+                         "[""swivel to=%1"", _poiPos] call _TRACE;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 23;
+                                        priority = 0.000000;
+                                        to="Look";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Look">*/
+                class Look
+                {
+                        name = "Look";
+                        itemno = 24;
+                        init = /*%FSM<STATEINIT""">*/"[""Look at=%1"", _poiPos] call _TRACE;" \n
+                         "gunner _vehicle lookAt _poiPos;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 25;
+                                        priority = 0.000000;
+                                        to="Reiterate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Reset_POI_info">*/
+                class Reset_POI_info
+                {
+                        name = "Reset_POI_info";
+                        itemno = 27;
+                        init = /*%FSM<STATEINIT""">*/"_poiCurrent = nil;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 25;
+                                        priority = 0.000000;
+                                        to="Reiterate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="A_A_FC_Radar_Sca";
+        finalStates[] =
+        {
+                "Done",
+        };
+};
+/*%FSM</COMPILE>*/

@@ -451,6 +451,36 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(aafc,radarsAdditionalClasses), "EDITBOX",
+    [ELSTRING(aafc,Settings_radarsAdditionalClasses_DisplayName), ELSTRING(aafc,Settings_radarsAdditionalClasses_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    '[]', // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(aafc,radarsUseStrobeLights), "CHECKBOX",
+    [ELSTRING(aafc,Settings_radarsUseStrobeLights_DisplayName), ELSTRING(aafc,Settings_radarsUseStrobeLights_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(aafc,radarsExecuteFSM), "CHECKBOX",
+    [ELSTRING(aafc,Settings_radarsExecuteFSM_DisplayName), ELSTRING(aafc,Settings_radarsExecuteFSM_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // AAIO
 
 [

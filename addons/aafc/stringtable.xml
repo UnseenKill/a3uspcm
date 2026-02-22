@@ -153,6 +153,30 @@
             <English>Play a sound when an AA group detects a new contact.</English>
             <German>Spiele einen Ton ab, wenn eine Fla-Gruppe einen neuen Kontakt entdeckt.</German>
         </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_radarsAdditionalClasses_DisplayName">
+            <English>Radars: additional classes</English>
+            <German>Radare: zusätzliche Klassen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_radarsAdditionalClasses_Tooltip">
+            <English>Additional classes to identify as radars (in addition to the built-in list).\nFormat: ["ClassName1", "ClassName2", ...]</English>
+            <German>Zusätzliche Klassen, die als Radare identifiziert werden sollen (zusätzlich zur eingebauten Liste).\nFormat: ["ClassName1", "ClassName2", ...]</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_radarsExecuteFSM_DisplayName">
+            <English>Radars: scan environment</English>
+            <German>Radare: Umgebung scannen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_radarsExecuteFSM_Tooltip">
+            <English>Whether radars are just sitting there or actively scanning the environment.</English>
+            <German>Ob Radare nur doof rumstehen oder aktiv die Umgebung scannen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_radarsUseStrobeLights_DisplayName">
+            <English>Radars: use strobe lights</English>
+            <German>Radare: Stroboskoplichter verwenden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_AAFC_Settings_radarsUseStrobeLights_Tooltip">
+            <English>Use strobe lights to visually identify radar units (experimental, may cause performance issues).</English>
+            <German>Verwende Stroboskoplichter, um Radareinheiten visuell zu identifizieren (experimentell, kann Leistungsprobleme verursachen).</German>
+        </Key>
         <Key ID="STR_A3USPCM_AAFC_Settings_reportAirOnly_DisplayName">
             <English>Report air contacts only</English>
             <German>Nur Luftkontakte melden</German>

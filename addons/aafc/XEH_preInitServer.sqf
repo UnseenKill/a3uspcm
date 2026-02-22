@@ -34,6 +34,7 @@ publicVariable QGVAR(groups);
 [CBA_EVENT_AAFC_SET_ROE_GLOBAL, { call FUNC(enforceROE) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_AAFC_SET_UNIT_CANFIRE, { call FUNC(setUnitCanFire) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_AAFC_UNIT_ROE_CHANGED, { call FUNC(acknowledgeROEChange) }] call CBA_fnc_addEventHandler;
+[CBA_EVENT_AAFC_VEHICLES_UPDATE, { call FUNC(updateGroupVehicles) }] call CBA_fnc_addEventHandler;
 
 [{
     if (isNil QGVAR(defaultInitialMode)) then {
@@ -45,6 +46,17 @@ publicVariable QGVAR(groups);
     };
 
     [CBA_EVENT_AAFC_START_CONTACT_TRACK, { call FUNC(onStartContactTracking) }] call CBA_fnc_addEventHandler;
+
+    private _setting = GVAR(radarsAdditionalClasses);
+    private _classes = parseSimpleArray _setting;
+
+    if (isNil "_classes" || { !(_classes isEqualType [])}) then {
+        _classes = [];
+        ERROR_1("Invalid setting for radarsAdditionalClasses: %1",_setting);
+    };
+
+    GVAR(radarsAdditionalClassesList) = _classes select { (_x isEqualType "") && { _x isNotEqualTo "" }};
+    INFO_1("Additional radar classes: %1",GVAR(radarsAdditionalClassesList));
 
     if GVAR(autoGroupAtStart) then {
         INFO("Auto-grouping A/A vehicles");
