@@ -41,7 +41,8 @@ switch true do {
     // Patriot, S-400
     case ((["SAM_System_03_base_F", "SAM_System_04_base_F"] findIf { _vehicle isKindOf _x }) != -1): { AA_TYPE_LRSAM };
     // AN/MPQ-105, Cronos
-    case ((["Radar_System_01_base_F", "Radar_System_02_base_F"] findIf { _vehicle isKindOf _x }) != -1): { AA_TYPE_RADAR };
+    case ((["Radar_System_01_base_F", "Radar_System_02_base_F"] findIf { _vehicle isKindOf _x }) != -1);
+    case (GVAR(radarsAdditionalClassesList) findIf { _vehicle isKindOf _x } != -1): { AA_TYPE_RADAR };
     // Praetorian 1C, JCA ADS-2 Skynex
     case (_vehicle isKindOf "StaticMGWeapon"): { AA_TYPE_CIWS };
     // RAM-1500 AA, Shilka and the likes

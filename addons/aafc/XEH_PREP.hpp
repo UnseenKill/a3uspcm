@@ -5,8 +5,10 @@ PREP(drawVehicleEffectiveRangesMarkers);
 PREP(enforceROE);
 PREP(getAAType);
 PREP(initReportHandler);
+PREP(isRadar);
 PREP(missileSafetyNetCheck);
 PREP(onStartContactTracking);
+PREP(radarStrobeLight);
 PREP(registerAAGroup);
 PREP(reloadCheck);
 PREP(roeCorrectionMonitor);
@@ -14,6 +16,7 @@ PREP(setUnitCanFire);
 PREP(toggleROEAll);
 PREP(trackContact);
 PREP(updateContactTracks);
+PREP(updateGroupVehicles);
 
 // Tablet UI
 PREP(tabletEventOnAfterTabFocus);
