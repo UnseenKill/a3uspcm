@@ -24,7 +24,7 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNCMAIN(utilNormalizeDirection),_this);
+//TRACE_1(QFUNCMAIN(utilNormalizeDirection),_this);
 
 if !assert(params[
     ["_direction", nil, [0]]
