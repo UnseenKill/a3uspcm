@@ -5,7 +5,7 @@ item0[] = {"A_A_FC_Radar_Sca",0,250,-108.471878,-271.935059,-18.471878,-221.9350
 item1[] = {"Initialize",2,250,-113.489693,-64.893860,-23.489670,-14.893875,0.000000,"Initialize"};
 item2[] = {"_",8,218,-77.985825,-164.580399,-43.183578,-131.291641,0.000000,""};
 item3[] = {"_",8,218,2.531982,-54.184937,37.334229,-20.896179,0.000000,""};
-item4[] = {"Loop",2,250,69.815582,-62.451752,159.815598,-12.451752,0.000000,"Loop"};
+item4[] = {"Loop",2,4346,69.815582,-62.451752,159.815598,-12.451752,0.000000,"Loop"};
 item5[] = {"__20__Dead_or_go",4,218,69.054688,-164.797363,159.054688,-114.797363,20.000000,"(20)" \n "Dead" \n "or gone"};
 item6[] = {"Done",1,250,69.435181,-267.142883,159.435211,-217.142960,0.000000,"Done"};
 item7[] = {"Reiterate",2,250,280.982391,209.774170,576.581360,260.786987,0.000000,"Reiterate"};
@@ -20,7 +20,7 @@ item15[] = {"__5__need_POI_",4,218,284.317505,-50.026199,374.317505,-0.026199,5.
 item16[] = {"POI_pick",2,250,428.371704,60.993057,518.371704,110.993057,0.000000,"POI" \n "pick"};
 item17[] = {"_",8,218,338.473419,-79.811783,428.473419,-29.811783,0.000000,""};
 item18[] = {"Look_at_POI",2,250,453.283386,-79.811905,543.283386,-29.811905,0.000000,"Look at" \n "POI"};
-item19[] = {"__5__POI_is_marker",4,4314,582.174011,-120.428673,672.174011,-70.428665,5.000000,"(5)" \n "POI is" \n "marker?"};
+item19[] = {"__5__POI_is_marker",4,218,582.174011,-120.428673,672.174011,-70.428665,5.000000,"(5)" \n "POI is" \n "marker?"};
 item20[] = {"_",8,218,581.632507,-50.026245,671.632507,-0.026245,0.000000,""};
 item21[] = {"Translate_to_pos",2,250,701.858154,-122.053360,791.858154,-72.053345,0.000000,"Translate" \n "to position"};
 item22[] = {"Swivel_to_positi",2,250,701.858215,-40.819733,791.858215,9.180267,0.000000,"Swivel" \n "to position"};
@@ -62,7 +62,7 @@ link29[] = {24,25};
 link30[] = {25,7};
 link31[] = {26,27};
 link32[] = {27,25};
-globals[] = {0.000000,0,0,0,0,640,480,1,36,6316128,1,-8.123359,920.105774,426.544189,-281.812744,1714,1308,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,36,6316128,1,-4.332458,923.896790,426.544189,-281.812744,1714,1308,1};
 window[] = {0,-1,-1,-1,-1,1698,152,3216,152,1,1741};
 *//*%FSM</HEAD>*/
 class FSM
@@ -127,10 +127,12 @@ class FSM
                          "" \n
                          "private _sensorsMax = _ranges get ""sensorsMax"";" \n
                          "private _sensorsMin = _ranges get ""sensorsMin"";" \n
+                         "private _interestSweepTTL = 10;" \n
+                         "private _interestPOITTL = 20;" \n
                          "" \n
                          "[""ranges=%1"", _ranges] call _TRACE;" \n
                          "" \n
-                         "[[], 0] params[""_poiList"",""_poiScan"",""_poiCurrent""];" \n
+                         "[[], 0] params[""_poiList"",""_poiScan"",""_poiCurrent"",""_poiIteration""];" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -166,7 +168,7 @@ class FSM
                 {
                         name = "Loop";
                         itemno = 4;
-                        init = /*%FSM<STATEINIT""">*/"[""Loop""] call _TRACE;" \n
+                        init = /*%FSM<STATEINIT""">*/"[""Loop: poiList=%1,poiScan=%2"", _poiList, _poiScan - diag_ticktime] call _TRACE;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -239,8 +241,7 @@ class FSM
                 {
                         name = "Reiterate";
                         itemno = 7;
-                        init = /*%FSM<STATEINIT""">*/"[""Reiterate""] call _TRACE;" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -263,9 +264,7 @@ class FSM
                 {
                         name = "Delay";
                         itemno = 8;
-                        init = /*%FSM<STATEINIT""">*/"private _delay = diag_tickTime + 3;" \n
-                         "" \n
-                         "[""Delay; now=%1; then=%2"",diag_tickTime,_delay] call _TRACE;" \n
+                        init = /*%FSM<STATEINIT""">*/"private _delay = diag_tickTime + 2;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -325,15 +324,16 @@ class FSM
                 {
                         name = "POI_pick";
                         itemno = 16;
-                        init = /*%FSM<STATEINIT""">*/"private _randomSweep = (random 100) < 50;" \n
+                        init = /*%FSM<STATEINIT""">*/"private _randomSweep = (random 100) < 25;" \n
                          "" \n
                          "if (_randomSweep || { _poiList isEqualTo [] }) then {" \n
-                         "    _poiCurrent = [diag_tickTime + 60, false];" \n
+                         "    _poiCurrent = [diag_tickTime + _interestSweepTTL, false];" \n
                          "} else {" \n
-                         "    _poiCurrent = [diag_tickTime + 20, _poiList deleteAt 0];" \n
+                         "    _poiCurrent = [diag_tickTime + _interestPOITTL, _poiList deleteAt 0];" \n
                          "};" \n
                          "" \n
                          "[""new POI=%1 -------------------------------------------------"", _poiCurrent] call _TRACE;" \n
+                         "_poiIteration = -1;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -357,11 +357,12 @@ class FSM
                 {
                         name = "Look_at_POI";
                         itemno = 18;
-                        init = /*%FSM<STATEINIT""">*/"[""Look at extract=%1"", _poiCurrent] call _TRACE;" \n
-                         "" \n
-                         "_poiCurrent params[""_poiTTL"",""_poiPosIn""];" \n
+                        init = /*%FSM<STATEINIT""">*/"_poiCurrent params[""_poiTTL"",""_poiPosIn""];" \n
                          "" \n
                          "private[""_poiPos""];" \n
+                         "" \n
+                         "_poiIteration = _poiIteration + 1;" \n
+                         "[""Look at POI: TTL=%1,Iter=%2,Pos=%3"", _poiTTL - diag_tickTime, _poiIteration, _poiPosIn] call _TRACE;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -411,7 +412,13 @@ class FSM
                         name = "Translate_to_pos";
                         itemno = 21;
                         init = /*%FSM<STATEINIT""">*/"_poiPos = markerPos _poiPosIn vectorAdd[0, 0, 500];" \n
-                         "[""POI marker=%1"", _poiPos] call _TRACE;" \n
+                         "" \n
+                         "private _offsets = [0, -20, 0, 20];" \n
+                         "private _direction = (_vehicle getDir _poiPos) + (_offsets select(_poiIteration % 4));" \n
+                         "" \n
+                         "_poiPos = _vehicle getPos[_vehicle distance _poiPos, _direction];" \n
+                         "" \n
+                         "[""POI marker=%1,direction=%2,iteration=%3,offset=%4"", _poiPos, _direction, _poiIteration, _offsets select(_poiIteration % 4)] call _TRACE;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
