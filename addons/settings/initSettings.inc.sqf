@@ -465,7 +465,7 @@
     QEGVAR(aafc,radarsUseStrobeLights), "CHECKBOX",
     [ELSTRING(aafc,Settings_radarsUseStrobeLights_DisplayName), ELSTRING(aafc,Settings_radarsUseStrobeLights_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
-    true, // default
+    false, // default
     true, // global
     {}, // onchange
     true // Needs mission restart
