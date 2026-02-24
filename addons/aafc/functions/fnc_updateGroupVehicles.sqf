@@ -21,11 +21,11 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(updateGroupVehicles),_this);
 
-#ifdef __A3USPCM_PRODUCTION__
-    #define FSM_DEBUG false
-#else
+#ifdef AAFC_FSM_DEBUG_DURING_DEVELOPMENT
     #define FSM_DEBUG true
-#endif // __A3USPCM_PRODUCTION__
+#else
+    #define FSM_DEBUG false
+#endif // AAFC_FSM_DEBUG_DURING_DEVELOPMENT
 
 if !assert(params[
     ["_group", nil, [grpNull]]

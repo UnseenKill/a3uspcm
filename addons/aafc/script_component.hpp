@@ -7,6 +7,7 @@
     #define AUTO_GROUP_DELAY 15
 #else
     #define AUTO_GROUP_DELAY ([15,1] select is3DENPreview)
+    //#define AAFC_FSM_DEBUG_DURING_DEVELOPMENT
 #endif // __A3USPCM_PRODUCTION__
 
 #define AA_TYPE_UNKNOWN QUOTE(unknown)
