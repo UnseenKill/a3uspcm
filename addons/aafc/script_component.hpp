@@ -16,6 +16,10 @@
 #define AA_TYPE_LRSAM QUOTE(lrSAM)
 #define AA_TYPE_SPAAG QUOTE(selfPropelledAA)
 
+// Any vehicle firing missiles with a max range of this many meters is
+// considered a short-range SAM.
+#define SRSAM_RANGE_THRESHOLD 6000
+
 #define ROE_FIREATWILL 0
 #define ROE_CIWSONLY 1
 #define ROE_SRSAM 2
