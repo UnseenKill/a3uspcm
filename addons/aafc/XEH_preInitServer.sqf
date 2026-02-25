@@ -47,17 +47,6 @@ publicVariable QGVAR(groups);
 
     [CBA_EVENT_AAFC_START_CONTACT_TRACK, { call FUNC(onStartContactTracking) }] call CBA_fnc_addEventHandler;
 
-    private _setting = GVAR(radarsAdditionalClasses);
-    private _classes = parseSimpleArray _setting;
-
-    if (isNil "_classes" || { !(_classes isEqualType [])}) then {
-        _classes = [];
-        ERROR_1("Invalid setting for radarsAdditionalClasses: %1",_setting);
-    };
-
-    GVAR(radarsAdditionalClassesList) = _classes select { (_x isEqualType "") && { _x isNotEqualTo "" }};
-    INFO_1("Additional radar classes: %1",GVAR(radarsAdditionalClassesList));
-
     if GVAR(autoGroupAtStart) then {
         INFO("Auto-grouping A/A vehicles");
 

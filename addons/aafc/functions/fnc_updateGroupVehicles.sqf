@@ -21,6 +21,12 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(updateGroupVehicles),_this);
 
+#ifdef AAFC_FSM_DEBUG_DURING_DEVELOPMENT
+    #define FSM_DEBUG true
+#else
+    #define FSM_DEBUG false
+#endif // AAFC_FSM_DEBUG_DURING_DEVELOPMENT
+
 if !assert(params[
     ["_group", nil, [grpNull]]
 ]) exitWith {};
@@ -30,7 +36,7 @@ _group getVariable[QGVAR(vehicles), []] select {
     [_x] call FUNC(isRadar);
 } apply {
     if (GVAR(radarsExecuteFSM) && {isNil { _x getVariable QGVAR(radarFSM) }}) then {
-        _x setVariable[QGVAR(radarFSM), [_x] execFSM QPATHTOF(aafc-radar-scan.fsm)];
+        _x setVariable[QGVAR(radarFSM), [_x, FSM_DEBUG] execFSM QPATHTOF(aafc-radar-scan.fsm)];
     };
 
     if (GVAR(radarsUseStrobeLights)) then {

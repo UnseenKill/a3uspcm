@@ -7,6 +7,7 @@
     #define AUTO_GROUP_DELAY 15
 #else
     #define AUTO_GROUP_DELAY ([15,1] select is3DENPreview)
+    //#define AAFC_FSM_DEBUG_DURING_DEVELOPMENT
 #endif // __A3USPCM_PRODUCTION__
 
 #define AA_TYPE_UNKNOWN QUOTE(unknown)
@@ -15,6 +16,10 @@
 #define AA_TYPE_SRSAM QUOTE(srSAM)
 #define AA_TYPE_LRSAM QUOTE(lrSAM)
 #define AA_TYPE_SPAAG QUOTE(selfPropelledAA)
+
+// Any vehicle firing missiles with a max range of this many meters is
+// considered a short-range SAM.
+#define SRSAM_RANGE_THRESHOLD 6000
 
 #define ROE_FIREATWILL 0
 #define ROE_CIWSONLY 1

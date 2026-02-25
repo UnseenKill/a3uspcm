@@ -21,6 +21,10 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(getAAType),_this);
 
+#define RETURN_TYPE(type) \
+    GVAR(vehicleTypeCache) set[_vehicle, type]; \
+    type
+
 if !assert(params[
     ["_vehicle", nil, ["", objNull]]
 ]) exitWith { AA_TYPE_UNKNOWN };
@@ -30,23 +34,54 @@ if (_vehicle isEqualType objNull) then {
     _vehicle = typeOf _vehicle;
 };
 
-if (getNumber(configFile >> "CfgVehicles" >> _vehicle >> "radarType") isNotEqualTo 2) then {
-    WARNING_1("Vehicle %1 does not have radarType 2, assuming it's not an AA vehicle",_vehicle);
-    AA_TYPE_UNKNOWN;
+if (_vehicle in GVAR(vehicleTypeCache)) exitWith {
+    GVAR(vehicleTypeCache) get _vehicle;
 };
 
-switch true do {
-    // Mk49 Spartan, Mk-29 ESSM,
-    case ((["SAM_System_01_base_F", "SAM_System_02_base_F"] findIf { _vehicle isKindOf _x }) != -1): { AA_TYPE_SRSAM };
-    // Patriot, S-400
-    case ((["SAM_System_03_base_F", "SAM_System_04_base_F"] findIf { _vehicle isKindOf _x }) != -1): { AA_TYPE_LRSAM };
-    // AN/MPQ-105, Cronos
-    case ((["Radar_System_01_base_F", "Radar_System_02_base_F"] findIf { _vehicle isKindOf _x }) != -1);
-    case (GVAR(radarsAdditionalClassesList) findIf { _vehicle isKindOf _x } != -1): { AA_TYPE_RADAR };
-    // Praetorian 1C, JCA ADS-2 Skynex
-    case (_vehicle isKindOf "StaticMGWeapon"): { AA_TYPE_CIWS };
-    // RAM-1500 AA, Shilka and the likes
-    case (_vehicle isKindOf "Car");
-    case (_vehicle isKindOf "Tank"): { AA_TYPE_SPAAG };
-    default { AA_TYPE_UNKNOWN };
+private _vehicleConfig = configFile >> "CfgVehicles" >> _vehicle;
+
+if (getNumber(_vehicleConfig >> "radarType") isNotEqualTo 2) exitWith {
+    WARNING_1("Vehicle %1 does not have radarType 2, assuming it's not an AA vehicle",_vehicle);
+    RETURN_TYPE(AA_TYPE_UNKNOWN);
 };
+
+private _extractWeapons = {
+    params["_class"];
+
+    flatten(getArray(_class >> "weapons") + ("true" configClasses(_class >> "Turrets") apply {
+        [_x] call _extractWeapons;
+    })) select { _x isNotEqualTo "FakeWeapon" };
+};
+
+private _magazines = [];
+private _weaponTypes = createHashMap;
+
+([_vehicleConfig] call _extractWeapons) apply {
+    configFile >> "CfgWeapons" >> _x;
+} select {
+    getText(_x >> "simulation") isEqualTo "Weapon";
+} apply {
+    _magazines insert[-1, getArray(_x >> "magazines"), true];
+    _weaponTypes set[getText(_x >> "nameSound"), true];
+};
+
+_weaponTypes = keys _weaponTypes;
+TRACE_2(QFUNC(getAAType),_vehicle,_weaponTypes);
+
+// We've established that the vehicle has radarType 2 a couple of lines earlier.
+// No weapons, but a radar would suggest the vehicle is a radar.
+if (_weaponTypes isEqualTo []) exitWith { RETURN_TYPE(AA_TYPE_RADAR) };
+
+// Some sort of weaponry, but it's movable, so it's likely a SPAAG
+if (_vehicle isKindOf "Car" || { _vehicle isKindOf "Tank" }) exitWith { RETURN_TYPE(AA_TYPE_SPAAG) };
+
+// Has no missiles, but some sort of weapon, so it's likely a CIWS
+if !("MissileLauncher" in _weaponTypes) exitWith { RETURN_TYPE(AA_TYPE_CIWS) };
+
+// Determine max missile range, then categorize if SRSAM or LRSAM based on that.
+private _maxMissileRange = [_magazines, 0, {
+    private _range = getNumber(configFile >> "CfgAmmo" >> getText(configFile >> "CfgMagazines" >> _x >> "ammo") >> "missileLockMaxDistance");
+    _accumulator max _range;
+}] call CBA_fnc_inject;
+
+[AA_TYPE_SRSAM, AA_TYPE_LRSAM] select(_maxMissileRange > SRSAM_RANGE_THRESHOLD);
