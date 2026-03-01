@@ -1,38 +1,46 @@
 /*%FSM<COMPILE "G:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, a3uspcm-aafc-radar-scan">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"A_A_FC_Radar_Sca",0,250,-108.471878,-271.935059,-18.471878,-221.935059,0.000000,"A/A FC" \n "Radar" \n "Scan"};
-item1[] = {"Initialize",2,250,-113.489693,-64.893860,-23.489670,-14.893875,0.000000,"Initialize"};
-item2[] = {"_",8,218,-77.985825,-164.580399,-43.183578,-131.291641,0.000000,""};
-item3[] = {"_",8,218,2.531982,-54.184937,37.334229,-20.896179,0.000000,""};
-item4[] = {"Loop",2,250,69.815582,-62.451752,159.815598,-12.451752,0.000000,"Loop"};
-item5[] = {"__20__Dead_or_go",4,218,69.054688,-164.797363,159.054688,-114.797363,20.000000,"(20)" \n "Dead" \n "or gone"};
-item6[] = {"Done",1,250,69.435181,-267.142883,159.435211,-217.142960,0.000000,"Done"};
-item7[] = {"Reiterate",2,250,280.982391,209.774170,576.581360,260.786987,0.000000,"Reiterate"};
-item8[] = {"Delay",2,250,68.800232,211.799805,158.800247,261.799805,0.000000,"Delay"};
-item9[] = {"continue",4,218,69.883392,8.608795,159.883392,58.608795,0.000000,"continue"};
-item10[] = {"_",8,218,200.970917,217.876648,235.773163,251.165405,0.000000,""};
-item11[] = {"_",8,218,410.437988,132.933578,445.240173,166.222336,0.000000,""};
-item12[] = {"Bad_init",4,218,-17.217621,-208.130890,72.782379,-158.130890,1.000000,"Bad" \n "init"};
-item13[] = {"__10__need_POI_update",4,218,231.786545,-19.698990,321.786560,30.301010,10.000000,"(10)" \n "need POI" \n "update?"};
-item14[] = {"POI_refresh",2,250,320.060364,59.909943,410.060364,109.909943,0.000000,"POI" \n "refresh"};
-item15[] = {"__5__need_POI_",4,218,284.317505,-50.026199,374.317505,-0.026199,5.000000,"(5)" \n "need" \n "POI?"};
-item16[] = {"POI_pick",2,4346,428.371704,60.993057,518.371704,110.993057,0.000000,"POI" \n "pick"};
-item17[] = {"_",8,218,338.473419,-79.811783,428.473419,-29.811783,0.000000,""};
-item18[] = {"Look_at_POI",2,250,453.283386,-79.811905,543.283386,-29.811905,0.000000,"Look at" \n "POI"};
-item19[] = {"__5__POI_is_marker",4,218,582.174011,-120.428673,672.174011,-70.428665,5.000000,"(5)" \n "POI is" \n "marker?"};
-item20[] = {"_",8,218,581.632507,-50.026245,671.632507,-0.026245,0.000000,""};
-item21[] = {"Translate_to_pos",2,250,701.858154,-122.053360,791.858154,-72.053345,0.000000,"Translate" \n "to position"};
-item22[] = {"Swivel_to_positi",2,250,701.858215,-40.819733,791.858215,9.180267,0.000000,"Swivel" \n "to position"};
-item23[] = {"_",8,218,839.413757,-74.937851,874.215942,-41.649094,0.000000,""};
-item24[] = {"Look",2,250,817.209839,204.505707,907.209839,254.505707,0.000000,"Look"};
-item25[] = {"_",8,218,662.866028,212.087494,697.668213,245.376251,0.000000,""};
-item26[] = {"__10__POI_expired",4,218,583.257080,16.585327,673.257080,66.585327,10.000000,"(10)" \n "POI" \n "expired?"};
-item27[] = {"Reset_POI_info",2,250,585.423401,90.237122,675.423401,140.237122,0.000000,"Reset POI" \n "info"};
+item0[] = {"A_A_FC_Radar_Sca",0,250,70.326706,-336.151489,160.326721,-286.151459,0.000000,"A/A FC" \n "Radar" \n "Scan"};
+item1[] = {"Initialize",2,250,348.616455,-105.816071,438.616455,-55.816086,0.000000,"Initialize"};
+item2[] = {"_",8,218,224.208954,-330.157928,259.011230,-296.869202,0.000000,""};
+item3[] = {"_",8,218,232.325897,-43.482224,267.128143,-10.193466,0.000000,""};
+item4[] = {"Loop",2,250,71.074677,13.096954,161.074692,63.096954,0.000000,"Loop"};
+item5[] = {"__20__Dead_or_go",4,218,70.313782,-89.248657,160.313782,-39.248657,20.000000,"(20)" \n "Dead" \n "or gone"};
+item6[] = {"Done",1,250,70.694275,-191.594177,160.694305,-141.594254,0.000000,"Done"};
+item7[] = {"Reiterate",2,250,282.241486,285.322876,577.840454,336.335693,0.000000,"Reiterate"};
+item8[] = {"Delay",2,250,70.059326,287.348511,160.059341,337.348511,0.000000,"Delay"};
+item9[] = {"continue",4,218,71.142487,84.157501,161.142487,134.157501,0.000000,"continue"};
+item10[] = {"_",8,218,202.230011,293.425354,237.032257,326.714111,0.000000,""};
+item11[] = {"_",8,218,411.697083,208.482285,446.499268,241.771042,0.000000,""};
+item12[] = {"Bad_init",4,218,210.057968,-181.059265,300.057983,-131.059265,1.000000,"Bad" \n "init"};
+item13[] = {"__10__need_POI_update",4,218,233.045639,55.849716,323.045654,105.849716,10.000000,"(10)" \n "need POI" \n "update?"};
+item14[] = {"POI_refresh",2,250,321.319458,135.458649,411.319458,185.458649,0.000000,"POI" \n "refresh"};
+item15[] = {"__5__need_POI_",4,218,285.576599,25.522507,375.576599,75.522507,5.000000,"(5)" \n "need" \n "POI?"};
+item16[] = {"POI_pick",2,250,429.630798,136.541763,519.630798,186.541763,0.000000,"POI" \n "pick"};
+item17[] = {"_",8,218,339.732513,-4.263077,429.732513,45.736923,0.000000,""};
+item18[] = {"Look_at_POI",2,250,454.542480,-4.263199,544.542480,45.736801,0.000000,"Look at" \n "POI"};
+item19[] = {"__5__POI_is_marker",4,218,584.062683,18.077263,674.062683,68.077271,5.000000,"(5)" \n "POI is" \n "marker?"};
+item20[] = {"_",8,218,584.780334,-47.507965,674.780334,2.492035,0.000000,""};
+item21[] = {"Translate_to_pos",2,250,706.265076,24.007462,796.265076,74.007477,0.000000,"Translate" \n "to position"};
+item22[] = {"Sweep_to_positio",2,250,704.376404,-50.892899,794.376404,-0.892899,0.000000,"Sweep" \n "to position"};
+item23[] = {"_",8,218,840.672852,0.610855,875.475037,33.899612,0.000000,""};
+item24[] = {"Look",2,250,814.061951,280.054413,904.061951,330.054413,0.000000,"Look"};
+item25[] = {"_",8,218,618.795959,288.265778,653.598145,321.554535,0.000000,""};
+item26[] = {"__10__POI_expired",4,218,584.516174,92.134033,674.516174,142.134033,10.000000,"(10)" \n "POI" \n "expired?"};
+item27[] = {"Reset_POI_info",2,250,586.682495,165.785828,676.682495,215.785828,0.000000,"Reset POI" \n "info"};
+item28[] = {"Check_group",2,250,387.816681,-334.384644,672.354553,-288.162079,0.000000,"Check" \n "group"};
+item29[] = {"__10__lonely_radar",4,218,354.449219,-262.613403,444.449219,-212.613388,10.000000,"(10)" \n "lonely" \n "radar in grp"};
+item30[] = {"_",8,218,624.535828,-253.799377,714.535767,-203.799362,0.000000,""};
+item31[] = {"_",8,218,503.109619,-93.438629,537.911865,-60.149902,0.000000,""};
+item32[] = {"Assign_target_only",2,250,477.845581,-180.139359,567.845581,-130.139359,0.000000,"Assign" \n "target-only" \n "role"};
+item33[] = {"Assign_default_r",2,250,352.560547,-180.139374,442.560547,-130.139374,0.000000,"Assign" \n "default" \n "role"};
+item34[] = {"__5__should_targ",4,4314,477.216003,-256.947205,567.216003,-206.947220,5.000000,"(5)" \n "should" \n "target"};
+item35[] = {"Assign_sweep_rol",2,250,623.906372,-179.509827,713.906372,-129.509811,0.000000,"Assign" \n "sweep" \n "role"};
 link0[] = {0,2};
 link1[] = {1,3};
 link2[] = {1,12};
-link3[] = {2,1};
+link3[] = {2,28};
 link4[] = {3,4};
 link5[] = {4,5};
 link6[] = {4,13};
@@ -62,8 +70,18 @@ link29[] = {24,25};
 link30[] = {25,7};
 link31[] = {26,27};
 link32[] = {27,25};
-globals[] = {0.000000,0,0,0,0,640,480,1,36,6316128,1,-4.332458,923.896790,426.544189,-281.812744,1714,1308,1};
-window[] = {0,-1,-1,-1,-1,1622,76,3140,76,1,1741};
+link33[] = {28,29};
+link34[] = {28,30};
+link35[] = {28,34};
+link36[] = {29,33};
+link37[] = {30,35};
+link38[] = {31,1};
+link39[] = {32,31};
+link40[] = {33,31};
+link41[] = {34,32};
+link42[] = {35,31};
+globals[] = {0.000000,0,0,0,0,640,480,1,50,6316128,1,-111.434334,1011.723022,470.208984,-353.271820,1784,1534,1};
+window[] = {0,-1,-1,-1,-1,2040,494,3558,268,1,1811};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -100,7 +118,7 @@ class FSM
                                 {
                                         itemno = 2;
                                         priority = 0.000000;
-                                        to="Initialize";
+                                        to="Check_group";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -130,7 +148,7 @@ class FSM
                          "private _interestSweepTTL = 10;" \n
                          "private _interestPOITTL = 20;" \n
                          "" \n
-                         "[""ranges=%1"", _ranges] call _TRACE;" \n
+                         "[""ranges=%1,canSweep=%2,canTarget=%3"", _ranges, _canSweep, _canTarget] call _TRACE;" \n
                          "" \n
                          "[[], 0] params[""_poiList"",""_poiScan"",""_poiCurrent"",""_poiIteration""];" \n
                          ""/*%FSM</STATEINIT""">*/;
@@ -193,7 +211,8 @@ class FSM
                                         priority = 10.000000;
                                         to="POI_refresh";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(diag_tickTime > _poiScan) &&" \n
+                                        condition=/*%FSM<CONDITION""">*/"_canTarget &&" \n
+                                         "{diag_tickTime > _poiScan} &&" \n
                                          "{ _poiList isEqualTo [] };" \n
                                          ""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -326,9 +345,9 @@ class FSM
                 {
                         name = "POI_pick";
                         itemno = 16;
-                        init = /*%FSM<STATEINIT""">*/"private _randomSweep = (random 100) < 25;" \n
+                        init = /*%FSM<STATEINIT""">*/"private _doSweep = !_canTarget || { (random 100) < 25 };" \n
                          "" \n
-                         "if (_randomSweep || { _poiList isEqualTo [] }) then {" \n
+                         "if (_canSweep && {_doSweep || { _poiList isEqualTo [] }}) then {" \n
                          "    _poiCurrent = [diag_tickTime + _interestSweepTTL, false];" \n
                          "} else {" \n
                          "    _poiCurrent = [diag_tickTime + _interestPOITTL, _poiList deleteAt 0];" \n
@@ -400,7 +419,7 @@ class FSM
                                 {
                                         itemno = 20;
                                         priority = 0.000000;
-                                        to="Swivel_to_positi";
+                                        to="Sweep_to_positio";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -440,10 +459,10 @@ class FSM
                         };
                 };
                 /*%FSM</STATE>*/
-                /*%FSM<STATE "Swivel_to_positi">*/
-                class Swivel_to_positi
+                /*%FSM<STATE "Sweep_to_positio">*/
+                class Sweep_to_positio
                 {
-                        name = "Swivel_to_positi";
+                        name = "Sweep_to_positio";
                         itemno = 22;
                         init = /*%FSM<STATEINIT""">*/"private _direction = [-deg(_vehicle animationSourcePhase ""mainturret"")] call A3USPCM_fnc_utilNormalizeDirection;" \n
                          "_direction = _direction + 91.5;" \n
@@ -451,7 +470,7 @@ class FSM
                          "_poiPos = _vehicle getPos[_sensorsMax, _direction] vectorAdd[0,0,500];" \n
                          "_nextDelay = 1.5;" \n
                          "" \n
-                         "[""swivel to=%1"", _poiPos] call _TRACE;" \n
+                         "[""sweep to=%1"", _poiPos] call _TRACE;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -512,6 +531,146 @@ class FSM
                                         itemno = 25;
                                         priority = 0.000000;
                                         to="Reiterate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Check_group">*/
+                class Check_group
+                {
+                        name = "Check_group";
+                        itemno = 28;
+                        init = /*%FSM<STATEINIT""">*/"private _group = _vehicle getVariable[""A3USPCM_aafc_group"", grpNull];" \n
+                         "" \n
+                         "if !assert(!isNull _group) exitWith { true };" \n
+                         "" \n
+                         "private _groupVehicles = _group getVariable[""A3USPCM_aafc_vehicles"", []];" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__10__lonely_radar">*/
+                                class __10__lonely_radar
+                                {
+                                        itemno = 29;
+                                        priority = 10.000000;
+                                        to="Assign_default_r";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"private _otherRadarIndex = _groupVehicles findIf {" \n
+                                         "	(_x isNotEqualTo _vehicle) && { [_x] call A3USPCM_aafc_fnc_isRadar }" \n
+                                         "};" \n
+                                         "" \n
+                                         "(_otherRadarIndex isEqualTo -1);" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__5__should_targ">*/
+                                class __5__should_targ
+                                {
+                                        itemno = 34;
+                                        priority = 5.000000;
+                                        to="Assign_target_only";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"private _otherRadar = _groupVehicles select _otherRadarIndex;" \n
+                                         "private _myGroupId = groupId gunner _vehicle;" \n
+                                         "private _otherGroupId = groupId gunner _otherRadar;" \n
+                                         "" \n
+                                         "[""otherRadar=%1, myGRPID=%2, othGRPID=%3"", _otherRadar, _myGroupId, _otherGroupId] call _TRACE;" \n
+                                         "" \n
+                                         "_myGroupId < _otherGroupId;" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 30;
+                                        priority = 0.000000;
+                                        to="Assign_sweep_rol";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Assign_target_only">*/
+                class Assign_target_only
+                {
+                        name = "Assign_target_only";
+                        itemno = 32;
+                        init = /*%FSM<STATEINIT""">*/"private _canTarget = true;" \n
+                         "private _canSweep = false;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 31;
+                                        priority = 0.000000;
+                                        to="Initialize";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Assign_default_r">*/
+                class Assign_default_r
+                {
+                        name = "Assign_default_r";
+                        itemno = 33;
+                        init = /*%FSM<STATEINIT""">*/"private _canTarget = true;" \n
+                         "private _canSweep = true;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 31;
+                                        priority = 0.000000;
+                                        to="Initialize";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Assign_sweep_rol">*/
+                class Assign_sweep_rol
+                {
+                        name = "Assign_sweep_rol";
+                        itemno = 35;
+                        init = /*%FSM<STATEINIT""">*/"private _canTarget = false;" \n
+                         "private _canSweep = true;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 31;
+                                        priority = 0.000000;
+                                        to="Initialize";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
