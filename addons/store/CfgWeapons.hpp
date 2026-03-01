@@ -7,6 +7,10 @@ class CfgWeapons {
         GVAR(fallbackSellPrice) = 450;
     };
 
+    class H_HelmetB: ItemCore {
+        GVAR(fallbackSellPrice) = 300;
+    };
+
     class HelmetBase: ItemCore {
         GVAR(fallbackSellPrice) = 300;
     };
