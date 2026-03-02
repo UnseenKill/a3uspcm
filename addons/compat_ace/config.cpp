@@ -19,3 +19,4 @@ class CfgPatches {
 #include "AceMedicalStatemachine.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgHalsStore.hpp"
+#include "CfgWeapons.hpp"
