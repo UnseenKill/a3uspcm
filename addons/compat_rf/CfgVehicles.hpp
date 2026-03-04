@@ -49,6 +49,8 @@ class CfgVehicles {
     DEFVEH(O_G_CommandoMortar_RF,O_CommandoMortar_RF);
 
     class Heli_EC_01_base_RF: Helicopter_Base_H {
+        EGVAR(vehicles,slingLoadAdjust) = 1;
+        EGVAR(vehicles,slingLoadMaxCargoMass) = 4500;
         slingLoadMaxCargoMass = 20000;
     };
 };
