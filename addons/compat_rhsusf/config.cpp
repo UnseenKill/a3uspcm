@@ -7,7 +7,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3A_hals","rhsusf_main"};
+        requiredAddons[] = {"A3A_hals","rhsusf_main","rhsusf_ch53","rhsusf_stryker"};
         skipWhenMissingDependencies = 1;
         author = "$STR_A3USPCM_Author";
         authors[] = {"goreSplatter"};
@@ -17,3 +17,4 @@ class CfgPatches {
 };
 
 #include "CfgHalsStore.hpp"
+#include "CfgVehicles.hpp"
