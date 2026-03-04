@@ -39,11 +39,11 @@ if !(isNil { _attachedObject getVariable QGVAR(ropeDetached) }) exitWith {};
 _attachedObject setVariable[QGVAR(ropeDetached), true];
 
 // Restore vehicle mass
-if assert(!isNil { _vehicle getVariable QGVAR(mass) }) then {
-    private _mass = _vehicle getVariable QGVAR(mass);
+if assert(!isNil { _attachedObject getVariable QGVAR(mass) }) then {
+    private _mass = _attachedObject getVariable QGVAR(mass);
     TRACE_2(QFUNC(onSlingAdjustRopeDetach),_attachedObject,_mass);
-    _vehicle setMass _mass;
-    _vehicle setVariable[QGVAR(mass), nil];
+    _attachedObject setMass _mass;
+    _attachedObject setVariable[QGVAR(mass), nil];
 };
 
 // Reset rope detached flag

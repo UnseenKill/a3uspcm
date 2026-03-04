@@ -40,7 +40,7 @@ if !(isNil { _attachedObject getVariable QGVAR(ropeAttached) }) exitWith {};
 _attachedObject setVariable[QGVAR(ropeAttached), true];
 
 // Make vehicle lighter
-_vehicle setVariable[QGVAR(mass), getMass _attachedObject];
+_attachedObject setVariable[QGVAR(mass), getMass _attachedObject];
 private _mass = [configOf _attachedObject >> QGVAR(slingLoadAdjustMassTo), "NUMBER", 1500] call CBA_fnc_getConfigEntry;
 _attachedObject setMass _mass;
 
