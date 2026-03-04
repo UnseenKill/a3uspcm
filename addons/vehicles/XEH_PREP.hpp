@@ -1,5 +1,6 @@
 PREP(canAirVehicleResupply);
 PREP(doAirVehicleResupply);
+PREP(initSlingloadAdjust);
 PREP(initVanillaInteractions);
 PREP(meepMeepCanDoAction);
 PREP(meepMeepDoAction);
@@ -10,6 +11,8 @@ PREP(meepMeepPlaySound);
 PREP(meepMeepShooUnits);
 PREP(meepMeepValidateTargets);
 PREP(onSeatsConfigSettingChanged);
+PREP(onSlingAdjustRopeAttach);
+PREP(onSlingAdjustRopeDetach);
 PREP(resupplyAirVehicle);
 PREP(resupplyCheckEngineer);
 PREP(resupplyInitInteractions);

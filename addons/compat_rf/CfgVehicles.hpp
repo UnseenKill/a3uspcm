@@ -9,6 +9,7 @@ class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles {
     class CommandoMortar_base_RF;
+    class Helicopter_Base_H;
 
     class B_CommandoMortar_RF: CommandoMortar_base_RF {
         GVAR(magazines)[] = {
@@ -46,4 +47,10 @@ class CfgVehicles {
     DEFVEH(I_G_CommandoMortar_RF,I_CommandoMortar_RF);
     DEFVEH(O_CommandoMortar_RF,B_CommandoMortar_RF);
     DEFVEH(O_G_CommandoMortar_RF,O_CommandoMortar_RF);
+
+    class Heli_EC_01_base_RF: Helicopter_Base_H {
+        EGVAR(vehicles,slingLoadAdjust) = 1;
+        EGVAR(vehicles,slingLoadMaxCargoMass) = 4500;
+        slingLoadMaxCargoMass = 20000;
+    };
 };
