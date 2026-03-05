@@ -1,4 +1,5 @@
 PREP(augmentHelipad);
+PREP(augmentHelipadGetConfig);
 PREP(canSnapNeck);
 PREP(canSquashSnake);
 PREP(onA3UFlagActionEvent);

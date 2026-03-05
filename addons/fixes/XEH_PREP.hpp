@@ -1,4 +1,5 @@
 PREP(buyVehicleDialogInit);
+PREP(fixLandingLights);
 PREP(fixSaveLoop);
 PREP(halsStoreDialogAdjust);
 PREP(halsStoreDialogInit);

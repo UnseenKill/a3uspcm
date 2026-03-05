@@ -36,7 +36,7 @@ if !(isClass(configFile >> "CfgPatches" >> "A3_Data_F_Heli")) exitWith {
     ERROR("Helicopters DLC not detected, cannot augment helipads.");
 };
 
-private _config = configFile >> QPREFIX >> QADDON >> "AugmentHelipads";
+private _config = [] call FUNC(augmentHelipadGetConfig);
 private _pattern = [_config >> GVAR(augmentHelipads), "STRING", GVAR(augmentHelipadsCustom)] call CBA_fnc_getConfigEntry;
 private _typeMap = createHashMapFromArray getArray(_config >> "patternTypeMap");
 private _types = _pattern splitString "," apply {
@@ -125,6 +125,7 @@ _object setVariable[QGVAR(lights), _types apply {
         };
     };
 
+    _light allowDamage false;
     _light setVariable[QGVAR(augmentHelipadLight), true];
     _light;
 }];
