@@ -125,6 +125,7 @@ _object setVariable[QGVAR(lights), _types apply {
         };
     };
 
+    _light allowDamage false;
     _light setVariable[QGVAR(augmentHelipadLight), true];
     _light;
 }];
