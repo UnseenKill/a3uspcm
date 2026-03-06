@@ -33,22 +33,24 @@ TRACE_1(QFUNC(fixLandingLights),_this);
     }] call CBA_fnc_inject;
 
     TRACE_1(QFUNC(fixLandingLights),_classes);
-    private _removeFromConstructions = [entities[_classes, [], false, true], [], {
-        TRACE_2(QFUNC(fixLandingLights),_x,_x in constructionsX);
-        if (_x in constructionsX) then {
-            _accumulator pushBack _x;
-            deleteVehicle _x;
-        };
-
-        _accumulator;
-    }] call CBA_fnc_inject;
+    private _removeFromConstructions = entities[_classes, []] select {
+        TRACE_3(QFUNC(fixLandingLights),_x,_x getVariable QEGVAR(misc,augmentHelipadLight),_x in constructionsToSave);
+        (_x in constructionsToSave) || {isNil { _x getVariable QEGVAR(misc,augmentHelipadLight) }};
+    };
 
     TRACE_1(QFUNC(fixLandingLights),_removeFromConstructions);
-    constructionsX = constructionsX - _removeFromConstructions;
     constructionsToSave = constructionsToSave - _removeFromConstructions;
     publicVariable "constructionsToSave";
 
-    entities[["A3AU_RebHelipad_base_F"], []] apply { [_x] call EFUNC(misc,augmentHelipad) };
-}, nil, 20] call CBA_fnc_waitAndExecute;
+    _removeFromConstructions apply {
+        TRACE_1(QFUNC(fixLandingLights),_x);
+        deleteVehicle _x;
+    };
+
+    [{
+        INFO_1("%1(): reaugmenting...",QFUNC(fixLandingLights));
+        nearestObjects[petros, ["A3AU_RebHelipad_base_F"], 1500, true] apply { [_x] call EFUNC(misc,augmentHelipad) };
+    }, nil, 5] call CBA_fnc_execAfterNFrames;
+}, nil, 5] call CBA_fnc_waitAndExecute;
 
 nil;

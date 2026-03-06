@@ -1,7 +1,7 @@
 class Extended_InitPost_EventHandlers {
     class A3AU_RebHelipad_base_F {
         class ADDON {
-            serverInit = QUOTE(call FUNC(augmentHelipad));
+            serverInit = QUOTE([ARR_3(FUNC(augmentHelipad),_this,5)] call CBA_fnc_execAfterNFrames);
         };
     };
 };
