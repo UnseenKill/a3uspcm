@@ -24,7 +24,7 @@ TRACE_1(QFUNC(resupplyCheckEngineer),_this);
 if !assert(params[
     ["_marker", nil, [""]]
 ]) exitWith { false };
-if !assert(markerType _marker isNotEqualTo "") exitWith { false };
+if !assert(markerShape _marker isNotEqualTo "") exitWith { false };
 
 private _garrison = garrison getVariable[_marker, []];
 private _type = A3A_faction_reb get "unitEng";
