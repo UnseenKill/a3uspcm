@@ -17,7 +17,13 @@ class CfgVehicles {
     class Air;
     class Helipad_base_F;
     class LandVehicle;
+    class Land_PortableHelipadLight_01_F;
     class Man;
+    class PortableHelipadLight_01_red_F;
+    class PortableHelipadLight_01_green_F;
+    class PortableHelipadLight_01_blue_F;
+    class PortableHelipadLight_01_white_F;
+    class PortableHelipadLight_01_yellow_F;
     class Ship;
 
     class A3AU_RebHelipad_base_F: Helipad_base_F {
@@ -52,4 +58,11 @@ class CfgVehicles {
     KICKAI_ACTION_FOR_VEHICLE(Helicopter,Air);
     KICKAI_ACTION_FOR_VEHICLE(Plane,Air);
     KICKAI_ACTION_FOR_VEHICLE(Ship_F,Ship);
+
+    class GVAR(PortableHelipadLight_01_red_F): PortableHelipadLight_01_red_F {};
+    class GVAR(PortableHelipadLight_01_green_F): PortableHelipadLight_01_green_F {};
+    class GVAR(PortableHelipadLight_01_blue_F): PortableHelipadLight_01_blue_F {};
+    class GVAR(PortableHelipadLight_01_pink_F): Land_PortableHelipadLight_01_F {};
+    class GVAR(PortableHelipadLight_01_white_F): PortableHelipadLight_01_white_F {};
+    class GVAR(PortableHelipadLight_01_yellow_F): PortableHelipadLight_01_yellow_F {};
 };

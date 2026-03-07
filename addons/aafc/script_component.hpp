@@ -7,6 +7,7 @@
     #define AUTO_GROUP_DELAY 15
 #else
     #define AUTO_GROUP_DELAY ([15,1] select is3DENPreview)
+    //#define AAFC_FSM_DEBUG_DURING_DEVELOPMENT
 #endif // __A3USPCM_PRODUCTION__
 
 #define AA_TYPE_UNKNOWN QUOTE(unknown)
@@ -15,6 +16,10 @@
 #define AA_TYPE_SRSAM QUOTE(srSAM)
 #define AA_TYPE_LRSAM QUOTE(lrSAM)
 #define AA_TYPE_SPAAG QUOTE(selfPropelledAA)
+
+// Any vehicle firing missiles with a max range of this many meters is
+// considered a short-range SAM.
+#define SRSAM_RANGE_THRESHOLD 6000
 
 #define ROE_FIREATWILL 0
 #define ROE_CIWSONLY 1
@@ -43,6 +48,8 @@
 #define CBA_EVENT_AAFC_CONTACT_ADDED QUOTE(TRIPLES(ADDON,events,contactAdded))
 // Parameters: [Object contact]
 #define CBA_EVENT_AAFC_CONTACT_UPDATE QUOTE(TRIPLES(ADDON,events,contactUpdate))
+// Parameters: [Object vehicle]
+#define CBA_EVENT_AAFC_RADAR_STROBE QUOTE(TRIPLES(ADDON,events,radarStrobe))
 // Parameters: []
 #define CBA_EVENT_AAFC_ROE_MONITOR QUOTE(TRIPLES(ADDON,events,ROEMonitor))
 // Parameters: [Number roeLevel]
@@ -61,6 +68,8 @@
 #define CBA_EVENT_AAFC_UPDATE_GROUP QUOTE(TRIPLES(ADDON,events,updateGroup))
 // Parameters: [Object vehicle, Number roeLevel, Boolean allowFire]
 #define CBA_EVENT_AAFC_UNIT_ROE_CHANGED QUOTE(TRIPLES(ADDON,events,unitROEChanged))
+// Parameters: [Group group]
+#define CBA_EVENT_AAFC_VEHICLES_UPDATE QUOTE(TRIPLES(ADDON,events,vehiclesUpdate))
 
 #ifdef __A3USPCM_PRODUCTION__
     #define CBA_EVENT_GLOBAL(eventName,params) [eventName, params] call CBA_fnc_globalEvent

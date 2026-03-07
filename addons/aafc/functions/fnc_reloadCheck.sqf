@@ -28,6 +28,9 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _vehicle) exitWith {};
 
+if (_vehicle isKindOf "CAManBase") exitWith {};
+if (isNull gunner _vehicle) exitWith {};
+
 private _turret = assignedVehicleRole gunner _vehicle select 1;
 private _magazines = magazinesAllTurrets _vehicle select { _x select 1 isEqualTo _turret };
 private _weapons = _vehicle weaponsTurret _turret;
