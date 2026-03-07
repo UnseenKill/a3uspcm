@@ -19,6 +19,8 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(timerRestore),_this);
 
+if (!isServer) exitWith { WARNING("Timer restore works on LAN hosted only, skipping") };
+
 INFO("Restoring timers...");
 
 [QGVAR(Timers)] call A3A_fnc_getStatVariable;

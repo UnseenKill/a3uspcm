@@ -36,7 +36,7 @@ if !(isClass(configFile >> "CfgPatches" >> "A3_Data_F_Heli")) exitWith {
     ERROR("Helicopters DLC not detected, cannot augment helipads.");
 };
 
-private _config = configFile >> QPREFIX >> QADDON >> "AugmentHelipads";
+private _config = [] call FUNC(augmentHelipadGetConfig);
 private _pattern = [_config >> GVAR(augmentHelipads), "STRING", GVAR(augmentHelipadsCustom)] call CBA_fnc_getConfigEntry;
 private _typeMap = createHashMapFromArray getArray(_config >> "patternTypeMap");
 private _types = _pattern splitString "," apply {
@@ -52,7 +52,8 @@ if (_types isEqualTo []) exitWith {
 
 // Clean up old lights; only used in debugging, since this is a postInit handler...
 _object getVariable[QGVAR(lights), []] apply {
-    if (_x getVariable[QGVAR(augmentHelipadLight), false]) then {
+    if !(isNil { _x getVariable QGVAR(augmentHelipadLight) }) then {
+        INFO_3("%1(%2): cleaning light %3",QFUNC(augmentHelipad),_object,_x);
         detach _x;
         deleteVehicle _x;
     };
@@ -69,7 +70,7 @@ if (isNil { _object getVariable QGVAR(ehDeleted) }) then {
         params["_object"];
         INFO_1("Cleaning up lights after %1 deletion.",_object);
         _object getVariable[QGVAR(lights), []] apply {
-            if (_x getVariable[QGVAR(augmentHelipadLight), false]) then {
+            if !(isNil { _x getVariable QGVAR(augmentHelipadLight) }) then {
                 detach _x;
                 deleteVehicle _x;
             };
@@ -125,7 +126,8 @@ _object setVariable[QGVAR(lights), _types apply {
         };
     };
 
-    _light setVariable[QGVAR(augmentHelipadLight), true];
+    _light allowDamage false;
+    _light setVariable[QGVAR(augmentHelipadLight), _object];
     _light;
 }];
 

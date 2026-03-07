@@ -25,7 +25,9 @@ if is3DEN exitWith {};
 
 //TRACE_1(QFUNCMAIN(utilOnA3UServerInitDone),_this);
 
-params[["_callback", {}, [{}]]];
+if !assert(params[
+    ["_callback", nil, [{}]]
+]) exitWith { ERROR_2("%1(): invalid params: %2",QFUNCMAIN(utilOnA3UServerInitDone),_this) };
 
 GVAR(ServerInitCallbacks) pushBack _callback;
 

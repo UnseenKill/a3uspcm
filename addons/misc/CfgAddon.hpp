@@ -9,12 +9,12 @@ class PREFIX {
             yellow = "Y,Y,Y,Y";
 
             patternTypeMap[] = {
-                {"R", "PortableHelipadLight_01_red_F"},
-                {"G", "PortableHelipadLight_01_green_F"},
-                {"B", "PortableHelipadLight_01_blue_F"},
-                {"P", "Land_PortableHelipadLight_01_F"},
-                {"W", "PortableHelipadLight_01_white_F"},
-                {"Y", "PortableHelipadLight_01_yellow_F"}
+                {"R", QGVAR(PortableHelipadLight_01_red_F)},
+                {"G", QGVAR(PortableHelipadLight_01_green_F)},
+                {"B", QGVAR(PortableHelipadLight_01_blue_F)},
+                {"P", QGVAR(PortableHelipadLight_01_pink_F)},
+                {"W", QGVAR(PortableHelipadLight_01_white_F)},
+                {"Y", QGVAR(PortableHelipadLight_01_yellow_F)}
             };
         };
     };

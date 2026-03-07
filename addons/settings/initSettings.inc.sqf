@@ -305,7 +305,7 @@
     QEGVAR(aafc,roeCorrectionInterval), "TIME",
     [ELSTRING(aafc,Settings_roeCorrectionInterval_DisplayName), ELSTRING(aafc,Settings_roeCorrectionInterval_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
-    [0, 300, 25, -1], // min,max,default,decimals
+    [0, 1800, 25, -1], // min,max,default,decimals
     true, // global
     {}, // onchange
     true
@@ -449,6 +449,26 @@
     true, // global
     {}, // onchange
     false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(aafc,radarsUseStrobeLights), "CHECKBOX",
+    [ELSTRING(aafc,Settings_radarsUseStrobeLights_DisplayName), ELSTRING(aafc,Settings_radarsUseStrobeLights_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    false, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(aafc,radarsExecuteFSM), "CHECKBOX",
+    [ELSTRING(aafc,Settings_radarsExecuteFSM_DisplayName), ELSTRING(aafc,Settings_radarsExecuteFSM_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(aafc,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
 // AAIO

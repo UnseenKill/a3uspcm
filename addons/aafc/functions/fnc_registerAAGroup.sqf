@@ -62,6 +62,8 @@ _group addEventHandler["VehicleAdded", {
     _group getVariable QGVAR(vehicles) pushBackUnique _vehicle;
     _vehicle setVariable[QGVAR(group), _group, true];
     publicVariable QGVAR(groups);
+
+    CBA_EVENT_LOCAL(CBA_EVENT_AAFC_VEHICLES_UPDATE,[_group]);
 }];
 
 GVAR(groups) pushBackUnique _group;
@@ -79,5 +81,6 @@ units _group apply {
 
 CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT,[ARR_2(leader _group,LLSTRING(Message_AARegistered))]);
 CBA_EVENT_LOCAL(CBA_EVENT_AAFC_ROE_MONITOR,[]);
+CBA_EVENT_LOCAL(CBA_EVENT_AAFC_VEHICLES_UPDATE,[_group]);
 
 nil;
