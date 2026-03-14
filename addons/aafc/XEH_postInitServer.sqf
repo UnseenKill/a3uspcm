@@ -23,6 +23,8 @@ publicVariable QGVAR(groups);
 }] call CBA_fnc_addEventHandlerArgs;
 
 [CBA_EVENT_AAFC_SET_ROE_GLOBAL, {
+    TRACE_1(CBA_EVENT_AAFC_SET_ROE_GLOBAL,_this);
+
     if !assert(params[
         ["_newROE", nil, [0]]
     ]) exitWith {};
@@ -33,6 +35,7 @@ publicVariable QGVAR(groups);
 
 [CBA_EVENT_AAFC_SET_ROE_GLOBAL, { call FUNC(enforceROE) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_AAFC_SET_UNIT_CANFIRE, { call FUNC(setUnitCanFire) }] call CBA_fnc_addEventHandler;
+[CBA_EVENT_AAFC_START_CONTACT_TRACK, { call FUNC(onStartContactTracking) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_AAFC_UNIT_ROE_CHANGED, { call FUNC(acknowledgeROEChange) }] call CBA_fnc_addEventHandler;
 [CBA_EVENT_AAFC_VEHICLES_UPDATE, { call FUNC(updateGroupVehicles) }] call CBA_fnc_addEventHandler;
 
@@ -45,7 +48,7 @@ publicVariable QGVAR(groups);
         INFO_2("Setting default ROE to %1 based on CBA setting %2",GVAR(globalROE),GVAR(defaultInitialMode));
     };
 
-    [CBA_EVENT_AAFC_START_CONTACT_TRACK, { call FUNC(onStartContactTracking) }] call CBA_fnc_addEventHandler;
+    publicVariable QGVAR(globalROE);
 
     if GVAR(autoGroupAtStart) then {
         INFO("Auto-grouping A/A vehicles");

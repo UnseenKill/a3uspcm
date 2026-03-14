@@ -1,9 +1,5 @@
 #include "script_component.hpp"
 
-ADDON = false;
-#include "XEH_PREP.hpp"
-ADDON = true;
-
 GVAR(revealCone) = 45;
 GVAR(revealDuration) = 5;
 GVAR(revealRadius) = 250;
