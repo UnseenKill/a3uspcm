@@ -1,6 +1,8 @@
 #include "script_component.hpp"
 
 [CBA_EVENT_AAFC_CONTACT_UPDATE, {
+    TRACE_1(CBA_EVENT_AAFC_CONTACT_UPDATE,_this);
+
     if !assert(params[
         ["_contact", nil, [objNull]]
     ]) exitWith {};
@@ -12,6 +14,8 @@
 [CBA_EVENT_AAFC_RADAR_STROBE, { call FUNC(radarStrobeLight) }] call CBA_fnc_addEventHandler;
 
 [CBA_EVENT_AAFC_SIDECHAT, {
+    TRACE_1(CBA_EVENT_AAFC_SIDECHAT,_this);
+
     if !assert(params[
         ["_sender", nil, [objNull]],
         ["_message", nil, [""]]
@@ -22,6 +26,8 @@
 }] call CBA_fnc_addEventHandler;
 
 [CBA_EVENT_AAFC_SIDECHAT_CONTACT, {
+    TRACE_1(CBA_EVENT_AAFC_SIDECHAT_CONTACT,_this);
+
     if !assert(params[
         ["_sender", nil, [objNull]],
         ["_message", nil, [""]]
@@ -38,6 +44,8 @@
 }] call CBA_fnc_addEventHandler;
 
 [CBA_EVENT_AAFC_SIDECHAT_FIRED, {
+    TRACE_1(CBA_EVENT_AAFC_SIDECHAT_FIRED,_this);
+
     if !assert(params[
         ["_sender", nil, [objNull]],
         ["_message", nil, [""]]
@@ -48,6 +56,8 @@
 }] call CBA_fnc_addEventHandler;
 
 [CBA_EVENT_AAFC_UPDATE_GROUP, {
+    TRACE_1(CBA_EVENT_AAFC_UPDATE_GROUP,_this);
+
     if !assert(params[
         ["_group", nil, [grpNull]]
     ]) exitWith {};
