@@ -32,7 +32,12 @@ TRACE_1(QFUNC(fixLandingLights),_this);
         _accumulator;
     }] call CBA_fnc_inject;
 
-    TRACE_1(QFUNC(fixLandingLights),_classes);
+    TRACE_2(QFUNC(fixLandingLights),_config,_classes);
+
+    if !assert(_classes isNotEqualTo []) exitWith {
+        INFO_1("%1(): no landing light classes found, skipping",QFUNC(fixLandingLights));
+    };
+
     private _removeFromConstructions = entities[_classes, []] select {
         TRACE_3(QFUNC(fixLandingLights),_x,_x getVariable QEGVAR(misc,augmentHelipadLight),_x in constructionsToSave);
         (_x in constructionsToSave) || {isNil { _x getVariable QEGVAR(misc,augmentHelipadLight) }};
