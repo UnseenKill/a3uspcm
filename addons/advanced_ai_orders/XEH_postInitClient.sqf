@@ -26,7 +26,7 @@ GVAR(securityReferenceSetting) = player;
             // E.g. when reequipping after respawn, a lot of items get
             // (un)assigned. If, however, the player opens the inventory, we
             // reset the above generous delay, so changes are "immediate" again.
-            player setVariable[QGVAR(ehInventoryOpened), player addEventHandler["InventoryOpened", {
+            _newUnit setVariable[QGVAR(ehInventoryOpened), _newUnit addEventHandler["InventoryOpened", {
                 missionNamespace setVariable[QGVAR(waitAndExecuteDelay), 3];
                 player removeEventHandler["InventoryOpened", player getVariable QGVAR(ehInventoryOpened)];
                 player setVariable[QGVAR(ehInventoryOpened), nil];
