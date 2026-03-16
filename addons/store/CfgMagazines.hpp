@@ -1,10 +1,10 @@
 #define DEFMAG(magazineClass,magazinePrice) \
-    class magazineClass: CAMagazine { \
+    class magazineClass: CA_Magazine { \
         GVAR(fallbackSellPrice) = magazinePrice; \
     }
 
 class CfgMagazines {
-    class CAMagazine;
+    class CA_Magazine;
 
     DEFMAG(20Rnd_650x39_Cased_Mag_F,50);
     DEFMAG(20Rnd_762x51_Mag,50);

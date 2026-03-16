@@ -11,12 +11,12 @@
         mass = 50; \
     }
 #define DEFMAG_SELL(magazineClass,magazinePrice) \
-    class GVAR(magazineClass): CAMagazine { \
+    class GVAR(magazineClass): CA_Magazine { \
         EGVAR(store,fallbackSellPrice) = magazinePrice; \
     }
 
 class CfgMagazines {
-    class CAMagazine;
+    class CA_Magazine;
 
     DEFMAG(2Rnd_60mm_Mo_Flare_white_RF,2,w_l16_ammo_illum_ca);
     DEFMAG(2Rnd_60mm_Mo_Smoke_white_RF,2,w_l16_ammo_smk_white_ca);
