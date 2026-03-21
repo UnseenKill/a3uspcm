@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="Compat_EF">
+        <Key ID="STR_A3USPCM_Compat_EF_Component">
+            <English>A3USPCM - EF Compatibility Component</English>
+            <German>A3USPCM - EF Kompatibilitätskomponente</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Compat_EF_I_T_UAV_03_dynamicLoadout_F_Display">
+            <English>MQ-12 Falcon II</English>
+            <German>MQ-12 Falcon II</German>
+        </Key>
+    </Package>
+</Project>

@@ -12,7 +12,7 @@ include = [
 ]
 
 [hemtt.launch.default]
-dlc = ["Reaction Forces"]
+dlc = ["ef","rf"]
 workshop = [
     "450814997", # CBA_A3
     "463939057", # ACE3
