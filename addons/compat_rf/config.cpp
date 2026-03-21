@@ -26,7 +26,7 @@ class CfgPatches {
             QGVAR(O_G_CommandoMortar_RF_carry)
         };
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"a3uspcm_main","ace_csw","RF_Weapons"};
+        requiredAddons[] = {"a3uspcm_main","a3uspcm_store","ace_csw","RF_Weapons"};
         skipWhenMissingDependencies = 1;
         author = "$STR_A3USPCM_Author";
         authors[] = {"goreSplatter"};
