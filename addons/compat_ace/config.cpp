@@ -7,7 +7,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"a3uspcm_main","ace_irlight","ace_medical_statemachine"};
+        requiredAddons[] = {"a3uspcm_main","a3uspcm_store","ace_irlight","ace_medical_statemachine"};
         skipWhenMissingDependencies = 1;
         author = "$STR_A3USPCM_Author";
         authors[] = {"goreSplatter"};
