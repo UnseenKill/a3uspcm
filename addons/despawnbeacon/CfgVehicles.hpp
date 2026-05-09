@@ -3,8 +3,9 @@ class DefaultEventHandlers;
 class CfgVehicles {
     class Man;
     class ThingX;
+    class I_UAV_01_F;
 
-    class EGVAR(assets,DespawnSuppressionBeacon) : ThingX {
+    class EGVAR(assets,DespawnSuppressionBeacon): ThingX {
         class ACE_Actions {
             class ACE_MainActions {
                 condition = QUOTE(true);
@@ -63,5 +64,9 @@ class CfgVehicles {
                 };        
             };
         };
+    };
+
+    class GVAR(I_UAV_01_F): I_UAV_01_F {
+        displayName = "A3USPCM DSB UAV";
     };
 };
