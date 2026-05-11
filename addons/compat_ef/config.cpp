@@ -3,10 +3,14 @@
 class CfgPatches {
     class ADDON {
         name = CSTRING(component);
-        units[] = {QGVAR(I_UAV_01_F)};
-        weapons[] = {QGVAR(PackedBeacon)};
+        magazines[] = {};
+        units[] = {
+            QUOTE(DOUBLES(PREFIX,I_T_UAV_03_dynamicLoadout_F))
+        };
+        weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"a3uspcm_assets","a3uspcm_util"};
+        requiredAddons[] = {"a3uspcm_main","a3uspcm_store","EF_Weapons","A3A_hals"};
+        skipWhenMissingDependencies = 1;
         author = "$STR_A3USPCM_Author";
         authors[] = {"goreSplatter"};
         url = "$STR_A3USPCM_URL";
@@ -14,6 +18,5 @@ class CfgPatches {
     };
 };
 
-#include "CfgEventHandlers.hpp"
+#include "CfgHalsStore.hpp"
 #include "CfgVehicles.hpp"
-#include "CfgWeapons.hpp"

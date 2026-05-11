@@ -15,20 +15,25 @@ Example:
 Returns:
     Nothing
 
+Environment:
+    Server, Unscheduled
+
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(handlerBeaconPostInit),_this);
 
-params[
-    ["_beacon",objNull,[objNull]]
-];
+if !assert(params[
+    ["_beacon", nil, [objNull]]
+]) exitWith {};
 
 if !assert(!isNull _beacon) exitWith {};
 
 _beacon allowDamage false;
 GVAR(Entities) pushBackUnique _beacon;
+GVAR(Entities) = GVAR(Entities) - [objNull];
 
-[_beacon] remoteExec[QFUNC(addInteractions), 0];
+publicVariable QGVAR(Entities);
+[CBA_EVENT_DSB_POSTINIT, [_beacon]] call CBA_fnc_globalEvent;
 
 nil;
