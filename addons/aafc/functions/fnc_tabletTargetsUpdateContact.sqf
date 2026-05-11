@@ -51,8 +51,9 @@ if (isNil "_contact") exitWith {
 };
 
 if (_index isEqualTo -1) exitWith {
-    if !(_mayRecurse) throw "WTF";
-    [_targetKey, _lnbSort] spawn FUNC(tabletTargetsAddContact);
+    if assert(_mayRecurse) then {
+        [_targetKey, _lnbSort] spawn FUNC(tabletTargetsAddContact);
+    };
 };
 
 private _unit = _contact get "unit";

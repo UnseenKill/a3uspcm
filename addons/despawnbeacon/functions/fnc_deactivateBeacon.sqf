@@ -24,18 +24,17 @@ Author:
 _this spawn {
     TRACE_1(QFUNC(deactivateBeacon),_this);
 
-    params[
-        ["_beacon", objNull, [objNull]],
-        ["_player", objNull, [objNull]]
-    ];
+    if !assert(params[
+        ["_beacon", nil, [objNull]],
+        ["_player", nil, [objNull]]
+    ]) exitWith {};
 
     if !assert(!isNull _beacon) exitWith {};
+    if !assert(!isNull _player) exitWith {};
 
     private _uav = _beacon getVariable[QGVAR(UAV), objNull];
 
     if (isNull _uav) exitWith {};
-
-    if !assert(!isNull _player) exitWith {};
 
     if !EGVAR(main,AceHaveAddon) then {
         _player playActionNow "PutDown";
@@ -43,7 +42,8 @@ _this spawn {
         [_beacon, _beacon] call ace_common_fnc_claim;
         [_player, "PutDown"] call ace_common_fnc_doGesture;
     };
-    _beacon setVariable[QGVAR(active), nil];
+
+    _beacon setVariable[QGVAR(active), nil, true];
 
     TRACE_1(QFUNC(deactivateBeacon_waitState),_beacon);
     waitUntil { _beacon getVariable[QGVAR(ready), false] };
@@ -52,12 +52,12 @@ _this spawn {
     crew _uav apply { deleteVehicle _x };
     deleteVehicle _uav;
 
-    _beacon setVariable[QGVAR(UAV), nil];
+    _beacon setVariable[QGVAR(UAV), nil, true];
 
     private _marker = _beacon getVariable[QGVAR(marker), false];
     if !(_marker isEqualType false) then {
         deleteMarker _marker;
-        _beacon setVariable[QGVAR(marker), nil];
+        _beacon setVariable[QGVAR(marker), nil, true];
     };
 };
 

@@ -1,5 +1,3 @@
-#include "\x\A3A\addons\hals\Addons\store\config.hpp"
-
 class A3U {
     class forbiddenItems {
         class forbidden_limited_base;
@@ -39,15 +37,15 @@ class CfgHALsAddons {
                 displayName = __EVAL(formatText ["%1 %2", "A3USPCM", localize "STR_A3AU_misc"]);
     			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
 
-                ITEM(EGVAR(assets,40mm_EMP),75,PN_STOCK)
-                ITEM(EGVAR(assets,Grenade_EMP),275,PN_STOCK)
-                ITEM(EGVAR(despawnbeacon,PackedBeacon),750,PN_STOCK)
-                ITEM(EGVAR(markers,PermanentMarker),25,PN_STOCK)
-                ITEM(EGVAR(assets,DecryptKeyPack_B),6800,3)
-                ITEM(EGVAR(assets,DecryptKeySingle_B),875,20)
-                ITEM(EGVAR(assets,DecryptKeyPack_O),6800,3)
-                ITEM(EGVAR(assets,DecryptKeySingle_O),875,20)
-                ITEM(EGVAR(advanced_ai_orders,ItemRadio),650,PN_STOCK)
+                A3U_STORE_ITEM(EGVAR(assets,40mm_EMP),75,A3U_STORE_PN_STOCK);
+                A3U_STORE_ITEM(EGVAR(assets,Grenade_EMP),275,A3U_STORE_PN_STOCK);
+                A3U_STORE_ITEM(EGVAR(despawnbeacon,PackedBeacon),750,A3U_STORE_PN_STOCK);
+                A3U_STORE_ITEM(EGVAR(markers,PermanentMarker),25,A3U_STORE_PN_STOCK);
+                A3U_STORE_ITEM(EGVAR(assets,DecryptKeyPack_B),6800,3);
+                A3U_STORE_ITEM(EGVAR(assets,DecryptKeySingle_B),875,20);
+                A3U_STORE_ITEM(EGVAR(assets,DecryptKeyPack_O),6800,3);
+                A3U_STORE_ITEM(EGVAR(assets,DecryptKeySingle_O),875,20);
+                A3U_STORE_ITEM(EGVAR(advanced_ai_orders,ItemRadio),650,A3U_STORE_PN_STOCK);
             };
         };
 

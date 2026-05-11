@@ -1,4 +1,4 @@
-#include "\x\A3A\addons\hals\Addons\store\config.hpp"
+#include "\z\a3uspcm\addons\store\script_macros.hpp"
 
 class A3U {
     class traderAddons {
@@ -24,12 +24,12 @@ class CfgHALsAddons {
                 displayName = __EVAL(formatText ["%1 %2", "ACE3", localize "STR_A3AU_misc"]);
     			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
 
-                ITEM(ACE_painkillers,5,PN_STOCK)
-                ITEM(ACE_suture,5,PN_STOCK)
-                ITEM(ACE_DBAL_A3_Green,250,PN_STOCK)
-                ITEM(ACE_DBAL_A3_Red,250,PN_STOCK)
-                ITEM(ACE_Fortify,250,PN_STOCK)
-                ITEM(ACE_FortifyToken,25,100)
+                A3U_STORE_ITEM(ACE_painkillers,5,A3U_STORE_PN_STOCK);
+                A3U_STORE_ITEM(ACE_suture,5,A3U_STORE_PN_STOCK);
+                A3U_STORE_ITEM(ACE_DBAL_A3_Green,250,A3U_STORE_PN_STOCK);
+                A3U_STORE_ITEM(ACE_DBAL_A3_Red,250,A3U_STORE_PN_STOCK);
+                A3U_STORE_ITEM(ACE_Fortify,250,A3U_STORE_PN_STOCK);
+                A3U_STORE_ITEM(ACE_FortifyToken,25,100);
             };
         };
 

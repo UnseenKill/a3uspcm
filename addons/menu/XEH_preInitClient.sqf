@@ -69,7 +69,7 @@
     QEGVAR(aafc,HotkeysToggleUI),
     [ELSTRING(aafc,HotkeysToggleUI), ELSTRING(aafc,HotkeysToggleUITooltip)],
     {},
-    { createDialog QEGVAR(aafc,ConfigTablet) }
+    { while { dialog } do { closeDialog 0 }; createDialog QEGVAR(aafc,ConfigTablet) }
 ] call CBA_fnc_addKeybind;
 
 [
