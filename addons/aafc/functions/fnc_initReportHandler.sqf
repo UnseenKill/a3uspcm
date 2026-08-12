@@ -26,11 +26,11 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _group) exitWith {};
 
-private _registerContact = {
-    params[
+GVAR(fncRegisterContact) = {
+    if !assert(params[
         ["_group", nil, [grpNull]],
         ["_enemy", nil, [objNull]]
-    ];
+    ]) exitWith {};
 
     INFO_3("'%1' detected enemy '%2' (isAir=%3)",_group,_enemy,_enemy isKindOf "Air");
 
@@ -104,7 +104,6 @@ private _registerContact = {
         };
     }];
 };
-_group setVariable[QGVAR(registerContact), _registerContact];
 
 /*
 CIWS fire report?
@@ -115,21 +114,21 @@ _group getVariable QGVAR(vehicles) apply { _x addEventHandler["Fired", {
 */
 
 _group addEventHandler["EnemyDetected", {
-    params[
+    if !assert(params[
         ["_group", nil, [grpNull]],
         ["_enemy", nil, [objNull]]
-    ];
+    ]) exitWith {};
 
-    [_group, _enemy] call (_group getVariable QGVAR(registerContact));
+    [_group, _enemy] call GVAR(fncRegisterContact);
 }];
 
 _group addEventHandler["KnowsAboutChanged", {
-    params[
+    if !assert(params[
         ["_group", nil, [grpNull]],
         ["_target", nil, [objNull]],
         ["_newKnowsAbout", 0, [0]],
         ["_oldKnowsAbout", 0, [0]]
-    ];
+    ]) exitWith {};
 
     if (_oldKnowsAbout >= 1.5) exitWith {};
     if (_newKnowsAbout < 1.5) exitWith {};
@@ -138,7 +137,7 @@ _group addEventHandler["KnowsAboutChanged", {
     private _enemy = [_target, objectParent _target] select (!(_target isKindOf "Air") && {!isNull objectParent _target});
     if !(_enemy isKindOf "Air") exitWith {};
 
-    [_group, _enemy] call (_group getVariable QGVAR(registerContact));
+    [_group, _enemy] call GVAR(fncRegisterContact);
 }];
 
 nil;
