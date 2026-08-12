@@ -21,6 +21,18 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1("A3USPCM_zeus_fnc_mountStaticEmplacements",_this);
 
+if (!hasInterface && { isServer }) exitWith {
+    if !(_this params[["_logic", objNull, [objNull]]]) exitWith {};
+
+    private _curatorOwner = owner _logic;
+
+    if (_curatorOwner > 2) then {
+        _this remoteExecCall[QFUNC(mountStaticEmplacements), _curatorOwner];
+    } else {
+        WARNING_1("No curator client owner found for module '%1'",_logic);
+    };
+};
+
 _this spawn {
     params[
         ["_logic", objNull, [objNull]],

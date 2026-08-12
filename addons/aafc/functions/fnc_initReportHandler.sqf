@@ -26,15 +26,7 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _group) exitWith {};
 
-/*
-CIWS fire report?
-
-_group getVariable QGVAR(vehicles) apply { _x addEventHandler["Fired", {
-    TRACE_1(QFUNC(initReportHandler),_this);
-}]};
-*/
-
-_group addEventHandler["EnemyDetected", {
+private _registerContact = {
     params[
         ["_group", nil, [grpNull]],
         ["_enemy", nil, [objNull]]
@@ -51,10 +43,10 @@ _group addEventHandler["EnemyDetected", {
     CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_CONTACT_ADDED,[_enemy]);
 
     private _message = format[
-        LLSTRING(Message_EnemyDetected), 
-        DISPLAY_NAME_UNIT(_enemy), 
-        mapGridPosition getPosATL _enemy, 
-        abs((leader _group distance _enemy) / 1000) toFixed 1, 
+        LLSTRING(Message_EnemyDetected),
+        DISPLAY_NAME_UNIT(_enemy),
+        mapGridPosition getPosATL _enemy,
+        abs((leader _group distance _enemy) / 1000) toFixed 1,
         getDir _enemy toFixed 1, speed _enemy toFixed 1
     ];
 
@@ -111,6 +103,42 @@ _group addEventHandler["EnemyDetected", {
             CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT_FIRED,[ARR_2(_sender,_message)]);
         };
     }];
+};
+_group setVariable[QGVAR(registerContact), _registerContact];
+
+/*
+CIWS fire report?
+
+_group getVariable QGVAR(vehicles) apply { _x addEventHandler["Fired", {
+    TRACE_1(QFUNC(initReportHandler),_this);
+}]};
+*/
+
+_group addEventHandler["EnemyDetected", {
+    params[
+        ["_group", nil, [grpNull]],
+        ["_enemy", nil, [objNull]]
+    ];
+
+    [_group, _enemy] call (_group getVariable QGVAR(registerContact));
+}];
+
+_group addEventHandler["KnowsAboutChanged", {
+    params[
+        ["_group", nil, [grpNull]],
+        ["_target", nil, [objNull]],
+        ["_newKnowsAbout", 0, [0]],
+        ["_oldKnowsAbout", 0, [0]]
+    ];
+
+    if (_oldKnowsAbout >= 1.5) exitWith {};
+    if (_newKnowsAbout < 1.5) exitWith {};
+    if !(side _group getFriend side _target < 0.6) exitWith {};
+
+    private _enemy = [_target, objectParent _target] select (!(_target isKindOf "Air") && {!isNull objectParent _target});
+    if !(_enemy isKindOf "Air") exitWith {};
+
+    [_group, _enemy] call (_group getVariable QGVAR(registerContact));
 }];
 
 nil;
