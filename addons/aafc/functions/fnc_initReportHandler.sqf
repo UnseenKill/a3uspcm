@@ -132,7 +132,7 @@ _group addEventHandler["KnowsAboutChanged", {
 
     if (_oldKnowsAbout >= 1.5) exitWith {};
     if (_newKnowsAbout < 1.5) exitWith {};
-    if !(side _group getFriend side _target < 0.6) exitWith {};
+    if (side _group getFriend side _target >= 0.6) exitWith {};
 
     private _enemy = [_target, objectParent _target] select (!(_target isKindOf "Air") && {!isNull objectParent _target});
     if !(_enemy isKindOf "Air") exitWith {};
