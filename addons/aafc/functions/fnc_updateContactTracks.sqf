@@ -43,6 +43,7 @@ GVAR(contactTracker) = [] spawn {
                 WARNING_1("Unit for contact '%1' is null, removing contact",_key);
                 GVAR(contacts) deleteAt _key;
                 deleteMarker _marker;
+                publicVariable QGVAR(contacts);
                 CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_CONTACT_UPDATE,[_unit]);
                 continue;
             };
@@ -52,6 +53,8 @@ GVAR(contactTracker) = [] spawn {
                     INFO_1("Unit for contact '%1' is dead, removing contact",_key);
                     GVAR(contacts) deleteAt _key;
                     deleteMarker _marker;
+                    publicVariable QGVAR(contacts);
+                    CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_CONTACT_UPDATE,[_unit]);
                     continue;
                 };
 

@@ -27,7 +27,57 @@ if !assert(params[
 if !assert(!isNull _unit) exitWith {};
 
 private _contactKey = _unit getVariable QGVAR(contactKey);
-if !assert(!isNil "_contactKey") exitWith {};
+if (isNil "_contactKey") exitWith {
+    [_unit] spawn {
+        params[["_unit", objNull, [objNull]]];
+
+        private _timeout = diag_tickTime + 5;
+        waitUntil {
+            uiSleep 0.1;
+            (!isNull _unit && { !isNil { _unit getVariable QGVAR(contactKey) } }) || { diag_tickTime > _timeout }
+        };
+
+        private _contactKey = _unit getVariable QGVAR(contactKey);
+        if !assert(!isNil "_contactKey") exitWith {};
+
+        _timeout = diag_tickTime + 1;
+        waitUntil {
+            uiSleep 0.1;
+            (!isNil { GVAR(contacts) get _contactKey }) || { diag_tickTime > _timeout }
+        };
+
+        [_contactKey] call FUNC(tabletTargetsUpdateContact);
+    };
+};
+
+if (isNil { GVAR(contacts) get _contactKey }) exitWith {
+    [_contactKey] spawn {
+        params[["_contactKey", nil, [""]]];
+
+        private _timeout = diag_tickTime + 1;
+        waitUntil {
+            uiSleep 0.1;
+            (!isNil { GVAR(contacts) get _contactKey }) || { diag_tickTime > _timeout }
+        };
+
+        [_contactKey] call FUNC(tabletTargetsUpdateContact);
+    };
+};
+
+if !(alive _unit) exitWith {
+    [_contactKey] spawn {
+        params[["_contactKey", nil, [""]]];
+
+        private _timeout = diag_tickTime + 1;
+        waitUntil {
+            uiSleep 0.1;
+            (isNil { GVAR(contacts) get _contactKey }) || { diag_tickTime > _timeout }
+        };
+
+        [_contactKey] call FUNC(tabletTargetsUpdateContact);
+    };
+};
+
 [_contactKey] spawn FUNC(tabletTargetsUpdateContact);
 
 nil;
