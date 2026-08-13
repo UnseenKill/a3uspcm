@@ -48,6 +48,10 @@ if (isNil "_contact") exitWith {
     if assert(_index >= 0) then {
         _control lnbDeleteRow _index;
     };
+
+    if ((lnbSize _control select 0) isEqualTo 0) then {
+        _control lnbAddRow[LLSTRING(Tablet_TabhostTargets_HintNoContactsReported_Text)];
+    };
 };
 
 if (_index isEqualTo -1) exitWith {

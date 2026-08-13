@@ -26,19 +26,11 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _group) exitWith {};
 
-/*
-CIWS fire report?
-
-_group getVariable QGVAR(vehicles) apply { _x addEventHandler["Fired", {
-    TRACE_1(QFUNC(initReportHandler),_this);
-}]};
-*/
-
-_group addEventHandler["EnemyDetected", {
-    params[
+GVAR(fncRegisterContact) = {
+    if !assert(params[
         ["_group", nil, [grpNull]],
         ["_enemy", nil, [objNull]]
-    ];
+    ]) exitWith {};
 
     INFO_3("'%1' detected enemy '%2' (isAir=%3)",_group,_enemy,_enemy isKindOf "Air");
 
@@ -51,10 +43,10 @@ _group addEventHandler["EnemyDetected", {
     CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_CONTACT_ADDED,[_enemy]);
 
     private _message = format[
-        LLSTRING(Message_EnemyDetected), 
-        DISPLAY_NAME_UNIT(_enemy), 
-        mapGridPosition getPosATL _enemy, 
-        abs((leader _group distance _enemy) / 1000) toFixed 1, 
+        LLSTRING(Message_EnemyDetected),
+        DISPLAY_NAME_UNIT(_enemy),
+        mapGridPosition getPosATL _enemy,
+        abs((leader _group distance _enemy) / 1000) toFixed 1,
         getDir _enemy toFixed 1, speed _enemy toFixed 1
     ];
 
@@ -111,6 +103,41 @@ _group addEventHandler["EnemyDetected", {
             CBA_EVENT_GLOBAL(CBA_EVENT_AAFC_SIDECHAT_FIRED,[ARR_2(_sender,_message)]);
         };
     }];
+};
+
+/*
+CIWS fire report?
+
+_group getVariable QGVAR(vehicles) apply { _x addEventHandler["Fired", {
+    TRACE_1(QFUNC(initReportHandler),_this);
+}]};
+*/
+
+_group addEventHandler["EnemyDetected", {
+    if !assert(params[
+        ["_group", nil, [grpNull]],
+        ["_enemy", nil, [objNull]]
+    ]) exitWith {};
+
+    [_group, _enemy] call GVAR(fncRegisterContact);
+}];
+
+_group addEventHandler["KnowsAboutChanged", {
+    if !assert(params[
+        ["_group", nil, [grpNull]],
+        ["_target", nil, [objNull]],
+        ["_newKnowsAbout", 0, [0]],
+        ["_oldKnowsAbout", 0, [0]]
+    ]) exitWith {};
+
+    if (_oldKnowsAbout >= 1.5) exitWith {};
+    if (_newKnowsAbout < 1.5) exitWith {};
+    if (side _group getFriend side _target >= 0.6) exitWith {};
+
+    private _enemy = [_target, objectParent _target] select (!(_target isKindOf "Air") && {!isNull objectParent _target});
+    if !(_enemy isKindOf "Air") exitWith {};
+
+    [_group, _enemy] call GVAR(fncRegisterContact);
 }];
 
 nil;
