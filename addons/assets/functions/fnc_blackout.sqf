@@ -33,15 +33,15 @@ private _classes = ["Lamps_base_F","PowerLines_Small_base_F"];
 private _haveCSLA = isClass(configFile >> "CfgPatches" >> "CSLA");
 
 if isClass(configFile >> "CfgPatches" >> "gm_core") then {
-    _classes = _classes + ["gm_lamp_euro_80_base"];
+    _classes pushBack "gm_lamp_euro_80_base";
 };
 
 if _haveCSLA then {
-    _classes = _classes + ["Land_CSLA_UL_base"];
+    _classes pushBack "Land_CSLA_UL_base";
 };
 
 if (GVAR(empEffectsLights) isEqualType []) then {
-    _classes = _classes + GVAR(empEffectsLights);
+    _classes pushBackUnique GVAR(empEffectsLights);
 };
 
 private _lights = nearestObjects[_position, _classes, _range];
