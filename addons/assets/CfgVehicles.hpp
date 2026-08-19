@@ -75,6 +75,7 @@ class CfgVehicles {
                 displayNameCode = QUOTE(format[ARR_2(QQUOTE(<img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceArsenal_ca.paa' size='1.6' shadow='2' /> <t size='1'>%1</t>),localize QQUOTE(STR_A3_Arsenal))]);
                 condition = QUOTE(alive _target && {isNull objectParent _this} && {_target distance _this < 5});
                 statement = QUOTE([] call JN_fnc_arsenal_handleAction);
+                showWindow = 1;
             };
 
             class VehicleInventory: ActionBase {
