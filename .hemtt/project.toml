@@ -24,3 +24,6 @@ workshop = [
 [hemtt.launch.malden]
 extends = "default"
 mission = "a3uspcm.Malden"
+
+[lints.sqf]
+direct_private = false
