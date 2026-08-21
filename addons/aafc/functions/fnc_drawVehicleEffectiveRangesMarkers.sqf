@@ -61,10 +61,8 @@ private _drawMainMarkers = {
 
     private _min = format["%1Min", _prefix];
     private _max = format["%1Max", _prefix];
-    private _minRadius = 0;
 
     if ((_ranges get _min) isNotEqualTo (_ranges get _max)) then {
-        _minRadius = _ranges get _min;
         _marker = createMarkerLocal[format["%1_%2Min", _markerPrefix, _prefix], _markerPos];
         _marker setMarkerShapeLocal "ELLIPSE";
         _marker setMarkerBrushLocal "Border";
