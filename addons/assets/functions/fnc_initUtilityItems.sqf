@@ -27,9 +27,9 @@ waitUntil {
 
 private _index = (A3A_utilityItemList find(A3A_faction_reb get "lootCrate")) + 1;
 private _boxes = [
-    [QGVAR(SupplyBoxSmall), 250, LLSTRING(SupplyBoxSmall_DisplayName), "", ["place", "move"]],
-    [QGVAR(SupplyBoxMedium), 500, LLSTRING(SupplyBoxMedium_DisplayName), "", ["place", "move"]],
-    [QGVAR(SupplyBoxLarge), 1000, LLSTRING(SupplyBoxLarge_DisplayName), "", ["place"]]
+    [QGVAR(SupplyBoxSmall), 250, LLSTRING(SupplyBoxSmall_DisplayName), "", ["place", "move", "loot", "noLootAction"]],
+    [QGVAR(SupplyBoxMedium), 500, LLSTRING(SupplyBoxMedium_DisplayName), "", ["place", "move", "loot", "noLootAction"]],
+    [QGVAR(SupplyBoxLarge), 1000, LLSTRING(SupplyBoxLarge_DisplayName), "", ["place", "loot", "noLootAction"]]
 ];
 
 A3A_utilityItemList insert[_index, _boxes apply {
