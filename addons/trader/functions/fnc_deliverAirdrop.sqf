@@ -146,7 +146,7 @@ _wp4 setWaypointType "MOVE";
 _wp4 setWaypointSpeed "FULL";
 _wp4 setWaypointStatements ["true", "(vehicle this) flyInHeight 100;"];
 
-private _timeOut = time + 600;
+_timeOut = time + 600;
 waitUntil { sleep 2; (currentWaypoint group _heli == 5) or (time > _timeOut) or !(canMove _heli)};
 
 if !(canMove _heli) then { sleep 600 };
