@@ -73,6 +73,14 @@
             <English>List of vehicle weaponry classes that can be added to vehicles.</English>
             <German>Liste der Fahrzeugbewaffnungs-Klassen, die Fahrzeugen hinzugefügt werden können.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Weapons_SwitchTerminalsActionText">
+            <English>Switch terminals</English>
+            <German>Terminals wechseln</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Weapons_SwitchTerminalsFeedbackText">
+            <English>Switched terminals from "%1" to "%2".</English>
+            <German>Terminals von "%1" zu "%2" gewechselt.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Weapons_VehicleHunterKillerEnableText">
             <English>Enable Hunter-Killer</English>
             <German>Hunter-Killer aktivieren</German>

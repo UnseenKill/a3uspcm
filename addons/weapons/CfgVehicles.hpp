@@ -30,6 +30,7 @@
 class CfgVehicles {
     class Air;
     class LandVehicle;
+    class Man;
     class Ship;
 
     WPNEDITOR_ACTION_FOR_CLASS(Car,LandVehicle);
@@ -37,4 +38,19 @@ class CfgVehicles {
     WPNEDITOR_ACTION_FOR_CLASS(Helicopter,Air);
     WPNEDITOR_ACTION_FOR_CLASS(Plane,Air);
     WPNEDITOR_ACTION_FOR_CLASS(Ship_F,Ship);
+
+    class CAManBase: Man {
+        class ACE_SelfActions {
+            class ACE_Equipment {
+                class GVAR(SwitchTerminals) {
+                    displayName = CSTRING(SwitchTerminalsActionText);
+                    condition = QUOTE([ACE_player] call FUNC(canSwitchTerminals));
+                    statement = QUOTE([ACE_player] call FUNC(switchTerminals));
+                    exceptions[] = {"isNotDragging", "notOnMap"};
+                    showDisabled = 0;
+                    priority = 0;
+                };        
+            };
+        };
+    };
 };
