@@ -49,6 +49,5 @@ if (GVAR(tracks) isNotEqualTo []) then {
 };
 
 TRACE_1("loaded",GVAR(tracks));
-publicVariable QGVAR(tracks);
 
 nil;
