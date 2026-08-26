@@ -41,5 +41,7 @@ private _count = _tree tvCount[];
 TRACE_1("save playlist",GVAR(tracks));
 [CBA_EVENT_MENU_SYNCGVAR, [player, QGVAR(tracks), GVAR(tracks)]] call CBA_fnc_serverEvent;
 
+profileNamespace setVariable[QGVAR(tracks), GVAR(tracks) toArray false];
+
 closeDialog 0;
 nil;
