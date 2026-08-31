@@ -21,7 +21,7 @@ TRACE_1(QFUNC(loadTracks),_this);
 
 INFO("Custom playlist not loaded, initializing...");
 
-[QGVAR(tracks)] call A3A_fnc_getStatVariable;
+GVAR(tracks) = profileNamespace getVariable QGVAR(tracks);
 
 if isNil QGVAR(tracks) then {
     INFO("No saved tracks found, using tracks from config");
@@ -49,6 +49,5 @@ if (GVAR(tracks) isNotEqualTo []) then {
 };
 
 TRACE_1("loaded",GVAR(tracks));
-publicVariable QGVAR(tracks);
 
 nil;
