@@ -41,7 +41,7 @@ if _haveCSLA then {
 };
 
 if (GVAR(empEffectsLights) isEqualType []) then {
-    _classes pushBackUnique GVAR(empEffectsLights);
+    _classes append GVAR(empEffectsLights);
 };
 
 private _lights = nearestObjects[_position, _classes, _range];
