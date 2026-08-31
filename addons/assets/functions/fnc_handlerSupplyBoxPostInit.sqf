@@ -27,5 +27,16 @@ if !assert(params[
 if !assert(!isNull _object) exitWith {};
 
 [_object] call A3A_logistics_fnc_addLoadAction;
+[{
+    if !assert(params[["_object", nil, [objNull]]]) exitWith {};
+    if (isNull _object) exitWith {};
+
+    private _lootActionID = _object getVariable "lootActionID";
+
+    if !(isNil "_lootActionID") then {
+        _object removeAction _lootActionID;
+        INFO_2("Removed loot action ID #%1 from object %2",_lootActionID,_object);
+    };
+}, [_object], 5] call CBA_fnc_waitAndExecute;
 
 nil;
