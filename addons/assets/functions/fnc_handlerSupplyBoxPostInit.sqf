@@ -29,7 +29,7 @@ if !assert(!isNull _object) exitWith {};
 [_object] call A3A_logistics_fnc_addLoadAction;
 [{
     if !assert(params[["_object", nil, [objNull]]]) exitWith {};
-    if !assert(!isNull _object) exitWith {};
+    if (isNull _object) exitWith {};
 
     private _lootActionID = _object getVariable "lootActionID";
 
