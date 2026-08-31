@@ -1,3 +1,5 @@
+PREP(canSwitchTerminals);
+PREP(switchTerminals);
 PREP(toggleSuppressors);
 PREP(vehicleHunterKillerCanEnable);
 PREP(vehicleHunterKillerEnable);
