@@ -20,15 +20,16 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(handlerPlayerRespawn),_this);
-
 if !assert(params[
     ["_player", nil, [objNull]]
 ]) exitWith {};
 
 if !(isPlayer _player) exitWith {};
+if !(isNil { _player getVariable QGVAR(ehSlotItemChanged) }) exitWith {};
 
-_player addEventHandler["SlotItemChanged", {
+TRACE_1(QFUNC(handlerPlayerRespawn),_this);
+
+_player setVariable[QGVAR(ehSlotItemChanged), _player addEventHandler["SlotItemChanged", {
     if !assert(params[
         ["_unit", nil, [objNull]],
         ["_name", nil, [""]],
@@ -42,7 +43,7 @@ _player addEventHandler["SlotItemChanged", {
     if (_slot isNotEqualTo 612) exitWith {}; // UAV terminal slot
 
     [] call FUNC(disableUAVConnectabilityAll);
-}];
+}]];
 
 [] call FUNC(disableUAVConnectabilityAll);
 
