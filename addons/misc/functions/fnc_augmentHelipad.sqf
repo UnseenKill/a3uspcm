@@ -97,10 +97,6 @@ _object setVariable[QGVAR(lights), _types apply {
         private _sideLength = (_radius + _offsetDistance) * 2;
         private _sideIndex = floor(_offsetAngle / 90) mod 4;
         private _angleOnSide = _offsetAngle mod 90;
-        private _t = _angleOnSide / 90;
-        private _posOnSide = _t * _sideLength - _sideLength / 2;
-        private _sideIndex = floor(_offsetAngle / 90) mod 4;
-        private _angleOnSide = _offsetAngle mod 90;
         private _posOnSide = (_angleOnSide / 90) * _sideLength - _sideLength / 2;
 
         switch (_sideIndex) do {

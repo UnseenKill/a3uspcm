@@ -23,9 +23,7 @@ TRACE_1(QFUNC(savePlaylist),_this);
 private _display = uiNamespace getVariable[QGVAR(menuDisplay), displayNull];
 if !assert(!isNull _display) exitWith {};
 
-private _result = createHashMap;
 private _tree = _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_STATICTREEPOSITION;
-
 private _count = _tree tvCount[];
 
 [0, _count - 1] call FUNCMAIN(utilRange) apply {

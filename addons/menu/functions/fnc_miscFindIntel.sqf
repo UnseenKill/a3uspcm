@@ -27,12 +27,12 @@ private _usePrecision = GVAR(findIntelPreciseMarker);
 private _config = GVAR(DiaryConfig);
 private _chemlights = getArray(_config >> "Intel" >> "chemlights");
 private _flags = getArray(_config >> "Intel" >> "flags");
-private _laptops = getArray(_config >> "Intel" >> "laptops");
+private _laptopTypes = getArray(_config >> "Intel" >> "laptops");
 
 _flags = _flags select EGVAR(main,AceHaveAddon);
 
 INFO_2("'%1' is searching for intel (radius=%2m)",name player,_radius);
-TRACE_3(QFUNCMAIN(miscFindIntel),_radius,_laptops,_config);
+TRACE_3(QFUNCMAIN(miscFindIntel),_radius,_laptopTypes,_config);
 
 private _sl = nearestObjects[player, ["CAManBase"], _radius, true] select {
     (!alive _x) && { _x getVariable[QGVAR(hasIntel), false] } &&
@@ -40,7 +40,7 @@ private _sl = nearestObjects[player, ["CAManBase"], _radius, true] select {
     {_x getVariable["side", west] isNotEqualTo side player}
 };
 
-private _laptops = nearestObjects[player, _laptops, _radius, true];
+private _laptops = nearestObjects[player, _laptopTypes, _radius, true];
 private _intelFound = 0;
 
 (_sl + _laptops) select {
