@@ -117,15 +117,11 @@ GVAR(Timers) = [false, false];
     if (!isNil QGVAR(AdditionalStatics) && { GVAR(AdditionalStatics) isEqualType [] }) then {
         INFO("Applying additional statics from server");
         GVAR(AdditionalStatics) apply {
+            _x params["_class","_price"];
             TRACE_1(QFUNC(loadAdditionalStatics),_x);
 
-            A3A_faction_reb get "staticMGs" pushBackUnique (_x select 0);
-            A3U_blackMarketStock pushBack [
-                _x select 0, // classname
-                _x select 1, // price
-                "STATICMG", // type
-                {true} // condition
-            ];
+            A3A_faction_reb get "staticMGs" pushBackUnique _class;
+            A3U_blackMarketStock getOrDefault["STATICMG", createHashMap, true] set[_class, _price, true];
         };
     };
 
@@ -148,17 +144,7 @@ GVAR(Timers) = [false, false];
             TRACE_3(QFUNC(loadAdditionalVehicles),_className,_price,_type);
 
             A3A_faction_reb get _type pushBackUnique _className;
-
-            if (A3U_blackMarketStock findIf { _x select 0 isEqualTo _className } isNotEqualTo -1) then {
-                WARNING_2("%1(%2): black market config found; not adding to BM",QFUNC(loadAdditionalVehicles),_className);
-            } else {
-                A3U_blackMarketStock pushBack [
-                    _className, // classname
-                    _price, // price
-                    _typeMap get _type, // type
-                    {true} // condition
-                ];
-            };
+            A3U_blackMarketStock getOrDefault[_typeMap get _type, createHashMap, true] set[_className, _price, true];
         };
     };
 

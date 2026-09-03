@@ -58,6 +58,16 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableVehicles),_this);
                         ["_key","",[""]]
                     ];
 
+                    private _typeMap = createHashMapFromArray[
+                        ["vehiclesLightArmed", "TANK"],
+                        ["vehiclesCivCar", "UNARMEDCAR"],
+                        ["vehiclesCivHeli", "HELI"],
+                        ["vehiclesCivPlane", "PLANE"],
+                        ["vehiclesCivBoat", "BOAT"],
+                        ["vehiclesPlane", "PLANE"],
+                        ["vehiclesBoat", "BOAT"]
+                    ];
+
                     private _className = typeOf _target;
                     private _priceValue = parseNumber _price;
                     private _config = [_className, _priceValue, _key];
@@ -73,9 +83,10 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableVehicles),_this);
                             A3A_faction_reb get _key deleteAt _factionIndex;
                         };
 
-                        private _bmIndex = A3U_blackMarketStock findIf { (_x select 0) isEqualTo _className };
-                        if (_bmIndex isNotEqualTo -1) then {
-                            A3U_blackMarketStock deleteAt _bmIndex;
+                        A3U_blackMarketStock apply {
+                            if (_className in _y) exitWith {
+                                _y deleteAt _className;
+                            };
                         };
 
                         server setVariable[_className, nil, true];
@@ -98,15 +109,7 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableVehicles),_this);
                     [CBA_EVENT_MENU_SYNCGVAR, [player, QGVAR(AdditionalVehicles), GVAR(AdditionalVehicles)]] call CBA_fnc_serverEvent;
 
                     server setVariable[_className, _priceValue, true];
-
-                    private _bmIndex = A3U_blackMarketStock findIf { _x select 0 isEqualTo _className };
-                    private _hasBM = _bmIndex >= 0;
-
-                    if !(_hasBM) then {
-                        A3U_blackMarketStock pushBack[_className, _priceValue, _key, { true }];
-                    } else {
-                        (A3U_blackMarketStock select _bmIndex) set[1, _priceValue];
-                    };
+                    A3U_blackMarketStock getOrDefault[_typeMap getOrDefault[_key, "UNARMEDCAR"], createHashMap, true] set[_className, _priceValue, true];
 
                     private _currentPrice = [_className] call A3A_fnc_vehiclePrice;
 
