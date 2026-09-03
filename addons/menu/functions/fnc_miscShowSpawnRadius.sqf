@@ -30,7 +30,7 @@ mapAnimAdd[0.5, 1, [worldSize / 2, worldSize / 2]];
 mapAnimCommit;
 
 private _markers = flatten[outposts, airportsX, milbases, resourcesX, factories, seaports] select {
-    (markerAlpha _x > 0) && { sidesX getVariable[_x, sideUnknown] != teamPlayer };
+    (markerAlpha("Dum" + _x) > 0) && { sidesX getVariable[_x, sideUnknown] != teamPlayer };
 } apply {
     private _marker = createMarkerLocal[format["%1:%2", _x, [] call CBA_fnc_createUUID], markerPos _x];
     TRACE_2(QFUNCMAIN(mapShowSpawnRadius),_x,_marker);
