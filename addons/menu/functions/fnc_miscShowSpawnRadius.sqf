@@ -46,6 +46,16 @@ private _markers = flatten[outposts, airportsX, milbases, resourcesX, factories,
 
 TRACE_1(QFUNCMAIN(mapShowSpawnRadius),_markers);
 
+if (customWaypointPosition isNotEqualTo []) then {
+    private _marker = createMarkerLocal[format["customWaypoint:%1", [] call CBA_fnc_createUUID], customWaypointPosition];
+    _marker setMarkerAlphaLocal 1;
+    _marker setMarkerBrushLocal "DiagGrid";
+    _marker setMarkerColorLocal "ColorPink";
+    _marker setMarkerShapeLocal "ELLIPSE";
+    _marker setMarkerSizeLocal[distanceSPWN, distanceSPWN];
+    _markers pushBack _marker;
+};
+
 _markers spawn {
     waitUntil { !visibleMap };
     _this apply { deleteMarker _x };
