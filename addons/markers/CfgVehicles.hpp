@@ -9,6 +9,14 @@ class CfgVehicles {
                 icon = QPATHTOEF(assets,ui\loadout-discard.paa);
                 exceptions[] = {"isNotDragging", "notOnMap", "isNotInside", "isNotSitting"};
                 showDisabled = 0;
+                priority = 15;
+            };
+
+            class GVAR(DrawSpawnRadius): GVAR(EraseMarkers) {
+                displayName = CSTRING(DrawSpawnRadius);
+                condition = QUOTE((customWaypointPosition isNotEqualTo []) && {call FUNC(canEraseMarkers)});
+                statement = QUOTE(call FUNC(drawSpawnRadius));
+                icon = "";
             };
         };
     };

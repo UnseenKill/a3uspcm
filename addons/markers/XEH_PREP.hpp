@@ -1,4 +1,5 @@
 PREP(canEraseMarkers);
+PREP(drawSpawnRadius);
 PREP(eraseMarkers);
 PREP(initEventHandlers);
 PREP(initItemContextMenu);
