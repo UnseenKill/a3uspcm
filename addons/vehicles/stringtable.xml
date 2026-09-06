@@ -9,6 +9,10 @@
             <English>A3USPCM - Vehicles Component</English>
             <German>A3USPCM - Fahrzeuge Komponente</German>
         </Key>
+        <Key ID="STR_A3USPCM_Vehicles_Drone_AlignBodyText">
+            <English>Align drone body</English>
+            <German>Drohnenkörper ausrichten</German>
+        </Key>
         <Key ID="STR_A3USPCM_Vehicles_HotkeysMeepMeep">
             <English>Meep Meep</English>
             <German>Meep Meep</German>

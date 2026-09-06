@@ -1,5 +1,7 @@
+PREP(addDroneActions);
 PREP(canAirVehicleResupply);
 PREP(doAirVehicleResupply);
+PREP(droneAlignBody);
 PREP(initSlingloadAdjust);
 PREP(initVanillaInteractions);
 PREP(meepMeepCanDoAction);
