@@ -605,6 +605,14 @@
             <English>Temporarily reveal roadblocks on map.</English>
             <German>Zeige temporär Straßensperren auf der Karte.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ShowSpawnRadiusCaption">
+            <English>Show spawn radius</English>
+            <German>Spawn-Radius anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ShowSpawnRadiusText">
+            <English>Temporarily reveal spawn radius of all (discovered) enemy locations on map.</English>
+            <German>Zeige temporär den Spawn-Radius aller (entdeckten) feindlichen Standorte auf der Karte.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_ToggleMarkerVisibilityCaption">
             <English>Marker visibility</English>
             <German>Marker-Sichtbarkeit</German>
