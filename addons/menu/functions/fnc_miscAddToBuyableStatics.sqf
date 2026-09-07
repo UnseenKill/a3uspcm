@@ -62,9 +62,10 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableStatics),_this);
                             A3A_faction_reb get "staticMGs" deleteAt _factionIndex;
                         };
 
-                        private _bmIndex = A3U_blackMarketStock findIf { (_x select 0) isEqualTo _className };
-                        if (_bmIndex isNotEqualTo -1) then {
-                            A3U_blackMarketStock deleteAt _bmIndex;
+                        A3U_blackMarketStock apply {
+                            if (_className in _y) exitWith {
+                                _y deleteAt _className;
+                            };
                         };
 
                         server setVariable[_className, nil, true];
@@ -88,14 +89,7 @@ TRACE_1(QFUNCMAIN(miscAddToBuyableStatics),_this);
 
                     server setVariable[_className, _priceValue, true];
 
-                    private _bmIndex = A3U_blackMarketStock findIf { (_x select 0) isEqualTo _className };
-                    private _bmConfig = [_className, _priceValue, "STATICMG", {true}];
-
-                    if (_bmIndex isEqualTo -1) then {
-                        A3U_blackMarketStock pushBack _bmConfig;
-                    } else {
-                        (A3U_blackMarketStock select _bmIndex) set[1, _priceValue];
-                    };
+                    A3U_blackMarketStock getOrDefault["STATICMG", createHashMap, true] set[_className, _priceValue, true];
 
                     private _currentPrice = [_className] call A3A_fnc_vehiclePrice;
     
