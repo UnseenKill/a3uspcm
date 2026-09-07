@@ -27,7 +27,26 @@ GVAR(MarkerSizes) = nil;
     if (_gvarName find QUOTE(ADDON) isNotEqualTo 0) exitWith { INFO_1("Ignoring syncGVAR event with invalid gvar name %1",str _gvarName) };
 
     TRACE_2(QFUNC(syncGVAR),_gvarName,_value);
+    private _oldValue = missionNamespace getVariable [_gvarName, []];
     missionNamespace setVariable[_gvarName, _value, true];
+
+    if ((_gvarName isEqualTo QGVAR(AdditionalStatics) || { _gvarName isEqualTo QGVAR(AdditionalVehicles) }) && { _value isEqualType [] }) then {
+        private _oldClasses = [];
+        if (_oldValue isEqualType []) then {
+            _oldClasses = _oldValue apply { _x select 0 };
+        };
+
+        private _newClasses = _value apply { _x select 0 };
+
+        (_oldClasses - _newClasses) apply {
+            server setVariable[_x, nil, true];
+        };
+
+        _value apply {
+            _x params[["_className","",[""]],["_price",0,[0]]];
+            server setVariable[_className, _price, true];
+        };
+    };
 }] call CBA_fnc_addEventHandler;
 
 [CBA_EVENT_SERVER_SAVEGAME_BEFORE, {

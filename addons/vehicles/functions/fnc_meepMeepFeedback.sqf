@@ -30,7 +30,7 @@ if !assert(params[
     ["_message", nil, [""]]
 ]) exitWith {};
 
-private _success = param[2, true, [true]];
+//private _success = param[2, true, [true]];
 private _speakerOverride = param[3, nil, [objNull]];
 
 if (isNil "_speakerOverride") then {

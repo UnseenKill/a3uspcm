@@ -24,3 +24,16 @@ workshop = [
 [hemtt.launch.malden]
 extends = "default"
 mission = "a3uspcm.Malden"
+
+[lints.sqf]
+# Too generic; does not take into account `isNil` checks, for example
+direct_private = false
+# Complains about if-elses whose branches would have to be exchanged leading to
+# one-line else statements you have to scroll for a bit because of a longer then
+if_not_else = false
+# Promoted to warning
+shadowed = "Warning"
+# Too generic; `(isNil "_x") && { _x > 0 }` is considered inefficient...
+short_circuit_bool_var = false
+# Promoted to warning
+unused = "Warning"

@@ -409,13 +409,17 @@
             <English>You're not pointing at anything.</English>
             <German>Du zeigst auf nichts.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsHintRemovedText">
+            <English>Object "%1" removed from the list of buyable static emplacements.</English>
+            <German>Objekt "%1" wurde von der Liste der käuflichen statischen Stellungen entfernt.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsHintSuccessText">
-            <English>You can now buy "%1" for the price of %2$.</English>
-            <German>Du kannst "%1" jetzt für den Preis von %2$ kaufen.</German>
+            <English>You can now buy "%1".&lt;br/&gt;Base price: %2$&lt;br/&gt;Current price: %3$</English>
+            <German>Du kannst "%1" jetzt kaufen.&lt;br/&gt;Basispreis: %2$&lt;br/&gt;Aktueller Preis: %3$</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsPricePromptText">
-            <English>New price</English>
-            <German>Neuer Preis</German>
+            <English>Base price before discounts (0 = remove)</English>
+            <German>Basispreis vor Rabatten (0 = entfernen)</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableStaticsText">
             <English>Add the current cursor target to list of base buyable statics.</English>
@@ -441,17 +445,21 @@
             <English>"%1" is not a vehicle.</English>
             <German>"%1" ist kein Fahrzeug.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintRemovedText">
+            <English>Object "%1" removed from the list of buyable vehicles.</English>
+            <German>Objekt "%1" wurde von der Liste der käuflichen Fahrzeuge entfernt.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintSuccessBMWarningText">
-            <English>You can now buy "%1".&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;WARNING:&lt;/t&gt; a black-market config entry exists for this vehicle; certain buying restrictions may still apply!</English>
-            <German>Du kannst "%1" jetzt kaufen.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;WARNUNG:&lt;/t&gt; Ein Schwarzmarkt-Konfigurationseintrag ist für dieses Fahrzeug vorhanden; bestimmte Kaufbeschränkungen können weiterhin gelten!</German>
+            <English>You can now buy "%1".&lt;br/&gt;Base price: %2$&lt;br/&gt;Current price: %3$&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;WARNING:&lt;/t&gt; a black-market config entry exists for this vehicle; certain buying restrictions may still apply!</English>
+            <German>Du kannst "%1" jetzt kaufen.&lt;br/&gt;Basispreis: %2$&lt;br/&gt;Aktueller Preis: %3$&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;WARNUNG:&lt;/t&gt; Ein Schwarzmarkt-Konfigurationseintrag ist für dieses Fahrzeug vorhanden; bestimmte Kaufbeschränkungen können weiterhin gelten!</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesHintSuccessText">
-            <English>You can now buy "%1" for the price of %2$.</English>
-            <German>Du kannst "%1" jetzt für den Preis von %2$ kaufen.</German>
+            <English>You can now buy "%1".&lt;br/&gt;Base price: %2$&lt;br/&gt;Current price: %3$</English>
+            <German>Du kannst "%1" jetzt kaufen.&lt;br/&gt;Basispreis: %2$&lt;br/&gt;Aktueller Preis: %3$</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesPricePromptText">
-            <English>New price</English>
-            <German>Neuer Preis</German>
+            <English>Base price before discounts (0 = remove)</English>
+            <German>Basispreis vor Rabatten (0 = entfernen)</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_AddToBuyableVehiclesText">
             <English>Add the current cursor target to list of base buyable vehicles.</English>
@@ -596,6 +604,14 @@
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_ShowRoadblocksText">
             <English>Temporarily reveal roadblocks on map.</English>
             <German>Zeige temporär Straßensperren auf der Karte.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ShowSpawnRadiusCaption">
+            <English>Show spawn radius</English>
+            <German>Spawn-Radius anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ShowSpawnRadiusText">
+            <English>Temporarily reveal spawn radius of all (discovered) enemy locations on map.</English>
+            <German>Zeige temporär den Spawn-Radius aller (entdeckten) feindlichen Standorte auf der Karte.</German>
         </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_ToggleMarkerVisibilityCaption">
             <English>Marker visibility</English>

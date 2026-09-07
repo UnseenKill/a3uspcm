@@ -35,12 +35,12 @@ if !assert(!isNil "_contact") exitWith {};
 
 private _display = uiNamespace getVariable QGVAR(display);
 private _tabHost = _display getVariable QGVAR(tabs) get IDC_TABHOST_TARGETS;
-private _control = _tabHost get "ctlMap";
+private _mapControl = _tabHost get "ctlMap";
 
-_control ctrlMapAnimAdd[1, 0.75, getPosATL(_contact get "unit")];
-ctrlMapAnimCommit _control;
+_mapControl ctrlMapAnimAdd[1, 0.75, getPosATL(_contact get "unit")];
+ctrlMapAnimCommit _mapControl;
 
-_control spawn {
+_mapControl spawn {
     waitUntil { ctrlMapAnimDone _this };
     ctrlSetFocus _this;
 };

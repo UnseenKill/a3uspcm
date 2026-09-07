@@ -141,6 +141,12 @@ class GVAR(Config) {
                 text = CSTRING(Miscellaneous_ShowRoadblocksText);
                 action = QFUNCMAIN(miscShowRoadblocks);
             };
+
+            class ShowSpawnRadius {
+                caption = CSTRING(Miscellaneous_ShowSpawnRadiusCaption);
+                text = CSTRING(Miscellaneous_ShowSpawnRadiusText);
+                action = QFUNCMAIN(miscShowSpawnRadius);
+            };
         };
 
         class AAFireControl {

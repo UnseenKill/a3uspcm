@@ -36,6 +36,14 @@ if isNil(QGVAR(AdditionalStatics)) then {
     GVAR(AdditionalStatics) pushBackUnique _x;
 };
 
+GVAR(AdditionalStatics) apply {
+    _x params[["_className","",[""]],["_price",0,[0]]];
+
+    TRACE_2(QFUNC(loadAdditionalStatics),_className,_price);
+
+    server setVariable[_className, _price, true];
+};
+
 publicVariable QGVAR(AdditionalStatics);
 
 nil;

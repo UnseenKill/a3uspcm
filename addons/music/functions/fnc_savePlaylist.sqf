@@ -23,9 +23,7 @@ TRACE_1(QFUNC(savePlaylist),_this);
 private _display = uiNamespace getVariable[QGVAR(menuDisplay), displayNull];
 if !assert(!isNull _display) exitWith {};
 
-private _result = createHashMap;
 private _tree = _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_STATICTREEPOSITION;
-
 private _count = _tree tvCount[];
 
 [0, _count - 1] call FUNCMAIN(utilRange) apply {
@@ -40,6 +38,8 @@ private _count = _tree tvCount[];
 
 TRACE_1("save playlist",GVAR(tracks));
 [CBA_EVENT_MENU_SYNCGVAR, [player, QGVAR(tracks), GVAR(tracks)]] call CBA_fnc_serverEvent;
+
+profileNamespace setVariable[QGVAR(tracks), GVAR(tracks) toArray false];
 
 closeDialog 0;
 nil;

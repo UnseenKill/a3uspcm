@@ -2,6 +2,7 @@ PREP(addVanillaRemoteTraderInteraction);
 PREP(canUseRemoteTraderMenu);
 PREP(createAirdropContainer);
 PREP(deliverAirdrop);
+PREP(extendTraderObjects);
 PREP(finishAirdrop);
 PREP(modifyRscDisplayStore);
 PREP(payRemoteAccessFee);
