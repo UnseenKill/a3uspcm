@@ -15,7 +15,6 @@ class CfgPatches {
         author = "$STR_A3USPCM_Author";
         authors[] = {};
         url = "$STR_A3USPCM_URL";
-        A3A_compatibility[] = {12, 0};
         VERSION_CONFIG;
     };
 };

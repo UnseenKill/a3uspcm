@@ -1,4 +1,10 @@
 #define MAINPREFIX z
+
+#define VERSION_CONFIG version = VERSION; \
+    versionStr = QUOTE(VERSION_STR); \
+    versionAr[] = {VERSION_AR}; \
+    A3A_compatibility[] = {A3A_COMPAT_MAJOR, A3A_COMPAT_MINOR}
+
 #include "\x\cba\addons\main\script_macros_common.hpp"
 
 #undef PREP
