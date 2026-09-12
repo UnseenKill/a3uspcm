@@ -11,6 +11,10 @@
 // MINIMAL required version for the Mod. Components can specify others..
 #define REQUIRED_VERSION 2.20
 
+// Antistasi Ultimate compatibility
+#define A3A_COMPAT_MAJOR 12
+#define A3A_COMPAT_MINOR 0
+
 // Define DEBUG_MODE_FULL for full debug mode when not in production
 #ifndef __A3USPCM_PRODUCTION__
     #define DEBUG_MODE_FULL
