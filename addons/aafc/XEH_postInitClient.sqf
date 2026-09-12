@@ -6,7 +6,7 @@
     if !assert(params[
         ["_contact", nil, [objNull]]
     ]) exitWith {};
-    if !assert(!isNull _contact) exitWith {};
+    if (isNull _contact) exitWith {};
 
     player reveal _contact;
 }] call CBA_fnc_addEventHandler;
