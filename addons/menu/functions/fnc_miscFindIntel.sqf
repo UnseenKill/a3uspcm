@@ -37,10 +37,13 @@ TRACE_3(QFUNCMAIN(miscFindIntel),_radius,_laptopTypes,_config);
 private _sl = nearestObjects[player, ["CAManBase"], _radius, true] select {
     (!alive _x) && { _x getVariable[QGVAR(hasIntel), false] } &&
     { !(_x getVariable["intelSearchDone", false]) } &&
-    {_x getVariable["side", west] isNotEqualTo side player}
+    { _x getVariable["side", sideUnknown] isNotEqualTo side player }
 };
 
-private _laptops = nearestObjects[player, _laptopTypes, _radius, true];
+private _laptops = nearestObjects[player, _laptopTypes, _radius, true] select {
+     _x getVariable["side", sideUnknown] isNotEqualTo side player
+};
+
 private _intelFound = 0;
 
 (_sl + _laptops) select {
