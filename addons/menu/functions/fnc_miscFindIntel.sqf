@@ -37,10 +37,13 @@ TRACE_3(QFUNCMAIN(miscFindIntel),_radius,_laptopTypes,_config);
 private _sl = nearestObjects[player, ["CAManBase"], _radius, true] select {
     (!alive _x) && { _x getVariable[QGVAR(hasIntel), false] } &&
     { !(_x getVariable["intelSearchDone", false]) } &&
-    {_x getVariable["side", west] isNotEqualTo side player}
+    { _x getVariable["side", sideUnknown] isNotEqualTo side player }
 };
 
-private _laptops = nearestObjects[player, _laptopTypes, _radius, true];
+private _laptops = nearestObjects[player, _laptopTypes, _radius, true] select {
+     _x getVariable["side", sideUnknown] isNotEqualTo side player
+};
+
 private _intelFound = 0;
 
 (_sl + _laptops) select {
@@ -87,10 +90,11 @@ private _intelFound = 0;
         private _flag = createVehicle[_class, [_pos # 0, _pos # 1], [], 0, "CAN_COLLIDE"];
         _flag setDir random 360;
 
-        if EGVAR(main,AceHaveAddon) then {
+        if (EGVAR(main,AceHaveAddon)) then {
             [_flag, _flag] call ace_common_fnc_claim; // disables ALL ACE3 interactions
         };
 
+        _flag setVariable[QGVAR(intelMarker), _marker];
         _flag addAction[
             LLSTRING(Miscellaneous_FindIntelCleanupActionText),
             {
