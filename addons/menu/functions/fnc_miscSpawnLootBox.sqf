@@ -37,8 +37,15 @@ if (GVAR(lootboxCost) > 0) then {
 };
 
 [_target] call A3A_Logistics_fnc_addLoadAction;
-[_target] call A3A_fnc_initMovableObject;
 [_target] remoteExec["SCRT_fnc_loot_addActionLoot", 2];
+
+_target addAction [
+    localize "STR_A3A_carryObject",
+    A3A_fnc_carryItem,
+    _target, 1.5, true, true, "",
+    QUOTE(!(call A3A_fnc_isCarrying) && (isNull objectParent _this) && (isNull attachedTo _originalTarget)),
+    8
+];
 
 clearMagazineCargoGlobal _target;
 clearWeaponCargoGlobal _target;
