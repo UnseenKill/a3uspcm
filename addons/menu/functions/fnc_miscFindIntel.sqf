@@ -87,10 +87,11 @@ private _intelFound = 0;
         private _flag = createVehicle[_class, [_pos # 0, _pos # 1], [], 0, "CAN_COLLIDE"];
         _flag setDir random 360;
 
-        if EGVAR(main,AceHaveAddon) then {
+        if (EGVAR(main,AceHaveAddon)) then {
             [_flag, _flag] call ace_common_fnc_claim; // disables ALL ACE3 interactions
         };
 
+        _flag setVariable[QGVAR(intelMarker), _marker];
         _flag addAction[
             LLSTRING(Miscellaneous_FindIntelCleanupActionText),
             {

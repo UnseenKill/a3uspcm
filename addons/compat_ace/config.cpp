@@ -19,4 +19,5 @@ class CfgPatches {
 #include "AceMedicalStatemachine.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgHalsStore.hpp"
+#include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"
