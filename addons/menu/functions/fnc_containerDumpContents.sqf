@@ -32,7 +32,7 @@ if !assert(!isNull _container) exitWith {};
 if !([_container] call FUNCMAIN(utilVehicleHasCargo)) exitWith { systemChat LLSTRING(DumpContentsEmpty) };
 
 [
-    GVAR(containerDumpContentsDelay),
+    RETDEF(GVAR(containerDumpContentsDelay),10),
     _this,
     {
         params["_params"];
