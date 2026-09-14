@@ -51,7 +51,7 @@ $[
 class GVAR(dialog) {
     idd = 6119820;
     onLoad = QUOTE(call FUNC(onMenuOpen));
-    onUnload = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(menuDisplay),nil)]);
+    onUnload = QUOTE(call FUNC(onMenuClose));
 	movingEnable = 1;
 
     class controls {

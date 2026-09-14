@@ -146,14 +146,29 @@ private _index = _listbox lnbAddRow[""];
 
 GVAR(lbEntries) = createHashMap;
 
+private _preselection = -1;
+private _preselectedLocation = _listbox getVariable[QGVAR(preselectedLocation), ""];
+_listbox setVariable[QGVAR(preselectedLocation), nil];
+
 _entries sort true;
 _entries apply {
     _x params[["_label", ""], ["_entry", nil, [createHashMap]]];
 
     private _index = _listbox lnbAddRow["", _label];
 
+    if (_entry get "marker" isEqualTo _preselectedLocation) then {
+        _preselection = _index;
+    };
+
     GVAR(lbEntries) set[_index, _entry];
     [_listbox, _index] call FUNC(updateGarrison);
+};
+
+if (_preselection != -1) then {
+    _listbox lnbSetCurSelRow _preselection;
+    [{
+        [CBA_EVENT_LOCATION_SELECTED, _this] call CBA_fnc_localEvent;
+    }, [_listbox, _preselection]] call CBA_fnc_execNextFrame;
 };
 
 nil;

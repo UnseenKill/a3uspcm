@@ -23,11 +23,15 @@ disableSerialization;
 
 TRACE_1(QFUNC(onMenuOpen),_this);
 
-params[["_display",displayNull,[displayNull]]];
-
+if !assert(params[
+    ["_display", nil, [displayNull]]
+]) exitWith {};
 if !assert(!isNull _display) exitWith {};
 
-uiNamespace setVariable [QGVAR(menuDisplay), _display];
+uiNamespace setVariable[QGVAR(menuDisplay), _display];
+
+_display setVariable[QGVAR(eventHandlers), createHashMap];
+_display getVariable QGVAR(eventHandlers) set[CBA_EVENT_PRESELECT_LOCATION, [CBA_EVENT_PRESELECT_LOCATION, LINKFUNC(onPreselectLocation)] call CBA_fnc_addEventHandler];
 
 private["_control"];
 
@@ -37,7 +41,6 @@ _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELINDEP ctrlSe
 _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_STATICLABELOPFOR ctrlSetText(A3A_faction_inv get "name");
 
 // Filters
-
 private _checkStates = missionNamespace getVariable[QGVAR(dialogCheckBoxes), createHashMapFromArray [
     [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBLUFOR, false],
     [IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOPFOR, false],
@@ -65,13 +68,11 @@ _checkStates apply {
 };
 
 // Close button top-right
-
 _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_BTNCLOSE ctrlAddEventHandler["ButtonClick", {
     closeDialog 0;
 }];
 
 // Location list
-
 private _rightMargin = 0.35;
 private _width = (1 - _rightMargin) / (count GVAR(lbColumns) - 1);
 
@@ -100,6 +101,10 @@ _control ctrlAddEventHandler["LBDblClick", {
 }];
 
 _control ctrlAddEventHandler["LBSelChanged", {
+    [CBA_EVENT_LOCATION_SELECTED, _this] call CBA_fnc_localEvent;
+}];
+
+_display getVariable QGVAR(eventHandlers) set[CBA_EVENT_LOCATION_SELECTED, [CBA_EVENT_LOCATION_SELECTED, {
     params[["_control",controlNull,[controlNull]], ["_index",0,[0]]];
     private _data = _control lnbData[_index,0];
     TRACE_1(QFUNC(onMenuOpen_EH_LBSelChanged),_data);
@@ -124,17 +129,15 @@ _control ctrlAddEventHandler["LBSelChanged", {
             [_entry] call FUNC(updateRecruitList);
         };
     };
-}];
+}] call CBA_fnc_addEventHandler];
 
 // Map
-
 _control = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_MAPCONTROL;
 _control ctrlAddEventHandler["MouseButtonUp", {
     call FUNC(onMapButtonUp);
 }];
 
 // Recruit list
-
 _control = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_LISTRECRUITTYPES;
 _control lnbAddColumn 0.1;
 _control ctrlEnable false;
@@ -156,7 +159,6 @@ GVAR(lbColumns) select { _x select 2 isNotEqualTo "" } apply {
 };
 
 // Recruit button
-
 _control = _display displayCtrl IDC_RSCA3USPCMGARRISONMANAGERDIALOG_BTNRECRUIT;
 _control ctrlEnable false;
 _control ctrlAddEventHandler["ButtonClick", {
@@ -164,7 +166,6 @@ _control ctrlAddEventHandler["ButtonClick", {
 }];
 
 // Update list
-
 [] call FUNC(updateList);
 
 // Auto list update loop
