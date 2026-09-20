@@ -49,6 +49,7 @@ if ([isNumber(_config >> "w"), isNumber(_config >> "h"), isText(_config >> "w"),
     private _class = _control getVariable QGVAR(createClass);
 
     if (CT_CONTROLS_GROUP isNotEqualTo getNumber(configFile >> _class >> "type")) then {
+        WARNING_1("no dimensions for non-control group element ""%1"" found.",configName _config);
         _dimensions append[0, 0];
     } else {
         private _parent = ctrlParentControlsGroup _control;
