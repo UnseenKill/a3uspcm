@@ -18,3 +18,17 @@ class CfgPatches {
 #include "CfgAddon.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
+
+class UserActionGroups {
+    class Common {
+        group[] += {QGVAR(UAVTerminalOpen)};
+    };
+};
+
+class CfgUserActions {
+    class GVAR(UAVTerminalOpen) {
+        displayName = "$STR_useract_uav_openuavterminal";
+        tooltip = "";
+        onActivate = QUOTE(player action[ARR_2(QQUOTE(UAVTerminalOpen),player)]);
+    };
+};

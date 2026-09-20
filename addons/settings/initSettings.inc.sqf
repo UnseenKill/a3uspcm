@@ -186,6 +186,16 @@
     true // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(menu,containerDumpContentsDelay), "TIME",
+    [ELSTRING(menu,Settings_containerDumpContentsDelay_DisplayName), ELSTRING(menu,Settings_containerDumpContentsDelay_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
+    [0, 180, 15, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Music
 
 [

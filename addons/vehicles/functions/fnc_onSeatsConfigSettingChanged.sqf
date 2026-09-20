@@ -44,9 +44,7 @@ GVAR(seatsConfig) = _array select {
     };
 
     _config findIf {
-        !(
-            (_x isEqualType 0) || { _x isEqualType [] }
-        ) && {
+        !(_x isEqualTypeArray[0, []]) && {
             ERROR_2("Invalid seat config for vehicle %1: %2",_vehicleClass,str _x);
             true;
         };

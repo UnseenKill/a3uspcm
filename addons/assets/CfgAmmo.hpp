@@ -6,7 +6,7 @@ class CfgAmmo {
         indirectHit = 20;
         indirectHitRange = 20;
 
-        class Eventhandlers {
+        class EventHandlers {
             fired = QUOTE(call FUNC(handle40mmFired));
         };
     };
