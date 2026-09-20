@@ -4,3 +4,4 @@ PREP(buildControl);
 PREP(buildControlsGroup);
 PREP(createControlCommon);
 PREP(parseColor);
+PREP(parseControlProperty);

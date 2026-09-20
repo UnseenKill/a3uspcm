@@ -32,22 +32,12 @@ if !assert(!isNull _control) exitWith {};
 if !assert(!isNull _config) exitWith {};
 
 #define COMPILE_PROPERTY(propertyName) ([] call { \
-    private _value = switch true do { \
-        case !(QUOTE(propertyName) in _properties): { ["N/A", 0] }; \
-        case isNumber(_config >> QUOTE(propertyName)): { ["NUM", getNumber(_config >> QUOTE(propertyName))] }; \
-        case !assert(isText(_config >> QUOTE(propertyName))): { ["TXT", 0] }; \
-        private _property = getText(_config >> QUOTE(propertyName)); \
-        case (_property isEqualTo ""): { ["MT", 0] }; \
-        case (_property regexMatch "^[0-9]+%$"): { \
-            throw "come back later"; \
-        }; \
-        default { ["CMP", [] call compile getText(_config >> QUOTE(propertyName))] }; \
-    }; \
-    TRACE_3(QFUNC(applyDimensions),_control,QUOTE(propertyName),_value); \
-    _value select 1; \
+    private _value = [_control, QUOTE(propertyName)] call FUNC(parseControlProperty); \
+    _value = RETDEF(_value,0); \
+    TRACE_2(QFUNC(applyDimensions),QUOTE(propertyName),_value); \
+    _value; \
 })
 
-private _properties = configProperties[_config] apply { configName _x };
 private _px = COMPILE_PROPERTY(x);
 private _py = COMPILE_PROPERTY(y);
 private _pw = COMPILE_PROPERTY(w);
