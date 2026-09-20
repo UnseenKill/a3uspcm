@@ -833,6 +833,14 @@
             <English>Duration of increased bandage effectiveness applied when automatically waking up. Set to zero to disable.</English>
             <German>Dauer der erhöhten Verbandmaterialwirksamkeit, die beim automatischen Aufwachen angewendet wird. Auf Null setzen, um zu deaktivieren.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_containerDumpContentsDelay_DisplayName">
+            <English>Dump container duration</English>
+            <German>Dauer zum Entladen des Containers</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Settings_containerDumpContentsDelay_Tooltip">
+            <English>When dumping container contents via interaction menu, show progress bar for this many seconds.</English>
+            <German>Zeige Fortschrittsbalken für diese Anzahl an Sekunden an, wenn Container-Inhalte über das Interaktionsmenü entladen werden.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Settings_dsbCost_DisplayName">
             <English>Despawn Suppressor Beacon™ cost</English>
             <German>Kosten für den Despawn Suppressor Beacon™</German>
