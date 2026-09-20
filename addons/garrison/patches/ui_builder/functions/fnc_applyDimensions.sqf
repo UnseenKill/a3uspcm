@@ -41,6 +41,7 @@ if !assert(!isNull _config) exitWith {};
 private _px = COMPILE_PROPERTY(x);
 private _py = COMPILE_PROPERTY(y);
 private _dimensions = [_px, _py, 0, 0];
+private _parent = ctrlParentControlsGroup _control;
 
 if ([isNumber(_config >> "w"), isNumber(_config >> "h"), isText(_config >> "w"), isText(_config >> "h")] findIf { _x } != -1) then {
     _dimensions set[2, COMPILE_PROPERTY(w)];
@@ -52,8 +53,6 @@ if ([isNumber(_config >> "w"), isNumber(_config >> "h"), isText(_config >> "w"),
         WARNING_1("no dimensions for non-control group element ""%1"" found.",configName _config);
         _dimensions append[0, 0];
     } else {
-        private _parent = ctrlParentControlsGroup _control;
-
         if (isNull _parent) then {
             _dimensions append[1, 1];
         } else {
@@ -63,11 +62,42 @@ if ([isNumber(_config >> "w"), isNumber(_config >> "h"), isText(_config >> "w"),
     };
 };
 
+private _offsets = [0, 0, 0, 0];
+
+// Spacing: elements only get spacing along edges that don't "hug"
+// their parent control.
+private _spacing = _control getVariable QGVAR(spacing) vectorMultiply 0.5;
+
+if (_spacing isNotEqualTo [0, 0]) then {
+    ctrlPosition _parent params["","","_parentW","_parentH"];
+
+    // Not hugging the left edge
+    if ((_dimensions select 0) > 0) then {
+        _offsets set[0, _spacing select 0];
+    };
+
+    // Not hugging the top edge
+    if ((_dimensions select 1) > 0) then {
+        _offsets set[1, _spacing select 1];
+    };
+
+    // Not hugging the right edge
+    if ((_dimensions select 2) < _parentW) then {
+        _offsets set[2, -1 * (_spacing select 0)];
+    };
+
+    // Not hugging the bottom edge
+    if ((_dimensions select 3) < _parentH) then {
+        _offsets set[3, -1 * (_spacing select 1)];
+    };
+};
+
+// Padding: additional space to apply inside the control boundaries
 private _padding = _control getVariable QGVAR(padding);
 
 if (_padding isNotEqualTo [0, 0]) then {
     _padding = [_padding select 0, _padding select 1, -2 * (_padding select 0), -2 * (_padding select 1)];
-    _dimensions = _dimensions vectorAdd _padding;
+    _offsets = _offsets vectorAdd _padding;
 };
 
-_control ctrlSetPosition _dimensions;
+_control ctrlSetPosition(_dimensions vectorAdd _offsets);

@@ -54,18 +54,21 @@ _control setVariable[QGVAR(config), _config];
 _control setVariable[QGVAR(configName), configName _config];
 _control setVariable[QGVAR(createClass), _className];
 
-private _padding = [0, 0];
+#define EXTRACT_PROPERTY(propertyName,propertyInheritGVAR) ([] call { \
+    private _value = [0, 0]; \
+    switch true do { \
+        case isArray(_config >> QUOTE(propertyName)): { \
+            _value = [_control, QUOTE(propertyName), true] call FUNC(parseControlProperty); \
+        }; \
+        case !(isNull _parent): { \
+            _value = _parent getVariable[QUOTE(propertyInheritGVAR), [0, 0]]; \
+        }; \
+    }; \
+    _control setVariable[QUOTE(GVAR(propertyName)), _value]; \
+})
 
-switch true do {
-    case isArray(_config >> "padding"): {
-        _padding = [_control, "padding", true] call FUNC(parseControlProperty);
-    };
-    case !(isNull _parent): {
-        _padding = _parent getVariable[QGVAR(controlsPadding), [0, 0]];
-    };
-};
-
-_control setVariable[QGVAR(padding), _padding];
+EXTRACT_PROPERTY(padding,GVAR(controlsPadding));
+EXTRACT_PROPERTY(spacing,GVAR(controlsSpacing));
 
 // Control properties
 if (isNumber(_config >> "enabled")) then {
