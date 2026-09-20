@@ -32,16 +32,24 @@ if !assert(!isNull _control) exitWith {};
 if !assert(!isNull _config) exitWith {};
 
 configProperties[_config, QUOTE(isText(_x) && { configName _x regexMatch '^on(?:[A-Z][a-z]+)+$/' })] apply {
-    private _event = configName _x select [2];
     private _handler = getText _x;
+    private _match = configName _x regexFind["^on((?:[A-Z][a-z]+)+?)(Event)?$/", 0];
+    if !assert(_match isNotEqualTo []) exitWith {};
 
-    TRACE_3(QFUNC(applyHandlers),_control,_event,_handler);
+    _match select 0 params["", "_event", "_trigger"];
+    _event = _event select 0;
+
+    if !(isNil "_trigger") then {
+        _handler = format["[%1, _this] call CBA_fnc_localEvent", str _handler];
+    };
 
     if ("Built" isEqualTo _event) then {
         _control setVariable[QGVAR(builtCallback), compile _handler];
     } else {
         _control ctrlAddEventHandler[_event, compile _handler];
     };
+
+    TRACE_3(QFUNC(applyHandlers),_x,_event,_handler);
 };
 
 nil;
