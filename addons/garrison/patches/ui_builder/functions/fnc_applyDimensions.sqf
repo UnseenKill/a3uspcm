@@ -40,7 +40,33 @@ if !assert(!isNull _config) exitWith {};
 
 private _px = COMPILE_PROPERTY(x);
 private _py = COMPILE_PROPERTY(y);
-private _pw = COMPILE_PROPERTY(w);
-private _ph = COMPILE_PROPERTY(h);
+private _dimensions = [_px, _py, 0, 0];
 
-_control ctrlSetPosition[_px, _py, _pw, _ph];
+if ([isNumber(_config >> "w"), isNumber(_config >> "h"), isText(_config >> "w"), isText(_config >> "h")] findIf { _x } != -1) then {
+    _dimensions set[2, COMPILE_PROPERTY(w)];
+    _dimensions set[3, COMPILE_PROPERTY(h)];
+} else {
+    private _class = _control getVariable QGVAR(createClass);
+
+    if (CT_CONTROLS_GROUP isNotEqualTo getNumber(configFile >> _class >> "type")) then {
+        _dimensions append[0, 0];
+    } else {
+        private _parent = ctrlParentControlsGroup _control;
+
+        if (isNull _parent) then {
+            _dimensions append[1, 1];
+        } else {
+            ctrlPosition _parent params["","","_w","_h"];
+            _dimensions append[_w, _h];
+        };
+    };
+};
+
+private _padding = _control getVariable QGVAR(padding);
+
+if (_padding isNotEqualTo [0, 0]) then {
+    _padding = [_padding select 0, _padding select 1, -2 * (_padding select 0), -2 * (_padding select 1)];
+    _dimensions = _dimensions vectorAdd _padding;
+};
+
+_control ctrlSetPosition _dimensions;
