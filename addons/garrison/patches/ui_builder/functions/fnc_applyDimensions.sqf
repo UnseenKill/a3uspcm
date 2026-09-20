@@ -38,32 +38,6 @@ if !assert(!isNull _config) exitWith {};
     _value; \
 })
 
-/*
-private _px = COMPILE_PROPERTY(x);
-private _py = COMPILE_PROPERTY(y);
-private _dimensions = [_px, _py, 0, 0];
-private _parent = ctrlParentControlsGroup _control;
-
-if ([isNumber(_config >> "w"), isNumber(_config >> "h"), isText(_config >> "w"), isText(_config >> "h")] findIf { _x } != -1) then {
-    _dimensions set[2, COMPILE_PROPERTY(w)];
-    _dimensions set[3, COMPILE_PROPERTY(h)];
-} else {
-    private _class = _control getVariable QGVAR(createClass);
-
-    if (CT_CONTROLS_GROUP isNotEqualTo getNumber(configFile >> _class >> "type")) then {
-        WARNING_1("no dimensions for non-control group element ""%1"" found.",configName _config);
-        _dimensions append[0, 0];
-    } else {
-        if (isNull _parent) then {
-            _dimensions append[1, 1];
-        } else {
-            ctrlPosition _parent params["","","_w","_h"];
-            _dimensions append[_w, _h];
-        };
-    };
-};
-*/
-
 private _parent = ctrlParentControlsGroup _control;
 private _px = COMPILE_PROPERTY(x,0);
 private _py = COMPILE_PROPERTY(y,0);

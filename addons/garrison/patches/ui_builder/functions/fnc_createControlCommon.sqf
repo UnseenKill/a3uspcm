@@ -57,6 +57,11 @@ _control setVariable[QGVAR(createClass), _className];
 #define EXTRACT_PROPERTY(propertyName,propertyInheritGVAR) ([] call { \
     private _value = [0, 0]; \
     switch true do { \
+        case isNumber(_config >> QUOTE(propertyName)); \
+        case isText(_config >> QUOTE(propertyName)): { \
+            _value = [_control, QUOTE(propertyName), true] call FUNC(parseControlProperty); \
+            _value = [_value, _value]; \
+        }; \
         case isArray(_config >> QUOTE(propertyName)): { \
             _value = [_control, QUOTE(propertyName), true] call FUNC(parseControlProperty); \
         }; \
