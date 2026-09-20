@@ -93,12 +93,9 @@ if (_spacing isNotEqualTo [0, 0]) then {
     };
 };
 
-// Padding: additional space to apply inside the control boundaries
-private _padding = _control getVariable QGVAR(padding);
+_dimensions = _dimensions vectorAdd _offsets;
 
-if (_padding isNotEqualTo [0, 0]) then {
-    _padding = [_padding select 0, _padding select 1, -2 * (_padding select 0), -2 * (_padding select 1)];
-    _offsets = _offsets vectorAdd _padding;
-};
+_control ctrlSetPosition _dimensions;
+_control setVariable[QGVAR(dimensions), _dimensions];
 
-_control ctrlSetPosition(_dimensions vectorAdd _offsets);
+nil;

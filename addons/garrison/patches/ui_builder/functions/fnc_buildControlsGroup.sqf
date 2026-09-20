@@ -35,11 +35,14 @@ if !assert(!isNull _display) exitWith { controlNull };
 
 if !assert(isClass(_config >> "Controls")) exitWith { controlNull };
 
+// Create foundation control
 private _controlsGroup = [_config, _display, _parent, "RscControlsGroup"] call FUNC(createControlCommon);
 if !assert(!isNull _controlsGroup) exitWith { controlNull };
 
+// Keep track of child controls
 _controlsGroup setVariable[QGVAR(controls), createHashMap];
 
+// Inherit/apply spacing/padding from config or parent control
 #define EXTRACT_PROPERTY(propertyName,propertyGVAR) ([] call { \
     private _value = [0, 0]; \
     switch true do { \
@@ -56,12 +59,53 @@ _controlsGroup setVariable[QGVAR(controls), createHashMap];
 EXTRACT_PROPERTY(padding,GVAR(controlsPadding));
 EXTRACT_PROPERTY(spacing,GVAR(controlsSpacing));
 
+// If background color property present, create RscText background
+if (isArray(_config >> "Controls" >> "colorBackground")) then {
+    private _colorBackground = [_controlsGroup, "colorBackground", true, _config >> "Controls"] call FUNC(parseControlProperty);
+    _colorBackground = [_colorBackground] call FUNC(parseColor);
+
+    private _background = _display ctrlCreate["RscText", -1, _controlsGroup];
+    _background ctrlSetBackgroundColor _colorBackground;
+    _background ctrlSetPosition(_controlsGroup getVariable QGVAR(dimensions));
+    _background ctrlCommit 0;
+
+    _controlsGroup getVariable QGVAR(controls) set["#background", _background];
+};
+
+// Create additional control group for children if there's to be padding
+private _parentControlsGroup = _controlsGroup;
+
+if (_controlsGroup getVariable QGVAR(controlsPadding) isNotEqualTo [0, 0]) then {
+    private _control = _display ctrlCreate["RscControlsGroup", -1, _controlsGroup];
+    private _dimensions = _controlsGroup getVariable QGVAR(dimensions);
+    private _padding = _controlsGroup getVariable QGVAR(controlsPadding);
+
+    _dimensions = _dimensions vectorAdd[
+        _padding select 0,
+        _padding select 1,
+        -2 * (_padding select 0),
+        -2 * (_padding select 1)
+    ];
+
+    _control ctrlSetPosition _dimensions;
+    _control ctrlCommit 0;
+
+    _control setVariable[QGVAR(createClass), "RscControlsGroup"];
+    _control setVariable[QGVAR(dimensions), _dimensions];
+    _control setVariable[QGVAR(controlsPadding), _padding];
+    _control setVariable[QGVAR(controlsSpacing), _controlsGroup getVariable QGVAR(controlsSpacing)];
+    _controlsGroup getVariable QGVAR(controls) set["#container", _control];
+
+    _parentControlsGroup = _control;
+};
+
+// Recursively create child controls
 "true" configClasses(_config >> "Controls") apply {
     private _subConfig = _x;
     private _control = if (isClass(_subConfig >> "Controls")) then {
-        [_subConfig, _display, _controlsGroup] call FUNC(buildControlsGroup);
+        [_subConfig, _display, _parentControlsGroup] call FUNC(buildControlsGroup);
     } else {
-        [_subConfig, _display, _controlsGroup] call FUNC(buildControl);
+        [_subConfig, _display, _parentControlsGroup] call FUNC(buildControl);
     };
 
     if !(isNull _control) then {
