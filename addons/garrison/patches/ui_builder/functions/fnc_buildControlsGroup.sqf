@@ -43,21 +43,7 @@ if !assert(!isNull _controlsGroup) exitWith { controlNull };
 _controlsGroup setVariable[QGVAR(controls), createHashMap];
 
 // Inherit/apply spacing/padding from config or parent control
-#define EXTRACT_PROPERTY(propertyName,propertyGVAR) ([] call { \
-    private _value = [0, 0]; \
-    switch true do { \
-        case isArray(_config >> "Controls" >> QUOTE(propertyName)): { \
-            _value = [_controlsGroup, QUOTE(propertyName), true, _config >> "Controls"] call FUNC(parseControlProperty); \
-        }; \
-        case !(isNull _parent): { \
-            _value = _parent getVariable QUOTE(propertyGVAR); \
-        }; \
-    }; \
-    _controlsGroup setVariable[QUOTE(propertyGVAR), _value]; \
-})
-
-EXTRACT_PROPERTY(padding,GVAR(controlsPadding));
-EXTRACT_PROPERTY(spacing,GVAR(controlsSpacing));
+[_controlsGroup] call FUNC(applyInheritableProperties);
 
 // If background color property present, create RscText background
 if (isArray(_config >> "Controls" >> "colorBackground")) then {
@@ -75,10 +61,10 @@ if (isArray(_config >> "Controls" >> "colorBackground")) then {
 // Create additional control group for children if there's to be padding
 private _parentControlsGroup = _controlsGroup;
 
-if (_controlsGroup getVariable QGVAR(controlsPadding) isNotEqualTo [0, 0]) then {
+if (_controlsGroup getVariable QGVAR(padding) isNotEqualTo [0, 0]) then {
     private _control = _display ctrlCreate["RscControlsGroup", -1, _controlsGroup];
     private _dimensions = _controlsGroup getVariable QGVAR(dimensions);
-    private _padding = _controlsGroup getVariable QGVAR(controlsPadding);
+    private _padding = _controlsGroup getVariable QGVAR(padding);
 
     _dimensions = _dimensions vectorAdd[
         _padding select 0,
@@ -92,8 +78,10 @@ if (_controlsGroup getVariable QGVAR(controlsPadding) isNotEqualTo [0, 0]) then 
 
     _control setVariable[QGVAR(createClass), "RscControlsGroup"];
     _control setVariable[QGVAR(dimensions), _dimensions];
-    _control setVariable[QGVAR(controlsPadding), _padding];
-    _control setVariable[QGVAR(controlsSpacing), _controlsGroup getVariable QGVAR(controlsSpacing)];
+    _control setVariable[QGVAR(font), _controlsGroup getVariable QGVAR(font)];
+    _control setVariable[QGVAR(fontSize), _controlsGroup getVariable QGVAR(fontSize)];
+    _control setVariable[QGVAR(padding), _padding];
+    _control setVariable[QGVAR(spacing), _controlsGroup getVariable QGVAR(spacing)];
     _controlsGroup getVariable QGVAR(controls) set["#container", _control];
 
     _parentControlsGroup = _control;

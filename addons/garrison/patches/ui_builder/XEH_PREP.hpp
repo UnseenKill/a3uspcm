@@ -1,5 +1,7 @@
 PREP(applyDimensions);
 PREP(applyHandlers);
+PREP(applyInheritableProperty);
+PREP(applyInheritableProperties);
 PREP(buildControl);
 PREP(buildControlsGroup);
 PREP(createControlCommon);

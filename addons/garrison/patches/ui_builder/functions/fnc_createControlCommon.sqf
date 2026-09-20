@@ -54,28 +54,9 @@ _control setVariable[QGVAR(config), _config];
 _control setVariable[QGVAR(configName), configName _config];
 _control setVariable[QGVAR(createClass), _className];
 
-#define EXTRACT_PROPERTY(propertyName,propertyInheritGVAR) ([] call { \
-    private _value = [0, 0]; \
-    switch true do { \
-        case isNumber(_config >> QUOTE(propertyName)); \
-        case isText(_config >> QUOTE(propertyName)): { \
-            _value = [_control, QUOTE(propertyName), true] call FUNC(parseControlProperty); \
-            _value = [_value, _value]; \
-        }; \
-        case isArray(_config >> QUOTE(propertyName)): { \
-            _value = [_control, QUOTE(propertyName), true] call FUNC(parseControlProperty); \
-        }; \
-        case !(isNull _parent): { \
-            _value = _parent getVariable[QUOTE(propertyInheritGVAR), [0, 0]]; \
-        }; \
-    }; \
-    _control setVariable[QUOTE(GVAR(propertyName)), _value]; \
-})
-
-EXTRACT_PROPERTY(padding,GVAR(controlsPadding));
-EXTRACT_PROPERTY(spacing,GVAR(controlsSpacing));
-
 // Control properties
+[_control] call FUNC(applyInheritableProperties);
+
 if (isNumber(_config >> "enabled")) then {
     private _enabled = [_config >> "enabled", "NUMBER", 1] call CBA_fnc_getConfigEntry;
     _control ctrlEnable(_enabled != 0);
@@ -109,6 +90,11 @@ if (isArray(_config >> "color")) then {
 if (isArray(_config >> "colorBackground")) then {
     private _color = [_config >> "colorBackground", "ARRAY", [0,0,0,1]] call CBA_fnc_getConfigEntry;
     _control ctrlSetBackgroundColor([_color] call FUNC(parseColor));
+};
+
+_control ctrlSetFont(_control getVariable QGVAR(font));
+if (_control getVariable QGVAR(fontSize) > 0) then {
+    _control ctrlSetFontHeight(_control getVariable QGVAR(fontSize));
 };
 
 // Apply common properties and event handlers
