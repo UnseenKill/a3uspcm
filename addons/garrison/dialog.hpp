@@ -3,9 +3,9 @@
 #include "RscDefine.hpp"
 
 FORWARD(RscButton);
-FORWARD(RscCheckbox);
+FORWARD(RscCheckBox);
 FORWARD(RscFrame);
-FORWARD(RscListbox);
+FORWARD(RscListBox);
 FORWARD(RscText);
 
 // Replace attributes:
@@ -88,7 +88,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.0125 * safezoneW);
 			h = QUOTE(0.02 * safezoneH);
 		};
-		class CheckShowBLUFOR: RscCheckbox
+		class CheckShowBLUFOR: RscCheckBox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBLUFOR;
 			x = QUOTE(0.1625 * safezoneW + safezoneX);
@@ -106,7 +106,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.04125 * safezoneW);
 			h = QUOTE(0.055 * safezoneH);
 		};
-		class CheckShowOPFOR: RscCheckbox
+		class CheckShowOPFOR: RscCheckBox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOPFOR;
 			x = QUOTE(0.235 * safezoneW + safezoneX);
@@ -124,7 +124,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.04125 * safezoneW);
 			h = QUOTE(0.055 * safezoneH);
 		};
-		class CheckShowINDEP: RscCheckbox
+		class CheckShowINDEP: RscCheckBox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWINDEP;
 			x = QUOTE(0.305 * safezoneW + safezoneX);
@@ -142,7 +142,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.04125 * safezoneW);
 			h = QUOTE(0.055 * safezoneH);
 		};
-		class CheckShowBases: RscCheckbox
+		class CheckShowBases: RscCheckBox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWBASES;
 			x = QUOTE(0.525 * safezoneW + safezoneX);
@@ -160,7 +160,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.075 * safezoneW);
 			h = QUOTE(0.06 * safezoneH);
 		};
-		class CheckShowOutposts: RscCheckbox
+		class CheckShowOutposts: RscCheckBox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWOUTPOSTS;
 			x = QUOTE(0.525 * safezoneW + safezoneX);
@@ -178,7 +178,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.075 * safezoneW);
 			h = QUOTE(0.06 * safezoneH);
 		};
-		class CheckShowResources: RscCheckbox
+		class CheckShowResources: RscCheckBox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWRESOURCES;
 			x = QUOTE(0.625 * safezoneW + safezoneX);
@@ -196,7 +196,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.0875 * safezoneW);
 			h = QUOTE(0.06 * safezoneH);
 		};
-		class CheckShowTowns: RscCheckbox
+		class CheckShowTowns: RscCheckBox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWTOWNS;
 			x = QUOTE(0.7375 * safezoneW + safezoneX);
@@ -214,7 +214,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.0875 * safezoneW);
 			h = QUOTE(0.06 * safezoneH);
 		};
-		class ListOverview: RscListbox
+		class ListOverview: RscListBox
 		{
 			type = CT_LISTNBOX;
 			drawSideArrows = 0;
@@ -260,7 +260,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.4 * safezoneW);
 			h = QUOTE(0.28 * safezoneH);
 		};
-		class ListRecruitTypes: RscListbox
+		class ListRecruitTypes: RscListBox
 		{
 			type = CT_LISTNBOX;
 			drawSideArrows = 0;
@@ -281,7 +281,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.375 * safezoneW);
 			h = QUOTE(0.24 * safezoneH);
 		};
-		class CheckHideFull: RscCheckbox
+		class CheckHideFull: RscCheckBox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKHIDEFULL;
 			x = QUOTE(0.7375 * safezoneW + safezoneX);
@@ -299,7 +299,7 @@ class GVAR(dialog) {
 			w = QUOTE(0.0875 * safezoneW);
 			h = QUOTE(0.06 * safezoneH);
 		};
-		class CheckShowPosts: RscCheckbox
+		class CheckShowPosts: RscCheckBox
 		{
 			idc = IDC_RSCA3USPCMGARRISONMANAGERDIALOG_CHECKSHOWPOSTS;
 			x = QUOTE(0.625 * safezoneW + safezoneX);

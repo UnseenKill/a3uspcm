@@ -2,11 +2,11 @@
 #include "RscDefine.hpp"
 
 FORWARD(RscButton);
-FORWARD(RscCheckbox);
+FORWARD(RscCheckBox);
 FORWARD(RscCombo);
 FORWARD(RscEdit);
 FORWARD(RscFrame);
-FORWARD(RscListbox);
+FORWARD(RscListBox);
 FORWARD(RscPicture);
 FORWARD(RscStructuredText);
 FORWARD(RscText);
@@ -158,7 +158,7 @@ class GVAR(sellDialog) {
 			w = QUOTE(0.391875 * safezoneW);
 			h = QUOTE(0.022 * safezoneH);
 		};
-		class ListContainerContent: RscListbox
+		class ListContainerContent: RscListBox
 		{
 			type = CT_LISTNBOX;
 			drawSideArrows = 1;
@@ -182,7 +182,7 @@ class GVAR(sellDialog) {
 			w = QUOTE(0.118594 * safezoneW);
 			h = QUOTE(0.055 * safezoneH);
 		};
-		class CheckShowUnsellable: RscCheckbox
+		class CheckShowUnsellable: RscCheckBox
 		{
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_CHECKSHOWUNSELLABLE;
 			x = QUOTE(0.62375 * safezoneW + safezoneX);
