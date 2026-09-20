@@ -31,13 +31,14 @@ if !assert(params[
 if !assert(!isNull _control) exitWith {};
 if !assert(!isNull _config) exitWith {};
 
-#define COMPILE_PROPERTY(propertyName) ([] call { \
+#define COMPILE_PROPERTY(propertyName,defaultValue) ([] call { \
     private _value = [_control, QUOTE(propertyName)] call FUNC(parseControlProperty); \
-    _value = RETDEF(_value,0); \
+    _value = RETDEF(_value,defaultValue); \
     TRACE_2(QFUNC(applyDimensions),QUOTE(propertyName),_value); \
     _value; \
 })
 
+/*
 private _px = COMPILE_PROPERTY(x);
 private _py = COMPILE_PROPERTY(y);
 private _dimensions = [_px, _py, 0, 0];
@@ -61,6 +62,32 @@ if ([isNumber(_config >> "w"), isNumber(_config >> "h"), isText(_config >> "w"),
         };
     };
 };
+*/
+
+private _parent = ctrlParentControlsGroup _control;
+private _px = COMPILE_PROPERTY(x,0);
+private _py = COMPILE_PROPERTY(y,0);
+private _dimensions = [_px, _py, 0, 0];
+
+if (!(isNumber(_config >> "w") || isText(_config >> "w")) || { !(isNumber(_config >> "h") || isText(_config >> "h")) }) then {
+    private _class = _control getVariable QGVAR(createClass);
+
+    if (CT_CONTROLS_GROUP isNotEqualTo getNumber(configFile >> _class >> "type")) then {
+        WARNING_1("no dimensions for non-control group element ""%1"" found.",configName _config);
+    } else {
+        if (isNull _parent) then {
+            _dimensions set[2, 1];
+            _dimensions set[3, 1];
+        } else {
+            ctrlPosition _parent params["","","_w","_h"];
+            _dimensions set[2, _w];
+            _dimensions set[3, _h];
+        };
+    };
+};
+
+_dimensions set[2, COMPILE_PROPERTY(w,_dimensions select 2)];
+_dimensions set[3, COMPILE_PROPERTY(h,_dimensions select 3)];
 
 private _offsets = [0, 0, 0, 0];
 
