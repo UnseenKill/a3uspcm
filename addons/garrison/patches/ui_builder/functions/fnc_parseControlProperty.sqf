@@ -12,6 +12,7 @@ Parameters:
 Optional:
     2: _recurse - allows array properties and parses them recursively <BOOL>
         (default: false)
+    3: _config - the config class containing control properties <CONFIG>
 
 Example:
 
@@ -33,7 +34,7 @@ if !assert(params[
 if !assert(!isNull _control) exitWith {};
 
 private _recurse = param[2, false, [true]];
-private _config = _control getVariable QGVAR(config);
+private _config = param[3, _control getVariable QGVAR(config), [configNull]];
 private _convertString = {
     private _value = _this;
     private _match = _value regexMatch "^-?\d+%$";

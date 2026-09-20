@@ -40,6 +40,19 @@ if !assert(!isNull _controlsGroup) exitWith { controlNull };
 
 _controlsGroup setVariable[QGVAR(controls), createHashMap];
 
+private _controlsPadding = [0, 0];
+
+switch true do {
+    case isArray(_config >> "Controls" >> "padding"): {
+        _controlsPadding = [_controlsGroup, "padding", true, _config >> "Controls"] call FUNC(parseControlProperty);
+    };
+    case !(isNull _parent): {
+        _controlsPadding = _parent getVariable QGVAR(controlsPadding);
+    };
+};
+
+_controlsGroup setVariable[QGVAR(controlsPadding), _controlsPadding];
+
 "true" configClasses(_config >> "Controls") apply {
     private _subConfig = _x;
     private _control = if (isClass(_subConfig >> "Controls")) then {

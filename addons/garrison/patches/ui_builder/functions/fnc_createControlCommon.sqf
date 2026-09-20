@@ -52,6 +52,20 @@ _elementsMap set[configName _config, _control];
 // Common properties
 _control setVariable[QGVAR(config), _config];
 _control setVariable[QGVAR(configName), configName _config];
+_control setVariable[QGVAR(createClass), _className];
+
+private _padding = [0, 0];
+
+switch true do {
+    case isArray(_config >> "padding"): {
+        _padding = [_control, "padding", true] call FUNC(parseControlProperty);
+    };
+    case !(isNull _parent): {
+        _padding = _parent getVariable[QGVAR(controlsPadding), [0, 0]];
+    };
+};
+
+_control setVariable[QGVAR(padding), _padding];
 
 // Control properties
 if (isNumber(_config >> "enabled")) then {
