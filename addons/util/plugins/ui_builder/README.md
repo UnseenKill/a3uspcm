@@ -21,15 +21,15 @@ my _dialog = [configFile >> QADDON >> "MyDialog2", findDisplay 49] call ESFUNC(u
 > While allowed in traditional UI config classes, this component will choke and
 > not build your class if it detects duplicate class names.
 >
-> I.e.: you cannot have a `class Spacer` in one controls group and another class
-> of the same name in another.
+> I.e.: you cannot have a `class Spacer` in one controls group and another
+> class of the same name in another.
 
 ### Common properties
 
 All dimensional properties (`x`, `y`, `w`, `h`, `fontSize` etc.) are
 [safe-zone][url-biki-safeZone] coordinates. Dimensions themselves can be
-relative; e.g. giving a height of "50%" would size the element according to half
-its parent's height.
+relative; e.g. giving a height of "50%" would size the element according to
+half its parent's height.
 
 ```sqf
 #define UI_GRID_W (0.025 * safezoneW)
@@ -135,8 +135,8 @@ You can use any [user interface event handler][url-biki-ui-event-handlers] as a
 property. This one accepts a string which will be compiled and executed when
 that event happens for the control.
 
-If you suffix `Event` to the event's name, a CBA event (local) will be triggered
-instead.
+If you suffix `Event` to the event's name, a CBA event (local) will be
+triggered instead.
 
 Special events are the `Built` and `Created` events whose handlers/events will
 be executed/triggered as soon as the control had been created and after it (and
