@@ -113,7 +113,7 @@ Property           | Type       | Inherited | Description
 `tooltip`          | `<STRING>` | no        | Used with [`ctrlSetTooltip`][url-biki-ctrlsettooltip]
 `visible`          | `<NUMBER>` | no        | Whether the element is shown (default: 1)
 
-### Events
+## Events
 
 You may juggle around with IDCs, as is tradition, or embed what's to happen at
 certain events directly in the config:
@@ -153,6 +153,17 @@ class MyButton1 {
 ```
 
 Both are being called with the control and its config class as arguments.
+
+## Element-specific configuration
+
+Depending on their underlying `type` property, there are additional properties
+available for configuration for those classes:
+
+### `CT_LISTNBOX`
+
+Property  | Type      | Description
+----------|-----------|------------
+`columns` | `<ARRAY>` | List box column offsets array. E.g. `columns[] = {0.1, 0.5, 0.75}`
 
 [url-biki-safezone]: https://community.bistudio.com/wiki/SafeZone
 [url-biki-controls_group]: https://community.bistudio.com/wiki/CT_CONTROLS_GROUP

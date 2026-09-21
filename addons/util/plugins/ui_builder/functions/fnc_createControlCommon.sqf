@@ -100,6 +100,7 @@ if (_control getVariable QGVAR(fontSize) > 0) then {
 // Apply common properties and event handlers
 [_control, _config] call FUNC(applyDimensions);
 [_control, _config] call FUNC(applyHandlers);
+[_control, _config] call FUNC(applyTypeSpecific);
 
 _control ctrlCommit 0;
 
