@@ -113,6 +113,44 @@ Property           | Type       | Inherited | Description
 `tooltip`          | `<STRING>` | no        | Used with [`ctrlSetTooltip`][url-biki-ctrlsettooltip]
 `visible`          | `<NUMBER>` | no        | Whether the element is shown (default: 1)
 
+### Events
+
+You may juggle around with IDCs, as is tradition, or embed what's to happen at
+certain events directly in the config:
+
+```sqf
+class MyDialog1 {
+    class Controls {
+        class MyButton1 {
+            className = QUOTE(RscButton);
+
+            onMouseClick = QUOTE(call FUNC(myButton1ClickHandler));
+            onMouseClickEvent = QUOTE(MyButton1ClickEvent);
+        };
+    };
+};
+```
+
+You can use any [user interface event handler][url-biki-ui-event-handlers] as a
+property. This one accepts a string which will be compiled and executed when
+that event happens for the control.
+
+If you suffix `Event` to the event's name, a CBA event (local) will be triggered
+instead.
+
+A special event is the `Built` event whose handler/event will be
+executed/triggered as soon as the control (and its children) has been fully
+built:
+
+```sqf
+class MyButton1 {
+    onBuilt = QUOTE(hint 'MyButton1 built');
+    onBuiltEvent = QUOTE(MyButton1BuiltEvent);
+};
+```
+
+Both are being called with the control and its config class as arguments.
+
 [url-biki-safezone]: https://community.bistudio.com/wiki/SafeZone
 [url-biki-controls_group]: https://community.bistudio.com/wiki/CT_CONTROLS_GROUP
 [url-biki-ctrlcreate]: https://community.bistudio.com/wiki/ctrlCreate
@@ -121,3 +159,4 @@ Property           | Type       | Inherited | Description
 [url-biki-ctrlsettext]: https://community.bistudio.com/wiki/ctrlSetText
 [url-biki-ctrlsettextcolor]: https://community.bistudio.com/wiki/ctrlSetTextColor
 [url-biki-ctrlsettooltip]: https://community.bistudio.com/wiki/ctrlSetTooltip
+[url-biki-ui-event-handlers]: https://community.bistudio.com/wiki/User_Interface_Event_Handlers
