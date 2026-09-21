@@ -30,10 +30,6 @@ if !assert(!isNull _control) exitWith {};
 
 private _config = _control getVariable QGVAR(config);
 
-if (isClass(_config >> "Controls")) then {
-    _config = _config >> "Controls";
-};
-
 [_control, _config, "font", QGVAR(font), "RobotoCondensed", false] call FUNC(applyInheritableProperty);
 [_control, _config, "fontSize", QGVAR(fontSize), 0] call FUNC(applyInheritableProperty);
 [_control, _config, "padding", QGVAR(padding), [0,0], true, true] call FUNC(applyInheritableProperty);

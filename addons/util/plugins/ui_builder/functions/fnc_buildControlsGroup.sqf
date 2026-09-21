@@ -46,8 +46,8 @@ _controlsGroup setVariable[QGVAR(controls), createHashMap];
 [_controlsGroup] call FUNC(applyInheritableProperties);
 
 // If background color property present, create RscText background
-if (isArray(_config >> "Controls" >> "colorBackground")) then {
-    private _colorBackground = [_controlsGroup, "colorBackground", true, _config >> "Controls"] call FUNC(parseControlProperty);
+if (isArray(_config >> "colorBackground")) then {
+    private _colorBackground = [_controlsGroup, "colorBackground", true] call FUNC(parseControlProperty);
     _colorBackground = [_colorBackground] call FUNC(parseColor);
 
     private _background = _display ctrlCreate["RscText", -1, _controlsGroup];

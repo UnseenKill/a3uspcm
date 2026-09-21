@@ -50,7 +50,7 @@ private _value = switch true do {
     case isNumber(_config >> _propertyName);
     case isText(_config >> _propertyName);
     case isArray(_config >> _propertyName): {
-        [_control, _propertyName, isArray(_config >> _propertyName), _config] call FUNC(parseControlProperty);
+        [_control, _propertyName, isArray(_config >> _propertyName)] call FUNC(parseControlProperty);
     };
     private _parent = ctrlParentControlsGroup _control;
     case (!(isNull _parent) && { !isNil { _parent getVariable _propertyGVAR } }): {
