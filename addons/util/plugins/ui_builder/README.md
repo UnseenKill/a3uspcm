@@ -138,14 +138,17 @@ that event happens for the control.
 If you suffix `Event` to the event's name, a CBA event (local) will be triggered
 instead.
 
-A special event is the `Built` event whose handler/event will be
-executed/triggered as soon as the control (and its children) has been fully
-built:
+Special events are the `Built` and `Created` events whose handlers/events will
+be executed/triggered as soon as the control had been created and after it (and
+its children) has been fully built:
 
 ```sqf
 class MyButton1 {
     onBuilt = QUOTE(hint 'MyButton1 built');
     onBuiltEvent = QUOTE(MyButton1BuiltEvent);
+
+    onCreate = QUOTE(hint 'MyButton1 created');
+    onCreateEvent = QUOTE(MyButton1CreateEvent);
 };
 ```
 

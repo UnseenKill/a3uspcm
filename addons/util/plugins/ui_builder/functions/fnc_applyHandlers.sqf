@@ -43,8 +43,9 @@ configProperties[_config, QUOTE(isText(_x) && { configName _x regexMatch '^on(?:
         _handler = format["[%1, _this] call CBA_fnc_localEvent", str _handler];
     };
 
-    if ("Built" isEqualTo _event) then {
-        _control setVariable[QGVAR(builtCallback), compile _handler];
+    if (_event in ["Built", "Create"]) then {
+        private _name = [QGVAR(builtCallback), QGVAR(createCallback)] select(_event isEqualTo "Create");
+        _control setVariable[_name, compile _handler];
     } else {
         _control ctrlAddEventHandler[_event, compile _handler];
     };

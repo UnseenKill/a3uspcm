@@ -98,6 +98,13 @@ if (_controlsGroup getVariable QGVAR(padding) isNotEqualTo [0, 0]) then {
 
     if !(isNull _control) then {
         _controlsGroup getVariable QGVAR(controls) set[configName _subConfig, _control];
+
+        if !(isNil { _control getVariable QGVAR(builtCallback) }) then {
+            private _callback = _control getVariable QGVAR(builtCallback);
+            _control setVariable[QGVAR(builtCallback), nil];
+
+            [_control, configName _config] call _callback;
+        };
     };
 };
 
