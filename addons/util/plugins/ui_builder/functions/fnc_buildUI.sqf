@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_util_ui_builder_fnc_build
+Function: A3USPCM_util_ui_builder_fnc_buildUI
 
 Description:
     Dynamically build UI from config class
@@ -14,7 +14,7 @@ Optional:
 
 Example:
     (begin example)
-    [configFile >> QADDON >> "Dialog"] call A3USPCM_util_ui_builder_fnc_build;
+    [configFile >> QADDON >> "Dialog"] call A3USPCM_util_ui_builder_fnc_buildUI;
     (end example)
 
 Returns:
@@ -26,7 +26,7 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNCMAIN(build),_this);
+TRACE_1(QFUNC(buildUI),_this);
 
 if !assert(params[
     ["_config", nil, [configNull]]
