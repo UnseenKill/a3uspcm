@@ -21,6 +21,11 @@ workshop = [
     "3499977893", # Advanced Developer Tools
     "3797129725", # ADT Caret Fix
 ]
+parameters = [
+    "-noPause",
+    "-noPauseAudio",
+    "-noFreeze",
+]
 
 [hemtt.launch.malden]
 extends = "default"
