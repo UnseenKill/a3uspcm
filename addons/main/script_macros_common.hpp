@@ -49,6 +49,10 @@
     #define LLSTRING(var1) (localize LSTRING(var1))
 #endif // SUBCOMPONENT
 
+// Access to functions of subcomponents
+#define ESFUNC(component1,subcomponent1,func1) TRIPLES(PREFIX,DOUBLES(component1,subcomponent1),DOUBLES(fnc,func1))
+#define QESFUNC(component1,subcomponent1,func1) QUOTE(ESFUNC(component1,subcomponent1,func1))
+
 #undef PREP
 #undef PREPMAIN
 #ifdef DISABLE_COMPILE_CACHE
