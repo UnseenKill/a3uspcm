@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_ui_builder_fnc_applyDimensions
+Function: A3USPCM_util_ui_builder_fnc_applyDimensions
 
 Description:
     Apply dimensions to a control based on config

@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_ui_builder_fnc_buildControlsGroup
+Function: A3USPCM_util_ui_builder_fnc_buildControlsGroup
 
 Description:
     Create UI recursively from config

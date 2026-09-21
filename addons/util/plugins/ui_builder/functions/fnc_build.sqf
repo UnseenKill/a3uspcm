@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_ui_builder_fnc_build
+Function: A3USPCM_util_ui_builder_fnc_build
 
 Description:
     Dynamically build UI from config class
@@ -14,7 +14,7 @@ Optional:
 
 Example:
     (begin example)
-    [configFile >> QADDON >> "Dialog"] call A3USPCM_garrison_ui_builder_fnc_build;
+    [configFile >> QADDON >> "Dialog"] call A3USPCM_util_ui_builder_fnc_build;
     (end example)
 
 Returns:

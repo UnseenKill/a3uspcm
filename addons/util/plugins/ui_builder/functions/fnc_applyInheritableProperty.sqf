@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_ui_builder_fnc_applyInheritableProperty
+Function: A3USPCM_util_ui_builder_fnc_applyInheritableProperty
 
 Description:
     Apply property from config or inherit from parent

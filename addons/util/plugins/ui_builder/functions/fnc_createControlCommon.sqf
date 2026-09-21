@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_ui_builder_fnc_createControlCommon
+Function: A3USPCM_util_ui_builder_fnc_createControlCommon
 
 Description:
     Create control from config, apply common properties and event handlers

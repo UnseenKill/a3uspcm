@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_ui_builder_fnc_applyInheritableProperties
+Function: A3USPCM_util_ui_builder_fnc_applyInheritableProperties
 
 Description:
     Apply common properties to element/controls group
