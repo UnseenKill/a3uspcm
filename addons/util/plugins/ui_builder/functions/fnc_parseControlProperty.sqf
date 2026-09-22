@@ -44,7 +44,7 @@ private _convertString = {
         ctrlPosition ctrlParentControlsGroup _control;
     };
 
-    TRACE_3(QFUNC(parseControlProperty),_value,_match,_dimensions);
+    //TRACE_3(QFUNC(parseControlProperty),_value,_match,_dimensions);
 
     switch true do {
         case (_value isEqualTo ""): { 0 };
