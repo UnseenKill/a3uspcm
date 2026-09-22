@@ -40,7 +40,7 @@ private _controlsGroup = [_config, _display, _parent, "RscControlsGroup"] call F
 if !assert(!isNull _controlsGroup) exitWith { controlNull };
 
 // Keep track of child controls
-_controlsGroup setVariable[QGVAR(controls), createHashMap];
+_controlsGroup setVariable[QUIBVAR(controls), createHashMap];
 
 // Inherit/apply spacing/padding from config or parent control
 [_controlsGroup] call FUNC(applyInheritableProperties);
@@ -59,7 +59,7 @@ if (isArray(_config >> "colorBackground")) then {
     _background ctrlSetPosition _dimensions;
     _background ctrlCommit 0;
 
-    _controlsGroup getVariable QGVAR(controls) set["#background", _background];
+    _controlsGroup getVariable QUIBVAR(controls) set["#background", _background];
 };
 
 // Create additional control group for children if there's to be padding
@@ -82,13 +82,13 @@ if (_controlsGroup getVariable QGVAR(padding) isNotEqualTo [0, 0]) then {
     _control ctrlSetPosition _dimensions;
     _control ctrlCommit 0;
 
-    _control setVariable[QGVAR(createClass), "RscControlsGroup"];
+    _control setVariable[QUIBVAR(createClass), "RscControlsGroup"];
     _control setVariable[QGVAR(dimensions), _dimensions];
     _control setVariable[QGVAR(font), _controlsGroup getVariable QGVAR(font)];
     _control setVariable[QGVAR(fontSize), _controlsGroup getVariable QGVAR(fontSize)];
     _control setVariable[QGVAR(padding), _padding];
     _control setVariable[QGVAR(spacing), _controlsGroup getVariable QGVAR(spacing)];
-    _controlsGroup getVariable QGVAR(controls) set["#container", _control];
+    _controlsGroup getVariable QUIBVAR(controls) set["#container", _control];
 
     _parentControlsGroup = _control;
 };
@@ -103,7 +103,7 @@ if (_controlsGroup getVariable QGVAR(padding) isNotEqualTo [0, 0]) then {
     };
 
     if !(isNull _control) then {
-        _controlsGroup getVariable QGVAR(controls) set[configName _subConfig, _control];
+        _controlsGroup getVariable QUIBVAR(controls) set[configName _subConfig, _control];
 
         if !(isNil { _control getVariable QGVAR(builtCallback) }) then {
             private _callback = _control getVariable QGVAR(builtCallback);
@@ -116,7 +116,7 @@ if (_controlsGroup getVariable QGVAR(padding) isNotEqualTo [0, 0]) then {
 
 // Top level controls group gets a copy of elements hashmap variable
 if (isNull _parent) then {
-    _controlsGroup setVariable[QGVAR(controls), +(uiNamespace getVariable GVAR(buildUUID))];
+    _controlsGroup setVariable[QUIBVAR(controls), +(uiNamespace getVariable GVAR(buildUUID))];
 };
 
 _controlsGroup;

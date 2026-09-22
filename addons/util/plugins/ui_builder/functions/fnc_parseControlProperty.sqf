@@ -34,7 +34,7 @@ if !assert(params[
 if !assert(!isNull _control) exitWith {};
 
 private _recurse = param[2, false, [true]];
-private _config = param[3, _control getVariable QGVAR(config), [configNull]];
+private _config = param[3, _control getVariable QUIBVAR(config), [configNull]];
 private _convertString = {
     private _value = _this;
     private _match = _value regexMatch "^-?\d+%$";

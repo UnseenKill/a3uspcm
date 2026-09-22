@@ -50,9 +50,9 @@ if !assert(!isNull _control) exitWith { controlNull };
 _elementsMap set[configName _config, _control];
 
 // Common properties
-_control setVariable[QGVAR(config), _config];
-_control setVariable[QGVAR(configName), configName _config];
-_control setVariable[QGVAR(createClass), _className];
+_control setVariable[QUIBVAR(config), _config];
+_control setVariable[QUIBVAR(configName), configName _config];
+_control setVariable[QUIBVAR(createClass), _className];
 
 // Control properties
 [_control] call FUNC(applyInheritableProperties);

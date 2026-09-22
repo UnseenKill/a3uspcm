@@ -28,7 +28,7 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _control) exitWith {};
 
-private _config = _control getVariable QGVAR(config);
+private _config = _control getVariable QUIBVAR(config);
 
 [_control, _config, "font", QGVAR(font), "RobotoCondensed", false] call FUNC(applyInheritableProperty);
 [_control, _config, "fontSize", QGVAR(fontSize), 0] call FUNC(applyInheritableProperty);

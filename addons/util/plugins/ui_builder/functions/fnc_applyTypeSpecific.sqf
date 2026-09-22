@@ -37,7 +37,7 @@ if (isNil QGVAR(typeSpecific)) then {
     #include "types\CT_LISTNBOX.sqf"
 };
 
-private _createClass = _control getVariable QGVAR(createClass);
+private _createClass = _control getVariable QUIBVAR(createClass);
 private _type = getNumber(configFile >> _createClass >> "type");
 
 if !(_type in GVAR(typeSpecific)) exitWith {};
