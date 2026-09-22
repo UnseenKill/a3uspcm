@@ -50,9 +50,13 @@ if (isArray(_config >> "colorBackground")) then {
     private _colorBackground = [_controlsGroup, "colorBackground", true] call FUNC(parseControlProperty);
     _colorBackground = [_colorBackground] call FUNC(parseColor);
 
+    private _dimensions = _controlsGroup getVariable QGVAR(dimensions);
+    _dimensions set[0, 0];
+    _dimensions set[1, 0];
+
     private _background = _display ctrlCreate["RscText", -1, _controlsGroup];
     _background ctrlSetBackgroundColor _colorBackground;
-    _background ctrlSetPosition(_controlsGroup getVariable QGVAR(dimensions));
+    _background ctrlSetPosition _dimensions;
     _background ctrlCommit 0;
 
     _controlsGroup getVariable QGVAR(controls) set["#background", _background];
@@ -66,6 +70,8 @@ if (_controlsGroup getVariable QGVAR(padding) isNotEqualTo [0, 0]) then {
     private _dimensions = _controlsGroup getVariable QGVAR(dimensions);
     private _padding = _controlsGroup getVariable QGVAR(padding);
 
+    _dimensions set[0, 0];
+    _dimensions set[1, 0];
     _dimensions = _dimensions vectorAdd[
         _padding select 0,
         _padding select 1,
