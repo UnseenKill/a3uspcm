@@ -54,8 +54,8 @@ if (!(isNumber(_config >> "w") || isText(_config >> "w")) || { !(isNumber(_confi
             _dimensions set[3, 1];
         } else {
             ctrlPosition _parent params["","","_w","_h"];
-            _dimensions set[2, _w];
-            _dimensions set[3, _h];
+            _dimensions set[2, _w - _px];
+            _dimensions set[3, _h - _py];
         };
     };
 };
