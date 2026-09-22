@@ -66,7 +66,8 @@ if (isArray(_config >> "colorBackground")) then {
 private _parentControlsGroup = _controlsGroup;
 
 if (_controlsGroup getVariable QGVAR(padding) isNotEqualTo [0, 0]) then {
-    private _control = _display ctrlCreate["RscControlsGroup", -1, _controlsGroup];
+    private _createClass = _controlsGroup getVariable QUIBVAR(createClass);
+    private _control = _display ctrlCreate[_createClass, -1, _controlsGroup];
     private _dimensions = _controlsGroup getVariable QGVAR(dimensions);
     private _padding = _controlsGroup getVariable QGVAR(padding);
 
@@ -82,7 +83,7 @@ if (_controlsGroup getVariable QGVAR(padding) isNotEqualTo [0, 0]) then {
     _control ctrlSetPosition _dimensions;
     _control ctrlCommit 0;
 
-    _control setVariable[QUIBVAR(createClass), "RscControlsGroup"];
+    _control setVariable[QUIBVAR(createClass), _createClass];
     _control setVariable[QGVAR(dimensions), _dimensions];
     _control setVariable[QGVAR(font), _controlsGroup getVariable QGVAR(font)];
     _control setVariable[QGVAR(fontSize), _controlsGroup getVariable QGVAR(fontSize)];
