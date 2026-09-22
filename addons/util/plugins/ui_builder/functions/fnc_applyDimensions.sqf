@@ -44,9 +44,7 @@ private _py = COMPILE_PROPERTY(y,0);
 private _dimensions = [_px, _py, 0, 0];
 
 if (!(isNumber(_config >> "w") || isText(_config >> "w")) || { !(isNumber(_config >> "h") || isText(_config >> "h")) }) then {
-    private _class = _control getVariable QUIBVAR(createClass);
-
-    if (CT_CONTROLS_GROUP isNotEqualTo getNumber(configFile >> _class >> "type")) then {
+    if (ctrlType _control isNotEqualTo CT_CONTROLS_GROUP) then {
         WARNING_1("no dimensions for non-control group element ""%1"" found.",configName _config);
     } else {
         if (isNull _parent) then {
