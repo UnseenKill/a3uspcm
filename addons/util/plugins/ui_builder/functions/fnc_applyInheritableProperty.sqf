@@ -42,7 +42,7 @@ if !assert(!isNull _control) exitWith {};
 if !assert(!isNull _config) exitWith {};
 
 private _canParse = param[5, true, [true]];
-private _treatScalarAsPair = param[6, false, [true]];
+private _treatScalarAsPair = param[6, nil, [true, 0]];
 private _value = switch true do {
     case (!_canParse && { isText(_config >> _propertyName) }): { getText(_config >> _propertyName) };
     case (!_canParse && { isNumber(_config >> _propertyName) }): { getNumber(_config >> _propertyName) };
@@ -65,8 +65,16 @@ if (isNil "_value" && isNil "_defaultValue") exitWith {
 
 _value = RETDEF(_value,RETNIL(_defaultValue));
 
-if (_treatScalarAsPair && !(_value isEqualType [])) then {
-    _value = [_value, _value];
+if (!isNil "_treatScalarAsPair") then {
+    if !(_value isEqualType []) then {
+        _value = [_value, _value];
+    };
+
+    if (_treatScalarAsPair isEqualType 0) then {
+        while { count _value < _treatScalarAsPair } do {
+            _value append _value;
+        };
+    };
 };
 
 if ((!isNil "_defaultValue") && { !(_value isEqualType _defaultValue) }) then {

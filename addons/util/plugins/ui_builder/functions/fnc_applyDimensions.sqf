@@ -61,33 +61,32 @@ if (!(isNumber(_config >> "w") || isText(_config >> "w")) || { !(isNumber(_confi
 _dimensions set[2, COMPILE_PROPERTY(w,_dimensions select 2)];
 _dimensions set[3, COMPILE_PROPERTY(h,_dimensions select 3)];
 
-private _offsets = [0, 0, 0, 0];
-
 // Spacing: elements only get spacing along edges that don't "hug"
 // their parent control.
 private _spacing = _control getVariable QGVAR(spacing) vectorMultiply 0.5;
+private _offsets = _spacing vectorMultiply[1, 1, -1, -1];
 
-if (_spacing isNotEqualTo [0, 0]) then {
+if (_spacing isNotEqualTo [0, 0, 0, 0]) then {
     ctrlPosition _parent params["","","_parentW","_parentH"];
 
-    // Not hugging the left edge
-    if ((_dimensions select 0) > 0) then {
-        _offsets set[0, _spacing select 0];
+    // hugging the left edge
+    if ((_dimensions select 0) <= 0) then {
+        _offsets set[0, 0];
     };
 
-    // Not hugging the top edge
-    if ((_dimensions select 1) > 0) then {
-        _offsets set[1, _spacing select 1];
+    // hugging the top edge
+    if ((_dimensions select 1) <= 0) then {
+        _offsets set[1, 0];
     };
 
-    // Not hugging the right edge
-    if ((_dimensions select 2) < _parentW) then {
-        _offsets set[2, -1 * (_spacing select 0)];
+    // hugging the right edge
+    if ((_dimensions select 2) >= _parentW) then {
+        _offsets set[2, 0];
     };
 
-    // Not hugging the bottom edge
-    if ((_dimensions select 3) < _parentH) then {
-        _offsets set[3, -1 * (_spacing select 1)];
+    // hugging the bottom edge
+    if ((_dimensions select 3) >= _parentH) then {
+        _offsets set[3, 0];
     };
 };
 

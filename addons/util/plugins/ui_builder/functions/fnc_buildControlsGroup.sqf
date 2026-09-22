@@ -51,12 +51,9 @@ if (isArray(_config >> "colorBackground")) then {
     _colorBackground = [_colorBackground] call FUNC(parseColor);
 
     private _dimensions = _controlsGroup getVariable QGVAR(dimensions);
-    _dimensions set[0, 0];
-    _dimensions set[1, 0];
-
     private _background = _display ctrlCreate["RscText", -1, _controlsGroup];
     _background ctrlSetBackgroundColor _colorBackground;
-    _background ctrlSetPosition _dimensions;
+    _background ctrlSetPosition(_dimensions vectorMultiply[0, 0, 1, 1]);
     _background ctrlCommit 0;
 
     _controlsGroup getVariable QUIBVAR(controls) set["#background", _background];
@@ -64,21 +61,15 @@ if (isArray(_config >> "colorBackground")) then {
 
 // Create additional control group for children if there's to be padding
 private _parentControlsGroup = _controlsGroup;
+private _padding = _controlsGroup getVariable QGVAR(padding);
 
-if (_controlsGroup getVariable QGVAR(padding) isNotEqualTo [0, 0]) then {
+if (_padding isNotEqualTo [0,0,0,0]) then {
     private _createClass = _controlsGroup getVariable QUIBVAR(createClass);
     private _control = _display ctrlCreate[_createClass, -1, _controlsGroup];
-    private _dimensions = _controlsGroup getVariable QGVAR(dimensions);
-    private _padding = _controlsGroup getVariable QGVAR(padding);
+    private _dimensions = +(_controlsGroup getVariable QGVAR(dimensions));
 
-    _dimensions set[0, 0];
-    _dimensions set[1, 0];
-    _dimensions = _dimensions vectorAdd[
-        _padding select 0,
-        _padding select 1,
-        -2 * (_padding select 0),
-        -2 * (_padding select 1)
-    ];
+    _dimensions = _dimensions vectorMultiply[0, 0, 1, 1];
+    _dimensions = _dimensions vectorAdd(_padding vectorMultiply[1, 1, -2, -2]);
 
     _control ctrlSetPosition _dimensions;
     _control ctrlCommit 0;
@@ -87,7 +78,7 @@ if (_controlsGroup getVariable QGVAR(padding) isNotEqualTo [0, 0]) then {
     _control setVariable[QGVAR(dimensions), _dimensions];
     _control setVariable[QGVAR(font), _controlsGroup getVariable QGVAR(font)];
     _control setVariable[QGVAR(fontSize), _controlsGroup getVariable QGVAR(fontSize)];
-    _control setVariable[QGVAR(padding), _padding];
+    _control setVariable[QGVAR(padding), _controlsGroup getVariable QGVAR(padding)];
     _control setVariable[QGVAR(spacing), _controlsGroup getVariable QGVAR(spacing)];
     _controlsGroup getVariable QUIBVAR(controls) set["#container", _control];
 
@@ -95,7 +86,11 @@ if (_controlsGroup getVariable QGVAR(padding) isNotEqualTo [0, 0]) then {
 };
 
 // Recursively create child controls
-"true" configClasses(_config >> "Controls") apply {
+"true" configClasses(_config >> "Controls")
+#ifdef __A3_DEBUG__
+select { getNumber(_x >> "__ignore") isEqualTo 0 }
+#endif
+apply {
     private _subConfig = _x;
     private _control = if (isClass(_subConfig >> "Controls")) then {
         [_subConfig, _display, _parentControlsGroup] call FUNC(buildControlsGroup);
