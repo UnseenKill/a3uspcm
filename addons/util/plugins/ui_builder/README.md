@@ -24,6 +24,9 @@ my _dialog = [configFile >> QADDON >> "MyDialog2", findDisplay 49] call ESFUNC(u
 > I.e.: you cannot have a `class Spacer` in one controls group and another
 > class of the same name in another.
 
+That is, unless you either provide a top-level `ignoreMap[] = {...}` array or
+add a property `ignoreMap = 1` to each duplicate class.
+
 ### Common properties
 
 All dimensional properties (`x`, `y`, `w`, `h`, `fontSize` etc.) are

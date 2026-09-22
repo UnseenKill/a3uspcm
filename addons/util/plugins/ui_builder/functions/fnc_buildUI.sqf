@@ -43,6 +43,7 @@ if (isNil "_parentDisplay" || { isNull _parentDisplay }) then {
 if !assert(!isNull _parentDisplay) exitWith { controlNull };
 if !assert(isNil QGVAR(buildUUID)) exitWith { controlNull };
 
+GVAR(ignoreMap) = getArray(_config >> "ignoreMap");
 GVAR(buildUUID) = [] call CBA_fnc_createUUID;
 uiNamespace setVariable[GVAR(buildUUID), createHashMap];
 

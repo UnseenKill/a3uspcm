@@ -38,7 +38,10 @@ if !assert(params[
 // Even though elements are nested in controls groups, don't allow duplicate
 // class names across the entire UI structure
 private _elementsMap = uiNamespace getVariable GVAR(buildUUID);
-if !assert(!(configName _config in _elementsMap)) throw format["duplicate element class name ""%1""", configName _config];
+if (getNumber(_config >> "ignoreMap") isEqualTo 0 &&
+    { !(configName _config in GVAR(ignoreMap)) } &&
+    { !assert(!(configName _config in _elementsMap)) })
+    throw format["duplicate element class name ""%1""", configName _config];
 
 // Create control
 private _idc = [_config >> "idc", "NUMBER", -1] call CBA_fnc_getConfigEntry;
