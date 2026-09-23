@@ -43,12 +43,12 @@ private _type = ctrlType _control;
 if !(_type in GVAR(typeSpecific)) exitWith {};
 
 GVAR(typeSpecific) get _type apply {
-    private _propertyName = _x;
+    _x params["_propertyName","_propertyParams"];
     private _propertyConfig = _config >> _propertyName;
 
     TRACE_3(QFUNC(applyTypeSpecific),configName _config,_propertyName,_propertyConfig);
 
-    _y params["_condition","_getter","_action"];
+    _propertyParams params["_condition","_getter","_action"];
 
     if (_propertyConfig call _condition) then {
         private _value = _propertyConfig call _getter;

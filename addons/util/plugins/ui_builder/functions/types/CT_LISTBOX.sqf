@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 
-GVAR(typeSpecific) set[CT_LISTBOX, createHashMapFromArray[
+GVAR(typeSpecific) set[CT_LISTBOX, [
     /* Items config:
      *
      * Needs to be an array of strings

@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 
-GVAR(typeSpecific) set[CT_LISTNBOX, createHashMapFromArray[
+GVAR(typeSpecific) set[CT_LISTNBOX, [
     /* Columns config:
      *
      * Needs to be an array of column offsets.
