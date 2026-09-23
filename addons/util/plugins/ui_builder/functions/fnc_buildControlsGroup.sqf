@@ -51,7 +51,7 @@ if (isArray(_config >> "colorBackground")) then {
     _colorBackground = [_colorBackground] call FUNC(parseColor);
 
     private _dimensions = _controlsGroup getVariable QGVAR(dimensions);
-    private _background = _display ctrlCreate["RscText", -1, _controlsGroup];
+    private _background = _display ctrlCreate["RscText", [] call FUNC(getNextIDC), _controlsGroup];
     _background ctrlSetBackgroundColor _colorBackground;
     _background ctrlSetPosition(_dimensions vectorMultiply[0, 0, 1, 1]);
     _background ctrlCommit 0;
@@ -65,7 +65,7 @@ private _padding = _controlsGroup getVariable QGVAR(padding);
 
 if (_padding isNotEqualTo [0,0,0,0]) then {
     private _createClass = _controlsGroup getVariable QUIBVAR(createClass);
-    private _control = _display ctrlCreate[_createClass, -1, _controlsGroup];
+    private _control = _display ctrlCreate[_createClass, [] call FUNC(getNextIDC), _controlsGroup];
     private _dimensions = +(_controlsGroup getVariable QGVAR(dimensions));
 
     _dimensions = _dimensions vectorMultiply[0, 0, 1, 1];
@@ -113,6 +113,11 @@ apply {
 // Top level controls group gets a copy of elements hashmap variable
 if (isNull _parent) then {
     _controlsGroup setVariable[QUIBVAR(controls), +(uiNamespace getVariable GVAR(buildUUID))];
+    _controlsGroup setVariable[QUIBVAR(idcMap), createHashMapFromArray(allControls _controlsGroup select {
+        ctrlIDC _x >= 0;
+    } apply {
+        [ctrlIDC _x, _x];
+    })];
 };
 
 _controlsGroup;

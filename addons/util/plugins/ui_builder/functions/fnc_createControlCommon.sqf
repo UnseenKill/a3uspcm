@@ -43,13 +43,23 @@ if (getNumber(_config >> "ignoreMap") isEqualTo 0 &&
     { !assert(!(configName _config in _elementsMap)) })
     throw format["duplicate element class name ""%1""", configName _config];
 
+if (isNumber(_config >> "idcBase")) then {
+    INFO_4("%1(%2): setting IDC base from %3 to %4",QFUNC(createControlCommon),configName _config,GVAR(idcBase),getNumber(_config >> "idcBase"));
+    GVAR(idcBase) = getNumber(_config >> "idcBase");
+};
+
 // Create control
 private _idc = [_config >> "idc", "NUMBER", -1] call CBA_fnc_getConfigEntry;
+
+if (_idc isEqualTo -1) then {
+    _idc = [] call FUNC(getNextIDC);
+};
+
 private _className = [_config >> "className", "STRING", _defaultClass] call CBA_fnc_getConfigEntry;
 private _control = _display ctrlCreate[_className, _idc, _parent];
 
 // Bail out if control creation failed
-if !assert(!isNull _control) exitWith { controlNull };
+if !assert(!isNull _control) throw format["failed to create control of class ""%1"" with idc %2", _className, _idc];
 _elementsMap set[configName _config, _control];
 
 // Common properties

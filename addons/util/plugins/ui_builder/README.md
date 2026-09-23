@@ -27,6 +27,13 @@ my _dialog = [configFile >> QADDON >> "MyDialog2", findDisplay 49] call ESFUNC(u
 That is, unless you either provide a top-level `ignoreMap[] = {...}` array or
 add a property `ignoreMap = 1` to each duplicate class.
 
+### Continuous IDCs
+
+Use the special `idcBase` property on any element to start automatically
+assigning control IDs. Any element not given an explicit `idc` will use that
+base value and increment it afterwards. Retrieve the global IDC-to-element map
+from the root element with `GUIBVAR(idcMap)`.
+
 ### Common properties
 
 All dimensional properties (`x`, `y`, `w`, `h`, `fontSize` etc.) are

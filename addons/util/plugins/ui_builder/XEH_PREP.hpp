@@ -7,5 +7,6 @@ PREP(buildUI);
 PREP(buildControl);
 PREP(buildControlsGroup);
 PREP(createControlCommon);
+PREP(getNextIDC);
 PREP(parseColor);
 PREP(parseControlProperty);
