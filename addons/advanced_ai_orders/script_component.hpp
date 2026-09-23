@@ -1,6 +1,5 @@
 #define COMPONENT advanced_ai_orders
 #include "\z\a3uspcm\addons\main\script_mod.hpp"
-#include "\z\a3uspcm\addons\main\script_macros.hpp"
 
 #define PAD_WIDTH 70
 

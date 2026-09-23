@@ -1,6 +1,5 @@
 #define COMPONENT util
 #include "\z\a3uspcm\addons\main\script_mod.hpp"
-#include "\z\a3uspcm\addons\main\script_macros.hpp"
 
 // Don't attach objects, but delete them and load their class names into cargo
 //#define ACE_CARGO_CONVERT_TO_CLASS

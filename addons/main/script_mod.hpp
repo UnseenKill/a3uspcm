@@ -47,3 +47,5 @@
     #define RECOMPILE // [Disable for release]
     #define DISABLE_COMPILE_CACHE
 #endif
+
+#include "\z\a3uspcm\addons\main\script_macros.hpp"
