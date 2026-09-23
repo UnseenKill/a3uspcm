@@ -62,6 +62,13 @@ private _control = _display ctrlCreate[_className, _idc, _parent];
 if !assert(!isNull _control) throw format["failed to create control of class ""%1"" with idc %2", _className, _idc];
 _elementsMap set[configName _config, _control];
 
+#ifdef __A3_DEBUG__
+if (isNumber(_config >> "__makeGVAR")) then {
+    LOG_1("created GVAR ctrl%1 for %1",configName _config);
+    uiNamespace setVariable[format["ctrl%1", configName _config], _control];
+};
+#endif // __A3_DEBUG__
+
 // Common properties
 _control setVariable[QUIBVAR(config), _config];
 _control setVariable[QUIBVAR(configName), configName _config];
