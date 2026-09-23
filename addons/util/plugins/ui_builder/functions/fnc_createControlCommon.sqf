@@ -44,7 +44,7 @@ if (getNumber(_config >> "ignoreMap") isEqualTo 0 &&
     throw format["duplicate element class name ""%1""", configName _config];
 
 if (isNumber(_config >> "idcBase")) then {
-    INFO_4("%1(%2): setting IDC base from %3 to %4",QFUNC(createControlCommon),configName _config,GVAR(idcBase),getNumber(_config >> "idcBase"));
+    LOG_4("%1(%2): setting IDC base from %3 to %4",QFUNC(createControlCommon),configName _config,GVAR(idcBase),getNumber(_config >> "idcBase"));
     GVAR(idcBase) = getNumber(_config >> "idcBase");
 };
 
