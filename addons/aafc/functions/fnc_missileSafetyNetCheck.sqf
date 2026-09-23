@@ -44,7 +44,7 @@ private _index = GVAR(groups) findIf {
 };
 
 if (_index isNotEqualTo -1) then {
-    INFO_2("Deleting unauthorized missile '%1' from '%2'",_projectile,_vehicle);
+    LOG_2("Deleting unauthorized missile '%1' from '%2'",_projectile,_vehicle);
     deleteVehicle _projectile;
 };
 

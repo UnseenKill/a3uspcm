@@ -21,7 +21,7 @@ TRACE_1(QFUNC(roeCorrectionMonitor),_this);
 
 uiSleep GVAR(roeCorrectionInterval);
 
-INFO("Running ROE correction routine...");
+LOG("Running ROE correction routine...");
 
 // No CBA_EVENT_AAFC_SET_ROE_GLOBAL event here, we don't want tablet UI updating
 // while in use...

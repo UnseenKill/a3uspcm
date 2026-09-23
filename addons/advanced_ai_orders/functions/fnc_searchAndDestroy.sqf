@@ -102,17 +102,17 @@ if (_maxDistance > 10 || { _units findIf { !isNull objectParent _x } != -1 }) th
     params["_event"];
     private _mission = missionNamespace getVariable QGVAR(sadMissions) get _event;
 
-    INFO_1("SAD mission %1: waiting for rally",_event);
+    LOG_1("SAD mission %1: waiting for rally",_event);
     waitUntil { _mission get "waitingOn" isEqualTo [] };
 
     missionNamespace setVariable[QGVAR(sadSettingUp), nil];
 
     if (_mission get "abort") exitWith {
-        INFO_1("SAD mission %1: aborted",_event);
+        LOG_1("SAD mission %1: aborted",_event);
         missionNamespace getVariable QGVAR(sadMissions) deleteAt _event;
     };
 
-    INFO_1("SAD mission %1: rally reached; assuming mission",_event);
+    LOG_1("SAD mission %1: rally reached; assuming mission",_event);
 
     if !GVAR(haveGlobalKillEventHandler) then {
         ["CAManBase", "killed", {
@@ -219,7 +219,7 @@ if (_maxDistance > 10 || { _units findIf { !isNull objectParent _x } != -1 }) th
     deleteMarker _marker;
 
     if (_mission get "abort") then {
-        INFO_1("SAD mission %1: aborted during execution",_event);
+        LOG_1("SAD mission %1: aborted during execution",_event);
 
         if ((_mission get "units") findIf { alive _x } == -1) then {
             ["TaskFailed", [LLSTRING(Menu_OrdersSAD_DisplayName), LLSTRING(OrdersSAD_Hint_MissionAbortAllDead)]] call BIS_fnc_showNotification;
@@ -227,7 +227,7 @@ if (_maxDistance > 10 || { _units findIf { !isNull objectParent _x } != -1 }) th
             ["TaskFailed", [LLSTRING(Menu_OrdersSAD_DisplayName), LLSTRING(OrdersSAD_Hint_MissionAbortTasking)]] call BIS_fnc_showNotification;
         };
     } else {
-        INFO_1("SAD mission %1: completed",_event);
+        LOG_1("SAD mission %1: completed",_event);
         ["TaskSucceeded", [LLSTRING(Menu_OrdersSAD_DisplayName), LLSTRING(OrdersSAD_Hint_MissionAbortSuccess)]] call BIS_fnc_showNotification;
     };
 

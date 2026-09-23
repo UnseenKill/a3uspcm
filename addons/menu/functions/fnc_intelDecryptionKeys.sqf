@@ -40,7 +40,7 @@ _key = format["%1RadioKeys", _key];
     TRACE_1(QFUNCMAIN(intelDecryptionKeys),_code);
     [_code] remoteExecCall["call", 2];
 
-    INFO_3("%1 changed %2 to %3",name player,_key,_amount);
+    LOG_3("%1 changed %2 to %3",name player,_key,_amount);
 
     [
         LLSTRING(Intel_DecryptionKeysChangedCaption),

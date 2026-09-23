@@ -40,7 +40,7 @@ _tracks = _tracks - GVAR(lastTracks);
 if !assert(_tracks isNotEqualTo []) exitWith {};
 
 private _track = selectRandom _tracks;
-INFO_3("%1() playing %2 track: %3",QFUNC(playNextTrack),_key,_track);
+LOG_3("%1() playing %2 track: %3",QFUNC(playNextTrack),_key,_track);
 
 [_track] call FUNC(playTrack);
 

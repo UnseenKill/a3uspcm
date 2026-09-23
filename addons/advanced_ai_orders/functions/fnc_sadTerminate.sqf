@@ -35,6 +35,6 @@ private _mission = _sadMissions get _missionId;
 if !assert(!isNil "_mission") exitWith {};
 
 _mission set["abort", true];
-INFO_2("SAD mission %1: termination requested by player: %2",_missionId,_player);
+LOG_2("SAD mission %1: termination requested by player: %2",_missionId,_player);
 
 nil;

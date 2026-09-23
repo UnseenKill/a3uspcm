@@ -59,13 +59,13 @@ TRACE_1(QFUNC(autoGroupVehicles),_this);
         _grouped pushBack _cluster;
     };
 
-    INFO_1("A/A auto-group found %1 A/A clusters",count _grouped);
+    LOG_1("A/A auto-group found %1 A/A clusters",count _grouped);
     {
-        INFO_2("group #%1 (%2x vehicles)",_foreachIndex,count _x);
+        LOG_2("group #%1 (%2x vehicles)",_foreachIndex,count _x);
 
         private _index = 0;
         _x apply {
-            INFO_4("group #%1:%2 - %3 at %4",_foreachIndex,_index,typeOf _x,mapGridPosition _x);
+            LOG_4("group #%1:%2 - %3 at %4",_foreachIndex,_index,typeOf _x,mapGridPosition _x);
             INC(_index);
         };
 

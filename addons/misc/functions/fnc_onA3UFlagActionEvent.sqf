@@ -39,9 +39,9 @@ if (hideEnemyMarkers && { _type isEqualTo "take" }) exitWith {
     TRACE_2(QFUNC(onA3UFlagActionEvent),_marker,_markerAlpha);
 
     if (_markerAlpha > 0) then {
-        INFO_1("Marker %1 already revealed, skipping adding flag action.",str _marker);
+        LOG_1("Marker %1 already revealed, skipping adding flag action.",str _marker);
     } else {
-        INFO_2("Marker %1 not revealed yet, adding flag action to %2.",str _marker,_object);
+        LOG_2("Marker %1 not revealed yet, adding flag action to %2.",str _marker,_object);
 
         _object setVariable[QGVAR(marker), _marker];
         _object addAction[

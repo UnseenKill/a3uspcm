@@ -22,9 +22,9 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(extendTraderObjects),_this);
 
-INFO("Waiting for 'SCRT_fnc_trader_createTrader' to become available...");
+LOG("Waiting for 'SCRT_fnc_trader_createTrader' to become available...");
 waitUntil { !isNil "SCRT_fnc_trader_createTrader" };
-INFO("'SCRT_fnc_trader_createTrader' is now available; hooking.");
+LOG("'SCRT_fnc_trader_createTrader' is now available; hooking.");
 
 GVAR(SCRT_fnc_trader_createTrader) = SCRT_fnc_trader_createTrader;
 SCRT_fnc_trader_createTrader = {

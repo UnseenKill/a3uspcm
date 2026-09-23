@@ -20,7 +20,7 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 
-INFO_1("player %1 wants air support fixed",name player);
+LOG_1("player %1 wants air support fixed",name player);
 
 private _classes = ["B_Plane_Fighter_01_Stealth_F","B_Plane_CAS_01_dynamicLoadout_F"];
 private _index = _classes findIf { isClass(configFile >> "CfgVehicles" >> _x) };

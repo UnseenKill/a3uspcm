@@ -19,15 +19,15 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(loadTracks),_this);
 
-INFO("Custom playlist not loaded, initializing...");
+LOG("Custom playlist not loaded, initializing...");
 
 GVAR(tracks) = profileNamespace getVariable QGVAR(tracks);
 
 if isNil QGVAR(tracks) then {
-    INFO("No saved tracks found, using tracks from config");
+    LOG("No saved tracks found, using tracks from config");
     GVAR(tracks) = [];
 } else {
-    INFO("Loading saved playlist");
+    LOG("Loading saved playlist");
 
     if !(GVAR(tracks) isEqualType []) then {
         WARNING("Invalid playlist data type, initializing with config instead");

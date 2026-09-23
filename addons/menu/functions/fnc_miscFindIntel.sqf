@@ -31,7 +31,7 @@ private _laptopTypes = getArray(_config >> "Intel" >> "laptops");
 
 _flags = _flags select EGVAR(main,AceHaveAddon);
 
-INFO_2("'%1' is searching for intel (radius=%2m)",name player,_radius);
+LOG_2("'%1' is searching for intel (radius=%2m)",name player,_radius);
 TRACE_3(QFUNCMAIN(miscFindIntel),_radius,_laptopTypes,_config);
 
 private _sl = nearestObjects[player, ["CAManBase"], _radius, true] select {
@@ -112,7 +112,7 @@ private _intelFound = 0;
     };
 };
 
-INFO_1("Found %1 intel",_intelFound);
+LOG_1("Found %1 intel",_intelFound);
 
 private _message = if (_intelFound isEqualTo 0) then {
     format[LLSTRING(Miscellaneous_FindIntel_NoIntelFoundText), _radius];

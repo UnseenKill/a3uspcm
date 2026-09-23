@@ -20,7 +20,7 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 
-INFO_1("player %1 wants buildings repaired",name player);
+LOG_1("player %1 wants buildings repaired",name player);
 
 destroyedBuildings inAreaArray[player, 200, 200, 0, true] apply {
     TRACE_3("repairing building",_x,getPos _x,typeOf _x);

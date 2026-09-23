@@ -6,7 +6,7 @@ ADDON = true;
 
 [
     {
-        INFO("adding advanced garrison management to map");
+        LOG("adding advanced garrison management to map");
         [] spawn FUNC(onClientInitDone);
     }
 ] call FUNCMAIN(utilOnA3UClientInitDone);

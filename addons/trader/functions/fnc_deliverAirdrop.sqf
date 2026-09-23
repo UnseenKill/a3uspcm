@@ -88,7 +88,7 @@ _wp2 setWaypointStatements ["true", "(vehicle this) flyInHeight 250;"];
 waitUntil {_heli distance2D _positionDestination < 250 || {!alive _heli || !(canMove _heli) || {!([(driver _heli)] call A3A_fnc_canFight)}}};
 
 if (!alive _heli || !(canMove _heli) || {!([(driver _heli)] call A3A_fnc_canFight)}) exitWith {
-	INFO_2("Helicopter is unable to loot area (#1). Positions: %1, %2",str _positionOrigin,str _positionDestination);
+	LOG_2("Helicopter is unable to loot area (#1). Positions: %1, %2",str _positionOrigin,str _positionDestination);
 };
 
 _wp3 = group _heli addWaypoint [_positionDestination, 2];
@@ -100,7 +100,7 @@ private _timeOut = time + 45;
 waitUntil {time > _timeOut};
 
 if (!alive _heli || !(canMove _heli) || {!([(driver _heli)] call A3A_fnc_canFight)}) exitWith {
-	INFO_2("Helicopter is unable to loot area (#2). Positions: %1, %2",str _positionOrigin,str _positionDestination);
+	LOG_2("Helicopter is unable to loot area (#2). Positions: %1, %2",str _positionOrigin,str _positionDestination);
 };
 
 _heli setSlingLoad objNull;

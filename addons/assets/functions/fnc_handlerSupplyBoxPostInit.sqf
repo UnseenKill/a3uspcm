@@ -35,7 +35,7 @@ if !assert(!isNull _object) exitWith {};
 
     if !(isNil "_lootActionID") then {
         _object removeAction _lootActionID;
-        INFO_2("Removed loot action ID #%1 from object %2",_lootActionID,_object);
+        LOG_2("Removed loot action ID #%1 from object %2",_lootActionID,_object);
     };
 }, [_object], 5] call CBA_fnc_waitAndExecute;
 

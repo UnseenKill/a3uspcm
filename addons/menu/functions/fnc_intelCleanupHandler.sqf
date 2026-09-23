@@ -24,7 +24,7 @@ if GVAR(IntelCleanup) exitWith {};
 GVAR(IntelCleanup) = true;
 
 [] spawn {
-    INFO("starting intel marker cleanup");
+    LOG("starting intel marker cleanup");
 
     while { (count GVAR(IntelMarkers)) > 0 } do {
         uiSleep INTEL_CLEANUP_INTERVAL;
@@ -41,7 +41,7 @@ GVAR(IntelCleanup) = true;
         } forEach GVAR(IntelMarkers);
     };
 
-    INFO("no more intel markers to clean up");
+    LOG("no more intel markers to clean up");
     GVAR(IntelCleanup) = false;
 };
 
