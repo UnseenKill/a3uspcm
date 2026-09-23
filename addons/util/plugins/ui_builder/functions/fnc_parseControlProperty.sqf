@@ -38,10 +38,11 @@ private _config = param[3, _control getVariable QUIBVAR(config), [configNull]];
 private _convertString = {
     private _value = _this;
     private _match = _value regexMatch "^-?\d+%$";
-    private _dimensions = if (isNull ctrlParentControlsGroup _control) then {
+    private _parent = ctrlParentControlsGroup _control;
+    private _dimensions = if (isNull _parent) then {
         [0, 0, safeZoneW, safeZoneH, safeZoneX, safeZoneY];
     } else {
-        ctrlPosition ctrlParentControlsGroup _control;
+        ctrlPosition _parent;
     };
 
     //TRACE_3(QFUNC(parseControlProperty),_value,_match,_dimensions);
@@ -68,6 +69,14 @@ private _convertString = {
                 case (_property isEqualTo "x"): {
                     _dimensions params["","","_width","",["_offX", 0],["_offY", 0]];
                     _offX + (_number * _width / 100);
+                };
+                case (_property isEqualTo "fontSize"): {
+                    if (isNil { _parent getVariable QGVAR(fontSize) }) then {
+                        0
+                    } else {
+                        private _parentFontSize = _parent getVariable QGVAR(fontSize);
+                        (_number * _parentFontSize / 100);
+                    };
                 };
                 default {
                     WARNING_3("Useless percentage property for %1 ignored (_property=%2,_value=%3)",_control,_property,_value);
