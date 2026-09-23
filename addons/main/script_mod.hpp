@@ -18,7 +18,9 @@
 // otherwise already specified
 #ifndef __A3USPCM_PRODUCTION__
     #ifndef DEBUG_MODE_NORMAL
-        #define DEBUG_MODE_FULL
+        #ifndef DEBUG_MODE_FULL
+            #define DEBUG_MODE_FULL
+        #endif
     #endif
 #endif
 
