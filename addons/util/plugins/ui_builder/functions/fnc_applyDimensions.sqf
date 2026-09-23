@@ -45,7 +45,10 @@ private _dimensions = [_px, _py, 0, 0];
 
 if (!(isNumber(_config >> "w") || isText(_config >> "w")) || { !(isNumber(_config >> "h") || isText(_config >> "h")) }) then {
     if (ctrlType _control isNotEqualTo CT_CONTROLS_GROUP) then {
-        WARNING_1("no dimensions for non-control group element ""%1"" found.",configName _config);
+        WARNING_1("no dimensions for non-control group element ""%1"" found. Using their default dimensions.",configName _config);
+        ctrlPosition _control params["","","_defaultW","_defaultH"];
+        _dimensions set[2, _defaultW];
+        _dimensions set[3, _defaultH];
     } else {
         if (isNull _parent) then {
             _dimensions set[2, 1];
