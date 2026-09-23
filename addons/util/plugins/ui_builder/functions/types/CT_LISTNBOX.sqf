@@ -17,9 +17,7 @@ GVAR(typeSpecific) set[CT_LISTNBOX, createHashMapFromArray[
         { getArray(_this) },
         {
             params["_control","_columns"];
-            _columns apply {
-                _control lnbAddColumn _x;
-            };
+            _control lnbSetColumnsPos _columns;
         }
     ]]
 ]];
