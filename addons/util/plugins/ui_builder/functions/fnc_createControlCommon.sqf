@@ -49,10 +49,10 @@ if (isNumber(_config >> "idcBase")) then {
 };
 
 // Create control
-private _idc = [_config >> "idc", "NUMBER", -1] call CBA_fnc_getConfigEntry;
-
-if (_idc isEqualTo -1) then {
-    _idc = [] call FUNC(getNextIDC);
+private _idc = if (isNumber(_config >> "idc")) then {
+    getNumber(_config >> "idc");
+} else {
+    [] call FUNC(getNextIDC);
 };
 
 private _className = [_config >> "className", "STRING", _defaultClass] call CBA_fnc_getConfigEntry;
