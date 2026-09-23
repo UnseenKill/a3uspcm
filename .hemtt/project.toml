@@ -31,6 +31,10 @@ parameters = [
 extends = "default"
 mission = "a3uspcm.Malden"
 
+[hemtt.launch.vr]
+extends = "default"
+mission = "a3uspcm.VR"
+
 [lints.sqf]
 # Too generic; does not take into account `isNil` checks, for example
 direct_private = false
