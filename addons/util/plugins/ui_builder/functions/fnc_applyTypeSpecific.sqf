@@ -34,6 +34,7 @@ if !assert(!isNull _config) exitWith {};
 if (isNil QGVAR(typeSpecific)) then {
     GVAR(typeSpecific) = createHashMap;
 
+    #include "types\CT_LISTBOX.sqf"
     #include "types\CT_LISTNBOX.sqf"
 };
 
