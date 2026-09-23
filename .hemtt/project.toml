@@ -24,7 +24,6 @@ workshop = [
 parameters = [
     "-noPause",
     "-noPauseAudio",
-    "-noFreeze",
 ]
 
 [hemtt.launch.malden]
