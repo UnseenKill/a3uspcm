@@ -45,6 +45,8 @@ GVAR(typeSpecific) get _type apply {
     private _propertyName = _x;
     private _propertyConfig = _config >> _propertyName;
 
+    TRACE_3(QFUNC(applyTypeSpecific),configName _config,_propertyName,_propertyConfig);
+
     _y params["_condition","_getter","_action"];
 
     if (_propertyConfig call _condition) then {
