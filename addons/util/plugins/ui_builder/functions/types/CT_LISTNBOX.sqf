@@ -17,7 +17,11 @@ GVAR(typeSpecific) set[CT_LISTNBOX, [
         { getArray(_this) },
         {
             params["_control","_columns"];
-            _control lnbSetColumnsPos _columns;
+            private _have = lnbGetColumnsPosition _control;
+            _have apply { _control lnbDeleteColumn 0 };
+            _columns apply {
+                _control lnbAddColumn _x;
+            };
         }
     ]],
     /* Items config:
