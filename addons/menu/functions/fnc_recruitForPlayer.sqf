@@ -25,7 +25,7 @@ _this spawn {
         ["_typeUnit", "", [""]]
     ];
 
-    INFO_2("player %1 wants %2 recruited",name player,_typeUnit);
+    LOG_2("player %1 wants %2 recruited",name player,_typeUnit);
     TRACE_1(QFUNCMAIN(recruitForPlayer),GVAR(recruitSkipEnemyCheck));
 
     recruitCooldown = 0;

@@ -6,7 +6,7 @@ GVAR(securityReferenceSetting) = player;
     player addEventHandler["Respawn", {
         params["_newUnit"];
 
-        INFO("Auto-adjusting player reference...");
+        LOG("Auto-adjusting player reference...");
 
         // If referencing to something human-like, it can only be the player,
         // so update the reference accordingly, lest units return to the corpse
@@ -18,7 +18,7 @@ GVAR(securityReferenceSetting) = player;
         // If respawning, wait longer until we possibly unassign the menu, so it
         // retains its "order" (i.e. artillery-menu won't shift onto its position)
         if (_newUnit getVariable[QGVAR(lastRadioEquipped), false]) then {
-            INFO("Old unit had radio equipped, waiting longer to unassign menu...");
+            LOG("Old unit had radio equipped, waiting longer to unassign menu...");
             
             missionNamespace setVariable[QGVAR(waitAndExecuteDelay), 30];
 

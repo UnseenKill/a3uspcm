@@ -20,7 +20,7 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 
-INFO_1("player %1 wants air drop fixed",name player);
+LOG_1("player %1 wants air drop fixed",name player);
 A3A_faction_reb set["vehiclesCivHeli",["B_Heli_Light_01_F"]];
 
 nil;

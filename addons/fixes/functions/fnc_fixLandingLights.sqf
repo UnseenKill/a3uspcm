@@ -35,7 +35,7 @@ TRACE_1(QFUNC(fixLandingLights),_this);
     TRACE_2(QFUNC(fixLandingLights),_config,_classes);
 
     if !assert(_classes isNotEqualTo []) exitWith {
-        INFO_1("%1(): no landing light classes found, skipping",QFUNC(fixLandingLights));
+        LOG_1("%1(): no landing light classes found, skipping",QFUNC(fixLandingLights));
     };
 
     private _removeFromConstructions = entities[_classes, []] select {
@@ -53,7 +53,7 @@ TRACE_1(QFUNC(fixLandingLights),_this);
     };
 
     [{
-        INFO_1("%1(): reaugmenting...",QFUNC(fixLandingLights));
+        LOG_1("%1(): reaugmenting...",QFUNC(fixLandingLights));
         nearestObjects[petros, ["A3AU_RebHelipad_base_F"], 1500, true] apply { [_x] call EFUNC(misc,augmentHelipad) };
     }, nil, 5] call CBA_fnc_execAfterNFrames;
 }, nil, 5] call CBA_fnc_waitAndExecute;

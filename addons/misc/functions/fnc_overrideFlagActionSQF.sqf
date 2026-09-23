@@ -22,7 +22,7 @@ TRACE_1(QFUNC(overrideFlagActionSQF),_this);
 
 waitUntil { !isNil "A3A_fnc_flagAction" };
 
-INFO("Hooking into A3A_fnc_flagAction ...");
+LOG("Hooking into A3A_fnc_flagAction ...");
 
 GVAR(A3A_fnc_flagAction) = A3A_fnc_flagAction;
 A3A_fnc_flagAction = {

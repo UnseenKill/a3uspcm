@@ -29,7 +29,7 @@ if !assert(!isNull _unit) exitWith {};
 private _notify = diag_tickTime > (_unit getVariable[QGVAR(nextEquipNotification), 0]);
 _unit setVariable[QGVAR(nextEquipNotification), diag_tickTime + 15];
 
-INFO_1("Player %1 equipped AAIO radio.",str name _unit);
+LOG_1("Player %1 equipped AAIO radio.",str name _unit);
 private _menuItemId = if (_notify) then {
     [_unit, QGVAR(CommunicationMenu)] call BIS_fnc_addCommMenuItem;
 } else {

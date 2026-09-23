@@ -20,11 +20,11 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 
-INFO_1("player %1 requests teleportation",name player);
+LOG_1("player %1 requests teleportation",name player);
 
 // remove old event handler in case of double-click on teleportation menu item
 if !isNil QGVAR(Teleport_MapSingleClickEH) exitWith {
-    INFO("ignoring double-click on teleportation menu item");
+    LOG("ignoring double-click on teleportation menu item");
 };
 
 if !visibleMap then {
@@ -42,7 +42,7 @@ GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
     GVAR(Teleport_Done) = true;
 
     openMap false;
-    INFO_2("teleporting %1 to %2",name player,mapGridPosition _pos);
+    LOG_2("teleporting %1 to %2",name player,mapGridPosition _pos);
     TRACE_3("teleporting",player,_pos,GVAR(teleportGroup));
 
     if (GVAR(teleportGroup) && { player isEqualTo theBoss }) exitWith {
@@ -77,7 +77,7 @@ GVAR(Teleport_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
     GVAR(Teleport_MapSingleClickEH) = nil;
 
     if !GVAR(Teleport_Done) exitWith {
-        INFO("teleportation aborted");
+        LOG("teleportation aborted");
         [
             LLSTRING(Teleport_TeleportHintAbortCaption), 
             LLSTRING(Teleport_TeleportHintAbortText)
