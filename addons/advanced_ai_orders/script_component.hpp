@@ -1,4 +1,13 @@
 #define COMPONENT advanced_ai_orders
+
+#define DEBUG_MODE_NORMAL
+// #define DEBUG_MODE_FULL
+// #define DISABLE_COMPILE_CACHE
+
+#ifdef DEBUG_ENABLED_ADVANCED_AI_ORDERS
+    #define DEBUG_MODE_FULL
+#endif
+
 #include "\z\a3uspcm\addons\main\script_mod.hpp"
 
 #define PAD_WIDTH 70
