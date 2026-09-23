@@ -92,11 +92,7 @@ select { getNumber(_x >> "__ignore") isEqualTo 0 }
 #endif
 apply {
     private _subConfig = _x;
-    private _control = if (isClass(_subConfig >> "Controls")) then {
-        [_subConfig, _display, _parentControlsGroup] call FUNC(buildControlsGroup);
-    } else {
-        [_subConfig, _display, _parentControlsGroup] call FUNC(buildControl);
-    };
+    private _control = [_subConfig, _display, _parentControlsGroup] call FUNC(buildControl);
 
     if !(isNull _control) then {
         _controlsGroup getVariable QUIBVAR(controls) set[configName _subConfig, _control];

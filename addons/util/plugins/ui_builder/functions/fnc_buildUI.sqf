@@ -40,6 +40,8 @@ if (isNil "_parentDisplay" || { isNull _parentDisplay }) then {
     _parentDisplay = findDisplay 46 createDisplay "RscDisplayEmpty";
 };
 
+TRACE_1(QFUNC(buildUI),_parentDisplay);
+
 if !assert(!isNull _parentDisplay) exitWith { controlNull };
 if !assert(isNil QGVAR(buildUUID)) exitWith { controlNull };
 
@@ -49,7 +51,7 @@ GVAR(buildUUID) = [] call CBA_fnc_createUUID;
 uiNamespace setVariable[GVAR(buildUUID), createHashMap];
 
 private _masterControl = try {
-    [_config, _parentDisplay, controlNull] call FUNC(buildControlsGroup);
+    [_config, _parentDisplay, controlNull, true] call FUNC(buildControl);
 } catch {
     if (isNil "_parent") then {
         _parentDisplay closeDisplay 0;

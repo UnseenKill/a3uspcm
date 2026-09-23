@@ -11,6 +11,8 @@ Parameters:
     2: _parent - Parent controls groups <CONTROL>
 
 Optional:
+    3: _allowNullParent - Whether to allow a null parent control <BOOL>
+        (default: false)
 
 Example:
 
@@ -32,6 +34,14 @@ if !assert(params[
 ]) exitWith { controlNull };
 if !assert(!isNull _config) exitWith { controlNull };
 if !assert(!isNull _display) exitWith { controlNull };
-if !assert(!isNull _parent) exitWith { controlNull };
+
+// Delegate if it's gonna be a controls group
+if (isClass(_config >> "Controls")) exitWith {
+    [_config, _display, _parent] call FUNC(buildControlsGroup);
+};
+
+private _allowNullParent = param[3, false, [true]];
+
+if !assert(_allowNullParent || { !isNull _parent }) exitWith { controlNull };
 
 [_config, _display, _parent, "RscText"] call FUNC(createControlCommon);
