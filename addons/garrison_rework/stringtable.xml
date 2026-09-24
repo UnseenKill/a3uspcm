@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="GarrisonRework">
+        <Key ID="STR_A3USPCM_Garrison_Rework_Component">
+            <English>A3USPCM - Garrison Management Component (Reworked)</English>
+            <German>A3USPCM - Garrison Management Komponente (Überarbeitet)</German>
+        </Key>
+    </Package>
+</Project>
