@@ -36,12 +36,23 @@ if !assert(!isNull _config) exitWith { controlNull };
 if !assert(!isNull _display) exitWith { controlNull };
 
 // Delegate if it's gonna be a controls group
-if (isClass(_config >> "Controls")) exitWith {
+private _control = if (isClass(_config >> "Controls")) then {
     [_config, _display, _parent] call FUNC(buildControlsGroup);
+} else {
+    private _allowNullParent = param[3, false, [true]];
+
+    if !assert(_allowNullParent || { !isNull _parent }) exitWith { controlNull };
+
+    [_config, _display, _parent, "RscText"] call FUNC(createControlCommon);
 };
 
-private _allowNullParent = param[3, false, [true]];
+if (isNull _control) exitWith { controlNull };
 
-if !assert(_allowNullParent || { !isNull _parent }) exitWith { controlNull };
+if !(isNil { _control getVariable QGVAR(builtCallback) }) then {
+    private _callback = _control getVariable QGVAR(builtCallback);
+    _control setVariable[QGVAR(builtCallback), nil];
 
-[_config, _display, _parent, "RscText"] call FUNC(createControlCommon);
+    [_control, configName _config] call _callback;
+};
+
+_control;
