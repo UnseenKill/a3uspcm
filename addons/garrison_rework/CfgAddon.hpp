@@ -1,3 +1,10 @@
+class RscDisplayEmpty;
+
+class GVAR(RscDisplayEmpty): RscDisplayEmpty {
+    onLoad = QUOTE([ARR_2(QUOTE(CBA_EVENT_DIALOG_LOADED),_this)] call CBA_fnc_localEvent);
+    onUnload = QUOTE([ARR_2(QUOTE(CBA_EVENT_DIALOG_UNLOADED),_this)] call CBA_fnc_localEvent);
+};
+
 class GVAR(Config) {
     class Dialog {
         idcBase = 1000;
@@ -15,6 +22,8 @@ class GVAR(Config) {
 
         font = "PuristaMedium";
         fontSize = QUOTE(1 * UI_GRID_H - 4 * pixelH);
+
+        onBuiltEvent = CBA_EVENT_DIALOG_BUILT;
 
         class Controls {
             class MainTitle {
