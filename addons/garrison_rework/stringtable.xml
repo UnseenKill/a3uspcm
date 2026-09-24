@@ -2,8 +2,144 @@
 <Project name="A3USPCM">
     <Package name="GarrisonRework">
         <Key ID="STR_A3USPCM_Garrison_Rework_Component">
-            <English>A3USPCM - Garrison Management Component (Reworked)</English>
+            <Original>A3USPCM - Garrison Management Component (Reworked)</Original>
             <German>A3USPCM - Garrison Management Komponente (Überarbeitet)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_HideFull_DisplayName">
+            <Original>Hide Full</Original>
+            <German>Volle ausblenden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowBases_DisplayName">
+            <Original>Show Bases</Original>
+            <German>Basen anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowOutposts_DisplayName">
+            <Original>Show Outposts</Original>
+            <German>Außenposten anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowResources_DisplayName">
+            <Original>Show Resources</Original>
+            <German>Ressourcen anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowTowns_DisplayName">
+            <Original>Show Towns</Original>
+            <German>Städte anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_SectionTitle">
+            <Original>Filters</Original>
+            <German>Filter</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_ListHeader_Column_Capacity_DisplayName">
+            <Original>Capacity</Original>
+            <German>Kapazität</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_ListHeader_Column_Current_DisplayName">
+            <Original>Current</Original>
+            <German>Aktuell</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_ListHeader_Column_Name_DisplayName">
+            <Original>Name</Original>
+            <German>Name</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_MainTitle">
+            <Original>Advanced Garrison Manager</Original>
+            <German>Garnisonsverwaltung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_AASpecialist_Abbreviated">
+            <Original>AA</Original>
+            <German>FlAbw</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_AASpecialist_DisplayName">
+            <Original>AA Specialist</Original>
+            <German>Flugabwehrspezialist</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_ATSpecialist_Abbreviated">
+            <Original>AT</Original>
+            <German>PzAbw</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_ATSpecialist_DisplayName">
+            <Original>AT Specialist</Original>
+            <German>Panzerabwehrspezialist</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_AT_Abbreviated">
+            <Original>LAT</Original>
+            <German>LAT</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_AT_DisplayName">
+            <Original>Light AT</Original>
+            <German>Leichte PzAbw</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Autorifleman_Abbreviated">
+            <Original>MG</Original>
+            <German>MG</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Autorifleman_DisplayName">
+            <Original>Autorifleman</Original>
+            <German>Automatikschütze</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Crew_Abbreviated">
+            <Original>Crew</Original>
+            <German>Bes</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Crew_DisplayName">
+            <Original>Crew</Original>
+            <German>Besatzung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Engineer_Abbreviated">
+            <Original>Eng</Original>
+            <German>Ing</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Engineer_DisplayName">
+            <Original>Engineer</Original>
+            <German>Ingenieur</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Grenadier_Abbreviated">
+            <Original>Grn</Original>
+            <German>Grn</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Grenadier_DisplayName">
+            <Original>Grenadier</Original>
+            <German>Grenadier</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Marksman_Abbreviated">
+            <Original>Mrk</Original>
+            <German>SSchü</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Marksman_DisplayName">
+            <Original>Marksman</Original>
+            <German>Scharfschütze</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Medic_Abbreviated">
+            <Original>Med</Original>
+            <German>San</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Medic_DisplayName">
+            <Original>Medic</Original>
+            <German>Sanitäter</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Rifleman_Abbreviated">
+            <Original>Rfl</Original>
+            <German>Schü</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Rifleman_DisplayName">
+            <Original>Rifleman</Original>
+            <German>Schütze</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Sapper_Abbreviated">
+            <Original>Expl</Original>
+            <German>Pio</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Sapper_DisplayName">
+            <Original>Sapper</Original>
+            <German>Pionier</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_SquadLdr_Abbreviated">
+            <Original>SL</Original>
+            <German>GF</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_SquadLdr_DisplayName">
+            <Original>Squad Leader</Original>
+            <German>Gruppenführer</German>
         </Key>
     </Package>
 </Project>
