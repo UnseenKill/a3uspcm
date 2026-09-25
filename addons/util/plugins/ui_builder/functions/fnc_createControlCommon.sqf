@@ -73,6 +73,13 @@ if (isNumber(_config >> "__makeGVAR")) then {
 _control setVariable[QUIBVAR(config), _config];
 _control setVariable[QUIBVAR(configName), configName _config];
 _control setVariable[QUIBVAR(createClass), _className];
+_control setVariable[QUIBVAR(parent), _parent];
+
+if (isNull _parent) then {
+    _control setVariable[QUIBVAR(root), _control];
+} else {
+    _control setVariable[QUIBVAR(root), _parent getVariable QUIBVAR(root)];
+};
 
 [_control, _config] call FUNC(applyCustomProperties);
 
