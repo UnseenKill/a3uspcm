@@ -41,6 +41,7 @@ private _closeLocation = {
 private _entries = markersX apply {
     private _entry = createHashMapFromArray[
         ["picture", ""],
+        ["limit", [_x] call A3A_fnc_getGarrisonLimit],
         ["marker", _x],
         ["position", markerPos _x],
         ["side", sidesX getVariable[_x, sideUnknown]]

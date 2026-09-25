@@ -48,7 +48,7 @@ INC(_column);
 _control lnbSetText[[_index, _column], str count _garrison];
 
 INC(_column);
-_control lnbSetText[[_index, _column], str([_marker] call A3A_fnc_getGarrisonLimit)];
+_control lnbSetText[[_index, _column], str(_entry get "limit")];
 
 _control getVariable QGVAR(columnsOrder) apply {
     private _unitType = _x;
