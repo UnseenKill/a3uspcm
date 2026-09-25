@@ -31,9 +31,9 @@ if !assert(params[
 if !assert(!isNull _control) exitWith {};
 if !assert(!isNull _config) exitWith {};
 
-configProperties[_config, QUOTE(isText(_x) && { configName _x regexMatch '^on(?:[A-Z][a-z]+)+$/' })] apply {
+configProperties[_config, QUOTE(isText(_x) && { configName _x regexMatch '^on(?:[A-Z][A-Za-z]+)+$/' })] apply {
     private _handler = getText _x;
-    private _match = configName _x regexFind["^on((?:[A-Z][a-z]+)+?)(Event)?$/", 0];
+    private _match = configName _x regexFind["^on(\w*?)(Event)?$/", 0];
     if !assert(_match isNotEqualTo []) exitWith {};
 
     _match select 0 params["", "_event", "_trigger"];
