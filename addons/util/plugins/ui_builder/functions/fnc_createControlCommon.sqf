@@ -74,6 +74,8 @@ _control setVariable[QUIBVAR(config), _config];
 _control setVariable[QUIBVAR(configName), configName _config];
 _control setVariable[QUIBVAR(createClass), _className];
 
+[_control, _config] call FUNC(applyCustomProperties);
+
 // Control properties
 [_control] call FUNC(applyInheritableProperties);
 
