@@ -30,4 +30,11 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _display) exitWith {};
 
+_display getVariable QGVAR(eventHandlers) apply {
+    TRACE_1(QFUNC(onDialogUnloaded),_x);
+    _x call CBA_fnc_removeEventHandler;
+};
+
+uiNamespace setVariable[QGVAR(display), nil];
+
 nil;

@@ -28,4 +28,15 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _display) exitWith {};
 
+#define REGISTER_EVENT(Event,Func) (if true then {\
+    _display getVariable QGVAR(eventHandlers) pushBack[Event, \
+        [Event, Func] call CBA_fnc_addEventHandler \
+    ] \
+})
+
+uiNamespace setVariable[QGVAR(display), _display];
+_display setVariable[QGVAR(eventHandlers), []];
+
+REGISTER_EVENT(CBA_EVENT_DIALOG_BTNCLOSE_CLICK,FUNC(onBtnCloseClick));
+
 nil;

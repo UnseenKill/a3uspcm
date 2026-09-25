@@ -1,3 +1,4 @@
+PREP(onBtnCloseClick);
 PREP(onDialogBuilt);
 PREP(onDialogLoaded);
 PREP(onDialogUnloaded);
