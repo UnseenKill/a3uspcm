@@ -113,16 +113,22 @@ private _entries = markersX apply {
     [_label, _entry];
 };
 
+_control setVariable[QGVAR(entries), []];
+
 _entries sort true;
 _entries apply {
     _x params[["_label", ""], ["_entry", nil, [createHashMap]]];
 
     private _index = _control lnbAddRow[_label];
 
+    _control getVariable QGVAR(entries) pushBack _entry;
+
+    [_control, _index] call FUNC(updateGarrisonInfo);
+
     _control lnbSetPicture[[_index, 0], _entry get "picture"];
     _control lnbSetPictureColor[[_index, 0], _entry get "color"];
 };
 
-_control setVariable[QGVAR(entries), _entries apply { _x select -1 }];
+_control lnbSetCurSelRow -1;
 
 nil;

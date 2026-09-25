@@ -115,6 +115,23 @@ class GVAR(Config) {
 
                                 onLBDblClickEvent = CBA_EVENT_DIALOG_LOCATION_DBLCLICK;
                                 onLBSelChangedEvent = CBA_EVENT_DIALOG_LOCATION_SELECTED;
+
+                                class Properties {
+                                    GVAR(columnsOrder)[] = {
+                                        QUOTE(unitSL),
+                                        QUOTE(unitMedic),
+                                        QUOTE(unitSniper),
+                                        QUOTE(unitRifle),
+                                        QUOTE(unitGL),
+                                        QUOTE(unitMG),
+                                        QUOTE(unitLAT),
+                                        QUOTE(unitAA),
+                                        QUOTE(unitAT),
+                                        QUOTE(unitCrew),
+                                        QUOTE(unitExp),
+                                        QUOTE(unitEng)
+                                    };
+                                };
                             };
                         };
                     };

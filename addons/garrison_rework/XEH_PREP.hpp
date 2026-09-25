@@ -3,6 +3,8 @@ PREP(onDialogBuilt);
 PREP(onDialogLoaded);
 PREP(onDialogUnloaded);
 PREP(onLocationDblClick);
+PREP(onLocationSelected);
 PREP(openManager);
 PREP(resizeLocations);
+PREP(updateGarrisonInfo);
 PREP(updateLocations);
