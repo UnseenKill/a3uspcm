@@ -268,13 +268,26 @@ class GVAR(Config) {
                                 };
                             };
 
-                            class LabelHideFull: LabelShowBases {
+                            class LabelShowPosts: LabelShowBases {
                                 y = QUOTE(5 * UI_GRID_H);
+                                text = CSTRING(Dialog_Filters_Check_ShowPosts_DisplayName);
+                            };
+
+                            class ChecksShowPosts: ChecksShowBases {
+                                y = QUOTE(5 * UI_GRID_H);
+
+                                class Properties {
+                                    GVAR(filterType) = FILTER_POSTS;
+                                };
+                            };
+
+                            class LabelHideFull: LabelShowBases {
+                                y = QUOTE(6 * UI_GRID_H);
                                 text = CSTRING(Dialog_Filters_Check_HideFull_DisplayName);
                             };
 
                             class ChecksHideFull: ChecksShowBases {
-                                y = QUOTE(5 * UI_GRID_H);
+                                y = QUOTE(6 * UI_GRID_H);
 
                                 class Properties {
                                     GVAR(filterType) = FILTER_AT_CAPACITY;

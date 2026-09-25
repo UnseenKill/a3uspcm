@@ -17,6 +17,10 @@
             <Original>Show Outposts</Original>
             <German>Außenposten anzeigen</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowPosts_DisplayName">
+            <Original>Show Posts</Original>
+            <German>Posten anzeigen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowResources_DisplayName">
             <Original>Show Resources</Original>
             <German>Ressourcen anzeigen</German>
