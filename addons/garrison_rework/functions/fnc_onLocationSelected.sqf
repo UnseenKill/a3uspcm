@@ -39,4 +39,14 @@ allControls _recruitGroup apply { _x ctrlEnable (_index >= 0) };
 // Nothing selected, exit early
 if (_index < 0) exitWith {};
 
+private _display = uiNamespace getVariable QGVAR(display);
+private _rootControl = _display getVariable QGVAR(rootControl);
+private _controls = _rootControl getVariable QUIBVAR(controls);
+private _control = _controls get "ListLocations";
+private _entry = _control getVariable QGVAR(entries) select _index;
+
+if !assert(!isNil "_entry") exitWith {};
+
+
+
 nil;

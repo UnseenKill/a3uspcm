@@ -38,7 +38,10 @@ private _closeLocation = {
     format[_format, mapGridPosition(_entry get "position")];
 };
 
-private _entries = markersX apply {
+private _filters = _display getVariable QGVAR(filters);
+private _entries = markersX select {
+    [_x, _filters] call FUNC(filterMarker);
+} apply {
     private _entry = createHashMapFromArray[
         ["picture", ""],
         ["limit", [_x] call A3A_fnc_getGarrisonLimit],
