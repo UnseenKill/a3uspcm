@@ -31,18 +31,28 @@ if !assert(params[
 
 if (isNil QGVAR(locationFilters)) then {
     GVAR(locationFilters) = compileFinal createHashMapFromArray[
+        [FILTER_AT_CAPACITY, { count(garrison getVariable[_this, []]) < ([_this] call A3A_fnc_getGarrisonLimit) }],
         [FILTER_BASES, { _this in(milbases + airportsX + seaports + ["Synd_HQ"]) }],
         [FILTER_OUTPOSTS, { _this in outposts }],
+        [FILTER_OWNER_INVADERS, { true }],
+        [FILTER_OWNER_OCCUPIERS, { true }],
+        [FILTER_OWNER_REBELS, { true }],
         [FILTER_POSTS, { _this in(aapostsFIA + atpostsFIA + hmgpostsFIA + roadblocksFIA) }],
         [FILTER_RESOURCES, { _this in(resourcesX + factories) }],
         [FILTER_TOWNS, { _this in citiesX }]
     ];
 };
 
-if (_filters findIf {
+private _match = _filters select {
     _marker call(GVAR(locationFilters) getOrDefault[_x, { false }]);
-} isEqualTo -1) exitWith { false };
+};
 
-if (FILTER_AT_CAPACITY in _filters && { count(garrison getVariable[_marker, []]) >= ([_marker] call A3A_fnc_getGarrisonLimit) }) exitWith { false };
+_match sort true;
 
-true;
+if (_match isNotEqualTo _filters) exitWith { false };
+
+private _markerVisible = (!hideEnemyMarkers || { markerAlpha _marker > 0 });
+
+((FILTER_OWNER_REBELS in _filters) && { sidesX getVariable[_marker, sideUnknown] isEqualTo resistance }) ||
+{ (FILTER_OWNER_OCCUPIERS in _filters) && { _markerVisible && { sidesX getVariable[_marker, sideUnknown] isEqualTo west } } } ||
+{ (FILTER_OWNER_INVADERS in _filters) && { _markerVisible && { sidesX getVariable[_marker, sideUnknown] isEqualTo east } } };

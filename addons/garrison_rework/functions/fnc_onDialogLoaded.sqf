@@ -44,6 +44,6 @@ REGISTER_EVENT(CBA_EVENT_DIALOG_LOCATION_SELECTED,LINKFUNC(onLocationSelected));
 REGISTER_EVENT(CBA_EVENT_UPDATE_LOCATIONS,LINKFUNC(updateLocations));
 REGISTER_EVENT(CBA_EVENT_UPDATE_LOCATIONS,LINKFUNC(resizeLocations));
 
-_display setVariable[QGVAR(filters), missionNamespace getVariable[QGVAR(filters), [FILTER_TOWNS, FILTER_AT_CAPACITY]]];
+_display setVariable[QGVAR(filters), missionNamespace getVariable[QGVAR(filters), [FILTER_TOWNS, FILTER_OWNER_REBELS, FILTER_AT_CAPACITY]]];
 
 nil;

@@ -9,6 +9,18 @@
             <Original>Hide Full</Original>
             <German>Volle ausblenden</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_OwnerFilterInvaders_DisplayName">
+            <Original>Owner: Invaders</Original>
+            <German>Eigentümer: Invasoren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_OwnerFilterOccupiers_DisplayName">
+            <Original>Owner: Occupiers</Original>
+            <German>Eigentümer: Besetzer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_OwnerFilterRebels_DisplayName">
+            <Original>Owner: Rebels</Original>
+            <German>Eigentümer: Rebellen</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowBases_DisplayName">
             <Original>Show Bases</Original>
             <German>Basen anzeigen</German>

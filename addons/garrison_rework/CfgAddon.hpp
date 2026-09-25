@@ -294,6 +294,52 @@ class GVAR(Config) {
                                 };
                             };
 
+                            class OwnershipGroup {
+                                y = QUOTE(8 * UI_GRID_H);
+                                h = QUOTE(4 * UI_GRID_H);
+
+                                class Controls {
+                                    class LabelOwnerFilterRebels: LabelShowBases {
+                                        y = 0;
+                                        text = CSTRING(Dialog_Filters_Check_OwnerFilterRebels_DisplayName);
+                                    };
+
+                                    class ChecksOwnerFilterRebels: ChecksShowBases {
+                                        y = 0;
+
+                                        class Properties {
+                                            GVAR(filterType) = FILTER_OWNER_REBELS;
+                                        };
+                                    };
+
+                                    class LabelOwnerFilterOccupiers: LabelShowBases {
+                                        y = QUOTE(1 * UI_GRID_H);
+                                        text = CSTRING(Dialog_Filters_Check_OwnerFilterOccupiers_DisplayName);
+                                    };
+
+                                    class ChecksOwnerFilterOccupiers: ChecksShowBases {
+                                        y = QUOTE(1 * UI_GRID_H);
+
+                                        class Properties {
+                                            GVAR(filterType) = FILTER_OWNER_OCCUPIERS;
+                                        };
+                                    };
+
+                                    class LabelOwnerFilterInvaders: LabelShowBases {
+                                        y = QUOTE(2 * UI_GRID_H);
+                                        text = CSTRING(Dialog_Filters_Check_OwnerFilterInvaders_DisplayName);
+                                    };
+
+                                    class ChecksOwnerFilterInvaders: ChecksShowBases {
+                                        y = QUOTE(2 * UI_GRID_H);
+
+                                        class Properties {
+                                            GVAR(filterType) = FILTER_OWNER_INVADERS;
+                                        };
+                                    };
+                                };
+                            };
+
 #ifdef __A3_DEBUG__
                             class ADTMagicWordEdit {
                                 w = "100%";

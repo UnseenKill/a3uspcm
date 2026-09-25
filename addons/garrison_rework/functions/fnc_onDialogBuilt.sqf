@@ -38,6 +38,9 @@ private _filtersToChecksMap = createHashMapFromArray[
     [FILTER_AT_CAPACITY, "ChecksHideFull"],
     [FILTER_BASES, "ChecksShowBases"],
     [FILTER_OUTPOSTS, "ChecksShowOutposts"],
+    [FILTER_OWNER_REBELS, "ChecksOwnerFilterRebels"],
+    [FILTER_OWNER_OCCUPIERS, "ChecksOwnerFilterOccupiers"],
+    [FILTER_OWNER_INVADERS, "ChecksOwnerFilterInvaders"],
     [FILTER_POSTS, "ChecksShowPosts"],
     [FILTER_RESOURCES, "ChecksShowResources"],
     [FILTER_TOWNS, "ChecksShowTowns"]
