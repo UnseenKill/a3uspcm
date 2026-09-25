@@ -2,16 +2,13 @@
 
 TRACE_1(QFUNC(postInitClient),_this);
 
-[CBA_EVENT_DIALOG_BUILT, {
-    TRACE_1(CBA_EVENT_DIALOG_BUILT,_this);
-}] call CBA_fnc_addEventHandler;
+// For populating UI
+[CBA_EVENT_DIALOG_BUILT, LINKFUNC(onDialogBuilt)] call CBA_fnc_addEventHandler;
 
-[CBA_EVENT_DIALOG_LOADED, {
-    TRACE_1(CBA_EVENT_DIALOG_LOADED,_this);
-}] call CBA_fnc_addEventHandler;
+// For event registering
+[CBA_EVENT_DIALOG_LOADED, LINKFUNC(onDialogLoaded)] call CBA_fnc_addEventHandler;
 
-[CBA_EVENT_DIALOG_UNLOADED, {
-    TRACE_1(CBA_EVENT_DIALOG_UNLOADED,_this);
-}] call CBA_fnc_addEventHandler;
+// For event unregistering
+[CBA_EVENT_DIALOG_UNLOADED, LINKFUNC(onDialogUnloaded)] call CBA_fnc_addEventHandler;
 
 nil;
