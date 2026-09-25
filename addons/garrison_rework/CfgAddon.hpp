@@ -40,7 +40,7 @@ class GVAR(Config) {
                 h = QUOTE(1 * UI_GRID_H);
                 className = QUOTE(RscButton);
                 text = "X";
-                onButtonClick = "ctrlParent(_this select 0) closeDisplay 0";
+                onButtonClickEvent = CBA_EVENT_DIALOG_BTNCLOSE_CLICK;
             };
 
             class Separator {
@@ -112,6 +112,9 @@ class GVAR(Config) {
                                 h = QUOTE(2 * safeZoneH / 5 - 2.5 * UI_GRID_H - 8 * pixelH);
                                 className = QGVAR(RscListNBox);
                                 COLUMN_OFFSETS;
+
+                                onLBDblClickEvent = CBA_EVENT_DIALOG_LOCATION_DBLCLICK;
+                                onLBSelChangedEvent = CBA_EVENT_DIALOG_LOCATION_SELECTED;
                             };
                         };
                     };
@@ -137,6 +140,12 @@ class GVAR(Config) {
                                         w = QUOTE(5 * UI_GRID_W); \
                                         h = QUOTE(1 * UI_GRID_H); \
                                         className = QUOTE(RscXSliderH); \
+                                        \
+                                        class Properties { \
+                                            GVAR(UnitType) = QUOTE(Name); \
+                                        }; \
+                                        \
+                                        onSliderPosChangedEvent = CBA_EVENT_DIALOG_UNITTYPE_SLIDER_CHANGED; \
                                     }; \
                                     class DOUBLES(Counter,Name) { \
                                         y = QUOTE((Offset) * UI_GRID_H); \
@@ -195,6 +204,12 @@ class GVAR(Config) {
                                 h = QUOTE(1 * UI_GRID_H);
                                 className = QGVAR(RscToolboxYesNo);
                                 fontSize = "80%";
+
+                                class Properties {
+                                    GVAR(filterType) = FILTER_BASES;
+                                };
+
+                                onToolBoxSelChangedEvent = CBA_EVENT_DIALOG_FILTER_CHANGED;
                             };
 
                             class LabelShowOutposts: LabelShowBases {
@@ -204,6 +219,10 @@ class GVAR(Config) {
 
                             class ChecksShowOutposts: ChecksShowBases {
                                 y = QUOTE(2 * UI_GRID_H);
+
+                                class Properties {
+                                    GVAR(filterType) = FILTER_OUTPOSTS;
+                                };
                             };
 
                             class LabelShowResources: LabelShowBases {
@@ -213,6 +232,10 @@ class GVAR(Config) {
 
                             class ChecksShowResources: ChecksShowBases {
                                 y = QUOTE(3 * UI_GRID_H);
+
+                                class Properties {
+                                    GVAR(filterType) = FILTER_RESOURCES;
+                                };
                             };
 
                             class LabelShowTowns: LabelShowBases {
@@ -222,6 +245,10 @@ class GVAR(Config) {
 
                             class ChecksShowTowns: ChecksShowBases {
                                 y = QUOTE(4 * UI_GRID_H);
+
+                                class Properties {
+                                    GVAR(filterType) = FILTER_TOWNS;
+                                };
                             };
 
                             class LabelHideFull: LabelShowBases {
@@ -231,6 +258,10 @@ class GVAR(Config) {
 
                             class ChecksHideFull: ChecksShowBases {
                                 y = QUOTE(5 * UI_GRID_H);
+
+                                class Properties {
+                                    GVAR(filterType) = FILTER_AT_CAPACITY;
+                                };
                             };
 
 #ifdef __A3_DEBUG__
