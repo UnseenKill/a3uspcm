@@ -37,6 +37,8 @@ if !assert(!isNull _display) exitWith {};
 uiNamespace setVariable[QGVAR(display), _display];
 _display setVariable[QGVAR(eventHandlers), []];
 
-REGISTER_EVENT(CBA_EVENT_DIALOG_BTNCLOSE_CLICK,FUNC(onBtnCloseClick));
+REGISTER_EVENT(CBA_EVENT_DIALOG_BTNCLOSE_CLICK,LINKFUNC(onBtnCloseClick));
+REGISTER_EVENT(CBA_EVENT_UPDATE_LOCATIONS,LINKFUNC(updateLocations));
+REGISTER_EVENT(CBA_EVENT_UPDATE_LOCATIONS,LINKFUNC(resizeLocations));
 
 nil;

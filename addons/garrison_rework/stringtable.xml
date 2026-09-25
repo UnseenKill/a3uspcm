@@ -30,16 +30,64 @@
             <German>Filter</German>
         </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_ListHeader_Column_Capacity_DisplayName">
-            <Original>Capacity</Original>
-            <German>Kapazität</German>
+            <Original>Max</Original>
+            <German>Max</German>
         </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_ListHeader_Column_Current_DisplayName">
-            <Original>Current</Original>
-            <German>Aktuell</German>
+            <Original>Cur</Original>
+            <German>Akt</German>
         </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_ListHeader_Column_Name_DisplayName">
             <Original>Name</Original>
             <German>Name</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_AAPost_Label">
+            <Original>A/A post near %1</Original>
+            <German>A/A Stellung nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_ATPost_Label">
+            <Original>A/T post near %1</Original>
+            <German>A/T Stellung nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Airport_Label">
+            <Original>Airport near %1</Original>
+            <German>Flughafen nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Factory_Label">
+            <Original>Factory near %1</Original>
+            <German>Fabrik nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_HmgPost_Label">
+            <Original>HMG post near %1</Original>
+            <German>SMG Stellung nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_MilBase_Label">
+            <Original>Military base near %1</Original>
+            <German>Militärbasis nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Outpost_Label">
+            <Original>Outpost near %1</Original>
+            <German>Außenposten nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Resource_Label">
+            <Original>Resource near %1</Original>
+            <German>Ressource nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Roadblock_Label">
+            <Original>Roadblock near %1</Original>
+            <German>Straßensperre nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Seaport_Label">
+            <Original>Seaport near %1</Original>
+            <German>Hafen nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_SyndicateHQ_Label">
+            <Original>HQ near %1</Original>
+            <German>HQ nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Watchpost_Label">
+            <Original>Watchpost near %1</Original>
+            <German>Wachposten nahe %1</German>
         </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_MainTitle">
             <Original>Advanced Garrison Manager</Original>

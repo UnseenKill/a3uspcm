@@ -30,6 +30,9 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _control) exitWith {};
 
+private _display = uiNamespace getVariable QGVAR(display);
+_display setVariable[QGVAR(rootControl), _control];
 
+[CBA_EVENT_UPDATE_LOCATIONS] call CBA_fnc_localEvent;
 
 nil;

@@ -9,6 +9,7 @@
 #endif
 
 #include "\z\a3uspcm\addons\main\script_mod.hpp"
+#include "\z\a3uspcm\addons\util\plugins\ui_builder\script_macros.hpp"
 
 #define FILTER_BASES 0
 #define FILTER_OUTPOSTS 1
@@ -25,3 +26,5 @@
 #define CBA_EVENT_DIALOG_LOCATION_DBLCLICK QUOTE(TRIPLES(ADDON,Event,DialogLocationDblClick))
 #define CBA_EVENT_DIALOG_LOCATION_SELECTED QUOTE(TRIPLES(ADDON,Event,DialogLocationSelected))
 #define CBA_EVENT_DIALOG_UNITTYPE_SLIDER_CHANGED QUOTE(TRIPLES(ADDON,Event,DialogUnitTypeSliderChanged))
+
+#define CBA_EVENT_UPDATE_LOCATIONS QUOTE(TRIPLES(ADDON,Event,UpdateLocations))
