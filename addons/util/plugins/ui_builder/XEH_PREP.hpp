@@ -1,3 +1,4 @@
+PREP(applyCustomProperties);
 PREP(applyDimensions);
 PREP(applyHandlers);
 PREP(applyInheritableProperty);

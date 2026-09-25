@@ -164,6 +164,56 @@ class MyButton1 {
 
 Both are being called with the control and its config class as arguments.
 
+## Custom properties
+
+This component allows for custom properties to be set on individual controls.
+
+```sqf
+// Parent container element omitted for brevity
+
+class MyButton1 {
+    title = "Add 10 of something";
+    onButtonClickEvent = QUOTE(MyButton1ClickEvent);
+
+    class Properties {
+        amount = 10;
+    };
+};
+
+class MyButton2: MyButton1 {
+    title = "Add 50 of something";
+
+    class Properties {
+        amount = 50;
+    };
+};
+
+class MyButton3: MyButton1 {
+    title = "Add 100 of something";
+
+    class Properties {
+        amount = 100;
+    };
+};
+```
+
+Those properties are [set as variables][url-biki-setvariable] on the controls
+and can later be retrieved like this:
+
+```sqf
+[QUOTE(MyButton1ClickEvent), {
+    params["_control"];
+
+    private _amount = _control getVariable "amount";
+    // ...
+}] call CBA_fnc_addEventHandler;
+```
+
+> [!NOTE]
+> You cannot overwrite (inheritable) internal properties this way; you'll
+> either see an RPT warning issued about already existing properties or they'll
+> be silently overwritten during element construction.
+
 ## Element-specific configuration
 
 Depending on their underlying `type` property, there are additional properties
@@ -176,6 +226,7 @@ Property  | Type      | Description
 `columns` | `<ARRAY>` | List box column offsets array. E.g. `columns[] = {0.1, 0.5, 0.75}`
 
 [url-biki-safezone]: https://community.bistudio.com/wiki/SafeZone
+[url-biki-setvariable]: https://community.bistudio.com/wiki/setVariable
 [url-biki-controls_group]: https://community.bistudio.com/wiki/CT_CONTROLS_GROUP
 [url-biki-ctrlcreate]: https://community.bistudio.com/wiki/ctrlCreate
 [url-biki-ctrlsetfont]: https://community.bistudio.com/wiki/ctrlSetFont
