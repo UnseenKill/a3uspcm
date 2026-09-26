@@ -5,6 +5,14 @@
             <Original>A3USPCM - Garrison Management Component (Reworked)</Original>
             <German>A3USPCM - Garrison Management Komponente (Überarbeitet)</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_BtnRecruit_DisplayName">
+            <Original>Recruit</Original>
+            <German>Rekrutieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_BtnRecruit_Tooltip">
+            <Original>Recruit units to the selected location</Original>
+            <German>Einheiten an den ausgewählten Standort rekrutieren</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_HideFull_DisplayName">
             <Original>Hide Full</Original>
             <German>Volle ausblenden</German>

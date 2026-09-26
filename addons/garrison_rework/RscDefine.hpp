@@ -6,8 +6,18 @@ class RscListNBox {
     class ListScrollBar;
 };
 
+FORWARD(RscButton);
 FORWARD(RscText);
 FORWARD(RscToolbox);
+
+class GVAR(RscButton): RscButton {
+    colorBackgroundActive[] = {
+        QUOTE(profileNamespace getVariable[ARR_2(QQUOTE(GUI_BCG_RGB_R),0.13)]),
+        QUOTE(profileNamespace getVariable[ARR_2(QQUOTE(GUI_BCG_RGB_G),0.54)]),
+        QUOTE(profileNamespace getVariable[ARR_2(QQUOTE(GUI_BCG_RGB_B),0.21)]),
+        0.5
+    };
+};
 
 class GVAR(RscListNBox): RscListNBox {
     colorText[] = {0.75,0.75,0.75,1};

@@ -141,8 +141,19 @@ class GVAR(Config) {
                         w = QUOTE(10 * UI_GRID_W);
 
                         class Controls {
+                            class BtnRecruit {
+                                className = QGVAR(RscButton);
+                                text = CSTRING(Dialog_BtnRecruit_DisplayName);
+                                tooltip = CSTRING(Dialog_BtnRecruit_Tooltip);
+                                x = QUOTE(5 * UI_GRID_W);
+                                y = QUOTE(11.5 * UI_GRID_H);
+                                w = QUOTE(5 * UI_GRID_W - 4 * pixelW);
+                                h = QUOTE(1.5 * UI_GRID_H);
+                                onButtonClickEvent = CBA_EVENT_DIALOG_BTNRECRUIT_CLICK;
+                            };
+
                             class RecruitList {
-                                h = QUOTE(2 * safeZoneH / 5 - 3.5 * UI_GRID_H - 8 * pixelH);
+                                h = QUOTE(11.5 * UI_GRID_H);
 
 #define RECRUIT_ROW(Offset,Name,UnitType) \
                                     class DOUBLES(Label,Name) { \
