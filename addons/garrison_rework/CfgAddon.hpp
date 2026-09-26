@@ -146,16 +146,18 @@ class GVAR(Config) {
 
 #define RECRUIT_ROW(Offset,Name,UnitType) \
                                     class DOUBLES(Label,Name) { \
-                                        y = QUOTE((Offset) * UI_GRID_H); \
+                                        className = QGVAR(RscText); \
+                                        y = QUOTE((Offset) * 0.8 * UI_GRID_H); \
                                         w = QUOTE(4 * UI_GRID_W); \
-                                        h = QUOTE(1 * UI_GRID_H); \
+                                        h = QUOTE(0.8 * UI_GRID_H); \
                                         text = UNIT_DISPLAYNAME(Name); \
+                                        fontSize = "80%"; \
                                     }; \
                                     class DOUBLES(Slider,Name) { \
-                                        y = QUOTE((Offset) * UI_GRID_H); \
+                                        y = QUOTE((Offset) * 0.8 * UI_GRID_H); \
                                         x = QUOTE(4 * UI_GRID_W); \
                                         w = QUOTE(5 * UI_GRID_W); \
-                                        h = QUOTE(1 * UI_GRID_H); \
+                                        h = QUOTE(0.8 * UI_GRID_H); \
                                         className = QUOTE(RscXSliderH); \
                                         \
                                         class Properties { \
@@ -166,11 +168,13 @@ class GVAR(Config) {
                                         onSliderPosChangedEvent = CBA_EVENT_DIALOG_UNITTYPE_SLIDER_CHANGED; \
                                     }; \
                                     class DOUBLES(Counter,Name) { \
-                                        y = QUOTE((Offset) * UI_GRID_H); \
+                                        className = QGVAR(RscText); \
+                                        y = QUOTE((Offset) * 0.8 * UI_GRID_H); \
                                         x = QUOTE(9 * UI_GRID_W); \
                                         w = QUOTE(1 * UI_GRID_W - 8 * pixelW); \
-                                        h = QUOTE(1 * UI_GRID_H); \
+                                        h = QUOTE(0.8 * UI_GRID_H); \
                                         text = "0"; \
+                                        fontSize = "80%"; \
                                     }
 
                                 class Controls {
