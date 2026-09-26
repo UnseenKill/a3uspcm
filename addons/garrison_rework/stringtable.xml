@@ -217,5 +217,17 @@
             <Original>Squad Leader</Original>
             <German>Gruppenführer</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_RecruitConfirmation_ConfirmAll">
+            <Original>Continue hiring/firing units from this location?</Original>
+            <German>Fortfahren mit der Rekrutierung/Entlassung von Einheiten an diesem Standort?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_RecruitConfirmation_ConfirmFire">
+            <Original>Based on the sliders, some units will also be dismissed.\nContinue hiring/firing units from this location?</Original>
+            <German>Fortfahren mit der Rekrutierung/Entlassung von Einheiten an diesem Standort?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_RecruitConfirmation_Header">
+            <Original>Garrison recruitment for %1</Original>
+            <German>Rekrutierung für %1</German>
+        </Key>
     </Package>
 </Project>

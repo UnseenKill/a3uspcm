@@ -1,6 +1,7 @@
 PREP(applyPendingFilters);
 PREP(filterMarker);
 PREP(onBtnCloseClick);
+PREP(onBtnRecruitClick);
 PREP(onBroadcastDelta);
 PREP(onDialogBuilt);
 PREP(onDialogFilterChanged);

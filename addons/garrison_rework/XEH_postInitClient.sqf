@@ -2,6 +2,12 @@
 
 TRACE_1(QFUNC(postInitClient),_this);
 
+// <TODO: CBA setting>
+
+// confirmRecruitment: 0 = never, 1 = only if dismissing units, 2 = always
+GVAR(confirmRecruitment) = 2;
+// </TODO: CBA setting>
+
 // For populating UI
 [CBA_EVENT_DIALOG_BUILT, LINKFUNC(onDialogBuilt)] call CBA_fnc_addEventHandler;
 

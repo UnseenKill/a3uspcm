@@ -114,6 +114,7 @@ private _entries = markersX select {
         default { format["UNK(%1)", _x] };
     };
 
+    _entry set["label", _label];
     [_label, _entry];
 };
 
