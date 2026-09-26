@@ -30,14 +30,24 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _control) exitWith {};
 
+TRACE_2(QFUNC(onLocationSelected),_index,_control getVariable QGVAR(currentSelection));
+
+if (_index isEqualTo(_control getVariable[QGVAR(currentSelection), -1337])) exitWith {};
+_control setVariable[QGVAR(currentSelection), _index];
+
 // Toggle recruitment panel
 private _rootControl = _control getVariable QUIBVAR(root);
-private _recruitGroup = _rootControl getVariable QUIBVAR(controls) get "CenterPanel";
+private _recruitGroup = _rootControl getVariable QUIBVAR(controls) get "RecruitList";
+private _recruitControls = _recruitGroup getVariable QUIBVAR(controls);
 
 allControls _recruitGroup apply { _x ctrlEnable (_index >= 0) };
 
 // Nothing selected, exit early
-if (_index < 0) exitWith {};
+if (_index < 0) exitWith {
+    keys _recruitControls select { _x find "Counter_" == 0 } apply {
+        _recruitControls get _x ctrlSetText "";
+    };
+};
 
 private _display = uiNamespace getVariable QGVAR(display);
 private _rootControl = _display getVariable QGVAR(rootControl);
@@ -45,8 +55,41 @@ private _controls = _rootControl getVariable QUIBVAR(controls);
 private _control = _controls get "ListLocations";
 private _entry = _control getVariable QGVAR(entries) select _index;
 
+TRACE_1(QFUNC(onLocationSelected),_entry);
+
 if !assert(!isNil "_entry") exitWith {};
 
+private _garrison = garrison getVariable(_entry get "marker");
+private _garrisonSize = count _garrison;
+private _garrisonInfo = createHashMapFromArray(allControls _recruitGroup select {
+    !isNil { _x getVariable QGVAR(unitType) };
+} apply {
+    private _slider = _x;
+    private _unitType = _slider getVariable QGVAR(unitType);
+    private _unitCount = { _x isEqualTo(A3A_faction_reb get _unitType) } count _garrison;
 
+    _slider sliderSetRange[0, _unitCount + (_entry get "limit") - _garrisonSize];
+    _slider sliderSetPosition _unitCount;
+    _slider sliderSetSpeed[1, 1, 1];
+    _slider setVariable[QGVAR(entry), _entry];
+
+    private _counter = _recruitControls get format["Counter_%1", _slider getVariable QGVAR(unitName)];
+
+    [_unitType, createHashMapFromArray[
+        ["counter", _counter],
+        ["slider", _slider],
+        ["unitCount", _unitCount],
+        ["unitCountOriginal", _unitCount],
+        ["unitType", _unitType]
+    ]];
+});
+
+_recruitGroup setVariable[QGVAR(garrisonInfo), _garrisonInfo];
+
+_garrisonInfo apply {
+    _y get "slider" setVariable[QGVAR(uiLocked), true];
+    [CBA_EVENT_DIALOG_UNITTYPE_SLIDER_CHANGED, [_y get "slider", _y get "unitCount"]] call CBA_fnc_localEvent;
+    _y get "slider" setVariable[QGVAR(uiLocked), nil];
+};
 
 nil;

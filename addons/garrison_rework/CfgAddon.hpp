@@ -144,7 +144,7 @@ class GVAR(Config) {
                             class RecruitList {
                                 h = QUOTE(2 * safeZoneH / 5 - 3.5 * UI_GRID_H - 8 * pixelH);
 
-#define RECRUIT_ROW(Offset,Name) \
+#define RECRUIT_ROW(Offset,Name,UnitType) \
                                     class DOUBLES(Label,Name) { \
                                         y = QUOTE((Offset) * UI_GRID_H); \
                                         w = QUOTE(4 * UI_GRID_W); \
@@ -159,7 +159,8 @@ class GVAR(Config) {
                                         className = QUOTE(RscXSliderH); \
                                         \
                                         class Properties { \
-                                            GVAR(UnitType) = QUOTE(Name); \
+                                            GVAR(unitName) = QUOTE(Name); \
+                                            GVAR(unitType) = QUOTE(UnitType); \
                                         }; \
                                         \
                                         onSliderPosChangedEvent = CBA_EVENT_DIALOG_UNITTYPE_SLIDER_CHANGED; \
@@ -173,18 +174,18 @@ class GVAR(Config) {
                                     }
 
                                 class Controls {
-                                    RECRUIT_ROW(0,SquadLdr);
-                                    RECRUIT_ROW(1,Medic);
-                                    RECRUIT_ROW(2,Marksman);
-                                    RECRUIT_ROW(3,Rifleman);
-                                    RECRUIT_ROW(4,Grenadier);
-                                    RECRUIT_ROW(5,Autorifleman);
-                                    RECRUIT_ROW(6,AT);
-                                    RECRUIT_ROW(7,AASpecialist);
-                                    RECRUIT_ROW(8,ATSpecialist);
-                                    RECRUIT_ROW(9,Crew);
-                                    RECRUIT_ROW(10,Sapper);
-                                    RECRUIT_ROW(11,Engineer);
+                                    RECRUIT_ROW(0,SquadLdr,unitSL);
+                                    RECRUIT_ROW(1,Medic,unitMedic);
+                                    RECRUIT_ROW(2,Marksman,unitSniper);
+                                    RECRUIT_ROW(3,Rifleman,unitRifle);
+                                    RECRUIT_ROW(4,Grenadier,unitGL);
+                                    RECRUIT_ROW(5,Autorifleman,unitMG);
+                                    RECRUIT_ROW(6,AT,unitLAT);
+                                    RECRUIT_ROW(7,AASpecialist,unitAA);
+                                    RECRUIT_ROW(8,ATSpecialist,unitAT);
+                                    RECRUIT_ROW(9,Crew,unitCrew);
+                                    RECRUIT_ROW(10,Sapper,unitExp);
+                                    RECRUIT_ROW(11,Engineer,unitEng);
                                 };
                             };
                         };
@@ -340,14 +341,14 @@ class GVAR(Config) {
                                 };
                             };
 
-#ifdef __A3_DEBUG__
                             class ADTMagicWordEdit {
-                                w = "100%";
                                 className = QUOTE(RscEdit);
-                                y = QUOTE(2 * safeZoneH / 5 - 3.5 * UI_GRID_H - 8 * pixelH);
+                                x = QUOTE(6 * UI_GRID_W - 8 * pixelW);
+                                y = 0;
+                                w = QUOTE(4 * UI_GRID_W);
                                 h = QUOTE(1 * UI_GRID_H);
+                                colorBackground[] = {0.5,0,0,0.9};
                             };
-#endif
                         };
                     };
                 };
