@@ -46,3 +46,5 @@ shadowed = "Warning"
 short_circuit_bool_var = false
 # Promoted to warning
 unused = "Warning"
+# Promoted to warning
+undefined = "Warning"

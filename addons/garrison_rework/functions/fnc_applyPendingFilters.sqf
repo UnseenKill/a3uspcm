@@ -33,8 +33,6 @@ private _display = uiNamespace getVariable QGVAR(display);
 
 _filterGroup setVariable[QGVAR(pendingFiltersTTL), diag_tickTime + 0.75];
 
-TRACE_1("B",_abort);
-
 if (_abort) exitWith {};
 
 waitUntil { isNull _filterGroup || { _filterGroup getVariable QGVAR(pendingFiltersTTL) < diag_tickTime } };

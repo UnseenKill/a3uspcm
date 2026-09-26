@@ -22,7 +22,7 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(filterMarker),_this);
+//TRACE_1(QFUNC(filterMarker),_this);
 
 if !assert(params[
     ["_marker", nil, [""]],
@@ -31,28 +31,26 @@ if !assert(params[
 
 if (isNil QGVAR(locationFilters)) then {
     GVAR(locationFilters) = compileFinal createHashMapFromArray[
-        [FILTER_AT_CAPACITY, { count(garrison getVariable[_this, []]) < ([_this] call A3A_fnc_getGarrisonLimit) }],
         [FILTER_BASES, { _this in(milbases + airportsX + seaports + ["Synd_HQ"]) }],
         [FILTER_OUTPOSTS, { _this in outposts }],
-        [FILTER_OWNER_INVADERS, { true }],
-        [FILTER_OWNER_OCCUPIERS, { true }],
-        [FILTER_OWNER_REBELS, { true }],
         [FILTER_POSTS, { _this in(aapostsFIA + atpostsFIA + hmgpostsFIA + roadblocksFIA) }],
         [FILTER_RESOURCES, { _this in(resourcesX + factories) }],
         [FILTER_TOWNS, { _this in citiesX }]
     ];
 };
 
-private _match = _filters select {
-    _marker call(GVAR(locationFilters) getOrDefault[_x, { false }]);
+private _hasOwnerShip = call {
+    if ((FILTER_OWNER_REBELS in _filters) && { sidesX getVariable[_marker, sideUnknown] isEqualTo resistance }) exitWith { true };
+    if (hideEnemyMarkers && { markerAlpha _marker == 0 }) exitWith { false };
+    if ((FILTER_OWNER_OCCUPIERS in _filters) && { sidesX getVariable[_marker, sideUnknown] isEqualTo west }) exitWith { true };
+    if ((FILTER_OWNER_INVADERS in _filters) && { sidesX getVariable[_marker, sideUnknown] isEqualTo east }) exitWith { true };
+    false;
 };
 
-_match sort true;
+if !(_hasOwnerShip) exitWith { false };
 
-if (_match isNotEqualTo _filters) exitWith { false };
+if ((FILTER_AT_CAPACITY in _filters) && { count(garrison getVariable[_marker, []]) >= ([_marker] call A3A_fnc_getGarrisonLimit) }) exitWith { false };
 
-private _markerVisible = (!hideEnemyMarkers || { markerAlpha _marker > 0 });
-
-((FILTER_OWNER_REBELS in _filters) && { sidesX getVariable[_marker, sideUnknown] isEqualTo resistance }) ||
-{ (FILTER_OWNER_OCCUPIERS in _filters) && { _markerVisible && { sidesX getVariable[_marker, sideUnknown] isEqualTo west } } } ||
-{ (FILTER_OWNER_INVADERS in _filters) && { _markerVisible && { sidesX getVariable[_marker, sideUnknown] isEqualTo east } } };
+keys GVAR(locationFilters) findIf {
+    (_x in _filters) && { _marker call (GVAR(locationFilters) get _x) }
+} != -1;
