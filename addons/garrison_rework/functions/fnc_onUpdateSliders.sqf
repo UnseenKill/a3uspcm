@@ -43,9 +43,9 @@ private _garrisonCount = [_garrisonInfo, 0, {
 _garrisonInfo apply {
     private _info = _y;
 
-    if (_y get "slider" isNotEqualTo _slider) then {
-        private _max = _garrisonLimit - _garrisonCount + (_y get "unitCount");
-        _y get "slider" sliderSetRange[0, _max max 0];
+    if (_info get "slider" isNotEqualTo _slider) then {
+        private _max = _garrisonLimit - _garrisonCount + (_info get "unitCount");
+        _info get "slider" sliderSetRange[0, _max max 0];
     };
 };
 
