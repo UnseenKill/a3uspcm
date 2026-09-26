@@ -39,6 +39,8 @@ _thisInfo set["unitCount", _value];
 
 if !(isNil { _control getVariable QGVAR(uiLocked)}) exitWith {};
 
+[CBA_EVENT_DIALOG_UPDATE_DELTA, [_group]] call CBA_fnc_localEvent;
+[CBA_EVENT_DIALOG_UPDATE_PRICETAG, [_group]] call CBA_fnc_localEvent;
 [CBA_EVENT_DIALOG_UPDATE_SLIDERS, [_control]] call CBA_fnc_localEvent;
 
 nil;

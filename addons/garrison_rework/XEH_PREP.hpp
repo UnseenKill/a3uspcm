@@ -10,6 +10,8 @@ PREP(onLocationSelected);
 PREP(onUnitTypeSliderChanged);
 PREP(openManager);
 PREP(resizeLocations);
+PREP(updateDelta);
 PREP(updateGarrisonInfo);
 PREP(updateLocations);
+PREP(updatePriceTag);
 PREP(updateSliders);

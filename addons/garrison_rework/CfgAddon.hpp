@@ -148,16 +148,16 @@ class GVAR(Config) {
                                     class DOUBLES(Label,Name) { \
                                         className = QGVAR(RscText); \
                                         y = QUOTE((Offset) * 0.8 * UI_GRID_H); \
-                                        w = QUOTE(3 * UI_GRID_W); \
+                                        w = QUOTE(2.5 * UI_GRID_W); \
                                         h = QUOTE(0.8 * UI_GRID_H); \
                                         text = UNIT_DISPLAYNAME(Name); \
                                         fontSize = "80%"; \
                                     }; \
                                     class DOUBLES(PriceTag,Name) { \
                                         className = QGVAR(RscTextRightAlign); \
-                                        x = QUOTE(3 * UI_GRID_W); \
+                                        x = QUOTE(2.5 * UI_GRID_W); \
                                         y = QUOTE((Offset) * 0.8 * UI_GRID_H); \
-                                        w = QUOTE(1 * UI_GRID_W); \
+                                        w = QUOTE(1.5 * UI_GRID_W); \
                                         h = QUOTE(0.8 * UI_GRID_H); \
                                         fontSize = "80%"; \
                                         \
@@ -202,6 +202,34 @@ class GVAR(Config) {
                                     RECRUIT_ROW(9,Crew,unitCrew);
                                     RECRUIT_ROW(10,Sapper,unitExp);
                                     RECRUIT_ROW(11,Engineer,unitEng);
+
+                                    class Separator: Separator {
+                                        y = QUOTE(10 * UI_GRID_H);
+                                        h = 0;
+                                        w = "100%";
+                                    };
+
+                                    class LabelTotal {
+                                        className = QGVAR(RscText);
+                                        y = QUOTE(10 * UI_GRID_H);
+                                        w = QUOTE(2.5 * UI_GRID_W);
+                                        h = QUOTE(1 * UI_GRID_H);
+                                        text = CSTRING(Dialog_Recruitment_LabelTotal);
+                                        fontSize = "80%";
+                                    };
+
+                                    class PriceTagTotal: LabelTotal {
+                                        className = QGVAR(RscTextRightAlign);
+                                        x = QUOTE(2.5 * UI_GRID_W);
+                                        w = QUOTE(1.5 * UI_GRID_W);
+                                        text = "";
+                                    };
+
+                                    class DeltaInfo: PriceTagTotal {
+                                        x = QUOTE(9 * UI_GRID_W);
+                                        w = QUOTE(1 * UI_GRID_W - 8 * pixelW);
+                                        text = "";
+                                    };
                                 };
                             };
                         };

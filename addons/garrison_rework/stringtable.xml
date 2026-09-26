@@ -109,6 +109,10 @@
             <Original>Advanced Garrison Manager</Original>
             <German>Garnisonsverwaltung</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Recruitment_LabelTotal">
+            <Original>Total spend:</Original>
+            <German>Gesamtausgaben:</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_AASpecialist_Abbreviated">
             <Original>AA</Original>
             <German>FlAbw</German>

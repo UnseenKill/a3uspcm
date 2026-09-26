@@ -30,8 +30,6 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _control) exitWith {};
 
-TRACE_2(QFUNC(onLocationSelected),_index,_control getVariable QGVAR(currentSelection));
-
 if (_index isEqualTo(_control getVariable[QGVAR(currentSelection), -1337])) exitWith {};
 _control setVariable[QGVAR(currentSelection), _index];
 
@@ -44,6 +42,11 @@ allControls _recruitGroup apply { _x ctrlEnable (_index >= 0) };
 
 // Nothing selected, exit early
 if (_index < 0) exitWith {
+    _recruitGroup setVariable[QGVAR(garrisonInfo), nil];
+
+    [CBA_EVENT_DIALOG_UPDATE_DELTA, [_recruitGroup]] call CBA_fnc_localEvent;
+    [CBA_EVENT_DIALOG_UPDATE_PRICETAG, [_recruitGroup]] call CBA_fnc_localEvent;
+
     keys _recruitControls select { _x find "Counter_" == 0 } apply {
         _recruitControls get _x ctrlSetText "";
     };
@@ -60,6 +63,9 @@ TRACE_1(QFUNC(onLocationSelected),_entry);
 if !assert(!isNil "_entry") exitWith {};
 
 private _garrison = garrison getVariable(_entry get "marker");
+
+if !assert(!isNil "_garrison") exitWith { [_control, -1] call FUNC(onLocationSelected) };
+
 private _garrisonSize = count _garrison;
 private _garrisonInfo = createHashMapFromArray(allControls _recruitGroup select {
     !isNil { _x getVariable QGVAR(unitType) };
@@ -85,6 +91,9 @@ private _garrisonInfo = createHashMapFromArray(allControls _recruitGroup select 
 });
 
 _recruitGroup setVariable[QGVAR(garrisonInfo), _garrisonInfo];
+
+[CBA_EVENT_DIALOG_UPDATE_DELTA, [_recruitGroup]] call CBA_fnc_localEvent;
+[CBA_EVENT_DIALOG_UPDATE_PRICETAG, [_recruitGroup]] call CBA_fnc_localEvent;
 
 _garrisonInfo apply {
     _y get "slider" setVariable[QGVAR(uiLocked), true];
