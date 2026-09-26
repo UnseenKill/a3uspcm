@@ -36,3 +36,7 @@ class GVAR(RscToolboxYesNo): RscToolbox {
 class GVAR(RscText): RscText {
     colorText[] = {0.75,0.75,0.75,1};
 };
+
+class GVAR(RscTextRightAlign): GVAR(RscText) {
+    style = ST_RIGHT;
+};

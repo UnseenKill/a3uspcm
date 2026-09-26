@@ -54,6 +54,17 @@ _filtersToChecksMap apply {
     _toolboxControl lbSetCurSel parseNumber(_filter in _filters);
 };
 
+allControls(_control getVariable QUIBVAR(controls) get "RecruitList") apply {
+    if (_x getVariable QUIBVAR(configName) find "Slider_" == 0) then {
+        private _slider = _x;
+        private _price = server getVariable(A3A_faction_reb get(_slider getVariable QGVAR(unitType)));
+        private _priceTag = _control getVariable QUIBVAR(controls) get format["PriceTag_%1", _slider getVariable QGVAR(unitName)];
+
+        _slider setVariable[QGVAR(unitPrice), _price];
+        _priceTag ctrlSetText format["%1 %2", [_price, 0, 0, true] call CBA_fnc_formatNumber, A3A_faction_civ get "currencySymbol"];
+    };
+};
+
 [CBA_EVENT_UPDATE_LOCATIONS] call CBA_fnc_localEvent;
 
 nil;

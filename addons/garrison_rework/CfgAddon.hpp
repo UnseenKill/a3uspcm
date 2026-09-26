@@ -148,10 +148,22 @@ class GVAR(Config) {
                                     class DOUBLES(Label,Name) { \
                                         className = QGVAR(RscText); \
                                         y = QUOTE((Offset) * 0.8 * UI_GRID_H); \
-                                        w = QUOTE(4 * UI_GRID_W); \
+                                        w = QUOTE(3 * UI_GRID_W); \
                                         h = QUOTE(0.8 * UI_GRID_H); \
                                         text = UNIT_DISPLAYNAME(Name); \
                                         fontSize = "80%"; \
+                                    }; \
+                                    class DOUBLES(PriceTag,Name) { \
+                                        className = QGVAR(RscTextRightAlign); \
+                                        x = QUOTE(3 * UI_GRID_W); \
+                                        y = QUOTE((Offset) * 0.8 * UI_GRID_H); \
+                                        w = QUOTE(1 * UI_GRID_W); \
+                                        h = QUOTE(0.8 * UI_GRID_H); \
+                                        fontSize = "80%"; \
+                                        \
+                                        class Properties { \
+                                            GVAR(unitType) = QUOTE(UnitType); \
+                                        }; \
                                     }; \
                                     class DOUBLES(Slider,Name) { \
                                         y = QUOTE((Offset) * 0.8 * UI_GRID_H); \
