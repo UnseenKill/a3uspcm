@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_rework_fnc_resizeLocations
+Function: A3USPCM_garrison_rework_fnc_onResizeLocations
 
 Description:
     CBA_EVENT_UPDATE_LOCATIONS event handler
@@ -22,7 +22,7 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(resizeLocations),_this);
+TRACE_1(QFUNC(onResizeLocations),_this);
 
 private _display = uiNamespace getVariable QGVAR(display);
 private _rootControl = _display getVariable QGVAR(rootControl);

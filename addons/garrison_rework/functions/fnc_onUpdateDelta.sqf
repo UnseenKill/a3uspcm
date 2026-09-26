@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_rework_fnc_updateDelta
+Function: A3USPCM_garrison_rework_fnc_onUpdateDelta
 
 Description:
     CBA_EVENT_DIALOG_UPDATE_DELTA event handler
@@ -22,7 +22,7 @@ Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 #pragma hemtt ignore_variables ["_y"]
-TRACE_1(QFUNC(updateDelta),_this);
+TRACE_1(QFUNC(onUpdateDelta),_this);
 
 if !assert(params[
     ["_group", nil, [controlNull]]
@@ -43,6 +43,8 @@ private _garrisonCount = [_garrisonInfo, [0, 0], {
 }] call CBA_fnc_inject;
 
 private _delta = (_garrisonCount select 0) - (_garrisonCount select 1);
+
+[CBA_EVENT_UPDATE_DELTA, [_delta]] call CBA_fnc_localEvent;
 
 _control ctrlSetText format["%1%2", [["±", "+"] select(_delta > 0), "-"] select(_delta < 0), abs _delta];
 _control ctrlSetTooltip format["%1 / %2", _garrisonCount select 0, _garrisonCount select 1];

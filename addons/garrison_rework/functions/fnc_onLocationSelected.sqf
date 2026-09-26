@@ -44,6 +44,7 @@ allControls _recruitGroup apply { _x ctrlEnable (_index >= 0) };
 if (_index < 0) exitWith {
     _recruitGroup setVariable[QGVAR(garrisonInfo), nil];
 
+    [CBA_EVENT_UPDATE_DELTA, [0]] call CBA_fnc_localEvent;
     [CBA_EVENT_DIALOG_UPDATE_DELTA, [_recruitGroup]] call CBA_fnc_localEvent;
     [CBA_EVENT_DIALOG_UPDATE_PRICETAG, [_recruitGroup]] call CBA_fnc_localEvent;
 

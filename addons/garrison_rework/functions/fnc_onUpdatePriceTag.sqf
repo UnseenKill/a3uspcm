@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_rework_fnc_updatePriceTag
+Function: A3USPCM_garrison_rework_fnc_onUpdatePriceTag
 
 Description:
     CBA_EVENT_DIALOG_UPDATE_PRICETAG event handler
@@ -22,7 +22,7 @@ Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 #pragma hemtt ignore_variables ["_y"]
-TRACE_1(QFUNC(updatePriceTag),_this);
+TRACE_1(QFUNC(onUpdatePriceTag),_this);
 
 if !assert(params[
     ["_group", nil, [controlNull]]
@@ -40,12 +40,12 @@ private _spend = [_garrisonInfo, 0, {
     private _price = _y get "slider" getVariable QGVAR(unitPrice);
     private _delta = (_y get "unitCountOriginal") - (_y get "unitCount");
 
-    TRACE_3(QFUNC(updatePriceTag),_x,_price,_delta);
+    TRACE_3(QFUNC(onUpdatePriceTag),_x,_price,_delta);
 
     _accumulator + (_price * _delta);
 }] call CBA_fnc_inject;
 
-TRACE_1(QFUNC(updatePriceTag),_spend);
+TRACE_1(QFUNC(onUpdatePriceTag),_spend);
 
 if (_spend isEqualTo 0) then {
     _control ctrlSetTextColor[0.75, 0.75, 0.75, 1];

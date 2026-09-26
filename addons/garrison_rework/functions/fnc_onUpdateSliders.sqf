@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /* ----------------------------------------------------------------------------
-Function: A3USPCM_garrison_rework_fnc_updateSliders
+Function: A3USPCM_garrison_rework_fnc_onUpdateSliders
 
 Description:
     CBA_EVENT_DIALOG_UPDATE_SLIDERS event handler
@@ -25,7 +25,7 @@ Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 #pragma hemtt ignore_variables ["_y"]
-TRACE_1(QFUNC(updateSliders),_this);
+TRACE_1(QFUNC(onUpdateSliders),_this);
 
 if !assert(params[
     ["_slider", nil, [controlNull]]
