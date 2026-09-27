@@ -191,7 +191,7 @@ class GVAR(Config) {
                                         onSliderPosChangedEvent = CBA_EVENT_DIALOG_UNITTYPE_SLIDER_CHANGED; \
                                     }; \
                                     class DOUBLES(Counter,Name) { \
-                                        className = QGVAR(RscText); \
+                                        className = QGVAR(RscTextRightAlign); \
                                         y = QUOTE((Offset) * 0.8 * UI_GRID_H); \
                                         x = QUOTE(9 * UI_GRID_W); \
                                         w = QUOTE(1 * UI_GRID_W - 8 * pixelW); \
