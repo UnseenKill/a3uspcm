@@ -50,9 +50,11 @@ if (isArray(_config >> "colorBackground")) then {
     private _colorBackground = [_controlsGroup, "colorBackground", true] call FUNC(parseControlProperty);
     _colorBackground = [_colorBackground] call FUNC(parseColor);
 
-    private _controlClass = [_config, "backgroundControlClass", "RscText"] call CBA_fnc_getConfigEntry;
+    private _controlClass = [_config >> "backgroundControlClass", "STRING", "RscText"] call CBA_fnc_getConfigEntry;
     private _dimensions = _controlsGroup getVariable QGVAR(dimensions);
     private _background = _display ctrlCreate[_controlClass, [] call FUNC(getNextIDC), _controlsGroup];
+
+    _background setVariable[QUIBVAR(createClass), _controlClass];
     _background ctrlSetBackgroundColor _colorBackground;
     _background ctrlSetPosition(_dimensions vectorMultiply[0, 0, 1, 1]);
     _background ctrlCommit 0;
