@@ -117,6 +117,14 @@
             <Original>Advanced Garrison Manager</Original>
             <German>Garnisonsverwaltung</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Message_EnemiesTooClose">
+            <Original>Enemies are close to selected location.</Original>
+            <German>Feinde sind in der Nähe des ausgewählten Standorts.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Message_LocationNotFriendly">
+            <Original>Non-allied location selected.</Original>
+            <German>Nicht-alliierter Standort ausgewählt.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Recruitment_LabelTotal">
             <Original>Total spend:</Original>
             <German>Gesamtausgaben:</German>

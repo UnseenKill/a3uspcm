@@ -41,12 +41,25 @@ private _recruitControls = _recruitGroup getVariable QUIBVAR(controls);
 allControls _recruitGroup apply { _x ctrlEnable (_index >= 0) };
 
 private _entry = _control getVariable QGVAR(entries) select _index;
+private _selectionInvalid = _index < 0;
+private _displayMessage = [""];
 
+if (!_selectionInvalid && { !(_entry get "friendly") }) then {
+    _selectionInvalid = true;
+    _displayMessage = [LLSTRING(Dialog_Message_LocationNotFriendly)];
+};
+
+if (!_selectionInvalid && GVAR(enemiesCloseCheck) && { _entry get "enemiesClose" }) then {
+    _selectionInvalid = true;
+    _displayMessage = [LLSTRING(Dialog_Message_EnemiesTooClose), true];
+};
+    
 // Nothing selected or not friendly, exit early
-if (_index < 0 || { !(_entry get "friendly") }) exitWith {
+if (_selectionInvalid) exitWith {
     _control setVariable[QGVAR(currentEntry), nil];
     _recruitGroup setVariable[QGVAR(garrisonInfo), nil];
 
+    [CBA_EVENT_SHOW_MESSAGE, _displayMessage] call CBA_fnc_localEvent;
     [CBA_EVENT_UPDATE_DELTA, [0]] call CBA_fnc_localEvent;
     [CBA_EVENT_DIALOG_UPDATE_DELTA, [_recruitGroup]] call CBA_fnc_localEvent;
     [CBA_EVENT_DIALOG_UPDATE_PRICETAG, [_recruitGroup]] call CBA_fnc_localEvent;
@@ -65,6 +78,8 @@ if !assert(!isNil "_entry") exitWith {};
 private _garrison = garrison getVariable(_entry get "marker");
 
 if !assert(!isNil "_garrison") exitWith { [_control, -1] call FUNC(onLocationSelected) };
+
+[CBA_EVENT_SHOW_MESSAGE] call CBA_fnc_localEvent;
 
 private _garrisonSize = count _garrison;
 private _garrisonInfo = createHashMapFromArray(allControls _recruitGroup select {

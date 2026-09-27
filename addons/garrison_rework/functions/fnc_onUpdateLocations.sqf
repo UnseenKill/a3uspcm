@@ -42,13 +42,15 @@ private _filters = _display getVariable QGVAR(filters);
 private _entries = markersX select {
     [_x, _filters] call FUNC(filterMarker);
 } apply {
+    private _side = sidesX getVariable[_x, sideUnknown];
     private _entry = createHashMapFromArray[
         ["picture", ""],
         ["limit", [_x] call A3A_fnc_getGarrisonLimit],
         ["marker", _x],
         ["position", markerPos _x],
-        ["side", sidesX getVariable[_x, sideUnknown]],
-        ["friendly", sidesX getVariable[_x, sideUnknown] isEqualTo resistance]
+        ["side", _side],
+        ["friendly", _side isEqualTo resistance],
+        ["enemiesClose", (_side isEqualTo resistance) && { [_x] call A3A_fnc_enemyNearCheck }]
     ];
 
     _entry set["color", switch (_entry get "side") do {
@@ -133,6 +135,11 @@ _entries apply {
 
     _control lnbSetPicture[[_index, 0], _entry get "picture"];
     _control lnbSetPictureColor[[_index, 0], _entry get "color"];
+
+    if (_entry get "enemiesClose") then {
+        _control lnbSetPictureRight[[_index, 0], "\a3\ui_f\data\igui\cfg\simpletasks\types\attack_ca.paa"];
+        _control lnbSetPictureColorRight[[_index, 0], [0.8, 0, 0, 1]];
+    };
 };
 
 _control lnbSetCurSelRow -1;

@@ -9,6 +9,9 @@ GVAR(allowOwnershipFilter) = true;
 // allowUnitDismissal: <BOOL>
 GVAR(allowUnitDismissal) = true;
 
+// enemiesCloseCheck: <BOOL>
+GVAR(enemiesCloseCheck) = true;
+
 // confirmRecruitment: 0 = never, 1 = only if dismissing units, 2 = always
 GVAR(confirmRecruitment) = 2;
 // </TODO: CBA setting>
