@@ -38,15 +38,19 @@ class GVAR(RscListNBoxHeader): GVAR(RscListNBox) {
     };
 };
 
-class GVAR(RscToolboxYesNo): RscToolbox {
-    columns = 2;
-    strings[] = {__EVAL(localize "str_lib_info_no"), __EVAL(localize "str_lib_info_yes")};
-};
-
 class GVAR(RscText): RscText {
     colorText[] = {0.75,0.75,0.75,1};
 };
 
+class GVAR(RscTextMessage): GVAR(RscText) {
+    style = ST_CENTER;
+};
+
 class GVAR(RscTextRightAlign): GVAR(RscText) {
     style = ST_RIGHT;
+};
+
+class GVAR(RscToolboxYesNo): RscToolbox {
+    columns = 2;
+    strings[] = {__EVAL(localize "str_lib_info_no"), __EVAL(localize "str_lib_info_yes")};
 };

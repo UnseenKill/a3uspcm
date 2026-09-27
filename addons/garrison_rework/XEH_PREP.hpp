@@ -10,6 +10,7 @@ PREP(onDialogUnloaded);
 PREP(onLocationDblClick);
 PREP(onLocationSelected);
 PREP(onResizeLocations);
+PREP(onShowMessage);
 PREP(onUnitTypeSliderChanged);
 PREP(onUpdateDelta);
 PREP(onUpdateLocations);

@@ -154,6 +154,8 @@ class GVAR(Config) {
 
                             class RecruitList {
                                 h = QUOTE(11.5 * UI_GRID_H);
+                                backgroundControlClass = QGVAR(RscTextMessage);
+                                colorBackground[] = {0,0,0,0};
 
 #define RECRUIT_ROW(Offset,Name,UnitType) \
                                     class DOUBLES(Label,Name) { \
