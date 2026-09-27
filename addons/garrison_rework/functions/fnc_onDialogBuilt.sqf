@@ -72,4 +72,8 @@ allControls(_control getVariable QUIBVAR(controls) get "RecruitList") apply {
 
 [CBA_EVENT_UPDATE_LOCATIONS] call CBA_fnc_localEvent;
 
+#ifdef __A3_DEBUG__
+[_control] call ESFUNC(util,ui_builder,dumpControl);
+#endif // __A3_DEBUG__
+
 nil;
