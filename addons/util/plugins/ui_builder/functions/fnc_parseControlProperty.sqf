@@ -37,15 +37,12 @@ private _recurse = param[2, false, [true]];
 private _config = param[3, _control getVariable QUIBVAR(config), [configNull]];
 private _convertString = {
     private _value = _this;
-    private _match = _value regexMatch "^-?\d+%$";
     private _parent = ctrlParentControlsGroup _control;
     private _dimensions = if (isNull _parent) then {
         [0, 0, safeZoneW, safeZoneH, safeZoneX, safeZoneY];
     } else {
         ctrlPosition _parent;
     };
-
-    //TRACE_3(QFUNC(parseControlProperty),_value,_match,_dimensions);
 
     switch true do {
         case (_value isEqualTo ""): { 0 };
