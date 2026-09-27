@@ -11,6 +11,7 @@ PREP(onLocationDblClick);
 PREP(onLocationSelected);
 PREP(onResizeLocations);
 PREP(onShowMessage);
+PREP(onToggleInteraction);
 PREP(onUnitTypeSliderChanged);
 PREP(onUpdateDelta);
 PREP(onUpdateLocations);
