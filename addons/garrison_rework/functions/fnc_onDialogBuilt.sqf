@@ -35,23 +35,28 @@ _display setVariable[QGVAR(rootControl), _control];
 
 private _filters = _display getVariable QGVAR(filters);
 private _filtersToChecksMap = createHashMapFromArray[
-    [FILTER_AT_CAPACITY, "ChecksHideFull"],
-    [FILTER_BASES, "ChecksShowBases"],
-    [FILTER_OUTPOSTS, "ChecksShowOutposts"],
-    [FILTER_OWNER_REBELS, "ChecksOwnerFilterRebels"],
-    [FILTER_OWNER_OCCUPIERS, "ChecksOwnerFilterOccupiers"],
-    [FILTER_OWNER_INVADERS, "ChecksOwnerFilterInvaders"],
-    [FILTER_POSTS, "ChecksShowPosts"],
-    [FILTER_RESOURCES, "ChecksShowResources"],
-    [FILTER_TOWNS, "ChecksShowTowns"]
+    [FILTER_AT_CAPACITY, ["ChecksHideFull"]],
+    [FILTER_BASES, ["ChecksShowBases"]],
+    [FILTER_OUTPOSTS, ["ChecksShowOutposts"]],
+    [FILTER_OWNER_REBELS, ["ChecksOwnerFilterRebels", { GVAR(allowOwnershipFilter) }]],
+    [FILTER_OWNER_OCCUPIERS, ["ChecksOwnerFilterOccupiers", { GVAR(allowOwnershipFilter) }]],
+    [FILTER_OWNER_INVADERS, ["ChecksOwnerFilterInvaders", { GVAR(allowOwnershipFilter) }]],
+    [FILTER_POSTS, ["ChecksShowPosts"]],
+    [FILTER_RESOURCES, ["ChecksShowResources"]],
+    [FILTER_TOWNS, ["ChecksShowTowns"]]
 ];
 
 _filtersToChecksMap apply {
+    _y params["_className", ["_condition", nil, [{}]]];
     private _filter = _x;
-    private _className = _y;
     private _toolboxControl = _control getVariable QUIBVAR(controls) get _className;
 
     _toolboxControl lbSetCurSel parseNumber(_filter in _filters);
+
+    if (!isNil "_condition" && { !([_className, _filter] call _condition) }) then {
+        _toolboxControl ctrlShow false;
+        _control getVariable QUIBVAR(controls) get(_toolboxControl getVariable QGVAR(label)) ctrlShow false;
+    };
 };
 
 allControls(_control getVariable QUIBVAR(controls) get "RecruitList") apply {

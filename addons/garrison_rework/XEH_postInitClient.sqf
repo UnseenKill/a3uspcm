@@ -3,6 +3,9 @@
 TRACE_1(QFUNC(postInitClient),_this);
 
 // <TODO: CBA setting>
+// allowOwnershipFilter: <BOOL>
+GVAR(allowOwnershipFilter) = true;
+
 // allowUnitDismissal: <BOOL>
 GVAR(allowUnitDismissal) = true;
 

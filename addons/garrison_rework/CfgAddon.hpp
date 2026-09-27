@@ -365,6 +365,7 @@ class GVAR(Config) {
 
                                         class Properties {
                                             GVAR(filterType) = FILTER_OWNER_REBELS;
+                                            GVAR(label) = QUOTE(LabelOwnerFilterRebels);
                                         };
                                     };
 
@@ -378,6 +379,7 @@ class GVAR(Config) {
 
                                         class Properties {
                                             GVAR(filterType) = FILTER_OWNER_OCCUPIERS;
+                                            GVAR(label) = QUOTE(LabelOwnerFilterOccupiers);
                                         };
                                     };
 
@@ -391,6 +393,7 @@ class GVAR(Config) {
 
                                         class Properties {
                                             GVAR(filterType) = FILTER_OWNER_INVADERS;
+                                            GVAR(label) = QUOTE(LabelOwnerFilterInvaders);
                                         };
                                     };
                                 };
