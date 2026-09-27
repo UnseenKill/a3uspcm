@@ -3,6 +3,8 @@
 TRACE_1(QFUNC(postInitClient),_this);
 
 // <TODO: CBA setting>
+// allowUnitDismissal: <BOOL>
+GVAR(allowUnitDismissal) = true;
 
 // confirmRecruitment: 0 = never, 1 = only if dismissing units, 2 = always
 GVAR(confirmRecruitment) = 2;

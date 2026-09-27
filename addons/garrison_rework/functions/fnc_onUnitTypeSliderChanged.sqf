@@ -34,6 +34,13 @@ private _group = ctrlParentControlsGroup _control;
 private _garrisonInfo = _group getVariable QGVAR(garrisonInfo);
 private _thisInfo = _garrisonInfo get(_control getVariable QGVAR(unitType));
 
+if !(GVAR(allowUnitDismissal)) then {
+    if (_value < _thisInfo get "unitCountOriginal") then {
+        _value = _thisInfo get "unitCountOriginal";
+        _control sliderSetPosition _value;
+    };
+};
+
 _thisInfo get "counter" ctrlSetText format["%1", _value];
 _thisInfo set["unitCount", _value];
 
