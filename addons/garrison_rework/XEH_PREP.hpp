@@ -9,6 +9,7 @@ PREP(onDialogLoaded);
 PREP(onDialogUnloaded);
 PREP(onLocationDblClick);
 PREP(onLocationSelected);
+PREP(onReloadLocation);
 PREP(onResizeLocations);
 PREP(onShowMessage);
 PREP(onToggleInteraction);
