@@ -47,7 +47,8 @@ private _entries = markersX select {
         ["limit", [_x] call A3A_fnc_getGarrisonLimit],
         ["marker", _x],
         ["position", markerPos _x],
-        ["side", sidesX getVariable[_x, sideUnknown]]
+        ["side", sidesX getVariable[_x, sideUnknown]],
+        ["friendly", sidesX getVariable[_x, sideUnknown] isEqualTo resistance]
     ];
 
     _entry set["color", switch (_entry get "side") do {

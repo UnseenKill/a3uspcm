@@ -40,8 +40,10 @@ private _recruitControls = _recruitGroup getVariable QUIBVAR(controls);
 
 allControls _recruitGroup apply { _x ctrlEnable (_index >= 0) };
 
-// Nothing selected, exit early
-if (_index < 0) exitWith {
+private _entry = _control getVariable QGVAR(entries) select _index;
+
+// Nothing selected or not friendly, exit early
+if (_index < 0 || { !(_entry get "friendly") }) exitWith {
     _control setVariable[QGVAR(currentEntry), nil];
     _recruitGroup setVariable[QGVAR(garrisonInfo), nil];
 
@@ -54,7 +56,6 @@ if (_index < 0) exitWith {
     };
 };
 
-private _entry = _control getVariable QGVAR(entries) select _index;
 _control setVariable[QGVAR(currentEntry), _entry];
 
 TRACE_1(QFUNC(onLocationSelected),_entry);
