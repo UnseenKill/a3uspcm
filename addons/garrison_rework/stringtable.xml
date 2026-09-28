@@ -133,6 +133,18 @@
             <Original>Recruitment failed to complete. Server request timed out.</Original>
             <German>Rekrutierung konnte nicht abgeschlossen werden. Serveranfrage zeitüberschritten.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_RecruitingWarning_HRBufferExceeded">
+            <Original>Number of recruited units would set HR below safety buffer of %1 HR.</Original>
+            <German>Die Anzahl der rekrutierten Einheiten würde HR unter die Grenze von %1 HR setzen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_RecruitingWarning_HRDepleted">
+            <Original>You're recruiting more units than HR is available.</Original>
+            <German>Du rekrutierst mehr Einheiten, als HR verfügbar ist.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_RecruitingWarning_InsufficientMoneyz">
+            <Original>Insufficient funds to complete recruitment.</Original>
+            <German>Geld reicht nicht, um die Rekrutierung abzuschließen.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Recruitment_LabelTotal">
             <Original>Total spend:</Original>
             <German>Gesamtausgaben:</German>
@@ -304,6 +316,14 @@
         <Key ID="STR_A3USPCM_Garrison_Rework_Settings_enemiesCloseCheck_Tooltip">
             <Original>Enable or disable the check for nearby enemies when managing the garrison.</Original>
             <German>Aktivieren oder Deaktivieren der Überprüfung auf nahe Feinde bei der Verwaltung der Garnison.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_hrBuffer_DisplayName">
+            <Original>HR Buffer</Original>
+            <German>HR-Puffer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_hrBuffer_Tooltip">
+            <Original>Keep HR above this threshold. Cannot recruit anymore units if you have less or equal to this many HR.</Original>
+            <German>Hält HR über diesem Schwellenwert. Es können keine weiteren Einheiten rekrutiert werden, wenn weniger oder gleich viele HR vorhanden sind.</German>
         </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_TerminateUI_Message">
             <Original>The advanced garrison manager has been taken over by "%1".</Original>

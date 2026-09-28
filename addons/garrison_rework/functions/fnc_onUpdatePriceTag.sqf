@@ -47,6 +47,8 @@ private _spend = [_garrisonInfo, 0, {
 
 TRACE_1(QFUNC(onUpdatePriceTag),_spend);
 
+uiNamespace getVariable QGVAR(display) setVariable[QGVAR(priceTag), _spend];
+
 if (_spend isEqualTo 0) then {
     _control ctrlSetTextColor[0.75, 0.75, 0.75, 1];
     _spend = "0";

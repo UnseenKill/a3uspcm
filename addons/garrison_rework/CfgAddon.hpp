@@ -246,6 +246,17 @@ class GVAR(Config) {
                                         text = "";
                                     };
 
+                                    class RecruitingWarning: LabelTotal {
+                                        className = QUOTE(RscPictureKeepAspect);
+                                        x = QUOTE(4 * UI_GRID_W + 4 * pixelW);
+                                        y = QUOTE(10 * UI_GRID_H + 4 * pixelW);
+                                        w = QUOTE(0.75 * UI_GRID_W - 8 * pixelW);
+                                        h = QUOTE(1 * UI_GRID_H - 8 * pixelW);
+                                        text = "\A3\ui_f\data\map\markers\military\warning_CA.paa";
+                                        color[] = {1, 0.6, 0, 1};
+                                        fade = 1;
+                                    };
+
                                     class DeltaInfo: PriceTagTotal {
                                         x = QUOTE(9 * UI_GRID_W);
                                         w = QUOTE(1 * UI_GRID_W - 8 * pixelW);
