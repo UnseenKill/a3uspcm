@@ -125,6 +125,14 @@
             <Original>Non-allied location selected.</Original>
             <German>Nicht-alliierter Standort ausgewählt.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Message_WaitOnRecruitment">
+            <Original>Waiting for recruitment to complete...</Original>
+            <German>Warten auf den Abschluss der Rekrutierung...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Message_WaitOnRecruitment_Timeout">
+            <Original>Recruitment failed to complete. Server request timed out.</Original>
+            <German>Rekrutierung konnte nicht abgeschlossen werden. Serveranfrage zeitüberschritten.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Recruitment_LabelTotal">
             <Original>Total spend:</Original>
             <German>Gesamtausgaben:</German>

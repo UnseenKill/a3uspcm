@@ -1,5 +1,6 @@
 PREP(applyPendingFilters);
 PREP(filterMarker);
+PREP(makeRecruitStruct);
 PREP(onBtnCloseClick);
 PREP(onBtnRecruitClick);
 PREP(onBroadcastDelta);
@@ -20,4 +21,5 @@ PREP(onUpdateLocations);
 PREP(onUpdatePriceTag);
 PREP(onUpdateSliders);
 PREP(openManager);
+PREP(recruitUnits);
 PREP(updateGarrisonInfo);
