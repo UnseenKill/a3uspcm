@@ -20,7 +20,7 @@ Author:
 TRACE_1(QFUNC(traderMove),_this);
 
 if (disableTrader) exitWith {
-    INFO("Trader is disabled.");
+    LOG("Trader is disabled.");
 
     [
         LLSTRING(Trader_MoveCaption),
@@ -28,7 +28,7 @@ if (disableTrader) exitWith {
     ] call A3A_fnc_customHint;
 };
 
-INFO_1("'%1' wants trader to move",name player);
+LOG_1("'%1' wants trader to move",name player);
 
 if (!isNil QGVAR(Trader_MoveInProgress)) exitWith {};
 
@@ -50,7 +50,7 @@ GVAR(Trader_MoveInProgress) = true;
 GVAR(Trader_MoveDone) = false;
 GVAR(Trader_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
 	params["_units","_pos","_alt","_shift"];
-    INFO_2("new trader position: %1 (%2)",_pos,mapGridPosition _pos);
+    LOG_2("new trader position: %1 (%2)",_pos,mapGridPosition _pos);
 
     GVAR(Trader_MoveDone) = true;
     GVAR(Trader_Position) = [GVAR(Trader_PositionCandidates), _pos] call BIS_fnc_nearestPosition;
@@ -69,7 +69,7 @@ GVAR(Trader_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
     GVAR(Trader_PositionCandidates) = nil;
 
     if (!GVAR(Trader_MoveDone)) exitWith {
-        INFO("Trader move aborted.");
+        LOG("Trader move aborted.");
 
         [
             LLSTRING(Trader_MoveCaption),
@@ -77,7 +77,7 @@ GVAR(Trader_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
         ] call A3A_fnc_customHint;
     };
 
-    INFO_1("Trader move done. --> %1",GVAR(Trader_Position));
+    LOG_1("Trader move done. --> %1",GVAR(Trader_Position));
 
     isTraderQuestAssigned = false;
     isTraderQuestCompleted = false;
@@ -85,7 +85,7 @@ GVAR(Trader_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
     publicVariable "isTraderQuestCompleted";
 
     if (!isNil "traderMarker") then {
-        INFO("Deleting trader markers.");
+        LOG("Deleting trader markers.");
 
         deleteMarker "TraderMarker";
         traderMarker = nil;
@@ -93,14 +93,14 @@ GVAR(Trader_MapSingleClickEH) = addMissionEventHandler["MapSingleClick", {
     };
 
     if (!isNil "traderX") then {
-        INFO("Deleting trader.");
+        LOG("Deleting trader.");
 
         deleteVehicle traderX;
         publicVariable "traderX";
     };
 
     if (!isNil "traderObjects") then {
-        INFO("Deleting trader objects.");
+        LOG("Deleting trader objects.");
 
         {
             deleteVehicle _x;

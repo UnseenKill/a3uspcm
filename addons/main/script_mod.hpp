@@ -1,4 +1,3 @@
-// COMPONENT should be defined in the script_component.hpp and included BEFORE this hpp
 #define PREFIX A3USPCM
 
 #include "script_production.hpp"
@@ -15,35 +14,23 @@
 #define A3A_COMPAT_MAJOR 12
 #define A3A_COMPAT_MINOR 0
 
-// Define DEBUG_MODE_FULL for full debug mode when not in production
+// Define DEBUG_MODE_FULL for full debug mode when not in production and not
+// otherwise already specified
 #ifndef __A3USPCM_PRODUCTION__
-    #define DEBUG_MODE_FULL
+    #ifndef DEBUG_MODE_NORMAL
+        #ifndef DEBUG_MODE_FULL
+            #define DEBUG_MODE_FULL
+        #endif
+    #endif
 #endif
-
-/*
-// Defined DEBUG_MODE_NORMAL in a few CBA_fncs to prevent looped logging :)
-#ifndef DEBUG_MODE_NORMAL
-    #define DEBUG_MODE_FULL
-#endif
-*/
-
-// Set a default debug mode for the component here (See documentation on how to default to each of the modes).
-/*
-    #define DEBUG_ENABLED_COMMON
-    #define DEBUG_ENABLED_DIAGNOSTIC
-    #define DEBUG_ENABLED_EVENTS
-    #define DEBUG_ENABLED_HASHES
-    #define DEBUG_ENABLED_MAIN
-    #define DEBUG_ENABLED_NETWORK
-    #define DEBUG_ENABLED_STRINGS
-    #define DEBUG_ENABLED_VERSIONING
-*/
 
 #ifdef __A3USPCM_PRODUCTION__
-    // Remove CfgFunction adding headers and disable SCRIPT macro (comment out to enable for debugging)
+    // Remove CfgFunction adding headers and disable SCRIPT macro
     #define SKIP_FUNCTION_HEADER // [Enable for release]
     #define SKIP_SCRIPT_NAME // [Enable for release]
 #else
     #define RECOMPILE // [Disable for release]
     #define DISABLE_COMPILE_CACHE
 #endif
+
+#include "\z\a3uspcm\addons\main\script_macros.hpp"

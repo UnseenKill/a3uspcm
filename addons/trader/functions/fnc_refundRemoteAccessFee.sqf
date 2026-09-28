@@ -24,7 +24,7 @@ if (player getVariable[QGVAR(feePaid), 0] > 0) then {
     private _amount = player getVariable QGVAR(feePaid);
     player setVariable[QGVAR(feePaid), nil];
 
-    INFO_1("Refund remote access fee to player (%1).",_amount);
+    LOG_1("Refund remote access fee to player (%1).",_amount);
     [_amount] call A3A_fnc_resourcesPlayer;
 
     [

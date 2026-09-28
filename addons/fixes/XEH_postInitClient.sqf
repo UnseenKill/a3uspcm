@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-INFO("A3U fixes post-init (client)");
+LOG("A3U fixes post-init (client)");
 
 [] call FUNC(halsStoreDialogInit);
 [] spawn FUNC(buyVehicleDialogInit);

@@ -20,15 +20,15 @@ Author:
 TRACE_1(QFUNC(loadAdditionalStatics),_this);
 
 if isNil(QGVAR(AdditionalStatics)) then {
-    INFO("loading additional static weapons");
+    LOG("loading additional static weapons");
 
     [QGVAR(AdditionalStatics)] call A3A_fnc_getStatVariable;
     
     if ((isNil QGVAR(AdditionalStatics)) || { !(GVAR(AdditionalStatics) isEqualType []) }) then {
-        INFO("No saved additional statics found, initializing empty array");
+        LOG("No saved additional statics found, initializing empty array");
         GVAR(AdditionalStatics) = [];
     } else {
-        INFO("Loading additional statics from saved data");
+        LOG("Loading additional statics from saved data");
     };
 };
 

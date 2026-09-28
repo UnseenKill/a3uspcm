@@ -394,11 +394,17 @@ class GVAR(Config) {
                 params = QUOTE(unitExp);
             };
 
+            class Crew {
+                caption = __EVAL(formatText[LLSTRING(Recruitment_RecruitUnitWrapper), localize "STR_antistasi_dialogs_crewman_title"]);
+                action = QFUNCMAIN(recruitForPlayer);
+                params = QUOTE(unitCrew);
+            };
+
             class SquadLeader {
                 caption = __EVAL(formatText[LLSTRING(Recruitment_RecruitUnitWrapper), localize "STR_antistasi_dialogs_hq_garrisons_squad_leader"]);
                 action = QFUNCMAIN(recruitForPlayer);
                 params = QUOTE(unitSL);
-                yetHemttThisStringtableKeyIsInUse = CSTRING(Recruitment_RecruitUnitWrapper);
+                yesHemttThisStringtableKeyIsInUse = CSTRING(Recruitment_RecruitUnitWrapper);
             };
         };
 

@@ -1,0 +1,19 @@
+#include "script_component.hpp"
+
+class CfgPatches {
+    class ADDON {
+        name = CSTRING(component);
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"a3uspcm_util", "a3uspcm_util_ui_builder"};
+        author = "$STR_A3USPCM_Author";
+        authors[] = {"goreSplatter"};
+        url = "$STR_A3USPCM_URL";
+        VERSION_CONFIG;
+    };
+};
+
+#include "RscDefine.hpp"
+#include "CfgAddon.hpp"
+#include "CfgEventHandlers.hpp"

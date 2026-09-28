@@ -1,6 +1,14 @@
 #define COMPONENT util
+
+#define DEBUG_MODE_NORMAL
+// #define DEBUG_MODE_FULL
+// #define DISABLE_COMPILE_CACHE
+
+#ifdef DEBUG_ENABLED_UTIL
+    #define DEBUG_MODE_FULL
+#endif
+
 #include "\z\a3uspcm\addons\main\script_mod.hpp"
-#include "\z\a3uspcm\addons\main\script_macros.hpp"
 
 // Don't attach objects, but delete them and load their class names into cargo
 //#define ACE_CARGO_CONVERT_TO_CLASS

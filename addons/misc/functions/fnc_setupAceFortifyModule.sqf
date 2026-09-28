@@ -23,7 +23,7 @@ Author:
 TRACE_1(QFUNC(setupAceFortifyModule),_this);
 
 if !EGVAR(main,AceHaveAddon) exitWith {
-    INFO("ACE3 Fortify Addon not detected, skipping fortification module setup.");
+    LOG("ACE3 Fortify Addon not detected, skipping fortification module setup.");
 };
 
 private _group = createGroup[sideLogic, true];
@@ -56,6 +56,6 @@ player synchronizeObjectsAdd[GVAR(aceFortifyModule)];
 
 [GVAR(aceFortifyModule), "", true] call ace_fortify_fnc_setupModule;
 
-INFO_1("Created %1",GVAR(aceFortifyModule));
+LOG_1("Created %1",GVAR(aceFortifyModule));
 
 nil;

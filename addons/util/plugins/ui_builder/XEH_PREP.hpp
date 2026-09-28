@@ -1,0 +1,14 @@
+PREP(applyCustomProperties);
+PREP(applyDimensions);
+PREP(applyHandlers);
+PREP(applyInheritableProperty);
+PREP(applyInheritableProperties);
+PREP(applyTypeSpecific);
+PREP(buildUI);
+PREP(buildControl);
+PREP(buildControlsGroup);
+PREP(createControlCommon);
+PREP(dumpControl);
+PREP(getNextIDC);
+PREP(parseColor);
+PREP(parseControlProperty);

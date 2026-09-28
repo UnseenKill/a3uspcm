@@ -100,7 +100,7 @@ if (!GVAR(moduleMSE_useAI) && GVAR(moduleMSE_transferHC)) then {
 
         uiSleep 5;
 
-        INFO_2("transferring group %1 to HC (theBoss=%2)",_group,theBoss);
+        LOG_2("transferring group %1 to HC (theBoss=%2)",_group,theBoss);
         theBoss hcSetGroup[_group];
     };
 };

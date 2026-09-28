@@ -26,7 +26,7 @@ Author:
     _amount = parseNumber _amount;
     if (_amount isEqualType false || 0 == _amount) exitWith {};
 
-    INFO_2("%1 added %2 to own funds",name player,_amount);
+    LOG_2("%1 added %2 to own funds",name player,_amount);
     [_amount] call A3A_fnc_resourcesPlayer;
 
     [
