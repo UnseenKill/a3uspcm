@@ -27,11 +27,27 @@ if ((player getVariable["moneyX", 0] < GVAR(dsbCost))) exitWith {
     playSound "A3AP_UiFailure";
 };
 
-private _beacon = createVehicle[QEGVAR(assets,DespawnSuppressionBeacon), player modelToWorld[0,1,0], [], 5, "NONE"];
-_beacon say3D QEGVAR(assets,RadioWave);
+[] spawn {
+    private _activate = false;
+    private _position = player modelToWorld[0,1,0];
 
-if (GVAR(dsbCost) > 0) then {
-    [-GVAR(dsbCost)] call A3A_fnc_resourcesPlayer;
+    if (customWaypointPosition isNotEqualTo []) then {
+        if ([LLSTRING(Miscellaneous_PlaceBeaconConfirmPositionText), LLSTRING(Miscellaneous_PlaceBeaconCaption), true, true] call BIS_fnc_guiMessage) then {
+            _activate = true;
+            _position = customWaypointPosition;
+        };
+    };
+
+    private _beacon = createVehicle[QEGVAR(assets,DespawnSuppressionBeacon), _position, [], 5, "NONE"];
+    _beacon say3D QEGVAR(assets,RadioWave);
+
+    if (_activate) then {
+        [LINKEFUNC(despawnbeacon,activateBeacon), [_beacon]] call CBA_fnc_execNextFrame;
+    };
+
+    if (GVAR(dsbCost) > 0) then {
+        [-GVAR(dsbCost)] call A3A_fnc_resourcesPlayer;
+    };
 };
 
 nil;

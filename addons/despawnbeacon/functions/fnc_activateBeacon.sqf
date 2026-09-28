@@ -25,18 +25,19 @@ _this spawn {
     TRACE_1(QFUNC(activateBeacon),_this);
 
     if !assert(params[
-        ["_beacon", nil, [objNull]],
-        ["_player", nil, [objNull]]
+        ["_beacon", nil, [objNull]]
     ]) exitWith {};
-
     if !assert(!isNull _beacon) exitWith {};
-    if !assert(!isNull _player) exitWith {};
 
-    if !EGVAR(main,AceHaveAddon) then {
-        _player playActionNow "PutDown";
-    } else {
-        [_beacon, _beacon] call ace_common_fnc_claim;
-        [_player, "PutDown"] call ace_common_fnc_doGesture;
+    private _player = param[1, objNull, [objNull]];
+
+    if !(isNull _player) then {
+        if !EGVAR(main,AceHaveAddon) then {
+            _player playActionNow "PutDown";
+        } else {
+            [_beacon, _beacon] call ace_common_fnc_claim;
+            [_player, "PutDown"] call ace_common_fnc_doGesture;
+        };
     };
 
     _beacon animateSource["Terminal_source", 100, 1];
