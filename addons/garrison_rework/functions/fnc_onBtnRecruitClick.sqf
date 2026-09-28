@@ -90,6 +90,8 @@ private _struct = [_recruitList] call FUNC(makeRecruitStruct);
     private _return = missionNamespace getVariable _uuid;
     missionNamespace setVariable[_uuid, nil];
 
+    [CBA_EVENT_UPDATE_RESOURCES] call CBA_fnc_localEvent;
+
     if !(_return isEqualType "") then {
         [CBA_EVENT_SHOW_MESSAGE] call CBA_fnc_localEvent;
         [CBA_EVENT_RELOAD_LOCATION] call CBA_fnc_localEvent;

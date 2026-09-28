@@ -33,6 +33,13 @@ class GVAR(Config) {
                 text = CSTRING(Dialog_MainTitle);
             };
 
+            class ResourcesInfo {
+                x = QUOTE(safeZoneW - 6.5 * UI_GRID_W);
+                w = QUOTE(5 * UI_GRID_W);
+                h = QUOTE(1.25 * UI_GRID_H);
+                className = QGVAR(RscTextRightAlign);
+            };
+
             class ButtonClose {
                 x = QUOTE(safeZoneW - 1 * UI_GRID_W - 8 * pixelW);
                 y = QUOTE(8 * pixelH);

@@ -137,6 +137,10 @@
             <Original>Total spend:</Original>
             <German>Gesamtausgaben:</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_ResourcesInfo_Label">
+            <Original>Resources: %1 HR / %2 %3</Original>
+            <German>Ressourcen: %1 HR / %2 %3</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_AASpecialist_Abbreviated">
             <Original>AA</Original>
             <German>FlAbw</German>
