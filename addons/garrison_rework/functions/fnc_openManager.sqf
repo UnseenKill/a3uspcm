@@ -65,6 +65,10 @@ _this spawn {
     missionNamespace setVariable[QGVAR(preselectedLocation), RETNIL(_location)];
     LOG_1("Preselected location: %1",RETNIL(_location));
 
+    [{
+        player selectDiarySubject "Map";
+    }] call CBA_fnc_execNextFrame;
+
     private _display = findDisplay 12 createDisplay QGVAR(RscDisplayEmpty);
     private _config = configFile >> QGVAR(Config) >> "Dialog";
     private _control = [_config, _display] call ESFUNC(util,ui_builder,buildUI);
