@@ -15,6 +15,7 @@ class CfgFunctions {
             PATHTO_FNC(miscAddToBuyableStatics);
             PATHTO_FNC(miscAddToBuyableVehicles);
             PATHTO_FNC(miscBuildAll);
+            PATHTO_FNC(miscChangeMarkerOwnership);
             PATHTO_FNC(miscEnlargeNearestMarker);
             PATHTO_FNC(miscFindIntel);
             PATHTO_FNC(miscFixVoices);

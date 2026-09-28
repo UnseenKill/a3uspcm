@@ -23,7 +23,7 @@ if GVAR(addActionToMapObject) then {
     missionNamespace getVariable "mapX" addAction[
         LLSTRING(RscA3USPCMGarrisonManagerDialog_StaticTitle),
         {
-            createDialog QGVAR(dialog);
+            [] call FUNCMAIN(recruitLaunchAGM);
         },
         nil,
         0,

@@ -19,6 +19,7 @@ PREP(onUnitTypeSliderChanged);
 PREP(onUpdateDelta);
 PREP(onUpdateLocations);
 PREP(onUpdatePriceTag);
+PREP(onUpdateResources);
 PREP(onUpdateSliders);
 PREP(openManager);
 PREP(recruitUnits);
