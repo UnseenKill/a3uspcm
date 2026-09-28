@@ -26,6 +26,32 @@ Author:
 TRACE_1(QFUNC(openManager),_this);
 
 [] spawn {
+    private _canOpen = true;
+    private _inUsePlayer = missionNamespace getVariable QGVAR(agmInUse);
+
+    if !(isNil { _inUsePlayer }) then {
+        private _canKick = [] call BIS_fnc_admin;
+        _canKick = (_canKick isNotEqualTo 0) || { isServer && hasInterface };
+        _canOpen = false;
+
+        if !(_canKick) exitWith {};
+        if !([format[LLSTRING(InUseWannaKick_Message), _inUsePlayer], LLSTRING(Dialog_MainTitle), true, true] call BIS_fnc_guiMessage) exitWith {};
+
+        [CBA_EVENT_TERMINATE_UI, [name player]] call CBA_fnc_remoteEvent;
+        private _ready = waitUntil[{ isNil { missionNamespace getVariable QGVAR(agmInUse) } }, 5];
+        _canOpen = !isNil "_ready";
+
+        if !(_canOpen) then {
+            ERROR("Failed to terminate UI and free up garrison manager.");
+        };
+    };
+
+    if !(_canOpen) exitWith {
+        playSound "A3AP_UiFailure";
+        [LLSTRING(Dialog_MainTitle), format[LLSTRING(InUse_Message), _inUsePlayer]] call A3A_fnc_customHint;
+    };
+
+    missionNamespace setVariable[QGVAR(visibleMap), visibleMap];
     openMap true;
 
     waitUntil { !isNull findDisplay 12 };

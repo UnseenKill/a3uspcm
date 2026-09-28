@@ -225,17 +225,29 @@
             <Original>Squad Leader</Original>
             <German>Gruppenführer</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_InUseWannaKick_Message">
+            <Original>The advanced garrison manager is currently in use by "%1".&lt;br /&gt;Do you want to kick them out of it?</Original>
+            <German>Der Garnisonsmanager wird derzeit von "%1" verwendet.&lt;br /&gt;Möchten Sie ihn daraus entfernen?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_InUse_Message">
+            <Original>The advanced garrison manager is currently in use by "%1".</Original>
+            <German>Der Garnisonsmanager wird derzeit von "%1" verwendet.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_RecruitConfirmation_ConfirmAll">
             <Original>Continue hiring/firing units from this location?</Original>
             <German>Fortfahren mit der Rekrutierung/Entlassung von Einheiten an diesem Standort?</German>
         </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_RecruitConfirmation_ConfirmFire">
-            <Original>Based on the sliders, some units will also be dismissed.\nContinue hiring/firing units from this location?</Original>
-            <German>Fortfahren mit der Rekrutierung/Entlassung von Einheiten an diesem Standort?</German>
+            <Original>Based on the sliders, some units will also be dismissed.&lt;br /&gt;Continue hiring/firing units from this location?</Original>
+            <German>Basierend auf den Schiebereglern werden einige Einheiten ebenfalls entlassen.&lt;br /&gt;Fortfahren mit der Rekrutierung/Entlassung von Einheiten an diesem Standort?</German>
         </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_RecruitConfirmation_Header">
             <Original>Garrison recruitment for %1</Original>
             <German>Rekrutierung für %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_TerminateUI_Message">
+            <Original>The advanced garrison manager has been taken over by "%1".</Original>
+            <German>Der Garnisonsmanager wurde von "%1" übernommen.</German>
         </Key>
     </Package>
 </Project>

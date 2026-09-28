@@ -35,6 +35,12 @@ _display getVariable QGVAR(eventHandlers) apply {
     _x call CBA_fnc_removeEventHandler;
 };
 
+if !(missionNamespace getVariable[QGVAR(visibleMap), false]) then {
+    openMap false;
+};
+
 uiNamespace setVariable[QGVAR(display), nil];
+missionNamespace setVariable[QGVAR(agmInUse), nil, true];
+missionNamespace setVariable[QGVAR(visibleMap), nil];
 
 nil;

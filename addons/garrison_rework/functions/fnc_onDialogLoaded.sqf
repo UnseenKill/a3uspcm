@@ -34,6 +34,8 @@ if !assert(!isNull _display) exitWith {};
     ] \
 })
 
+missionNamespace setVariable[QGVAR(agmInUse), name player, true];
+
 uiNamespace setVariable[QGVAR(display), _display];
 _display setVariable[QGVAR(eventHandlers), []];
 
