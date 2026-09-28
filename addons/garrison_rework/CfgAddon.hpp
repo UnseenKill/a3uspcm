@@ -416,6 +416,7 @@ class GVAR(Config) {
                                 w = QUOTE(4 * UI_GRID_W);
                                 h = QUOTE(1 * UI_GRID_H);
                                 colorBackground[] = {0.5,0,0,0.9};
+                                visible = 0;
                             };
                         };
                     };

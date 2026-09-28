@@ -75,6 +75,7 @@ allControls(_control getVariable QUIBVAR(controls) get "RecruitList") apply {
 
 #ifdef __A3_DEBUG__
 [_control] call ESFUNC(util,ui_builder,dumpControl);
+_control getVariable QUIBVAR(controls) get "ADTMagicWordEdit" ctrlShow true;
 #endif // __A3_DEBUG__
 
 nil;
