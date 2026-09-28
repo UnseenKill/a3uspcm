@@ -37,6 +37,12 @@ _this spawn {
 
     TRACE_3(QFUNC(diaryExecuteAction),_name,_params,_config);
 
+    if (getNumber(_config >> "collapseDiary") isNotEqualTo 0) then {
+        [{
+            player selectDiarySubject "Map";
+        }] call CBA_fnc_execNextFrame;
+    };
+
     GVAR(DiaryConfig) = _config;
     _params call _action;
     GVAR(DiaryConfig) = nil;
