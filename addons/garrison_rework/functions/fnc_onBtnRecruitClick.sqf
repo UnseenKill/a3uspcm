@@ -103,7 +103,7 @@ private _struct = [_recruitList] call FUNC(makeRecruitStruct);
             [CBA_EVENT_SHOW_MESSAGE] call CBA_fnc_localEvent;
             [CBA_EVENT_TOGGLE_INTERACTION, true] call CBA_fnc_localEvent;
             [CBA_EVENT_RELOAD_LOCATION] call CBA_fnc_localEvent;
-        }, 10] call CBA_fnc_waitAndExecute;
+        }, nil, 10] call CBA_fnc_waitAndExecute;
     };
 };
 
