@@ -1,6 +1,14 @@
 #define COMPONENT zeus
+
+#define DEBUG_MODE_NORMAL
+// #define DEBUG_MODE_FULL
+// #define DISABLE_COMPILE_CACHE
+
+#ifdef DEBUG_ENABLED_ZEUS
+    #define DEBUG_MODE_FULL
+#endif
+
 #include "\z\a3uspcm\addons\main\script_mod.hpp"
-#include "\z\a3uspcm\addons\main\script_macros.hpp"
 #define CREW_STATIC_WAIT 5
 #define FIND_STATIC_RADIUS 100
 #define REORIENT_OBJECT_WAIT 5

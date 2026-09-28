@@ -53,7 +53,7 @@ if (_types isEqualTo []) exitWith {
 // Clean up old lights; only used in debugging, since this is a postInit handler...
 _object getVariable[QGVAR(lights), []] apply {
     if !(isNil { _x getVariable QGVAR(augmentHelipadLight) }) then {
-        INFO_3("%1(%2): cleaning light %3",QFUNC(augmentHelipad),_object,_x);
+        LOG_3("%1(%2): cleaning light %3",QFUNC(augmentHelipad),_object,_x);
         detach _x;
         deleteVehicle _x;
     };
@@ -68,7 +68,7 @@ private _radius = [5.6, 7] select _circular;
 if (isNil { _object getVariable QGVAR(ehDeleted) }) then {
     _object setVariable[QGVAR(ehDeleted), _object addEventHandler["Deleted", {
         params["_object"];
-        INFO_1("Cleaning up lights after %1 deletion.",_object);
+        LOG_1("Cleaning up lights after %1 deletion.",_object);
         _object getVariable[QGVAR(lights), []] apply {
             if !(isNil { _x getVariable QGVAR(augmentHelipadLight) }) then {
                 detach _x;

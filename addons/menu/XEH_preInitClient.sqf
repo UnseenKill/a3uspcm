@@ -107,7 +107,7 @@ GVAR(Timers) = [false, false];
     [] call FUNC(commanderMenuAppend);
 
     if (!isNil QGVAR(AdditionalBuildables) && { GVAR(AdditionalBuildables) isEqualType [] }) then {
-        INFO("Applying additional buildables from server");
+        LOG("Applying additional buildables from server");
         GVAR(AdditionalBuildables) apply {
             TRACE_1(QFUNC(loadAdditionalBuildables),_x);
             A3A_buildableObjects pushBackUnique _x;
@@ -115,7 +115,7 @@ GVAR(Timers) = [false, false];
     };
 
     if (!isNil QGVAR(AdditionalStatics) && { GVAR(AdditionalStatics) isEqualType [] }) then {
-        INFO("Applying additional statics from server");
+        LOG("Applying additional statics from server");
         GVAR(AdditionalStatics) apply {
             _x params["_class","_price"];
             TRACE_1(QFUNC(loadAdditionalStatics),_x);
@@ -126,7 +126,7 @@ GVAR(Timers) = [false, false];
     };
 
     if (!isNil QGVAR(AdditionalVehicles) && { GVAR(AdditionalVehicles) isEqualType [] }) then {
-        INFO("Applying additional vehicles from server");
+        LOG("Applying additional vehicles from server");
 
         private _typeMap = createHashMapFromArray[
             ["vehiclesLightArmed", "TANK"],
@@ -158,7 +158,7 @@ GVAR(Timers) = [false, false];
                     WARNING_2("%1: classname %2 is already in the list of available undercover clothes",QFUNC(loadAdditionalUndercoverClothes),str _x);
                 };
                 default {
-                    INFO_2("%1: adding %2 to list of available undercover clothes",QFUNC(loadAdditionalUndercoverClothes),str _x);
+                    LOG_2("%1: adding %2 to list of available undercover clothes",QFUNC(loadAdditionalUndercoverClothes),str _x);
                     true;
                 };
             };

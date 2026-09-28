@@ -21,7 +21,7 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNCMAIN(miscAddTeamZeus),_this);
 
-INFO_1("player %1 wants team added to Zeus objects",name theBoss);
+LOG_1("player %1 wants team added to Zeus objects",name theBoss);
 
 if (!isServer && hasInterface) exitWith { [] remoteExec[QFUNCMAIN(miscAddTeamZeus), 2] };
 

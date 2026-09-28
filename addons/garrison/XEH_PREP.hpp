@@ -7,6 +7,7 @@ PREP(onMapButtonUp);
 PREP(onMenuClose);
 PREP(onMenuOpen);
 PREP(onPreselectLocation);
+PREP(openManager);
 PREP(startAutoUpdateLoop);
 PREP(updateGarrison);
 PREP(updateList);

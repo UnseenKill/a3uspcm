@@ -57,23 +57,23 @@ if !(isNull objectParent _unit) then {
 
 unassignVehicle _unit;
 
-INFO_2("Waiting for disembarkment: %1 (CC: %2)",_unit,currentCommand _unit);
+LOG_2("Waiting for disembarkment: %1 (CC: %2)",_unit,currentCommand _unit);
 waitUntil { isNull objectParent _unit };
 
-INFO_2("Unit disembarked: %1 (CC: %2)",_unit,currentCommand _unit);
+LOG_2("Unit disembarked: %1 (CC: %2)",_unit,currentCommand _unit);
 
 // doStop _unit; // That one necessary?
 _unit doMove _position;
 
-INFO_2("Waiting for move completion: %1 (CC: %2)",_unit,currentCommand _unit);
+LOG_2("Waiting for move completion: %1 (CC: %2)",_unit,currentCommand _unit);
 waitUntil { moveToCompleted _unit || { currentCommand _unit isNotEqualTo "MOVE" } };
 
 if (currentCommand _unit isEqualTo "STOP") exitWith {
-    INFO_2("Unit stopped: %1 (CC: %2)",_unit,currentCommand _unit);
+    LOG_2("Unit stopped: %1 (CC: %2)",_unit,currentCommand _unit);
     SEND_EVENT(false);
 };
 
-INFO_3("Unit move complete: %1, watch %2 (CC: %3)",_unit,_watch,currentCommand _unit);
+LOG_3("Unit move complete: %1, watch %2 (CC: %3)",_unit,_watch,currentCommand _unit);
 _unit commandWatch _watch;
 _unit setFormDir _direction;
 _unit setDir _direction;

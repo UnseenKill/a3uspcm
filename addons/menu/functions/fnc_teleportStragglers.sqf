@@ -20,7 +20,7 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 
-INFO_1("player %1 summoned stragglers",name player);
+LOG_1("player %1 summoned stragglers",name player);
 
 if (count units group player isEqualTo 1) exitWith {
     [
@@ -49,7 +49,7 @@ _stragglers spawn {
         uiSleep 0.5;
         private _position = getPosATL player findEmptyPosition[10, 40, typeOf _x];
 
-        INFO_1("beaming straggler %1",name _x);
+        LOG_1("beaming straggler %1",name _x);
         TRACE_2("beaming straggler",_x,_position);
 
         if (_position isEqualTo []) then {

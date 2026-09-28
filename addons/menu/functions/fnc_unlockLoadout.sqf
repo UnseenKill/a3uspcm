@@ -20,7 +20,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-INFO_1("'%1' is unlocking everything in their current loadout",name player);
+LOG_1("'%1' is unlocking everything in their current loadout",name player);
 
 [getUnitLoadout player] call FUNCMAIN(utilUnlockLoadout);
 

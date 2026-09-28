@@ -20,15 +20,15 @@ Author:
 TRACE_1(QFUNC(loadAdditionalUndercoverVehicles),_this);
 
 if isNil(QGVAR(AdditionalUndercoverVehicles)) then {
-    INFO("loading additional vehicles");
+    LOG("loading additional vehicles");
 
     [QGVAR(AdditionalUndercoverVehicles)] call A3A_fnc_getStatVariable;
     
     if ((isNil QGVAR(AdditionalUndercoverVehicles)) || { !(GVAR(AdditionalUndercoverVehicles) isEqualType []) }) then {
-        INFO("No saved additional undercover vehicles found, initializing empty array");
+        LOG("No saved additional undercover vehicles found, initializing empty array");
         GVAR(AdditionalUndercoverVehicles) = [];
     } else {
-        INFO("Loading additional undercover vehicles from saved data");
+        LOG("Loading additional undercover vehicles from saved data");
 
         GVAR(AdditionalUndercoverVehicles) apply {
             undercoverVehicles pushBack _x;

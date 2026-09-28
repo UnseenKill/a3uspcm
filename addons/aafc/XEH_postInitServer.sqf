@@ -16,7 +16,7 @@ publicVariable QGVAR(groups);
     [_thisType, _thisId] call CBA_fnc_removeEventHandler;
 
     if (GVAR(roeCorrectionInterval) isNotEqualTo 0) then {
-        INFO("Starting ROE correction monitor");
+        LOG("Starting ROE correction monitor");
 
         [] spawn FUNC(roeCorrectionMonitor);
     };
@@ -41,17 +41,17 @@ publicVariable QGVAR(groups);
 
 [{
     if (isNil QGVAR(defaultInitialMode)) then {
-        INFO("Setting default ROE to 'Hold Fire' since CBA setting not found.");
+        LOG("Setting default ROE to 'Hold Fire' since CBA setting not found.");
         GVAR(globalROE) = ROE_HOLDFIRE;
     } else {
         GVAR(globalROE) = [ROE_HOLDFIRE, ROE_FIREATWILL] select(GVAR(defaultInitialMode) isEqualTo "FC_DEFAULT_ANGRY");
-        INFO_2("Setting default ROE to %1 based on CBA setting %2",GVAR(globalROE),GVAR(defaultInitialMode));
+        LOG_2("Setting default ROE to %1 based on CBA setting %2",GVAR(globalROE),GVAR(defaultInitialMode));
     };
 
     publicVariable QGVAR(globalROE);
 
     if GVAR(autoGroupAtStart) then {
-        INFO("Auto-grouping A/A vehicles");
+        LOG("Auto-grouping A/A vehicles");
 
         [] call FUNC(autoGroupVehicles);
     };

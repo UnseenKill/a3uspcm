@@ -71,7 +71,7 @@ if !(_value isEqualType "") then {
         if !(_value isEqualType _original) then {
             WARNING_4("%1(%2) - value type mismatch (original=%3,input=%4)",QFUNC(a3uChangeParameter),_value,typeName _original,typeName _value);
         } else {
-            INFO_5("%1(%2) change from %3 (%4) to %5",QFUNC(a3uChangeParameter),_variable,_original,typeName _original,_value);
+            LOG_5("%1(%2) change from %3 (%4) to %5",QFUNC(a3uChangeParameter),_variable,_original,typeName _original,_value);
             call compile format["%1 = %2", _variable, _value];
         };
     };

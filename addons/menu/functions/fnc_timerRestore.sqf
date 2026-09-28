@@ -21,15 +21,15 @@ TRACE_1(QFUNC(timerRestore),_this);
 
 if (!isServer) exitWith { WARNING("Timer restore works on LAN hosted only, skipping") };
 
-INFO("Restoring timers...");
+LOG("Restoring timers...");
 
 [QGVAR(Timers)] call A3A_fnc_getStatVariable;
 
 if isNil QGVAR(Timers) then {
-    INFO("No saved timers found, initializing empty array");
+    LOG("No saved timers found, initializing empty array");
     GVAR(Timers) = [false, false];
 } else {
-    INFO("Loading saved timers");
+    LOG("Loading saved timers");
 
     if (GVAR(Timers) isEqualType []) then {
         GVAR(Timers) = GVAR(Timers) apply {

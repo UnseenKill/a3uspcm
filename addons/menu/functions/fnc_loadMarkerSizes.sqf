@@ -21,15 +21,15 @@ Author:
 TRACE_1(QFUNC(loadMarkerSizes),_this);
 
 if isNil(QGVAR(MarkerSizes)) then {
-    INFO("loading changed markers");
+    LOG("loading changed markers");
 
     [QGVAR(MarkerSizes)] call A3A_fnc_getStatVariable;
     
     if ((isNil QGVAR(MarkerSizes)) || { !(GVAR(MarkerSizes) isEqualType []) }) then {
-        INFO("No saved markers found, initializing empty array");
+        LOG("No saved markers found, initializing empty array");
         GVAR(MarkerSizes) = createHashMap;
     } else {
-        INFO("Loading changed markers from saved data");
+        LOG("Loading changed markers from saved data");
 
         GVAR(MarkerSizes) = createHashMapFromArray GVAR(MarkerSizes);
         GVAR(MarkerSizes) apply {

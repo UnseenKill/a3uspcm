@@ -23,12 +23,12 @@ TRACE_1(QFUNC(payRemoteAccessFee),_this);
 player setVariable[QGVAR(feePaid), nil];
 
 if (GVAR(remoteTraderFee) <= 0) exitWith {
-    INFO("Remote trader access fee is zero or less; no payment required.");
+    LOG("Remote trader access fee is zero or less; no payment required.");
     true;
 };
 
 if (player getVariable "moneyX" < GVAR(remoteTraderFee)) exitWith {
-    INFO("Player does not have enough money to pay remote access fee.");
+    LOG("Player does not have enough money to pay remote access fee.");
     
     [
         LLSTRING(HintCaption),
@@ -41,7 +41,7 @@ if (player getVariable "moneyX" < GVAR(remoteTraderFee)) exitWith {
 
 if (GVAR(showAccessFeeHint) &&
     { !([format[LLSTRING(HintConfirmAccessFee), GVAR(remoteTraderFee), A3A_faction_civ get "currencySymbol"], LLSTRING(HintCaption), true, true] call BIS_fnc_guiMessage) }) exitWith {
-    INFO("No player consent to remote access fee.");
+    LOG("No player consent to remote access fee.");
     false;
 };
 

@@ -20,9 +20,9 @@ Author:
 TRACE_1(QFUNC(initServerDoneHandler),_this);
 
 _this spawn {
-    INFO("waiting for A3U server init");
+    LOG("waiting for A3U server init");
     waitUntil { !isNil "serverInitDone" };
-    INFO("running server init callbacks");
+    LOG("running server init callbacks");
 
     GVAR(ServerInitCallbacks) apply {
         [] call _x;

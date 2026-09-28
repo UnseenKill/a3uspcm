@@ -20,7 +20,7 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 
-INFO_1("player %1 healed group",name player);
+LOG_1("player %1 healed group",name player);
 {
     if !EGVAR(main,AceHaveAddon) then {
         _x setDamage 0;
@@ -30,7 +30,7 @@ INFO_1("player %1 healed group",name player);
 } forEach units group player;
 
 if !isNull(objectParent player) then {
-    INFO_1("healing vehicle %1 as well",typeOf objectParent player);
+    LOG_1("healing vehicle %1 as well",typeOf objectParent player);
     (objectParent player) setDamage 0;
 };
 

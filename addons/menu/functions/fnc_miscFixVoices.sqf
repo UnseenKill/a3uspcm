@@ -30,6 +30,4 @@ private _voice = selectRandom _voices;
 
 [_voice, units group player] remoteExec[QFUNCMAIN(utilSetUnitsSpeaker), 0];
 
-systemChat format["Voices set to %1", _voice];
-
 nil;

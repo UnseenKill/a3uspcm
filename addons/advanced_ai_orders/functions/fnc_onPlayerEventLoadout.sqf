@@ -55,7 +55,7 @@ if (!_hasRadio && { !_needsEquipped }) then {
     _hasRadio = QGVAR(ItemRadio) in items _unit;
 };
 
-INFO_3("Player loadout for %1 changed. Has AAIO radio: %2 (previously had: %3)",str name _unit,_hasRadio,_hadRadio);
+LOG_3("Player loadout for %1 changed. Has AAIO radio: %2 (previously had: %3)",str name _unit,_hasRadio,_hadRadio);
 
 if (_hadRadio isEqualTo _hasRadio) exitWith {};
 _unit setVariable[QGVAR(lastRadioEquipped), _hasRadio];
