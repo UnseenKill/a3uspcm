@@ -142,6 +142,14 @@ _entries apply {
     };
 };
 
-_control lnbSetCurSelRow -1;
+private _preselection = missionNamespace getVariable QGVAR(preselectedLocation);
+private _index = if (isNil "_preselection") then {
+    -1;
+} else {
+    missionNamespace setVariable[QGVAR(preselectedLocation), nil];
+    _entries findIf { (_x select -1) get "marker" isEqualTo _preselection };
+};
+
+_control lnbSetCurSelRow _index;
 
 nil;

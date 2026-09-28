@@ -8,6 +8,7 @@ Description:
 Parameters:
 
 Optional:
+    0: _location - optional location to preselect <STRING>
 
 Example:
     (begin example)
@@ -25,7 +26,7 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(openManager),_this);
 
-[] spawn {
+_this spawn {
     private _canOpen = true;
     private _inUsePlayer = missionNamespace getVariable QGVAR(agmInUse);
 
@@ -60,6 +61,10 @@ TRACE_1(QFUNC(openManager),_this);
 
     waitUntil { !isNull findDisplay 12 };
 
+    private _location = param[0, nil, [""]];
+    missionNamespace setVariable[QGVAR(preselectedLocation), RETNIL(_location)];
+    LOG_1("Preselected location: %1",RETNIL(_location));
+
     private _display = findDisplay 12 createDisplay QGVAR(RscDisplayEmpty);
     private _config = configFile >> QGVAR(Config) >> "Dialog";
     private _control = [_config, _display] call ESFUNC(util,ui_builder,buildUI);
@@ -79,8 +84,6 @@ TRACE_1(QFUNC(openManager),_this);
         _control ctrlCommit 0.25;
     }, [_control, _position select 1]] call CBA_fnc_execNextFrame;
 #endif
-
-    //[_control] call ESFUNC(util,ui_builder,dumpControl);
 
     nil;
 };

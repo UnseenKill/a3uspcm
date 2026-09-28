@@ -29,6 +29,9 @@ if !assert(params[
     ["_filters", nil, [[]]]
 ]) exitWith { false };
 
+private _preselection = missionNamespace getVariable QGVAR(preselectedLocation);
+if (!isNil "_preselection" && { _preselection isEqualTo _marker }) exitWith { true };
+
 if (isNil QGVAR(locationFilters)) then {
     GVAR(locationFilters) = compileFinal createHashMapFromArray[
         [FILTER_BASES, { _this in(milbases + airportsX + seaports + ["Synd_HQ"]) }],
