@@ -92,6 +92,7 @@ private _struct = [_recruitList] call FUNC(makeRecruitStruct);
 
     if !(_return isEqualType "") then {
         [CBA_EVENT_SHOW_MESSAGE] call CBA_fnc_localEvent;
+        [CBA_EVENT_RELOAD_LOCATION] call CBA_fnc_localEvent;
     } else {
         [CBA_EVENT_SHOW_MESSAGE, _return] call CBA_fnc_localEvent;
         [CBA_EVENT_TOGGLE_INTERACTION, false] call CBA_fnc_localEvent;
@@ -99,6 +100,7 @@ private _struct = [_recruitList] call FUNC(makeRecruitStruct);
         [{
             [CBA_EVENT_SHOW_MESSAGE] call CBA_fnc_localEvent;
             [CBA_EVENT_TOGGLE_INTERACTION, true] call CBA_fnc_localEvent;
+            [CBA_EVENT_RELOAD_LOCATION] call CBA_fnc_localEvent;
         }, 10] call CBA_fnc_waitAndExecute;
     };
 };
