@@ -40,7 +40,7 @@ private _recruitControls = _recruitGroup getVariable QUIBVAR(controls);
 
 allControls _recruitGroup apply { _x ctrlEnable (_index >= 0) };
 
-private _entry = _control getVariable QGVAR(entries) select _index;
+private _entry = if (_index < 0) then[{ nil }, { _control getVariable QGVAR(entries) select _index }];
 private _selectionInvalid = _index < 0;
 private _displayMessage = [""];
 
