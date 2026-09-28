@@ -30,16 +30,20 @@ TRACE_1(QFUNC(openManager),_this);
     private _inUsePlayer = missionNamespace getVariable QGVAR(agmInUse);
 
     if !(isNil { _inUsePlayer }) then {
+        LOG_1("garrison manager in use by ""%1""",_inUsePlayer);
+
         private _canKick = [] call BIS_fnc_admin;
         _canKick = (_canKick isNotEqualTo 0) || { isServer && hasInterface };
         _canOpen = false;
 
-        if !(_canKick) exitWith {};
-        if !([format[LLSTRING(InUseWannaKick_Message), _inUsePlayer], LLSTRING(Dialog_MainTitle), true, true] call BIS_fnc_guiMessage) exitWith {};
+        if !(_canKick) exitWith { LOG("Cannot kick current user, exiting.") };
+        if !([format[LLSTRING(InUseWannaKick_Message), _inUsePlayer], LLSTRING(Dialog_MainTitle), true, true] call BIS_fnc_guiMessage) exitWith { LOG("User chose not to kick current user, exiting.") };
 
         [CBA_EVENT_TERMINATE_UI, [name player]] call CBA_fnc_remoteEvent;
         private _ready = waitUntil[{ isNil { missionNamespace getVariable QGVAR(agmInUse) } }, 5];
         _canOpen = !isNil "_ready";
+
+        LOG_1("Ready status after attempting to terminate UI: %1",RETNIL(_ready));
 
         if !(_canOpen) then {
             ERROR("Failed to terminate UI and free up garrison manager.");
