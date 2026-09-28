@@ -32,4 +32,7 @@ _control setVariable[QGVAR(currentSelection), nil];
 
 [CBA_EVENT_DIALOG_LOCATION_SELECTED, [_control, _selection]] call CBA_fnc_localEvent;
 
+// This should be an event
+[LINKFUNC(updateGarrisonInfo), [_control, _selection]] call CBA_fnc_execNextFrame;
+
 nil;
