@@ -257,6 +257,50 @@
             <Original>Advanced Garrison Manager</Original>
             <German>Erweiterter Garnisonsmanager</German>
         </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_allowOwnershipFilter_DisplayName">
+            <Original>Allow ownership filter</Original>
+            <German>Besitzfilter erlauben</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_allowOwnershipFilter_Tooltip">
+            <Original>Enable or disable the ownership filter for garrison management.</Original>
+            <German>Aktivieren oder Deaktivieren des Besitzfilters für die Garnisonsverwaltung.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_allowUnitDismissal_DisplayName">
+            <Original>Allow unit dismissal</Original>
+            <German>Einheitenentlassung erlauben</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_allowUnitDismissal_Tooltip">
+            <Original>Enable or disable the ability to dismiss units in the garrison manager.</Original>
+            <German>Aktivieren oder Deaktivieren der Möglichkeit, Einheiten im Garnisonsmanager zu entlassen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_confirmRecruitment_DisplayName">
+            <Original>Confirm recruitment</Original>
+            <German>Rekrutierung bestätigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_confirmRecruitment_Option0">
+            <Original>Never</Original>
+            <German>Niemals</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_confirmRecruitment_Option1">
+            <Original>Only if units are to be dismissed</Original>
+            <German>Nur wenn Einheiten entlassen werden sollen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_confirmRecruitment_Option2">
+            <Original>Always</Original>
+            <German>Immer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_confirmRecruitment_Tooltip">
+            <Original>Enable or disable the confirmation dialog when recruiting units in the garrison manager.</Original>
+            <German>Aktivieren oder Deaktivieren des Bestätigungsdialogs bei der Rekrutierung von Einheiten im Garnisonsmanager.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_enemiesCloseCheck_DisplayName">
+            <Original>Check for nearby enemies</Original>
+            <German>Auf nahe Feinde prüfen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_enemiesCloseCheck_Tooltip">
+            <Original>Enable or disable the check for nearby enemies when managing the garrison.</Original>
+            <German>Aktivieren oder Deaktivieren der Überprüfung auf nahe Feinde bei der Verwaltung der Garnison.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Garrison_Rework_TerminateUI_Message">
             <Original>The advanced garrison manager has been taken over by "%1".</Original>
             <German>Der Garnisonsmanager wurde von "%1" übernommen.</German>

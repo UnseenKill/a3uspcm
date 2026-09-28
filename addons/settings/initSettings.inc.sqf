@@ -208,6 +208,50 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(garrison_rework,allowOwnershipFilter), "CHECKBOX",
+    [ELSTRING(garrison_rework,Settings_allowOwnershipFilter_DisplayName), ELSTRING(garrison_rework,Settings_allowOwnershipFilter_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(garrison_rework,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(garrison_rework,allowUnitDismissal), "CHECKBOX",
+    [ELSTRING(garrison_rework,Settings_allowUnitDismissal_DisplayName), ELSTRING(garrison_rework,Settings_allowUnitDismissal_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(garrison_rework,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(garrison_rework,enemiesCloseCheck), "CHECKBOX",
+    [ELSTRING(garrison_rework,Settings_enemiesCloseCheck_DisplayName), ELSTRING(garrison_rework,Settings_enemiesCloseCheck_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(garrison_rework,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(garrison_rework,confirmRecruitment), "LIST",
+    [ELSTRING(garrison_rework,Settings_confirmRecruitment_DisplayName), ELSTRING(garrison_rework,Settings_confirmRecruitment_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(garrison_rework,Settings_Category_DisplayName)],
+    [
+        [0, 1, 2],
+        [LELSTRING(garrison_rework,Settings_confirmRecruitment_Option0), LELSTRING(garrison_rework,Settings_confirmRecruitment_Option1), LELSTRING(garrison_rework,Settings_confirmRecruitment_Option2)],
+        2
+    ], // values, strings, default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Music
 
 [
