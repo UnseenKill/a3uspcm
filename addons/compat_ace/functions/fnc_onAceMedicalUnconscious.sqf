@@ -27,7 +27,7 @@ params["_unit","_isUnconscious"];
 if (!_isUnconscious || {EGVAR(menu,autoWakeUpDelay) isEqualTo 0} || {_unit isNotEqualTo player}) exitWith {};
 
 TRACE_1(QFUNC(onAceMedicalUnconscious),EGVAR(menu,autoWakeUpDelay));
-INFO_1("Waking player up in %1 seconds",EGVAR(menu,autoWakeUpDelay));
+LOG_1("Waking player up in %1 seconds",EGVAR(menu,autoWakeUpDelay));
 
 GVAR(magicalEffectsGVARs) = [
     [0.5, ACE_QEGVAR(medical_treatment,treatmentTimeTourniquet)],
@@ -38,7 +38,7 @@ GVAR(magicalEffectsGVARs) = [
     private _ttlMagicEffects = EGVAR(menu,autoWakeUpMagicEffectsDuration);
     TRACE_1(QFUNC(onAceMedicalUnconscious),_this);
 
-    INFO_1("Trying to wake player up; increased bandages effectiveness for %1 seconds",_ttlMagicEffects);
+    LOG_1("Trying to wake player up; increased bandages effectiveness for %1 seconds",_ttlMagicEffects);
 
     _this setVariable[QGVAR(hasStableVitals), diag_tickTime + _ttlMagicEffects];
     [{

@@ -19,11 +19,20 @@ workshop = [
     "3020755032", # Antistasi Ultimate
     "1779063631", # ZEN
     "3499977893", # Advanced Developer Tools
+    "3797129725", # ADT Caret Fix
+]
+parameters = [
+    "-noPause",
+    "-noPauseAudio",
 ]
 
 [hemtt.launch.malden]
 extends = "default"
 mission = "a3uspcm.Malden"
+
+[hemtt.launch.vr]
+extends = "default"
+mission = "a3uspcm.VR"
 
 [lints.sqf]
 # Too generic; does not take into account `isNil` checks, for example
@@ -37,3 +46,5 @@ shadowed = "Warning"
 short_circuit_bool_var = false
 # Promoted to warning
 unused = "Warning"
+# Promoted to warning
+undefined = "Warning"

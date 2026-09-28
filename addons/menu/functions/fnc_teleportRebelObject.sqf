@@ -29,7 +29,7 @@ params[
     ["_teleportCallback", {}, [{}]]
 ];
 
-INFO_3("'%1' wants '%2' teleported to them at %3",name player,_objectVariableName,position player);
+LOG_3("'%1' wants '%2' teleported to them at %3",name player,_objectVariableName,position player);
 
 private _object = missionNamespace getVariable _objectVariableName;
 

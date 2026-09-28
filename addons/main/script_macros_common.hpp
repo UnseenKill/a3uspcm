@@ -49,14 +49,20 @@
     #define LLSTRING(var1) (localize LSTRING(var1))
 #endif // SUBCOMPONENT
 
+// Access to functions of subcomponents
+#define ESFUNC(component1,subcomponent1,func1) TRIPLES(PREFIX,DOUBLES(component1,subcomponent1),DOUBLES(fnc,func1))
+#define QESFUNC(component1,subcomponent1,func1) QUOTE(ESFUNC(component1,subcomponent1,func1))
+
 #undef PREP
 #undef PREPMAIN
 #ifdef DISABLE_COMPILE_CACHE
+    #define LINKEFUNC(component1,var1) { call EFUNC(component1,var1) }
     #define LINKFUNC(var1) { call FUNC(var1) }
     #define LINKFUNCMAIN(var1) { call FUNCMAIN(var1) }
     #define PREP(var1) FUNC(var1) = compile preprocessFileLineNumbers 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\DOUBLES(fnc,var1))'
     #define PREPMAIN(var1) FUNCMAIN(var1) = compile preprocessFileLineNumbers 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\DOUBLES(fnc,var1))'
 #else
+    #define LINKEFUNC(component1,var1) EFUNC(component1,var1)
     #define LINKFUNC(var1) FUNC(var1)
     #define LINKFUNCMAIN(var1) FUNCMAIN(var1)
     #define PREP(var1) ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\DOUBLES(fnc,var1))', 'FUNC(var1)'] call SLX_XEH_COMPILE_NEW

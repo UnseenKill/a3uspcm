@@ -25,7 +25,7 @@ TRACE_1(QFUNCMAIN(miscMakeLootBox),_this);
     {
         params[["_target", objNull, [objNull]]];
 
-        INFO_2("player %1 wants %2 turned into lootbox",name player,typeOf _target);
+        LOG_2("player %1 wants %2 turned into lootbox",name player,typeOf _target);
 
         if (0 == getNumber(configOf _target >> "maximumLoad")) exitWith {
             [

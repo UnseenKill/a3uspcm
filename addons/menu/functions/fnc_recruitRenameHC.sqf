@@ -48,7 +48,7 @@ TRACE_1(QFUNCMAIN(recruitRenameHC),_this);
         if !(assert !isNull _group) exitWith {};
         if (_name isEqualTo "") exitWith {};
 
-        INFO_3("%1 renamed group %2 to '%3'",name player,groupId _group,_name);
+        LOG_3("%1 renamed group %2 to '%3'",name player,groupId _group,_name);
 
         _group setGroupId[_name];
     }, _group] call FUNCMAIN(utilPromptText);

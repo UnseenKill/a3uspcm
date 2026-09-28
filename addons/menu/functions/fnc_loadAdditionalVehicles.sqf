@@ -20,15 +20,15 @@ Author:
 TRACE_1(QFUNC(loadAdditionalVehicles),_this);
 
 if isNil(QGVAR(AdditionalVehicles)) then {
-    INFO("loading additional vehicles");
+    LOG("loading additional vehicles");
 
     [QGVAR(AdditionalVehicles)] call A3A_fnc_getStatVariable;
     
     if ((isNil QGVAR(AdditionalVehicles)) || { !(GVAR(AdditionalVehicles) isEqualType []) }) then {
-        INFO("No saved additional Vehicles found, initializing empty array");
+        LOG("No saved additional Vehicles found, initializing empty array");
         GVAR(AdditionalVehicles) = [];
     } else {
-        INFO("Loading additional Vehicles from saved data");
+        LOG("Loading additional Vehicles from saved data");
     };
 };
 

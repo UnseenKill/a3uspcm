@@ -26,7 +26,7 @@ if !(GVAR(contactTracker) isEqualType false) exitWith {
 };
 
 GVAR(contactTracker) = [] spawn {
-    INFO("Contact tracking started");
+    LOG("Contact tracking started");
 
     while { count GVAR(contacts) > 0 } do {
         uiSleep 0.125;
@@ -50,7 +50,7 @@ GVAR(contactTracker) = [] spawn {
 
             switch true do {
                 case !(_contact get "alive"): {
-                    INFO_1("Unit for contact '%1' is dead, removing contact",_key);
+                    LOG_1("Unit for contact '%1' is dead, removing contact",_key);
                     GVAR(contacts) deleteAt _key;
                     deleteMarker _marker;
                     publicVariable QGVAR(contacts);
@@ -59,7 +59,7 @@ GVAR(contactTracker) = [] spawn {
                 };
 
                 case (_contact get "alive" isNotEqualTo alive _unit): {
-                    INFO_3("Contact '%1' alive state changed (alive=%2;unit=%3)",_key,alive _unit,_unit);
+                    LOG_3("Contact '%1' alive state changed (alive=%2;unit=%3)",_key,alive _unit,_unit);
                     if !assert(!alive _unit) then { continue };
 
                     _contact set["alive", false];
@@ -80,11 +80,11 @@ GVAR(contactTracker) = [] spawn {
         };
     };
 
-    INFO("Contact tracking stopped");
+    LOG("Contact tracking stopped");
 };
 
 waitUntil { scriptDone GVAR(contactTracker) };
-INFO("Contact tracking script has finished");
+LOG("Contact tracking script has finished");
 
 GVAR(contactTracker) = false;
 

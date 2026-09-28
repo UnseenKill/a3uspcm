@@ -19,7 +19,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-INFO_1("player %1 wants to go undercover again",name player);
+LOG_1("player %1 wants to go undercover again",name player);
 
 if !(isNull objectParent player) then {
     TRACE_1("unreporting car",objectParent player);

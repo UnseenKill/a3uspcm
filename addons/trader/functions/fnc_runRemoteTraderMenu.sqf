@@ -71,7 +71,7 @@ if !assert(!isNil "traderX") exitWith {};
     waitUntil { isNull findDisplay IDD_DISPLAY_STORE };
 
     if (loadAbs GVAR(airdropContainer) isEqualTo 0) exitWith {
-        INFO("Remote trader airdrop container empty; deleting.");
+        LOG("Remote trader airdrop container empty; deleting.");
         [] call FUNC(refundRemoteAccessFee);
         deleteVehicle GVAR(airdropContainer);
         GVAR(airdropContainer) = nil;

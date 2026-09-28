@@ -20,7 +20,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-INFO_1("Unlocking permanent marker for '%1'",name player);
+LOG_1("Unlocking permanent marker for '%1'",name player);
 
 [QEGVAR(markers,PermanentMarker)] call FUNCMAIN(utilUnlockArsenalItem);
 

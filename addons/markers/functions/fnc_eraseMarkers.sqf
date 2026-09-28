@@ -23,7 +23,7 @@ Author:
 TRACE_1(QFUNC(eraseMarkers),_this);
 
 if !isNil QGVAR(MapSingleClickEH) exitWith {
-    INFO("ignoring duplicate feature activation");
+    LOG("ignoring duplicate feature activation");
 };
 
 if !visibleMap then {

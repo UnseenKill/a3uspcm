@@ -21,18 +21,18 @@ Author:
 TRACE_1(QFUNC(loadMarkers),_this);
 
 if !(isNil QGVAR(storedMarkers)) exitWith {
-    INFO("Markers already loaded, skipping...");
+    LOG("Markers already loaded, skipping...");
 };
 
-INFO("Markers not loaded, initializing...");
+LOG("Markers not loaded, initializing...");
 
 [QGVAR(storedMarkers)] call A3A_fnc_getStatVariable;
 
 if (isNil QGVAR(storedMarkers)) then {
-    INFO("No saved markers found, initializing empty map");
+    LOG("No saved markers found, initializing empty map");
     GVAR(storedMarkers) = createHashMap;
 } else {
-    INFO("Loading saved markers");
+    LOG("Loading saved markers");
     TRACE_2(QFUNC(loadMarkers),typeName GVAR(storedMarkers),GVAR(storedMarkers));
 
     if (GVAR(storedMarkers) isEqualType []) then {

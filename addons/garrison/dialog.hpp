@@ -1,7 +1,7 @@
 #include "\z\a3uspcm\addons\main\ui_define.hpp"
-#include "mapcontrol.hpp"
 #include "RscDefine.hpp"
 
+FORWARD(A3A_MapControl);
 FORWARD(RscButton);
 FORWARD(RscCheckBox);
 FORWARD(RscFrame);

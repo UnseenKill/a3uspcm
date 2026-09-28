@@ -1,12 +1,12 @@
 #include "script_component.hpp"
 
 [{
-    INFO("loading stored markers");
+    LOG("loading stored markers");
     [] call FUNC(loadMarkers);
 }] call FUNCMAIN(utilOnA3UServerInitDone);
 
 [CBA_EVENT_SERVER_SAVEGAME_BEFORE, {
-    INFO("saving permanent markers");
+    LOG("saving permanent markers");
 
     if (isNil QGVAR(storedMarkers)) exitWith {};
     if !(GVAR(storedMarkers) isEqualType createHashMap) exitWith {

@@ -23,8 +23,8 @@ GVAR(MarkerSizes) = nil;
         ["_value", nil]
     ]) exitWith {};
 
-    if (_player isNotEqualTo theBoss) exitWith { INFO_2("Ignoring syncGVAR event from non-boss player %1 (variable %2)",str name _player,str _gvarName) };
-    if (_gvarName find QUOTE(ADDON) isNotEqualTo 0) exitWith { INFO_1("Ignoring syncGVAR event with invalid gvar name %1",str _gvarName) };
+    if (_player isNotEqualTo theBoss) exitWith { LOG_2("Ignoring syncGVAR event from non-boss player %1 (variable %2)",str name _player,str _gvarName) };
+    if (_gvarName find QUOTE(ADDON) isNotEqualTo 0) exitWith { LOG_1("Ignoring syncGVAR event with invalid gvar name %1",str _gvarName) };
 
     TRACE_2(QFUNC(syncGVAR),_gvarName,_value);
     private _oldValue = missionNamespace getVariable [_gvarName, []];
@@ -50,7 +50,7 @@ GVAR(MarkerSizes) = nil;
 }] call CBA_fnc_addEventHandler;
 
 [CBA_EVENT_SERVER_SAVEGAME_BEFORE, {
-    INFO("saving game variables");
+    LOG("saving game variables");
 
     if (!isNil QGVAR(AdditionalBuildables) && { GVAR(AdditionalBuildables) isEqualType [] }) then {
         [QGVAR(AdditionalBuildables), +GVAR(AdditionalBuildables)] call A3A_fnc_setStatVariable;

@@ -20,7 +20,7 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 
-INFO_3("A3USPCM_fnc_diaryInitialize - initialize for (name=%1;uid=%2;type=%3)",name player,getPlayerUID player,typeOf player);
+LOG_3("A3USPCM_fnc_diaryInitialize - initialize for (name=%1;uid=%2;type=%3)",name player,getPlayerUID player,typeOf player);
 
 GVAR(DiarySubjectIndex) = player createDiarySubject[MENU_SUBJECT_ID, LLSTRING(DiarySubjectTitle)];
 GVAR(DiaryEntries) = createHashMap;

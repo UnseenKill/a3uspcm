@@ -54,7 +54,7 @@ _this spawn {
     };
 
     if (_statics isEqualTo []) exitWith {
-        INFO("No statics selected by Zeus.");
+        LOG("No statics selected by Zeus.");
         systemChat LLSTRING(ModuleMSE_NoStaticsFound);
     };
 

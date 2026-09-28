@@ -20,7 +20,7 @@ Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
 
-INFO_1("player %1 healed self",name player);
+LOG_1("player %1 healed self",name player);
 
 if !EGVAR(main,AceHaveAddon) then {
     player setDamage 0;

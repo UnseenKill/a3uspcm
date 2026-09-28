@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3USPCM">
+    <Package name="GarrisonRework">
+        <Key ID="STR_A3USPCM_Garrison_Rework_Component">
+            <Original>A3USPCM - Garrison Management Component (Reworked)</Original>
+            <German>A3USPCM - Garrison Management Komponente (Überarbeitet)</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_BtnRecruit_DisplayName">
+            <Original>Recruit</Original>
+            <German>Rekrutieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_BtnRecruit_Tooltip">
+            <Original>Recruit units to the selected location</Original>
+            <German>Einheiten an den ausgewählten Standort rekrutieren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_HideFull_DisplayName">
+            <Original>Hide Full</Original>
+            <German>Volle ausblenden</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_OwnerFilterInvaders_DisplayName">
+            <Original>Owner: Invaders</Original>
+            <German>Eigentümer: Invasoren</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_OwnerFilterOccupiers_DisplayName">
+            <Original>Owner: Occupiers</Original>
+            <German>Eigentümer: Besetzer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_OwnerFilterRebels_DisplayName">
+            <Original>Owner: Rebels</Original>
+            <German>Eigentümer: Rebellen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowBases_DisplayName">
+            <Original>Show Bases</Original>
+            <German>Basen anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowOutposts_DisplayName">
+            <Original>Show Outposts</Original>
+            <German>Außenposten anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowPosts_DisplayName">
+            <Original>Show Posts</Original>
+            <German>Posten anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowResources_DisplayName">
+            <Original>Show Resources</Original>
+            <German>Ressourcen anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_Check_ShowTowns_DisplayName">
+            <Original>Show Towns</Original>
+            <German>Städte anzeigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Filters_SectionTitle">
+            <Original>Filters</Original>
+            <German>Filter</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_ListHeader_Column_Capacity_DisplayName">
+            <Original>Max</Original>
+            <German>Max</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_ListHeader_Column_Current_DisplayName">
+            <Original>Cur</Original>
+            <German>Akt</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_ListHeader_Column_Name_DisplayName">
+            <Original>Name</Original>
+            <German>Name</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_AAPost_Label">
+            <Original>A/A post near %1</Original>
+            <German>A/A Stellung nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_ATPost_Label">
+            <Original>A/T post near %1</Original>
+            <German>A/T Stellung nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Airport_Label">
+            <Original>Airport near %1</Original>
+            <German>Flughafen nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Factory_Label">
+            <Original>Factory near %1</Original>
+            <German>Fabrik nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_HmgPost_Label">
+            <Original>HMG post near %1</Original>
+            <German>SMG Stellung nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_MilBase_Label">
+            <Original>Military base near %1</Original>
+            <German>Militärbasis nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Outpost_Label">
+            <Original>Outpost near %1</Original>
+            <German>Außenposten nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Resource_Label">
+            <Original>Resource near %1</Original>
+            <German>Ressource nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Roadblock_Label">
+            <Original>Roadblock near %1</Original>
+            <German>Straßensperre nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Seaport_Label">
+            <Original>Seaport near %1</Original>
+            <German>Hafen nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_SyndicateHQ_Label">
+            <Original>HQ near %1</Original>
+            <German>HQ nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_LocationsList_Watchpost_Label">
+            <Original>Watchpost near %1</Original>
+            <German>Wachposten nahe %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_MainTitle">
+            <Original>Advanced Garrison Manager</Original>
+            <German>Garnisonsverwaltung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Message_EnemiesTooClose">
+            <Original>Enemies are close to selected location.</Original>
+            <German>Feinde sind in der Nähe des ausgewählten Standorts.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Message_LocationNotFriendly">
+            <Original>Non-allied location selected.</Original>
+            <German>Nicht-alliierter Standort ausgewählt.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Message_WaitOnRecruitment">
+            <Original>Waiting for recruitment to complete...</Original>
+            <German>Warten auf den Abschluss der Rekrutierung...</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Message_WaitOnRecruitment_Timeout">
+            <Original>Recruitment failed to complete. Server request timed out.</Original>
+            <German>Rekrutierung konnte nicht abgeschlossen werden. Serveranfrage zeitüberschritten.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_Recruitment_LabelTotal">
+            <Original>Total spend:</Original>
+            <German>Gesamtausgaben:</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_AASpecialist_Abbreviated">
+            <Original>AA</Original>
+            <German>FlAbw</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_AASpecialist_DisplayName">
+            <Original>AA Specialist</Original>
+            <German>Flugabwehrspezialist</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_ATSpecialist_Abbreviated">
+            <Original>AT</Original>
+            <German>PzAbw</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_ATSpecialist_DisplayName">
+            <Original>AT Specialist</Original>
+            <German>Panzerabwehrspezialist</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_AT_Abbreviated">
+            <Original>LAT</Original>
+            <German>LAT</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_AT_DisplayName">
+            <Original>Light AT</Original>
+            <German>Leichte PzAbw</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Autorifleman_Abbreviated">
+            <Original>MG</Original>
+            <German>MG</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Autorifleman_DisplayName">
+            <Original>Autorifleman</Original>
+            <German>Automatikschütze</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Crew_Abbreviated">
+            <Original>Crew</Original>
+            <German>Bes</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Crew_DisplayName">
+            <Original>Crew</Original>
+            <German>Besatzung</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Engineer_Abbreviated">
+            <Original>Eng</Original>
+            <German>Ing</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Engineer_DisplayName">
+            <Original>Engineer</Original>
+            <German>Ingenieur</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Grenadier_Abbreviated">
+            <Original>Grn</Original>
+            <German>Grn</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Grenadier_DisplayName">
+            <Original>Grenadier</Original>
+            <German>Grenadier</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Marksman_Abbreviated">
+            <Original>Mrk</Original>
+            <German>SSchü</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Marksman_DisplayName">
+            <Original>Marksman</Original>
+            <German>Scharfschütze</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Medic_Abbreviated">
+            <Original>Med</Original>
+            <German>San</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Medic_DisplayName">
+            <Original>Medic</Original>
+            <German>Sanitäter</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Rifleman_Abbreviated">
+            <Original>Rfl</Original>
+            <German>Schü</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Rifleman_DisplayName">
+            <Original>Rifleman</Original>
+            <German>Schütze</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Sapper_Abbreviated">
+            <Original>Expl</Original>
+            <German>Pio</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_Sapper_DisplayName">
+            <Original>Sapper</Original>
+            <German>Pionier</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_SquadLdr_Abbreviated">
+            <Original>SL</Original>
+            <German>GF</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Dialog_UnitType_SquadLdr_DisplayName">
+            <Original>Squad Leader</Original>
+            <German>Gruppenführer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_InUseWannaKick_Message">
+            <Original>The advanced garrison manager is currently in use by "%1".&lt;br /&gt;Do you want to kick them out of it?</Original>
+            <German>Der Garnisonsmanager wird derzeit von "%1" verwendet.&lt;br /&gt;Möchten Sie ihn daraus entfernen?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_InUse_Message">
+            <Original>The advanced garrison manager is currently in use by "%1".</Original>
+            <German>Der Garnisonsmanager wird derzeit von "%1" verwendet.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_RecruitConfirmation_ConfirmAll">
+            <Original>Continue hiring/firing units from this location?</Original>
+            <German>Fortfahren mit der Rekrutierung/Entlassung von Einheiten an diesem Standort?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_RecruitConfirmation_ConfirmFire">
+            <Original>Based on the sliders, some units will also be dismissed.&lt;br /&gt;Continue hiring/firing units from this location?</Original>
+            <German>Basierend auf den Schiebereglern werden einige Einheiten ebenfalls entlassen.&lt;br /&gt;Fortfahren mit der Rekrutierung/Entlassung von Einheiten an diesem Standort?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_RecruitConfirmation_Header">
+            <Original>Garrison recruitment for %1</Original>
+            <German>Rekrutierung für %1</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_Category_DisplayName">
+            <Original>Advanced Garrison Manager</Original>
+            <German>Erweiterter Garnisonsmanager</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_allowOwnershipFilter_DisplayName">
+            <Original>Allow ownership filter</Original>
+            <German>Besitzfilter erlauben</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_allowOwnershipFilter_Tooltip">
+            <Original>Enable or disable the ownership filter for garrison management.</Original>
+            <German>Aktivieren oder Deaktivieren des Besitzfilters für die Garnisonsverwaltung.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_allowUnitDismissal_DisplayName">
+            <Original>Allow unit dismissal</Original>
+            <German>Einheitenentlassung erlauben</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_allowUnitDismissal_Tooltip">
+            <Original>Enable or disable the ability to dismiss units in the garrison manager.</Original>
+            <German>Aktivieren oder Deaktivieren der Möglichkeit, Einheiten im Garnisonsmanager zu entlassen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_confirmRecruitment_DisplayName">
+            <Original>Confirm recruitment</Original>
+            <German>Rekrutierung bestätigen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_confirmRecruitment_Option0">
+            <Original>Never</Original>
+            <German>Niemals</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_confirmRecruitment_Option1">
+            <Original>Only if units are to be dismissed</Original>
+            <German>Nur wenn Einheiten entlassen werden sollen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_confirmRecruitment_Option2">
+            <Original>Always</Original>
+            <German>Immer</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_confirmRecruitment_Tooltip">
+            <Original>Enable or disable the confirmation dialog when recruiting units in the garrison manager.</Original>
+            <German>Aktivieren oder Deaktivieren des Bestätigungsdialogs bei der Rekrutierung von Einheiten im Garnisonsmanager.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_enemiesCloseCheck_DisplayName">
+            <Original>Check for nearby enemies</Original>
+            <German>Auf nahe Feinde prüfen</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_Settings_enemiesCloseCheck_Tooltip">
+            <Original>Enable or disable the check for nearby enemies when managing the garrison.</Original>
+            <German>Aktivieren oder Deaktivieren der Überprüfung auf nahe Feinde bei der Verwaltung der Garnison.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Garrison_Rework_TerminateUI_Message">
+            <Original>The advanced garrison manager has been taken over by "%1".</Original>
+            <German>Der Garnisonsmanager wurde von "%1" übernommen.</German>
+        </Key>
+    </Package>
+</Project>

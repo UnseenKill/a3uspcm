@@ -31,7 +31,7 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _display) exitWith {};
 
-INFO("Setting up map control for targets tab");
+LOG("Setting up map control for targets tab");
 
 private _ctlMap  = _display ctrlCreate[QGVAR(RscMapControl), IDC_TARGETS_CTL_MAP];
 _ctlMap ctrlSetPosition[_mapPosition select 0, _mapPosition select 1, _mapSize select 0, _mapSize select 1];

@@ -565,6 +565,10 @@
             <English>Buy a DSB</English>
             <German>Kaufe einen DSB</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_PlaceBeaconConfirmPositionText">
+            <English>Custom waypoint is set. Do you want to spawn the DSB at that position?</English>
+            <German>Der benutzerdefinierte Wegpunkt ist gesetzt. Möchtest Du den DSB an dieser Position spawnen?</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_PlaceBeaconHintNoMoneyText">
             <English>You need %1$ to buy a Despawn Suppressor Beacon™.</English>
             <German>Du benötigst %1$, um einen Despawn Suppressor Beacon™ zu kaufen.</German>

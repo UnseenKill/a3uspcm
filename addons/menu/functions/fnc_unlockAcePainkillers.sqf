@@ -20,7 +20,7 @@ Returns:
 Author:
     goreSplatter
 ---------------------------------------------------------------------------- */
-INFO_1("Unlocking ACE Painkillers for '%1'",name player);
+LOG_1("Unlocking ACE Painkillers for '%1'",name player);
 
 ["ACE_painkillers"] call FUNCMAIN(utilUnlockArsenalItem);
 

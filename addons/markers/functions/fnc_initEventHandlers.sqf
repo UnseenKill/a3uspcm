@@ -31,7 +31,7 @@ if !GVAR(allowPersistentMarkers) exitWith { false };
         ["_player", nil, [objNull]]
     ]) exitWith {};
 
-    if GVAR(markersRestored) exitWith { INFO("Markers already restored, skipping...") };
+    if GVAR(markersRestored) exitWith { LOG("Markers already restored, skipping...") };
 
     [_player] call FUNC(restoreMarkers);
 }] call CBA_fnc_addEventHandler;

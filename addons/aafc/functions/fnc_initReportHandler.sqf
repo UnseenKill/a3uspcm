@@ -32,7 +32,7 @@ GVAR(fncRegisterContact) = {
         ["_enemy", nil, [objNull]]
     ]) exitWith {};
 
-    INFO_3("'%1' detected enemy '%2' (isAir=%3)",_group,_enemy,_enemy isKindOf "Air");
+    LOG_3("'%1' detected enemy '%2' (isAir=%3)",_group,_enemy,_enemy isKindOf "Air");
 
     private _enemySide = _enemy getVariable["ownerSide", side _enemy];
     if (_enemySide isNotEqualTo sideUnknown && { side _group getFriend _enemySide >= 0.6 }) exitWith {};

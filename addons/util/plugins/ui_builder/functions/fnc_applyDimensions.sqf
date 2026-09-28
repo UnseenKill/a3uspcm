@@ -1,0 +1,101 @@
+#include "..\script_component.hpp"
+/* ----------------------------------------------------------------------------
+Function: A3USPCM_util_ui_builder_fnc_applyDimensions
+
+Description:
+    Apply dimensions to a control based on config
+
+Parameters:
+    0: _control - Control to apply dimensions to <CONTROL>
+    1: _config - Config class containing dimension information <CONFIG>
+
+Optional:
+
+Example:
+
+Returns:
+    Nothing
+
+Environment:
+    Client, Unscheduled
+
+Author:
+    UnseenKill/gor3Splatter
+---------------------------------------------------------------------------- */
+TRACE_1(QFUNC(applyDimensions),_this);
+
+if !assert(params[
+    ["_control", nil, [controlNull]],
+    ["_config", nil, [configNull]]
+]) exitWith {};
+if !assert(!isNull _control) exitWith {};
+if !assert(!isNull _config) exitWith {};
+
+#define COMPILE_PROPERTY(propertyName,defaultValue) ([] call { \
+    private _value = [_control, QUOTE(propertyName)] call FUNC(parseControlProperty); \
+    _value = RETDEF(_value,defaultValue); \
+    TRACE_2(QFUNC(applyDimensions),QUOTE(propertyName),_value); \
+    _value; \
+})
+
+private _parent = ctrlParentControlsGroup _control;
+private _px = COMPILE_PROPERTY(x,0);
+private _py = COMPILE_PROPERTY(y,0);
+private _dimensions = [_px, _py, 0, 0];
+
+if (!(isNumber(_config >> "w") || isText(_config >> "w")) || { !(isNumber(_config >> "h") || isText(_config >> "h")) }) then {
+    if (ctrlType _control isNotEqualTo CT_CONTROLS_GROUP) then {
+        WARNING_1("No dimensions for non-control group element ""%1"" found. Using its default dimensions.",configName _config);
+        ctrlPosition _control params["","","_defaultW","_defaultH"];
+        _dimensions set[2, _defaultW];
+        _dimensions set[3, _defaultH];
+    } else {
+        if (isNull _parent) then {
+            _dimensions set[2, 1];
+            _dimensions set[3, 1];
+        } else {
+            ctrlPosition _parent params["","","_w","_h"];
+            _dimensions set[2, _w - _px];
+            _dimensions set[3, _h - _py];
+        };
+    };
+};
+
+_dimensions set[2, COMPILE_PROPERTY(w,_dimensions select 2)];
+_dimensions set[3, COMPILE_PROPERTY(h,_dimensions select 3)];
+
+// Spacing: elements only get spacing along edges that don't "hug"
+// their parent control.
+private _spacing = _control getVariable QGVAR(spacing) vectorMultiply 0.5;
+private _offsets = _spacing vectorMultiply[1, 1, -1, -1];
+
+if (_spacing isNotEqualTo [0, 0, 0, 0]) then {
+    ctrlPosition _parent params["","","_parentW","_parentH"];
+
+    // hugging the left edge
+    if ((_dimensions select 0) <= 0) then {
+        _offsets set[0, 0];
+    };
+
+    // hugging the top edge
+    if ((_dimensions select 1) <= 0) then {
+        _offsets set[1, 0];
+    };
+
+    // hugging the right edge
+    if ((_dimensions select 2) >= _parentW) then {
+        _offsets set[2, 0];
+    };
+
+    // hugging the bottom edge
+    if ((_dimensions select 3) >= _parentH) then {
+        _offsets set[3, 0];
+    };
+};
+
+_dimensions = _dimensions vectorAdd _offsets;
+
+_control ctrlSetPosition _dimensions;
+_control setVariable[QGVAR(dimensions), _dimensions];
+
+nil;

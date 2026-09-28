@@ -289,5 +289,13 @@
             <English>Allows the player to change ownership of any location on AGM map; hold Ctrl and click for normal ownership change, Ctrl+Alt for all.</English>
             <German>Erlaube dem Spieler, den Besitz jedes Ortes auf der AGM-Karte zu ändern; Halte Strg gedrückt und klicke für normalen Besitzwechsel, Strg+Alt für alle.</German>
         </Key>
+        <Key ID="STR_A3USPCM_garrison_Settings_useTraditionalAGM_DisplayName">
+            <English>Use traditional AGM</English>
+            <German>Verwende traditionellen AGM</German>
+        </Key>
+        <Key ID="STR_A3USPCM_garrison_Settings_useTraditionalAGM_Tooltip">
+            <English>Enables the traditional ("old") advanced garrison manager</English>
+            <German>Aktiviert den traditionellen ("alten") erweiterten Garnisonsmanager</German>
+        </Key>
     </Package>
 </Project>
