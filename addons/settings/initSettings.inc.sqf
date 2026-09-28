@@ -131,26 +131,6 @@
 ] call CBA_fnc_addSetting;
 
 [
-    QEGVAR(garrison,addActionToMapObject), "CHECKBOX",
-    [ELSTRING(garrison,Settings_addActionToMapObject_DisplayName), ELSTRING(garrison,Settings_addActionToMapObject_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
-    true, // default
-    true, // global
-    {}, // onchange
-    true // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
-    QEGVAR(garrison,allowTakeOverAnything), "CHECKBOX",
-    [ELSTRING(garrison,Settings_allowTakeOverAnything_DisplayName), ELSTRING(garrison,Settings_allowTakeOverAnything_Tooltip)],
-    [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
-    false, // default
-    false, // global
-    {}, // onchange
-    false // Needs mission restart
-] call CBA_fnc_addSetting;
-
-[
     QEGVAR(menu,injectA3USPCMTab), "LIST",
     [ELSTRING(menu,Settings_injectA3USPCMTab_DisplayName), ELSTRING(menu,Settings_injectA3USPCMTab_Tooltip)],
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
@@ -192,6 +172,38 @@
     [ELSTRING(main,Title), ELSTRING(menu,Settings_Category_DisplayName)],
     [0, 180, 15, 0], // min,max,default,decimals
     true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+// Garrison manager
+
+[
+    QEGVAR(garrison,useTraditionalAGM), "CHECKBOX",
+    [ELSTRING(garrison,Settings_useTraditionalAGM_DisplayName), ELSTRING(garrison,Settings_useTraditionalAGM_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(garrison_rework,Settings_Category_DisplayName)],
+    false, // default
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(garrison,addActionToMapObject), "CHECKBOX",
+    [ELSTRING(garrison,Settings_addActionToMapObject_DisplayName), ELSTRING(garrison,Settings_addActionToMapObject_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(garrison_rework,Settings_Category_DisplayName)],
+    true, // default
+    true, // global
+    {}, // onchange
+    true // Needs mission restart
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(garrison,allowTakeOverAnything), "CHECKBOX",
+    [ELSTRING(garrison,Settings_allowTakeOverAnything_DisplayName), ELSTRING(garrison,Settings_allowTakeOverAnything_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(garrison_rework,Settings_Category_DisplayName)],
+    false, // default
+    false, // global
     {}, // onchange
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
