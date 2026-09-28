@@ -477,6 +477,22 @@
             <English>Instant-build all unbuilt objects.</English>
             <German>Bau alle ungebauten Objekte sofort.</German>
         </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ChangeMarkerOwnershipCaption">
+            <English>Change ownership</English>
+            <German>Besitzer ändern</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ChangeMarkerOwnershipConfirmation">
+            <English>Change ownership of "%1" from "%2" to "%3"?</English>
+            <German>Ändere den Besitzer von "%1" von "%2" zu "%3"?</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ChangeMarkerOwnershipHint">
+            <English>Click on (or near) any map location to change its owner. Close map to abort.</English>
+            <German>Klicke auf (oder in der Nähe von) einen beliebigen Kartenstandort, um dessen Besitzer zu ändern. Schließe die Karte, um abzubrechen.</German>
+        </Key>
+        <Key ID="STR_A3USPCM_Menu_Miscellaneous_ChangeMarkerOwnershipText">
+            <English>Change owner of a map location.</English>
+            <German>Ändere den Besitzer eines Kartenstandorts.</German>
+        </Key>
         <Key ID="STR_A3USPCM_Menu_Miscellaneous_EmergencyInvincibilityCooldownHintText">
             <English>You have recently been immortal. That can't happen any time, though. Wait another %1 seconds.</English>
             <German>Du warst erst vor Kurzem unsterblich. Das kann aber nicht jederzeit passieren. Warte weitere %1 Sekunden.</German>

@@ -252,6 +252,16 @@
     false // Needs mission restart
 ] call CBA_fnc_addSetting;
 
+[
+    QEGVAR(garrison_rework,hrBuffer), "SLIDER",
+    [ELSTRING(garrison_rework,Settings_hrBuffer_DisplayName), ELSTRING(garrison_rework,Settings_hrBuffer_Tooltip)],
+    [ELSTRING(main,Title), ELSTRING(garrison_rework,Settings_Category_DisplayName)],
+    [0, 100, 10, 0], // min,max,default,decimals
+    true, // global
+    {}, // onchange
+    false // Needs mission restart
+] call CBA_fnc_addSetting;
+
 // Music
 
 [

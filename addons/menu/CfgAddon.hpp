@@ -56,7 +56,15 @@ class GVAR(Config) {
                 caption = CSTRING(Miscellaneous_ToggleMarkerVisibilityCaption);
                 text = CSTRING(Miscellaneous_ToggleMarkerVisibilityText);
                 action = QFUNCMAIN(miscToggleMarkerVisibility);
-             };
+            };
+
+            class ChangeMarkerOwnership {
+                caption = CSTRING(Miscellaneous_ChangeMarkerOwnershipCaption);
+                text = CSTRING(Miscellaneous_ChangeMarkerOwnershipText);
+                action = QFUNCMAIN(miscChangeMarkerOwnership);
+                condition = QUOTE(player isEqualTo theBoss);
+                collapseDiary = 1;
+            };
 
             class EnlargeNearestMarker {
                 caption = CSTRING(Miscellaneous_EnlargeNearestMarkerCaption);
@@ -324,7 +332,7 @@ class GVAR(Config) {
                 caption = CSTRING(Recruitment_LaunchAGMCaption);
                 text = CSTRING(Recruitment_LaunchAGMText);
                 action = QFUNCMAIN(recruitLaunchAGM);
-                closeDiary = 1;
+                collapseDiary = 1;
             };
 
             class RenameHC {

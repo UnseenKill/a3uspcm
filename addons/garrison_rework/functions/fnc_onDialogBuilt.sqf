@@ -70,10 +70,12 @@ allControls(_control getVariable QUIBVAR(controls) get "RecruitList") apply {
     };
 };
 
+[CBA_EVENT_UPDATE_RESOURCES] call CBA_fnc_localEvent;
 [CBA_EVENT_UPDATE_LOCATIONS] call CBA_fnc_localEvent;
 
 #ifdef __A3_DEBUG__
 [_control] call ESFUNC(util,ui_builder,dumpControl);
+_control getVariable QUIBVAR(controls) get "ADTMagicWordEdit" ctrlShow true;
 #endif // __A3_DEBUG__
 
 nil;
