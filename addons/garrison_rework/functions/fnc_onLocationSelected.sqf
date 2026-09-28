@@ -83,7 +83,7 @@ if !assert(!isNil "_garrison") exitWith { [_control, -1] call FUNC(onLocationSel
 
 private _garrisonSize = count _garrison;
 private _garrisonInfo = createHashMapFromArray(allControls _recruitGroup select {
-    !isNil { _x getVariable QGVAR(unitType) };
+    !isNil { _x getVariable QGVAR(isSlider) };
 } apply {
     private _slider = _x;
     private _unitType = _slider getVariable QGVAR(unitType);

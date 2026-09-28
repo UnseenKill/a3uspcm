@@ -186,6 +186,7 @@ class GVAR(Config) {
                                         className = QUOTE(RscXSliderH); \
                                         \
                                         class Properties { \
+                                            GVAR(isSlider) = 1; \
                                             GVAR(unitName) = QUOTE(Name); \
                                             GVAR(unitType) = QUOTE(UnitType); \
                                         }; \
