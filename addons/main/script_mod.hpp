@@ -12,7 +12,7 @@
 
 // Antistasi Ultimate compatibility
 #define A3A_COMPAT_MAJOR 12
-#define A3A_COMPAT_MINOR 0
+#define A3A_COMPAT_MINOR 4
 
 // Define DEBUG_MODE_FULL for full debug mode when not in production and not
 // otherwise already specified
