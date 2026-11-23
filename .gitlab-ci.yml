@@ -3,6 +3,7 @@ variables:
   WORK_ON_BRANCH: "dev"
 
 stages:
+  - submodules
   - validate
   - release
 
@@ -24,6 +25,11 @@ default:
   - echo "--version:$GL_UPLOAD_VERSION"
   - response=$(curl --header "JOB-TOKEN:$CI_JOB_TOKEN" --upload-file ${GL_UPLOAD_ARCHIVE} ${PACKAGE_LINK})
   - echo "--response:$response"
+
+submodules-job:
+  stage: submodules
+  script:
+    - git submodule update --init --recursive
 
 validate-job:
   stage: validate
